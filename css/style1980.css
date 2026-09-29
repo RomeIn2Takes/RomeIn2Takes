@@ -3,6 +3,7 @@
    ========================================================= */
 
    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* STILE GENERALE */
 
@@ -153,7 +154,7 @@ header {
 .bar-style {
     position: sticky;
     top: 45px;
-    z-index: 1000;
+    z-index: 999;
 
     display: flex;
 
@@ -293,26 +294,19 @@ main p {
 
 .title-container {
     position: relative;
-
     width: 100%;
     max-width: 900px;
-
     margin: 0 auto;
     padding: 60px 70px;
-
     box-sizing: border-box;
-
-    background-color: #050010;
-
-    border: 4px solid #00f3ff;
-    border-radius: 0px;
-
+    
+    background-color: #1d0243;
     box-shadow:
-        0 0 0 3px white,
-        0 0 0 7px #f4e8c1,
-        0 0 20px rgba(244, 232, 193, 0.7),
-        0 0 40px rgba(244, 232, 193, 0.35),
-        0 8px 20px rgba(0, 0, 0, 0.4);
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+
 }
 
 
@@ -327,56 +321,126 @@ main p {
     margin: 0;
     padding: 0;
 
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 5.5rem;
-    line-height: 1;
-    letter-spacing: 6px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 3rem;
+    line-height: 1.5;
 
-    color: white;
+    color: #ffe600;
 
     text-align: center;
     text-transform: uppercase;
+    text-shadow: -3px -3px 0px #00ffff;
+    -webkit-text-stroke: 2px #ff007f;
 
-    -webkit-text-stroke: 1px #f4e8c1;
+    animation: jitter 0.15s infinite;
 
-    text-shadow:
-        2px 2px 0 #6d2121,
-        0 0 8px rgba(244, 232, 193, 0.3);
 }
 
 
-/* =========================================================
-   LUCI INSEGNA
-   ========================================================= */
-
-.title-container::before,
-.title-container::after {
+.title-container h1::before,
+.title-container h1::after {
+    content: attr(data-text);
     position: absolute;
+    top: 0;
     left: 0;
-
     width: 100%;
-
-    color: #f4e8c1;
-
-    font-family: Arial, sans-serif;
-    font-size: 1.4rem;
-    letter-spacing: 10px;
-
-    text-align: center;
-
-    text-shadow:
-        0 0 4px white,
-        0 0 8px #f4e8c1;
+    height: 100%;
+    background: #1d0243;
 }
 
-.title-container::before {
-    content: "  \25CF     \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF   ";
-    top: 8px;
+/* Primo strato Glitch */
+.title-container h1::before {
+    left: 4px;
+    animation: glitch-anim-1 0.2s infinite linear alternate-reverse;
 }
 
-.title-container::after {
-    content: "     \25CF      \25CF          \25CF      \25CF      \25CF      \25CF     \25CF      \25CF      \25CF      \25CF      \25CF      \25CF      \25CF";
-    bottom: 8px;
+/* Secondo strato Glitch */
+.title-container h1::after {
+    left: -4px;
+    animation: glitch-anim-2 0.3s infinite linear alternate-reverse;
+}
+
+/* ANIMAZIONI */
+
+@keyframes glitch-anim-1 {
+    0% {
+        clip-path: inset(20% 0 50% 0);
+        transform: translate(-3px, 2px);
+    }
+
+    20% {
+        clip-path: inset(80% 0 5% 0);
+        transform: translate(3px, -2px);
+    }
+
+    40% {
+        clip-path: inset(10% 0 70% 0);
+        transform: translate(-4px, -1px);
+    }
+
+    60% {
+        clip-path: inset(40% 0 20% 0);
+        transform: translate(4px, 3px);
+    }
+
+    80% {
+        clip-path: inset(60% 0 10% 0);
+        transform: translate(-2px, 1px);
+    }
+
+    100% {
+        clip-path: inset(30% 0 40% 0);
+        transform: translate(2px, -3px);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip-path: inset(15% 0 65% 0);
+        transform: translate(3px, -2px);
+    }
+
+    25% {
+        clip-path: inset(55% 0 15% 0);
+        transform: translate(-3px, 3px);
+    }
+
+    50% {
+        clip-path: inset(75% 0 5% 0);
+        transform: translate(2px, 1px);
+    }
+
+    75% {
+        clip-path: inset(5% 0 85% 0);
+        transform: translate(-4px, -2px);
+    }
+
+    100% {
+        clip-path: inset(35% 0 35% 0);
+        transform: translate(1px, 2px);
+    }
+}
+
+@keyframes jitter {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-2px, 1px);
+    }
+
+    50% {
+        transform: translate(1px, -1px);
+    }
+
+    75% {
+        transform: translate(-1px, -2px);
+    }
+
+    100% {
+        transform: translate(2px, 1px);
+    }
 }
 
 
@@ -1234,8 +1298,8 @@ main p {
     display: flex;
     flex-direction: column;
 
-    background-color: #f4e8c1;
-    color: #2b2623;
+    background-color: #0ff;
+    color: #1d0243;
 
     text-align: center;
 
@@ -1249,10 +1313,9 @@ main p {
 .poster-back p {
     margin: 0;
 
-    color: #2b2623;
+    color: #1d0243;
 
-    font-family: 'Special Elite', monospace;
-    font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+    font-size: 1em;
     line-height: 1.4;
 
     text-align: justify;
@@ -1407,7 +1470,8 @@ footer {
     margin-top: 80px;
     padding: 25px 40px;
 
-    background-color: #1c1b1b;
+    background-color: #1d0243;
+    border-top: 2px solid #ff007f;
 }
 
 .footer-container {
@@ -1419,30 +1483,18 @@ footer {
     text-align: center;
 }
 
-footer p {
-    max-width: 950px;
 
-    margin: 6px auto;
-
-    color: white;
-
-    font-size: 0.85rem;
-    line-height: 1.5;
-
-    text-align: center;
+footer p{
+    color: #ff007f;
+    font-size: 1rem;
 }
 
-footer a {
-    color: white;
 
-    font-size: 0.85rem;
+footer a, footer a:hover {
+    color: #ffe600;
+    font-size: 1rem;
 }
 
-footer a:hover {
-    color: #f4e8c1;
-
-    opacity: 1;
-}
 
 
 /* =========================================================
