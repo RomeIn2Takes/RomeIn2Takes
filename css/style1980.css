@@ -1,0 +1,1669 @@
+/* =========================================================
+   CSS STILE ANNI 80
+   ========================================================= */
+
+   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+/* STILE GENERALE */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    background: linear-gradient(180deg,#1d0243,#2a0360,#1d0243);
+    background-attachment: fixed;
+
+    font-family: 'VT323', monospace;
+    color: #00f3ff;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HEADER / NAVBAR
+   ========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 40px;
+
+    background-color: #1d0243;
+
+    border-top: 1px solid #ff007f;
+    border-bottom: 1px solid #00f3ff;
+    box-shadow: 0 0 15px #00f3ff;
+}
+
+
+/* LINK NAVBAR */
+
+.link-head {
+    display: flex;
+    align-items: center;
+}
+
+.link-head>a,
+.dropdown>a {
+    margin-right: 20px;
+
+    color: #ff007f;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+
+    transition: color 0.2s ease;
+}
+
+.link-head>a:hover,
+.dropdown>a:hover {
+    color: #ffe600;
+
+    opacity: 1;
+
+    text-decoration: underline;
+
+}
+
+
+/* DROPDOWN NAVBAR (itinerary)*/
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 230px;
+
+    background-color: #1d0243;
+
+    border: 1px solid #1d0243;
+
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.35);
+
+    z-index: 2100;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+
+    margin: 0;
+    padding: 12px 15px;
+
+    color: white;
+
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid rgba(255, 0, 127, 0.4);
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ff007f;
+
+    color: white;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   BARRA STILI / DATE
+   ========================================================= */
+
+.bar-style {
+    position: sticky;
+    top: 45px;
+    z-index: 1000;
+
+    display: flex;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 15px 0;
+
+    background-color: #ff007f;
+
+    border-top: 1.5px solid #ffe600;
+    border-bottom: 1.5px solid #ffe600;
+}
+
+.bar-item {
+    flex: 1;
+
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    border-right: 1.5px solid rgba(255, 225, 0, 0.35);
+}
+
+.bar-item:last-child {
+    border-right: none;
+}
+
+.bar-item a {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffe600;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+
+    text-shadow: 0 0 2px white;
+
+    transition: text-shadow 0.4s ease;
+}
+
+.bar-item a:hover {
+
+    color: #ffe600;
+
+    opacity: 1;
+
+    text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 30px 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* TITOLI GENERALI stesso stile usato nella homepage */
+
+main h2 {
+    width: 100%;
+    max-width: 950px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 15px;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    letter-spacing: 2px;
+
+    color: #ff007f;
+
+    text-align: center;
+}
+
+
+/* TESTO GENERALE */
+
+main p {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+
+    color: #ffffff;
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   HOMEPAGE - INSEGNA CINEMATOGRAFICA
+   ========================================================= */
+
+.home-introduction {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 50px auto 70px auto;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CONTENITORE TITOLO
+   ========================================================= */
+
+.title-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+    padding: 60px 70px;
+
+    box-sizing: border-box;
+
+    background-color: #050010;
+
+    border: 4px solid #00f3ff;
+    border-radius: 0px;
+
+    box-shadow:
+        0 0 0 3px white,
+        0 0 0 7px #f4e8c1,
+        0 0 20px rgba(244, 232, 193, 0.7),
+        0 0 40px rgba(244, 232, 193, 0.35),
+        0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   TITOLO HOMEPAGE
+   ========================================================= */
+
+.title-container h1 {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5.5rem;
+    line-height: 1;
+    letter-spacing: 6px;
+
+    color: white;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    -webkit-text-stroke: 1px #f4e8c1;
+
+    text-shadow:
+        2px 2px 0 #6d2121,
+        0 0 8px rgba(244, 232, 193, 0.3);
+}
+
+
+/* =========================================================
+   LUCI INSEGNA
+   ========================================================= */
+
+.title-container::before,
+.title-container::after {
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+
+    color: #f4e8c1;
+
+    font-family: Arial, sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 10px;
+
+    text-align: center;
+
+    text-shadow:
+        0 0 4px white,
+        0 0 8px #f4e8c1;
+}
+
+.title-container::before {
+    content: "  \25CF     \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF   ";
+    top: 8px;
+}
+
+.title-container::after {
+    content: "     \25CF      \25CF          \25CF      \25CF      \25CF      \25CF     \25CF      \25CF      \25CF      \25CF      \25CF      \25CF      \25CF";
+    bottom: 8px;
+}
+
+
+/* =========================================================
+   HOMEPAGE - NARRATIVE
+   ========================================================= */
+
+.narratives {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 70px auto;
+}
+
+.narrativa-container {
+    width: 100%;
+
+    display: flex;
+
+    gap: 40px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   CARD NARRATIVE
+   ========================================================= */
+
+.narrative-card {
+    flex: 1;
+
+    box-sizing: border-box;
+
+    background-color: #1c1b1b;
+
+    color: white;
+
+    border: 4px solid #00f3ff;
+
+    transition:
+        opacity 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   PARTE SUPERIORE TIPO CIAK
+   ========================================================= */
+
+.card-decoration {
+    height: 45px;
+
+    background:
+        repeating-linear-gradient(135deg,
+            white 0px,
+            white 35px,
+            #1c1b1b 35px,
+            #1c1b1b 70px);
+
+    border-bottom: 4px solid white;
+}
+
+
+/* =========================================================
+   ETICHETTA ITINERARIO
+   ========================================================= */
+
+.card-label {
+    padding: 12px 20px;
+
+    border-bottom: 2px solid #f4e8c1;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+
+    color: #ffe600;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CORPO CARD
+   ========================================================= */
+
+.card-body {
+    padding: 25px;
+}
+
+
+/* =========================================================
+   TITOLO NARRATIVA
+   ========================================================= */
+
+.card-body h3 {
+    min-height: 80px;
+
+    margin: 0 0 20px 0;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    letter-spacing: 1px;
+
+    color: #ff007f;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DETTAGLI
+   ========================================================= */
+
+.card-details {
+    padding: 10px 0;
+    margin-bottom: 20px;
+
+    border-top: 1px dashed #ff007f;
+    border-bottom: 1px dashed #ff007f;
+}
+
+.card-details p {
+    width: 100%;
+    max-width: none;
+
+    margin: 5px 0;
+
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    line-height: 1.3rem;
+
+    color: #00f3ff;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   DESCRIZIONE CARD
+   ========================================================= */
+
+.card-description {
+    width: 100%;
+    max-width: none;
+
+    margin-bottom: 25px;
+
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    text-align: left;
+
+    color: white;
+}
+
+
+/* =========================================================
+   DISCOVER
+   ========================================================= */
+
+.discover {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    background-color: #1c1b1b;
+
+    border: 1px solid white;
+    border-radius: 3px;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+
+    color: white;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.narrative-card:hover .discover {
+    background-color: #f4e8c1;
+
+    color: #943b3b;
+
+    border-color: #f4e8c1;
+}
+
+
+/* =========================================================
+   HOVER CARD
+   ========================================================= */
+
+.narrative-card:hover {
+
+    opacity: 1;
+
+    border-color: #f4e8c1;
+
+    box-shadow:
+
+        0 0 8px rgba(244, 232, 193, 0.7),
+
+        0 0 18px rgba(244, 232, 193, 0.35);
+
+}
+
+
+/* =========================================================
+   AREA PRINCIPALE - stile interface desktop 
+   ========================================================= */
+
+.area-immagini {
+    width: 100%;
+    max-width: 950px;
+    height: 560px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    padding: 14px 20px;
+
+    box-sizing: border-box;
+
+    /* box redesign */
+    background-color: #1d0243;
+    border: 2px solid #ffe600;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    position: relative;
+    
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(255, 0, 127, 0.04) 0px,
+        rgba(255, 0, 127, 0.04) 2px,
+        transparent 2px, /* spessore linea */
+        transparent 8px /* Distanza tra le linee */
+        );
+    
+    box-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+}
+
+/* =========================================================
+   ZONA SINISTRA - FOTO
+   ========================================================= */
+
+.film-panel-left {
+    width: 40%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    box-sizing: border-box;
+}
+
+.film-panel-left>div {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    
+    /* cornicex immagini */
+    background-color: #1d0243;
+    border: 1px solid #00f3ff;
+    overflow: hidden;
+    padding: 12px 0 8px 0;
+    border-radius: 6px;
+}
+
+.film-panel-left img {
+    width: 80%;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover; 
+    display: block;
+    /* snx, h, blur, poi colore trasparenza */
+    box-shadow: 0 0 12px rgba(0, 243, 255, 0.4);
+    border-radius: 4px;
+}
+
+.photo-when {
+    width: 100%;
+
+    margin-bottom: 5px;
+    margin-left: 30px;
+
+    color: white;
+
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   ZONA CENTRALE - FRECCE
+   ========================================================= */
+
+.frecce_scena {
+    width: 8%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.frecce_scena button {
+    padding: 4px 8px;
+
+    background-color: #1d0243;
+    border-top: 2px solid #c2b8cf;
+    border-left: 2px solid #c2b8cf;
+    border-right: 2px solid #46365d;
+    border-bottom: 2px solid #46365d;
+
+    color: #ff007f;
+
+    font-size: 2.2rem;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.frecce_scena button:hover {
+    color: #00f3ff;
+    background-color: #502f7e;
+
+    transform: scale(1.2);
+}
+/* cambio colore bottini invertiti (effetto press)*/
+.frecce_scena button:active {
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid #c2b8cf;
+    border-bottom: 2px solid #c2b8cf;
+}
+
+.frecce_scena span {
+    color: white;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    writing-mode: vertical-lr;
+}
+
+
+/* ZONA DESTRA testi */
+
+.description-container-right {
+    width: 45%;
+    height: 100%;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+/* BOTTONI STORY / METADATA / QR */
+
+.showview-buttons {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
+}
+
+.showview-buttons button {
+    padding: 10px 20px;
+
+    background-color: #ff007f;
+    color: white;
+
+    border: 1px solid white;
+    border-radius: 0px;
+
+    border-top: 2px solid #ff71b8;
+    border-left: 2px solid #ff71b8;
+    border-right: 2px solid #800040;
+    border-bottom: 2px solid #800040;
+
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    letter-spacing: 0.08rem;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+/* tasti cambio scena */
+.showview-buttons button:hover {
+    color: #00f3ff;
+    background-color: #1d0243;
+    border-top: 2px solid #c2b8cf;
+    border-left: 2px solid #c2b8cf;
+    border-right: 2px solid #46365d;
+    border-bottom: 2px solid #46365d;
+}
+
+.showview-buttons button:active {
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid #c2b8cf;
+    border-bottom: 2px solid #c2b8cf;
+}
+
+
+/* =========================================================
+   BOX TESTO SCENE
+   ========================================================= */
+
+.story-content, .metadata-content, .qr-content {
+    position: relative;
+
+    width: 100%;
+    height: 450px;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #c2b8cf;
+    color: black;
+
+    border-top: 3px solid #46365d;
+    border-left: 3px solid #46365d;
+    border-right: 3px solid #c2b8cf;
+    border-bottom: 3px solid #c2b8cf;
+    border-radius: 0px;
+
+    overflow-y: auto;
+
+}
+
+.story-content h3,
+.metadata-content h3,
+.qr-content h3 {
+
+    color: #ffe600 !important; 
+}
+
+/* DIFFICULTY BUTTONS */
+
+.difficulty-buttons {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 6px;
+
+    margin-bottom: 8px;
+
+    flex-shrink: 0;
+}
+
+.difficulty-buttons button {
+    flex: 1;
+
+    padding: 8px;
+
+    background-color: #c2b8cf;
+
+    color: white;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #46365d;
+    border-bottom: 2px solid #46365d;
+    border-radius: 0px;
+
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+
+    text-align: center;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.difficulty-buttons button:hover {
+    color: #00f3ff;
+    background-color: #c2b8cf;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #46365d;
+    border-bottom: 2px solid #46365d;
+    opacity: 1;
+}
+
+.difficulty-buttons button:active {
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+
+/* =========================================================
+   TELL ME BUTTONS
+   ========================================================= */
+
+.tellme-buttons {
+    margin: 15px 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.tellme-buttons button, .metadata-tasti button {
+    padding: 6px 12px;
+
+    background-color: #c2b8cf;
+    color: white;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #46365d;
+    border-bottom: 2px solid #46365d;
+    border-radius: 0px;
+
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.tellme-buttons button:hover, .metadata-tasti button:hover {
+    color: #00f3ff;
+    background-color: #c2b8cf;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #46365d;
+    border-bottom: 2px solid #46365d;
+    opacity: 1;
+}
+
+.tellme-buttons button:active, .metadata-tasti button:active {
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+
+/* metadata*/
+
+.introduzione-meta {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.metadata-tasti {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin: 15px auto 0;
+
+    font-weight: bold;
+}
+
+.metadata-tasti li {
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   META PUNTI (????? non ho capito cosa sia)
+   ========================================================= */
+
+.meta-punti {
+    color: #3b9454;
+
+    font-size: 1.2rem;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.meta-punti:hover {
+    color: #82af7a;
+
+    border-bottom: 2px solid #62216d;
+
+    text-decoration: underline;
+}
+
+
+/* METADATA finestra informazioni aggiuntive */
+
+.modal-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    z-index: 9999;
+
+    cursor: pointer;
+}
+
+.modal-box {
+    position: relative;
+
+    width: 450px;
+    max-width: 90%;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    background-color: #c2b8cf;
+    color: #1d0243;
+
+    border: 2px solid #46365d;
+    border-radius: 0px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+    text-align: justify;
+
+    cursor: default;
+}
+
+.modal-box h3 {
+    margin-top: 0;
+
+    padding-bottom: 8px;
+
+    color: #ff007f;
+
+    border-bottom: 1px solid #ff007f;
+
+    font-size: 1.2rem;
+}
+
+.modal-box ul {
+    margin: 15px 0 0;
+    padding: 0;
+
+    list-style: none;
+
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TESTI STORY E METADATA
+   ========================================================= */
+
+.story-content h3,
+.story-content p,
+.story-content strong,
+.metadata-content h3,
+.metadata-content li,
+.metadata-content strong,
+.metadata-content p {
+    color: #1d0243;
+}
+
+.story-content p,
+.metadata-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   QR
+   ========================================================= */
+
+.qr-content {
+    width: 100%;
+    height: 450px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.qr-content h3 {
+    margin-top: 0;
+    color: #1d0243;
+    font-size: 1.17em;
+    text-align: left;
+}
+
+.qr-description {
+    margin-bottom: 30px;
+    color: #1d0243;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.qr-image {
+    width: 170px;
+    height: 170px;
+
+    margin-top: 10px;
+
+    padding: 4px;
+
+    background-color: white;
+
+    border: 1px solid #1d0243;
+}
+
+
+/* =========================================================
+   SEZIONE FILM HOMEPAGE
+   ========================================================= */
+
+.films-section {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 80px auto;
+}
+
+.films-introduction {
+    margin-bottom: 40px;
+}
+
+.films-introduction h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   POSTER
+   ========================================================= */
+
+.poster-container {
+    width: 100%;
+    max-width: 950px;
+
+    box-sizing: border-box;
+
+    margin: 40px auto;
+    padding: 0 10px;
+}
+
+.poster-grid {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.poster {
+    flex: 1 1 calc(33.333% - 30px);
+
+    min-width: 250px;
+
+    box-sizing: border-box;
+}
+
+.poster-flip {
+    position: relative;
+
+    width: 100%;
+}
+
+.poster-img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    transition: transform 0.6s ease-in-out;
+
+    backface-visibility: hidden;
+}
+
+.poster-back {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding: 7%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #f4e8c1;
+    color: #2b2623;
+
+    text-align: center;
+
+    transform: rotateY(180deg);
+
+    transition: transform 0.6s ease-in-out;
+
+    backface-visibility: hidden;
+}
+
+.poster-back p {
+    margin: 0;
+
+    color: #2b2623;
+
+    font-family: 'Special Elite', monospace;
+    font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+    line-height: 1.4;
+
+    text-align: justify;
+}
+
+.poster-flip:hover .poster-img {
+    transform: rotateY(-180deg);
+}
+
+.poster-flip:hover .poster-back {
+    transform: rotateY(0deg);
+}
+
+
+/* =========================================================
+   BOTTONI PREVIOUS / NEXT
+   ========================================================= */
+
+.bottoni-pagine {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 50px auto 20px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottone {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background-color: #1c1b1b;
+
+    border: 1px solid #1c1b1b;
+    border-radius: 3px;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.bottone:hover {
+    background-color: #f4e8c1;
+
+    color: #943b3b;
+
+    border-color: #f4e8c1;
+
+    opacity: 1;
+
+    box-shadow:
+
+        0 0 5px rgba(244, 232, 193, 0.8),
+
+        0 0 10px rgba(244, 232, 193, 0.5);
+}
+
+.bottoni-pagine .bottone:only-child {
+    margin-left: auto;
+}
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.disclaimer-page {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.disclaimer-page .page-title {
+    text-align: center;
+    max-width: none;
+    margin-bottom: 40px;
+}
+
+.disclaimer-page .disclaimer-item {
+    display: flex;
+    flex-direction: row-reverse;
+    /* dispari: txt a snx, n a dx */
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid #f4e8c1;
+    box-sizing: border-box;
+}
+
+.disclaimer-page .disclaimer-item:last-child {
+    border-bottom: none;
+}
+
+.disclaimer-page .disclaimer-item:nth-child(even) {
+    flex-direction: row;
+    /* pari: n a snx, txt a dx */
+}
+
+/* num grande */
+.disclaimer-page .disclaimer-number {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #f4e8c1;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.disclaimer-page .disclaimer-content {
+    flex-grow: 1;
+}
+
+/* annullare i vincoli globali di main h2 e main p*/
+.disclaimer-page .disclaimer-title,
+.disclaimer-page .disclaimer-text {
+    max-width: none;
+    margin: 0;
+}
+
+.disclaimer-page .disclaimer-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #f4e8c1;
+    text-align: left;
+}
+
+.disclaimer-page .disclaimer-text {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 80px;
+    padding: 25px 40px;
+
+    background-color: #1c1b1b;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+footer p {
+    max-width: 950px;
+
+    margin: 6px auto;
+
+    color: white;
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+footer a {
+    color: white;
+
+    font-size: 0.85rem;
+}
+
+footer a:hover {
+    color: #f4e8c1;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+    header {
+        padding: 12px 20px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .link-head {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        text-align: center !important;
+    }
+
+    .link-head>a,
+    .dropdown>a {
+        display: inline-block;
+
+        margin: 5px 8px;
+
+        font-size: 0.7rem;
+    }
+
+
+    /* dropdown mobile */
+
+    .dropdown-menu {
+        top: 100%;
+        left: 50%;
+
+        min-width: 210px;
+
+        transform: translateX(-50%);
+    }
+
+
+    /* barra date */
+
+    .bar-style {
+        top: 80px;
+    }
+
+    .bar-item {
+        min-width: 100px;
+    }
+
+    .bar-item a {
+        font-size: 0.7rem;
+    }
+
+
+    /* main */
+
+    main {
+        padding: 20px;
+    }
+
+    main h2 {
+        font-size: 2.3rem;
+    }
+
+
+    /* insegna homepage */
+
+    .home-introduction {
+        margin: 35px auto 50px auto;
+    }
+
+    .title-container {
+        padding: 50px 25px;
+
+        border-width: 5px;
+    }
+
+    .title-container h1 {
+        font-size: 3.2rem;
+
+        letter-spacing: 3px;
+    }
+
+    .title-container::before,
+    .title-container::after {
+        font-size: 0.9rem;
+
+        letter-spacing: 4px;
+
+        overflow: hidden;
+
+        white-space: nowrap;
+    }
+
+
+    /* narrative */
+
+    .narratives {
+        margin: 50px auto;
+    }
+
+    .narrativa-container {
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .card-body h3 {
+        min-height: auto;
+
+        font-size: 2rem;
+    }
+
+
+    /* rullino */
+
+    .area-immagini {
+        height: auto;
+
+        flex-direction: column;
+
+        padding: 20px;
+
+        overflow: visible;
+    }
+
+    .film-panel-left,
+    .description-container-right {
+        width: 100%;
+    }
+
+    .film-panel-left img {
+        width: 100%;
+    }
+
+    .frecce_scena {
+        width: 100%;
+
+        flex-direction: row;
+    }
+
+    .frecce_scena span {
+        writing-mode: horizontal-tb;
+    }
+
+    .story-content,
+    .metadata-content,
+    .qr-content {
+        height: auto;
+
+        min-height: 400px;
+    }
+
+    .showview-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .metadata-tasti button {
+        width: 100%;
+    }
+
+
+    /* poster */
+
+    .poster {
+        flex: 1 1 100%;
+    }
+
+
+    /* previous / next */
+
+    .bottoni-pagine {
+        margin-top: 35px;
+
+        gap: 15px;
+    }
+
+    .bottone {
+        font-size: 0.9rem;
+    }
+
+
+    /* footer */
+
+    footer {
+        padding: 25px 20px;
+    }
+}
+
+/*MAPPA*/
+#map {
+    height: 500px;
+    width: 70%;
+}
+
+
+.leaflet-popup-content {
+    font-family: inherit;
+}
+
+.map-legend {
+    padding: 10px;
+}
+
+/*disclaimer*/
+.disclaimer-page .disclaimer-item,
+.disclaimer-page .disclaimer-item:nth-child(even) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.disclaimer-page .disclaimer-number {
+    font-size: 2.5rem;
+}
