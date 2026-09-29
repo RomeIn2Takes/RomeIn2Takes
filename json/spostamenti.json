@@ -1,0 +1,118 @@
+{
+    "historicalRoutes": [
+        {
+            "fromOrder": 1,
+            "toOrder": 2,
+            "transport": "Public transport",
+            "time": "Approx. 30 min",
+            "distance": "",
+            "directions": "Travel from Palazzo Federici towards the historic centre and continue to Piazza di Spagna."
+        },
+        {
+            "fromOrder": 2,
+            "toOrder": 3,
+            "transport": "Walking",
+            "time": "Approx. 20 min",
+            "distance": "1.6 km",
+            "directions": "Walk through the historic centre from Piazza di Spagna towards Piazza Navona."
+        },
+        {
+            "fromOrder": 3,
+            "toOrder": 4,
+            "transport": "Walking",
+            "time": "Approx. 20 min",
+            "distance": "",
+            "directions": "Leave Piazza Navona towards the Tiber, cross into Trastevere and continue towards Santa Maria in Cappella."
+        },
+        {
+            "fromOrder": 4,
+            "toOrder": 5,
+            "transport": "Walking",
+            "time": "Approx. 15 min",
+            "distance": "",
+            "directions": "Continue south from Trastevere, cross the Tiber and proceed towards Piazza Testaccio."
+        },
+        {
+            "fromOrder": 5,
+            "toOrder": 6,
+            "transport": "Public transport / Walking",
+            "time": "Approx. 20–30 min",
+            "distance": "",
+            "directions": "Continue south towards Via Ostiense and the Basilica of Saint Paul Outside the Walls."
+        },
+        {
+            "fromOrder": 6,
+            "toOrder": 7,
+            "transport": "Public transport",
+            "time": "Approx. 25–30 min",
+            "distance": "",
+            "directions": "Travel towards the Aventine Hill and continue to Piazza dei Cavalieri di Malta."
+        },
+        {
+            "fromOrder": 7,
+            "toOrder": 8,
+            "transport": "Walking",
+            "time": "Approx. 25 min",
+            "distance": "",
+            "directions": "Continue towards Trastevere and climb the Janiculum to reach Fontana dell’Acqua Paola."
+        }
+    ],
+    "womenRoutes": [
+        {
+            "fromOrder": 1,
+            "toOrder": 2,
+            "transport": "Public transport",
+            "time": "Approx. 35–40 min",
+            "distance": "",
+            "directions": "Travel from Palazzo Federici towards Metro Line A and continue to Cinecittà."
+        },
+        {
+            "fromOrder": 2,
+            "toOrder": 3,
+            "transport": "Metro + public transport",
+            "time": "Approx. 40–45 min",
+            "distance": "",
+            "directions": "Return towards the city centre and continue to the Testaccio neighbourhood and Via Bodoni."
+        },
+        {
+            "fromOrder": 3,
+            "toOrder": 4,
+            "transport": "Walking",
+            "time": "Approx. 5 min",
+            "distance": "",
+            "directions": "Continue through Testaccio towards Piazza Testaccio and the Testaccio Market."
+        },
+        {
+            "fromOrder": 4,
+            "toOrder": 5,
+            "transport": "Walking",
+            "time": "Approx. 5 min",
+            "distance": "",
+            "directions": "Leave the Piazza Testaccio and Market area and continue west towards Lungotevere Testaccio."
+        },
+        {
+            "fromOrder": 5,
+            "toOrder": 6,
+            "transport": "Walking",
+            "time": "Approx. 10 min",
+            "distance": "",
+            "directions": "Follow the Tiber north towards Porta Portese and continue into the Piazza dei Mercanti area."
+        },
+        {
+            "fromOrder": 6,
+            "toOrder": 7,
+            "transport": "Walking",
+            "time": "Approx. 15 min",
+            "distance": "",
+            "directions": "Continue through Trastevere and climb towards San Pietro in Montorio."
+        },
+        {
+            "fromOrder": 7,
+            "toOrder": 8,
+            "transport": "Walking",
+            "time": "Approx. 5 min",
+            "distance": "",
+            "directions": "Continue uphill along the Janiculum to Fontana dell’Acqua Paola."
+        }
+    ]
+}

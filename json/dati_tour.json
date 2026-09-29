@@ -1,0 +1,736 @@
+{
+  "itinerari": [
+    {
+      "id": "tour-storico",
+      "source_file": "tourStorico.html",
+      "tappe": [
+        {
+          "step": 1,
+          "id": "palazzo-federici",
+          "story": {
+            "title": "Federici Palace- A special day (1977)",
+            "environment": "Environment: THE HOUSE",
+            "levels": {
+              "normal": {
+                "text-less": "The tour begins at the height of the Fascist regime, where it all started: the building's residents, dressed in Fascist uniforms, return home marching.",
+                "text-standard": "It is May 6, 1938, the day of Hitler's arrival in Rome. The apartment building repopulates after a morning in which almost all of its inhabitants went out into the streets to applaud the Führer's procession.",
+                "text-more": "It is May 6, 1938, the day of Hitler's arrival in Rome and, despite the parade for this big event, Antonietta decided to stay home to attend to household chores and met Gabriele, a omosexual anti-fascist who has chosen not to participate in the rally",
+                "text-didyouknow": "Did you know that the circular march around the pool visually symbolizes the restoration of the regime's order and conformity?"
+              },
+              "child": {
+                "text-less": "Everyone in the building went to see the important leader.",
+                "text-standard": "Only two people didn't go to the procession: Antonietta, who is busy cleaning, and Gabriele.",
+                "text-more": "While the streets are full of people shouting and cheering, these two very different people meet by chance and start talking on the balcony.",
+                "text-didyouknow": "Did you know that the movie shows a real historical day in 1938, but tells a brand new story about two lonely friends?"
+              },
+              "scholar": {
+                "text-less": "The scene underline the difference between spatial isolation and a mass-orchestrated totalitarian public ritual.",
+                "text-standard": "Antonietta's decision to stay at home while doing household chores show the intimate and claustrophobic domesticity of a vacant housing block in front of the overwhelming architectural scale of collective fascist choreography.",
+                "text-more": "The narrative employs real archival newsreel footage of Adolf Hitler's state visit to Rome on May 6, 1938, seamlessly stitching fictional character dynamics into the sociopolitical fabric of Italian cinematic realism and historical trauma.",
+                "text-didyouknow": "The apartment complex featured in the film is an iconic real-world example of Italian rationalist architecture located in the Viale XXI Aprile district of Rome."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "A special day (1977)",
+            "schema:director": "Ettore Scola",
+            "schema:episode": "Fascist participants returning from the mass rally through the internal courtyard",
+            "schema:direction": "High-angle",
+            "dcterms:type": "residential courtyard"
+          },
+          "location": {
+            "schema:name": "Palazzo Federici",
+            "schema:address": "Viale XXI Aprile, 21-29 Roma",
+            "schema:GeoCoordinates": "41°55′09.4″N 12°31′13.7″E",
+            "crm:P2_has_type": "Architecture",
+            "crm:P4_has_time_span": "1930s",
+            "schema:OpeningDate": "1937"
+          },
+          "project": {
+            "dcterms:subject": "Rome in the 20th-century",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 2,
+          "id": "piazza-di-spagna",
+          "story": {
+            "title": "Piazza di Spagna - Rome, Open City (1945)",
+            "environment": "Environment: THE SQUARE",
+            "levels": {
+              "normal": {
+                "text-less": "The tour continues with the dark years of the Nazi occupation: German soldiers marching in Piazza di Spagna show the harsh reality of that.",
+                "text-standard": "The square, usually animated with social gathering, is rendered desolate under the strict control imposed by the occupying forces.",
+                "text-more": "We are between 1943 and 1944, during the months of the German occupation of Rome. Rossellini opens the film by showing a patrol of soldiers in the ghostly silence of a deserted Piazza di Spagna, which had been requisitioned by the Nazi command.",
+                "text-didyouknow": "Rossellini began shooting the film in January 1945, just a few months after the liberation of Rome, capturing the square while the wounds of war were still visible and real."
+              },
+              "child": {
+                "text-less": "Soldiers are controlling the quiet square.",
+                "text-standard": "During the war, the big square in Rome was very empty and quiet because soldiers were guarding it.",
+                "text-more": "In the movie, the famous square looks very different from normal days, because nobody is allowed to walk around freely when the soldiers are watching.",
+                "text-didyouknow": "Did you know that the director had to shoot the film secretly on the real streets of Rome right after the war ended?"
+              },
+              "scholar": {
+                "text-less": "The empty square is an index of totalitarian surveillance and urban trauma",
+                "text-standard": "Roberto Rossellini utilizes the spatial emptiness of iconic urban landmarks to mirror the psychological suspension and existential dread of the civilian population under military occupation.",
+                "text-more": "The opening sequence establishes the neorealist paradigm by stripping the urban fabric of its monumental rhetoric, substituting cinematic artifice with immediate, documentary-style proximity to historical displacement.",
+                "text-didyouknow": "Rome, Open City was filmed on actual Roman locations using leftover film stock and makeshift equipment, blending fictional narrative with immediate post-war documentary reality."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "Rome, Open City(1945)",
+            "schema:director": "Roberto Rossellini",
+            "schema:episode": "German soldiers patrolling the streets of Rome during the German occupation, filmed at night",
+            "schema:direction": "Lateral long shot",
+            "dcterms:type": "urban square"
+          },
+          "location": {
+            "schema:name": "Piazza di Spagna",
+            "schema:address": "Piazza di Spagna, Roma",
+            "schema:GeoCoordinates": "41°54'21.0\"N 12°28'55.0\"E",
+            "crm:P2_has_type": "Urban Space",
+            "crm:P4_has_time_span": "18th century",
+            "schema:OpeningDate": "1725"
+          },
+          "project": {
+            "dcterms:subject": "Rome in the 20th-century",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 3,
+          "id": "piazza-navona",
+          "story": {
+            "title": "Piazza Navona - There's Still Tomorrow (2023)",
+            "environment": "Environment: The neighborhood",
+            "levels": {
+              "normal": {
+                "text-standard": "incolla testo",
+                "text-less": "pire qui",
+                "text-more": "qui anche",
+                "text-didyouknow": "same here"
+              },
+              "child": {
+                "text-less": "copiare",
+                "text-standard": "incolla",
+                "text-more": "testo",
+                "text-didyouknow": "anche qui"
+              },
+              "scholar": {
+                "text-less": "copia incolla",
+                "text-standard": "same",
+                "text-more": "teto bello",
+                "text-didyouknow": "anche qui testo"
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "There's Still Tomorrow (2023)",
+            "schema:director": "Paola Cortellesi",
+            "schema:episode": "scrivere",
+            "schema:direction": "scrivere",
+            "dcterms:type": "scrivere"
+          },
+          "location": {
+            "schema:name": "Palazzo Federici",
+            "schema:address": "Viale XXI Aprile, 21-29 Roma",
+            "schema:GeoCoordinates": "41°55′09.4″N 12°31′13.7″E",
+            "crm:P2_has_type": "Italian Rationalist Architecture",
+            "crm:P4_has_time_span": "1930s",
+            "schema:OpeningDate": "1937"
+          },
+          "project": {
+            "dcterms:subject": "Rome in the 20th-century",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 4,
+          "id": "santa-maria-in-cappella",
+          "story": {
+            "title": "Chiesa di Santa Maria in Cappella There's Still Tomorrow (2023)",
+            "environment": "Environment: The community",
+            "levels": {
+              "normal": {
+                "text-less": "Set in 1946 the scene captures the tensions of a traditional patriarchal family mirrored on the parvis of this ancient church.",
+                "text-standard": "The tour continues with the post-war recovery, we move to the working class neighborhoods (then Trastevere), that are the true drivers of the rebirth: the struggles of a patriarchal family are reflected on the parvis od this ancient chruch in a Rome that is about to change.",
+                "text-more": "We are in 1946, in the months preceding the institutional referendum and the introduction of the women’s suffrage. This beautiful medieval church serves as a background for the wedding between Marcella, Delia’s young daughter, and Giulio, the scion of a family that grew wealthy through the black market",
+                "text-didyouknow": "Did you know that the church of Santa Maria in Cappella is one of Rome's hidden medieval gems, tucked away in Trastevere and founded in the late 11th century?"
+              },
+              "child": {
+                "text-less": "A wedding takes place outside an old church in Rome after the war.",
+                "text-standard": "After the war, people in Rome started celebrating weddings again, but families still had many rules and expectations.",
+                "text-more": "In the film, Delia's daughter gets married at an old church by the river. Even on a happy day like a wedding, you can see how much families hoped for a better future.",
+                "text-didyouknow": "Did you know that Santa Maria in Cappella is an example of medieval church in Rome?"
+              },
+              "scholar": {
+                "text-less": "The scene show a sacral architecture as a site of familial renegotiation.",
+                "text-standard": "Paola Cortellesi employs sacred spaces to underscore the intersection between shifting national legislation—such as the birth of the Republic and women's suffrage—and entrenched domestic hierarchies.",
+                "text-more": "The wedding sequence compares the enduring institutional authority of ecclesiastical architecture with the socio-political agency of women in post-war Italy, framing personal familialial contracts against the backdrop of historical democratization.",
+                "text-didyouknow": "The historic complex of Santa Maria in Cappella preserves rare medieval architectural features, providing an authentic layer of historical realism to the cinematic reconstruction."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "There's still tomorrow (2023)",
+            "schema:director": "Paola Cortellesi",
+            "schema:episode": "A flashback to Delia’s wedding inside the church: the couple stand side by side at the altar while the priest conducts the ceremony",
+            "schema:direction": "Central low-angle rear view",
+            "dcterms:type": "sacred architecture"
+          },
+          "location": {
+            "schema:name": "Chiesa di Santa Maria in Cappella",
+            "schema:address": "Vicolo di S. Maria in Cappella, 6, Roma",
+            "schema:GeoCoordinates": "41°53′14.4″N 12°28′41.3″E",
+            "crm:P2_has_type": "Architecture",
+            "crm:P4_has_time_span": "11th century",
+            "schema:OpeningDate": "1090"
+          },
+          "project": {
+            "dcterms:subject": "Rome in the 20th-century",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 5,
+          "id": "lungotevere-testaccio",
+          "story": {
+            "title": "Lungotevere Testaccio- There's still tomorrow (2023)",
+            "environment": "Environment: The transition",
+            "levels": {
+              "normal": {
+                "text-less": "The journey reaches the heart of working-class Rome in the post-war period: in this historic square, the daily life of a neighborhood trying to leave behind the rubble left by the conflict is reborn.",
+                "text-standard": "As Delia runs her daily errands through the bustling streets, Testaccio acts as the vibrant core of a community trying to overcome post-war poverty and hardship.",
+                "text-more": "It is here where Delia walks while running her daily errands: an authentic image of a working class that, even amidst the poverty of reconstruction, finds the strength to rebuild a solidary community and hope for a better future.",
+                "text-didyouknow": "During one of her walks in Testaccio Delia meets William, an African American soldier who, despite the language barrier, will become a key figure in the narrative."
+              },
+              "child": {
+                "text-less": "Walking far from home expands Delia’s world and possibilities.",
+                "text-standard": "As Delia moves farther from home, she meets new people and discovers new possibilities. Walking through Rome slowly makes her world bigger.",
+                "text-more": "Delia does not walk around Rome simply because she is free: most of her journeys are connected to work and family duties.Yet going through the city gives her opportunities that she would never have at home. She meets different people and begins to see that her life could change. Moving through Rome therefore becomes an important part of her journey toward independence.",
+                "text-didyouknow": "During her movements Delia meets William, an American soldier important for the story."
+              },
+              "scholar": {
+                "text-less": "The scene show urban mobility as vectors of female emancipation.",
+                "text-standard": "Paola Cortellesi maps the protagonist's gradual psychological liberation through her physical trajectory across working-class topography, contrasting domestic confinement with public communal space.",
+                "text-more": "The spatial expansion of Delia’s daily errands across Testaccio stages a micro-geography of resistance; crossing neighborhood boundaries transforms the city from a site of labor into a landscape of potential autonomy.",
+                "text-didyouknow": "The introduction of the Allied military operative functions as a disruption within the narrative, symbolizing the post-liberation geopolitical influx that begins to destabilize traditional Roman domesticity."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "There's still tomorrow (2023)",
+            "schema:director": "Paola Cortellesi",
+            "schema:episode": "High-angle view of the bustling local market stalls in Piazza Testaccio",
+            "schema:direction": "High-angle",
+            "dcterms:type": "rurban space"
+          },
+          "location": {
+            "schema:name": "Piazza Testaccio",
+            "schema:address": "Piazza Testaccio, Roma",
+            "schema:GeoCoordinates": "41°52'43.0\"N 12°28 me'36.0\"E",
+            "crm:P2_has_type": "Urban Space",
+            "crm:P4_has_time_span": "20th century",
+            "schema:OpeningDate": "1914"
+          },
+          "project": {
+            "dcterms:subject": "Rome in the 20th-century",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 6,
+          "id": "porta-portese",
+          "story": {
+            "title": "Porta Portese market Mamma Roma (1962)",
+            "environment": "Environment: The public city",
+            "levels": {
+              "normal": {
+                "text-less": "The tour moves to the early 1950s: the market serves as the backdrop for a mother's desperate quest for social redemption for her son.",
+                "text-standard": "We are in the post-war expansion era, where the chaotic atmosphere of Porta Portese reflects the struggles of common people trying to climb out of poverty during Italy's economic transition.",
+                "text-more": "Mamma Roma tries to leave her past as a prostitute behind, renting a market stall at Via Lucio Sestio to secure a respectable future for her teenage son, Ettore, who instead gets pulled back into the Roman underclass by selling off her belongings at the Porta Portese market.",
+                "text-didyouknow": "The film stars Anna Magnani, one of Italy's most legendary actresses, whose intense performances became the ultimate symbol of working-class Roman women on screen."
+              },
+              "child": {
+                "text-less": "Mamma Roma works hard in the city to build a better future for her son.",
+                "text-standard": "Mamma Roma works in the city and tries to build a better life for herself and her son. But being independent does not make all her difficulties disappear.",
+                "text-more": "Mamma Roma wants to leave her old life behind and create better opportunities for her son Ettore. She works at the market and moves confidently through Rome, trying to change their future. But her past and her social condition continue to limit her possibilities. The city gives her greater independence, but it cannot remove all the inequalities she faces.",
+                "text-didyouknow": "Mamma Roma is played by Anna Magnani, one of the most famous actresses in Italian cinema and a figure strongly associated with cinematic representations of Rome."
+              },
+              "scholar": {
+                "text-less": "The open-air market represents an economic microcosm of subproletarian struggle and post-war urbanization.",
+                "text-standard": "Pier Paolo Pasolini maps the precarious socio-economic reality of the Roman subproletariat through the chaotic topography of Porta Portese",
+                "text-more": "Pasolini’s framing of the bustling market space compares neoclassical monumentalism with the marginalized outskirts, using Mamma Roma's mercantile aspirations to critique the systemic impossibility of authentic class mobility during Italy's economic miracle.",
+                "text-didyouknow": "The casting of Anna Magnani functions as an essential semiotic anchor, merging the actress's iconic persona with the mythography of Roman popular womanhood and neorealist cinematic resistance."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "Mamma Roma (1962)",
+            "schema:director": "Pier Paolo Pasolini",
+            "schema:episode": "JEttore walks alone through the neighborhood near the aqueduct arches at Porta Furba",
+            "schema:direction": "Eye-level central tracking shot",
+            "dcterms:type": "urban infrastructure"
+          },
+          "location": {
+            "schema:name": "Porta Portese",
+            "schema:address": "Piazza di Porta Portese, Roma",
+            "schema:GeoCoordinates": "41°52'52.0\"N 12°28 me'22.0\"E",
+            "crm:P2_has_type": "Urban Space",
+            "crm:P4_has_time_span": "17th century",
+            "schema:OpeningDate": "1644"
+          },
+          "project": {
+            "dcterms:subject": "Rome in the 20th-century",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 7,
+          "id": "knights-of-malta-keyhole",
+          "story": {
+            "title": "San Pietro in Montorio - The Great Beauty (2013)",
+            "environment": "Environment: The ascent",
+            "levels": {
+              "normal": {
+                "text-less": "The journey ascends the Aventine Hill, where we encounter one of Rome's most fascinating secrets: the ancient keyhole that frames the dome of St. Peter's and transforms the city into a painting.",
+                "text-standard": "We are in 2013. In one of the most evocative night scenes in Sorrentino's film, Jep Gambardella takes Ramona on a magical walk, where ancient history dialogues with modern disillusionment.",
+                "text-more": "Wandering through the monumental beauty of nocturnal Rome, Jep and Ramona experience a suspended moment away from the superficiality of high-society parties, rediscovering the deep soul of the eternal city.",
+                "text-didyouknow": "Did you know that by looking through the keyhole of the door, your eyes view three different States? You are standing on the soil of the Italian Republic, you peek through the garden of the Villa del Priorato (which enjoys the right of extraterritoriality for the Sovereign Military Order of Malta), and in the background, the Dome of St. Peter's is situated in the Vatican City State."
+              },
+              "child": {
+                "text-less": "A magical nighttime walk reveals a secret view of Rome through a tiny keyhole.",
+                "text-standard": "In the movie, the characters take a quiet night walk through beautiful hidden gardens and secret places in Rome.",
+                "text-more": "While exploring Rome at night, the characters visit a very special place on top of a hill where you can peek through a keyhole and see a giant church dome framed perfectly by green trees.",
+                "text-didyouknow": "Did you know that when you look through that tiny keyhole, you are actually looking across three different countries all at the exact same time?"
+              },
+              "scholar": {
+                "text-less": "The scene shows nocturnal topography and optical framing as metaphors for contemporary aesthetic detachment.",
+                "text-standard": "Paolo Sorrentino deploys the labyrinthine, secretive spaces of Rome's historical estates to construct a meditation on urban melancholia, contrasting timeless monumentalism with spiritual vacuity.",
+                "text-more": "The nocturnal excursion through exclusive architecture functions as a baroque psychogeography, where Jep Gambardella navigates a city transformed into a museumized specter of lost beauty, oscillating between aristocratic heritage and existential irony.",
+                "text-didyouknow": "The famous optical alignment of the Villa's keyhole acts as a visual hyperbole of extraterritorial sovereignty, merging physical geography with cinematic framing to stage a theatricalized illusion of Rome."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "The great beauty (2013)",
+            "schema:director": "Paolo Sorrentino",
+            "schema:episode": "Jep, Ramona and the caretaker walk along the private tree-lined avenue of the Villa dei Cavalieri di Malta, with the illuminated dome of St Peter’s towering at the far end of the vista framed by the hedges",
+            "schema:direction": "Eye-level central tracking shot",
+            "dcterms:type": "residential interior"
+          },
+          "location": {
+            "schema:name": "Villa del Priorato di Malta",
+            "schema:address": "Piazza dei Cavalieri di Malta, 3, Roma",
+            "schema:GeoCoordinates": "41°52'58.0\"N 12°28'43.0\"E",
+            "crm:P2_has_type": "Architecture",
+            "crm:P4_has_time_span": "18th century",
+            "schema:OpeningDate": "1765"
+          },
+          "project": {
+            "dcterms:subject": "Rome in the 20th-century",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        }
+      ]
+    },
+    {
+      "id": "narrativa-femminista",
+      "source_file": "narrativa_femminista.html",
+      "tappe": [
+        {
+          "step": 1,
+          "id": "palazzo-federici",
+          "story": {
+            "title": "Federici Palace- A Special Day (1977)",
+            "environment": "Environment: THE HOUSE",
+            "levels": {
+              "normal": {
+                "text-less": "Antonietta is confined to her home while Rome celebrates Hitler’s visit.",
+                "text-standard": "An enormous 1930s residential complex designed as a city within a city. Here, the domestic space becomes the boundary within which Antonietta is forced to live.",
+                "text-more": "Palazzo Federici occupies an entire block in the Nomentano district and consists of courtyards, stairs, passageways, and hundreds of apartments. In A Special Day , Antonietta remains inside the building while Rome celebrates Hitler's visit.",
+                "text-didyouknow": "Almost the entire film is set inside Palazzo Federici, which becomes a sort of microcosm of Fascist society."
+              },
+              "child": {
+                "text-less": "While the streets celebrate, Antonietta must stay inside her apartment.",
+                "text-standard": "Antonietta spends most of her life inside Palazzo Federici. Rome is just outside, but her duties as a wife and mother keep her away from public life.",
+                "text-more": "On the day Hitler visits Rome, the streets are full of people attending the celebrations. But Antonietta has to stay at home to take care of her family and household. Her life shows how women were expected to dedicate themselves only to their husbands, children and homes. When she unexpectedly meets her neighbour Gabriele, her ordinary day changes and she begins to look at her life from a different perspective.",
+                "text-didyouknow": "Most of A Special Day was filmed inside the real Palazzo Federici, which can still be seen in the Rome of today."
+              },
+              "scholar": {
+                "text-less": "Palazzo Federici operates as a built environment mirroring Fascist domestic confinement and ideological control.",
+                "text-standard": "Scola turns Palazzo Federici into a visual metaphor for Antonietta’s exclusion: while Fascist public life occupies Rome, she remains confined to the domestic sphere.",
+                "text-more": "Scola constructs Palazzo Federici as a microcosm of Fascist society. The public spectacle of Hitler’s visit occupies Rome, while Antonietta remains associated with motherhood and domestic service. Windows, balconies and courtyards constantly remind us that the public city is physically close but socially inaccessible to her. The encounter with Gabriele temporarily transforms this domestic environment: a space initially associated with conformity becomes one in which dominant ideas about gender and political identity can be questioned.",
+                "text-didyouknow": "The film repeatedly uses windows and the central courtyard to connect otherwise separate apartments, turning the architecture itself into an important part of the visual storytelling."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "A Special Day (1977)",
+            "schema:director": "Ettore Scola",
+            "schema:episode": "DESCRIZIONE CHIEDI",
+            "schema:direction": "South-East (135°)",
+            "dcterms:type": "residential complex"
+          },
+          "location": {
+            "schema:name": "Palazzo Federici",
+            "schema:address": "Viale XXI Aprile, 21-29 Roma",
+            "schema:GeoCoordinates": "41°55′09.4″N 12°31′13.7″E",
+            "crm:P2_has_type": "Italian Rationalist Architecture",
+            "crm:P4_has_time_span": "1930s",
+            "schema:OpeningDate": "1937"
+          },
+          "project": {
+            "dcterms:subject": "Female Encipation Trough Cinema",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 2,
+          "id": "cinecitta",
+          "story": {
+            "title": "Cinecittà - Bellissima (1951)",
+            "environment": "Environment: THE CITY OF THE IMAGE",
+            "levels": {
+              "normal": {
+                "text-less": "Behind the gates of Cinecittà, Rome turns from a real city into a dream factory of cinematic success.",
+                "text-standard": "To find a better career for her daughter, Maddalena decides to take her to Cinecittà.",
+                "text-more": "In Bellissima, Maddalena takes her daughter Maria to an audition, convinced that cinema can offer her a better future. Maddalena manages to enter the world of film production, only to discover that visibility can turn into judgment and humiliation. The film reveals the ambiguous nature of the cinematic gaze directed at women.",
+                "text-didyouknow": "Bellissima also depicts film studios in their less glamorous aspects, revealing hard work and illusions."
+              },
+              "child": {
+                "text-less": "Maddalena brings her daughter to Cinecittà believing cinema can change their future.",
+                "text-standard": "Cinecittà looks like a place where dreams can come true, but Maddalena soon discovers that success has a price.",
+                "text-more": "Maddalena takes her daughter Maria to Cinecittà for an audition because she believes that becoming an actress could change her future. She does everything she can to help Maria succeed. But behind the exciting world of cinema she discovers competition and people willing to take advantage of her hopes. Cinecittà therefore becomes a place where Maddalena learns that entering a new world does not always mean being accepted by it.",
+                "text-didyouknow": "Parts of Bellissima were filmed at the real Cinecittà studios, so the film shows actual spaces connected with the Italian film industry."
+              },
+              "scholar": {
+                "text-less": "Visconti uses Cinecittà to dismantle the myth of the studio as a space of social mobility.",
+                "text-standard": "Visconti presents Cinecittà as both a dream factory and a mechanism of selection, questioning the promise that cinema can offer social mobility to everyone.",
+                "text-more": "Bellissima operates as a reflection on the mechanisms of cinematic representation. Maddalena’s ambition brings her from working-class Rome into Cinecittà, but Visconti progressively dismantles the mythology of the studio as a democratic space of opportunity. Maria becomes an object of selection and ridicule, while Maddalena discovers the economic mechanisms surrounding her desire for social advancement. Female mobility is here presented ambiguously: crossing the gates of Cinecittà expands Maddalena’s territory, but does not automatically grant her authority within it.",
+                "text-didyouknow": "The film blurs fiction and reality by including figures connected to the actual Italian film industry."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "Bellissima(1951)",
+            "schema:director": "Luchino Visconti",
+            "schema:episode": "DESCRIZIONE CHIEDI",
+            "schema:direction": "North-west (Azimuth 315°)",
+            "dcterms:type": "Film Studio/Cinematic Set"
+          },
+          "location": {
+            "schema:name": "Cinecittà Studios",
+            "schema:address": "Via Tuscolana 1055, Roma",
+            "schema:GeoCoordinates": "41°51′N 12°34′E",
+            "crm:P2_has_type": "Industrial Architecture",
+            "crm:P4_has_time_span": "1930s",
+            "schema:OpeningDate": "1937"
+          },
+          "project": {
+            "dcterms:subject": "Female Encipation Trough Cinema",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 3,
+          "id": "via-bodoni",
+          "story": {
+            "title": "Via Bodoni - There's Still Tomorrow (2023)",
+            "environment": "Environment: The neighborhood",
+            "levels": {
+              "normal": {
+                "text-standard": "The exteriors of Delia's house are located on Via Bodoni. Here, the domestic space extends into the courtyard and the surrounding urban fabric.",
+                "text-less": "In Testaccio, the front door opens onto a neighborhood of courtyards and social control.",
+                "text-more": "Walking through Via Bodoni allows Delia to break away. The street acts as an intermediary space where neighborhood dynamics and daily struggles connect her to a wider community.",
+                "text-didyouknow": "The exterior shots of the house were actually filmed in Testaccio, while the interiors were reconstructed at the Cinecittà studios"
+              },
+              "child": {
+                "text-less": "Leaving her house lets Delia walk through the streets and live a different life.",
+                "text-standard": "When Delia leaves her house, her world becomes larger. The neighborhood allows her to meet people and experience a life beyond her family.",
+                "text-more": "Delia often walks through her neighborhood for work and everyday errands. These journeys may seem ordinary, but they allow her to meet other people and experience a world beyond her husband and family. Little by little, the streets become an important part of her independence.",
+                "text-didyouknow": "The exterior of Delia’s house was filmed in Testaccio, while its interiors were reconstructed at Cinecittà."
+              },
+              "scholar": {
+                "text-less": "Bodoni acts as a spatial threshold between domestic oppression and urban emancipation.",
+                "text-standard": "Via Bodoni functions as a threshold between Delia’s oppressive domestic environment and the possibilities created by movement through the city.",
+                "text-more": "The geography of There’s Still Tomorrow contributes directly to Delia’s character development. Domestic interiors are associated with her husband’s authority and repetitive labour, while the streets introduce encounters beyond his direct control. Via Bodoni is therefore neither completely private nor completely emancipatory: it functions as a threshold. Delia’s repeated movement across it gradually creates a personal geography extending beyond the family and prepares the transformation that structures the film’s conclusion.",
+                "text-didyouknow": "The contrast between real exterior locations and reconstructed interiors reinforces the film’s dialogue between historical Rome and a deliberately stylised representation of the past."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "C'è acnora domani (2023)",
+            "schema:director": "Paola Cortellesi",
+            "schema:episode": "Delia's house exteriors and neighborhood life in Testaccio",
+            "schema:direction": "North-West (135°)",
+            "dcterms:type": "urban neighborhood"
+          },
+          "location": {
+            "schema:name": "Via Bodoni (Testaccio district)",
+            "schema:address": "Via Bodoni 98, Roma",
+            "schema:GeoCoordinates": "41.8780° N, 12.4750° E",
+            "crm:P2_has_type": "Popular Historic Quarter",
+            "crm:P4_has_time_span": "Early 20th Century (Testaccio expansion period)",
+            "schema:OpeningDate": "1903"
+          },
+          "project": {
+            "dcterms:subject": "Female Encipation Trough Cinema",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 4,
+          "id": "piazza-testaccio",
+          "story": {
+            "title": "Piazza and Market of Testaccio - There's still Tomorrow (2023)",
+            "environment": "Environment: The neighborhood",
+            "levels": {
+              "normal": {
+                "text-less": "The square and the market transform the neighborhood into a shared space where women work, talk, and build bonds.",
+                "text-standard": "Piazza Testaccio represents the neighborhood's civic space, while the market is a hub of exchange and daily work. Here, women participate in the neighborhood's economic and social life.",
+                "text-more": "Piazza Testaccio represents the neighborhood's civic space, while the market is a hub of exchange and daily work. Here, women’s presence is no longer confined to the home; they participate in the neighborhood's economic and social life. For Delia, her relationship with Marisa demonstrates that public space can foster solidarity and offer the chance to envision a different path",
+                "text-didyouknow": "Part of the actual Testaccio Market was used to recreate Marisa’s workplace."
+              },
+              "child": {
+                "text-less": "At the market, Delia finds a trusted friend outside her family.",
+                "text-standard": "At the market, women work and help one another. Delia discovers that relationships outside the family can give her support and new possibilities.",
+                "text-more": "The market is a busy place full of people and conversations. Here women are not isolated inside their homes but participate in the life of the neighborhood. Delia’s friendship with Marisa is especially important because it gives her someone outside her family whom she can trust. Their relationship shows how friendship and solidarity can help women imagine a different future.",
+                "text-didyouknow": "Testaccio has historically been one of Rome’s best-known working-class neighborhoods, strongly connected with markets and community life."
+              },
+              "scholar": {
+                "text-less": "The marketplace introduces a collective dimension of female shared community networks.",
+                "text-standard": "The market introduces a collective dimension to female emancipation: public space becomes a network of labour and solidarity.",
+                "text-more": "Cortellesi uses the social geography of Testaccio to move Delia’s emancipation beyond the individual dimension. In the market, friendship and work coexist within the same public environment. Her relationship with Marisa contrasts with the isolation of domestic life and demonstrates how female agency can develop through networks of solidarity. Within the itinerary, this location therefore marks a transition from simply accessing public space to actively participating in its social and economic structures.",
+                "text-didyouknow": "The choice of Testaccio connects Delia’s fictional story with a Roman district historically associated with labour and strong popular culture."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "C'è ancora domani (2023)",
+            "schema:director": "Paola Cortellesi",
+            "schema:episode": "DESCRIZIONE CHIEDI",
+            "schema:direction": "South-West (225°)",
+            "dcterms:type": "Public square"
+          },
+          "location": {
+            "schema:name": "Piazza Testaccio & Mercato di Testaccio",
+            "schema:address": "Piazza Testaccio, Roma",
+            "schema:GeoCoordinates": "41.8750° N, 12.4720° E",
+            "crm:P2_has_type": "Public Market & Community Hub Architecture",
+            "crm:P4_has_time_span": "20th/21st Century (Historic market relocated/revitalized)",
+            "schema:OpeningDate": "2012 (inauguration date of the new modern structure of the area)"
+          },
+          "project": {
+            "dcterms:subject": "Female Encipation Trough Cinema",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 5,
+          "id": "lungotevere-testaccio",
+          "story": {
+            "title": "Lungotevere Testaccio - There's still tomorrow (2023)",
+            "environment": "Environment: The transition",
+            "levels": {
+              "normal": {
+                "text-less": "The Tiber embankment acts as a physical and symbolic border leading to new opportunities.",
+                "text-standard": "The Tiber marks a physical and symbolic border: crossing it means leaving one's neighborhood and opening up to new possibilities.",
+                "text-more": "The Lungotevere connects Testaccio to Porta Portese and Trastevere. In Delia’s journey, walking through Rome is not yet an act of absolute freedom; her movements are dictated by work and family. Yet, it is precisely by traversing the city that she encounters people, information, and opportunities for change that could not reach her at home.",
+                "text-didyouknow": "The area near the Lungotevere is the setting for the meeting between Delia and the American soldier William—a pivotal figure in the story's development."
+              },
+              "child": {
+                "text-less": "Walking far from home expands Delia’s world and possibilities.",
+                "text-standard": "As Delia moves farther from home, she meets new people and discovers new possibilities. Walking through Rome slowly makes her world bigger.",
+                "text-more": "Delia does not walk around Rome simply because she is free: most of her journeys are connected to work and family duties. Yet going through the city gives her opportunities that she would never have at home. She meets different people and begins to see that her life could change. Moving through Rome therefore becomes an important part of her journey toward independence.",
+                "text-didyouknow": "During her movements through this area of Rome, Delia meets William, the American soldier who becomes important to the development of her story."
+              },
+              "scholar": {
+                "text-less": "Urban movement along the river serves as a narrative vehicle for gradual liberation from domestic enclosure.",
+                "text-standard": "Cortellesi transforms urban movement into a form of agency: Delia’s physical journey through Rome parallels her gradual movement away from domestic confinement.",
+                "text-more": "Delia’s journeys initially remain functional, dictated by work and errands rather than leisure. But dispite this, Cortellesi progressively associates physical mobility with access to information and relationships outside the household. The Lungotevere functions as a liminal space between familiar Testaccio and a wider urban territory. Movement acquires narrative significance: Delia does not simply cross Rome geographically, but gradually expands the boundaries within which she can imagine and determine her future.",
+                "text-didyouknow": "The presence of American soldiers connects Delia’s personal geography with the wider political and social transformations of post-war Rome."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "C'è ancora domani (2023)",
+            "schema:director": "Paola Cortellesi",
+            "schema:episode": "Delia's walk along the river and meeting with the American soldier William",
+            "schema:direction": "North-West (Azimuth 315°)",
+            "dcterms:type": "Urban Riverfront"
+          },
+          "location": {
+            "schema:name": "Lungotevere Testaccio",
+            "schema:address": "Lungotevere Testaccio, Roma",
+            "schema:GeoCoordinates": "41.8790° N, 12.4680° E",
+            "crm:P2_has_type": "19th-Century Embankment Architecture",
+            "crm:P4_has_time_span": "Late 19th Century",
+            "schema:OpeningDate": "1888 (start of construction on the historic Tiber embankments)"
+          },
+          "project": {
+            "dcterms:subject": "Female Encipation Trough Cinema",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 6,
+          "id": "porta-portese",
+          "story": {
+            "title": "Porta Portese and Piazza dei Mercanti - Mamma Roma (1962)",
+            "environment": "Environment: The public city",
+            "levels": {
+              "normal": {
+                "text-less": "Porta Portese forms the backdrop for a woman seeking to change her future",
+                "text-standard": "Between markets, commerce, and relationships, Rome becomes a space in which Mamma Roma struggles to rebuild her life and secure a future for her son Ettore.",
+                "text-more": "Porta Portese represents the city’s noisy, working-class side, whereas Piazza dei Mercanti introduces a more intimate space centered on social connections and job opportunities. Mamma Roma attempts to leave prostitution behind, sell goods at the market, and find employment for her son. The city seems to offer her a chance at redemption, yet it remains rife with social inequalities that hinder her emancipation.",
+                "text-didyouknow": "The Meo Patacca restaurant in Piazza dei Mercanti appears in the film during Mamma Roma’s attempt to secure a job for Ettore."
+              },
+              "child": {
+                "text-less": "Mamma Roma works hard in the city to build a better future for her son.",
+                "text-standard": "Mamma Roma works in the city and tries to build a better life for herself and her son. But being independent does not make all her difficulties disappear.",
+                "text-more": "Mamma Roma wants to leave her old life behind and create better opportunities for her son Ettore. She works at the market and moves confidently through Rome, trying to change their future. But her past and her social condition continue to limit her possibilities. The city gives her greater independence, but it cannot remove all the inequalities she faces.",
+                "text-didyouknow": "Mamma Roma is played by Anna Magnani, one of the most famous actresses in Italian cinema and a figure strongly associated with cinematic representations of Rome."
+              },
+              "scholar": {
+                "text-less": "Pasolini decouples spatial mobility from true social power, showing how class divides persist.",
+                "text-standard": "Pasolini separates spatial freedom from social emancipation: Mamma Roma can occupy the public city, but class inequality continues to determine her possibilities.",
+                "text-more": "Mamma Roma complicates the idea that access to public space automatically produces emancipation. The protagonist possesses considerable urban agency: she works, negotiates, moves independently and attempts to use social relationships to improve Ettore’s position. Yet Pasolini’s Rome remains structured by class divisions that individual determination cannot overcome. So her trajectory exposes a fundamental distinction between mobility and power: Mamma Roma has acquired the freedom to occupy the city without acquiring the social power necessary to determine her future within it.",
+                "text-didyouknow": "Pasolini repeatedly films Anna Magnani walking while speaking, making her movement, voice and physical presence an integral part of the film’s representation of Rome."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "Mamma Roma (1962())",
+            "schema:director": "Pier Paolo Pasolini",
+            "schema:episode": "Market and public square sequences with Ettore and Mamma Roma",
+            "schema:direction": "South-East (135°)",
+            "dcterms:type": "Historic Market"
+          },
+          "location": {
+            "schema:name": "Porta Portese & Piazza dei Mercanti",
+            "schema:address": "Viale XXI Aprile, 21-29 Roma",
+            "schema:GeoCoordinates": "41°53′02.03″N 12°28′26.48″E",
+            "crm:P2_has_type": "Medieval Architecture",
+            "crm:P4_has_time_span": "Medieval and Modern Era",
+            "schema:OpeningDate": "1644 (Year the Porta Portese market was historically established under Pope Innocent X)"
+          },
+          "project": {
+            "dcterms:subject": "Female Encipation Trough Cinema",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 7,
+          "id": "san-pietro-in-montorio",
+          "story": {
+            "title": "Bramante's Tempietto - The Great Beauty (2013)",
+            "environment": "Environment: The temple",
+            "levels": {
+              "normal": {
+                "text-less": "Inside a Renaissance courtyard, a sudden apparition creates a moment of mystery.",
+                "text-standard": "Inside the Renaissance courtyard of San Pietro in Montorio, a quiet architectural gem hides a surreal and silent mystery.",
+                "text-more": "The scene opens with a group of wealthy tourists waiting in silence inside the courtyard of Bramante's Tempietto. Suddenly, a young girl dressed in a white dress appears and mysteriously vanishes into thin air, leaving the characters and the audience suspended between illusion, memory, and the elusive nature of beauty.",
+                "text-didyouknow": "The real Tempietto marks the traditional site of Saint Peter's martyrdom, but in the film it transforms into a metaphysical space where logic dissolves into pure mystery"
+              },
+              "child": {
+                "text-less": "A mysterious female figure appears inside a historic monument.",
+                "text-standard": "Here the role of women in the journey changes. Instead of following a woman moving through Rome, we see a female figure who becomes part of the city’s beautiful and mysterious image.",
+                "text-more": "At the Tempietto, a mysterious female figure appears inside one of Rome’s most beautiful monuments. Until now, our journey has followed women working and creating in this way relationships in the city. But here the woman becomes someone to observe. The scene introduces a new question: is being visible in the city enough, or is it also important to have the power to tell your own story?",
+                "text-didyouknow": "Bramante’s Tempietto was built in the early sixteenth century and is considered one of the most important examples of Renaissance architecture in Rome."
+              },
+              "scholar": {
+                "text-less": "Sorrentino shifts the narrative focus from spatial negotiation to the politics of the cinematic gaze.",
+                "text-standard": "Sorrentino shifts the narrative from occupying space to being represented within it, introducing the relationship between female visibility and the cinematic gaze.",
+                "text-more": "After films centred on women who materially negotiate Rome’s spaces, The Great Beauty introduces a different cinematic relationship between female presence and the city. Sorrentino’s monumental Rome is predominantly experienced through Jep Gambardella’s wandering gaze. Within this structure, female figures can become elements of spectacle alongside architecture and artworks. So the Tempietto allows the itinerary to move from spatial emancipation to the politics of representation: occupying public space and controlling the way one is represented in it are not necessarily the same form of power.",
+                "text-didyouknow": "Sorrentino frequently juxtaposes human bodies with monumental architecture, transforming Rome itself into both a character and an object of contemplation."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "La grande bellezza (2013)",
+            "schema:director": "Paolo Sorrentino",
+            "schema:episode": "DESCRIZIONE CHIEDI",
+            "schema:direction": "North - West (315°)",
+            "dcterms:type": "Historic Site Set"
+          },
+          "location": {
+            "schema:name": "Bramante's Tempietto",
+            "schema:address": "Piazza di San Pietro in Montorio, 2, Roma",
+            "schema:GeoCoordinates": "41°53′19.5″N 12°27′59.1″E",
+            "crm:P2_has_type": "Renaissance Religious Architecture",
+            "crm:P4_has_time_span": "15th Century (Bramante's Tempietto)",
+            "schema:OpeningDate": "1502 (Completion of Bramante's Tempietto)"
+          },
+          "project": {
+            "dcterms:subject": "Female Encipation Trough Cinema",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        },
+        {
+          "step": 8,
+          "id": "fontana-acqua-paola",
+          "story": {
+            "title": "Fontanone and Belvedere del Gianicolo - The Great Beauty (2023)",
+            "environment": "Environment: The ascent",
+            "levels": {
+              "normal": {
+                "text-less": "From the Gianicolo, Rome shows as a monumental panorama.",
+                "text-standard": "From the heights of the Gianicolo, Rome finally opens up in its entirety and becomes a panorama, a monument, and an image.",
+                "text-more": "The Fontanone dell’Acqua Paola and the Belvedere mark the end of the journey. After passing through houses, courtyards, markets, and streets, the visitor gains a panoramic view of the city. In *The Great Beauty*, however, Rome is often viewed through a male gaze that transforms people and places into a spectacle. Thus, this arrival does not represent a definitive conquest but leaves a question open: does gaining entry to the city also grant the right to tell its story in one’s own voice?",
+                "text-didyouknow": "The Acqua Paola Fountain appears in the opening sequence of \"The Great Beauty\", accompanied by a female choir singing against the backdrop of the Rome skyline."
+              },
+              "child": {
+                "text-less": "The journey ends with the whole city visible.",
+                "text-standard": "The journey began inside a home and ends with the whole city in front of us. But one question remains: who gets to tell Rome’s stories?",
+                "text-more": "Our journey began with Antonietta almost completely confined to her home. Step by step, women entered neighborhoods, markets and streets and moved farther across Rome. From the Gianicolo the whole city is finally visible. But being able to enter the city does not always mean being able to decide how its stories are told. The journey ends by asking whether women can not only inhabit Rome, but also tell its stories through their own voices.",
+                "text-didyouknow": "The Fontanone dell’Acqua Paola appears at the beginning of The Great Beauty , immediately presenting Rome as an enormous visual spectacle."
+              },
+              "scholar": {
+                "text-less": "The final view of Rome frames urban storytelling as a struggle over who holds the narrative voice.",
+                "text-standard": "The final panorama transforms the politics of urban space into a politics of representation: occupying Rome and possessing the authority to narrate it are two different forms of power.",
+                "text-more": "The ascent to the Gianicolo completes the itinerary’s spatial progression: domestic interior, neighborhood, marketplace, street and finally panorama. Yet The Great Beauty prevents this expansion from becoming a simple narrative of liberation. Rome is predominantly constructed through Jep’s gaze, which transforms the city and many of its inhabitants into objects of contemplation. The final panorama therefore introduces a second dimension of emancipation: beyond the right to inhabit urban space lies the right to determine its meanings and become the subject rather than merely the object of its narratives.",
+                "text-didyouknow": "Sorrentino opens The Great Beauty at the Acqua Paola Fountain before introducing Jep, establishing the act of looking at Rome as one of the film’s central concerns."
+              }
+            }
+          },
+          "cinematic_context": {
+            "schema:name": "Mamma Roma (1962) & The Great Beauty (La grande bellezza, 2013)",
+            "schema:director": "Pier Paolo Pasolini & Paolo Sorrentino",
+            "schema:episode": "Final panoramic views of Rome from the monumental fountain terrace",
+            "schema:direction": "East (9°)",
+            "dcterms:type": "Panoramic Belvedere Set"
+          },
+          "location": {
+            "schema:name": "Fontanone del Gianicolo",
+            "schema:address": "Via Garibaldi, Roma",
+            "schema:GeoCoordinates": "41.8910° N, 12.4630° E",
+            "crm:P2_has_type": "Baroque Monumental Fountain Architecture",
+            "crm:P4_has_time_span": "17th Century (Baroque era)",
+            "schema:OpeningDate": "1612 (Inauguration of the monumental water display)"
+          },
+          "project": {
+            "dcterms:subject": "Female Encipation Trough Cinema",
+            "dcterms:language": "en",
+            "dcterms:rights": "Academic use - Alma Mater Studiorum, University of Bologna"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rome and Female Emancipation Through Cinema</title>
+    <link id="theme-style" rel="stylesheet" href="css/base.css">
+    <script src="java/base.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+
+<body> 
+    <header>
+
+        <div class="link-head" style="text-align:left;">
+            <a href="index.html">Home</a>
+            <a href="mappa.html">Map</a>
+            <div class="dropdown">
+                 <a href="#">Itinerary &#9660;</a>
+                <div class="dropdown-menu">
+                    <a href="tourStorico.html">Historical Journey</a>
+                    <a href="narrativa_femminista.html">Women & Urban Space</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="link-head" style="text-align:right;">
+            <a href="pagina1.html">Team</a>
+            <a href="documentazione.html">Documentation</a>
+            <a href="pagina3.html">Disclaimer</a>
+
+        </div>
+
+    </header>
+
+    <div class="bar-style">
+        <div class="bar-item"><a href="css/style1500.css"><span class="nav-label">1500</span></a></div>
+        <div class="bar-item"><a href="css/style1900.css"><span class="nav-label">1900</span></a></div>
+        <div class="bar-item"><a href="css/base.css"><span class="nav-label">1950</span></a></div>
+        <div class="bar-item"><a href="css/style1980.css"><span class="nav-label">1980</span></a>
+        </div>
+        <div class="bar-item"><a href="css/style2000.css"><span class="nav-label">2000</span></a></div>
+        <div class="bar-item"><a href="css/style2020.css"><span class="nav-label">2020</span></a></div>
+        <div class="bar-item"><a href="css/style2035.css"><span class="nav-label">2035</span></a></div>
+    </div>
+
+    <main> 
+        <div class="introduction">
+            <h2> Rome and Female Emancipation Through Cinema  </h2>
+            <p>
+                Rome is an open-air museum: however, in this narrative, you can explore the city through the eyes of the women who inhabited, defended, and transformed beyond the official image everybody knows. The itinerary reconstructs the evolution of women's conditions from the Fascist era through the economic boom. The chosen locations are not mere scenic backgrounds, but living spaces of daily resistance, struggles for independence, and social emancipation. 
+            </p>
+        </div>
+
+
+        <!-- SCENA 1 -->
+        <div class="area-immagini" id="palazzo-federici">
+
+            <div class="film-panel-left">
+                <div style="width: 100%;"> 
+                    <p class="photo-when">TODAY</p>
+                    <img src="img_femminista/palazzo federici_oggi.jpg" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%;">
+                    <p class="photo-when">IN THE MOVIE</p>
+                    <img src="img_femminista/palazzo federici_cinema.jpg" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+        
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&#9650;</button>
+                <span> 1 / 8</span>
+                <button onclick="next_scene()">&#9660;</button>
+            </div>
+
+            <div class="description-container-right">
+                <div style="width: 100%;">
+
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                        <button type="button" onclick="showQRView(this)"> QR CODE </button>
+                    </div>
+
+                    <div class="story-content" style="display: flex;">
+                        
+                        <div class="difficulty-buttons">
+                        <button type="button" onclick="showNormal(this)">Normal</button>
+                        <button type="button" onclick="showChild(this)">Child</button>
+                        <button type="button" onclick="showScholar(this)">Cinephile</button>
+                        </div>
+
+
+                        <h3></h3>
+                    <p class="movie-description"></p>
+        
+                    <!-- livello normal -->
+                    <div class="level-normal" style="display:block">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello child -->
+                    <div class="level-child" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello scholar -->
+                    <div class="level-scholar" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <div class="tellme-buttons">
+                            <button type="button" onClick="showNormal(this)">Standard</button>
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div> 
+                    </div>
+
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <p class="introduzione-meta"> For each scene, structured metadata has been integrated to detail the <strong> cinematic context of the film</strong>, the <strong> location where it was shot</strong>, and the <strong> academic framework of the project </strong>. To enable semantic web interoperability and digital cataloging, this data is modeled using established formal ontologies: <strong>Schema.org </strong> for entities and web structures, <strong> Dublin Core (dcterms) </strong> for bibliographic and project metadata, and <strong> CIDOC CRM </strong>for cultural heritage and architectural classifications.
+                        </p>
+                        
+                        <div class="metadata-tasti">
+                            <button type="button" onclick="toggleModal('film-finestra')"> CINEMATIC CONTEXT </button> 
+                            <button type="button" onclick="toggleModal('location-finestra')"> LOCATION </button> 
+                            <button type="button" onclick="toggleModal('project-finestra')"> PROJECT </button> 
+                        </div>
+                        
+                        <div id="film-finestra" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'film-finestra')">
+                            <div class="modal-box">
+                                <h3> Cinematic Context </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="location-finestra" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'location-finestra')">
+                            <div class="modal-box">
+                                <h3> Location </h3>
+                                <ul></ul>
+                                
+                            </div>
+                        </div>
+                        
+                        <div id="project-finestra" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'project-finestra')">
+                            <div class="modal-box">
+                                <h3> Project </h3>
+                                <ul></ul>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="qr-content" style="display:none;">
+                        <h3> External details </h3>
+                        <p class="qr-description">
+                            Scan or tap the QR code below to access additional documentation.
+                        </p>
+                        <a href="https://it.wikipedia.org/wiki/Palazzi_Federici" target="_blank">
+                            <img src="img_femminista/cinecittà_qr.png" alt="QR Wikipedia" class="qr-image" >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SCENA 2 -->
+        <div class="area-immagini" id="cinecitta" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%;"> 
+                    <p class="photo-when">TODAY</p>
+                    <img src="img_femminista/cinecittà_oggi.jpg" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%;">
+                    <p class="photo-when">IN THE MOVIE</p>
+                    <img src="img_femminista/cinecittà_cinema.jpg" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+        
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&#9650;</button>
+                <span >2 / 8</span>
+                <button onclick="next_scene()">&#9660;</button>
+            </div>
+
+            <div class="description-container-right">
+                <div style="width: 100%;">
+                    
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                        <button type="button" onclick="showQRView(this)"> QR CODE </button>
+                    </div>
+
+                    <div class="story-content" style="display: flex;">
+                        
+                        <div class="difficulty-buttons">
+                        <button type="button" onclick="showNormal(this)">Normal</button>
+                        <button type="button" onclick="showChild(this)">Child</button>
+                        <button type="button" onclick="showScholar(this)">Cinephile</button>
+                        </div>
+
+
+                        <h3></h3>
+                    <p class="movie-description"></p>
+        
+                    <!-- livello normal -->
+                    <div class="level-normal" style="display:block">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello child -->
+                    <div class="level-child" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello scholar -->
+                    <div class="level-scholar" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <div class="tellme-buttons">
+                            <button type="button" onClick="showNormal(this)">Standard</button>
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div> 
+                    </div>
+
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <p class="introduzione-meta"> For each scene, structured metadata has been integrated to detail the <strong> cinematic context of the film</strong>, the <strong> location where it was shot</strong>, and the <strong> academic framework of the project </strong>. To enable semantic web interoperability and digital cataloging, this data is modeled using established formal ontologies: <strong>Schema.org </strong> for entities and web structures, <strong> Dublin Core (dcterms) </strong> for bibliographic and project metadata, and <strong> CIDOC CRM </strong>for cultural heritage and architectural classifications.
+                        </p>
+                        
+                        <div class="metadata-tasti">
+                            <button type="button" onclick="toggleModal('film-finestra-2')"> CINEMATIC CONTEXT </button> 
+                            <button type="button" onclick="toggleModal('location-finestra-2')"> LOCATION </button>
+                            <button type="button" onclick="toggleModal('project-finestra-2')"> PROJECT </button> 
+                        </div>
+                    
+                        
+                        <div id="film-finestra-2" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'film-finestra-2')">
+                            <div class="modal-box">
+                                <h3> Cinematic Context </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="location-finestra-2" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'location-finestra-2')">
+                            <div class="modal-box">
+                                <h3>Location</h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="project-finestra-2" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'project-finestra-2')">
+                            <div class="modal-box">
+                                <h3> Project </h3>
+                                <ul></ul>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="qr-content" style="display:none;">
+                        <h3> External details </h3>
+                        <p class="qr-description">
+                            Scan or tap the QR code below to access additional documentation.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Cinecitt%C3%A0" target="_blank">
+                            <img src="img_femminista/cinecittà_qr.png" alt="QR Wikipedia" class="qr-image" >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SCENA 3 -->
+        <div class="area-immagini" id="via-bodoni" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%;"> 
+                    <p class="photo-when">TODAY</p>
+                    <img src="img_femminista/via bodoni_oggi.jpg" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%;">
+                    <p class="photo-when">IN THE MOVIE</p>
+                    <img src="img_femminista/via bodoni_cinema.jpg" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+        
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&#9650;</button>
+                <span>3 / 8</span>
+                <button onclick="next_scene()">&#9660;</button>
+            </div>
+
+            <div class="description-container-right">
+                <div style="width: 100%;">
+
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                        <button type="button" onclick="showQRView(this)"> QR CODE </button>
+                    </div>
+
+                    
+                    <div class="story-content" style="display: flex;">
+                        
+                        <div class="difficulty-buttons">
+                        <button type="button" onclick="showNormal(this)">Normal</button>
+                        <button type="button" onclick="showChild(this)">Child</button>
+                        <button type="button" onclick="showScholar(this)">Cinephile</button>
+                        </div>
+
+
+                        <h3></h3>
+                    <p class="movie-description"></p>
+        
+                    <!-- livello normal -->
+                    <div class="level-normal" style="display:block">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello child -->
+                    <div class="level-child" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello scholar -->
+                    <div class="level-scholar" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <div class="tellme-buttons">
+                            <button type="button" onClick="showNormal(this)">Standard</button>
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div> 
+                    </div>
+        
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <p class="introduzione-meta"> For each scene, structured metadata has been integrated to detail the <strong> cinematic context of the film</strong>, the <strong> location where it was shot</strong>, and the <strong> academic framework of the project </strong>. To enable semantic web interoperability and digital cataloging, this data is modeled using established formal ontologies: <strong>Schema.org </strong> for entities and web structures, <strong> Dublin Core (dcterms) </strong> for bibliographic and project metadata, and <strong> CIDOC CRM </strong>for cultural heritage and architectural classifications.
+                        </p>
+                        
+                        <div class="metadata-tasti">
+                            <button type="button" onclick="toggleModal('film-finestra-3')"> CINEMATIC CONTEXT </button> 
+                            <button type="button" onclick="toggleModal('location-finestra-3')"> LOCATION </button>
+                            <button type="button" onclick="toggleModal('project-finestra-3')"> PROJECT </button> 
+                        </div>
+                        
+                        <div id="film-finestra-3" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'film-finestra-3')">
+                            <div class="modal-box">
+                                <h3> Cinematic Context </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="location-finestra-3" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'location-finestra-3')">
+                            <div class="modal-box">
+                                <h3> Location </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="project-finestra-3" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'project-finestra-3')">
+                            <div class="modal-box">
+                                <h3> Project </h3>
+                                <ul></ul>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="qr-content" style="display:none;">
+                        <h3> External details </h3>
+                        <p class="qr-description">
+                            Scan or tap the QR code below to access additional documentation.
+                        </p>
+                        <a href="https://it.wikipedia.org/wiki/Palazzi_Federici" target="_blank">
+                            <img src="img_femminista/cinecittà_qr.png" alt="QR Wikipedia" class="qr-image" >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SCENA 4 -->
+        <div class="area-immagini" id="piazza-testaccio" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%;"> 
+                    <p class="photo-when">TODAY</p>
+                    <img src="img_femminista/piazza testaccio_oggi.jpg" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%;">
+                    <p class="photo-when">IN THE MOVIE</p>
+                    <img src="img_femminista/.jpg" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+        
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&#9650;</button>
+                <span>4 / 8</span>
+                <button onclick="next_scene()">&#9660;</button>
+            </div>
+
+            <div class="description-container-right">
+                <div style="width: 100%;">
+
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                        <button type="button" onclick="showQRView(this)"> QR CODE</button>
+                    </div> 
+
+                    <div class="story-content" style="display: flex;">
+                        
+                        <div class="difficulty-buttons">
+                        <button type="button" onclick="showNormal(this)">Normal</button>
+                        <button type="button" onclick="showChild(this)">Child</button>
+                        <button type="button" onclick="showScholar(this)">Cinephile</button>
+                        </div>
+
+
+                        <h3></h3>
+                    <p class="movie-description"></p>
+        
+                    <!-- livello normal -->
+                    <div class="level-normal" style="display:block">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello child -->
+                    <div class="level-child" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello scholar -->
+                    <div class="level-scholar" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <div class="tellme-buttons">
+                            <button type="button" onClick="showNormal(this)">Standard</button>
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div> 
+                    </div>
+
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <p class="introduzione-meta"> For each scene, structured metadata has been integrated to detail the <strong> cinematic context of the film</strong>, the <strong> location where it was shot</strong>, and the <strong> academic framework of the project </strong>. To enable semantic web interoperability and digital cataloging, this data is modeled using established formal ontologies: <strong>Schema.org </strong> for entities and web structures, <strong> Dublin Core (dcterms) </strong> for bibliographic and project metadata, and <strong> CIDOC CRM </strong>for cultural heritage and architectural classifications.
+                        </p>
+                        
+                        <div class="metadata-tasti">
+                            <button type="button" onclick="toggleModal('film-finestra-4')"> CINEMATIC CONTEXT </button> 
+                            <button type="button" onclick="toggleModal('location-finestra-4')"> LOCATION </button>
+                            <button type="button" onclick="toggleModal('project-finestra-4')"> PROJECT </button> 
+                        </div>
+                        
+                        <div id="film-finestra-4" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'film-finestra-4')">
+                            <div class="modal-box">
+                                <h3> Cinematic Context </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="location-finestra-4" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'location-finestra-4')">
+                            <div class="modal-box">
+                                <h3> Location </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="project-finestra-4" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'project-finestra-4')">
+                            <div class="modal-box">
+                                <h3> Project </h3>
+                                <ul></ul>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="qr-content" style="display:none;">
+                        <h3> External details </h3>
+                        <p class="qr-description">
+                            Scan or tap the QR code below to access additional documentation.
+                        </p>
+                        <a href="https://www.turismoroma.it/it/luoghi/piazza-testaccio" target="_blank">
+                            <img src="img_femminista/piazzatestaccio_qr.png" alt="QR Wikipedia" class="qr-image" >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    
+         
+        <!-- SCENA 5 -->
+        <div class="area-immagini" id="lungotevere-testaccio" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%;"> 
+                    <p class="photo-when">TODAY</p>
+                    <img src="img_femminista/lungotevere_oggi.jpg" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%;">
+                    <p class="photo-when">IN THE MOVIE</p>
+                    <img src="img_femminista/lungotevere_cinema.jpg" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+        
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&#9650;</button>
+                <span>5 / 8</span>
+                <button onclick="next_scene()">&#9660;</button>
+            </div>
+
+            <div class="description-container-right">
+                <div style="width: 100%;">
+
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                        <button type="button" onclick="showQRView(this)"> QR CODE </button>
+                    </div>
+
+                    <div class="story-content" style="display: flex;">
+                        
+                        <div class="difficulty-buttons">
+                        <button type="button" onclick="showNormal(this)">Normal</button>
+                        <button type="button" onclick="showChild(this)">Child</button>
+                        <button type="button" onclick="showScholar(this)">Cinephile</button>
+                    </div>
+
+
+                        <h3></h3>
+                    <p class="movie-description"></p>
+        
+                    <!-- livello normal -->
+                    <div class="level-normal" style="display:block">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello child -->
+                    <div class="level-child" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello scholar -->
+                    <div class="level-scholar" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <div class="tellme-buttons">
+                            <button type="button" onClick="showNormal(this)">Standard</button>
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div> 
+                    </div>
+                    
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <p class="introduzione-meta"> For each scene, structured metadata has been integrated to detail the <strong> cinematic context of the film</strong>, the <strong> location where it was shot</strong>, and the <strong> academic framework of the project </strong>. To enable semantic web interoperability and digital cataloging, this data is modeled using established formal ontologies: <strong>Schema.org </strong> for entities and web structures, <strong> Dublin Core (dcterms) </strong> for bibliographic and project metadata, and <strong> CIDOC CRM </strong>for cultural heritage and architectural classifications.
+                        </p>
+                        
+                        <div class="metadata-tasti">
+                            <button type="button" onclick="toggleModal('film-finestra-5')"> CINEMATIC CONTEXT </button> 
+                            <button type="button" onclick="toggleModal('location-finestra-5')"> LOCATION </button> 
+                            <button type="button" onclick="toggleModal('shot-finestra-5')"> SHOT</button>
+                            <button type="button" onclick="toggleModal('project-finestra-5')"> PROJECT </button> 
+                        </div>
+                        
+                        <div id="film-finestra-5" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'film-finestra-5')">
+                            <div class="modal-box">
+                                <h3> Cinematic Context </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="location-finestra-5" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'location-finestra-5')">
+                            <div class="modal-box">
+                                <h3> Location </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="project-finestra-5" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'project-finestra-5')">
+                            <div class="modal-box">
+                                <h3> Project </h3>
+                                <ul></ul>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="qr-content" style="display:none;">
+                        <h3> External details </h3>
+                        <p class="qr-description">
+                            Scan or tap the QR code below to access additional documentation.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Lungotevere_Testaccio" target="_blank">
+                            <img src="img_femminista/lunngotevere_qr.png" alt="QR Wikipedia" class="qr-image" >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    
+
+        <!-- SCENA 6 -->
+        <div class="area-immagini" id="porta-portese" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%;"> 
+                    <p class="photo-when">TODAY</p>
+                    <img src="img_femminista/porta portese_oggi.jpg" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%;">
+                    <p class="photo-when">IN THE MOVIE</p>
+                    <img src="img_femminista/porta portese_cinema.jpg" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+        
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&#9650;</button>
+                <span>6 / 8</span>
+                <button onclick="next_scene()">&#9660;</button>
+            </div>
+
+            <div class="description-container-right">
+                <div style="width: 100%;">
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                        <button type="button" onclick="showQRView(this)"> QR CODE </button>
+                    </div>
+                    
+
+                    <div class="story-content" style="display: flex;">
+                        
+                        <div class="difficulty-buttons">
+                        <button type="button" onclick="showNormal(this)">Normal</button>
+                        <button type="button" onclick="showChild(this)">Child</button>
+                        <button type="button" onclick="showScholar(this)">Cinephile</button>
+                        </div>
+
+
+                        <h3></h3>
+                    <p class="movie-description"></p>
+        
+                    <!-- livello normal -->
+                    <div class="level-normal" style="display:block">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello child -->
+                    <div class="level-child" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello scholar -->
+                    <div class="level-scholar" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <div class="tellme-buttons">
+                            <button type="button" onClick="showNormal(this)">Standard</button>
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div> 
+                    </div>
+                
+
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <p class="introduzione-meta"> For each scene, structured metadata has been integrated to detail the <strong> cinematic context of the film</strong>, the <strong> location where it was shot</strong>, and the <strong> academic framework of the project </strong>. To enable semantic web interoperability and digital cataloging, this data is modeled using established formal ontologies: <strong>Schema.org </strong> for entities and web structures, <strong> Dublin Core (dcterms) </strong> for bibliographic and project metadata, and <strong> CIDOC CRM </strong>for cultural heritage and architectural classifications.
+                        </p>
+                        
+                        <div class="metadata-tasti">
+                            <button type="button" onclick="toggleModal('film-finestra-6')"> CINEMATIC CONTEXT </button> 
+                            <button type="button" onclick="toggleModal('location-finestra-6')"> LOCATION </button>
+                            <button type="button" onclick="toggleModal('shot-finestra-6')"> SHOT</button>
+                            <button type="button" onclick="toggleModal('project-finestra-6')"> PROJECT </button> 
+                        </div>
+                
+                        <div id="film-finestra-6" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'film-finestra-6')">
+                            <div class="modal-box">
+                                <h3> Cinematic Context </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="location-finestra-6" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'location-finestra-6')">
+                            <div class="modal-box">
+                                <h3> Location </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="project-finestra-6" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'project-finestra-6')">
+                            <div class="modal-box">
+                                <h3> Project </h3>
+                                <ul></ul>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="qr-content" style="display:none;">
+                        <h3> External details </h3>
+                        <p class="qr-description">
+                            Scan or tap the QR code below to access additional documentation.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Porta_Portese" target="_blank">
+                            <img src="img_femminista/porta_portese_qr.png" alt="QR Wikipedia" class="qr-image" >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SCENA 7 -->
+        <div class="area-immagini" id="san-pietro-in-montorio" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%;"> 
+                    <p class="photo-when">TODAY</p>
+                    <img src="img_femminista/tempietto_oggi.png" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%;">
+                    <p class="photo-when">IN THE MOVIE</p>
+                    <img src="img_femminista/tempietto_cinema.png" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+        
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&#9650;</button>
+                <span>7 / 8</span>
+                <button onclick="next_scene()">&#9660;</button>
+            </div>
+
+            <div class="description-container-right">
+                <div style="width: 100%;">
+                    
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                        <button type="button" onclick="showQRView(this)"> QR CODE </button>
+                    </div>
+
+                    <div class="story-content" style="display: flex;">
+                        
+                        <div class="difficulty-buttons">
+                        <button type="button" onclick="showNormal(this)">Normal</button>
+                        <button type="button" onclick="showChild(this)">Child</button>
+                        <button type="button" onclick="showScholar(this)">Cinephile</button>
+                        </div>
+
+
+                        <h3></h3>
+                    <p class="movie-description"></p>
+        
+                    <!-- livello normal -->
+                    <div class="level-normal" style="display:block">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello child -->
+                    <div class="level-child" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello scholar -->
+                    <div class="level-scholar" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <div class="tellme-buttons">
+                            <button type="button" onClick="showNormal(this)">Standard</button>
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div> 
+                    </div>
+                    
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <p class="introduzione-meta"> For each scene, structured metadata has been integrated to detail the <strong> cinematic context of the film</strong>, the <strong> location where it was shot</strong>, and the <strong> academic framework of the project </strong>. To enable semantic web interoperability and digital cataloging, this data is modeled using established formal ontologies: <strong>Schema.org </strong> for entities and web structures, <strong> Dublin Core (dcterms) </strong> for bibliographic and project metadata, and <strong> CIDOC CRM </strong>for cultural heritage and architectural classifications.
+                        </p>
+                        
+                        <div class="metadata-tasti">
+                            <button type="button" onclick="toggleModal('film-finestra-7')"> CINEMATIC CONTEXT </button> 
+                            <button type="button" onclick="toggleModal('location-finestra-7')"> LOCATION </button> 
+                            <button type="button" onclick="toggleModal('shot-finestra-7')"> SHOT</button>
+                            <button type="button" onclick="toggleModal('project-finestra-7')"> PROJECT </button> 
+                        </div>
+                        
+                        <div id="film-finestra-7" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'film-finestra-7')">
+                            <div class="modal-box">
+                                <h3> Cinematic Context </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="location-finestra-7" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'location-finestra-7')">
+                            <div class="modal-box">
+                                <h3> Location </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="project-finestra-7" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'project-finestra-7')">
+                            <div class="modal-box">
+                                <h3> Project </h3>
+                                <ul></ul>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="qr-content" style="display:none;">
+                        <h3> External details </h3>
+                        <p class="qr-description">
+                            Scan or tap the QR code below to access additional documentation.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Tempietto_del_Bramante" target="_blank">
+                            <img src="img_femminista/tempietto_qr.png" alt="QR Wikipedia" class="qr-image" >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SCENA 8 -->
+        <div class="area-immagini" id="fontana-acqua-paola" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%;"> 
+                    <p class="photo-when">TODAY</p>
+                    <img src="img_femminista/fontanone_oggi.jpg" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%;">
+                    <p class="photo-when">IN THE MOVIE</p>
+                    <img src="img_femminista/fontanone_cinema.png" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+        
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&#9650;</button>
+                <span>8 / 8</span>
+                <button onclick="next_scene()">&#9660;</button>
+            </div>
+
+            <div class="description-container-right">
+                <div style="width: 100%;">
+                    
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                        <button type="button" onclick="showQRView(this)"> QR CODE </button>
+                    </div>
+
+                    <div class="story-content" style="display: flex;">
+                        
+                        <div class="difficulty-buttons">
+                        <button type="button" onclick="showNormal(this)">Normal</button>
+                        <button type="button" onclick="showChild(this)">Child</button>
+                        <button type="button" onclick="showScholar(this)">Cinephile</button>
+                        </div>
+
+
+                        <h3></h3>
+                    <p class="movie-description"></p>
+        
+                    <!-- livello normal -->
+                    <div class="level-normal" style="display:block">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello child -->
+                    <div class="level-child" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <!-- livello scholar -->
+                    <div class="level-scholar" style="display: none;">
+                        <p class="movie-description text-less" style="display: none;"></p>
+                        <p class="movie-description text-standard" style="display: block;"></p>
+                        <p class="movie-description text-more" style="display: none;"></p>
+                        <p class="movie-description text-didyouknow" style="display: none;"></p>
+                    </div>
+        
+                    <div class="tellme-buttons">
+                            <button type="button" onClick="showNormal(this)">Standard</button>
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div> 
+                    </div>
+                    
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <p class="introduzione-meta"> For each scene, structured metadata has been integrated to detail the <strong> cinematic context of the film</strong>, the <strong> location where it was shot</strong>, and the <strong> academic framework of the project </strong>. To enable semantic web interoperability and digital cataloging, this data is modeled using established formal ontologies: <strong>Schema.org </strong> for entities and web structures, <strong> Dublin Core (dcterms) </strong> for bibliographic and project metadata, and <strong> CIDOC CRM </strong>for cultural heritage and architectural classifications.
+                        </p>
+                        
+                        <div class="metadata-tasti">
+                            <button type="button" onclick="toggleModal('film-finestra-8')"> CINEMATIC CONTEXT </button> 
+                            <button type="button" onclick="toggleModal('location-finestra-8')"> LOCATION </button> 
+                            <button type="button" onclick="toggleModal('shot-finestra-8')"> SHOT</button>
+                            <button type="button" onclick="toggleModal('project-finestra-8')"> PROJECT </button> 
+                        </div>
+
+
+                        <div id="film-finestra-8" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'film-finestra-8')">
+                            <div class="modal-box">
+                                <h3> Cinematic Context </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="location-finestra-8" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'location-finestra-8')">
+                            <div class="modal-box">
+                                <h3> Location </h3>
+                                <ul></ul>
+                            </div>
+                        </div>
+                        
+                        <div id="project-finestra-8" class="modal-overlay" style="display:none;" onclick="closeOnBackground(event, 'project-finestra-8')">
+                            <div class="modal-box">
+                                <h3> Project </h3>
+                                <ul></ul>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="qr-content" style="display:none;">
+                        <h3> External details </h3>
+                        <p class="qr-description">
+                            Scan or tap the QR code below to access additional documentation.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Fontana_dell%27Acqua_Paola" target="_blank">
+                            <img src="img_femminista/fontanone_qr.png" alt="QR Wikipedia" class="qr-image" >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="poster-container">
+            <div class="poster-grid">
+        
+                <!-- POSTER 1 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="img/romacittaperta-poster.png" alt="Roma città aperta" class="poster-img">
+                        <div class="poster-back">
+                            <h3>Rome, Open City</h3>
+                            <p>Roberto Rossellini (1945)<br><br>
+                            <i>Rome, Open City</i> is a neorealist war drama film
+                            set in Rome in 1944. The film follows a diverse group of characters coping under the Nazi occupation, and centers on a Resistance fighter trying to escape the city with the help of a Catholic priest.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- POSTER 2 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="img/bellissima-poster.png" alt="Bellissima" class="poster-img">
+                        <div class="poster-back">
+                            <h3>Bellissima</h3>
+                            <p>Luchino Visconti (1951)<br><br><i>Bellissima</i> centers on a working-class mother in Rome, Maddalena, who drags her young daughter to Cinecittà Studios to
+                            attend an audition for a new film by Alessandro Blasetti. Maddalena's efforts to promote her daughter grow increasingly
+                            frenzied.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSTER 3 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="img/mammaroma-poster.png" alt="Mamma Roma" class="poster-img">
+                        <div class="poster-back">
+                            <h3>Mamma Roma</h3>
+                            <p>Pier Paolo Pasolini (1962)<br><br>After her pimp Carmine marries, prostitute Mamma Roma starts a new life as a marketer in Rome to enable her 16-year-old
+                            son Ettore a better life.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSTER 4 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="img/1ggparticolare-poster.png" alt="Una giornata particolare" class="poster-img">
+                        <div class="poster-back">
+                            <h3>A Special Day</h3>
+                            <p>Ettore Scola (1977)<br><br><i>A special day</i> is a movie set in Rome in 1938. Its narrative follows a housewife (Loren) and her neighbor (Mastroianni) who stay home the day
+                            Adolf Hitler visits Benito Mussolini.</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- POSTER 5 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="img/grandebellezza-poster.png" alt="La grande bellezza" class="poster-img">
+                        <div class="poster-back">
+                            <h3>The Great Beauty</h3>
+                            <p>Paolo Sorrentino (2013)<br><br>The movie follows the story of the protagonist Jep Gambardella: a 65-year-old seasoned journalist and theater critic, mostly committed to wandering among the social
+                            events of a Rome immersed in the beauty of its history and in the superficiality of its inhabitants today, in a
+                            merciless contrast.</p>
+                         </div>
+                     </div>
+                </div>
+ 
+                <!-- POSTER 6 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="img/ancoradomani-poster.png" alt="C'è ancora domani" class="poster-img">
+                        <div class="poster-back">
+                            <h3>There's Still Tomorrow</h3>
+                            <p>Paola Cortellesi (2023)<br><br><i>There's Still Tomorrow</i>is a 2023 Italian period comedy-drama film,
+                            co-written and directed by <i>Paola Cortellesi</i> in her directorial debut. Set in postwar 1940s Italy, it follows Delia
+                            breaking traditional family patterns and aspiring to a different future, after receiving a mysterious letter.</p>
+                        </div>
+                    </div>
+                </div>
+        
+            </div> 
+        </div> 
+
+        <div class="bottoni-pagine">
+            <a href="tourStorico.html" class="bottone">&larr; PREVIOUS</a>
+            <a href="team.html" class="bottone">NEXT &rarr;</a>
+        </div>
+        
+        </main>
+    <footer>
+        <div class="footer-container">
+            <p> This page was finished editining on September 2026. <br>
+            This website was designed for the exam of <a href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2025/533915">Information Modeling and Web Technologies </a>from the master <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge">Digital Humanities and Digital Knowledge.</a><br>
+                &copy; Copyright reserved to Cavaleri Maria, Gaeta Francesca, Madayag C. Kielyn </p> 
+            
+        </div>
+    </footer>
+</body>
+
+</html>
+        
+
+

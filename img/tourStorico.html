@@ -1,0 +1,661 @@
+<!-- da aggiungere:
+.sfondo colorato per poster e coopyright
+.fare piu piccolo box nero
+.tasti too easy e too difficut
+.poster metterli in ordine
+.qr code
+
+possibili cambiameni:
+.non si capisce in che button sei (quindi farlo schiacciato o scriverlo)
+
+da dire:
+.diminuire dimensioni box nero
+.farlo diventare adaptabile allo schermo
+.forse mi piacciono linee piu armoniche
+.nelle scene bisogna spostare lo stile nel css cosi che si possa usarecambia stile
+.conformare text less more, did u know that
+. too easy e too diffiuclt (faccio io cosi uso java)
+.testi livelli + testi poster (vogliamo trama o i luoghi che abbiamo selezionato?)
+.chiedere info coordinate
+.scena 3 fontana di trevi non esiste
+.cosa è testi x sito?
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rome through cinema</title>
+    <link rel="stylesheet" href="cinemaStylesheet.css">
+    <script src="script_narrativa_femminista.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="link-head" style="text-align:left;">
+            <a href="index.html">HomePage</a>
+            <a href="percorso.html">Percorsi</a>
+            <a href="mappa.html">Mappa</a>
+        </div>
+        <div class="link-head" style="text-align:right;">
+            <a href="pagina1.html">Scelte stile</a>
+            <a href="pagina2.html">Bibliografia</a>
+            <a href="pagina3.html">Team</a>
+        </div>
+    </header>
+
+    <!-- barra scelta stile -->
+    <div class="bar-style">
+        <div class="bar-item">
+            <a href="style1.css">
+                <span class="nav-label">1500</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="style2.css">
+                <span class="nav-label">1900</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="style3.css">
+                <span class="nav-label">1950</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="style4.css">
+                <span class="nav-label">2000</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="style5.css">
+                <span class="nav-label">2020</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="style6.css">
+                <span class="nav-label">2035</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- area centrale blocchi (foto e testo) -->
+    <main>
+        <div class="introduction">
+            <h2>Rome in the 20th-century: <br>from the oppression of the regime to the contemporary disillusionment</h2>
+            <p>Rome is an open-air museum: however, in this narrative, you can explore the city through the historical, political, and
+            social transformations of the 20th century as portrayed by great Italian cinema. The itinerary reconstructs the
+            evolution of the capital from the oppression of the Fascist regime and the horrors of war to post-war reconstruction,
+            the illusions of the economic boom, and the existential emptiness of contemporary times. The chosen locations are not
+            mere movie sets, but meaningful spaces to illustrate how civic passion, collective hope, and historical memory have
+            gradually dissolved into modern-day Rome.
+            </p>
+        </div>
+    
+    
+        <!-- SCENA 1 -->
+        <div class="area-immagini">
+            <div class="film-panel-left">
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 1rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        Today</p>
+                    <img src="tour-marcia-federici-oggi.jpg" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 1rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        the Movie</p>
+                    <img src="marcia-federici-1gg.png" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+    
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&lt;</button>
+                <span style="font-weight:bold; font-size:0.9rem; writing-mode: vertical-lr;">1 / 7</span>
+                <button onclick="next_scene()">&gt;</button>
+            </div>
+    
+            <div class="description-container-right">
+                <div style="width: 100%;">
+    
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                    </div>
+    
+                    <div class="story-content" style="display: block;">
+                        <h3> Federici Palace<br><i>A special day (1977)</i><br></h3>
+                        <p class="movie-description"> <strong> Environment: THE HOUSE </strong></p>
+    
+                        <div class="tellme-buttons">
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div>
+    
+                        <p class="movie-description text-less" style="display:block">
+                            The tour begins at the height of the Fascist regime, where it all started: the building's residents, dressed in Fascist
+                            uniforms, return home marching.
+                        </p>
+                        <p class="movie-description text-more" style="display:none;">
+                            It is May 6, 1938, the day of Hitler's arrival in Rome. The apartment building repopulates after a morning in which
+                            almost all of its inhabitants went out into the streets to applaud the Führer's procession.
+                        </p>
+                        <p class="movie-description text-didyouknow" style="display:none;">
+                            Did you know that the circular march around the pool visually symbolizes the restoration of the regime's order and
+                            conformity?
+                        </p>
+                    </div>
+    
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <li><strong>Coordinates:</strong> </li>
+                        <li><strong>Camera Angle:</strong> metti info </li>
+                        <li><strong>Metadata Standard:</strong> metti ontologie </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- SCENA 2 -->
+        <div class="area-immagini" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        Today</p>
+                    <img src="tour-romacitta-spagna-oggi.png" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        In the Movie</p>
+                    <img src="tour-romacitta.png" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+    
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&lt;</button>
+                <span style="font-weight:bold; font-size:0.9rem; writing-mode: vertical-lr;">2 / 7</span>
+                <button onclick="next_scene()">&gt;</button>
+            </div>
+    
+            <div class="description-container-right">
+                <div style="width: 100%;">
+    
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                    </div>
+    
+                    <div class="story-content" style="display: block;">
+                        <h3> Piazza di Spagna<i> Rome, Open City (1945) </i> </h3>
+                        <p class="movie-description"> <strong> Environment: THE SQUARE </strong></p>
+    
+                        <div class="tellme-buttons">
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div>
+    
+                        <p class="movie-description text-less" style="display:block;">
+                            The tour continues with the dark years of the Nazi occupation: German soldiers marching in Piazza di Spagna show the
+                            harsh reality of that.
+                        </p>
+                        <p class="movie-description text-more" style="display:none;">
+                            We are between 1943 and 1944, during the months of the German occupation of Rome. Rossellini opens the film by showing a
+                            patrol of soldiers in the ghostly silence of a deserted Piazza di Spagna, which had been requisitioned by the Nazi
+                            command.
+                        </p>
+                        <p class="movie-description text-didyouknow" style="display:none;">
+                            Rossellini began shooting the film in January 1945, just a few months after the liberation of Rome, capturing the square
+                            while the wounds of war were still visible and real.
+                        </p>
+                        </p>
+                    </div>
+    
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 0.9rem; text-align: left;">
+                            <li><strong>Coordinates:</strong> 41.8500° N, 12.5650° E</li>
+                            <li><strong>Camera Angle:</strong> North-West (approx. 315°)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- SCENA 3 -->
+        <div class="area-immagini" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        Today</p>
+                    <img src="palazzo federici_oggi.jpg" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        In the Movie</p>
+                    <img src="palazzo federici_cinema.jpg" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+    
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&gt;</button>
+                <span style="font-weight:bold; font-size:0.9rem; writing-mode: vertical-lr;">3 / 7</span>
+                <button onclick="next_scene()">&lt;</button>
+            </div>
+    
+            <div class="description-container-right">
+                <div style="width: 100%;">
+    
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                    </div>
+    
+                    <div class="story-content" style="display: block;">
+                        <h3> Fontana di Trevi<i>There's Still Tomorrow (2023)</i> </h3>
+                        <p class="movie-description"> <strong> Environment: The neighborhood </strong></p>
+    
+                        <div class="tellme-buttons">
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div>
+    
+                        <p class="movie-description text-less" style="display: block;">
+                            Following the Resistance’s fight for freedom this stop highlighits a contrast with the present: the Rome that fought to
+                            survive has turned into a postcard for mass consuption, where historical memory gives way to indifference
+                        </p>
+                        <p class="movie-description text-more" style="display:none;">
+                            the connection with the previous stops lies in the strong ethical contrast. While at Palazzo Federici and Piazza di
+                            Spagna we saw a city united by the pain and collective struggle of the war, here Jep Gambardella, the film’s
+                            protagonist, observes people plunging into the fountain at night in total loliness
+                        </p>
+                        <p class="movie-description text-didyouknow" style="display:none;">
+                            The historic Baroque fountain, once a symbol of rebirth, becomes the stage for a contemporary Rome that has lost its
+                            post-war civic passion, reducing itself to pure aesthetics and distraction.
+                        </p>
+                    </div>
+    
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 0.9rem; text-align: left;">
+                            <li><strong>Coordinates:</strong> 41.8780° N, 12.4750° E</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- SCENA 4 -->
+        <div class="area-immagini" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        Today</p>
+                    <img src="tour-domani-mat-oggi.png" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        In the Movie</p>
+                    <img src="tour-domani-matrimonio.png" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+    
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&lt;</button>
+                <span style="font-weight:bold; font-size:0.9rem; writing-mode: vertical-lr;">4 / 7</span>
+                <button onclick="next_scene()">&gt;</button>
+            </div>
+    
+            <div class="description-container-right">
+                <div style="width: 100%;">
+    
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                    </div>
+    
+                    <div class="story-content" style="display: block;">
+                        <h3>Chiesa di Santa Maria in Cappella<i>There's Still Tomorrow (2023)</i> </h3>
+                        <p class="movie-description"> <strong> Environment: The community </strong></p>
+    
+                        <div class="tellme-buttons">
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div>
+    
+                        <p class="movie-description text-less" style="display:block;">
+                            The tour continues with the post-war recovery, we move to the working class neighborhoods (then Trastevere), that are
+                            the true drivers of the rebirth: the struggles of a patriarchal family are reflected on the parvis od this ancient
+                            chruch in a Rome that is about to change.
+                        </p>
+                        <p class="movie-description text-more" style="display:none;">
+                            We are in 1946, in the months preceding the institutional referendum and the introduction of the women’s suffrage. This
+                            beautiful medieval church serves as a background for the wedding between Marcella, Delia’s young daughter, and Giulio,
+                            the scion of a family that grew wealthy through the black market
+                        </p>
+                        <p class="movie-description text-didyouknow" style="display:none;">
+                            aggiungere testo
+                        </p>
+                        </div>
+                        
+                        <div class="metadata-content" style="display: none;">
+                            <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                            <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 0.9rem; text-align: left;">
+                                <li><strong>Coordinates:</strong> 41.8780° N, 12.4750° E</li>
+                            </ul>
+                        </div>
+    
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 0.9rem; text-align: left;">
+                            <li><strong>Coordinates:</strong> 41.8750° N, 12.4720° E</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- SCENA 5 -->
+        <div class="area-immagini" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        Today</p>
+                    <img src="tour-domani-testaccio-oggi.png" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        In the Movie</p>
+                    <img src="tour-domani-testaccio.png" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+    
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&lt;</button>
+                <span style="font-weight:bold; font-size:0.9rem; writing-mode: vertical-lr;">5 / 7</span>
+                <button onclick="next_scene()">&gt;</button>
+            </div>
+    
+            <div class="description-container-right">
+                <div style="width: 100%;">
+    
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                    </div>
+    
+                    <div class="story-content" style="display: block;">
+                        <h3> Lungotevere Testaccio<i> There's still tomorrow</i> </h3>
+                        <p class="movie-description"> <strong> Environment: The transition </strong></p>
+    
+                        <div class="tellme-buttons">
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div>
+    
+                        <p class="movie-description text-less" style="display:block;">
+                            The journey reaches the heart of working-class Rome in the post-war period: in this historic square, the daily life of a
+                            neighborhood trying to leave behind the rubble left by the conflict is reborn.
+                        </p>
+                        <p class="movie-description text-more" style="display:none;">
+                            It is here where Delia walks while running her daily errands: an authentic image of a working class that, even amidst
+                            the poverty of reconstruction, finds the strength to rebuild a solidary community and hope for a better future.
+                        </p>
+                        <p class="movie-description text-didyouknow" style="display:none;">
+                            aggiungere testo
+                        </p>
+                    </div>
+    
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 0.9rem; text-align: left;">
+                            <li><strong>Coordinates:</strong> 41.8790° N, 12.4680° E</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- SCENA 6 -->
+        <div class="area-immagini" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        Today</p>
+                    <img src="tour-mammaroma-portese-oggi.png" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        In the Movie</p>
+                    <img src="tour-mammaroma-portese.png" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+    
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&lt;</button>
+                <span style="font-weight:bold; font-size:0.9rem; writing-mode: vertical-lr;">6 / 7</span>
+                <button onclick="next_scene()">&gt;</button>
+            </div>
+    
+            <div class="description-container-right">
+                <div style="width: 100%;">
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                    </div>
+    
+                    <div class="story-content" style="display: block;">
+                        <h3>Porta Portese market<i><br>Mamma Roma (1962)</i></h3>
+                        <p class="movie-description"> <strong> Environment: The public city </strong></p>
+    
+                        <div class="tellme-buttons">
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div>
+    
+                        <p class="movie-description text-less" style="display: block;">
+                            The tour moves to the early 1950s, the era of the economic boom and the illusion of success: the majestic basilica
+                            serves as the backdrop for a mother's desperate quest for social redemption for her little girl
+                        </p>
+                        <p class="movie-description text-more" style="display:none;">
+                            We are in 1951, in an Italy racing towards material wealth yet remaining profoundly naive in the face of the
+                            entertainment industry's promises. Luchino Visconti chooses this imposing basilica for a key scene in which Maddalena
+                            Cecconi, played by the extraordinary Anna Magnani, tries to protect her daughter Maria.
+                        </p>
+                        <p class="movie-description text-didyouknow" style="display:none;">
+                            The solemnity and vastness of Rome's historical monuments painfully contrast with the fragility and intimacy of an
+                            ordinary family, crushed by dreams of cinematic glory that are as grand as they are illusory.
+                        </p>
+                    </div>
+    
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 0.9rem; text-align: left;">
+                            <li><strong>Coordinates:</strong> 41.8850° N, 12.4710° E</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- SCENA 7 -->
+        <div class="area-immagini" style="display: none;">
+            <div class="film-panel-left">
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        Today</p>
+                    <img src="palazzo federici_oggi.jpg" alt="The same place today" class="movie-pic">
+                </div>
+                <div style="width: 100%; text-align: center;">
+                    <p
+                        style="color: #aaa; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        In the Movie</p>
+                    <img src="palazzo federici_cinema.jpg" alt="picture from the movie" class="movie-pic">
+                </div>
+            </div>
+    
+            <div class="frecce_scena">
+                <button onclick="previous_scene()">&gt;</button>
+                <span style="font-weight:bold; font-size:0.9rem; writing-mode: vertical-lr;">7 / 7</span>
+                <button onclick="next_scene()">&lt;</button>
+            </div>
+    
+            <div class="description-container-right">
+                <div style="width: 100%;">
+    
+                    <div class="showview-buttons">
+                        <button type="button" onclick="showStoryView(this)"> STORY </button>
+                        <button type="button" onclick="showMetadataView(this)"> METADATA </button>
+                    </div>
+    
+                    <div class="story-content" style="display: block;">
+                        <h3> San Pietro in Montorio<i>The Great Beauty </i> </h3>
+                        <p class="movie-description"> <strong> Environment: The ascent </strong></p>
+    
+                        <div class="tellme-buttons">
+                            <button type="button" onclick="showLess(this)"> Tell me less </button>
+                            <button type="button" onclick="showMore(this)"> Tell me more </button>
+                            <button type="button" onclick="showDidYouKnow(this)"> Did you know that? </button>
+                        </div>
+    
+                        <p class="movie-description text-less" style="display: block;">
+                            The journey ascends the Aventine Hill, where we encounter one of Rome's most fascinating secrets: the ancient keyhole
+                            that frames the dome of St. Peter's and transforms the city into a painting.
+                        </p>
+                        <p class="movie-description text-more" style="display:none;">
+                            We are in 2013. In one of the most evocative night scenes in Sorrentino's film, Jep Gambardella takes Ramona on a
+                            magical walk, where ancient history dialogues with modern disillusionment.
+                        </p>
+                        <p class="movie-description text-didyouknow" style="display:none;">
+                            Did you know that by looking through the keyhole of the door, your eyes view three different States? You are standing on
+                            the soil of the Italian Republic, you peek through the garden of the Villa del Priorato (which enjoys the right of
+                            extraterritoriality for the Sovereign Military Order of Malta), and in the background, the Dome of St. Peter's is
+                            situated in the Vatican City State.
+                        </p>
+                    </div>
+    
+                    <div class="metadata-content" style="display: none;">
+                        <h3 style="margin-bottom: 10px;"> Technical Details & Metadata </h3>
+                        <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 0.9rem; text-align: left;">
+                            <li><strong>Coordinates:</strong> 41.8900° N, 12.4640° E</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+        <!-- locandine film -->
+        <div class="poster-container">
+            <div class="poster-grid">
+        
+                <!-- POSTER 1 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="romacittaperta-poster.png" alt="Roma città aperta" class="poster-img">
+                        <div class="poster-back">
+                            <h3>Rome, Open City</h3>
+                            <p>Roberto Rossellini (1945)<br><br>
+                            <i>Rome, Open City</i> is a neorealist war drama film
+                            set in Rome in 1944. The film follows a diverse group of characters coping under the Nazi occupation, and centers on a Resistance fighter trying to escape the city with the help of a Catholic priest.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- POSTER 2 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="bellissima-poster.png" alt="Bellissima" class="poster-img">
+                        <div class="poster-back">
+                            <h3>Bellissima</h3>
+                            <p>Luchino Visconti (1951)<br><br><i>Bellissima</i> centers on a working-class mother in Rome, Maddalena, who drags her young daughter to Cinecittà Studios to
+                            attend an audition for a new film by Alessandro Blasetti. Maddalena's efforts to promote her daughter grow increasingly
+                            frenzied.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSTER 3 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="mammaroma-poster.png" alt="Mamma Roma" class="poster-img">
+                        <div class="poster-back">
+                            <h3>Mamma Roma</h3>
+                            <p>Pier Paolo Pasolini (1962)<br><br>After her pimp Carmine marries, prostitute Mamma Roma starts a new life as a marketer in Rome to enable her 16-year-old
+                            son Ettore a better life.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSTER 4 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="1ggparticolare-poster.png" alt="Una giornata particolare" class="poster-img">
+                        <div class="poster-back">
+                            <h3>A Special Day</h3>
+                            <p>Ettore Scola (1977)<br><br><i>A special day</i> is a movie set in Rome in 1938. Its narrative follows a housewife (Loren) and her neighbor (Mastroianni) who stay home the day
+                            Adolf Hitler visits Benito Mussolini.</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- POSTER 5 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="grandebellezza-poster.png" alt="La grande bellezza" class="poster-img">
+                        <div class="poster-back">
+                            <h3>The Great Beauty</h3>
+                            <p>Paolo Sorrentino (2013)<br><br>The movie follows the story of the protagonist Jep Gambardella: a 65-year-old seasoned journalist and theater critic, mostly committed to wandering among the social
+                            events of a Rome immersed in the beauty of its history and in the superficiality of its inhabitants today, in a
+                            merciless contrast.</p>
+                         </div>
+                     </div>
+                </div>
+ 
+                <!-- POSTER 6 -->
+                <div class="poster">
+                    <div class="poster-flip">
+                        <img src="ancoradomani-poster.png" alt="C'è ancora domani" class="poster-img">
+                        <div class="poster-back">
+                            <h3>There's Still Tomorrow</h3>
+                            <p>Paola Cortellesi (2023)<br><br><i>There's Still Tomorrow</i>is a 2023 Italian period comedy-drama film,
+                            co-written and directed by <i>Paola Cortellesi</i> in her directorial debut. Set in postwar 1940s Italy, it follows Delia
+                            breaking traditional family patterns and aspiring to a different future, after receiving a mysterious letter.</p>
+                        </div>
+                    </div>
+                </div>
+        
+            </div> 
+        </div> 
+        
+        </main>
+    <footer>
+        <div class="footer-container">
+            <p>   &copy; 2026, Cavaleri Maria, Gaeta Francesca, Madayag Kielyn C.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
