@@ -292,31 +292,68 @@ main p {
     padding: 60px 70px;
 
     box-sizing: border-box;
-
-    /* Effetto patina */
-    background: linear-gradient(135deg,
-                rgba(255, 255, 255, 0.15) 0%,
-                rgba(20, 60, 45, 0.45) 50%,
-                rgba(5, 20, 15, 0.6) 100%);
-    backdrop-filter: blur(25px) saturate(140%);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-top: 2px solid rgba(255, 255, 255, 0.6);
-    border-left: 2px solid rgba(255, 255, 255, 0.35);
     border-radius: 50px;
+    /* Nasconde tutto ciò che esce dalla forma */
+    overflow: hidden;
 
     box-shadow:
-        0 30px 60px rgba(0, 0, 0, 0.45),
-        inset 0 2px 4px rgba(255, 255, 255, 0.5),
-        inset 0 -8px 20px rgba(0, 0, 0, 0.4);
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(163, 247, 203, 0.25);
+}
+
+/* 1. STRATO SOTTO: La luce che ruota veloce */
+.title-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1200px;
+    height: 1200px;
+
+    /* Gradiente conico con i 3 colori: da salvia a verde neon a bianco-menta */
+    background: conic-gradient(
+        transparent 0deg,
+        transparent 160deg,
+        #bad3c7 220deg,
+        #a3f7cb 290deg,
+        #e3f7ee 360deg
+    );
+
+    /* standard animation 360 rotation */
+    animation: ruota-bordo 2s linear infinite;
+    z-index: 0;
+}
+
+.title-container::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border-radius: 47px;
+
+    /* Sfondo effetto blur */
+    background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.12) 0%,
+                rgba(15, 45, 35, 0.75) 50%,
+                rgba(5, 20, 15, 0.9) 100%);
+    backdrop-filter: blur(25px);
+
+    /* Ombre interne per la profondità del vetro (non coprono la luce esterna) */
+    box-shadow:
+        0 1px 1px rgba(255, 255, 255, 0.45),
+        0 10px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1;
 }
 
 
-/* =========================================================
-   TITOLO HOMEPAGE
-   ========================================================= */
+/* titolo homepage (in primo piano) */
 
 .title-container h1 {
+    position: relative;
+    z-index: 2;
+
     width: 100%;
     max-width: none;
 
@@ -331,43 +368,20 @@ main p {
 
     text-align: center;
     text-transform: uppercase;
+}
 
+/* Animazione semplice di rotazione */
+@keyframes ruota-bordo {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 
-/* =========================================================
-   PUNTINI / GOCCE DECORATIVE (NO NEON)
-   ========================================================= */
-
-.title-container::before,
-.title-container::after {
-    position: absolute;
-    left: 0;
-
-    width: 100%;
-
-    color: rgba(255, 255, 255, 0.45);
-
-    font-size: 1rem;
-    letter-spacing: 10px;
-
-    text-align: center;
-}
-
-.title-container::before {
-    content: "  \25CF     \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF   ";
-    top: 18px;
-}
-
-.title-container::after {
-    content: "     \25CF      \25CF          \25CF      \25CF      \25CF      \25CF     \25CF      \25CF      \25CF      \25CF      \25CF      \25CF      \25CF";
-    bottom: 18px;
-}
-
-
-/* =========================================================
-   HOMEPAGE - NARRATIVE
-   ========================================================= */
+/* narratives homepage */
 
 .narratives {
     width: 100%;
@@ -388,7 +402,6 @@ main p {
 
 .narrative-card {
     flex: 1;
-
     box-sizing: border-box;
 
     background: linear-gradient(160deg,
@@ -408,6 +421,7 @@ main p {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
 
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* ETICHETTA ITINERARIO */
@@ -442,7 +456,7 @@ main p {
     font-weight: 700;
     line-height: 1.2;
 
-    color: #ffffff;
+    color: #e3f7ee;
 
     text-align: center;
 }
@@ -485,45 +499,38 @@ main p {
 
     text-align: left;
 
-    color: #e3f7ee !important;
+    color: #e3f7ee;
 }
 
 
-/* =========================================================
-   DISCOVER (PULSANTE LIQUIDO SOFT)
-   ========================================================= */
+/* discover*/
 
 .discover {
     display: inline-block;
 
     padding: 12px 26px;
 
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 38, 28, 0.5) 100%);
 
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 30px;
 
     font-size: 0.9rem;
     font-weight: 700;
 
-    color: #ffffff;
+    color: #e3f7ee;
 
-    box-shadow:
-        0 8px 15px rgba(0, 0, 0, 0.2),
-        inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
 
     transition: all 0.3s ease;
 }
 
 .narrative-card:hover .discover {
-    background: #ffffff;
+    background: #a3f7cb;
 
     color: #0b2218;
 
-    box-shadow:
-        0 10px 25px rgba(255, 255, 255, 0.3),
-        inset 0 1px 1px rgba(255, 255, 255, 1);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
 }
 
 
@@ -533,15 +540,12 @@ main p {
     transform: translateY(-8px);
 
     border-color: rgba(255, 255, 255, 0.35);
-
-    box-shadow:
-        0 30px 50px rgba(0, 0, 0, 0.5),
-        inset 0 2px 4px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
 }
 
 
 /* =========================================================
-   AREA PRINCIPALE - RULLINO GLASS
+   PAGINA ITINERARI
    ========================================================= */
 
 .area-immagini {
@@ -559,29 +563,23 @@ main p {
     margin-top: 50px;
     margin-bottom: 50px;
 
-    padding: 20px;
+    padding: 14px 20px;
 
     box-sizing: border-box;
 
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 38, 28, 0.5) 100%);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 38, 28, 0.75) 100%);
 
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-top: 1.5px solid rgba(255, 255, 255, 0.5);
     border-radius: 40px;
 
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.4),
-        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
 
     overflow: hidden;
 }
 
 
-/* =========================================================
-   ZONA SINISTRA - FOTO
-   ========================================================= */
+/* box itinerario pic */
 
 .film-panel-left {
     width: 40%;
@@ -592,7 +590,7 @@ main p {
     align-items: center;
     justify-content: space-between;
 
-    gap: 20px;
+    gap: 15px;
 
     box-sizing: border-box;
 }
@@ -619,20 +617,17 @@ main p {
 .photo-when {
     width: 100%;
 
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    color: #a3f7cb;
 
-    color: #6ee7b7;
-
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
 
     text-align: left;
 }
 
 
-/* =========================================================
-   ZONA CENTRALE - FRECCE
-   ========================================================= */
+/* frecce box itinerario */
 
 .frecce_scena {
     width: 8%;
@@ -651,7 +646,7 @@ main p {
     background: none;
     border: none;
 
-    color: #ffffff;
+    color: #e3f7ee;
 
     font-size: 2.2rem;
 
@@ -666,16 +661,14 @@ main p {
 .frecce_scena span {
     color: #bad3c7;
 
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: bold;
 
     writing-mode: vertical-lr;
 }
 
 
-/* =========================================================
-   ZONA DESTRA
-   ========================================================= */
+/* zona testi box itinerario*/
 
 .description-container-right {
     width: 45%;
@@ -692,9 +685,7 @@ main p {
 }
 
 
-/* =========================================================
-   BOTTONI STORY / METADATA / QR
-   ========================================================= */
+/* buttons story, metadata, qr */
 
 .showview-buttons {
     width: 100%;
@@ -717,16 +708,16 @@ main p {
     border-top: 1.5px solid rgba(255, 255, 255, 0.45);
     border-radius: 20px;
 
-    font-size: 0.8rem;
+    font-size: 0.8em;
     font-weight: 600;
 
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
 
     transition: all 0.3s ease;
 }
 
 .showview-buttons button:hover {
-    background: #ffffff;
+    background: #a3f7cb;
 
     color: #0b2218;
 
@@ -753,24 +744,20 @@ main p {
     display: flex;
     flex-direction: column;
 
-    background: linear-gradient(145deg, rgba(10, 32, 23, 0.7) 0%, rgba(4, 15, 10, 0.85) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: linear-gradient(145deg, rgba(10, 32, 23, 0.85) 0%, rgba(4, 15, 10, 0.95) 100%);
     color: #e3f7ee;
 
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-top: 1.5px solid rgba(255, 255, 255, 0.35);
     border-radius: 30px;
 
-    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 
     overflow-y: auto;
 }
 
 
-/* =========================================================
-   DIFFICULTY & TELL ME BUTTONS
-   ========================================================= */
+/* difficulty and tell-me buttons */
 
 .difficulty-buttons,
 .tellme-buttons {
@@ -808,8 +795,7 @@ main p {
 
 .difficulty-buttons button:hover,
 .tellme-buttons button:hover {
-    background: #ffffff;
-
+    background: #a3f7cb;
     color: #0b2218;
 }
 
@@ -871,13 +857,11 @@ main p {
 }
 
 .meta-punti:hover {
-    color: #ffffff;
+    color: #e3f7ee;
 }
 
 
-/* =========================================================
-   MODAL (LIQUID GLASS POPUP)
-   ========================================================= */
+/* metadata buttons */
 
 .modal-overlay {
     position: fixed;
@@ -920,11 +904,9 @@ main p {
 
     box-shadow:
         0 30px 60px rgba(0, 0, 0, 0.6),
-        inset 0 2px 3px rgba(255, 255, 255, 0.4);
+        0 2px 3px rgba(255, 255, 255, 0.4);
 
     text-align: justify;
-
-    cursor: default;
 }
 
 .modal-box h3 {
@@ -932,7 +914,7 @@ main p {
 
     padding-bottom: 8px;
 
-    color: #ffffff;
+    color: #e3f7ee;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
@@ -974,7 +956,7 @@ main p {
 .qr-content h3 {
     margin-top: 0;
 
-    color: #ffffff;
+    color: #e3f7ee;
 
     font-size: 1.17em;
     font-weight: bold;
@@ -999,7 +981,7 @@ main p {
 
     padding: 10px;
 
-    background-color: #ffffff;
+    background-color: #e3f7ee;
 
     border-radius: 25px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -1026,9 +1008,7 @@ main p {
 }
 
 
-/* =========================================================
-   POSTER (GLASS FLIP CARD)
-   ========================================================= */
+/* poster */
 
 .poster-container {
     width: 100%;
@@ -1136,9 +1116,7 @@ main p {
 }
 
 
-/* =========================================================
-   BOTTONI PREVIOUS / NEXT
-   ========================================================= */
+/* bottoni previous/ next all pages */
 
 .bottoni-pagine {
     width: 100%;
@@ -1165,19 +1143,19 @@ main p {
     font-size: 0.9rem;
     font-weight: 700;
 
-    color: #ffffff;
+    color: #e3f7ee;
 
     text-decoration: none;
 
     box-shadow:
         0 10px 20px rgba(0, 0, 0, 0.25),
-        inset 0 1px 2px rgba(255, 255, 255, 0.4);
+        0 1px 1px rgba(255, 255, 255, 0.45);
 
     transition: all 0.3s ease;
 }
 
 .bottone:hover {
-    background: #ffffff;
+    background: #a3f7cb;
 
     color: #0b2218;
 
@@ -1188,6 +1166,82 @@ main p {
     margin-left: auto;
 }
 
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.disclaimer-page {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.disclaimer-page .page-title {
+    text-align: center;
+    max-width: none;
+    margin-bottom: 40px;
+
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #a3f7cb;
+    text-shadow: 0 0 20px rgba(163, 247, 203, 0.35);
+}
+
+.disclaimer-page .disclaimer-item {
+    display: flex;
+    flex-direction: row-reverse; /* dispari: txt a snx, n a dx */
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
+    box-sizing: border-box;
+}
+
+.disclaimer-page .disclaimer-item:last-child {
+    border-bottom: none;
+}
+
+.disclaimer-page .disclaimer-item:nth-child(even) {
+    flex-direction: row;
+    /* pari: n a snx, txt a dx */
+}
+
+/* num grande neon */
+.disclaimer-page .disclaimer-number {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #a3f7cb;
+    text-shadow: 0 0 20px rgba(163, 247, 203, 0.4);
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.disclaimer-page .disclaimer-content {
+    flex-grow: 1;
+}
+
+/* annullare i vincoli globali di main h2 e main p*/
+.disclaimer-page .disclaimer-title,
+.disclaimer-page .disclaimer-text {
+    max-width: none;
+    margin: 0;
+}
+
+.disclaimer-page .disclaimer-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #e3f7ee;
+    text-align: left;
+}
+
+.disclaimer-page .disclaimer-text {
+    text-align: justify;
+    line-height: 1.6;
+    color: #bad3c7;
+}
 
 /* =========================================================
    FOOTER
@@ -1229,13 +1283,13 @@ footer p {
 }
 
 footer a {
-    color: #6ee7b7;
+    color: #a3f7cb;
 
     font-size: 0.85rem;
 }
 
 footer a:hover {
-    color: #ffffff;
+    color: #e3f7ee;
 }
 
 
@@ -1311,19 +1365,12 @@ footer a:hover {
         border-radius: 30px;
     }
 
-    .title-container h1 {
-        font-size: 2.8rem;
+    .title-container::after {
+        border-radius: 27px;
     }
 
-    .title-container::before,
-    .title-container::after {
-        font-size: 0.8rem;
-
-        letter-spacing: 4px;
-
-        overflow: hidden;
-
-        white-space: nowrap;
+    .title-container h1 {
+        font-size: 2.8rem;
     }
 
     .narratives {
@@ -1407,23 +1454,125 @@ footer a:hover {
     footer {
         padding: 25px 20px;
     }
+
+    /* DISCLAIMER MOBILE */
+    .disclaimer-page .page-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
+    .disclaimer-page .disclaimer-item,
+    .disclaimer-page .disclaimer-item:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 30px 0;
+    }
+
+    .disclaimer-page .disclaimer-number {
+        font-size: 3rem;
+    }
+
+    .disclaimer-page .disclaimer-title {
+        font-size: 1.3rem;
+    }
+
+    /* MAPPA MOBILE */
+    .map-page h1 {
+        font-size: 2.5rem;
+    }
+
+    #map {
+        height: 400px;
+    }
+
+    #filters {
+        flex-wrap: wrap;
+    }
+
+    #locations-list::before {
+        left: 24px;
+    }
+
+    .location-card {
+        gap: 18px;
+    }
+
+    .location-number {
+        flex-basis: 50px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+
+    .location-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .route-connection {
+        width: calc(100% - 68px);
+        margin-left: 68px;
+    }
 }
 
 
-/* MAPPA */
+/* =========================================================
+   MAPPA - CYBER GLASS 2035
+   ========================================================= */
 
+.map-page {
+    width: 100%;
+}
+
+/* TITOLO MAPPA */
+.map-page h1 {
+    width: 100%;
+    max-width: 950px;
+    margin: 35px auto 25px auto;
+
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #a3f7cb;
+    text-align: center;
+    text-shadow: 0 0 25px rgba(163, 247, 203, 0.4);
+}
+
+/* CONTENITORE MAPPA LEAFLET */
 #map {
-    height: 500px;
-    width: 70%;
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 950px;
+    height: 550px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-top: 2px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(163, 247, 203, 0.15);
+
+    overflow: hidden;
+}
+
+.leaflet-popup-content-wrapper {
+    background: rgba(14, 42, 32, 0.95) !important;
+    backdrop-filter: blur(15px);
+    color: #e3f7ee !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px !important;
+}
+
+.leaflet-popup-tip {
+    background: rgba(14, 42, 32, 0.95) !important;
 }
 
 .leaflet-popup-content {
     font-family: inherit;
-    color: #0b2218;
+    color: #e3f7ee;
 }
 
 .map-legend {
@@ -1433,4 +1582,264 @@ footer a:hover {
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     color: #e3f7ee;
+}
+
+/* =========================================================
+   MAPPA
+   ========================================================= */
+
+#filters {
+    width: 100%;
+    max-width: 950px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 30px auto 0 auto;
+}
+
+#filters button {
+    padding: 9px 18px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 38, 28, 0.6) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.45);
+    border-radius: 25px;
+
+    font-size: 0.85rem;
+
+    color: #e3f7ee;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#filters button:hover,
+#filters button.active {
+    background: #a3f7cb;
+    color: #0b2218;
+    box-shadow: 0 0 20px rgba(163, 247, 203, 0.45);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   EXPLORE THE LOCATIONS
+   ========================================================= */
+
+.locations-section {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 65px auto 40px auto;
+}
+
+.locations-section h2 {
+    color: #e3f7ee;
+    font-size: 2.4rem;
+}
+
+/* =========================================================
+   CONTENITORE ITINERARIO E TIMELINE
+   ========================================================= */
+
+#locations-list {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Linea verticale luminosa */
+#locations-list::before {
+    content: "";
+    position: absolute;
+
+    left: 31px;
+    top: 30px;
+    bottom: 30px;
+
+    width: 2px;
+
+    background: linear-gradient(180deg, #a3f7cb 0%, rgba(163, 247, 203, 0.3) 100%);
+}
+
+/* Singola tappa */
+.location-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 25px 0;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+}
+
+/* Badge numero tappa neon */
+.location-number {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    background: linear-gradient(135deg, rgba(20, 60, 45, 0.95) 0%, rgba(6, 20, 14, 0.95) 100%);
+    border: 2px solid #a3f7cb;
+    border-radius: 50%;
+
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #a3f7cb;
+    box-shadow: 
+        0 0 15px rgba(163, 247, 203, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Informazioni location */
+.location-info {
+    flex: 1;
+    padding-top: 5px;
+}
+
+.location-info h3 {
+    margin: 0 0 6px 0;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e3f7ee;
+    letter-spacing: 0.5px;
+}
+
+/* Film associati */
+.location-info p:first-of-type {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 10px 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #a3f7cb;
+    text-align: left;
+}
+
+/* Descrizione */
+.location-info p:nth-of-type(2) {
+    width: 100%;
+    max-width: 700px;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #bad3c7;
+    text-align: justify;
+}
+
+/* Link Explore tappa */
+.location-info a {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 8px 18px;
+
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 38, 28, 0.6) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #e3f7ee;
+    text-decoration: none;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.location-info a:hover {
+    background: #a3f7cb;
+    color: #0b2218;
+    border-color: #a3f7cb;
+    box-shadow: 0 0 15px rgba(163, 247, 203, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Più location nella stessa tappa */
+.location-subitem {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba(163, 247, 203, 0.25);
+}
+
+.location-subitem:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* =========================================================
+   CONNESSIONE TRA TAPPE
+   ========================================================= */
+
+.route-connection {
+    position: relative;
+    width: calc(100% - 95px);
+    margin: -8px 0 -8px 95px;
+    padding: 8px 15px 8px 18px;
+    box-sizing: border-box;
+    border-left: 1px dashed rgba(163, 247, 203, 0.35);
+}
+
+.route-connection::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: 12px;
+    width: 7px;
+    height: 7px;
+    background-color: #a3f7cb;
+    box-shadow: 0 0 8px #a3f7cb;
+    border-radius: 50%;
+}
+
+.route-main-info {
+    margin-bottom: 4px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #a3f7cb;
+}
+
+.route-directions {
+    width: 100% !important;
+    max-width: 650px !important;
+    margin: 0 !important;
+    font-family: inherit;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    color: #bad3c7 !important;
+    text-align: left !important;
+}
+
+.route-directions strong {
+    font-weight: 600;
+    color: #e3f7ee;
+}
+
+/* Vista "All locations" */
+#locations-list:not(:has(.location-number))::before {
+    display: none;
+}
+
+.location-card:not(:has(.location-number)) {
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(163, 247, 203, 0.15);
+}
+
+.location-card:not(:has(.location-number)) .location-info {
+    padding-left: 0;
 }
