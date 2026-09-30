@@ -35,7 +35,9 @@
             "schema:name": "A special day (1977)",
             "schema:director": "Ettore Scola",
             "schema:episode": "Fascist participants returning from the mass rally through the internal courtyard",
-            "schema:direction": "High-angle",
+            "schema:cameraPosition": "Inner courtyard, 2nd-floor residential walkway",
+            "schema:shotType": "Wide shot",
+            "schema:cameraAngle": "High angle",
             "dcterms:type": "residential courtyard"
           },
           "location": {
@@ -80,10 +82,12 @@
             }
           },
           "cinematic_context": {
-            "schema:name": "Rome, Open City(1945)",
+            "schema:name": "Rome, Open City (1945)",
             "schema:director": "Roberto Rossellini",
             "schema:episode": "German soldiers patrolling the streets of Rome during the German occupation, filmed at night",
-            "schema:direction": "Lateral long shot",
+            "schema:cameraPosition": "South-west side of the square facing the Spanish Steps",
+            "schema:shotType": "Wide shot / Long shot",
+            "schema:cameraAngle": "Eye level",
             "dcterms:type": "urban square"
           },
           "location": {
@@ -130,9 +134,11 @@
           "cinematic_context": {
             "schema:name": "There's Still Tomorrow (2023)",
             "schema:director": "Paola Cortellesi",
-            "schema:episode": "scrivere",
-            "schema:direction": "scrivere",
-            "dcterms:type": "scrivere"
+            "schema:episode": "Characters walking through Piazza Navona framed by the historic baroque architecture and fountains",
+            "schema:cameraPosition": "Eastern perimeter of the square, near Fontana dei Quattro Fiumi",
+            "schema:shotType": "Medium shot",
+            "schema:cameraAngle": "Eye level",
+            "dcterms:type": "historic public square"
           },
           "location": {
             "schema:name": "Palazzo Federici",
@@ -176,10 +182,12 @@
             }
           },
           "cinematic_context": {
-            "schema:name": "There's still tomorrow (2023)",
+            "schema:name": "There's Still Tomorrow (2023)",
             "schema:director": "Paola Cortellesi",
             "schema:episode": "A flashback to Delia’s wedding inside the church: the couple stand side by side at the altar while the priest conducts the ceremony",
-            "schema:direction": "Central low-angle rear view",
+            "schema:cameraPosition": "Central church nave facing the main altar",
+            "schema:shotType": "Medium shot",
+            "schema:cameraAngle": "Low angle",
             "dcterms:type": "sacred architecture"
           },
           "location": {
@@ -224,11 +232,13 @@
             }
           },
           "cinematic_context": {
-            "schema:name": "There's still tomorrow (2023)",
+            "schema:name": "There's Still Tomorrow (2023)",
             "schema:director": "Paola Cortellesi",
             "schema:episode": "High-angle view of the bustling local market stalls in Piazza Testaccio",
-            "schema:direction": "High-angle",
-            "dcterms:type": "rurban space"
+            "schema:cameraPosition": "Elevated residential balcony overlooking the market",
+            "schema:shotType": "Wide shot",
+            "schema:cameraAngle": "High angle",
+            "dcterms:type": "urban space"
           },
           "location": {
             "schema:name": "Piazza Testaccio",
@@ -274,8 +284,10 @@
           "cinematic_context": {
             "schema:name": "Mamma Roma (1962)",
             "schema:director": "Pier Paolo Pasolini",
-            "schema:episode": "JEttore walks alone through the neighborhood near the aqueduct arches at Porta Furba",
-            "schema:direction": "Eye-level central tracking shot",
+            "schema:episode": "Ettore walks alone through the neighborhood near the aqueduct arches at Porta Furba",
+            "schema:cameraPosition": "Street level alongside the market stands and arches",
+            "schema:shotType": "Medium shot",
+            "schema:cameraAngle": "Eye level",
             "dcterms:type": "urban infrastructure"
           },
           "location": {
@@ -320,10 +332,12 @@
             }
           },
           "cinematic_context": {
-            "schema:name": "The great beauty (2013)",
+            "schema:name": "The Great Beauty (2013)",
             "schema:director": "Paolo Sorrentino",
             "schema:episode": "Jep, Ramona and the caretaker walk along the private tree-lined avenue of the Villa dei Cavalieri di Malta, with the illuminated dome of St Peter’s towering at the far end of the vista framed by the hedges",
-            "schema:direction": "Eye-level central tracking shot",
+            "schema:cameraPosition": "Central garden allée framed by hedges towards St. Peter's",
+            "schema:shotType": "Medium wide shot",
+            "schema:cameraAngle": "Eye level",
             "dcterms:type": "residential interior"
           },
           "location": {
@@ -376,8 +390,10 @@
           "cinematic_context": {
             "schema:name": "A Special Day (1977)",
             "schema:director": "Ettore Scola",
-            "schema:episode": "DESCRIZIONE CHIEDI",
-            "schema:direction": "South-East (135°)",
+            "schema:episode": "Domestic life of Antonietta inside the apartment, looking out into the complex courtyard during the fascist rally",
+            "schema:cameraPosition": "South-east side of courtyard / Domestic window (135°)",
+            "schema:shotType": "Medium shot",
+            "schema:cameraAngle": "Eye level",
             "dcterms:type": "residential complex"
           },
           "location": {
@@ -422,10 +438,12 @@
             }
           },
           "cinematic_context": {
-            "schema:name": "Bellissima(1951)",
+            "schema:name": "Bellissima (1951)",
             "schema:director": "Luchino Visconti",
-            "schema:episode": "DESCRIZIONE CHIEDI",
-            "schema:direction": "North-west (Azimuth 315°)",
+            "schema:episode": "Maddalena arrives at Cinecittà studios with her daughter Maria for the film auditions",
+            "schema:cameraPosition": "North-west entrance plaza of the film studios (315°)",
+            "schema:shotType": "Wide shot",
+            "schema:cameraAngle": "Eye level",
             "dcterms:type": "Film Studio/Cinematic Set"
           },
           "location": {
@@ -470,10 +488,12 @@
             }
           },
           "cinematic_context": {
-            "schema:name": "C'è acnora domani (2023)",
+            "schema:name": "C'è ancora domani (2023)",
             "schema:director": "Paola Cortellesi",
             "schema:episode": "Delia's house exteriors and neighborhood life in Testaccio",
-            "schema:direction": "North-West (135°)",
+            "schema:cameraPosition": "North-west courtyard and residential stairs (135°)",
+            "schema:shotType": "Medium shot",
+            "schema:cameraAngle": "Low angle",
             "dcterms:type": "urban neighborhood"
           },
           "location": {
@@ -520,8 +540,10 @@
           "cinematic_context": {
             "schema:name": "C'è ancora domani (2023)",
             "schema:director": "Paola Cortellesi",
-            "schema:episode": "DESCRIZIONE CHIEDI",
-            "schema:direction": "South-West (225°)",
+            "schema:episode": "Delia walking through the market stalls in Piazza Testaccio interacting with local vendors",
+            "schema:cameraPosition": "South-west side of the public market square (225°)",
+            "schema:shotType": "Wide shot",
+            "schema:cameraAngle": "Eye level",
             "dcterms:type": "Public square"
           },
           "location": {
@@ -569,7 +591,9 @@
             "schema:name": "C'è ancora domani (2023)",
             "schema:director": "Paola Cortellesi",
             "schema:episode": "Delia's walk along the river and meeting with the American soldier William",
-            "schema:direction": "North-West (Azimuth 315°)",
+            "schema:cameraPosition": "North-west riverside promenade along Lungotevere (315°)",
+            "schema:shotType": "Medium shot",
+            "schema:cameraAngle": "Eye level",
             "dcterms:type": "Urban Riverfront"
           },
           "location": {
@@ -614,10 +638,12 @@
             }
           },
           "cinematic_context": {
-            "schema:name": "Mamma Roma (1962())",
+            "schema:name": "Mamma Roma (1962)",
             "schema:director": "Pier Paolo Pasolini",
             "schema:episode": "Market and public square sequences with Ettore and Mamma Roma",
-            "schema:direction": "South-East (135°)",
+            "schema:cameraPosition": "South-east market avenue near Piazza dei Mercanti (135°)",
+            "schema:shotType": "Wide shot",
+            "schema:cameraAngle": "Eye level",
             "dcterms:type": "Historic Market"
           },
           "location": {
@@ -664,8 +690,10 @@
           "cinematic_context": {
             "schema:name": "La grande bellezza (2013)",
             "schema:director": "Paolo Sorrentino",
-            "schema:episode": "DESCRIZIONE CHIEDI",
-            "schema:direction": "North - West (315°)",
+            "schema:episode": "Architectural contemplation of Bramante's Tempietto in the quiet courtyard of San Pietro in Montorio",
+            "schema:cameraPosition": "North-west courtyard facing Bramante's Tempietto (315°)",
+            "schema:shotType": "Medium wide shot",
+            "schema:cameraAngle": "Eye level",
             "dcterms:type": "Historic Site Set"
           },
           "location": {
@@ -710,10 +738,12 @@
             }
           },
           "cinematic_context": {
-            "schema:name": "Mamma Roma (1962) & The Great Beauty (La grande bellezza, 2013)",
-            "schema:director": "Pier Paolo Pasolini & Paolo Sorrentino",
+            "schema:name": "The Great Beauty (La grande bellezza, 2013)",
+            "schema:director": "Paolo Sorrentino",
             "schema:episode": "Final panoramic views of Rome from the monumental fountain terrace",
-            "schema:direction": "East (9°)",
+            "schema:cameraPosition": "East-facing terrace of the Janiculum panoramic belvedere (9°)",
+            "schema:shotType": "Extreme wide shot",
+            "schema:cameraAngle": "High angle",
             "dcterms:type": "Panoramic Belvedere Set"
           },
           "location": {
