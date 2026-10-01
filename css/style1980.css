@@ -514,15 +514,28 @@ main p {
     box-sizing: border-box;
 }
 
-/* 3 pulsanti cerchietti colorati idea dekstop */
+/* Pulsante quadrato con "X" stile finestra desktop retro */
 .card-decoration::before {
-    content: "";
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #ff007f;
-    box-shadow: 16px 0 0 #ffe600, 32px 0 0 #00f3ff;
+    content: "X";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+
+    color: #ff007f;
+    background-color: #c2b8cf;
+    border-top: 2px solid #c2b8cf;
+    border-left: 2px solid #c2b8cf;
+    border-right: 2px solid #46365d;
+    border-bottom: 2px solid #46365d;
+
+    border-radius: 2px;
+
+    font-family: 'Press Start 2P', monospace, sans-serif;
+    font-size: 10px;
+    line-height: 1;
 }
 
 
@@ -629,6 +642,12 @@ main p {
 
 .narrative-card:hover .card-decoration {
     border-bottom-color: #ffe600;
+}
+
+.narrative-card:hover .card-decoration::before {
+    border-color: #ffe600;
+    color: #ffe600;
+    box-shadow: 0 0 6px #ffe600;
 }
 
 .narrative-card:hover .card-body h3 {
