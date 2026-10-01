@@ -33,6 +33,10 @@ button {
     cursor: pointer;
 }
 
+h2 {
+    text-shadow: 0 0 3px #00f3ff;
+}
+
 
 /* =========================================================
    HEADER / NAVBAR
@@ -298,12 +302,20 @@ main p {
     padding: 60px 70px;
     box-sizing: border-box;
     
+    border: 2px solid #ffe600;
     background-color: #1d0243;
     box-shadow:
         0 0 5px #0ff,
         0 0 10px #0ff,
         0 0 20px #0ff,
         0 0 40px #0ff;
+
+    background-image: repeating-linear-gradient(0deg,
+        rgba(255, 0, 127, 0.04) 0px,
+        rgba(255, 0, 127, 0.04) 2px,
+        transparent 2px, /* spessore linea */
+        transparent 8px /* Distanza tra le linee */
+    );
 
 }
 
@@ -460,56 +472,72 @@ main p {
 }
 
 
-/* decor narratives homepage */
+/* =========================================================
+   HOMEPAGE - NARRATIVE CARD 
+   ========================================================= */
 
 .narrative-card {
     flex: 1;
-
     box-sizing: border-box;
 
-    background-color: #1c1b1b;
+    
+    background-color: #1d0243;
+    background-image: repeating-linear-gradient(0deg,
+        rgba(255, 0, 127, 0.04) 0px,
+        rgba(255, 0, 127, 0.04) 2px,
+        transparent 2px, /* spessore linea */
+        transparent 8px /* Distanza tra le linee */
+            );
 
     color: white;
 
-    border: 4px solid #00f3ff;
+    border: 2px solid #00f3ff;
+    border-radius: 8px;
+    overflow: hidden;
 
-    transition:
-        opacity 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 
-/* =========================================================
-   PARTE SUPERIORE TIPO CIAK
-   ========================================================= */
+/* parte superiore barra ricerca */
 
 .card-decoration {
     height: 45px;
 
-    background:
-        repeating-linear-gradient(135deg,
-            white 0px,
-            white 35px,
-            #1c1b1b 35px,
-            #1c1b1b 70px);
+    background: #15022e;
 
-    border-bottom: 4px solid white;
+    border-bottom: 2px solid #00f3ff;
+
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    box-sizing: border-box;
+}
+
+/* 3 pulsanti cerchietti colorati idea dekstop */
+.card-decoration::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ff007f;
+    box-shadow: 16px 0 0 #ffe600, 32px 0 0 #00f3ff;
 }
 
 
 /* =========================================================
-   ETICHETTA ITINERARIO
+   ETICHETTA ITINERARIO / TAB DI NAVIGAZIONE
    ========================================================= */
 
 .card-label {
     padding: 12px 20px;
 
-    border-bottom: 2px solid #f4e8c1;
+    border-bottom: 2px #ff007f;
 
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
 
     color: #ffe600;
 
@@ -517,45 +545,31 @@ main p {
 }
 
 
-/* =========================================================
-   CORPO CARD
-   ========================================================= */
-
 .card-body {
-    padding: 25px;
+    padding: 24px 22px;
 }
 
 
-/* =========================================================
-   TITOLO NARRATIVA
-   ========================================================= */
+/* titolo */
 
 .card-body h3 {
     min-height: 80px;
-
-    margin: 0 0 20px 0;
+    margin: 0 0 30px 0;
 
     font-family: 'Press Start 2P', cursive;
-    font-size: 1.2rem;
-    line-height: 1.4;
+    font-size: 1.15rem;
+    line-height: 1.45;
     letter-spacing: 1px;
 
     color: #ff007f;
-
     text-align: center;
 }
 
-
-/* =========================================================
-   DETTAGLI
-   ========================================================= */
-
 .card-details {
     padding: 10px 0;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    border-top: 2px dashed #ff007f;
 
-    border-top: 1px dashed #ff007f;
-    border-bottom: 1px dashed #ff007f;
 }
 
 .card-details p {
@@ -563,69 +577,43 @@ main p {
     max-width: none;
 
     margin: 5px 0;
-
     font-family: 'VT323', monospace;
-    font-size: 1rem;
-    line-height: 1.3rem;
+    font-size: 1.25rem;
+    line-height: 1.4rem;
 
     color: #00f3ff;
-
     text-align: left;
 }
 
-
-/* =========================================================
-   DESCRIZIONE CARD
-   ========================================================= */
+.card-details p strong {
+    color: #ffe600;
+}
 
 .card-description {
     width: 100%;
     max-width: none;
-
     margin-bottom: 25px;
-
     font-family: 'VT323', monospace;
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1.5rem;
 
-    text-align: left;
-
-    color: white;
+    text-align: justify;
+    color: #ffffff;
 }
-
-
-/* =========================================================
-   DISCOVER
-   ========================================================= */
 
 .discover {
     display: inline-block;
+    padding: 10px 16px;
+    background-color: #1d0243;
+    border: 2px solid #00f3ff;
 
-    padding: 8px 14px;
-
-    background-color: #1c1b1b;
-
-    border: 1px solid white;
-    border-radius: 3px;
-
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
+    border-radius: 4px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.68rem;
     letter-spacing: 1px;
 
-    color: white;
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        background-color 0.2s ease;
-}
-
-.narrative-card:hover .discover {
-    background-color: #f4e8c1;
-
-    color: #943b3b;
-
-    border-color: #f4e8c1;
+    color: #00f3ff;
+    transition: all 0.2s ease;
 }
 
 
@@ -634,17 +622,24 @@ main p {
    ========================================================= */
 
 .narrative-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffe600;
+    box-shadow: 0 0 10px #ffe600;
+}
 
-    opacity: 1;
+.narrative-card:hover .card-decoration {
+    border-bottom-color: #ffe600;
+}
 
-    border-color: #f4e8c1;
+.narrative-card:hover .card-body h3 {
+    color: #ffe600;
+}
 
-    box-shadow:
-
-        0 0 8px rgba(244, 232, 193, 0.7),
-
-        0 0 18px rgba(244, 232, 193, 0.35);
-
+.narrative-card:hover .discover {
+    background-color: #ffe600;
+    color: #1d0243;
+    border-color: #ffe600;
+    box-shadow: 0 0 10px #ffe600;
 }
 
 
@@ -1449,6 +1444,314 @@ main p {
     line-height: 1.6;
 }
 
+/* =========================================================
+   MAPPA - 1980 ARCADE / SYNTHWAVE
+   ========================================================= */
+
+.map-page {
+    width: 100%;
+}
+
+/* TITOLO MAPPA */
+.map-page h1 {
+    width: 100%;
+    max-width: 950px;
+    margin: 35px auto 25px auto;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #ff007f;
+    text-align: center;
+    text-shadow: 0 0 3px #00f3ff;
+}
+
+/* CONTENITORE MAPPA LEAFLET */
+#map {
+    width: 100%;
+    max-width: 950px;
+    height: 550px;
+
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    background-color: #1d0243;
+    border: 2px solid #ffe600;
+
+    box-shadow:
+            0 0 5px #0ff,
+            0 0 10px #0ff,
+            0 0 20px #0ff,
+            0 0 40px #0ff;
+
+    border-radius: 8px;
+}
+
+.leaflet-popup-content {
+    font-family: 'VT323', monospace;
+}
+
+
+/* =========================================================
+   FILTRI MAPPA
+   ========================================================= */
+
+#filters {
+    width: 100%;
+    max-width: 950px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 30px auto 0 auto;
+}
+
+#filters button {
+    padding: 10px 18px;
+
+    background-color: #1d0243;
+    border-top: 2px solid #00f3ff;
+    border-left: 2px solid #00f3ff;
+    border-right: 2px solid #0e3537;
+    border-bottom: 2px solid #0e3537;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5rem;
+
+    color: #00f3ff;
+    transition: all 0.2s ease;
+}
+
+#filters button:hover,
+#filters button.active {
+    color: #ffe600;
+    border-top: 2px solid #0e3537;
+    border-left: 2px solid #0e3537;
+    border-right: 2px solid #00f3ff;
+    border-bottom: 2px solid #00f3ff;
+}
+
+/* =========================================================
+   EXPLORE THE LOCATIONS
+   ========================================================= */
+
+.locations-section {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 65px auto 20px auto;
+}
+
+.locations-section h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: #ff007f;
+    text-shadow: 0 0 3px #00f3ff;
+    font-size: 1.5rem;
+    margin-bottom: 45px;
+
+}
+
+/* =========================================================
+   CONTENITORE ITINERARIO E TIMELINE
+   ========================================================= */
+
+#locations-list {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Raggio laser neon verticale */
+#locations-list::before {
+    content: "";
+    position: absolute;
+
+    left: 31px;
+    top: 30px;
+    bottom: 30px;
+
+    width: 2px;
+
+    background: #ff007f ;
+}
+
+/* Singola tappa */
+.location-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 25px 0;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+}
+
+/* Gettone numero tappa */
+.location-number {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    background-color: #1d0243;
+    border: 2px solid #ffe600;
+    border-radius: 50%;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    color: #ffe600;
+    box-shadow: 0 0 12px rgba(255, 230, 0, 0.6);
+}
+
+/* Informazioni location */
+.location-info {
+    flex: 1;
+    padding-top: 5px;
+}
+
+.location-info h3 {
+    margin: 0 0 8px 0;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.1rem;
+    color: #ff007f;
+    letter-spacing: 1px;
+
+    text-shadow: 0 0 3px #00f3ff;
+}
+
+/* Film associati */
+.location-info p:first-of-type {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 10px 0;
+    font-family: 'VT323', monospace;
+    font-size: 1.25rem;
+    color: #00f3ff;
+    text-align: left;
+}
+
+/* Descrizione */
+.location-info p:nth-of-type(2) {
+    width: 100%;
+    max-width: 700px;
+    margin: 0;
+
+    font-family: 'VT323', monospace;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: white;
+    text-align: justify;
+}
+
+/* Link Explore tappa */
+.location-info a {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 8px 16px;
+
+    background-color: #1d0243;
+    border: 1px solid #00f3ff;
+    border-radius: 0px;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    letter-spacing: 0.05rem;
+    color: #00f3ff;
+    text-decoration: none;
+}
+
+.location-info a:hover {
+    background-color: #ffe600;
+    color: #1d0243;
+    border-color: #ffe600;
+    box-shadow: 0 0 12px #ffe600;
+}
+
+/* Più location nella stessa tappa */
+.location-subitem {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba(255, 0, 127, 0.45);
+}
+
+.location-subitem:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* =========================================================
+   CONNESSIONE TRA TAPPE
+   ========================================================= */
+
+.route-connection {
+    position: relative;
+    width: calc(100% - 95px);
+    margin: -8px 0 -8px 95px;
+    padding: 8px 15px 8px 18px;
+    box-sizing: border-box;
+}
+
+.route-connection::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 12px;
+    width: 8px;
+    height: 8px;
+    background-color: #00f3ff;
+    box-shadow: 0 0 8px #00f3ff;
+    border-radius: 50%;
+}
+
+.route-main-info {
+    margin-bottom: 4px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    color: #ffe600;
+}
+
+.route-directions {
+    width: 100% !important;
+    max-width: 650px !important;
+    margin: 0 !important;
+    font-family: 'VT323', monospace !important;
+    font-size: 1.15rem !important;
+    line-height: 1.35 !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    text-align: left !important;
+}
+
+.route-directions strong {
+    font-weight: normal;
+    color: #00f3ff;
+}
+
+/* Vista all locations*/
+#locations-list:not(:has(.location-number))::before {
+    display: none;
+}
+
+.location-card:not(:has(.location-number)) {
+    padding: 22px 0;
+}
+
+.location-card:not(:has(.location-number)) .location-info {
+    padding-left: 0;
+}
 
 /* =========================================================
    FOOTER
@@ -1604,7 +1907,7 @@ footer a, footer a:hover {
     .card-body h3 {
         min-height: auto;
 
-        font-size: 2rem;
+        font-size: 1.1rem;
     }
 
 
