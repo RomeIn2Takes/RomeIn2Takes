@@ -1337,16 +1337,16 @@ main p {
 
     padding: 10px 18px;
 
-    background-color: #ff007f;
+    background-color: #1d0243;
 
-    border: 1px solid #ff007f;
+    border: 1px solid #00f3ff;
     border-radius: 3px;
 
     font-family: 'VT323', monospace;
     font-size: 1.25rem;
     letter-spacing: 1.5px;
 
-    color: #ffe600;
+    color: #00f3ff;
     box-shadow: 0 0 10px #00f3ff;
 
     text-decoration: none;
