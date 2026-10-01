@@ -1446,7 +1446,7 @@ main p {
 }
 
 /* =========================================================
-   MAPPA - 1980 ARCADE / SYNTHWAVE
+   MAPPA 
    ========================================================= */
 
 .map-page {
@@ -1704,6 +1704,7 @@ main p {
     margin: -8px 0 -8px 95px;
     padding: 8px 15px 8px 18px;
     box-sizing: border-box;
+    border-left: 0.5px solid #00f3ff;
 }
 
 .route-connection::before {
