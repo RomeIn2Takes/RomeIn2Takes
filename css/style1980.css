@@ -251,7 +251,7 @@ main h2 {
     margin-bottom: 15px;
 
     font-family: 'Press Start 2P', cursive;
-    font-size: 1rem;
+    font-size: 1.5rem;
     letter-spacing: 2px;
 
     color: #ff007f;
@@ -271,9 +271,6 @@ main p {
     font-family: 'VT323', monospace;
     font-size: 1.3rem;
     line-height: 1.5rem;
-
-    color: #ffffff;
-
     text-align: justify;
 }
 
@@ -481,7 +478,7 @@ main p {
     box-sizing: border-box;
 
     
-    background-color: #1d0243;
+    background-color: #c2b8cf;
     background-image: repeating-linear-gradient(0deg,
         rgba(255, 0, 127, 0.04) 0px,
         rgba(255, 0, 127, 0.04) 2px,
@@ -489,7 +486,6 @@ main p {
         transparent 8px /* Distanza tra le linee */
             );
 
-    color: white;
 
     border: 2px solid #00f3ff;
     border-radius: 8px;
@@ -504,7 +500,7 @@ main p {
 .card-decoration {
     height: 45px;
 
-    background: #15022e;
+    background: #998fa7;
 
     border-bottom: 2px solid #00f3ff;
 
@@ -611,7 +607,7 @@ main p {
     line-height: 1.5rem;
 
     text-align: justify;
-    color: #ffffff;
+    color: #1d0243;
 }
 
 .discover {
@@ -1401,14 +1397,23 @@ main p {
    ========================================================= */
 
 .disclaimer-page {
+    width: 100%;
     max-width: 950px;
     margin: 0 auto;
 }
 
 .disclaimer-page .page-title {
+    width: 100%;
+    max-width: 950px;
+    margin: 35px auto 50px auto;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.8em;
+    letter-spacing: 3px;
+
+    color: #ff007f;
     text-align: center;
-    max-width: none;
-    margin-bottom: 40px;
+    text-shadow: 0 0 3px #00f3ff;
 }
 
 .disclaimer-page .disclaimer-item {
@@ -1417,9 +1422,9 @@ main p {
     /* dispari: txt a snx, n a dx */
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 50px;
     padding: 40px 0;
-    border-bottom: 1px solid #f4e8c1;
+    border-bottom: 2px dashed #ffe600;
     box-sizing: border-box;
 }
 
@@ -1432,20 +1437,25 @@ main p {
     /* pari: n a snx, txt a dx */
 }
 
-/* num grande */
+
+.disclaimer-page .disclaimer-title {
+    color: #ffe600;
+    text-shadow: 0 0 3px #ffe600;
+}
+
 .disclaimer-page .disclaimer-number {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #f4e8c1;
-    flex-shrink: 0;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
     line-height: 1;
+    color: #ffe600;
+    text-shadow: 0 0 15px #00f3ff;
 }
 
 .disclaimer-page .disclaimer-content {
     flex-grow: 1;
 }
 
-/* annullare i vincoli globali di main h2 e main p*/
+/* Annullare i vincoli globali di main h2 e main p */
 .disclaimer-page .disclaimer-title,
 .disclaimer-page .disclaimer-text {
     max-width: none;
@@ -1453,15 +1463,21 @@ main p {
 }
 
 .disclaimer-page .disclaimer-title {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-    color: #f4e8c1;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    color: #ff007f;
+    text-shadow: 0 0 3px #00f3ff;
     text-align: left;
 }
 
 .disclaimer-page .disclaimer-text {
+    font-family: 'VT323', monospace;
+    font-size: 1.35rem;
+    line-height: 1.5;
     text-align: justify;
-    line-height: 1.6;
 }
 
 /* =========================================================
@@ -2007,31 +2023,35 @@ footer a, footer a:hover {
     footer {
         padding: 25px 20px;
     }
-}
 
-/*MAPPA*/
-#map {
-    height: 500px;
-    width: 70%;
-}
+    /* DISCLAIMER MOBILE */
+    .disclaimer-page .page-title {
+        font-size: 1.6rem;
+        margin: 25px auto 35px auto;
+    }
 
+    .disclaimer-page .disclaimer-item,
+    .disclaimer-page .disclaimer-item:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 30px 0;
+    }
 
-.leaflet-popup-content {
-    font-family: inherit;
-}
+    .disclaimer-page .disclaimer-number {
+        font-size: 2.4rem;
+    }
 
-.map-legend {
-    padding: 10px;
-}
+    .disclaimer-page .disclaimer-title {
+        font-size: 1rem;
+    }
 
-/*disclaimer*/
-.disclaimer-page .disclaimer-item,
-.disclaimer-page .disclaimer-item:nth-child(even) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-}
+    .disclaimer-page .disclaimer-text {
+        font-size: 1.2rem;
+    }
 
-.disclaimer-page .disclaimer-number {
-    font-size: 2.5rem;
+    /* MAPPA MOBILE */
+    #map {
+        height: 420px;
+    }
 }
