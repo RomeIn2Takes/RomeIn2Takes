@@ -1,0 +1,2204 @@
+/* =========================================================
+   1900 — EARLY CINEMA
+   ========================================================= */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #343434;
+    color: #e2e2df;
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 16px 40px;
+    box-sizing: border-box;
+
+    background-color: #292929;
+    border-bottom: 1px solid #707070;
+}
+
+.link-head {
+    display: flex;
+    align-items: center;
+}
+
+.link-head > a,
+.dropdown > a {
+    margin-right: 24px;
+
+    color: #e8e6e1;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.link-head > a:hover,
+.dropdown > a:hover {
+    color: white;
+}
+
+
+/* =========================================================
+   DROPDOWN
+   ========================================================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 220px;
+
+    background-color: #292929;
+    border: 1px solid #707070;
+
+    z-index: 2100;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+
+    padding: 12px 15px;
+
+    color: #e8e6e1;
+
+    font-size: 0.85rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: #e8e6e1;
+    color: #111;
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.bar-style {
+    position: sticky;
+    top: 51px;
+    z-index: 999;
+
+    display: flex;
+
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: #343434;
+    border-bottom: 1px solid #707070;
+}
+
+.bar-item {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 58px;
+
+    border-right: 1px solid #606060;
+}
+
+.bar-item:last-child {
+    border-right: none;
+}
+
+.bar-item a {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #bdbdb9;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.bar-item a:hover {
+    color: #f1f1ed;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main h2 {
+    width: 100%;
+    max-width: 950px;
+
+    margin-bottom: 20px;
+
+    color: #eee;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+main p {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    color: #d0ceca;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.7;
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   HOMEPAGE - TITLE
+   ========================================================= */
+
+.home-introduction {
+    width: 100%;
+    max-width: 950px;
+    margin: 60px auto 80px;
+    text-align: center;
+}
+
+.title-container {
+    width: 100%;
+    min-height: 490px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 40px;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+        url("../img/tende.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+.title-container::before {
+    content: "";
+    position: absolute;
+    width: 549px;
+    height: 353px;
+
+    left: 50%;
+    top: 68%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(228, 228, 220, 0.25) 0%,
+        rgba(210, 210, 200, 0.20) 58%,
+        rgba(200, 200, 190, 0.10) 78%,
+        transparent 100%
+    );
+
+    pointer-events: none;
+}
+
+.title-container h1 {
+    position: relative;
+    z-index: 2;
+
+    width: 590px;
+    margin: 0;
+    color: #d3d1cc;
+
+    font-family: 'Lobster Two', cursive;
+    font-size: 7.2rem;
+    font-style: italic;
+    font-weight: 700;
+
+    line-height: 0.97;
+    letter-spacing: -4px;
+
+    text-align: center;
+    text-transform: none;
+    transform: translateY(45px) rotate(-8deg);
+
+    text-shadow:
+        3px 4px 1px rgba(0, 0, 0, 0.65),
+        6px 7px 4px rgba(0, 0, 0, 0.28);
+}
+
+.home-introduction > p {
+    max-width: 780px;
+    margin: 0 auto;
+
+    color: #e2e2df;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HOMEPAGE - NARRATIVE
+   ========================================================= */
+
+.narratives {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 70px auto;
+}
+
+.narrativa-container {
+    width: 100%;
+
+    display: flex;
+
+    gap: 40px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   CARD NARRATIVE
+   ========================================================= */
+
+.narrative-card {
+    flex: 1;
+
+    box-sizing: border-box;
+
+    background-color: #1c1b1b;
+
+    color: white;
+
+    border: 4px solid white;
+
+    transition:
+        opacity 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   PARTE SUPERIORE TIPO CIAK
+   ========================================================= */
+
+.card-decoration {
+    height: 45px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            white 0px,
+            white 35px,
+            #1c1b1b 35px,
+            #1c1b1b 70px
+        );
+
+    border-bottom: 4px solid white;
+}
+
+
+/* =========================================================
+   ETICHETTA ITINERARIO
+   ========================================================= */
+
+.card-label {
+    padding: 12px 20px;
+
+    border-bottom: 2px solid #f4e8c1;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+
+    color: #f4e8c1;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CORPO CARD
+   ========================================================= */
+
+.card-body {
+    padding: 25px;
+}
+
+
+/* =========================================================
+   TITOLO NARRATIVA
+   ========================================================= */
+
+.card-body h3 {
+    min-height: 80px;
+
+    margin: 0 0 20px 0;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    letter-spacing: 2px;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DETTAGLI
+   ========================================================= */
+
+.card-details {
+    padding: 10px 0;
+    margin-bottom: 20px;
+
+    border-top: 1px solid #f4e8c1;
+    border-bottom: 1px solid #f4e8c1;
+}
+
+.card-details p {
+    width: 100%;
+    max-width: none;
+
+    margin: 5px 0;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+
+    color: white;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   DESCRIZIONE CARD
+   ========================================================= */
+
+.card-description {
+    width: 100%;
+    max-width: none;
+
+    margin-bottom: 25px;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    text-align: left;
+
+    color: white !important;
+}
+
+
+/* =========================================================
+   DISCOVER
+   ========================================================= */
+
+.discover {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    background-color: #1c1b1b;
+
+    border: 1px solid white;
+    border-radius: 3px;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+
+    color: white;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.narrative-card:hover .discover {
+    background-color: #f4e8c1;
+
+    color: #943b3b;
+
+    border-color: #f4e8c1;
+}
+
+
+/* =========================================================
+   HOVER CARD
+   ========================================================= */
+
+.narrative-card:hover {
+
+    opacity: 1;
+
+    border-color: #f4e8c1;
+
+    box-shadow:
+
+        0 0 8px rgba(244, 232, 193, 0.7),
+
+        0 0 18px rgba(244, 232, 193, 0.35);
+
+}
+
+
+/* =========================================================
+   AREA PRINCIPALE - RULLINO
+   ========================================================= */
+
+.area-immagini {
+    width: 100%;
+    max-width: 950px;
+    height: 560px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    padding: 14px 20px;
+
+    box-sizing: border-box;
+
+    background-color: #1c1b1b;
+
+    /* linee tratteggiate x rullino */
+    border-top: 14px dashed white;
+    border-bottom: 14px dashed white;
+
+    border-radius: 4px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ZONA SINISTRA - FOTO
+   ========================================================= */
+
+.film-panel-left {
+    width: 40%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-sizing: border-box;
+}
+
+.film-panel-left > div {
+    width: 100%;
+}
+
+.film-panel-left img {
+    width: 80%;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+    border: 5px solid white;
+
+    display: block;
+}
+
+.photo-when {
+    width: 100%;
+
+    margin-bottom: 5px;
+
+    color: white;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 1rem;
+    letter-spacing: 1px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   ZONA CENTRALE - FRECCE
+   ========================================================= */
+
+.frecce_scena {
+    width: 8%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.frecce_scena button {
+    padding: 0;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 2.2rem;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.frecce_scena button:hover {
+    color: #f4e8c1;
+
+    transform: scale(1.2);
+}
+
+.frecce_scena span {
+    color: white;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    writing-mode: vertical-lr;
+}
+
+
+/* =========================================================
+   ZONA DESTRA
+   ========================================================= */
+
+.description-container-right {
+    width: 45%;
+    height: 100%;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BOTTONI STORY / METADATA / QR
+   ========================================================= */
+
+.showview-buttons {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
+}
+
+.showview-buttons button {
+    padding: 10px 20px;
+
+    background-color: #1c1b1b;
+    color: white;
+
+    border: 1px solid white;
+    border-radius: 4px;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.showview-buttons button:hover, .showview-buttons button.active {
+    background-color: #f4e8c1;
+
+    color: #943b3b;
+
+    border-color: #f4e8c1;
+}
+
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+.story-content {
+    position: relative;
+
+    width: 100%;
+    height: 450px;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #f4e8c1;
+    color: #2b2623;
+
+    border: 2px solid white;
+    border-radius: 8px;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   DIFFICULTY BUTTONS
+   ========================================================= */
+
+.difficulty-buttons {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 6px;
+
+    margin-bottom: 8px;
+
+    flex-shrink: 0;
+}
+
+.difficulty-buttons button {
+    flex: 1;
+
+    padding: 8px;
+
+    background-color: #1c1b1b;
+
+    color: white;
+
+    border: 1px solid #1c1b1b;
+    border-radius: 4px;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+
+    text-align: center;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.difficulty-buttons button:hover, .difficulty-buttons button.active {
+    background-color: #f4e8c1;
+
+    color: #943b3b;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   TELL ME BUTTONS
+   ========================================================= */
+
+.tellme-buttons {
+    margin: 15px 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.tellme-buttons button {
+    padding: 6px 12px;
+
+    background-color: #1c1b1b;
+
+    color: white;
+
+    border: 1px solid #1c1b1b;
+    border-radius: 4px;
+
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: bold;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.tellme-buttons button:hover, .tellme-buttons button.active {
+    background-color: #f4e8c1;
+
+    color: #943b3b;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   METADATA
+   ========================================================= */
+
+.metadata-content {
+    position: relative;
+
+    width: 100%;
+    height: 450px;
+
+    box-sizing: border-box;
+
+    padding: 15px 30px;
+
+    background-color: #f4e8c1;
+    color: #2b2623;
+
+    border: 2px solid white;
+    border-radius: 8px;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 1.1rem;
+
+    overflow-y: auto;
+}
+
+.metadata-content h3 {
+    font-family: 'Special Elite', monospace;
+    font-size: 1.2rem;
+}
+
+.introduzione-meta {
+    margin-bottom: 15px;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BOTTONI METADATA
+   ========================================================= */
+
+.metadata-tasti {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin: 15px auto 0;
+
+    font-weight: bold;
+}
+
+.metadata-tasti button {
+    width: 250px;
+
+    align-self: center;
+
+    padding: 10px 20px;
+
+    background-color: #1c1b1b;
+    color: white;
+
+    border: 1px solid #1c1b1b;
+    border-radius: 4px;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 1rem;
+    font-weight: bold;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.metadata-tasti button:hover {
+    background-color: #f4e8c1;
+
+    color: #943b3b;
+}
+
+.metadata-tasti li {
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   META PUNTI
+   ========================================================= */
+
+.meta-punti {
+    color: #943b3b;
+
+    font-size: 1.2rem;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.meta-punti:hover {
+    color: #6d2121;
+
+    border-bottom: 2px solid #6d2121;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    z-index: 9999;
+
+    cursor: pointer;
+}
+
+.modal-box {
+    position: relative;
+
+    width: 450px;
+    max-width: 90%;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    background-color: #f4e8c1;
+    color: #2b2623;
+
+    border: 3px solid white;
+    border-radius: 8px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+    text-align: justify;
+
+    cursor: default;
+}
+
+.modal-box h3 {
+    margin-top: 0;
+
+    padding-bottom: 8px;
+
+    color: #943b3b;
+
+    border-bottom: 1px solid #943b3b;
+
+    font-size: 1.2rem;
+}
+
+.modal-box ul {
+    margin: 15px 0 0;
+    padding: 0;
+
+    list-style: none;
+
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TESTI STORY E METADATA
+   ========================================================= */
+
+.story-content h3,
+.story-content p,
+.story-content strong,
+.metadata-content h3,
+.metadata-content li,
+.metadata-content strong,
+.metadata-content p {
+    color: #2b2623;
+}
+
+.story-content p,
+.metadata-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   QR
+   ========================================================= */
+
+.qr-content {
+    width: 100%;
+    height: 450px;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    background-color: #f4e8c1;
+
+    border: 2px solid white;
+    border-radius: 8px;
+
+    text-align: center;
+
+    overflow-y: auto;
+}
+
+.qr-content h3 {
+    margin-top: 0;
+
+    color: #2b2623;
+
+    font-size: 1.17em;
+    font-weight: bold;
+
+    text-align: left;
+}
+
+.qr-description {
+    margin-bottom: 30px;
+
+    color: #2b2623;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.qr-image {
+    width: 170px;
+    height: 170px;
+
+    margin-top: 10px;
+
+    padding: 4px;
+
+    background-color: white;
+
+    border: 1px solid #38312d;
+}
+
+
+/* =========================================================
+   SEZIONE FILM HOMEPAGE
+   ========================================================= */
+
+.films-section {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 80px auto;
+}
+
+.films-introduction {
+    margin-bottom: 40px;
+}
+
+.films-introduction h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   POSTER
+   ========================================================= */
+
+.poster-container {
+    width: 100%;
+    max-width: 950px;
+
+    box-sizing: border-box;
+
+    margin: 40px auto;
+    padding: 0 10px;
+}
+
+.poster-grid {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.poster {
+    flex: 1 1 calc(33.333% - 30px);
+
+    min-width: 250px;
+
+    box-sizing: border-box;
+}
+
+.poster-flip {
+    position: relative;
+
+    width: 100%;
+}
+
+.poster-img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    transition: transform 0.6s ease-in-out;
+
+    backface-visibility: hidden;
+}
+
+.poster-back {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding: 7%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #f4e8c1;
+    color: #2b2623;
+
+    text-align: center;
+
+    transform: rotateY(180deg);
+
+    transition: transform 0.6s ease-in-out;
+
+    backface-visibility: hidden;
+}
+
+.poster-back p {
+    margin: 0;
+
+    color: #2b2623;
+
+    font-family: 'Special Elite', monospace;
+    font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+    line-height: 1.4;
+
+    text-align: justify;
+}
+
+.poster-flip:hover .poster-img {
+    transform: rotateY(-180deg);
+}
+
+.poster-flip:hover .poster-back {
+    transform: rotateY(0deg);
+}
+
+
+/* =========================================================
+   BOTTONI PREVIOUS / NEXT
+   ========================================================= */
+
+.bottoni-pagine {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 50px auto 20px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottone {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background-color: #1c1b1b;
+
+    border: 1px solid #1c1b1b;
+    border-radius: 3px;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.bottone:hover {
+    background-color: #f4e8c1;
+
+    color: #943b3b;
+
+    border-color: #f4e8c1;
+
+    opacity: 1;
+
+    box-shadow:
+
+        0 0 5px rgba(244, 232, 193, 0.8),
+
+        0 0 10px rgba(244, 232, 193, 0.5);
+}
+
+.bottoni-pagine .bottone:only-child {
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 80px;
+    padding: 25px 40px;
+
+    background-color: #1c1b1b;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+footer p {
+    max-width: 950px;
+
+    margin: 6px auto;
+
+    color: white;
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+footer a {
+    color: white;
+
+    font-size: 0.85rem;
+}
+
+footer a:hover {
+    color: #f4e8c1;
+
+    opacity: 1;
+}
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.disclaimer-page {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.disclaimer-page .page-title {
+    text-align: center;
+    max-width: none;
+    margin-bottom: 40px;
+}
+
+.disclaimer-page .disclaimer-item {
+    display: flex;
+    flex-direction: row-reverse; /* dispari: txt a snx, n a dx */
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid #f4e8c1;
+    box-sizing: border-box;
+}
+
+.disclaimer-page .disclaimer-item:last-child {
+    border-bottom: none;
+}
+
+.disclaimer-page .disclaimer-item:nth-child(even) {
+    flex-direction: row; /* pari: n a snx, txt a dx */
+}
+
+/* num grande */
+.disclaimer-page .disclaimer-number {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #f4e8c1;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.disclaimer-page .disclaimer-content {
+    flex-grow: 1;
+}
+
+/* annullare i vincoli globali di main h2 e main p*/
+.disclaimer-page .disclaimer-title,
+.disclaimer-page .disclaimer-text {
+    max-width: none;
+    margin: 0;
+}
+
+.disclaimer-page .disclaimer-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #f4e8c1;
+    text-align: left;
+}
+
+.disclaimer-page .disclaimer-text {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+    header {
+        padding: 12px 20px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .link-head {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        text-align: center !important;
+    }
+
+    .link-head > a,
+    .dropdown > a {
+        display: inline-block;
+
+        margin: 5px 8px;
+
+        font-size: 0.9rem;
+    }
+
+
+    /* dropdown mobile */
+
+    .dropdown-menu {
+        top: 100%;
+        left: 50%;
+
+        min-width: 210px;
+
+        transform: translateX(-50%);
+    }
+
+
+    /* barra date */
+
+    .bar-style {
+        top: 90px;
+    }
+
+    .bar-item {
+        min-width: 100px;
+    }
+
+    .bar-item a {
+        font-size: 1rem;
+    }
+
+
+    /* main */
+
+    main {
+        padding: 20px;
+    }
+
+    main h2 {
+        font-size: 2.3rem;
+    }
+
+
+    /* insegna homepage */
+
+    .home-introduction {
+        margin: 35px auto 50px auto;
+    }
+
+    .title-container {
+        padding: 50px 25px;
+
+        border-width: 5px;
+    }
+
+    .title-container h1 {
+        font-size: 3.2rem;
+
+        letter-spacing: 3px;
+    }
+
+    .title-container::before,
+    .title-container::after {
+        font-size: 0.9rem;
+
+        letter-spacing: 4px;
+
+        overflow: hidden;
+
+        white-space: nowrap;
+    }
+
+
+    /* narrative */
+
+    .narratives {
+        margin: 50px auto;
+    }
+
+    .narrativa-container {
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .card-body h3 {
+        min-height: auto;
+
+        font-size: 2rem;
+    }
+
+
+    /* rullino */
+
+    .area-immagini {
+        height: auto;
+
+        flex-direction: column;
+
+        padding: 20px;
+
+        overflow: visible;
+    }
+
+    .film-panel-left,
+    .description-container-right {
+        width: 100%;
+    }
+
+    .film-panel-left img {
+        width: 100%;
+    }
+
+    .frecce_scena {
+        width: 100%;
+
+        flex-direction: row;
+    }
+
+    .frecce_scena span {
+        writing-mode: horizontal-tb;
+    }
+
+    .story-content,
+    .metadata-content,
+    .qr-content {
+        height: auto;
+
+        min-height: 400px;
+    }
+
+    .showview-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .metadata-tasti button {
+        width: 100%;
+    }
+
+
+    /* poster */
+
+    .poster {
+        flex: 1 1 100%;
+    }
+
+
+    /* previous / next */
+
+    .bottoni-pagine {
+        margin-top: 35px;
+
+        gap: 15px;
+    }
+
+    .bottone {
+        font-size: 0.9rem;
+    }
+
+
+    /* footer */
+
+    footer {
+        padding: 25px 20px;
+    }
+}
+
+
+/* =========================================================
+   DOCUMENTATION
+   ========================================================= */
+
+/* Titolo principale */
+
+.documentation-intro h1 {
+    width: 100%;
+    max-width: 950px;
+    margin: 35px auto 25px;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    letter-spacing: 4px;
+
+    color: #f4e8c1;
+    text-align: center;
+}
+
+
+/* Sezioni */
+
+.documentation-section {
+    width: 100%;
+    max-width: 950px;
+    margin: 50px auto;
+}
+
+.documentation-section h2,
+.workflow h2 {
+    max-width: none;
+    white-space: nowrap;
+}
+
+
+/* Film */
+
+.film-selection {
+    max-width: 850px;
+    margin: 35px auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid #f4e8c1;
+}
+
+.film-selection span {
+    padding: 15px 20px;
+
+    border-bottom: 1px solid rgba(244, 232, 193, 0.5);
+
+    font-size: 0.95rem;
+}
+
+.film-selection span:nth-child(odd) {
+    border-right: 1px solid rgba(244, 232, 193, 0.5);
+}
+
+.film-selection span::before {
+    content: "●";
+    margin-right: 10px;
+
+    color: #f4e8c1;
+    font-size: 0.6rem;
+}
+
+
+/* Prototipi */
+
+.prototype-row {
+    display: flex;
+    gap: 40px;
+
+    margin-top: 60px;
+}
+
+.prototype-row figure {
+    flex: 1;
+    margin: 0;
+
+    text-align: center;
+}
+
+.prototype-row img {
+    width: 100%;
+    height: 400px;
+
+    display: block;
+    object-fit: contain;
+}
+
+.prototype-row figcaption {
+    margin-top: 12px;
+
+    font-size: 0.85rem;
+    color: #fefefe;
+
+    text-align: center;
+}
+
+
+/* Graphic Ideas */
+
+.graphic-ideas {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.graphic-ideas img {
+    display: block;
+
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+
+    margin: 30px auto 12px;
+}
+
+.graphic-ideas p {
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+
+
+
+
+
+ /* =========================================================
+   MAPPA
+   ========================================================= */
+
+.map-page {
+    width: 100%;
+}
+
+
+/* TITOLO MAPPA */
+
+.map-page h1 {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 35px auto 25px auto;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    letter-spacing: 4px;
+
+    color: #f4e8c1;
+
+    text-align: center;
+}
+
+
+/* MAPPA LEAFLET */
+
+#map {
+    width: 100%;
+    max-width: 950px;
+    height: 550px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+
+    border: 4px solid white;
+}
+
+.leaflet-popup-content {
+    font-family: 'Special Elite', monospace;
+}
+
+
+/* =========================================================
+   FILTRI MAPPA
+   ========================================================= */
+
+#filters {
+    width: 100%;
+    max-width: 950px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 20px auto 0 auto;
+}
+
+#filters button {
+    padding: 9px 18px;
+
+    background-color: #1c1b1b;
+
+    border: 1px solid white;
+    border-radius: 3px;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 0.85rem;
+
+    color: white;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+#filters button:hover,
+#filters button.active {
+    background-color: #f4e8c1;
+
+    color: #943b3b;
+
+    border-color: #f4e8c1;
+}
+
+
+/* =========================================================
+   EXPLORE THE LOCATIONS
+   ========================================================= */
+
+.locations-section {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 65px auto 20px auto;
+}
+
+.locations-section h2 {
+    margin-bottom: 45px;
+}
+
+
+/* =========================================================
+   CONTENITORE ITINERARIO
+   ========================================================= */
+
+#locations-list {
+    position: relative;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   LINEA VERTICALE PRINCIPALE
+   ========================================================= */
+
+#locations-list::before {
+    content: "";
+
+    position: absolute;
+
+    left: 31px;
+    top: 30px;
+    bottom: 30px;
+
+    width: 2px;
+
+    background-color: rgba(244, 232, 193, 0.65);
+}
+
+
+/* =========================================================
+   SINGOLA TAPPA
+   ========================================================= */
+
+.location-card {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    padding: 25px 0;
+
+    box-sizing: border-box;
+
+    background-color: transparent;
+
+    border: none;
+}
+
+
+/* =========================================================
+   NUMERO TAPPA
+   ========================================================= */
+
+.location-number {
+    position: relative;
+
+    z-index: 2;
+
+    flex: 0 0 64px;
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    background-color: #943b3b;
+
+    border: 2px solid #f4e8c1;
+    border-radius: 50%;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+
+    color: #f4e8c1;
+}
+
+
+/* =========================================================
+   INFORMAZIONI PRINCIPALI LOCATION
+   ========================================================= */
+
+.location-info {
+    flex: 1;
+
+    padding-top: 3px;
+}
+
+.location-info h3 {
+    margin: 0 0 5px 0;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+
+    color: white;
+}
+
+
+/* FILM */
+
+.location-info p:first-of-type {
+    width: 100%;
+    max-width: none;
+
+    margin: 0 0 8px 0;
+
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+
+    color: #f4e8c1;
+
+    text-align: left;
+}
+
+
+/* DESCRIZIONE */
+
+.location-info p:nth-of-type(2) {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0;
+
+    font-size: 0.9rem;
+    line-height: 1.45rem;
+
+    color: white;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   DISCOVER THIS STOP
+   ========================================================= */
+
+.location-info a {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding: 6px 11px;
+
+    background-color: #1c1b1b;
+
+    border: 1px solid white;
+    border-radius: 3px;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 0.7rem;
+
+    color: white;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.location-info a:hover {
+    background-color: #f4e8c1;
+
+    color: #943b3b;
+
+    border-color: #f4e8c1;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PIÙ LOCATION NELLA STESSA TAPPA
+   es. Piazza Testaccio + Testaccio Market
+   ========================================================= */
+
+.location-subitem {
+    padding-bottom: 20px;
+
+    margin-bottom: 20px;
+
+    border-bottom:
+        1px dashed rgba(244, 232, 193, 0.4);
+}
+
+.location-subitem:last-child {
+    padding-bottom: 0;
+
+    margin-bottom: 0;
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   SPOSTAMENTO TRA DUE TAPPE
+   INFORMAZIONE SECONDARIA
+   ========================================================= */
+
+.route-connection {
+    position: relative;
+
+    width: calc(100% - 95px);
+
+    margin:
+        -8px
+        0
+        -8px
+        95px;
+
+    padding:
+        8px
+        15px
+        8px
+        18px;
+
+    box-sizing: border-box;
+
+    border-left:
+        1px solid rgba(244, 232, 193, 0.45);
+}
+
+
+/* PICCOLO PUNTO SULLA LINEA SECONDARIA */
+
+.route-connection::before {
+    content: "";
+
+    position: absolute;
+
+    left: -4px;
+    top: 12px;
+
+    width: 7px;
+    height: 7px;
+
+    background-color: #f4e8c1;
+
+    border-radius: 50%;
+}
+
+
+/* TRASPORTO + TEMPO */
+
+.route-main-info {
+    margin-bottom: 3px;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 0.68rem;
+    font-weight: normal;
+
+    color: rgba(244, 232, 193, 0.85);
+}
+
+
+/* INDICAZIONI */
+
+.route-directions {
+    width: 100% !important;
+    max-width: 650px !important;
+
+    margin: 0 !important;
+
+    font-family: 'Special Elite', monospace;
+    font-size: 0.66rem !important;
+    line-height: 1.1rem !important;
+
+    color: rgba(255, 255, 255, 0.65) !important;
+
+    text-align: left !important;
+}
+
+
+/* NEXT STOP leggermente più evidente */
+
+.route-directions strong {
+    font-weight: normal;
+
+    color: rgba(244, 232, 193, 0.8);
+}
+
+
+
+/* =========================================================
+   ALL LOCATIONS
+   ========================================================= */
+
+/*
+   Quando selezioni All Locations non esiste .location-number.
+   Quindi nascondiamo la linea da itinerario.
+*/
+
+#locations-list:not(:has(.location-number))::before {
+    display: none;
+}
+
+
+/* Le card di All Locations diventano più semplici */
+
+.location-card:not(:has(.location-number)) {
+    padding: 22px 0;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.25);
+}
+
+.location-card:not(:has(.location-number)) .location-info {
+    padding-left: 0;
+}
+
+
+/* =========================================================
+   MAPPA RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+    .map-page h1 {
+        font-size: 3.2rem;
+    }
+
+    #map {
+        height: 430px;
+    }
+
+    #filters {
+        flex-wrap: wrap;
+    }
+
+    .locations-section {
+        margin-top: 45px;
+    }
+
+    #locations-list::before {
+        left: 24px;
+    }
+
+    .location-card {
+        gap: 18px;
+    }
+
+    .location-number {
+        flex-basis: 50px;
+
+        width: 50px;
+        height: 50px;
+
+        font-size: 1.4rem;
+    }
+
+    .location-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .route-connection {
+        width: calc(100% - 68px);
+
+        margin-left: 68px;
+    }
+}
+
+/* DISCLAIMER*/
+.disclaimer-page .disclaimer-item,
+.disclaimer-page .disclaimer-item:nth-child(even) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.disclaimer-page .disclaimer-number {
+    font-size: 2.5rem;
+}
