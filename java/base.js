@@ -1120,6 +1120,16 @@ function initMapPage() {
        FILTRI
        ======================================================== */
 
+    function setActiveFilter(activeButton) {
+
+        document.querySelectorAll('#filters button')
+            .forEach(function (button) {
+                button.classList.remove('active');
+            });
+
+        activeButton.classList.add('active');
+    }
+
     var historicalButton =
         document.getElementById(
             'show-historical'
@@ -1132,11 +1142,9 @@ function initMapPage() {
             'click',
             function () {
 
-                currentNarrative =
-                    'historical';
-
-                updateMap();
-
+                currentNarrative = 'historical';
+                    setActiveFilter(this);
+                    updateMap();
             }
         );
 
@@ -1155,11 +1163,9 @@ function initMapPage() {
             'click',
             function () {
 
-                currentNarrative =
-                    'women';
-
+                currentNarrative = 'women';
+                setActiveFilter(this);
                 updateMap();
-
             }
         );
 
@@ -1179,7 +1185,7 @@ function initMapPage() {
             function () {
 
                 currentNarrative = 'all';
-
+                setActiveFilter(this);
                 updateMap();
 
             }
