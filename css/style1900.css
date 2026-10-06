@@ -598,43 +598,87 @@ main p {
 
     filter: grayscale(100%) sepia(20%) contrast(110%);
 }
-
-
 /* =========================================================
-   AREA PRINCIPALE - RULLINO
+   AREA PRINCIPALE — PELLICOLA
    ========================================================= */
 
 .area-immagini {
+    position: relative;
+
     width: 100%;
     max-width: 950px;
-    height: 560px;
+    height: 590px;
 
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
-    gap: 15px;
+    gap: 20px;
 
-    margin-top: 50px;
-    margin-bottom: 50px;
-
-    padding: 14px 20px;
+    margin: 55px auto;
+    padding: 42px 62px;
 
     box-sizing: border-box;
 
-    background-color: #1c1b1b;
+    /* nero non perfettamente uniforme */
+    background:
+        linear-gradient(
+            90deg,
+            #111 0%,
+            #191817 10%,
+            #141414 50%,
+            #191817 90%,
+            #111 100%
+        );
 
-    /* linee tratteggiate x rullino */
-    border-top: 14px dashed white;
-    border-bottom: 14px dashed white;
+    border: 1px solid #0b0b0b;
 
-    border-radius: 4px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.45),
+        inset 0 0 20px rgba(255, 255, 255, 0.025);
 
     overflow: hidden;
 }
+
+
+/* PERFORAZIONI */
+
+.area-immagini::before,
+.area-immagini::after {
+    content: "";
+
+    position: absolute;
+
+    top: 12px;
+    bottom: 12px;
+
+    width: 26px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #b9b4aa 0px,
+            #b9b4aa 13px,
+            #111 13px,
+            #111 24px
+        );
+
+    opacity: 0.9;
+
+    box-shadow:
+        inset 0 0 4px rgba(0, 0, 0, 0.65);
+
+    z-index: 4;
+}
+
+.area-immagini::before {
+    left: 8px;
+}
+
+.area-immagini::after {
+    right: 8px;
+}
+
 
 
 /* =========================================================
@@ -660,15 +704,23 @@ main p {
 }
 
 .film-panel-left img {
-    width: 80%;
+    width: 100%;
 
     aspect-ratio: 16 / 10;
-
     object-fit: cover;
 
-    border: 5px solid white;
-
     display: block;
+
+    border: none;
+    border-radius: 1px;
+
+    filter:
+        grayscale(100%)
+        sepia(20%)
+        contrast(110%);
+
+    box-shadow:
+        inset 0 0 12px rgba(0, 0, 0, 0.25);
 }
 
 .photo-when {
@@ -678,7 +730,6 @@ main p {
 
     color: white;
 
-    font-family: 'Special Elite', monospace;
     font-size: 1rem;
     letter-spacing: 1px;
 
@@ -764,34 +815,6 @@ main p {
 
     margin-bottom: 8px;
 }
-
-/* =========================================================
-   STORY
-   ========================================================= */
-
-.story-content {
-    position: relative;
-
-    width: 100%;
-    height: 450px;
-
-    box-sizing: border-box;
-
-    padding: 30px;
-
-    display: flex;
-    flex-direction: column;
-
-    background-color: #f4e8c1;
-    color: #2b2623;
-
-    border: 2px solid white;
-    border-radius: 8px;
-
-    overflow-y: auto;
-}
-
-
 /* =========================================================
    DIFFICULTY BUTTONS
    ========================================================= */
@@ -824,46 +847,67 @@ main p {
 }
 
 
-
-
 /* =========================================================
-   METADATA
+   STORY / METADATA / QR — FOTOGRAMMA
    ========================================================= */
 
-.metadata-content {
+.story-content,
+.metadata-content,
+.qr-content {
     position: relative;
 
     width: 100%;
     height: 450px;
 
     box-sizing: border-box;
+    padding: 30px;
 
-    padding: 15px 30px;
+    background:
+        radial-gradient(
+            ellipse at 45% 40%,
+            rgba(255, 255, 255, 0.16) 0%,
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(60, 50, 40, 0.06),
+            transparent 35%,
+            rgba(30, 30, 30, 0.08)
+        ),
+        #c5c1b8 !important;
 
-    background-color: #f4e8c1;
-    color: #2b2623;
+    color: #25231f;
 
-    border: 2px solid white;
-    border-radius: 8px;
+    border: none;
+    border-radius: 1px;
 
-    font-family: 'Special Elite', monospace;
-    font-size: 1.1rem;
+    box-shadow:
+        inset 0 0 25px rgba(40, 35, 30, 0.18),
+        inset 0 0 3px rgba(0, 0, 0, 0.45);
+
+    font-family: Georgia, "Times New Roman", serif;
 
     overflow-y: auto;
 }
 
+.story-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+
 .metadata-content h3 {
-    font-family: 'Special Elite', monospace;
     font-size: 1.2rem;
 }
 
 .introduzione-meta {
     margin-bottom: 15px;
 
-    font-family: 'Special Elite', monospace;
     font-size: 1.1rem;
     line-height: 1.6;
 }
+
 
 
 /* =========================================================
@@ -931,7 +975,10 @@ main p {
 #filters button.active {
     background-color: #c8c6c0;
     color: #292929;
-    border-color: #c8c6c0;
+    border: 1px solid #292929;
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.22);
+    transform: translateY(1px);
 }
 
 
@@ -980,30 +1027,35 @@ main p {
     max-width: 90%;
 
     box-sizing: border-box;
-
     padding: 30px;
 
-    background-color: #f4e8c1;
-    color: #2b2623;
+    background:
+        radial-gradient(
+            ellipse at 45% 40%,
+            rgba(255, 255, 255, 0.16) 0%,
+            transparent 55%
+        ),
+        #c5c1b8;
 
-    border: 3px solid white;
-    border-radius: 8px;
+    color: #25231f;
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid #77736c;
+    border-radius: 1px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.55),
+        inset 0 0 25px rgba(40, 35, 30, 0.18);
 
     text-align: justify;
-
     cursor: default;
 }
 
 .modal-box h3 {
     margin-top: 0;
-
     padding-bottom: 8px;
 
-    color: #943b3b;
-
-    border-bottom: 1px solid #943b3b;
+    color: #292929;
+    border-bottom: 1px solid #77736c;
 
     font-size: 1.2rem;
 }
@@ -1044,23 +1096,6 @@ main p {
    QR
    ========================================================= */
 
-.qr-content {
-    width: 100%;
-    height: 450px;
-
-    box-sizing: border-box;
-
-    padding: 30px;
-
-    background-color: #f4e8c1;
-
-    border: 2px solid white;
-    border-radius: 8px;
-
-    text-align: center;
-
-    overflow-y: auto;
-}
 
 .qr-content h3 {
     margin-top: 0;
@@ -1078,7 +1113,6 @@ main p {
 
     color: #2b2623;
 
-    font-family: 'Special Elite', monospace;
     font-size: 0.9rem;
     line-height: 1.4;
 }
@@ -1095,6 +1129,7 @@ main p {
 
     border: 1px solid #38312d;
 }
+
 
 
 /* =========================================================
@@ -1676,7 +1711,7 @@ footer a:hover {
 }
 
 .leaflet-popup-content {
-    font-family: 'Special Elite', monospace;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 
