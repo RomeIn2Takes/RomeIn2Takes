@@ -1,6 +1,9 @@
 /* =========================================================
    STILE GENERALE
    ========================================================= */
+html {
+    scroll-behavior: smooth;
+}
 
 html,
 body {
@@ -242,15 +245,14 @@ main h2 {
 
     box-sizing: border-box;
 
-    margin-bottom: 15px;
-
     font-family: 'Bebas Neue', sans-serif;
     font-size: 3rem;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 
     color: #f4e8c1;
 
     text-align: center;
+    margin: 35px 0 20px;
 }
 
 
@@ -1404,6 +1406,12 @@ footer a:hover {
     text-align: center;
     max-width: none;
     margin-bottom: 40px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    
+    color: #f4e8c1;
+    text-align: center;
 }
 
 .disclaimer-page .disclaimer-item {
@@ -1662,33 +1670,88 @@ footer a:hover {
 /* Titolo principale */
 
 .documentation-intro h1 {
-    width: 100%;
-    max-width: 950px;
-    margin: 35px auto 25px;
-
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 4.5rem;
-    letter-spacing: 4px;
-
+    font-size: 3rem;
+    letter-spacing: 2px;
     color: #f4e8c1;
     text-align: center;
+    margin: 35px 0 20px;
 }
 
+.documentation-intro p {
+    margin: 0 auto 20px;
+}
+
+.documentation-section,
+.workflow {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 22px 0;
+    border-bottom: 1px solid #f4e8c1;
+    box-sizing: border-box;
+    scroll-margin-top: 80px;
+}
+
+.documentation-section:last-of-type {
+    border-bottom: none;
+}
 
 /* Sezioni */
-
 .documentation-section {
     width: 100%;
     max-width: 950px;
-    margin: 50px auto;
+    align-items: center;
 }
+
 
 .documentation-section h2,
 .workflow h2 {
+    width: 100%;
     max-width: none;
-    white-space: nowrap;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 15px;
+    white-space: normal;
 }
 
+.documentation-section p {
+    margin-bottom: 15px;
+}
+
+.workflow-steps {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* workflow riquadri */
+
+.workflow-step {
+    flex: 1;
+    display: block;
+    text-align: center;
+    padding: 15px 5px;
+    border: 7px solid black;
+    border-style: double;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.workflow-step strong {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.workflow-step p {
+    font-size: 0.85rem;
+    text-align: center;
+    margin: 0;
+    color: black;
+}
 
 /* Film */
 
@@ -1729,7 +1792,7 @@ footer a:hover {
     display: flex;
     gap: 40px;
 
-    margin-top: 60px;
+    margin-top: 25px;
 }
 
 .prototype-row figure {
@@ -1741,17 +1804,14 @@ footer a:hover {
 
 .prototype-row img {
     width: 100%;
-    height: 400px;
-
-    display: block;
-    object-fit: contain;
+    padding: 8px;
 }
 
 .prototype-row figcaption {
     margin-top: 12px;
 
     font-size: 0.85rem;
-    color: #fefefe;
+    color: #f4e8c1;
 
     text-align: center;
 }
@@ -1779,9 +1839,40 @@ footer a:hover {
     text-align: center;
 }
 
+/* 4 riquadri development */
+.development-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);/* 2 colonne uguali */
+    gap: 16px; /* Spazio orizzontale e verticale tra i riquadri */
+    margin-top: 20px;
+}
 
+.development-item {
+    flex: 1;
+    text-align: center;
+    padding: 15px 8px;
+    border: 7px solid black;
+    border-style: double;
+    border-radius: 4px;
+    background-color: white;
+    box-sizing: border-box;
+}
 
+.development-item h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.25rem;
+    color: black;
+    margin: 0 0 6px 0;
+    text-align: center;
+}
 
+.development-item p {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    text-align: center;
+    margin: 0;
+    color: black;
+}
 
 
  /* =========================================================
@@ -1798,16 +1889,12 @@ footer a:hover {
 .map-page h1 {
     width: 100%;
     max-width: 950px;
-
-    margin: 35px auto 25px auto;
-
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 4.5rem;
-    letter-spacing: 4px;
-
+    font-size: 3rem;
+    letter-spacing: 2px;
     color: #f4e8c1;
-
     text-align: center;
+    margin: 35px 0 20px;
 }
 
 
