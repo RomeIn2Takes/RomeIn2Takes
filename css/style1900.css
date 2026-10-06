@@ -51,6 +51,8 @@ header {
     align-items: center;
 }
 
+
+
 .link-head > a,
 .dropdown > a {
     margin-right: 24px;
@@ -60,11 +62,19 @@ header {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
+
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .link-head > a:hover,
 .dropdown > a:hover {
-    color: white;
+    color: #ffffff;
+    border-bottom-color: #bdbdb9;
 }
 
 
@@ -97,11 +107,8 @@ header {
 
 .dropdown-menu a {
     display: block;
-
     padding: 12px 15px;
-
     color: #e8e6e1;
-
     font-size: 0.85rem;
 }
 
@@ -375,6 +382,15 @@ main p {
         bottom right;
 
     mask-repeat: no-repeat;
+
+    transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+.narrative-card:hover {
+    transform: translateY(-5px);
+    filter: grayscale(100%) sepia(20%) contrast(118%);
 }
 
 .card-decoration {
@@ -508,8 +524,12 @@ main p {
     text-transform: uppercase;
 }
 
-.discover:hover {
-    text-decoration: underline;
+.discover {
+    transition: letter-spacing 0.2s ease;
+}
+
+.narrative-card:hover .discover {
+    letter-spacing: 2.5px;
 }
 
 /* =========================================================
@@ -662,7 +682,7 @@ main p {
     background: none;
     border: none;
 
-    color: white;
+    color: #bdbdb9;;
 
     font-size: 2.2rem;
 
@@ -672,9 +692,8 @@ main p {
 }
 
 .frecce_scena button:hover {
-    color: #f4e8c1;
-
-    transform: scale(1.2);
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 .frecce_scena span {
@@ -721,34 +740,6 @@ main p {
     margin-bottom: 8px;
 }
 
-.showview-buttons button {
-    padding: 10px 20px;
-
-    background-color: #1c1b1b;
-    color: white;
-
-    border: 1px solid white;
-    border-radius: 4px;
-
-    font-family: 'Special Elite', monospace;
-    font-size: 0.85rem;
-    font-weight: bold;
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        background-color 0.2s ease;
-}
-
-.showview-buttons button:hover, .showview-buttons button.active {
-    background-color: #f4e8c1;
-
-    color: #943b3b;
-
-    border-color: #f4e8c1;
-}
-
-
 /* =========================================================
    STORY
    ========================================================= */
@@ -793,37 +784,6 @@ main p {
     flex-shrink: 0;
 }
 
-.difficulty-buttons button {
-    flex: 1;
-
-    padding: 8px;
-
-    background-color: #1c1b1b;
-
-    color: white;
-
-    border: 1px solid #1c1b1b;
-    border-radius: 4px;
-
-    font-family: 'Special Elite', monospace;
-    font-size: 0.85rem;
-    font-weight: bold;
-
-    text-align: center;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
-}
-
-.difficulty-buttons button:hover, .difficulty-buttons button.active {
-    background-color: #f4e8c1;
-
-    color: #943b3b;
-
-    opacity: 1;
-}
-
 
 /* =========================================================
    TELL ME BUTTONS
@@ -838,32 +798,7 @@ main p {
     gap: 8px;
 }
 
-.tellme-buttons button {
-    padding: 6px 12px;
 
-    background-color: #1c1b1b;
-
-    color: white;
-
-    border: 1px solid #1c1b1b;
-    border-radius: 4px;
-
-    font-family: 'Courier New', monospace;
-    font-size: 1rem;
-    font-weight: bold;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
-}
-
-.tellme-buttons button:hover, .tellme-buttons button.active {
-    background-color: #f4e8c1;
-
-    color: #943b3b;
-
-    opacity: 1;
-}
 
 
 /* =========================================================
@@ -921,60 +856,72 @@ main p {
     font-weight: bold;
 }
 
-.metadata-tasti button {
-    width: 250px;
+/* =========================================================
+   BOTTONI
+   ========================================================= */
 
-    align-self: center;
+.showview-buttons button,
+.difficulty-buttons button,
+.tellme-buttons button,
+.metadata-tasti button,
+#filters button {
+    padding: 8px 14px;
 
-    padding: 10px 20px;
+    background-color: #292929;
+    color: #d8d6d1;
 
-    background-color: #1c1b1b;
-    color: white;
+    border: 1px solid #707070;
+    border-radius: 2px;
 
-    border: 1px solid #1c1b1b;
-    border-radius: 4px;
-
-    font-family: 'Special Elite', monospace;
-    font-size: 1rem;
-    font-weight: bold;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.8rem;
+    font-weight: normal;
+    letter-spacing: 0.7px;
 
     transition:
         background-color 0.2s ease,
-        color 0.2s ease;
-}
-
-.metadata-tasti button:hover {
-    background-color: #f4e8c1;
-
-    color: #943b3b;
-}
-
-.metadata-tasti li {
-    margin-bottom: 12px;
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
-/* =========================================================
-   META PUNTI
-   ========================================================= */
+/* HOVER */
 
-.meta-punti {
-    color: #943b3b;
-
-    font-size: 1.2rem;
-
-    text-decoration: none;
-
-    transition: all 0.2s ease;
+.showview-buttons button:hover,
+.difficulty-buttons button:hover,
+.tellme-buttons button:hover,
+.metadata-tasti button:hover,
+#filters button:hover {
+    background-color: #404040;
+    color: #ffffff;
+    border-color: #bdbdb9;
 }
 
-.meta-punti:hover {
-    color: #6d2121;
 
-    border-bottom: 2px solid #6d2121;
+/* SELEZIONATO */
 
-    text-decoration: underline;
+.showview-buttons button.active,
+.difficulty-buttons button.active,
+.tellme-buttons button.active,
+#filters button.active {
+    background-color: #c8c6c0;
+    color: #292929;
+    border-color: #c8c6c0;
 }
+
+
+/* DIMENSIONI SPECIFICHE */
+
+.difficulty-buttons button {
+    flex: 1;
+}
+
+.metadata-tasti button {
+    width: 250px;
+    align-self: center;
+}
+
+
 
 
 /* =========================================================
@@ -1233,21 +1180,17 @@ main p {
 
 .bottone {
     display: inline-block;
+    padding: 9px 16px;
 
-    padding: 10px 18px;
+    background-color: #292929;
+    color: #d8d6d1;
 
-    background-color: #1c1b1b;
+    border: 1px solid #707070;
+    border-radius: 2px;
 
-    border: 1px solid #1c1b1b;
-    border-radius: 3px;
-
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 1.5px;
-
-    color: white;
-
-    text-decoration: none;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.7px;
 
     transition:
         background-color 0.2s ease,
@@ -1256,19 +1199,9 @@ main p {
 }
 
 .bottone:hover {
-    background-color: #f4e8c1;
-
-    color: #943b3b;
-
-    border-color: #f4e8c1;
-
-    opacity: 1;
-
-    box-shadow:
-
-        0 0 5px rgba(244, 232, 193, 0.8),
-
-        0 0 10px rgba(244, 232, 193, 0.5);
+    background-color: #404040;
+    color: #ffffff;
+    border-color: #bdbdb9;
 }
 
 .bottoni-pagine .bottone:only-child {
@@ -1320,9 +1253,9 @@ footer a {
 }
 
 footer a:hover {
-    color: #f4e8c1;
-
-    opacity: 1;
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 /* =========================================================
@@ -1775,33 +1708,6 @@ footer a:hover {
     margin: 20px auto 0 auto;
 }
 
-#filters button {
-    padding: 9px 18px;
-
-    background-color: #1c1b1b;
-
-    border: 1px solid white;
-    border-radius: 3px;
-
-    font-family: 'Special Elite', monospace;
-    font-size: 0.85rem;
-
-    color: white;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
-}
-
-#filters button:hover,
-#filters button.active {
-    background-color: #f4e8c1;
-
-    color: #943b3b;
-
-    border-color: #f4e8c1;
-}
 
 
 /* =========================================================
@@ -1972,18 +1878,17 @@ footer a:hover {
     display: inline-block;
 
     margin-top: 12px;
+    padding: 8px 14px;
 
-    padding: 6px 11px;
+    background-color: #292929;
+    color: #d8d6d1;
 
-    background-color: #1c1b1b;
+    border: 1px solid #707070;
+    border-radius: 2px;
 
-    border: 1px solid white;
-    border-radius: 3px;
-
-    font-family: 'Special Elite', monospace;
-    font-size: 0.7rem;
-
-    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.7px;
 
     transition:
         background-color 0.2s ease,
@@ -1992,13 +1897,9 @@ footer a:hover {
 }
 
 .location-info a:hover {
-    background-color: #f4e8c1;
-
-    color: #943b3b;
-
-    border-color: #f4e8c1;
-
-    opacity: 1;
+    background-color: #404040;
+    color: #ffffff;
+    border-color: #bdbdb9;
 }
 
 
