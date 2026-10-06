@@ -235,7 +235,7 @@ main p {
 
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
-        url("../img/tende.png");
+        url("../img/tende.png"); 
 
     background-size: cover;
     background-position: center top;
@@ -306,218 +306,252 @@ main p {
     text-align: center;
 }
 
-
 /* =========================================================
-   HOMEPAGE - NARRATIVE
+   HOMEPAGE - NARRATIVES
    ========================================================= */
 
 .narratives {
     width: 100%;
     max-width: 950px;
-
     margin: 70px auto;
 }
 
 .narrativa-container {
     width: 100%;
-
     display: flex;
-
-    gap: 40px;
-
+    gap: 35px;
     margin-top: 30px;
 }
 
 
 /* =========================================================
-   CARD NARRATIVE
+   TICKET
    ========================================================= */
-
 .narrative-card {
+    position: relative;
     flex: 1;
-
     box-sizing: border-box;
-
-    background-color: #1c1b1b;
-
-    color: white;
-
-    border: 4px solid white;
-
-    transition:
-        opacity 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-/* =========================================================
-   PARTE SUPERIORE TIPO CIAK
-   ========================================================= */
-
-.card-decoration {
-    height: 45px;
+    color: #302820;
+    --ticket-cut: 22px;
 
     background:
-        repeating-linear-gradient(
-            135deg,
-            white 0px,
-            white 35px,
-            #1c1b1b 35px,
-            #1c1b1b 70px
+    linear-gradient(
+        rgba(72, 66, 58, 0.10),
+        rgba(72, 66, 58, 0.10)
+    ),
+    #c8c6c0;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.30),
+        inset 0 0 25px rgba(70, 48, 28, 0.12);
+
+    mask:
+        radial-gradient(
+            circle at 0 0,
+            transparent var(--ticket-cut),
+            black calc(var(--ticket-cut) + 1px)
+        ),
+        radial-gradient(
+            circle at 100% 0,
+            transparent var(--ticket-cut),
+            black calc(var(--ticket-cut) + 1px)
+        ),
+        radial-gradient(
+            circle at 0 100%,
+            transparent var(--ticket-cut),
+            black calc(var(--ticket-cut) + 1px)
+        ),
+        radial-gradient(
+            circle at 100% 100%,
+            transparent var(--ticket-cut),
+            black calc(var(--ticket-cut) + 1px)
         );
 
-    border-bottom: 4px solid white;
+    mask-size: 51% 51%;
+    mask-position:
+        top left,
+        top right,
+        bottom left,
+        bottom right;
+
+    mask-repeat: no-repeat;
 }
 
+.card-decoration {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+    border: 1px solid rgba(65, 48, 33, 0.75);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.card-decoration::after {
+    content: "";
+
+    position: absolute;
+
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+
+    border: 1px solid rgba(81, 72, 59, 0.45);
+    border-radius: 7px;
+}
 
 /* =========================================================
-   ETICHETTA ITINERARIO
+   CONTENUTO TICKET
    ========================================================= */
 
 .card-label {
-    padding: 12px 20px;
+    padding: 28px 28px 7px;
 
-    border-bottom: 2px solid #f4e8c1;
+    color: #514235;
 
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.3rem;
-    letter-spacing: 2px;
-
-    color: #f4e8c1;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.68rem;
+    font-weight: bold;
+    letter-spacing: 4px;
 
     text-align: center;
+    text-transform: uppercase;
 }
-
-
-/* =========================================================
-   CORPO CARD
-   ========================================================= */
 
 .card-body {
-    padding: 25px;
+    padding: 8px 34px 30px;
 }
 
-
-/* =========================================================
-   TITOLO NARRATIVA
-   ========================================================= */
+/* titolo */
 
 .card-body h3 {
-    min-height: 80px;
+    margin: 0 0 14px;
 
-    margin: 0 0 20px 0;
+    color: #302b24;
 
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.2rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: bold;
     line-height: 1.1;
-    letter-spacing: 2px;
-
-    color: white;
+    letter-spacing: 1px;
 
     text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 
-/* =========================================================
-   DETTAGLI
-   ========================================================= */
-
+/* dettagli */
 .card-details {
-    padding: 10px 0;
-    margin-bottom: 20px;
+    padding: 9px 0;
+    margin: 0 0 13px;
 
-    border-top: 1px solid #f4e8c1;
-    border-bottom: 1px solid #f4e8c1;
+    border-top: 1px solid rgba(81, 72, 59, 0.55);
+    border-bottom: 1px solid rgba(81, 72, 59, 0.55);
 }
 
 .card-details p {
     width: 100%;
     max-width: none;
 
-    margin: 5px 0;
+    margin: 2px 0;
 
-    font-family: 'Special Elite', monospace;
-    font-size: 0.9rem;
-    line-height: 1.3rem;
+    color: #4a4843;
 
-    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.75rem;
+    line-height: 1.4;
 
-    text-align: left;
+    text-align: center;
+    letter-spacing: 0.5px;
 }
 
 
-/* =========================================================
-   DESCRIZIONE CARD
-   ========================================================= */
+/* descrizione */
 
 .card-description {
     width: 100%;
     max-width: none;
 
-    margin-bottom: 25px;
+    margin: 0 0 14px;
 
-    font-family: 'Special Elite', monospace;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    color: #403e39 !important;
 
-    text-align: left;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.85rem;
+    line-height: 1.45;
 
-    color: white !important;
+    text-align: center;
 }
 
 
-/* =========================================================
-   DISCOVER
-   ========================================================= */
+/* link */
 
 .discover {
-    display: inline-block;
+    display: block;
 
-    padding: 8px 14px;
+    padding: 0;
 
-    background-color: #1c1b1b;
+    background: none;
+    border: none;
 
-    border: 1px solid white;
-    border-radius: 3px;
+    color: #292929;
 
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 2px;
 
-    color: white;
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        background-color 0.2s ease;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-.narrative-card:hover .discover {
-    background-color: #f4e8c1;
-
-    color: #943b3b;
-
-    border-color: #f4e8c1;
+.discover:hover {
+    text-decoration: underline;
 }
-
 
 /* =========================================================
-   HOVER CARD
+   POSTER
    ========================================================= */
+.poster-img,
+.film-panel-left img,
+.narrative-card {
+    filter: grayscale(100%) sepia(20%) contrast(110%);
+}
 
-.narrative-card:hover {
+.poster-back {
+    position: absolute;
 
-    opacity: 1;
+    top: 0;
+    left: 0;
 
-    border-color: #f4e8c1;
+    width: 100%;
+    height: 100%;
 
-    box-shadow:
+    box-sizing: border-box;
+    padding: 7%;
 
-        0 0 8px rgba(244, 232, 193, 0.7),
+    display: flex;
+    flex-direction: column;
 
-        0 0 18px rgba(244, 232, 193, 0.35);
+    background:
+        linear-gradient(
+            rgba(72, 66, 58, 0.10),
+            rgba(72, 66, 58, 0.10)
+        ),
+        #c8c6c0;
 
+    color: #302b24;
+
+    text-align: center;
+
+    transform: rotateY(180deg);
+    transition: transform 0.6s ease-in-out;
+    backface-visibility: hidden;
+
+    filter: grayscale(100%) sepia(20%) contrast(110%);
 }
 
 
@@ -1160,46 +1194,18 @@ main p {
 
     backface-visibility: hidden;
 }
-
-.poster-back {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    box-sizing: border-box;
-
-    padding: 7%;
-
-    display: flex;
-    flex-direction: column;
-
-    background-color: #f4e8c1;
-    color: #2b2623;
-
-    text-align: center;
-
-    transform: rotateY(180deg);
-
-    transition: transform 0.6s ease-in-out;
-
-    backface-visibility: hidden;
-}
-
 .poster-back p {
     margin: 0;
 
-    color: #2b2623;
+    color: #302b24;
 
-    font-family: 'Special Elite', monospace;
+    font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(0.75rem, 1.1vw, 0.95rem);
-    line-height: 1.4;
+    line-height: 1.5;
 
     text-align: justify;
 }
+
 
 .poster-flip:hover .poster-img {
     transform: rotateY(-180deg);
@@ -1498,11 +1504,6 @@ footer a:hover {
         gap: 30px;
     }
 
-    .card-body h3 {
-        min-height: auto;
-
-        font-size: 2rem;
-    }
 
 
     /* rullino */
