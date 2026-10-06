@@ -220,6 +220,25 @@ main p {
 
 
 /* =========================================================
+   TITOLI PAGINE INTERNE
+   ========================================================= */
+
+.map-page h1,
+.documentation-intro h1,
+.disclaimer-page .page-title {
+    width: 100%;
+    max-width: 950px;
+    margin: 35px auto 25px;
+
+    font-family: 'Lobster Two', cursive;
+    font-size: 4.5rem;
+    font-weight: 700;
+
+    color: #d3d1cc;
+    text-align: center;
+}
+
+/* =========================================================
    HOMEPAGE - TITLE
    ========================================================= */
 
@@ -1273,11 +1292,6 @@ footer a:hover {
     margin: 0 auto;
 }
 
-.disclaimer-page .page-title {
-    text-align: center;
-    max-width: none;
-    margin-bottom: 40px;
-}
 
 .disclaimer-page .disclaimer-item {
     display: flex;
@@ -1527,21 +1541,6 @@ footer a:hover {
    DOCUMENTATION
    ========================================================= */
 
-/* Titolo principale */
-
-.documentation-intro h1 {
-    width: 100%;
-    max-width: 950px;
-    margin: 35px auto 25px;
-
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 4.5rem;
-    letter-spacing: 4px;
-
-    color: #f4e8c1;
-    text-align: center;
-}
-
 
 /* Sezioni */
 
@@ -1660,23 +1659,6 @@ footer a:hover {
     width: 100%;
 }
 
-
-/* TITOLO MAPPA */
-
-.map-page h1 {
-    width: 100%;
-    max-width: 950px;
-
-    margin: 35px auto 25px auto;
-
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 4.5rem;
-    letter-spacing: 4px;
-
-    color: #f4e8c1;
-
-    text-align: center;
-}
 
 
 /* MAPPA LEAFLET */
