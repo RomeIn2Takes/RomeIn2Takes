@@ -1743,7 +1743,7 @@ footer a:hover {
 
     width: 2px;
 
-    background-color: rgba(244, 232, 193, 0.65);
+    background-color: rgba(189, 189, 185, 0.55);
 }
 
 
@@ -1777,13 +1777,11 @@ footer a:hover {
 
 .location-number {
     position: relative;
-
     z-index: 2;
 
-    flex: 0 0 64px;
-
-    width: 64px;
-    height: 64px;
+    flex: 0 0 58px;
+    width: 58px;
+    height: 58px;
 
     display: flex;
     align-items: center;
@@ -1791,15 +1789,16 @@ footer a:hover {
 
     box-sizing: border-box;
 
-    background-color: #943b3b;
+    background-color: #343434;
 
-    border: 2px solid #f4e8c1;
+    border: 1px solid #bdbdb9;
     border-radius: 50%;
 
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.7rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: normal;
 
-    color: #f4e8c1;
+    color: #e8e6e1;
 }
 
 
@@ -1814,13 +1813,14 @@ footer a:hover {
 }
 
 .location-info h3 {
-    margin: 0 0 5px 0;
+    margin: 0 0 7px 0;
 
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+    font-weight: normal;
+    letter-spacing: 0.3px;
 
-    color: white;
+    color: #eee;
 }
 
 
@@ -1835,7 +1835,7 @@ footer a:hover {
     font-size: 0.8rem;
     line-height: 1.2rem;
 
-    color: #f4e8c1;
+    color: #bdbdb9;
 
     text-align: left;
 }
@@ -1902,7 +1902,7 @@ footer a:hover {
     margin-bottom: 20px;
 
     border-bottom:
-        1px dashed rgba(244, 232, 193, 0.4);
+    1px dashed rgba(189, 189, 185, 0.35);
 }
 
 .location-subitem:last-child {
@@ -1939,7 +1939,7 @@ footer a:hover {
     box-sizing: border-box;
 
     border-left:
-        1px solid rgba(244, 232, 193, 0.45);
+    1px solid rgba(189, 189, 185, 0.35);
 }
 
 
@@ -1956,7 +1956,7 @@ footer a:hover {
     width: 7px;
     height: 7px;
 
-    background-color: #f4e8c1;
+    background-color: #bdbdb9;
 
     border-radius: 50%;
 }
@@ -1967,11 +1967,11 @@ footer a:hover {
 .route-main-info {
     margin-bottom: 3px;
 
-    font-family: 'Special Elite', monospace;
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 0.68rem;
     font-weight: normal;
 
-    color: rgba(244, 232, 193, 0.85);
+    color: #bdbdb9;
 }
 
 
@@ -1983,11 +1983,11 @@ footer a:hover {
 
     margin: 0 !important;
 
-    font-family: 'Special Elite', monospace;
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 0.66rem !important;
     line-height: 1.1rem !important;
 
-    color: rgba(255, 255, 255, 0.65) !important;
+    color: #d8d6d1;
 
     text-align: left !important;
 }
@@ -2007,17 +2007,12 @@ footer a:hover {
    ALL LOCATIONS
    ========================================================= */
 
-/*
-   Quando selezioni All Locations non esiste .location-number.
-   Quindi nascondiamo la linea da itinerario.
-*/
 
 #locations-list:not(:has(.location-number))::before {
     display: none;
 }
 
 
-/* Le card di All Locations diventano più semplici */
 
 .location-card:not(:has(.location-number)) {
     padding: 22px 0;
