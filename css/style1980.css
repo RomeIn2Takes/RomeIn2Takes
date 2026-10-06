@@ -807,11 +807,13 @@ main p {
     transform: scale(1.2);
 }
 /* cambio colore bottini invertiti (effetto press)*/
-.frecce_scena button:active {
+.frecce_scena button:active,
+.frecce_scena button.active {
     border-top: 2px solid #46365d;
     border-left: 2px solid #46365d;
     border-right: 2px solid #c2b8cf;
     border-bottom: 2px solid #c2b8cf;
+    color: #ffe600;
 }
 
 .frecce_scena span {
@@ -876,14 +878,15 @@ main p {
         border-color 0.2s ease,
         background-color 0.2s ease;
 }
-/* tasti cambio scena */
-.showview-buttons button:hover {
+/* tasti cambio vista (Story / Metadata / QR) */
+.showview-buttons button:hover,
+.showview-buttons button.active {
     color: #00f3ff;
     background-color: #1d0243;
-    border-top: 2px solid #c2b8cf;
-    border-left: 2px solid #c2b8cf;
-    border-right: 2px solid #46365d;
-    border-bottom: 2px solid #46365d;
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid #c2b8cf;
+    border-bottom: 2px solid #c2b8cf;
 }
 
 .showview-buttons button:active {
@@ -972,13 +975,14 @@ main p {
 }
 
 
-.difficulty-buttons button:hover {
+.difficulty-buttons button:hover,
+.difficulty-buttons button.active {
     color: #00f3ff;
-    background-color: #c2b8cf;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid #46365d;
-    border-bottom: 2px solid #46365d;
+    background-color: #998fa7;
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
     opacity: 1;
 }
 
@@ -1022,13 +1026,14 @@ main p {
         color 0.2s ease;
 }
 
-.tellme-buttons button:hover, .metadata-tasti button:hover {
+.tellme-buttons button:hover, .metadata-tasti button:hover,
+.tellme-buttons button.active, .metadata-tasti button.active {
     color: #00f3ff;
-    background-color: #c2b8cf;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid #46365d;
-    border-bottom: 2px solid #46365d;
+    background-color: #998fa7;
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
     opacity: 1;
 }
 
@@ -1372,7 +1377,9 @@ main p {
         border-color 0.2s ease;
 }
 
-.bottone:hover {
+.bottone:hover,
+.bottone:active,
+.bottone.active {
     background-color: #ffe600;
 
     color: #1d0243;
@@ -1382,10 +1389,8 @@ main p {
     opacity: 1;
 
     box-shadow:
-
-        0 0 5px rgba(244, 232, 193, 0.8),
-
-        0 0 10px rgba(244, 232, 193, 0.5);
+        0 0 8px rgba(255, 230, 0, 0.8),
+        0 0 16px rgba(255, 230, 0, 0.5);
 }
 
 .bottoni-pagine .bottone:only-child {
@@ -1563,7 +1568,8 @@ main p {
 }
 
 #filters button:hover,
-#filters button.active {
+#filters button.active,
+#filters button:active {
     color: #ffe600;
     border-top: 2px solid #0e3537;
     border-left: 2px solid #0e3537;
