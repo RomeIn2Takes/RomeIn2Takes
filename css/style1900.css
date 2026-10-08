@@ -1269,54 +1269,6 @@ main p {
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-    width: 100%;
-
-    box-sizing: border-box;
-
-    margin-top: 80px;
-    padding: 25px 40px;
-
-    background-color: #1c1b1b;
-}
-
-.footer-container {
-    width: 100%;
-    max-width: 950px;
-
-    margin: 0 auto;
-
-    text-align: center;
-}
-
-footer p {
-    max-width: 950px;
-
-    margin: 6px auto;
-
-    color: white;
-
-    font-size: 0.85rem;
-    line-height: 1.5;
-
-    text-align: center;
-}
-
-footer a {
-    color: white;
-
-    font-size: 0.85rem;
-}
-
-footer a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-}
 
 /* =========================================================
    DISCLAIMER
@@ -1564,11 +1516,6 @@ footer a:hover {
     }
 
 
-    /* footer */
-
-    footer {
-        padding: 25px 20px;
-    }
 }
 
 
@@ -2121,4 +2068,117 @@ footer a:hover {
 
 .disclaimer-page .disclaimer-number {
     font-size: 2.5rem;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 80px;
+    padding: 25px 40px;
+    background-color: #1c1b1b;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+footer p {
+    max-width: 950px;
+
+    margin: 6px auto;
+
+    color: white;
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+footer a {
+    color: white;
+
+    font-size: 0.85rem;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+footer p a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    transition: color 0.2s ease;
+}
+
+footer p a:hover {
+    color: #bdbdb9;;
+}
+
+/* =========================================================
+   FOOTER - ABOUT / GITHUB
+   ========================================================= */
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+
+.footer-box {
+    width: 220px;
+    box-sizing: border-box;
+
+    padding: 12px 18px;
+
+    border: 1px solid #707070;
+    border-radius: 2px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    text-decoration: none;
+}
+
+.footer-box i {
+    color: white;
+}
+
+
+/* hover uguale agli altri pulsanti 1900 */
+
+.footer-box:hover {
+    background-color: #404040;
+    color: #ffffff;
+
+    border-color: #bdbdb9;
+
+    text-decoration: none;
+}
+
+.footer-copyright {
+    padding-top: 15px;
+
+    border-top: 1px solid #606060;
 }

@@ -1393,6 +1393,88 @@ footer a:hover {
     opacity: 1;
 }
 
+/* Titolo footer */
+
+.footer-title {
+    margin-bottom: 12px;
+}
+
+
+/* Link nel testo */
+
+footer p a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+
+/* About + GitHub */
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+
+/* Box */
+
+.footer-box {
+    width: 220px;
+
+    box-sizing: border-box;
+
+    padding: 14px 18px;
+
+    border: 1px solid white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+/* Icone */
+
+.footer-box i {
+    color: white;
+    font-size: 1rem;
+
+    transition: color 0.2s ease;
+}
+
+
+/* Hover box */
+
+.footer-box:hover {
+    background-color: #f4e8c1;
+    border-color: #f4e8c1;
+
+    color: #010101;
+
+    opacity: 1;
+}
+
+
+/* Anche l'icona cambia colore */
+
+.footer-box:hover i {
+    color: #943b3b;
+}
+
+
+/* Copyright */
+
+.footer-copyright {
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 /* =========================================================
    DISCLAIMER
    ========================================================= */
