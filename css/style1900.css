@@ -225,7 +225,8 @@ main p {
 
 .map-page h1,
 .documentation-intro h1,
-.disclaimer-page .page-title {
+.disclaimer-page .page-title,
+.introduction h2 {
     width: 100%;
     max-width: 950px;
     margin: 35px auto 25px;
