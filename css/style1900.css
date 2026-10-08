@@ -413,6 +413,7 @@ main p {
     filter: grayscale(100%) sepia(20%) contrast(118%);
 }
 
+
 .card-decoration {
     position: absolute;
     top: 18px;
@@ -553,9 +554,9 @@ main p {
 }
 
 .narrative-card:hover .discover {
-    background-color: #807e78;
-    color: #292929;
-    border-color: #707070;
+    background-color: #707070;
+    color: #ffffff;
+    border-color: #bdbdb9;
 }
 
 /* =========================================================
