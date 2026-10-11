@@ -157,38 +157,34 @@ header {
 
 .bar-style {
     position: sticky;
-    top: 45px;
+    top: 50px;
     z-index: 999;
 
     display: flex;
+    align-items: center;
+    gap: 10px; /* Spazio tra i rettangoli */
 
     width: 100%;
     box-sizing: border-box;
+    height: 80px;
+    padding: 5px;
 
-    padding: 15px 0;
-
-    background-color: #ff007f;
-
-    border-top: 1.5px solid #ffe600;
-    border-bottom: 1.5px solid #ffe600;
 }
 
 .bar-item {
     flex: 1;
+    background-color:#ff007f;
 
-    height: 70px;
+    height: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     text-align: center;
-
-    border-right: 1.5px solid rgba(255, 225, 0, 0.35);
-}
-
-.bar-item:last-child {
-    border-right: none;
+    
+    border: 1.5px solid #ffe600;
+    transition: transform 0.08s ease;
 }
 
 .bar-item a {
@@ -208,6 +204,9 @@ header {
 
     transition: text-shadow 0.4s ease;
 }
+
+.bar-item:active {
+    transform: translate(5px, 5px); }
 
 .bar-item a:hover {
 
