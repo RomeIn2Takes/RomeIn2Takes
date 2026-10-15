@@ -1,0 +1,2460 @@
+/* =========================================================
+   1963 — ITALIAN CINEMA POSTERS
+   ROME IN TWO TAKES
+
+   Inspired by Italian illustrated film posters
+   of the 1950s and 1960s
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Bodoni+Moda:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&display=swap');
+
+
+/* =========================================================
+   COLOR PALETTE
+   ========================================================= */
+
+:root {
+
+    /* Paper */
+
+    --paper: #F0E1C3;
+    --paper-light: #F8EBD4;
+    --paper-dark: #DDC59E;
+
+    /* Ink */
+
+    --ink: #33251E;
+    --ink-light: #5C4538;
+
+    /* Cinematic colors */
+
+    --red: #B85232;
+    --red-dark: #963E28;
+    --red-bright: #C83C2E;
+
+    --yellow: #F4D44E;
+    --ochre: #D6A45A;
+
+    --turquoise: #1599A3;
+    --turquoise-dark: #126D78;
+
+    --green: #3E625A;
+
+    /* Lines */
+
+    --line: rgba(51, 37, 30, 0.35);
+}
+
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: var(--paper);
+    color: var(--ink);
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 16px 40px;
+    box-sizing: border-box;
+
+    background-color: var(--paper-light);
+
+    border-bottom: 2px solid var(--ink);
+}
+
+.link-head {
+    display: flex;
+    align-items: center;
+}
+
+.link-head > a,
+.dropdown > a {
+    margin-right: 24px;
+
+    color: var(--ink);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    padding: 6px 0;
+
+    border-bottom: 2px solid transparent;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.link-head > a:hover,
+.dropdown > a:hover {
+    color: var(--red);
+    border-bottom-color: var(--red);
+}
+
+
+/* =========================================================
+   DROPDOWN
+   ========================================================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 220px;
+
+    background-color: var(--paper-light);
+    border: 1px solid var(--ink);
+
+    z-index: 2100;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+
+    padding: 12px 15px;
+
+    color: var(--ink);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--red);
+    color: var(--paper-light);
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.bar-style {
+    position: sticky;
+    top: 51px;
+    z-index: 999;
+
+    display: flex;
+
+    width: 100%;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    background-color: var(--red);
+
+    border-bottom: 2px solid var(--ink);
+}
+
+.bar-item {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 58px;
+
+    border-right: 1px solid rgba(255, 245, 220, 0.35);
+}
+
+.bar-item:last-child {
+    border-right: none;
+}
+
+.bar-item a {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--paper-light);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.bar-item a:hover {
+    background-color: var(--paper-light);
+    color: var(--red);
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    width: 100%;
+
+    padding: 40px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main h2 {
+    width: 100%;
+    max-width: 950px;
+
+    margin-bottom: 20px;
+
+    color: var(--ink);
+
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    text-align: center;
+}
+
+main p {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    color: var(--ink);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.7;
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   INTERNAL PAGE TITLES
+   ========================================================= */
+
+.map-page h1,
+.documentation-intro h1,
+.disclaimer-page .page-title,
+.introduction h2 {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 35px auto 25px;
+
+    color: var(--red);
+
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: 4.5rem;
+    font-style: italic;
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HOMEPAGE — INTRODUCTION
+   ========================================================= */
+
+.home-introduction {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 45px auto 65px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HOMEPAGE — CINEMA POSTER 1963
+   ========================================================= */
+
+.title-container {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    min-height: 620px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    margin-bottom: 40px;
+    padding: 130px 45px 115px;
+
+    /*
+       Main poster illustration
+       File: immagini/roma.png
+    */
+
+    background-image:
+        url("../img/roma.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-color: var(--turquoise);
+
+    border: 12px solid var(--paper-light);
+    border-radius: 2px;
+
+    box-shadow:
+        0 6px 22px rgba(51, 37, 30, 0.15);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   POSTER — TOP CREDITS
+   ========================================================= */
+
+.title-container::before {
+    content: "ROME IN TWO TAKES PRESENTS";
+
+    position: absolute;
+
+    top: 22px;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+
+    padding: 0 15px;
+
+    color: var(--paper-light);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+    font-weight: 600;
+
+    line-height: 1.2;
+    letter-spacing: 3px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    background: none;
+    border: none;
+    border-radius: 0;
+
+    transform: none;
+
+    text-shadow:
+        2px 2px 0 var(--ink);
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   POSTER — BOTTOM CREDITS
+   ========================================================= */
+
+.title-container::after {
+    content: "ROME  •  CINEMA  •  HISTORY  •  TWO JOURNEYS";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 68px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 20px;
+
+    background-color: var(--paper-light);
+
+    color: var(--ink);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(0.7rem, 1.5vw, 1rem);
+    font-weight: 600;
+
+    line-height: 1.3;
+    letter-spacing: 2px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    transform: none;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   POSTER — MAIN TITLE
+   ========================================================= */
+
+.title-container h1 {
+    position: relative;
+    z-index: 2;
+
+    width: fit-content;
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 0 0 15px;
+    padding: 22px 38px 25px;
+
+    background-color: var(--red-bright);
+
+    color: var(--yellow);
+
+    font-family: 'Anton', Impact, sans-serif;
+
+    font-size: clamp(4rem, 8.5vw, 7.5rem);
+    font-style: normal;
+    font-weight: 400;
+
+    line-height: 0.98;
+    letter-spacing: 1px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    overflow-wrap: normal;
+
+    transform: rotate(-3deg);
+
+    -webkit-text-stroke: 1px var(--ink);
+
+    text-shadow:
+        3px 3px 0 var(--ink);
+
+    box-shadow:
+        7px 8px 0 rgba(51, 37, 30, 0.25);
+}
+
+
+/* =========================================================
+   HOMEPAGE — INTRODUCTION TEXT
+   ========================================================= */
+
+.home-introduction > p {
+    max-width: 780px;
+
+    margin: 0 auto;
+
+    color: var(--ink);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HOMEPAGE — SECTION HEADINGS
+   ========================================================= */
+
+.home-introduction h2,
+.narratives h2,
+.films-section h2 {
+    width: 100%;
+
+    margin: 0 0 22px;
+    padding-bottom: 12px;
+
+    color: var(--ink);
+
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+
+    font-style: italic;
+    font-weight: 800;
+
+    line-height: 1.15;
+    letter-spacing: -2px;
+
+    text-align: left;
+
+    border-bottom: 2px solid var(--red);
+}
+
+
+/* =========================================================
+   HOMEPAGE — NARRATIVES
+   ========================================================= */
+
+.narratives {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 65px auto;
+}
+
+.narrativa-container {
+    width: 100%;
+
+    display: flex;
+    gap: 30px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   NARRATIVE CARDS
+   ========================================================= */
+
+.narrative-card {
+    position: relative;
+
+    flex: 1;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    background: var(--paper-light);
+    color: var(--ink);
+
+    border: 1px solid var(--ink);
+    border-radius: 0;
+
+    mask: none;
+    filter: none;
+
+    box-shadow:
+        0 8px 20px rgba(51, 37, 30, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.narrative-card:nth-child(2) {
+    background-color: #E7C79E;
+}
+
+.narrative-card:hover {
+    transform: translateY(-4px);
+
+    filter: none;
+
+    box-shadow:
+        0 12px 25px rgba(51, 37, 30, 0.18);
+}
+
+
+/* =========================================================
+   CARD DECORATION
+   ========================================================= */
+
+.card-decoration,
+.card-decoration::after {
+    display: none;
+}
+
+
+/* =========================================================
+   CARD LABEL
+   ========================================================= */
+
+.card-label {
+    padding: 25px 20px 5px;
+
+    color: var(--ink);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.card-body {
+    padding: 15px 35px 35px;
+}
+
+.card-body h3 {
+    margin: 10px 0 25px;
+
+    color: var(--red);
+
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: clamp(2.3rem, 3.5vw, 3.3rem);
+
+    font-style: italic;
+    font-weight: 800;
+
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+
+    text-align: center;
+    text-transform: none;
+
+    white-space: normal;
+}
+
+
+/* =========================================================
+   CARD DETAILS
+   ========================================================= */
+
+.card-details {
+    padding: 12px 0;
+
+    margin: 0 0 20px;
+
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+}
+
+.card-details p {
+    width: 100%;
+    max-width: none;
+
+    margin: 2px 0;
+
+    color: var(--ink);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+   ========================================================= */
+
+.card-description {
+    width: 100%;
+    max-width: none;
+
+    margin: 0 0 14px;
+
+    color: var(--ink) !important;
+
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DISCOVER BUTTON
+   ========================================================= */
+
+.discover {
+    display: block;
+
+    width: fit-content;
+
+    margin: 22px auto 0;
+    padding: 10px 20px;
+
+    background-color: var(--red);
+    color: var(--paper-light);
+
+    border: none;
+    border-radius: 0;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.narrative-card:hover .discover {
+    background-color: var(--ink);
+    color: var(--paper-light);
+}
+
+
+/* =========================================================
+   POSTER — GENERAL
+   ========================================================= */
+
+.poster-img,
+.film-panel-left img {
+    filter: none;
+}
+
+
+/* =========================================================
+   POSTER BACK
+   ========================================================= */
+
+.poster-back {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    padding: 7%;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--paper-light);
+    color: var(--ink);
+
+    text-align: center;
+
+    transform: rotateY(180deg);
+    transition: transform 0.6s ease-in-out;
+
+    backface-visibility: hidden;
+
+    border: 1px solid var(--ink);
+
+    filter: none;
+}
+
+
+/* =========================================================
+   FILM AREA — EDITORIAL LAYOUT
+   ========================================================= */
+
+.area-immagini {
+    position: relative;
+
+    width: 100%;
+    max-width: 950px;
+    height: 590px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin: 55px auto;
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    background-color: var(--paper-light);
+
+    border: 2px solid var(--ink);
+
+    box-shadow:
+        6px 6px 0 rgba(51, 37, 30, 0.18);
+
+    overflow: hidden;
+}
+
+.area-immagini::before,
+.area-immagini::after {
+    display: none;
+}
+
+
+/* =========================================================
+   FILM PANEL — LEFT
+   ========================================================= */
+
+.film-panel-left {
+    width: 43%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-sizing: border-box;
+}
+
+.film-panel-left > div {
+    width: 100%;
+}
+
+.film-panel-left img {
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+
+    display: block;
+
+    border: 1px solid var(--ink);
+    border-radius: 0;
+
+    filter: none;
+    box-shadow: none;
+}
+
+.photo-when {
+    width: 100%;
+
+    margin-bottom: 5px;
+
+    color: var(--red);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+
+/* =========================================================
+   NAVIGATION ARROWS
+   ========================================================= */
+
+.frecce_scena {
+    width: 8%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.frecce_scena button {
+    padding: 0;
+
+    background: none;
+    border: none;
+
+    color: var(--red);
+
+    font-size: 2.2rem;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.frecce_scena button:hover {
+    color: var(--ink);
+    transform: scale(1.1);
+}
+
+.frecce_scena span {
+    color: var(--ink);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    writing-mode: vertical-lr;
+}
+
+
+/* =========================================================
+   DESCRIPTION — RIGHT
+   ========================================================= */
+
+.description-container-right {
+    width: 45%;
+    height: 100%;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   STORY / METADATA / QR BUTTONS
+   ========================================================= */
+
+.showview-buttons {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.difficulty-buttons {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 6px;
+    margin-bottom: 8px;
+
+    flex-shrink: 0;
+}
+
+.tellme-buttons {
+    margin: 15px 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+/* =========================================================
+   STORY / METADATA / QR CONTENT
+   ========================================================= */
+
+.story-content,
+.metadata-content,
+.qr-content {
+    position: relative;
+
+    width: 100%;
+    height: 450px;
+
+    box-sizing: border-box;
+    padding: 30px;
+
+    background: var(--paper) !important;
+    color: var(--ink);
+
+    border: 1px solid var(--ink);
+    border-radius: 0;
+
+    box-shadow: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow-y: auto;
+}
+
+.story-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.metadata-content h3 {
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: 1.4rem;
+
+    color: var(--red);
+}
+
+.introduzione-meta {
+    margin-bottom: 15px;
+
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   METADATA BUTTON CONTAINER
+   ========================================================= */
+
+.metadata-tasti {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+    margin: 15px auto 0;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.showview-buttons button,
+.difficulty-buttons button,
+.tellme-buttons button,
+.metadata-tasti button,
+#filters button {
+    padding: 8px 14px;
+
+    background-color: var(--paper-light);
+    color: var(--ink);
+
+    border: 1px solid var(--ink);
+    border-radius: 0;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    letter-spacing: 0.7px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* HOVER */
+
+.showview-buttons button:hover,
+.difficulty-buttons button:hover,
+.tellme-buttons button:hover,
+.metadata-tasti button:hover,
+#filters button:hover {
+    background-color: var(--red);
+    color: var(--paper-light);
+
+    border-color: var(--red);
+}
+
+
+/* ACTIVE */
+
+.showview-buttons button.active,
+.difficulty-buttons button.active,
+.tellme-buttons button.active,
+#filters button.active {
+    background-color: var(--red);
+    color: var(--paper-light);
+
+    border: 1px solid var(--red);
+
+    box-shadow: none;
+    transform: none;
+}
+
+
+/* SPECIFIC DIMENSIONS */
+
+.difficulty-buttons button {
+    flex: 1;
+}
+
+.metadata-tasti button {
+    width: 250px;
+    align-self: center;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    z-index: 9999;
+
+    cursor: pointer;
+}
+
+.modal-box {
+    position: relative;
+
+    width: 450px;
+    max-width: 90%;
+
+    box-sizing: border-box;
+    padding: 30px;
+
+    background: var(--paper-light);
+    color: var(--ink);
+
+    border: 2px solid var(--ink);
+    border-radius: 0;
+
+    box-shadow:
+        7px 7px 0 rgba(184, 82, 50, 0.35);
+
+    text-align: justify;
+    cursor: default;
+}
+
+.modal-box h3 {
+    margin-top: 0;
+    padding-bottom: 8px;
+
+    color: var(--red);
+
+    border-bottom: 1px solid var(--ink);
+
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: 1.5rem;
+}
+
+.modal-box ul {
+    margin: 15px 0 0;
+    padding: 0;
+
+    list-style: none;
+
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   STORY / METADATA TEXT
+   ========================================================= */
+
+.story-content h3,
+.metadata-content h3 {
+    color: var(--red);
+
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: 1.4rem;
+}
+
+.story-content p,
+.story-content strong,
+.metadata-content li,
+.metadata-content strong,
+.metadata-content p {
+    color: var(--ink);
+}
+
+.story-content p,
+.metadata-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   QR
+   ========================================================= */
+
+.qr-content h3 {
+    margin-top: 0;
+
+    color: var(--red);
+
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: 1.5rem;
+
+    text-align: left;
+}
+
+.qr-description {
+    margin-bottom: 30px;
+
+    color: var(--ink);
+
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.qr-image {
+    width: 170px;
+    height: 170px;
+
+    margin-top: 10px;
+    padding: 4px;
+
+    background-color: white;
+
+    border: 1px solid var(--ink);
+}
+
+
+/* =========================================================
+   HOMEPAGE — FILMS
+   ========================================================= */
+
+.films-section {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 75px auto;
+}
+
+.films-introduction {
+    margin-bottom: 35px;
+}
+
+.films-introduction h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   POSTER GRID
+   ========================================================= */
+
+.poster-container {
+    width: 100%;
+    max-width: 950px;
+
+    box-sizing: border-box;
+
+    margin: 35px auto;
+    padding: 0;
+}
+
+.poster-grid {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.poster {
+    flex: 1 1 calc(33.333% - 25px);
+
+    min-width: 250px;
+
+    box-sizing: border-box;
+}
+
+.poster-flip {
+    position: relative;
+    width: 100%;
+}
+
+.poster-img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    filter: none;
+
+    border: 1px solid var(--ink);
+    box-sizing: border-box;
+
+    transition: transform 0.6s ease-in-out;
+
+    backface-visibility: hidden;
+}
+
+.poster-back p {
+    margin: 0;
+
+    color: var(--ink);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.poster-flip:hover .poster-img {
+    transform: rotateY(-180deg);
+}
+
+.poster-flip:hover .poster-back {
+    transform: rotateY(0deg);
+}
+
+
+/* =========================================================
+   PREVIOUS / NEXT
+   ========================================================= */
+
+.bottoni-pagine {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 50px auto 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottone {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background-color: var(--red);
+    color: var(--paper-light);
+
+    border: 1px solid var(--ink);
+    border-radius: 0;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.bottone:hover {
+    background-color: var(--ink);
+    color: var(--paper-light);
+
+    border-color: var(--ink);
+}
+
+.bottoni-pagine .bottone:only-child {
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   EXPLORE THE MAP
+   ========================================================= */
+
+a.bottone[href="mappa.html"] {
+    display: block;
+
+    width: fit-content;
+
+    margin: 30px auto;
+    padding: 13px 30px;
+
+    background-color: var(--red);
+    color: var(--paper-light);
+
+    border: 1px solid var(--ink);
+    border-radius: 0;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-align: center;
+
+    box-shadow:
+        3px 3px 0 rgba(51, 37, 30, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+a.bottone[href="mappa.html"]:hover {
+    background-color: var(--red-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        5px 6px 0 rgba(51, 37, 30, 0.25);
+}
+
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.disclaimer-page {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.disclaimer-page .disclaimer-item {
+    display: flex;
+    flex-direction: row-reverse;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+    padding: 40px 0;
+
+    border-bottom: 1px solid var(--line);
+
+    box-sizing: border-box;
+}
+
+.disclaimer-page .disclaimer-item:last-child {
+    border-bottom: none;
+}
+
+.disclaimer-page .disclaimer-item:nth-child(even) {
+    flex-direction: row;
+}
+
+.disclaimer-page .disclaimer-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+
+    color: var(--red);
+
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.disclaimer-page .disclaimer-content {
+    flex-grow: 1;
+}
+
+.disclaimer-page .disclaimer-title,
+.disclaimer-page .disclaimer-text {
+    max-width: none;
+    margin: 0;
+}
+
+.disclaimer-page .disclaimer-title {
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: 1.8rem;
+
+    margin-bottom: 12px;
+
+    color: var(--red);
+    text-align: left;
+}
+
+.disclaimer-page .disclaimer-text {
+    color: var(--ink);
+
+    text-align: justify;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DOCUMENTATION
+   ========================================================= */
+
+.documentation-section {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 50px auto;
+}
+
+.documentation-section h2,
+.workflow h2 {
+    max-width: none;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FILM SELECTION
+   ========================================================= */
+
+.film-selection {
+    max-width: 850px;
+
+    margin: 35px auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid var(--ink);
+}
+
+.film-selection span {
+    padding: 15px 20px;
+
+    border-bottom: 1px solid var(--line);
+
+    font-size: 0.95rem;
+}
+
+.film-selection span:nth-child(odd) {
+    border-right: 1px solid var(--line);
+}
+
+.film-selection span::before {
+    content: "●";
+
+    margin-right: 10px;
+
+    color: var(--red);
+    font-size: 0.6rem;
+}
+
+
+/* =========================================================
+   PROTOTYPES
+   ========================================================= */
+
+.prototype-row {
+    display: flex;
+    gap: 40px;
+
+    margin-top: 60px;
+}
+
+.prototype-row figure {
+    flex: 1;
+    margin: 0;
+
+    text-align: center;
+}
+
+.prototype-row img {
+    width: 100%;
+    height: 400px;
+
+    display: block;
+    object-fit: contain;
+}
+
+.prototype-row figcaption {
+    margin-top: 12px;
+
+    font-size: 0.85rem;
+    color: var(--ink);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   GRAPHIC IDEAS
+   ========================================================= */
+
+.graphic-ideas {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.graphic-ideas img {
+    display: block;
+
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+
+    margin: 30px auto 12px;
+}
+
+.graphic-ideas p {
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.map-page {
+    width: 100%;
+}
+
+#map {
+    width: 100%;
+    max-width: 950px;
+    height: 550px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+
+    border: 4px solid var(--ink);
+}
+
+.leaflet-popup-content {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================================
+   MAP FILTERS
+   ========================================================= */
+
+#filters {
+    width: 100%;
+    max-width: 950px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 20px auto 0;
+}
+
+
+/* =========================================================
+   EXPLORE THE LOCATIONS
+   ========================================================= */
+
+.locations-section {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 65px auto 20px;
+}
+
+.locations-section h2 {
+    margin-bottom: 45px;
+}
+
+
+/* =========================================================
+   LOCATIONS LIST
+   ========================================================= */
+
+#locations-list {
+    position: relative;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   VERTICAL TIMELINE
+   ========================================================= */
+
+#locations-list::before {
+    content: "";
+
+    position: absolute;
+
+    left: 31px;
+    top: 30px;
+    bottom: 30px;
+
+    width: 2px;
+
+    background-color: var(--red);
+}
+
+
+/* =========================================================
+   LOCATION CARD
+   ========================================================= */
+
+.location-card {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    padding: 25px 0;
+
+    box-sizing: border-box;
+
+    background-color: transparent;
+    border: none;
+}
+
+
+/* =========================================================
+   LOCATION NUMBER
+   ========================================================= */
+
+.location-number {
+    position: relative;
+    z-index: 2;
+
+    flex: 0 0 58px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    background-color: var(--red);
+
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    color: var(--paper-light);
+}
+
+
+/* =========================================================
+   LOCATION INFO
+   ========================================================= */
+
+.location-info {
+    flex: 1;
+    padding-top: 3px;
+}
+
+.location-info h3 {
+    margin: 0 0 7px;
+
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    color: var(--red);
+}
+
+.location-info p:first-of-type {
+    width: 100%;
+    max-width: none;
+
+    margin: 0 0 8px;
+
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+
+    color: var(--red);
+
+    text-align: left;
+}
+
+.location-info p:nth-of-type(2) {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0;
+
+    font-size: 0.9rem;
+    line-height: 1.45rem;
+
+    color: var(--ink);
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   DISCOVER THIS STOP
+   ========================================================= */
+
+.location-info a {
+    display: inline-block;
+
+    margin-top: 12px;
+    padding: 8px 14px;
+
+    background-color: var(--red);
+    color: var(--paper-light);
+
+    border: 1px solid var(--ink);
+    border-radius: 0;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    letter-spacing: 0.7px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.location-info a:hover {
+    background-color: var(--ink);
+    color: var(--paper-light);
+}
+
+
+/* =========================================================
+   MULTIPLE LOCATIONS
+   ========================================================= */
+
+.location-subitem {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px dashed var(--line);
+}
+
+.location-subitem:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   ROUTE CONNECTION
+   ========================================================= */
+
+.route-connection {
+    position: relative;
+
+    width: calc(100% - 95px);
+
+    margin: -8px 0 -8px 95px;
+
+    padding: 8px 15px 8px 18px;
+
+    box-sizing: border-box;
+
+    border-left: 1px solid var(--line);
+}
+
+.route-connection::before {
+    content: "";
+
+    position: absolute;
+
+    left: -4px;
+    top: 12px;
+
+    width: 7px;
+    height: 7px;
+
+    background-color: var(--red);
+
+    border-radius: 50%;
+}
+
+.route-main-info {
+    margin-bottom: 3px;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+
+    color: var(--red);
+}
+
+.route-directions {
+    width: 100% !important;
+    max-width: 650px !important;
+
+    margin: 0 !important;
+
+    font-size: 0.66rem !important;
+    line-height: 1.1rem !important;
+
+    color: var(--ink);
+
+    text-align: left !important;
+}
+
+.route-directions strong {
+    font-weight: bold;
+    color: var(--red);
+}
+
+
+/* =========================================================
+   ALL LOCATIONS
+   ========================================================= */
+
+#locations-list:not(:has(.location-number))::before {
+    display: none;
+}
+
+.location-card:not(:has(.location-number)) {
+    padding: 22px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.location-card:not(:has(.location-number)) .location-info {
+    padding-left: 0;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 80px;
+    padding: 25px 40px;
+
+    background-color: var(--ink);
+    color: var(--paper-light);
+
+    border-top: 5px solid var(--red);
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+footer p {
+    max-width: 950px;
+
+    margin: 6px auto;
+
+    color: var(--paper-light);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.8rem;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+footer a {
+    color: var(--paper-light);
+    font-size: 0.85rem;
+}
+
+footer a:hover {
+    color: var(--ochre);
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+footer p a {
+    color: var(--paper-light);
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    transition: color 0.2s ease;
+}
+
+footer p a:hover {
+    color: var(--ochre);
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.footer-box {
+    width: 220px;
+
+    box-sizing: border-box;
+    padding: 12px 18px;
+
+    border: 1px solid var(--paper-light);
+    border-radius: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    color: var(--paper-light);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    text-decoration: none;
+}
+
+.footer-box i {
+    color: var(--paper-light);
+}
+
+.footer-box:hover {
+    background-color: var(--red);
+    color: var(--paper-light);
+
+    border-color: var(--red);
+
+    text-decoration: none;
+}
+
+.footer-copyright {
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(247, 235, 213, 0.35);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+    /* HEADER */
+
+    header {
+        padding: 12px 20px;
+
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .link-head {
+        justify-content: center;
+        flex-wrap: wrap;
+
+        text-align: center;
+    }
+
+    .link-head > a,
+    .dropdown > a {
+        display: inline-block;
+
+        margin: 5px 8px;
+
+        font-size: 0.8rem;
+    }
+
+    .dropdown-menu {
+        top: 100%;
+        left: 50%;
+
+        min-width: 210px;
+
+        transform: translateX(-50%);
+    }
+
+
+    /* TIMELINE */
+
+    .bar-style {
+        top: 90px;
+        overflow-x: auto;
+    }
+
+    .bar-item {
+        min-width: 100px;
+    }
+
+    .bar-item a {
+        font-size: 1rem;
+    }
+
+
+    /* MAIN */
+
+    main {
+        padding: 20px;
+    }
+
+    main h2 {
+        font-size: 2.3rem;
+    }
+
+
+    /* HOMEPAGE */
+
+    .home-introduction {
+        margin: 35px auto 50px;
+    }
+
+    .title-container {
+        min-height: 500px;
+
+        padding: 110px 20px 95px;
+
+        background-position: center center;
+
+        border-width: 8px;
+    }
+
+    .title-container::before {
+        top: 22px;
+
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+
+    .title-container::after {
+        height: 60px;
+
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .title-container h1 {
+        padding: 18px 24px;
+
+        font-size: clamp(3.5rem, 10vw, 6rem);
+
+        letter-spacing: 0;
+
+        transform: rotate(-2deg);
+    }
+
+    .home-introduction h2,
+    .narratives h2,
+    .films-section h2 {
+        font-size: 2.5rem;
+    }
+
+
+    /* NARRATIVES */
+
+    .narratives {
+        margin: 50px auto;
+    }
+
+    .narrativa-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card-body h3 {
+        font-size: 2.7rem;
+    }
+
+
+    /* FILM AREA */
+
+    .area-immagini {
+        height: auto;
+
+        flex-direction: column;
+
+        padding: 20px;
+
+        overflow: visible;
+    }
+
+    .film-panel-left,
+    .description-container-right {
+        width: 100%;
+    }
+
+    .film-panel-left img {
+        width: 100%;
+    }
+
+    .frecce_scena {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .frecce_scena span {
+        writing-mode: horizontal-tb;
+    }
+
+    .story-content,
+    .metadata-content,
+    .qr-content {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .showview-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .metadata-tasti button {
+        width: 100%;
+    }
+
+
+    /* POSTERS */
+
+    .poster {
+        flex: 1 1 100%;
+    }
+
+
+    /* PREVIOUS / NEXT */
+
+    .bottoni-pagine {
+        margin-top: 35px;
+        gap: 15px;
+    }
+
+    .bottone {
+        font-size: 0.8rem;
+    }
+
+
+    /* MAP */
+
+    .map-page h1 {
+        font-size: 3.2rem;
+    }
+
+    #map {
+        height: 430px;
+    }
+
+    #filters {
+        flex-wrap: wrap;
+    }
+
+    .locations-section {
+        margin-top: 45px;
+    }
+
+    #locations-list::before {
+        left: 24px;
+    }
+
+    .location-card {
+        gap: 18px;
+    }
+
+    .location-number {
+        flex-basis: 50px;
+
+        width: 50px;
+        height: 50px;
+
+        font-size: 1.3rem;
+    }
+
+    .location-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .route-connection {
+        width: calc(100% - 68px);
+        margin-left: 68px;
+    }
+
+
+    /* DISCLAIMER */
+
+    .disclaimer-page .disclaimer-item,
+    .disclaimer-page .disclaimer-item:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .disclaimer-page .disclaimer-number {
+        font-size: 3rem;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 25px 20px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+    .footer-box {
+        width: 180px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .title-container {
+        min-height: 430px;
+
+        padding: 95px 12px 85px;
+
+        border-width: 6px;
+
+        background-position: center center;
+    }
+
+    .title-container::before {
+        top: 20px;
+
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    .title-container::after {
+        height: 55px;
+
+        padding: 10px;
+
+        font-size: 0.58rem;
+        letter-spacing: 0.5px;
+    }
+
+    .title-container h1 {
+        padding: 15px 18px;
+
+        font-size: clamp(2.5rem, 10vw, 4.2rem);
+
+        line-height: 1.05;
+
+        -webkit-text-stroke: 0.5px var(--ink);
+
+        text-shadow:
+            2px 2px 0 var(--ink);
+
+        box-shadow:
+            4px 5px 0 rgba(51, 37, 30, 0.25);
+    }
+
+    .card-body {
+        padding: 15px 25px 30px;
+    }
+
+    .card-body h3 {
+        font-size: 2.3rem;
+    }
+
+    .footer-box {
+        width: 100%;
+    }
+
+    .documentation-section h2,
+    .workflow h2 {
+        white-space: normal;
+    }
+
+    .prototype-row {
+        flex-direction: column;
+    }
+
+    .film-selection {
+        grid-template-columns: 1fr;
+    }
+
+    .film-selection span:nth-child(odd) {
+        border-right: none;
+    }
+}
