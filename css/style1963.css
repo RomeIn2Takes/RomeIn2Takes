@@ -256,22 +256,7 @@ main {
     align-items: center;
 }
 
-main h2 {
-    width: 100%;
-    max-width: 950px;
 
-    margin-bottom: 20px;
-
-    color: var(--ink);
-
-    font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: 2.8rem;
-    font-weight: 700;
-
-    letter-spacing: -1px;
-
-    text-align: center;
-}
 
 main p {
     width: 100%;
@@ -288,33 +273,49 @@ main p {
     text-align: justify;
 }
 
-
 /* =========================================================
-   INTERNAL PAGE TITLES
+   TITOLI PRINCIPALI — STILE MANIFESTO 1963
    ========================================================= */
 
+main h2,
 .map-page h1,
 .documentation-intro h1,
-.disclaimer-page .page-title,
-.introduction h2 {
-    width: 100%;
-    max-width: 950px;
+.disclaimer-page .page-title {
 
-    margin: 35px auto 25px;
+    width: fit-content;
+    max-width: 100%;
 
-    color: var(--red);
+    box-sizing: border-box;
 
-    font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: 4.5rem;
-    font-style: italic;
-    font-weight: 800;
+    margin: 35px auto 30px;
+    padding: 12px 25px;
 
-    letter-spacing: -2px;
+    background-color: var(--red-bright);
+    color: var(--yellow);
+
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-style: normal;
+    font-weight: 400;
+
+    line-height: 1.1;
+    letter-spacing: 1px;
 
     text-align: center;
+    text-transform: uppercase;
+
+    border: none;
+
+    -webkit-text-stroke: 1px var(--ink);
+
+    text-shadow:
+        3px 3px 0 var(--ink);
+
+    box-shadow:
+        6px 7px 0 rgba(51, 37, 30, 0.25);
+
+    transform: none;
 }
-
-
 /* =========================================================
    HOMEPAGE — INTRODUCTION
    ========================================================= */
@@ -481,33 +482,6 @@ main p {
 }
 
 
-/* =========================================================
-   HOMEPAGE — SECTION HEADINGS
-   ========================================================= */
-
-.home-introduction h2,
-.narratives h2,
-.films-section h2 {
-    width: 100%;
-
-    margin: 0 0 22px;
-    padding-bottom: 12px;
-
-    color: var(--ink);
-
-    font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: clamp(2.5rem, 4.5vw, 4rem);
-
-    font-style: italic;
-    font-weight: 800;
-
-    line-height: 1.15;
-    letter-spacing: -2px;
-
-    text-align: left;
-
-    border-bottom: 2px solid var(--red);
-}
 
 
 /* =========================================================
@@ -1499,12 +1473,6 @@ a.bottone[href="mappa.html"]:hover {
     margin: 50px auto;
 }
 
-.documentation-section h2,
-.workflow h2 {
-    max-width: none;
-    white-space: nowrap;
-}
-
 
 /* =========================================================
    FILM SELECTION
@@ -2168,12 +2136,6 @@ footer p a:hover {
         transform: rotate(-2deg);
     }
 
-    .home-introduction h2,
-    .narratives h2,
-    .films-section h2 {
-        font-size: 2.5rem;
-    }
-
 
     /* NARRATIVES */
 
@@ -2385,9 +2347,6 @@ footer p a:hover {
         padding: 15px 25px 30px;
     }
 
-    .card-body h3 {
-        font-size: 2.3rem;
-    }
 
     .footer-box {
         width: 100%;
