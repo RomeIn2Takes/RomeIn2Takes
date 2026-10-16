@@ -483,6 +483,28 @@ main h2,
 
 
 
+/* =========================================================
+   HOMEPAGE — NARRATIVES
+   ========================================================= */
+
+.narratives {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 65px auto;
+}
+
+.narrativa-container {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 35px;
+    margin-top: 40px;
+
+    align-items: stretch;
+}
 
 /* =========================================================
    HOMEPAGE — NARRATIVES
@@ -498,52 +520,57 @@ main h2,
 .narrativa-container {
     width: 100%;
 
-    display: flex;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    margin-top: 30px;
+    gap: 35px;
+    margin-top: 40px;
+
+    align-items: stretch;
 }
 
 
 /* =========================================================
-   NARRATIVE CARDS
+   NARRATIVE — CINEMA POSTERS
    ========================================================= */
 
 .narrative-card {
     position: relative;
 
-    flex: 1;
     min-width: 0;
 
-    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:
+        auto
+        auto
+        auto
+        auto
+        1fr
+        auto;
 
-    padding: 12px;
+    padding: 0;
 
-    background: var(--paper-light);
+    background-color: var(--paper-light);
     color: var(--ink);
 
-    border: 1px solid var(--ink);
-    border-radius: 0;
+    border: 10px solid var(--paper-light);
+    outline: 1px solid var(--ink);
 
-    mask: none;
-    filter: none;
+    border-radius: 0;
 
     box-shadow:
         0 8px 20px rgba(51, 37, 30, 0.12);
+
+    overflow: hidden;
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
 
-.narrative-card:nth-child(2) {
-    background-color: #E7C79E;
-}
-
 .narrative-card:hover {
-    transform: translateY(-4px);
-
-    filter: none;
+    transform: translateY(-3px);
 
     box-shadow:
         0 12px 25px rgba(51, 37, 30, 0.18);
@@ -551,7 +578,7 @@ main h2,
 
 
 /* =========================================================
-   CARD DECORATION
+   REMOVE DECORATIONS
    ========================================================= */
 
 .card-decoration,
@@ -561,19 +588,30 @@ main h2,
 
 
 /* =========================================================
-   CARD LABEL
+   GRID STRUCTURE
+   ========================================================= */
+
+.card-body {
+    display: contents;
+}
+
+
+/* =========================================================
+   ITINERARY — TOP CREDITS
    ========================================================= */
 
 .card-label {
-    padding: 25px 20px 5px;
+    grid-row: 1;
 
-    color: var(--ink);
+    padding: 22px 20px 5px;
 
     font-family: 'Oswald', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
+    font-size: 0.75rem;
+    font-weight: 600;
 
     letter-spacing: 4px;
+
+    color: var(--ink);
 
     text-align: center;
     text-transform: uppercase;
@@ -581,109 +619,198 @@ main h2,
 
 
 /* =========================================================
-   CARD BODY
+   POSTER TITLE
    ========================================================= */
 
-.card-body {
-    padding: 15px 35px 35px;
-}
-
 .card-body h3 {
-    margin: 10px 0 25px;
+    grid-row: 2;
 
-    color: var(--red);
+    position: relative;
+    z-index: 2;
 
-    font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: clamp(2.3rem, 3.5vw, 3.3rem);
+    margin: 0;
+    padding: 10px 20px 15px;
 
-    font-style: italic;
-    font-weight: 800;
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-style: normal;
+    font-weight: 400;
 
-    line-height: 1.05;
-    letter-spacing: -1.5px;
+    line-height: 1;
+    letter-spacing: 1px;
+
+    color: var(--red-bright);
 
     text-align: center;
-    text-transform: none;
+    text-transform: uppercase;
 
-    white-space: normal;
+    -webkit-text-stroke: 0.5px var(--ink);
 }
 
 
 /* =========================================================
-   CARD DETAILS
+   POSTER ILLUSTRATION
+   ========================================================= */
+
+.narrative-card::before {
+    content: "";
+
+    grid-row: 3;
+
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: none;
+
+    /*
+       The illustration fades into
+       the poster background
+    */
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            black 0%,
+            black 75%,
+            transparent 100%
+        );
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black 0%,
+            black 75%,
+            transparent 100%
+        );
+
+    margin-bottom: -15px;
+}
+
+
+/* HISTORICAL JOURNEY */
+
+.narrative-card:nth-child(1)::before {
+    background-image: url("../img/historical.png");
+}
+
+
+/* WOMEN & URBAN SPACE */
+
+.narrative-card:nth-child(2)::before {
+    background-image: url("../img/women.png");
+}
+
+
+/* =========================================================
+   POSTER — LOCATION / PERIOD
    ========================================================= */
 
 .card-details {
-    padding: 12px 0;
+    grid-row: 4;
 
-    margin: 0 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
+    gap: 18px;
+
+    margin: 0;
+    padding: 15px 20px;
+
+    border: none;
 }
 
 .card-details p {
-    width: 100%;
+    width: auto;
     max-width: none;
 
-    margin: 2px 0;
-
-    color: var(--ink);
+    margin: 0;
 
     font-family: 'Oswald', sans-serif;
     font-size: 0.75rem;
+    font-weight: 500;
 
-    line-height: 1.6;
     letter-spacing: 0.5px;
 
+    line-height: 1.4;
+
+    color: var(--ink);
+
     text-align: center;
+    text-transform: uppercase;
+}
+
+.card-details p + p::before {
+    content: "•";
+
+    margin-right: 18px;
+
+    color: var(--red-bright);
 }
 
 
 /* =========================================================
-   CARD DESCRIPTION
+   POSTER — DESCRIPTION
    ========================================================= */
 
 .card-description {
+    grid-row: 5;
+
     width: 100%;
     max-width: none;
 
-    margin: 0 0 14px;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 15px 35px 30px;
 
     color: var(--ink) !important;
 
-    font-family: Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 0.9rem;
 
     line-height: 1.6;
 
     text-align: center;
+
+    border: none;
 }
 
 
 /* =========================================================
-   DISCOVER BUTTON
+   POSTER — DISCOVER
    ========================================================= */
 
 .discover {
+    grid-row: 6;
+
     display: block;
 
-    width: fit-content;
+    width: 100%;
+    box-sizing: border-box;
 
-    margin: 22px auto 0;
-    padding: 10px 20px;
+    margin: 0;
+    padding: 16px 20px;
 
-    background-color: var(--red);
-    color: var(--paper-light);
+    background-color: var(--red-bright);
+    color: var(--yellow);
 
     border: none;
     border-radius: 0;
 
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
 
     letter-spacing: 1.5px;
+
+    text-align: center;
     text-transform: uppercase;
 
     transition:
@@ -693,7 +820,42 @@ main h2,
 
 .narrative-card:hover .discover {
     background-color: var(--ink);
-    color: var(--paper-light);
+    color: var(--yellow);
+}
+
+
+
+/* =========================================================
+   DISCOVER BUTTON
+   ========================================================= */
+
+.discover {
+    display: block;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: auto;
+    padding: 14px 20px;
+
+    background-color: var(--red-bright);
+    color: var(--yellow);
+
+    border: none;
+
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 1.2rem;
+
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+
+    transition: background-color 0.25s ease;
+}
+
+.narrative-card:hover .discover {
+    background-color: var(--ink);
+    color: var(--yellow);
 }
 
 
