@@ -88,8 +88,9 @@ header {
     align-items: center;
 
     width: 100%;
+    min-height: 58px;
 
-    padding: 16px 40px;
+    padding: 12px 40px;
     box-sizing: border-box;
 
     background-color: var(--paper-light);
@@ -182,8 +183,8 @@ header {
 
 .bar-style {
     position: sticky;
-    top: 51px;
-    z-index: 999;
+    top: 58px;
+    z-index: 1999;
 
     display: flex;
 
@@ -192,7 +193,7 @@ header {
 
     box-sizing: border-box;
 
-    background-color: var(--red);
+    background-color: var(--red-bright);
 
     border-bottom: 2px solid var(--ink);
 }
@@ -235,8 +236,8 @@ header {
 }
 
 .bar-item a:hover {
-    background-color: var(--paper-light);
-    color: var(--red);
+    background-color: var(--paper-dark);
+    color: var(--red-bright);
 }
 
 
