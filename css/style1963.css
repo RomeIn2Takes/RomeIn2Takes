@@ -1458,8 +1458,6 @@ main h2,
 .poster-flip:hover .poster-back {
     transform: rotateY(0deg);
 }
-
-
 /* =========================================================
    PREVIOUS / NEXT
    ========================================================= */
@@ -1478,36 +1476,38 @@ main h2,
 .bottone {
     display: inline-block;
 
-    padding: 10px 18px;
+    padding: 12px 22px;
 
-    background-color: var(--red);
-    color: var(--paper-light);
+    background-color: var(--red-bright);
+    color: var(--yellow);
 
-    border: 1px solid var(--ink);
+    border: none;
     border-radius: 0;
 
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-transform: uppercase;
 
     transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .bottone:hover {
-    background-color: var(--ink);
-    color: var(--paper-light);
+    background-color: var(--yellow);
+    color: var(--turquoise-dark);
 
-    border-color: var(--ink);
+    transform: translateY(-2px);
 }
 
 .bottoni-pagine .bottone:only-child {
     margin-left: auto;
 }
-
 
 /* =========================================================
    EXPLORE THE MAP
@@ -1515,41 +1515,23 @@ main h2,
 
 a.bottone[href="mappa.html"] {
     display: block;
-
     width: fit-content;
 
     margin: 30px auto;
-    padding: 13px 30px;
+    padding: 14px 30px;
 
-    background-color: var(--red);
-    color: var(--paper-light);
-
-    border: 1px solid var(--ink);
-    border-radius: 0;
-
-    font-family: 'Oswald', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-
+    font-size: 1.2rem;
     letter-spacing: 2px;
-    text-align: center;
-
-    box-shadow:
-        3px 3px 0 rgba(51, 37, 30, 0.2);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background-color 0.25s ease;
 }
 
 a.bottone[href="mappa.html"]:hover {
-    background-color: var(--red-dark);
+    background-color: var(--yellow);
 
     transform: translateY(-3px);
 
     box-shadow:
         5px 6px 0 rgba(51, 37, 30, 0.25);
+    outline: 2px solid var(--ink);
 }
 
 
