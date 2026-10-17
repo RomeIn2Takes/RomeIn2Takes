@@ -860,14 +860,33 @@ main h2,
 
 
 /* =========================================================
-   POSTER — GENERAL
+   POSTERS — 1960s POP ART FILTER
    ========================================================= */
 
-.poster-img,
+.poster-img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    filter:
+        saturate(1.25)
+        contrast(1.08)
+        brightness(1.03);
+
+    border: 1px solid var(--ink);
+    box-sizing: border-box;
+
+    transition:
+        filter 0.3s ease,
+        transform 0.6s ease-in-out;
+
+    backface-visibility: hidden;
+}
+
 .film-panel-left img {
     filter: none;
 }
-
 
 /* =========================================================
    POSTER BACK
@@ -1428,8 +1447,6 @@ main h2,
     height: auto;
 
     display: block;
-
-    filter: none;
 
     border: 1px solid var(--ink);
     box-sizing: border-box;
