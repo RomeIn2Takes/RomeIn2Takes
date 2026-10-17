@@ -18,6 +18,7 @@
         "css/style1980.css",
         "css/style2000.css",
         "css/style2020.css",
+        "css/style1963.css",
         "css/style2035.css"
     ];
 

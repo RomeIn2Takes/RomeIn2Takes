@@ -28,7 +28,7 @@
 
     /* Cinematic colors */
 
-    --red: #B85232;
+    --red: #C83C2E;
     --red-dark: #963E28;
     --red-bright: #C83C2E;
 
@@ -819,7 +819,7 @@ main h2,
 }
 
 .narrative-card:hover .discover {
-    background-color: var(--ink);
+    background-color: var(--turquoise);
     color: var(--yellow);
 }
 
@@ -853,10 +853,6 @@ main h2,
     transition: background-color 0.25s ease;
 }
 
-.narrative-card:hover .discover {
-    background-color: var(--ink);
-    color: var(--yellow);
-}
 
 
 /* =========================================================
@@ -864,24 +860,15 @@ main h2,
    ========================================================= */
 
 .poster-img {
-    width: 100%;
-    height: auto;
-
-    display: block;
-
     filter:
-        saturate(1.25)
-        contrast(1.08)
-        brightness(1.03);
-
-    border: 1px solid var(--ink);
-    box-sizing: border-box;
+        saturate(1.8)
+        contrast(1.35)
+        sepia(0.15)
+        brightness(1.05);
 
     transition:
         filter 0.3s ease,
         transform 0.6s ease-in-out;
-
-    backface-visibility: hidden;
 }
 
 .film-panel-left img {
@@ -923,8 +910,54 @@ main h2,
 }
 
 
+
 /* =========================================================
-   FILM AREA — EDITORIAL LAYOUT
+   INTRODUCTION
+   ========================================================= */
+
+.introduction {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 35px auto 25px;
+
+    text-align: center;
+}
+
+.introduction h2 {
+    margin: 20px auto 25px;
+}
+
+.introduction h3 {
+    max-width: 800px;
+
+    margin: 0 auto 25px;
+
+    color: var(--turquoise-dark);
+
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    font-weight: 700;
+    font-style: italic;
+
+    line-height: 1.4;
+    text-align: center;
+}
+
+.introduction p {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   FILM AREA — CINEMA POSTER LAYOUT
    ========================================================= */
 
 .area-immagini {
@@ -932,28 +965,32 @@ main h2,
 
     width: 100%;
     max-width: 950px;
-    height: 590px;
+    height: 610px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 25px;
+    gap: 22px;
 
     margin: 55px auto;
-    padding: 35px;
+    padding: 28px;
 
     box-sizing: border-box;
 
     background-color: var(--paper-light);
 
-    border: 2px solid var(--ink);
+    border: 8px solid var(--paper-light);
+    outline: 2px solid var(--ink);
 
     box-shadow:
-        6px 6px 0 rgba(51, 37, 30, 0.18);
+        7px 8px 0 rgba(51, 37, 30, 0.18);
 
     overflow: hidden;
 }
+
+
+/* REMOVE OLD DECORATIONS */
 
 .area-immagini::before,
 .area-immagini::after {
@@ -971,90 +1008,154 @@ main h2,
 
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
 
-    gap: 20px;
+    gap: 18px;
 
     box-sizing: border-box;
 }
 
 .film-panel-left > div {
     width: 100%;
-}
-
-.film-panel-left img {
-    width: 100%;
-
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-
-    display: block;
-
-    border: 1px solid var(--ink);
-    border-radius: 0;
-
-    filter: none;
-    box-shadow: none;
-}
-
-.photo-when {
-    width: 100%;
-
-    margin-bottom: 5px;
-
-    color: var(--red);
-
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-
-    letter-spacing: 1px;
-    text-align: left;
+    min-height: 0;
 }
 
 
 /* =========================================================
-   NAVIGATION ARROWS
+   PHOTO LABELS
+   ========================================================= */
+
+.photo-when {
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 0 8px;
+    padding: 5px 12px;
+
+    background-color: var(--turquoise);
+    color: var(--paper-light);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-align: left;
+    text-transform: uppercase;
+}
+
+
+/* SECOND PHOTO LABEL */
+
+.film-panel-left > div:nth-child(2) .photo-when {
+    background-color: var(--red-bright);
+    color: var(--yellow);
+}
+
+
+/* =========================================================
+   FILM PHOTOGRAPHS
+   ========================================================= */
+
+.film-panel-left img {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+    border: 3px solid var(--ink);
+    border-radius: 0;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        4px 4px 0 rgba(51, 37, 30, 0.15);
+
+    /*
+       Vintage cinematic print
+    */
+
+    filter:
+        saturate(1.35)
+        contrast(1.12)
+        sepia(0.08);
+
+    transition:
+        filter 0.3s ease;
+}
+
+.film-panel-left img:hover {
+    filter:
+        saturate(1.55)
+        contrast(1.18)
+        sepia(0.03);
+}
+
+
+/* =========================================================
+   SCENE NAVIGATION
    ========================================================= */
 
 .frecce_scena {
-    width: 8%;
+    width: 9%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    gap: 15px;
+    gap: 20px;
 }
 
+
+/* ARROWS */
+
 .frecce_scena button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 0;
 
-    background: none;
-    border: none;
+    background-color: var(--red-bright);
+    color: var(--yellow);
 
-    color: var(--red);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
 
-    font-size: 2.2rem;
+    font-size: 1.1rem;
 
     transition:
+        background-color 0.2s ease,
         color 0.2s ease,
         transform 0.2s ease;
 }
 
 .frecce_scena button:hover {
-    color: var(--ink);
-    transform: scale(1.1);
+    background-color: var(--turquoise);
+    color: var(--yellow);
+
+    transform: scale(1.08);
 }
 
-.frecce_scena span {
-    color: var(--ink);
 
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
+/* SCENE COUNTER */
+
+.frecce_scena span {
+    color: var(--red-bright);
+
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+
+    letter-spacing: 2px;
 
     writing-mode: vertical-lr;
 }
@@ -1068,55 +1169,74 @@ main h2,
     width: 45%;
     height: 100%;
 
+    min-width: 0;
     min-height: 0;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 
     box-sizing: border-box;
 }
 
+.description-container-right > div {
+    width: 100%;
+    min-width: 0;
+}
+
 
 /* =========================================================
-   STORY / METADATA / QR BUTTONS
+   STORY / METADATA / QR NAVIGATION
    ========================================================= */
 
 .showview-buttons {
     width: 100%;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 
-    gap: 8px;
-    margin-bottom: 8px;
+    gap: 5px;
+    margin-bottom: 10px;
 }
 
-.difficulty-buttons {
-    width: 100%;
+.showview-buttons button {
+    flex: 1;
 
-    display: flex;
-    flex-direction: row;
+    padding: 10px 8px;
 
-    gap: 6px;
-    margin-bottom: 8px;
+    background-color: var(--paper-dark);
+    color: var(--ink);
 
-    flex-shrink: 0;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
-.tellme-buttons {
-    margin: 15px 0;
+.showview-buttons button:hover {
+    background-color: var(--turquoise);
+    color: var(--yellow);
+}
 
-    display: flex;
-    flex-wrap: wrap;
+.showview-buttons button.active {
+    background-color: var(--red-bright);
+    color: var(--yellow);
 
-    gap: 8px;
+    border-color: var(--ink);
 }
 
 
 /* =========================================================
-   STORY / METADATA / QR CONTENT
+   CONTENT PANELS
    ========================================================= */
 
 .story-content,
@@ -1125,141 +1245,283 @@ main h2,
     position: relative;
 
     width: 100%;
-    height: 450px;
+    height: 465px;
 
     box-sizing: border-box;
-    padding: 30px;
+    padding: 25px;
 
-    background: var(--paper) !important;
+    background-color: var(--paper) !important;
     color: var(--ink);
 
-    border: 1px solid var(--ink);
+    border: 2px solid var(--ink);
     border-radius: 0;
 
-    box-shadow: none;
-
-    font-family: Georgia, "Times New Roman", serif;
+    box-shadow:
+        inset 0 0 0 5px rgba(248, 235, 212, 0.6);
 
     overflow-y: auto;
+
+    font-family: Georgia, "Times New Roman", serif;
 }
 
+
+/* STORY FLEX STRUCTURE */
+
 .story-content {
-    display: flex;
     flex-direction: column;
     align-items: stretch;
 }
 
-.metadata-content h3 {
-    font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: 1.4rem;
 
-    color: var(--red);
-}
+/* =========================================================
+   STORY TITLE
+   ========================================================= */
 
-.introduzione-meta {
-    margin-bottom: 15px;
+.story-content h3,
+.metadata-content h3,
+.qr-content h3 {
+    margin: 15px 0;
 
-    font-size: 1.1rem;
-    line-height: 1.6;
+    color: var(--red-bright);
+
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 1.65rem;
+    font-weight: 400;
+
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
 }
 
 
 /* =========================================================
-   METADATA BUTTON CONTAINER
+   STORY TEXT
+   ========================================================= */
+
+.story-content p,
+.metadata-content p,
+.qr-content p {
+    width: 100%;
+    max-width: none;
+
+    margin: 10px 0;
+
+    color: var(--ink);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    text-align: left;
+}
+
+.story-content strong,
+.metadata-content strong {
+    color: var(--red-dark);
+}
+
+
+/* =========================================================
+   DIFFICULTY BUTTONS
+   ========================================================= */
+
+.difficulty-buttons {
+    width: 100%;
+
+    display: flex;
+
+    gap: 5px;
+    margin-bottom: 18px;
+}
+
+.difficulty-buttons button {
+    flex: 1;
+
+    padding: 8px 5px;
+
+    background-color: transparent;
+    color: var(--turquoise-dark);
+
+    border: 1px solid var(--turquoise-dark);
+    border-radius: 0;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.difficulty-buttons button:hover {
+    background-color: var(--turquoise);
+    color: var(--paper-light);
+}
+
+.difficulty-buttons button.active {
+    background-color: var(--turquoise);
+    color: var(--paper-light);
+
+    border-color: var(--turquoise-dark);
+}
+
+
+/* =========================================================
+   TELL ME BUTTONS
+   ========================================================= */
+
+.tellme-buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin: 20px 0 5px;
+}
+
+.tellme-buttons button {
+    padding: 8px 12px;
+
+    background-color: var(--paper-light);
+    color: var(--red-dark);
+
+    border: 1px solid var(--red-bright);
+    border-radius: 0;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.tellme-buttons button:hover {
+    background-color: var(--red-bright);
+    color: var(--yellow);
+}
+
+.tellme-buttons button.active {
+    background-color: var(--red-bright);
+    color: var(--yellow);
+
+    border-color: var(--red-bright);
+}
+
+
+/* =========================================================
+   METADATA
+   ========================================================= */
+
+.metadata-content h3 {
+    margin-top: 0;
+}
+
+.introduzione-meta {
+    margin-bottom: 20px !important;
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   METADATA BUTTONS
    ========================================================= */
 
 .metadata-tasti {
     display: flex;
     flex-direction: column;
 
-    gap: 15px;
-    margin: 15px auto 0;
-
-    font-weight: bold;
+    gap: 12px;
+    margin: 20px auto 0;
 }
 
+.metadata-tasti button {
+    width: 100%;
+    max-width: 260px;
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+    align-self: center;
 
-.showview-buttons button,
-.difficulty-buttons button,
-.tellme-buttons button,
-.metadata-tasti button,
-#filters button {
-    padding: 8px 14px;
+    padding: 11px 15px;
 
-    background-color: var(--paper-light);
-    color: var(--ink);
+    background-color: var(--turquoise);
+    color: var(--paper-light);
 
     border: 1px solid var(--ink);
     border-radius: 0;
 
     font-family: 'Oswald', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 600;
 
-    letter-spacing: 0.7px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 
     transition:
         background-color 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
+        color 0.2s ease;
 }
 
-
-/* HOVER */
-
-.showview-buttons button:hover,
-.difficulty-buttons button:hover,
-.tellme-buttons button:hover,
-.metadata-tasti button:hover,
-#filters button:hover {
-    background-color: var(--red);
-    color: var(--paper-light);
-
-    border-color: var(--red);
-}
-
-
-/* ACTIVE */
-
-.showview-buttons button.active,
-.difficulty-buttons button.active,
-.tellme-buttons button.active,
-#filters button.active {
-    background-color: var(--red);
-    color: var(--paper-light);
-
-    border: 1px solid var(--red);
-
-    box-shadow: none;
-    transform: none;
-}
-
-
-/* SPECIFIC DIMENSIONS */
-
-.difficulty-buttons button {
-    flex: 1;
-}
-
-.metadata-tasti button {
-    width: 250px;
-    align-self: center;
+.metadata-tasti button:hover {
+    background-color: var(--red-bright);
+    color: var(--yellow);
 }
 
 
 /* =========================================================
-   MODAL
+   QR CODE
    ========================================================= */
 
-.modal-overlay {
+.qr-content {
+    text-align: center;
+}
+
+.qr-content h3 {
+    text-align: center;
+}
+
+.qr-description {
+    margin-bottom: 25px !important;
+
+    text-align: center !important;
+}
+
+.qr-image {
+    display: block;
+
+    width: 170px;
+    height: 170px;
+
+    margin: 20px auto;
+    padding: 10px;
+
+    background-color: white;
+
+    border: 3px solid var(--turquoise);
+
+    box-shadow:
+        5px 5px 0 rgba(51, 37, 30, 0.2);
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+   ========================================================= */
+
+.modal-overlay,
+.modal-overlay-2 {
     position: fixed;
 
-    top: 0;
-    left: 0;
+    inset: 0;
 
     width: 100vw;
     height: 100vh;
@@ -1268,121 +1530,193 @@ main h2,
     align-items: center;
     justify-content: center;
 
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(51, 37, 30, 0.75);
 
     z-index: 9999;
 
     cursor: pointer;
 }
 
+
+/* =========================================================
+   MODAL BOX
+   ========================================================= */
+
 .modal-box {
     position: relative;
 
     width: 450px;
     max-width: 90%;
+    max-height: 85vh;
 
     box-sizing: border-box;
     padding: 30px;
 
-    background: var(--paper-light);
+    background-color: var(--paper-light);
     color: var(--ink);
 
-    border: 2px solid var(--ink);
+    border: 4px solid var(--red-bright);
     border-radius: 0;
 
     box-shadow:
-        7px 7px 0 rgba(184, 82, 50, 0.35);
+        8px 8px 0 var(--turquoise-dark);
 
-    text-align: justify;
+    overflow-y: auto;
+
     cursor: default;
 }
 
+
+/* MODAL TITLE */
+
 .modal-box h3 {
-    margin-top: 0;
-    padding-bottom: 8px;
+    margin: 0 0 20px;
+    padding-bottom: 12px;
 
-    color: var(--red);
+    color: var(--red-bright);
 
-    border-bottom: 1px solid var(--ink);
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
 
-    font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: 1.5rem;
+    text-transform: uppercase;
+
+    border-bottom: 2px solid var(--ink);
 }
 
+
+/* MODAL CONTENT */
+
 .modal-box ul {
-    margin: 15px 0 0;
+    margin: 0;
     padding: 0;
 
     list-style: none;
 
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 0.9rem;
     line-height: 1.8;
 }
 
-
-/* =========================================================
-   STORY / METADATA TEXT
-   ========================================================= */
-
-.story-content h3,
-.metadata-content h3 {
-    color: var(--red);
-
-    font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: 1.4rem;
+.modal-box li {
+    margin-bottom: 10px;
 }
 
-.story-content p,
-.story-content strong,
-.metadata-content li,
-.metadata-content strong,
-.metadata-content p {
-    color: var(--ink);
-}
-
-.story-content p,
-.metadata-content p {
-    font-size: 0.9rem;
-    line-height: 1.5;
+.modal-box strong {
+    color: var(--red-dark);
 }
 
 
 /* =========================================================
-   QR
+   RESPONSIVE — TABLET
    ========================================================= */
 
-.qr-content h3 {
-    margin-top: 0;
+@media screen and (max-width: 800px) {
 
-    color: var(--red);
+    .area-immagini {
+        height: auto;
 
-    font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: 1.5rem;
+        flex-direction: column;
 
-    text-align: left;
+        gap: 25px;
+        padding: 20px;
+
+        overflow: visible;
+    }
+
+    .film-panel-left,
+    .description-container-right {
+        width: 100%;
+        height: auto;
+    }
+
+    .film-panel-left {
+        gap: 20px;
+    }
+
+    .film-panel-left img {
+        width: 100%;
+    }
+
+    .frecce_scena {
+        width: 100%;
+
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .frecce_scena span {
+        writing-mode: horizontal-tb;
+    }
+
+    .story-content,
+    .metadata-content,
+    .qr-content {
+        height: auto;
+        min-height: 400px;
+        max-height: 550px;
+    }
+
+    .showview-buttons {
+        flex-wrap: wrap;
+    }
 }
 
-.qr-description {
-    margin-bottom: 30px;
 
-    color: var(--ink);
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
 
-    font-size: 0.9rem;
-    line-height: 1.5;
+@media screen and (max-width: 480px) {
+
+    .introduction h3 {
+        font-size: 1.3rem;
+    }
+
+    .area-immagini {
+        padding: 12px;
+
+        border-width: 5px;
+    }
+
+    .photo-when {
+        font-size: 0.75rem;
+    }
+
+    .frecce_scena button {
+        width: 38px;
+        height: 38px;
+    }
+
+    .story-content,
+    .metadata-content,
+    .qr-content {
+        padding: 18px;
+    }
+
+    .story-content h3,
+    .metadata-content h3,
+    .qr-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .showview-buttons button {
+        font-size: 0.7rem;
+        padding: 9px 5px;
+    }
+
+    .difficulty-buttons button {
+        font-size: 0.7rem;
+    }
+
+    .tellme-buttons button {
+        font-size: 0.7rem;
+    }
+
+    .modal-box {
+        padding: 20px;
+    }
 }
-
-.qr-image {
-    width: 170px;
-    height: 170px;
-
-    margin-top: 10px;
-    padding: 4px;
-
-    background-color: white;
-
-    border: 1px solid var(--ink);
-}
-
 
 /* =========================================================
    HOMEPAGE — FILMS
@@ -1516,8 +1850,8 @@ main h2,
 }
 
 .bottone:hover {
-    background-color: var(--yellow);
-    color: var(--turquoise-dark);
+    background-color: var(--turquoise);
+    color: var(--yellow);
 
     transform: translateY(-2px);
 }
@@ -1542,7 +1876,8 @@ a.bottone[href="mappa.html"] {
 }
 
 a.bottone[href="mappa.html"]:hover {
-    background-color: var(--yellow);
+    background-color: var(--turquoise);
+    color: var(--yellow);
 
     transform: translateY(-3px);
 
