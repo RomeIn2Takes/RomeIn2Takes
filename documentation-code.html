@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Documentation - Rome in Two Takes</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Limelight&family=Bebas+Neue&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,400;1,700&display=swap"
+        rel="stylesheet">
+    <script src="java/base.js"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="link-head" style="text-align:left;">
+            <a href="index.html">Home</a>
+            <a href="mappa.html">Map</a>
+            <div class="dropdown">
+                <a href="#">Itinerary &#9660;</a>
+                <div class="dropdown-menu">
+                    <a href="tourStorico.html">Historical Journey</a>
+                    <a href="narrativa_femminista.html">Women & Urban Space</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="link-head" style="text-align:left;">
+            <a href="about.html">About</a>
+            <div class="dropdown">
+                <a href="#">Documentation &#9660;</a>
+                <div class="dropdown-menu">
+                    <a href="documentazione.html">The journey</a>
+                    <a href="documentation-code.html">Code</a>
+                </div>
+            </div>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+    </header>
+
+    <!-- BARRA SCELTA STILE -->
+    <div class="bar-style">
+        <div class="bar-item">
+            <a href="css/style1500.css">
+                <span class="nav-label">1500</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="css/style1900.css">
+                <span class="nav-label">1900</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="css/base.css">
+                <span class="nav-label">1950</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="css/style1980.css">
+                <span class="nav-label">1980</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="css/style2000.css">
+                <span class="nav-label">2000</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="css/style2020.css">
+                <span class="nav-label">2020</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="css/style2035.css">
+                <span class="nav-label">2035</span>
+            </a>
+        </div>
+    </div>
+
+
+    <main class="documentation-page">
+
+        <section class="documentation-intro">
+            <h1>Code & Technical Choices</h1>
+            <p>
+                This section illustrates the software architecture, design patterns, data models,
+                and specific solutions adopted in <em>Rome in Two Takes</em>.
+                It describes both high-level system architectural decisions and low-level CSS/JavaScript
+                implementations.
+            </p>
+        </section>
+        <section class="workflow">
+            <h2>TECHNICAL INDEX</h2>
+            <div class="workflow-steps">
+                <a href="#arch-pages" class="workflow-step">
+                    <strong>01</strong>
+                    <p>Web architecture</p>
+                </a>
+                <a href="#arch-json" class="workflow-step">
+                    <strong>02</strong>
+                    <p>JSON files</p>
+                </a>
+                <a href="#arch-themes" class="workflow-step">
+                    <strong>03</strong>
+                    <p>CSS themes</p>
+                </a>
+                <a href="#arch-metadata" class="workflow-step">
+                    <strong>04</strong>
+                    <p>Metadata</p>
+                </a>
+                <a href="#tech-pseudo" class="workflow-step">
+                    <strong>05</strong>
+                    <p>Coding choices</p>
+                </a>
+                <a href="#tech-height" class="workflow-step">
+                    <strong>06</strong>
+                    <p>Media queries</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- ARCHITETTURA SITO --> 
+        <section class="documentation-section" id="arch-pages">
+            <h2>01. HTML Architecture & style switching system</h2>
+
+            <p>
+                The website is organized into modular static HTML pages sharing a standardized document layout:
+                global sticky header navigation, temporal style selector, dynamic main content,and footer connected with external links<br><br>
+                In project the folder you can find:
+            </p>
+
+
+            <pre class="tree"><code>RomeIn2Takes/...
+├── css/
+│   ├── base.css               <span class="comment"># 1950 - Neorealism (base)</span>
+│   ├── style1500.css          <span class="comment"># Renaissance</span>
+│   ├── style1900.css          <span class="comment"># Early Silent Cinema</span>
+│   ├── style1980.css          <span class="comment"># Synthwave / Arcade</span>
+│   ├── style2000.css          <span class="comment"># Y2K / Digital Web</span>
+│   ├── style2020.css          <span class="comment"># Contemporary Minimal</span>
+│   └── style2035.css          <span class="comment"># Futuristic Glassmorphism</span>
+├── img/
+│   └── ...                    <span class="comment"># pictures used in the project</span>
+├── java/
+│   └── base.js                <span class="comment"># unique script</span>
+├── json/
+│   ├── dati_tour.json         <span class="comment"># metadata and tours description</span>
+│   ├── mappa.geojson          <span class="comment"># georeferenced coordinates</span>
+│   └── spostamenti.json       <span class="comment"># narrative data for thematic tours</span>
+├── disclaimer.html            <span class="comment"># Disclaimer</span>
+├── documentazione.html        <span class="comment"># Design workflow</span>
+├── documentation-code.html    <span class="comment"># this page</span>
+├── index.html                 <span class="comment"># Homepage</span>
+├── mappa.html                 <span class="comment"># Full interactive map</span>
+└── README.md                  <span class="comment"># Repository overview</span></code></pre>
+
+            <div class="tech-highlight-card">
+                <h3>Persistent Style Switching System</h3>
+                <p>
+                    Rather than duplicating HTML structures across eras, the website implements a non-destructive
+                    runtime theme-swapping system.
+                    below the <code>&lt;header&gt;</code> of each page, a single stylesheet tag carries
+                    <code>class="bar-style"</code>,invoking a function in JavaScript attaching event
+                    listeners to every <code>.bar-style</code>:
+                </p>
+                <p>
+                    <strong>Persistence across page transitions:</strong> When a user navigates through different sections of this website, <code>base.js</code> reads <code>localStorage.getItem("userStyle")</code> before DOM
+                    rendering completes, preserving the chosen era.
+                </p>
+            </div>
+        </section>
+
+        <!--json -->
+        <section class="documentation-section" id="arch-json">
+            <h2>02. Data Decoupling via JSON</h2>
+
+            <p>
+                A core architectural decision was the complete separation of content, metadata, and cartographic
+                geometry from static markup into external JSON repositories (<code>dati_tour.json</code>,
+                <code>mappa.geojson</code>, and <code>spostamenti.json</code>).
+            </p>
+
+            <div class="development-grid">
+                <div class="development-item">
+                    <h3>Data Decoupling</h3>
+                    <p>
+                        HTML files maintain an immaculate structural skeleton without dense walls of hardcoded prose.
+                        In this way editors can refine narrations or add metadata without
+                        editing HTML markup.
+                    </p>
+                </div>
+
+                <div class="development-item">
+                    <h3>Single source files</h3>
+                    <p>Itinerary data are shared between the narrative texts and the map page.
+                        Dynamic JSON nesting allows each scene to store information between 3 target
+                        audiences (<code>normal</code>, <code>child</code>, <code>scholar</code>) and 4
+                        content granularities (<code>text-less</code>, <code>text-standard</code>,
+                        <code>text-more</code>, <code>text-didyouknow</code>), or explore different coordinates.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- css stylesheet tables -->
+        <section class="documentation-section" id="arch-themes">
+            <h2>03. Stylistic Directions: Palettes, Typography & Eras</h2>
+
+            <p>
+                Each era stylesheet reimagines the graphic identity of <em>Rome in Two Takes</em>, aligning aesthetic
+                choices with historical media technologies and graphic traditions:
+            </p>
+
+            <table class="tech-table">
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Color palette</th>
+                        <th>Typography</th>
+                        <th>Design choice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1500</strong></td>
+                        <td>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #d4af37;"></span><code>#d4af37</code></span>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #2b1d0c;"></span><code>#2b1d0c</code></span>
+                        </td>
+                        <td><code>'Cinzel'</code>, <code>Garamond</code>, Serif</td>
+                        <td>Stampe rinascimentali, trattati cartografici e manoscritti umanistici</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1900</strong></td>
+                        <td>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #343434;"></span><code>#343434</code></span>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #e2e2df;"></span><code>#e2e2df</code></span>
+                        </td>
+                        <td><code>Georgia</code>, <code>"Times New Roman"</code></td>
+                        <td>Cinema muto d'inizio secolo, cartelli d'intertitolo e alto contrasto monocromo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1950 (Base)</strong></td>
+                        <td>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #943b3b;"></span><code>#943b3b</code></span>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #f4e8c1;"></span><code>#f4e8c1</code></span>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #000000;"></span><code>#000000</code></span>
+                        </td>
+                        <td><code>'Special Elite'</code>, <code>'Bebas Neue'</code></td>
+                        <td>Evokes post-war Italian Neorealism, vintage typewriter scripts, and
+                            mid-century cinema posters</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1980</strong></td>
+                        <td>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #1d0243;"></span><code>#1d0243</code></span>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #2a0360;"></span><code>#2a0360</code></span>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #00f3ff;"></span><code>#00f3ff</code></span>
+                        </td>
+                        <td><code>'VT323'</code>, <code>'Press Start 2P'</code></td>
+                        <td>Vibrant counter-culture, arcade gaming monitors, and neon
+                            aesthetic</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2000</strong></td>
+                        <td>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #e0e0e0;"></span><code>#e0e0e0</code></span>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #003366;"></span><code>#003366</code></span>
+                        </td>
+                        <td><code>'Trebuchet MS'</code>, <code>Arial</code>, Sans-Serif</td>
+                        <td>Transizione digitale Y2K, estetica dei menu DVD e primi portali web</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2020</strong></td>
+                        <td>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #121212;"></span><code>#121212</code></span>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #ffffff;"></span><code>#ffffff</code></span>
+                        </td>
+                        <td><code>'Inter'</code>, <code>Helvetica Neue</code>, Sans-Serif</td>
+                        <td>Minimalismo contemporaneo, dark mode e interfacce delle piattaforme di streaming</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2035 (Futuristic)</strong></td>
+                        <td>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #15382b;"></span><code>#15382b</code></span>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #030a07;"></span><code>#030a07</code></span>
+                            <span class="color-badge"><span class="color-swatch" style="background-color: #bad3c7;"></span><code>#bad3c7</code></span>
+                        </td>
+                        <td><code>'SF Pro Display'</code>, Ultra-clean Geometric Sans-Serif</td>
+                        <td>Implements modern glassmorphism (translucent panels, subtle luminous borders, clean HUD
+                            layouts)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- metadata -->
+        <section class="documentation-section" id="arch-metadata">
+            <h2>04. Metadata in narratives</h2>
+
+            <p>Every cinematic scene incorporates metadata organised using standard web ontologies:
+            </p>
+
+            <div>
+                <ul>
+                    <li>
+                        <span><strong>Schema.org</strong></span>
+                       used for the cinematic contexts such movie titles, directors and shot information.
+                    </li><br>
+                    <li>
+                        <span><strong>CIDOC CRM</strong> and <strong>Schema.org</strong></span>
+                        gives infomration about the architectural heritage and coordinates and dates datas..
+                    </li><br>
+                    <li>
+                        <span><strong>Dublin Core (dcterms)</strong></span>records the language attribuet and the credits of this project
+                    </li>
+                </ul>
+                <p>
+                    These properties are fetched dynamically and rendered inside specific modal overlays,
+                    ensuring that viewers can inspect technical filmmaking choices both with with architectural data.
+                </p>
+            </div>
+        </section>
+
+        <section class="documentation-section" id="tech-pseudo">
+            <h2>05. Technical implementations & architectural best practices</h2>
+
+            <p>Some of the technical coding choices we have done in order to to enrich the visual presentation without polluting the HTML DOM are:
+            </p>
+
+            <div class="development-grid">
+                <div class="development-item">
+                    <h3><code>::before</code> and <code>::after</code></h3>
+                    <p>This pseudo-elements are used to add content in specific stylesheet when belonging to specific eras 
+                    </p>
+                </div>
+
+                <div class="development-item">
+                    <h3><code>.active</code> buttons state</h3>
+                    <p>Is handled by the JavaScript to manage selected
+                    states of the <button><code>button</code></button>consistently without writing redundant code on every button element
+                    </p>
+                </div>
+
+                <div class="development-item">
+                    <h3>Fixed Viewport</h3>
+                    <p>Standard desktop displays and modern laptops provide typical viewport heights between 768px and 1080px. We have chosen to fix some height limit to
+                    560px in order to ensures the entire fit of the content without requiring disruptive scrolling.
+                    </p>
+                </div>
+
+                <div class="development-item">
+                    <h3>Media Wueries</h3>
+                    <p>text
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!--media queries -->
+        <section class="documentation-section" id="tech-insights">
+            <h2>07. Media queries</h2>
+        </section>
+
+        <!-- NAVIGAZIONE BOTTOM -->
+        <div class="bottoni-pagine">
+            <a href="documentazione.html" class="bottone">&larr; Previous</a>
+            <a href="disclaimer.html" class="bottone">NEXT &rarr;</a>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p class="footer-title">
+                <strong>Rome in Two Takes</strong>
+            </p>
+
+            <p>
+                Project developed for the course
+                <a href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2025/533915"
+                    target="_blank">
+                    Information Modeling and Web Technologies
+                </a>
+                within the Master's Degree in
+                <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">
+                    Digital Humanities and Digital Knowledge
+                </a>,
+                University of Bologna.
+            </p>
+
+            <p>
+                Maria Cavaleri · Francesca Gaeta · C. Kielyn Madayag
+            </p>
+
+            <div class="footer-links">
+                <a href="about.html" class="footer-box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    About the Project
+                </a>
+                <a href="https://github.com/RomeIn2Takes/RomeIn2Takes" target="_blank" class="footer-box">
+                    <i class="fa-brands fa-github"></i>
+                    GitHub Repository
+                </a>
+            </div>
+
+            <p class="footer-copyright">
+                © 2026 Rome in Two Takes
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

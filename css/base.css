@@ -1746,7 +1746,7 @@ footer p a {
 
 
 /* =========================================================
-   DOCUMENTATION
+   DOCUMENTATION - the journey
    ========================================================= */
 
 /* Titolo principale */
@@ -2442,4 +2442,197 @@ footer p a {
 
 .disclaimer-page .disclaimer-number {
     font-size: 2.5rem;
+}
+
+
+
+
+
+
+/* =========================================================
+   DOCUMENTATION - The code
+   ========================================================= */
+/* directory tree (compatto) */
+pre.tree {
+    background: #f4e8c1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 12px 0;
+    overflow-x: auto;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11.5px;
+    line-height: 1.25;
+    tab-size: 2;
+    box-sizing: border-box;
+}
+
+.tree {
+    color: black;
+}
+
+.comment {
+    color: #666666;
+    font-style: italic;
+}
+
+/* Box per frammenti di codice */
+.code-snippet-box {
+    background-color: #f4e8c1;
+    color: #e2e2df;
+    padding: 16px 20px;
+    border-radius: 4px;
+    border: 2px solid #f4e8c1;
+    overflow-x: auto;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin: 18px 0;
+    box-sizing: border-box;
+}
+
+.code-snippet-box pre {
+    margin: 0;
+}
+
+.code-snippet-box code {
+    font-family: 'Courier Prime', monospace;
+    color: black;
+}
+
+/* Schede tecniche con bordo vintage */
+.tech-highlight-card {
+    background-color: white;
+    color: #1a1a1a;
+    border: 7px solid #000000;
+    border-style: double;
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+
+.tech-highlight-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    color: #943b3b;
+    margin-top: 0;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.tech-highlight-card p,
+.tech-highlight-card ul {
+    color: #222222;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   TABELLA COMPARATIVA STILI CSS (Compatta per stare intera nella view)
+   ========================================================= */
+
+.tech-table {
+    width: 100%;
+    max-width: 950px;
+    margin: 15px auto;
+    border-collapse: collapse;
+    background-color: transparent;
+    color: #ffffff;
+    box-sizing: border-box;
+
+    border-top: 1px solid #f4e8c1;
+    border-bottom: 1px solid #f4e8c1;
+}
+
+.tech-table th,
+.tech-table td {
+    padding: 4px 8px;
+    text-align: left;
+    font-size: 0.8rem;
+    line-height: 1.25;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(244, 232, 193, 0.35);
+}
+
+/* Divisore verticale tra le colonne */
+.tech-table th:not(:last-child),
+.tech-table td:not(:last-child) {
+    border-right: 1px solid rgba(244, 232, 193, 0.35);
+}
+
+/* Intestazione della tabella con font Bebas Neue */
+.tech-table th {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    color: #f4e8c1;
+    padding: 6px 8px;
+    border-bottom: 1px solid #f4e8c1;
+}
+
+.tech-table td strong {
+    color: #f4e8c1;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* Tag <code> compatto ed elegante */
+.tech-table td code {
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 1px 4px;
+    border-radius: 2px;
+    border: 1px solid rgba(244, 232, 193, 0.2);
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.76rem;
+}
+
+/* =========================================================
+   COLOR SWATCHES PER TECH-TABLE (Compatti)
+   ========================================================= */
+
+.color-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin: 1px 3px 1px 0;
+    white-space: nowrap;
+}
+
+.color-swatch {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    border: 1px solid rgba(244, 232, 193, 0.6);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+}
+/* Etichette ontologie semantiche */
+.badge-tag {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.badge-schema {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    border: 1px solid #90caf9;
+}
+
+.badge-dc {
+    background-color: #f3e5f5;
+    color: #4a148c;
+    border: 1px solid #ce93d8;
+}
+
+.badge-cidoc {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border: 1px solid #a5d6a7;
 }
