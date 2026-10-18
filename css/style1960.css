@@ -875,39 +875,6 @@ main h2,
     filter: none;
 }
 
-/* =========================================================
-   POSTER BACK
-   ========================================================= */
-
-.poster-back {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    box-sizing: border-box;
-    padding: 7%;
-
-    display: flex;
-    flex-direction: column;
-
-    background: var(--paper-light);
-    color: var(--ink);
-
-    text-align: center;
-
-    transform: rotateY(180deg);
-    transition: transform 0.6s ease-in-out;
-
-    backface-visibility: hidden;
-
-    border: 1px solid var(--ink);
-
-    filter: none;
-}
 
 
 
@@ -1771,35 +1738,261 @@ main h2,
     box-sizing: border-box;
 }
 
+/* =========================================================
+   FILM POSTERS — PRINTED CINEMA POSTERS
+   ========================================================= */
+
 .poster-flip {
     position: relative;
+
     width: 100%;
+
+    padding: 9px;
+
+    box-sizing: border-box;
+
+    background-color: #FFF9EC;
+
+    border: 1px solid var(--ink);
+
+    box-shadow:
+        0 6px 15px rgba(51, 37, 30, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
+
+/* POSTER IMAGE */
+
 .poster-img {
+    display: block;
+
     width: 100%;
     height: auto;
 
-    display: block;
-
-    border: 1px solid var(--ink);
     box-sizing: border-box;
+
+    border: 1px solid rgba(51, 37, 30, 0.35);
+
+    backface-visibility: hidden;
+
+    transition:
+        transform 0.6s ease-in-out,
+        filter 0.3s ease;
+}
+
+
+/* HOVER */
+
+.poster-flip:hover {
+    box-shadow:
+        0 10px 22px rgba(51, 37, 30, 0.25);
+}
+
+
+/* =========================================================
+   FILM POSTERS — BACK
+   1960s ITALIAN CINEMA
+   ========================================================= */
+
+.poster-back {
+    position: absolute;
+
+    inset: 9px;
+
+    width: auto;
+    height: auto;
+
+    box-sizing: border-box;
+
+    padding: 25px 22px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background-color: var(--paper-light);
+    color: var(--ink);
+
+    border: 2px solid var(--red-bright);
+
+    text-align: center;
+
+    transform: rotateY(180deg);
 
     transition: transform 0.6s ease-in-out;
 
     backface-visibility: hidden;
+
+    overflow-y: auto;
+
+    filter: none;
 }
 
-.poster-back p {
+
+/* =========================================================
+   POSTER BACK — INNER FRAME
+   ========================================================= */
+
+.poster-back::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 6px;
+
+    border: 1px solid var(--ink);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   POSTER BACK — FILM TITLE
+   ========================================================= */
+
+.poster-back h3 {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    color: var(--red-bright);
+
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    font-weight: 400;
+
+    line-height: 1.1;
+    letter-spacing: 1px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    -webkit-text-stroke: 0.4px var(--ink);
+}
+
+
+/* =========================================================
+   POSTER BACK — DECORATIVE DIVIDER
+   ========================================================= */
+
+.poster-back h3::after {
+
+    content: "──── ◆ ────";
+
+    display: block;
+
+    width: 100%;
+
+    margin: 15px auto 0;
+
+    padding: 0;
+
+    border: none;
+
+    color: var(--red-bright);
+
+    font-family: Georgia, serif;
+
+    font-size: 0.75rem;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+
+    -webkit-text-stroke: 0;
+
+}
+
+
+/* =========================================================
+   POSTER BACK — FILM YEAR
+   ========================================================= */
+
+.poster-back .film-year {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+
     margin: 0;
 
     color: var(--ink);
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
 
-    line-height: 1.5;
-    text-align: justify;
+    letter-spacing: 3px;
+
+    line-height: 1.3;
+    text-align: center;
+}
+
+
+/* =========================================================
+   POSTER BACK — DIRECTOR
+   ========================================================= */
+
+.poster-back .film-director {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    margin: 0;
+
+    color: var(--turquoise-dark);
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    line-height: 1.4;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   POSTER BACK — SYNOPSIS
+   ========================================================= */
+
+.poster-back .film-synopsis {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    margin: 8px 0 0;
+
+    color: var(--ink);
+
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    text-align: center;
 }
 
 .poster-flip:hover .poster-img {
@@ -2864,4 +3057,27 @@ footer p a:hover {
     .film-selection span:nth-child(odd) {
         border-right: none;
     }
+}
+
+
+/* =========================================================
+   FILM POSTERS — RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .poster-flip {
+        padding: 7px;
+    }
+
+    .poster-back {
+        inset: 7px;
+        padding: 20px 18px;
+    }
+
+    .poster-back p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
 }
