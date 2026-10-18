@@ -1816,7 +1816,7 @@ main h2,
 
     gap: 10px;
 
-    background-color: var(--paper-light);
+    background-color: white;
     color: var(--ink);
 
     border: 2px solid var(--red-bright);
@@ -1860,62 +1860,35 @@ main h2,
     position: relative;
     z-index: 2;
 
-    width: 100%;
+    width: fit-content;
+    max-width: 100%;
 
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;
 
-    color: var(--red-bright);
+    margin: 0 auto 10px;
+    padding: 8px 12px;
+
+    background-color: var(--red-bright);
+    color: var(--yellow);
 
     font-family: 'Anton', Impact, sans-serif;
-    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    font-size: clamp(1.3rem, 2.2vw, 2rem);
     font-weight: 400;
 
-    line-height: 1.1;
-    letter-spacing: 1px;
+    line-height: 1.05;
+    letter-spacing: 0.5px;
 
     text-align: center;
     text-transform: uppercase;
 
-    -webkit-text-stroke: 0.4px var(--ink);
+    -webkit-text-stroke: 0.5px var(--ink);
+
+    text-shadow: 2px 2px 0 var(--ink);
+
+    box-shadow: 4px 4px 0 rgba(51, 37, 30, 0.25);
 }
 
 
-/* =========================================================
-   POSTER BACK — DECORATIVE DIVIDER
-   ========================================================= */
-
-.poster-back h3::after {
-
-    content: "──── ◆ ────";
-
-    display: block;
-
-    width: 100%;
-
-    margin: 15px auto 0;
-
-    padding: 0;
-
-    border: none;
-
-    color: var(--red-bright);
-
-    font-family: Georgia, serif;
-
-    font-size: 0.75rem;
-
-    font-weight: 400;
-
-    line-height: 1;
-
-    letter-spacing: 2px;
-
-    text-align: center;
-
-    -webkit-text-stroke: 0;
-
-}
 
 
 /* =========================================================
