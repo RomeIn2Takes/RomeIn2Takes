@@ -13,12 +13,11 @@
     const savedStyle = localStorage.getItem("userStyle");
     const validStyles = [
         "css/base.css",
-        "css/style1500.css",
+        "css/style1650.css",
+        "css/style1850.css",
         "css/style1900.css",
-        "css/style1980.css",
-        "css/style2000.css",
-        "css/style2020.css",
-        "css/style1963.css",
+        "css/style1960.css",
+        "css/style1990.css",
         "css/style2035.css"
     ];
 
