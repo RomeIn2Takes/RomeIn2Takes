@@ -1,0 +1,2062 @@
+/* =========================================================
+   CSS STILE ANNI 80
+   ========================================================= */
+
+   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* STILE GENERALE */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    background: linear-gradient(180deg,#1d0243,#2a0360,#1d0243);
+    background-attachment: fixed;
+
+    font-family: 'VT323', monospace;
+    color: #00f3ff;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+button {
+    cursor: pointer;
+}
+
+h2 {
+    text-shadow: 0 0 3px #00f3ff;
+}
+
+
+/* =========================================================
+   HEADER / NAVBAR
+   ========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 40px;
+
+    background-color: #1d0243;
+
+    border-top: 1px solid #ff007f;
+    border-bottom: 1px solid #00f3ff;
+    box-shadow: 0 0 15px #00f3ff;
+}
+
+
+/* LINK NAVBAR */
+
+.link-head {
+    display: flex;
+    align-items: center;
+}
+
+.link-head>a,
+.dropdown>a {
+    margin-right: 20px;
+
+    color: #ff007f;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+
+    transition: color 0.2s ease;
+}
+
+.link-head>a:hover,
+.dropdown>a:hover {
+    color: #ffe600;
+
+    opacity: 1;
+
+    text-decoration: underline;
+
+}
+
+
+/* DROPDOWN NAVBAR (itinerary)*/
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 230px;
+
+    background-color: #1d0243;
+
+    border: 1px solid #1d0243;
+
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.35);
+
+    z-index: 2100;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+
+    margin: 0;
+    padding: 12px 15px;
+
+    color: white;
+
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid rgba(255, 0, 127, 0.4);
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ff007f;
+
+    color: white;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   BARRA STILI / DATE
+   ========================================================= */
+
+.bar-style {
+    position: sticky;
+    top: 50px;
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spazio tra i rettangoli */
+
+    width: 100%;
+    box-sizing: border-box;
+    height: 80px;
+    padding: 5px;
+
+}
+
+.bar-item {
+    flex: 1;
+    background-color:#ff007f;
+
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    
+    border: 1.5px solid #ffe600;
+    transition: transform 0.08s ease;
+}
+
+.bar-item a {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffe600;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+
+    text-shadow: 0 0 2px white;
+
+    transition: text-shadow 0.4s ease;
+}
+
+.bar-item:active {
+    transform: translate(5px, 5px); }
+
+.bar-item a:hover {
+
+    color: #ffe600;
+
+    opacity: 1;
+
+    text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 30px 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* TITOLI GENERALI stesso stile usato nella homepage */
+
+main h2 {
+    width: 100%;
+    max-width: 950px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 15px;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+
+    color: #ff007f;
+
+    text-align: center;
+}
+
+
+/* TESTO GENERALE */
+
+main p {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    text-align: justify;
+}
+
+
+/* =========================================================
+   HOMEPAGE - INSEGNA CINEMATOGRAFICA
+   ========================================================= */
+
+.home-introduction {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 50px auto 70px auto;
+
+    text-align: center;
+}
+
+
+/* contenitore titolo */
+
+.title-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 70px;
+    box-sizing: border-box;
+    
+    border: 2px solid #ffe600;
+    background-color: #1d0243;
+    box-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+
+    background-image: repeating-linear-gradient(0deg,
+        rgba(255, 0, 127, 0.04) 0px,
+        rgba(255, 0, 127, 0.04) 2px,
+        transparent 2px, /* spessore linea */
+        transparent 8px /* Distanza tra le linee */
+    );
+
+}
+
+
+/* homepage title */
+
+.title-container h1 {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Press Start 2P', monospace;
+    font-size: 3rem;
+    line-height: 1.5;
+
+    color: #ffe600;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: -3px -3px 0px #00ffff;
+    -webkit-text-stroke: 2px #ff007f;
+
+    animation: jitter 0.15s infinite;
+
+}
+
+
+.title-container h1::before,
+.title-container h1::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1d0243;
+}
+
+/* Primo strato Glitch */
+.title-container h1::before {
+    left: 4px;
+    animation: glitch-anim-1 0.2s infinite linear alternate-reverse;
+}
+
+/* Secondo strato Glitch */
+.title-container h1::after {
+    left: -4px;
+    animation: glitch-anim-2 0.3s infinite linear alternate-reverse;
+}
+
+/* ANIMAZIONI */
+
+@keyframes glitch-anim-1 {
+    0% {
+        clip-path: inset(20% 0 50% 0);
+        transform: translate(-3px, 2px);
+    }
+
+    20% {
+        clip-path: inset(80% 0 5% 0);
+        transform: translate(3px, -2px);
+    }
+
+    40% {
+        clip-path: inset(10% 0 70% 0);
+        transform: translate(-4px, -1px);
+    }
+
+    60% {
+        clip-path: inset(40% 0 20% 0);
+        transform: translate(4px, 3px);
+    }
+
+    80% {
+        clip-path: inset(60% 0 10% 0);
+        transform: translate(-2px, 1px);
+    }
+
+    100% {
+        clip-path: inset(30% 0 40% 0);
+        transform: translate(2px, -3px);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip-path: inset(15% 0 65% 0);
+        transform: translate(3px, -2px);
+    }
+
+    25% {
+        clip-path: inset(55% 0 15% 0);
+        transform: translate(-3px, 3px);
+    }
+
+    50% {
+        clip-path: inset(75% 0 5% 0);
+        transform: translate(2px, 1px);
+    }
+
+    75% {
+        clip-path: inset(5% 0 85% 0);
+        transform: translate(-4px, -2px);
+    }
+
+    100% {
+        clip-path: inset(35% 0 35% 0);
+        transform: translate(1px, 2px);
+    }
+}
+
+@keyframes jitter {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-2px, 1px);
+    }
+
+    50% {
+        transform: translate(1px, -1px);
+    }
+
+    75% {
+        transform: translate(-1px, -2px);
+    }
+
+    100% {
+        transform: translate(2px, 1px);
+    }
+}
+
+
+/* narratives homepage */
+
+.narratives {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 70px auto;
+}
+
+.narrativa-container {
+    width: 100%;
+
+    display: flex;
+
+    gap: 40px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   HOMEPAGE - NARRATIVE CARD 
+   ========================================================= */
+
+.narrative-card {
+    flex: 1;
+    box-sizing: border-box;
+
+    
+    background-color: #c2b8cf;
+    background-image: repeating-linear-gradient(0deg,
+        rgba(255, 0, 127, 0.04) 0px,
+        rgba(255, 0, 127, 0.04) 2px,
+        transparent 2px, /* spessore linea */
+        transparent 8px /* Distanza tra le linee */
+            );
+
+
+    border: 2px solid #00f3ff;
+    border-radius: 8px;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+
+/* parte superiore barra ricerca */
+
+.card-decoration {
+    height: 45px;
+
+    background: #998fa7;
+
+    border-bottom: 2px solid #00f3ff;
+
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    box-sizing: border-box;
+}
+
+/* Pulsante quadrato con "X" stile finestra desktop retro */
+.card-decoration::before {
+    content: "X";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+
+    color: #ff007f;
+    background-color: #c2b8cf;
+    border-top: 2px solid #c2b8cf;
+    border-left: 2px solid #c2b8cf;
+    border-right: 2px solid #46365d;
+    border-bottom: 2px solid #46365d;
+
+    border-radius: 2px;
+
+    font-family: 'Press Start 2P', monospace, sans-serif;
+    font-size: 10px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   ETICHETTA ITINERARIO / TAB DI NAVIGAZIONE
+   ========================================================= */
+
+.card-label {
+    padding: 12px 20px;
+
+    border-bottom: 2px #ff007f;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+
+    color: #ffe600;
+
+    text-align: center;
+}
+
+
+.card-body {
+    padding: 24px 22px;
+}
+
+
+/* titolo */
+
+.card-body h3 {
+    min-height: 80px;
+    margin: 0 0 30px 0;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.15rem;
+    line-height: 1.45;
+    letter-spacing: 1px;
+
+    color: #ff007f;
+    text-align: center;
+}
+
+.card-details {
+    padding: 10px 0;
+    margin-bottom: 18px;
+    border-top: 2px dashed #ff007f;
+
+}
+
+.card-details p {
+    width: 100%;
+    max-width: none;
+
+    margin: 5px 0;
+    font-family: 'VT323', monospace;
+    font-size: 1.25rem;
+    line-height: 1.4rem;
+
+    color: #00f3ff;
+    text-align: left;
+}
+
+.card-details p strong {
+    color: #ffe600;
+}
+
+.card-description {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 25px;
+    font-family: 'VT323', monospace;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+
+    text-align: justify;
+    color: #1d0243;
+}
+
+.discover {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #1d0243;
+    border: 2px solid #00f3ff;
+
+    border-radius: 4px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+
+    color: #00f3ff;
+    transition: all 0.2s ease;
+}
+
+
+/* =========================================================
+   HOVER CARD
+   ========================================================= */
+
+.narrative-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffe600;
+    box-shadow: 0 0 10px #ffe600;
+}
+
+.narrative-card:hover .card-decoration {
+    border-bottom-color: #ffe600;
+}
+
+.narrative-card:hover .card-decoration::before {
+    border-color: #ffe600;
+    color: #ffe600;
+    box-shadow: 0 0 6px #ffe600;
+}
+
+.narrative-card:hover .card-body h3 {
+    color: #ffe600;
+}
+
+.narrative-card:hover .discover {
+    background-color: #ffe600;
+    color: #1d0243;
+    border-color: #ffe600;
+    box-shadow: 0 0 10px #ffe600;
+}
+
+
+/* =========================================================
+   AREA PRINCIPALE - stile interface desktop 
+   ========================================================= */
+
+.area-immagini {
+    width: 100%;
+    max-width: 950px;
+    height: 560px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    padding: 14px 20px;
+
+    box-sizing: border-box;
+
+    /* box redesign */
+    background-color: #1d0243;
+    border: 2px solid #ffe600;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    position: relative;
+    
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(255, 0, 127, 0.04) 0px,
+        rgba(255, 0, 127, 0.04) 2px,
+        transparent 2px, /* spessore linea */
+        transparent 8px /* Distanza tra le linee */
+        );
+    
+    box-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+}
+
+/* =========================================================
+   ZONA SINISTRA - FOTO
+   ========================================================= */
+
+.film-panel-left {
+    width: 40%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    box-sizing: border-box;
+}
+
+.film-panel-left>div {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    
+    /* cornicex immagini */
+    background-color: #1d0243;
+    border: 1px solid #00f3ff;
+    overflow: hidden;
+    padding: 12px 0 8px 0;
+    border-radius: 6px;
+}
+
+.film-panel-left img {
+    width: 80%;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover; 
+    display: block;
+    /* snx, h, blur, poi colore trasparenza */
+    box-shadow: 0 0 12px rgba(0, 243, 255, 0.4);
+    border-radius: 4px;
+}
+
+.photo-when {
+    width: 100%;
+
+    margin-bottom: 5px;
+    margin-left: 30px;
+
+    color: white;
+
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   ZONA CENTRALE - FRECCE
+   ========================================================= */
+
+.frecce_scena {
+    width: 8%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.frecce_scena button {
+    padding: 4px 8px;
+
+    background-color: #1d0243;
+    border-top: 2px solid #c2b8cf;
+    border-left: 2px solid #c2b8cf;
+    border-right: 2px solid #46365d;
+    border-bottom: 2px solid #46365d;
+
+    color: #ff007f;
+
+    font-size: 2.2rem;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.frecce_scena button:hover {
+    color: #00f3ff;
+    background-color: #502f7e;
+
+    transform: scale(1.2);
+}
+/* cambio colore bottini invertiti (effetto press)*/
+.frecce_scena button:active,
+.frecce_scena button.active {
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid #c2b8cf;
+    border-bottom: 2px solid #c2b8cf;
+    color: #ffe600;
+}
+
+.frecce_scena span {
+    color: white;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    writing-mode: vertical-lr;
+}
+
+
+/* ZONA DESTRA testi */
+
+.description-container-right {
+    width: 45%;
+    height: 100%;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+/* BOTTONI STORY / METADATA / QR */
+
+.showview-buttons {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
+}
+
+.showview-buttons button {
+    padding: 10px 20px;
+
+    background-color: #ff007f;
+    color: white;
+
+    border: 1px solid white;
+    border-radius: 0px;
+
+    border-top: 2px solid #ff71b8;
+    border-left: 2px solid #ff71b8;
+    border-right: 2px solid #800040;
+    border-bottom: 2px solid #800040;
+
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    letter-spacing: 0.08rem;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+/* tasti cambio vista (Story / Metadata / QR) */
+.showview-buttons button:hover,
+.showview-buttons button.active {
+    color: #00f3ff;
+    background-color: #1d0243;
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid #c2b8cf;
+    border-bottom: 2px solid #c2b8cf;
+}
+
+.showview-buttons button:active {
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid #c2b8cf;
+    border-bottom: 2px solid #c2b8cf;
+}
+
+
+/* =========================================================
+   BOX TESTO SCENE
+   ========================================================= */
+
+.story-content, .metadata-content, .qr-content {
+    position: relative;
+
+    width: 100%;
+    height: 450px;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #c2b8cf;
+    color: black;
+
+    border-top: 3px solid #46365d;
+    border-left: 3px solid #46365d;
+    border-right: 3px solid #c2b8cf;
+    border-bottom: 3px solid #c2b8cf;
+    border-radius: 0px;
+
+    overflow-y: auto;
+
+}
+
+.story-content h3,
+.metadata-content h3,
+.qr-content h3 {
+
+    color: #ffe600 !important; 
+}
+
+/* DIFFICULTY BUTTONS */
+
+.difficulty-buttons {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 6px;
+
+    margin-bottom: 8px;
+
+    flex-shrink: 0;
+}
+
+.difficulty-buttons button {
+    flex: 1;
+
+    padding: 8px;
+
+    background-color: #c2b8cf;
+
+    color: white;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #46365d;
+    border-bottom: 2px solid #46365d;
+    border-radius: 0px;
+
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+
+    text-align: center;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.difficulty-buttons button:hover,
+.difficulty-buttons button.active {
+    color: #00f3ff;
+    background-color: #998fa7;
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    opacity: 1;
+}
+
+.difficulty-buttons button:active {
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+
+/* =========================================================
+   TELL ME BUTTONS
+   ========================================================= */
+
+.tellme-buttons {
+    margin: 15px 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.tellme-buttons button, .metadata-tasti button {
+    padding: 6px 12px;
+
+    background-color: #c2b8cf;
+    color: white;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #46365d;
+    border-bottom: 2px solid #46365d;
+    border-radius: 0px;
+
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.tellme-buttons button:hover, .metadata-tasti button:hover,
+.tellme-buttons button.active, .metadata-tasti button.active {
+    color: #00f3ff;
+    background-color: #998fa7;
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    opacity: 1;
+}
+
+.tellme-buttons button:active, .metadata-tasti button:active {
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+
+/* metadata*/
+
+.introduzione-meta {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.metadata-tasti {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin: 15px auto 0;
+
+    font-weight: bold;
+}
+
+.metadata-tasti li {
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   META PUNTI (????? non ho capito cosa sia)
+   ========================================================= */
+
+.meta-punti {
+    color: #3b9454;
+
+    font-size: 1.2rem;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.meta-punti:hover {
+    color: #82af7a;
+
+    border-bottom: 2px solid #62216d;
+
+    text-decoration: underline;
+}
+
+
+/* METADATA finestra informazioni aggiuntive */
+
+.modal-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    z-index: 9999;
+
+    cursor: pointer;
+}
+
+.modal-box {
+    position: relative;
+
+    width: 450px;
+    max-width: 90%;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    background-color: #c2b8cf;
+    color: #1d0243;
+
+    border: 2px solid #46365d;
+    border-radius: 0px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+    text-align: justify;
+
+    cursor: default;
+}
+
+.modal-box h3 {
+    margin-top: 0;
+
+    padding-bottom: 8px;
+
+    color: #ff007f;
+
+    border-bottom: 1px solid #ff007f;
+
+    font-size: 1.2rem;
+}
+
+.modal-box ul {
+    margin: 15px 0 0;
+    padding: 0;
+
+    list-style: none;
+
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TESTI STORY E METADATA
+   ========================================================= */
+
+.story-content h3,
+.story-content p,
+.story-content strong,
+.metadata-content h3,
+.metadata-content li,
+.metadata-content strong,
+.metadata-content p {
+    color: #1d0243;
+}
+
+.story-content p,
+.metadata-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   QR
+   ========================================================= */
+
+.qr-content {
+    width: 100%;
+    height: 450px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.qr-content h3 {
+    margin-top: 0;
+    color: #1d0243;
+    font-size: 1.17em;
+    text-align: left;
+}
+
+.qr-description {
+    margin-bottom: 30px;
+    color: #1d0243;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.qr-image {
+    width: 170px;
+    height: 170px;
+
+    margin-top: 10px;
+
+    padding: 4px;
+
+    background-color: white;
+
+    border: 1px solid #1d0243;
+}
+
+
+/* =========================================================
+   SEZIONE FILM HOMEPAGE
+   ========================================================= */
+
+.films-section {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 80px auto;
+}
+
+.films-introduction {
+    margin-bottom: 40px;
+}
+
+.films-introduction h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   POSTER
+   ========================================================= */
+
+.poster-container {
+    width: 100%;
+    max-width: 950px;
+
+    box-sizing: border-box;
+
+    margin: 40px auto;
+    padding: 0 10px;
+}
+
+.poster-grid {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.poster {
+    flex: 1 1 calc(33.333% - 30px);
+
+    min-width: 250px;
+
+    box-sizing: border-box;
+}
+
+.poster-flip {
+    position: relative;
+
+    width: 100%;
+}
+
+.poster-img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    transition: transform 0.6s ease-in-out;
+
+    backface-visibility: hidden;
+}
+
+.poster-back {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding: 7%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #0ff;
+    color: #1d0243;
+
+    text-align: center;
+
+    transform: rotateY(180deg);
+
+    transition: transform 0.6s ease-in-out;
+
+    backface-visibility: hidden;
+}
+
+.poster-back p {
+    margin: 0;
+
+    color: #1d0243;
+
+    font-size: 1em;
+    line-height: 1.4;
+
+    text-align: justify;
+}
+
+.poster-flip:hover .poster-img {
+    transform: rotateY(-180deg);
+}
+
+.poster-flip:hover .poster-back {
+    transform: rotateY(0deg);
+}
+
+
+/* =========================================================
+   BOTTONI PREVIOUS / NEXT
+   ========================================================= */
+
+.bottoni-pagine {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 50px auto 20px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottone {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background-color: #1d0243;
+
+    border: 1px solid #00f3ff;
+    border-radius: 3px;
+
+    font-family: 'VT323', monospace;
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+
+    color: #00f3ff;
+    box-shadow: 0 0 10px #00f3ff;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.bottone:hover,
+.bottone:active,
+.bottone.active {
+    background-color: #ffe600;
+
+    color: #1d0243;
+
+    border-color: #ffe600;
+
+    opacity: 1;
+
+    box-shadow:
+        0 0 8px rgba(255, 230, 0, 0.8),
+        0 0 16px rgba(255, 230, 0, 0.5);
+}
+
+.bottoni-pagine .bottone:only-child {
+    margin-left: auto;
+}
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.disclaimer-page {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.disclaimer-page .page-title {
+    width: 100%;
+    max-width: 950px;
+    margin: 35px auto 50px auto;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.8em;
+    letter-spacing: 3px;
+
+    color: #ff007f;
+    text-align: center;
+    text-shadow: 0 0 3px #00f3ff;
+}
+
+.disclaimer-page .disclaimer-item {
+    display: flex;
+    flex-direction: row-reverse;
+    /* dispari: txt a snx, n a dx */
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 40px 0;
+    border-bottom: 2px dashed #ffe600;
+    box-sizing: border-box;
+}
+
+.disclaimer-page .disclaimer-item:last-child {
+    border-bottom: none;
+}
+
+.disclaimer-page .disclaimer-item:nth-child(even) {
+    flex-direction: row;
+    /* pari: n a snx, txt a dx */
+}
+
+
+.disclaimer-page .disclaimer-title {
+    color: #ffe600;
+    text-shadow: 0 0 3px #ffe600;
+}
+
+.disclaimer-page .disclaimer-number {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    line-height: 1;
+    color: #ffe600;
+    text-shadow: 0 0 15px #00f3ff;
+}
+
+.disclaimer-page .disclaimer-content {
+    flex-grow: 1;
+}
+
+/* Annullare i vincoli globali di main h2 e main p */
+.disclaimer-page .disclaimer-title,
+.disclaimer-page .disclaimer-text {
+    max-width: none;
+    margin: 0;
+}
+
+.disclaimer-page .disclaimer-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    color: #ff007f;
+    text-shadow: 0 0 3px #00f3ff;
+    text-align: left;
+}
+
+.disclaimer-page .disclaimer-text {
+    font-family: 'VT323', monospace;
+    font-size: 1.35rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* =========================================================
+   MAPPA 
+   ========================================================= */
+
+.map-page {
+    width: 100%;
+}
+
+/* TITOLO MAPPA */
+.map-page h1 {
+    width: 100%;
+    max-width: 950px;
+    margin: 35px auto 25px auto;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #ff007f;
+    text-align: center;
+    text-shadow: 0 0 3px #00f3ff;
+}
+
+/* CONTENITORE MAPPA LEAFLET */
+#map {
+    width: 100%;
+    max-width: 950px;
+    height: 550px;
+
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    background-color: #1d0243;
+    border: 2px solid #ffe600;
+
+    box-shadow:
+            0 0 5px #0ff,
+            0 0 10px #0ff,
+            0 0 20px #0ff,
+            0 0 40px #0ff;
+
+    border-radius: 8px;
+}
+
+.leaflet-popup-content {
+    font-family: 'VT323', monospace;
+}
+
+
+/* =========================================================
+   FILTRI MAPPA
+   ========================================================= */
+
+#filters {
+    width: 100%;
+    max-width: 950px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 30px auto 0 auto;
+}
+
+#filters button {
+    padding: 10px 18px;
+
+    background-color: #1d0243;
+    border-top: 2px solid #00f3ff;
+    border-left: 2px solid #00f3ff;
+    border-right: 2px solid #0e3537;
+    border-bottom: 2px solid #0e3537;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5rem;
+
+    color: #00f3ff;
+    transition: all 0.2s ease;
+}
+
+#filters button:hover,
+#filters button.active,
+#filters button:active {
+    color: #ffe600;
+    border-top: 2px solid #0e3537;
+    border-left: 2px solid #0e3537;
+    border-right: 2px solid #00f3ff;
+    border-bottom: 2px solid #00f3ff;
+}
+
+/* =========================================================
+   EXPLORE THE LOCATIONS
+   ========================================================= */
+
+.locations-section {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 65px auto 20px auto;
+}
+
+.locations-section h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: #ff007f;
+    text-shadow: 0 0 3px #00f3ff;
+    font-size: 1.5rem;
+    margin-bottom: 45px;
+
+}
+
+/* =========================================================
+   CONTENITORE ITINERARIO E TIMELINE
+   ========================================================= */
+
+#locations-list {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Raggio laser neon verticale */
+#locations-list::before {
+    content: "";
+    position: absolute;
+
+    left: 31px;
+    top: 30px;
+    bottom: 30px;
+
+    width: 2px;
+
+    background: #ff007f ;
+}
+
+/* Singola tappa */
+.location-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 25px 0;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+}
+
+/* Gettone numero tappa */
+.location-number {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    background-color: #1d0243;
+    border: 2px solid #ffe600;
+    border-radius: 50%;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    color: #ffe600;
+    box-shadow: 0 0 12px rgba(255, 230, 0, 0.6);
+}
+
+/* Informazioni location */
+.location-info {
+    flex: 1;
+    padding-top: 5px;
+}
+
+.location-info h3 {
+    margin: 0 0 8px 0;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.1rem;
+    color: #ff007f;
+    letter-spacing: 1px;
+
+    text-shadow: 0 0 3px #00f3ff;
+}
+
+/* Film associati */
+.location-info p:first-of-type {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 10px 0;
+    font-family: 'VT323', monospace;
+    font-size: 1.25rem;
+    color: #00f3ff;
+    text-align: left;
+}
+
+/* Descrizione */
+.location-info p:nth-of-type(2) {
+    width: 100%;
+    max-width: 700px;
+    margin: 0;
+
+    font-family: 'VT323', monospace;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: white;
+    text-align: justify;
+}
+
+/* Link Explore tappa */
+.location-info a {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 8px 16px;
+
+    background-color: #1d0243;
+    border: 1px solid #00f3ff;
+    border-radius: 0px;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    letter-spacing: 0.05rem;
+    color: #00f3ff;
+    text-decoration: none;
+}
+
+.location-info a:hover {
+    background-color: #ffe600;
+    color: #1d0243;
+    border-color: #ffe600;
+    box-shadow: 0 0 12px #ffe600;
+}
+
+/* Più location nella stessa tappa */
+.location-subitem {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba(255, 0, 127, 0.45);
+}
+
+.location-subitem:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* =========================================================
+   CONNESSIONE TRA TAPPE
+   ========================================================= */
+
+.route-connection {
+    position: relative;
+    width: calc(100% - 95px);
+    margin: -8px 0 -8px 95px;
+    padding: 8px 15px 8px 18px;
+    box-sizing: border-box;
+    border-left: 0.5px solid #00f3ff;
+}
+
+.route-connection::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 12px;
+    width: 8px;
+    height: 8px;
+    background-color: #00f3ff;
+    box-shadow: 0 0 8px #00f3ff;
+    border-radius: 50%;
+}
+
+.route-main-info {
+    margin-bottom: 4px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    color: #ffe600;
+}
+
+.route-directions {
+    width: 100% !important;
+    max-width: 650px !important;
+    margin: 0 !important;
+    font-family: 'VT323', monospace !important;
+    font-size: 1.15rem !important;
+    line-height: 1.35 !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    text-align: left !important;
+}
+
+.route-directions strong {
+    font-weight: normal;
+    color: #00f3ff;
+}
+
+/* Vista all locations*/
+#locations-list:not(:has(.location-number))::before {
+    display: none;
+}
+
+.location-card:not(:has(.location-number)) {
+    padding: 22px 0;
+}
+
+.location-card:not(:has(.location-number)) .location-info {
+    padding-left: 0;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 80px;
+    padding: 25px 40px;
+
+    background-color: #1d0243;
+    border-top: 2px solid #ff007f;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+footer p{
+    color: #ff007f;
+    font-size: 1rem;
+}
+
+
+footer a, footer a:hover {
+    color: #ffe600;
+    font-size: 1rem;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+    header {
+        padding: 12px 20px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .link-head {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        text-align: center !important;
+    }
+
+    .link-head>a,
+    .dropdown>a {
+        display: inline-block;
+
+        margin: 5px 8px;
+
+        font-size: 0.7rem;
+    }
+
+
+    /* dropdown mobile */
+
+    .dropdown-menu {
+        top: 100%;
+        left: 50%;
+
+        min-width: 210px;
+
+        transform: translateX(-50%);
+    }
+
+
+    /* barra date */
+
+    .bar-style {
+        top: 80px;
+    }
+
+    .bar-item {
+        min-width: 100px;
+    }
+
+    .bar-item a {
+        font-size: 0.7rem;
+    }
+
+
+    /* main */
+
+    main {
+        padding: 20px;
+    }
+
+    main h2 {
+        font-size: 2.3rem;
+    }
+
+
+    /* insegna homepage */
+
+    .home-introduction {
+        margin: 35px auto 50px auto;
+    }
+
+    .title-container {
+        padding: 50px 25px;
+
+        border-width: 5px;
+    }
+
+    .title-container h1 {
+        font-size: 3.2rem;
+
+        letter-spacing: 3px;
+    }
+
+    .title-container::before,
+    .title-container::after {
+        font-size: 0.9rem;
+
+        letter-spacing: 4px;
+
+        overflow: hidden;
+
+        white-space: nowrap;
+    }
+
+
+    /* narrative */
+
+    .narratives {
+        margin: 50px auto;
+    }
+
+    .narrativa-container {
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .card-body h3 {
+        min-height: auto;
+
+        font-size: 1.1rem;
+    }
+
+
+    /* rullino */
+
+    .area-immagini {
+        height: auto;
+
+        flex-direction: column;
+
+        padding: 20px;
+
+        overflow: visible;
+    }
+
+    .film-panel-left,
+    .description-container-right {
+        width: 100%;
+    }
+
+    .film-panel-left img {
+        width: 100%;
+    }
+
+    .frecce_scena {
+        width: 100%;
+
+        flex-direction: row;
+    }
+
+    .frecce_scena span {
+        writing-mode: horizontal-tb;
+    }
+
+    .story-content,
+    .metadata-content,
+    .qr-content {
+        height: auto;
+
+        min-height: 400px;
+    }
+
+    .showview-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .metadata-tasti button {
+        width: 100%;
+    }
+
+
+    /* poster */
+
+    .poster {
+        flex: 1 1 100%;
+    }
+
+
+    /* previous / next */
+
+    .bottoni-pagine {
+        margin-top: 35px;
+
+        gap: 15px;
+    }
+
+    .bottone {
+        font-size: 0.9rem;
+    }
+
+
+    /* footer */
+
+    footer {
+        padding: 25px 20px;
+    }
+
+    /* DISCLAIMER MOBILE */
+    .disclaimer-page .page-title {
+        font-size: 1.6rem;
+        margin: 25px auto 35px auto;
+    }
+
+    .disclaimer-page .disclaimer-item,
+    .disclaimer-page .disclaimer-item:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 30px 0;
+    }
+
+    .disclaimer-page .disclaimer-number {
+        font-size: 2.4rem;
+    }
+
+    .disclaimer-page .disclaimer-title {
+        font-size: 1rem;
+    }
+
+    .disclaimer-page .disclaimer-text {
+        font-size: 1.2rem;
+    }
+
+    /* MAPPA MOBILE */
+    #map {
+        height: 420px;
+    }
+}
