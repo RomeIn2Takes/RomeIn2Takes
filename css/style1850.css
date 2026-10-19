@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=IM+Fell+English+SC&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* SFONDO BODY CHE SIMULA PUNTINISMO --> INSPO DOMENICA, SERAUT */ 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f2ecd9;
+    background-image: 
+        radial-gradient(#b5c4b1 18%, transparent 19%), 
+        radial-gradient(#b1d698 18%, transparent 19%),
+        radial-gradient(#9db4c0 12%, transparent 13%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px, 5px 15px;
+    
+    font-family: 'IM Fell English SC', serif;
+    color: #2c2825;
+}
+
+a {
+    text-decoration: none;
+    color: #4a3b32;
+}
+
+a:hover {
+    color: #8c4736;
+    opacity: 0.85;
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #808143;
+    border-top: 3px double #2b3d1d;
+    border-bottom: 3px double #2b3d1d;
+}
+
+.link-head {
+    display: flex;
+    align-items: center;
+}
+
+.link-head > a,
+.dropdown > a {
+    margin-right: 20px;
+    color: #f4ebd0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+}
+
+.link-head > a:hover,
+.dropdown > a:hover {
+    color: #d4a373;
+    text-decoration: underline;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 230px;
+    background-color: #808143;
+    border: 2px solid #2b3d1d;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    z-index: 2100;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    margin: 0;
+    padding: 12px 15px;
+    color: #f4ebd0;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(212, 163, 115, 0.3);
+}
+
+.dropdown-menu a:hover {
+    background-color: #d4a373;
+    color: #2b221e;
+}
+
+/* BARRA STILI-DATE */
+.bar-style {
+    position: sticky;
+    top: 55px;
+    z-index: 999;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 0;
+    background-color: #4a3b32;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bar-item {
+    flex: 1;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.bar-item:last-child {
+    border-right: none;
+}
+
+.bar-item a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f4ebd0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+
+.bar-item a:hover {
+    color: #d4a373;
+    text-shadow: 0 0 8px rgba(212, 163, 115, 0.8);
+}
+
+/* =========================================================
+   TITOLO PRINCIPALE --> dovrebbe simulare una pennelleta materica 
+   ========================================================= */
+.home-introduction {
+    width: 100%;
+    max-width: 1000px;
+    margin: 60px auto 80px auto;
+    text-align: center;
+}
+
+.title-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.title-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-1deg);
+  width: 75%;
+  height: 110px;
+  padding: 90px 90px;
+  background: 
+    radial-gradient(ellipse at center, rgba(123, 158, 168, 0.65) 0%, rgba(88, 129, 87, 0.55) 40%, transparent 75%),
+    linear-gradient(90deg, transparent 0%, rgba(96, 184, 169, 0.45) 50%, transparent 100%);
+  filter: blur(22px);
+  z-index: 1;
+}
+
+.title-container h1 {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Karolyne Macbeth', cursive;
+  font-size: 5.5rem;
+  line-height: 1.1;
+  color: #222b26;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9);
+}
