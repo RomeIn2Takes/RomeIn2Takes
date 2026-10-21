@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Exo:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap');
+
+.bruno-ace-sc-regular {
+    font-family: "Bruno Ace SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 /* =========================================================
    STYLE 2035 - liquid/ glass style
    ========================================================= */
@@ -8,7 +15,6 @@ body {
     padding: 0;
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
 
     background: radial-gradient(circle at 50% 30%, #15382b 0%, #081711 70%, #030a07 100%);
     background-attachment: fixed;
@@ -290,7 +296,7 @@ main p {
     left: 50%;
     transform: translate(-50%, -50%) rotate(90deg);
     /* Con rotate(90deg): 'height' è la larghezza orizzontale a schermo, 'width' è l'altezza verticale */
-    width: 320px;
+    width: 350px;
     height: min(95vw, 1200px);
     background-image: url("../img_femminista/sfondo.jpg"), url("../sfondo.jpg");
     background-repeat: no-repeat;
@@ -381,6 +387,7 @@ main p {
     margin: 0;
     padding: 0;
 
+    font-family: 'Exo', sans-serif;
     font-size: 4.2rem;
     font-weight: 800;
     line-height: 1.1;
@@ -1394,7 +1401,7 @@ footer a:hover {
     }
 
     .home-introduction::before {
-        width: 220px;
+        width: 260px;
         height: 95vw;
         max-width: none;
         max-height: none;
@@ -1413,6 +1420,7 @@ footer a:hover {
     .title-container h1 {
         font-size: 2.8rem;
     }
+
 
     .narratives {
         margin: 50px auto;
