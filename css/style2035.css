@@ -1158,15 +1158,56 @@ main p {
     backface-visibility: hidden;
 }
 
-.poster-back p {
+.poster-back h3 {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(15, 45, 33, 0.5) 100%);
+    border-radius: 35px;
+    height: 50px;
+    border: 1.5px solid #a3f7cb;
+    box-shadow: 0 0 18px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
+    
+    color: #a3f7cb;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.film-year {
+
+    font-size: 1.05rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+    line-height: 1.3;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    color: #e3f7ee;
+    }
+
+.film-director {
+    text-transform: uppercase;
+    color: #a3f7cb;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+    border-bottom: 1px solid #a3f7cb;
+    padding-bottom: 20px;
+}
+
+.film-synopsis {
+    padding-top: 20px;
     margin: 0;
 
-    color: #bad3c7;
+    color: #e3f7ee;
 
-    font-size: clamp(0.75rem, 1.1vw, 0.95rem);
-    line-height: 1.4;
+    font-size: 1em;
+    line-height: 1.6;
 
-    text-align: justify;
+    text-align: center;
 }
 
 .poster-flip:hover .poster-img {
