@@ -294,9 +294,14 @@ main p {
 
 .home-introduction {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
+    min-height: 490px;
 
-    margin: 50px auto 70px auto;
+    margin: 5px auto 70px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     text-align: center;
     position: relative;
@@ -311,7 +316,7 @@ main p {
     left: 50%;
     transform: translate(-50%, -50%) rotate(90deg);
     /* Con rotate(90deg): 'height' è la larghezza orizzontale a schermo, 'width' è l'altezza verticale */
-    width: 350px;
+    width: 490px;
     height: min(95vw, 1200px);
     background-image: url("../img_femminista/sfondo.jpg"), url("../sfondo.jpg");
     background-repeat: no-repeat;
@@ -327,7 +332,7 @@ main p {
 .title-container {
     position: relative;
 
-    width: 100%;
+    width: 90%;
     max-width: 900px;
 
     margin: 0 auto;
@@ -1665,10 +1670,11 @@ footer a:hover {
 
     .home-introduction {
         margin: 35px auto 50px auto;
+        min-height: 450px;
     }
 
     .home-introduction::before {
-        width: 260px;
+        width: 450px;
         height: 95vw;
         max-width: none;
         max-height: none;
