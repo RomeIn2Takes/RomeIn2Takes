@@ -987,3 +987,248 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
     }
 
 }
+
+/* =========================================================
+   ABOUT PAGE
+   Shared styles for all historical themes
+   ========================================================= */
+
+
+/* =========================================================
+   GENERAL STRUCTURE
+   ========================================================= */
+
+.about-page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+}
+
+.about-page section {
+    margin-bottom: 3.5rem;
+}
+
+.about-page section:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Paragraphs */
+
+.about-page section > p:not(.section-label) {
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+
+/* Section headings */
+
+.about-page h2 {
+    margin-bottom: 1.2rem;
+}
+
+
+/* =========================================================
+   ABOUT INTRODUCTION
+   ========================================================= */
+
+.about-introduction {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid currentColor;
+}
+
+.about-introduction h1 {
+    margin-bottom: 1.8rem;
+}
+
+
+/* =========================================================
+   TEAM SECTION
+   ========================================================= */
+
+.team-section {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid currentColor;
+}
+
+.team-introduction {
+    margin-bottom: 2rem !important;
+}
+
+
+/* Team grid */
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+
+    margin-top: 2rem;
+}
+
+
+/* =========================================================
+   TEAM CARDS
+   ========================================================= */
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 190px;
+
+    padding: 1.5rem;
+
+    box-sizing: border-box;
+
+    border: 1px solid currentColor;
+    background: transparent;
+    color: inherit;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+/* Decorative numbering */
+
+.team-card::before {
+    display: block;
+
+    margin-bottom: 2rem;
+
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+
+    opacity: 0.65;
+}
+
+.team-card:nth-child(1)::before {
+    content: "01";
+}
+
+.team-card:nth-child(2)::before {
+    content: "02";
+}
+
+.team-card:nth-child(3)::before {
+    content: "03";
+}
+
+
+/* Member name */
+
+.team-card h3 {
+    margin: 0 0 1.5rem;
+
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+
+    color: inherit;
+}
+
+
+/* Member role */
+
+.team-card .team-role {
+    margin: auto 0 0;
+    padding-top: 1rem;
+
+    border-top: 1px solid currentColor;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    opacity: 0.8;
+}
+
+
+/* Subtle hover */
+
+.team-card:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   SHARED WORK
+   ========================================================= */
+
+.shared-work {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid currentColor;
+}
+
+
+/* =========================================================
+   VISUAL STYLES
+   ========================================================= */
+
+.about-styles p {
+    margin-bottom: 1.2rem;
+}
+
+.about-styles .bottone {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .team-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .team-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .about-page {
+        width: 90%;
+        padding: 2rem 0 3rem;
+    }
+
+    .about-page section {
+        margin-bottom: 2.5rem;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .team-card {
+        min-height: 150px;
+        padding: 1.2rem;
+    }
+
+    .team-card:last-child {
+        grid-column: auto;
+    }
+
+    .team-card::before {
+        margin-bottom: 1.5rem;
+    }
+
+    .team-card h3 {
+        font-size: 1.2rem;
+    }
+
+}
