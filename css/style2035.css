@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Exo:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap');
 
-.bruno-ace-sc-regular {
-    font-family: "Bruno Ace SC", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
+
 /* =========================================================
    STYLE 2035 - liquid/ glass style
    ========================================================= */
@@ -19,7 +15,7 @@ body {
     background: radial-gradient(circle at 50% 30%, #15382b 0%, #081711 70%, #030a07 100%);
     background-attachment: fixed;
 
-    font-family: 'SF Pro Display', sans-serif;
+    font-family: 'Exo', sans-serif;
     color: #bad3c7;
 }
 
@@ -35,6 +31,24 @@ button {
     cursor: pointer;
 }
 
+/*conform titles*/
+.introduction h2,
+.documentation-intro h1,
+.page-title {
+    width: 100%;
+    max-width: 950px;
+    margin: 35px auto 25px auto;
+
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #a3f7cb;
+    text-align: center;
+    text-shadow: 0 0 25px rgba(163, 247, 203, 0.4);
+
+}
 
 /* =========================================================
    HEADER / NAVBAR 
@@ -576,6 +590,14 @@ main p {
 /* =========================================================
    PAGINA ITINERARI
    ========================================================= */
+.introduction h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    
+    color: #a3f7cb;
+    text-align: center;
+    text-transform: uppercase;
+}
 
 .area-immagini {
     width: 100%;
@@ -1216,19 +1238,6 @@ main p {
     margin: 0 auto;
 }
 
-.disclaimer-page .page-title {
-    text-align: center;
-    max-width: none;
-    margin-bottom: 40px;
-
-    font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    color: #a3f7cb;
-    text-shadow: 0 0 20px rgba(163, 247, 203, 0.35);
-}
 
 .disclaimer-page .disclaimer-item {
     display: flex;
@@ -1282,6 +1291,199 @@ main p {
     text-align: justify;
     line-height: 1.6;
     color: #bad3c7;
+}
+
+/* =========================================================
+   ABOUT PAGE - CYBER LIQUID GLASS 2035
+   ========================================================= */
+
+.about-page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    box-sizing: border-box;
+}
+
+.about-page section {
+    margin-bottom: 3.8rem;
+    position: relative;
+}
+
+.about-page section:last-child {
+    margin-bottom: 0;
+}
+
+/* Eyebrow Label */
+.about-page .section-label {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a3f7cb;
+    text-shadow: 0 0 12px rgba(163, 247, 203, 0.4);
+}
+
+/* Paragraphs */
+.about-page section > p:not(.section-label) {
+    max-width: none;
+    line-height: 1.8;
+    margin-bottom: 1.4rem;
+    color: #bad3c7;
+    font-size: 1.05rem;
+    text-align: left;
+}
+
+.about-page section > p strong {
+    color: #e3f7ee;
+}
+
+.about-page section > p i {
+    color: #a3f7cb;
+}
+
+/* Section Headings */
+.about-page h2 {
+    max-width: none;
+    margin-bottom: 1.4rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    color: #e3f7ee;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+
+/* About Introduction */
+.about-introduction {
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
+}
+
+.about-introduction h1 {
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #a3f7cb;
+    text-shadow: 0 0 22px rgba(163, 247, 203, 0.4);
+    margin: 0.5rem 0 2rem;
+    text-align: left;
+}
+
+/* Team Section */
+.team-section {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
+}
+
+.team-introduction {
+    margin-bottom: 2.2rem !important;
+}
+
+/* Team Grid */
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Team Cards */
+.team-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 210px;
+    padding: 1.8rem;
+    box-sizing: border-box;
+    background: linear-gradient(145deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(18, 52, 38, 0.35) 50%,
+                rgba(6, 20, 14, 0.6) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1.5px solid rgba(163, 247, 203, 0.5);
+    border-left: 1.5px solid rgba(163, 247, 203, 0.3);
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(163, 247, 203, 0.03);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(163, 247, 203, 0.8);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(163, 247, 203, 0.35);
+}
+
+/* Decorative Numbering */
+.team-card::before {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 1.5rem;
+    padding: 3px 10px;
+    font-family: ui-monospace, 'SF Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #a3f7cb;
+    background: rgba(163, 247, 203, 0.12);
+    border: 1px solid rgba(163, 247, 203, 0.35);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(163, 247, 203, 0.2);
+}
+
+.team-card:nth-child(1)::before {
+    content: "01";
+}
+
+.team-card:nth-child(2)::before {
+    content: "02";
+}
+
+.team-card:nth-child(3)::before {
+    content: "03";
+}
+
+/* Member Name */
+.team-card h3 {
+    margin: 0 0 1.2rem;
+    font-family: inherit;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #e3f7ee;
+    letter-spacing: 0.5px;
+}
+
+/* Member Role */
+.team-card .team-role {
+    margin: auto 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(163, 247, 203, 0.2);
+    font-family: inherit;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #a3f7cb;
+    letter-spacing: 0.4px;
+}
+
+/* Shared Work */
+.shared-work {
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
+}
+
+/* Visual Styles Section */
+.about-styles p {
+    margin-bottom: 1.4rem;
+}
+
+.about-styles .bottone {
+    display: inline-block;
+    margin-top: 1.5rem;
 }
 
 /* =========================================================
@@ -1561,6 +1763,40 @@ footer a:hover {
     .route-connection {
         width: calc(100% - 68px);
         margin-left: 68px;
+    }
+
+    /* ABOUT PAGE RESPONSIVE */
+    .about-page {
+        width: 95%;
+        padding: 2rem 0 3.5rem;
+    }
+
+    .about-page section {
+        margin-bottom: 2.8rem;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .team-card {
+        min-height: 170px;
+        padding: 1.4rem;
+    }
+
+    .team-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .team-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .team-card:last-child {
+        grid-column: 1 / -1;
     }
 }
 
@@ -1901,18 +2137,6 @@ footer a:hover {
    DOCUMENTATION: JOURNEY & WORKFLOW (STYLE 2035)
    ========================================================= */
 
-.documentation-intro h1 {
-    width: 100%;
-    max-width: 950px;
-    margin: 35px auto 20px;
-    font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #a3f7cb;
-    text-shadow: 0 0 25px rgba(163, 247, 203, 0.4);
-    text-align: center;
-}
 
 .documentation-intro p {
     margin: 0 auto 20px;
