@@ -1107,14 +1107,14 @@ main p {
     width: 100%;
     border-radius: 30px;
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid #e3f7ee;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     transition: all 0.3s ease;
 }
 
 .poster-flip:hover {
-    border-color: 1.5px #e3f7ee;
+    border: 1px solid #a3f7cb;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -1162,7 +1162,7 @@ main p {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(15, 45, 33, 0.5) 100%);
     border-radius: 35px;
     height: 50px;
-    border: 1.5px solid #a3f7cb;
+    border: 1px solid #a3f7cb;
     box-shadow: 0 0 18px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
     
     color: #a3f7cb;
