@@ -2192,3 +2192,180 @@ footer p a:hover {
 
     border-top: 1px solid #606060;
 }
+
+/* =========================================================
+   VISUAL STYLES — MINIMAL ACCORDION
+   ========================================================= */
+
+.style-exploration {
+    margin-top: 2.5rem;
+}
+
+.style-exploration > h3 {
+    margin-bottom: 0.5rem;
+}
+
+.style-exploration > p {
+    margin-bottom: 1.5rem;
+}
+
+
+/* Accordion */
+
+.style-item {
+    border-bottom: 1px solid currentColor;
+}
+
+.style-item:first-of-type {
+    border-top: 1px solid currentColor;
+}
+
+
+/* Summary */
+
+.style-item summary {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    padding: 0.9rem 0.2rem;
+
+    cursor: pointer;
+    list-style: none;
+
+    color: inherit;
+    font-family: inherit;
+
+    transition: opacity 0.2s ease;
+}
+
+.style-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.style-item summary::marker {
+    content: "";
+}
+
+.style-item summary:hover {
+    opacity: 0.7;
+}
+
+
+/* Year */
+
+.style-year {
+    min-width: 75px;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+/* Theme name */
+
+.style-name {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+/* Arrow */
+
+.style-item summary::after {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+
+    transform: rotate(45deg);
+
+    margin-right: 0.5rem;
+
+    transition: transform 0.25s ease;
+}
+
+.style-item[open] summary::after {
+    transform: rotate(225deg);
+}
+
+
+/* Expanded content */
+
+.style-content {
+
+    width: 100%;
+
+    max-width: none;
+
+    box-sizing: border-box;
+
+    padding: 0.3rem 0 1.5rem;
+
+}
+
+.style-content p {
+    margin: 0 0 1rem;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+
+/* Pinterest reference */
+
+.style-pinterest-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    margin-top: 0.3rem;
+
+    color: inherit;
+    font-family: inherit;
+    font-size: 0.85rem;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid currentColor;
+
+    padding-bottom: 0.2rem;
+
+    transition: opacity 0.2s ease;
+}
+
+.style-pinterest-link:hover {
+    opacity: 0.65;
+}
+
+.style-pinterest-link .fa-arrow-up-right-from-square {
+    font-size: 0.65rem;
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .style-item summary {
+        gap: 0.8rem;
+    }
+
+    .style-year {
+        min-width: 60px;
+        font-size: 1rem;
+    }
+
+    .style-name {
+        font-size: 0.95rem;
+    }
+
+    .style-content {
+        padding-bottom: 1.2rem;
+    }
+
+}
