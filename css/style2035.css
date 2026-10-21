@@ -98,7 +98,7 @@ header {
 
 }
 
-.link-head>a:hover, .dropdown>a:hover {
+.link-head>a:hover, .dropdown>a:hover, .dropdown:hover>a {
     color: #a3f7cb;
     transform: translateY(-1px);
 }
@@ -113,33 +113,32 @@ header {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 125%;
+    top: calc(100% + 10px);
     left: 0;
-
-    background: linear-gradient(135deg,
-                rgba(255, 255, 255, 0.15) 0%,
-                rgba(20, 60, 45, 0.45) 50%,
-                rgba(5, 20, 15, 0.6) 100%);
-    backdrop-filter: blur(25px) saturate(140%);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 50px;
-    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
+    min-width: 200px;
     z-index: 2100;
-    padding: 15px 35px;
+    padding: 0;
 
     background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.15) 0%,
-            rgba(20, 60, 45, 0.45) 50%,
-            rgba(5, 20, 15, 0.6) 100%);
+            rgba(255, 255, 255, 0.12) 0%,
+            rgba(20, 60, 45, 0.7) 50%,
+            rgba(5, 20, 15, 0.9) 100%);
     backdrop-filter: blur(25px) saturate(140%);
-
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 50px;
-
-    box-shadow:0 1px 1px rgba(255, 255, 255, 0.45);
-
-    /* hover inside bubble*/
+    -webkit-backdrop-filter: blur(25px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
     overflow: hidden;
+}
+
+/* Ponte invisibile per non perdere l'hover tra link e tendina */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -149,12 +148,14 @@ header {
 .dropdown-menu a {
     display: block;
     margin: 0;
-    padding: 12px 20px;
+    padding: 11px 18px;
     color: #e3f7ee;
-    font-size: 1rem;
+    font-size: 0.92rem;
+    font-weight: 400;
     white-space: nowrap;
+    text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 0.3s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .dropdown-menu a:last-child {
@@ -162,8 +163,8 @@ header {
 }
 
 .dropdown-menu a:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #e3f7ee;
+    background: rgba(163, 247, 203, 0.18);
+    color: #a3f7cb;
 }
 
 
@@ -735,7 +736,6 @@ main p {
     box-sizing: border-box;
 }
 
-
 /* buttons story, metadata, qr */
 
 .showview-buttons {
@@ -812,8 +812,7 @@ main p {
 
 /* difficulty and tell-me buttons */
 
-.difficulty-buttons,
-.tellme-buttons {
+.difficulty-buttons {
     width: 100%;
 
     display: flex;
@@ -824,10 +823,25 @@ main p {
     flex-shrink: 0;
 }
 
+.difficulty-buttons button {
+    flex: 1;
+}
+
+.tellme-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+.tellme-buttons button {
+    white-space: nowrap;
+}
+
 .difficulty-buttons button,
 .tellme-buttons button {
-    flex: 1;
-
     padding: 8px 12px;
 
     background: rgba(255, 255, 255, 0.1);
@@ -842,6 +856,7 @@ main p {
     font-weight: 600;
 
     text-align: center;
+    cursor: pointer;
 
     transition: all 0.3s ease;
 }
@@ -1004,6 +1019,15 @@ main p {
 .metadata-content strong,
 .metadata-content p {
     color: #e3f7ee;
+}
+
+.story-content p {
+    margin-bottom: 20px;
+}
+
+.story-content>p.movie-description {
+    color: #a3f7cb;
+    margin-bottom: 20px;
 }
 
 .story-content p,
