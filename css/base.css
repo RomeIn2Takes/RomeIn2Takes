@@ -1092,33 +1092,22 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
         background-color 0.25s ease;
 }
 
+/* Team Card Icon */
 
-/* Decorative numbering */
-
-.team-card::before {
-    display: block;
-
-    margin-bottom: 2rem;
-
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-
-    opacity: 0.65;
+.team-icon {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 1.3rem;
+    opacity: 0.85;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.team-card:nth-child(1)::before {
-    content: "01";
+.team-card:hover .team-icon {
+    transform: scale(1.12) translateY(-2px);
+    opacity: 1;
 }
-
-.team-card:nth-child(2)::before {
-    content: "02";
-}
-
-.team-card:nth-child(3)::before {
-    content: "03";
-}
-
 
 /* Member name */
 
@@ -1221,10 +1210,6 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
 
     .team-card:last-child {
         grid-column: auto;
-    }
-
-    .team-card::before {
-        margin-bottom: 1.5rem;
     }
 
     .team-card h3 {

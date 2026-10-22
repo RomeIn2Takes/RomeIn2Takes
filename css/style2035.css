@@ -1536,33 +1536,22 @@ main p {
     box-shadow: 0 22px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(163, 247, 203, 0.35);
 }
 
-/* Decorative Numbering */
-.team-card::before {
+/* Team Card Icon */
+.team-icon {
     display: inline-block;
     align-self: flex-start;
-    margin-bottom: 1.5rem;
-    padding: 3px 10px;
-    font-family: ui-monospace, 'SF Mono', monospace;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 1.3rem;
     color: #a3f7cb;
-    background: rgba(163, 247, 203, 0.12);
-    border: 1px solid rgba(163, 247, 203, 0.35);
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(163, 247, 203, 0.2);
+    text-shadow: 0 0 16px rgba(163, 247, 203, 0.45);
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.team-card:nth-child(1)::before {
-    content: "01";
-}
-
-.team-card:nth-child(2)::before {
-    content: "02";
-}
-
-.team-card:nth-child(3)::before {
-    content: "03";
+.team-card:hover .team-icon {
+    transform: scale(1.12) translateY(-2px);
+    color: #e3f7ee;
+    text-shadow: 0 0 20px rgba(163, 247, 203, 0.7);
 }
 
 /* Member Name */
