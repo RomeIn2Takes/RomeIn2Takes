@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Exo:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap');
 
-
-/* =========================================================
-   STYLE 2035 - liquid/ glass style
-   ========================================================= */
-
 html,
 body {
     margin: 0;
@@ -23,15 +18,10 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    opacity: 1;
-}
-
-
 /*conform titles*/
 .introduction h2,
 .documentation-intro h1,
-.page-title {
+.page-title, .map-page h1 {
     width: 100%;
     max-width: 950px;
     margin: 35px auto 25px auto;
@@ -47,15 +37,41 @@ a:hover {
 
 }
 
-/*conform button*/
+/* conform subtitles */
+h2,
+main h2,
+section h2,
+.about-page h2,
+.workflow h2,
+.documentation-section h2,
+.disclaimer-page .disclaimer-title {
+    max-width: none;
+    margin-bottom: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #e3f7ee;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
 
+.card-body h3,
+.location-info h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #e3f7ee;
+}
+
+/*conform button*/
 button {
     cursor: pointer;
 }
 
 .difficulty-buttons button,
 .tellme-buttons button, .showview-buttons button, .metadata-tasti button, #filters button, #filters button:hover,
-#filters button.active {
+#filters button.active, .bottone,
+.discover {
     padding: 8px 12px;
 
     background: rgba(255, 255, 255, 0.1);
@@ -79,7 +95,9 @@ button {
 .tellme-buttons button.active, .showview-buttons button:hover,
 .showview-buttons button.active, .metadata-tasti button:hover,
 .metadata-tasti button.active, #filters button:hover,
-#filters button.active {
+#filters button.active, .bottone:hover,
+.discover:hover,
+.narrative-card:hover .discover {
     background: rgba(20, 60, 45, 0.6);
     color: #a3f7cb;
     border: 1.5px solid #a3f7cb;
@@ -88,16 +106,27 @@ button {
     transform: translateY(-2px);
 }
 
+/* bottoni previous/ next all pages */
+.bottoni-pagine {
+    width: 100%;
+    max-width: 950px;
 
+    margin: 50px auto 20px auto;
 
-/* =========================================================
-   HEADER / NAVBAR 
-   ========================================================= */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-header {
+.bottoni-pagine .bottone:only-child {
+    margin-left: auto;
+}
+
+/* HEADER */
+header, .bar-style {
     position: sticky;
     top: 15px;
-    z-index: 2000;
+    z-index: 3000;
 
     width: 95%;
     max-width: 1200px;
@@ -122,9 +151,7 @@ header {
     box-shadow:0 1px 1px rgba(255, 255, 255, 0.45);
 }
 
-
-/* link navbar */
-
+/* link header */
 .link-head {
     display: flex;
     align-items: center;
@@ -144,8 +171,7 @@ header {
 }
 
 
-/* dropdown navbar*/
-
+/* dropdown header*/
 .dropdown {
     position: relative;
 }
@@ -153,33 +179,22 @@ header {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
     min-width: 200px;
-    z-index: 2100;
+    z-index: 4000;
     padding: 0;
 
     background: linear-gradient(135deg,
             rgba(255, 255, 255, 0.12) 0%,
             rgba(20, 60, 45, 0.7) 50%,
             rgba(5, 20, 15, 0.9) 100%);
+
     backdrop-filter: blur(25px) saturate(140%);
-    -webkit-backdrop-filter: blur(25px) saturate(140%);
+
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 14px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
     overflow: hidden;
 }
 
-/* Ponte invisibile per non perdere l'hover tra link e tendina */
-.dropdown-menu::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 0;
-    width: 100%;
-    height: 10px;
-}
 
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -193,9 +208,7 @@ header {
     font-size: 0.92rem;
     font-weight: 400;
     white-space: nowrap;
-    text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .dropdown-menu a:last-child {
@@ -208,39 +221,15 @@ header {
 }
 
 
-/* =========================================================
-   BARRA STILI / DATE
-   ========================================================= */
-
+/* BARRA STILI */
 .bar-style {
-    position: sticky;
     top: 85px;
-    z-index: 1000;
-
-    display: flex;
-
-    width: 95%;
-    max-width: 1200px;
-    margin: 20px auto;
-    box-sizing: border-box;
-
+    z-index: 2000;
     padding: 15px 35px;
-    
-    background: linear-gradient(135deg,
-                rgba(255, 255, 255, 0.15) 0%,
-                rgba(20, 60, 45, 0.45) 50%,
-                rgba(5, 20, 15, 0.6) 100%);
-    backdrop-filter: blur(25px) saturate(140%);
-    
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 50px;
-    
-    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
 }
 
 .bar-item {
     flex: 1;
-
     height: 60px;
 
     display: flex;
@@ -277,10 +266,7 @@ header {
 }
 
 
-/* =========================================================
-   MAIN
-   ========================================================= */
-
+/* main */
 main {
     width: 100%;
     box-sizing: border-box;
@@ -290,24 +276,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-
-/* TITOLI GENERALI */
-
-main h2 {
-    width: 100%;
-    max-width: 950px;
-
-    box-sizing: border-box;
-
-    margin-bottom: 15px;
-
-    font-size: 3rem;
-    font-weight: 700;
-
-    color: #e3f7ee;
-    text-align: center;
 }
 
 
@@ -329,7 +297,7 @@ main p {
 
 
 /* =========================================================
-   HOMEPAGE - 
+   H0M3 P4G3
    ========================================================= */
 
 .home-introduction {
@@ -348,16 +316,15 @@ main p {
     isolation: isolate;
 }
 
-/* Immagine di sfondo centrata: allineata alla larghezza dell'header (1200px) e ritagliata sopra/sotto */
+/* immagine sfondo */
 .home-introduction::before {
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(90deg);
-    /* Con rotate(90deg): 'height' è la larghezza orizzontale a schermo, 'width' è l'altezza verticale */
     width: 490px;
-    height: min(95vw, 1200px);
+    min-height: 1200px;
     background-image: url("../img_femminista/sfondo.jpg"), url("../sfondo.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -367,7 +334,6 @@ main p {
 
 
 /* contenitore titolo */
-
 .title-container {
     position: relative;
 
@@ -387,7 +353,7 @@ main p {
         0 0 30px rgba(163, 247, 203, 0.25);
 }
 
-/* 1. STRATO SOTTO: La luce che ruota veloce */
+/* luce che ruota */
 .title-container::before {
     content: "";
     position: absolute;
@@ -396,7 +362,7 @@ main p {
     width: 1200px;
     height: 1200px;
 
-    /* Gradiente conico con i 3 colori: da salvia a verde neon a bianco-menta */
+    /* Gradiente conico*/
     background: conic-gradient(
         transparent 0deg,
         transparent 160deg,
@@ -426,16 +392,9 @@ main p {
                 rgba(5, 20, 15, 0.9) 100%);
     backdrop-filter: blur(25px);
 
-    /* Ombre interne per la profondità del vetro (non coprono la luce esterna) */
-    box-shadow:
-        0 1px 1px rgba(255, 255, 255, 0.45),
-        0 10px 20px rgba(0, 0, 0, 0.25);
-    z-index: 1;
 }
 
-
-/* titolo homepage (in primo piano) */
-
+/* titolo Rome in 2 takes */
 .title-container h1 {
     position: relative;
     z-index: 2;
@@ -457,7 +416,7 @@ main p {
     text-transform: uppercase;
 }
 
-/* Animazione semplice di rotazione */
+/* animazione rotazione */
 @keyframes ruota-bordo {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -469,7 +428,6 @@ main p {
 
 
 /* narratives homepage */
-
 .narratives {
     width: 100%;
     max-width: 950px;
@@ -479,11 +437,8 @@ main p {
 
 .narrativa-container {
     width: 100%;
-
     display: flex;
-
     gap: 40px;
-
     margin-top: 30px;
 }
 
@@ -511,8 +466,7 @@ main p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ETICHETTA ITINERARIO */
-
+/* etichetta itinerary numb. */
 .card-label {
     padding: 12px 20px;
 
@@ -527,29 +481,15 @@ main p {
     text-align: center;
 }
 
-
-/* CORPO CARD */
-
 .card-body {
     padding: 25px;
 }
-
+/* titolo itinerario */
 .card-body h3 {
     min-height: 70px;
-
     margin: 0 0 20px 0;
-
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 1.2;
-
-    color: #e3f7ee;
-
     text-align: center;
 }
-
-
-/* DETTAGLI */
 
 .card-details {
     padding: 12px 0;
@@ -573,8 +513,6 @@ main p {
 }
 
 
-/* DESCRIZIONE CARD */
-
 .card-description {
     width: 100%;
     max-width: none;
@@ -590,42 +528,9 @@ main p {
 }
 
 
-/* discover*/
-
-.discover {
-    display: inline-block;
-
-    padding: 12px 26px;
-
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 38, 28, 0.5) 100%);
-
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 30px;
-
-    font-size: 0.9rem;
-    font-weight: 700;
-
-    color: #e3f7ee;
-
-    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
-
-    transition: all 0.3s ease;
-}
-
-.narrative-card:hover .discover,
-.discover:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(15, 45, 33, 0.7) 100%);
-    color: #a3f7cb;
-    border: 1.5px solid #a3f7cb;
-    box-shadow: 0 0 16px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
-    text-shadow: 0 0 8px rgba(163, 247, 203, 0.6);
-}
-
-
-/* HOVER CARD */
-
 .narrative-card:hover {
     transform: translateY(-8px);
+    transition-duration: 0.8s;
 
     border-color: rgba(255, 255, 255, 0.35);
     box-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
@@ -635,6 +540,416 @@ main p {
     margin-bottom: 30px;
 }
 
+/* poster */
+
+.poster-container {
+    width: 100%;
+    max-width: 950px;
+    box-sizing: border-box;
+    margin: 40px auto;
+    padding: 0 10px;
+}
+
+.poster-grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.poster {
+    flex: 1 1 calc(33.333% - 30px);
+    min-width: 250px;
+    box-sizing: border-box;
+}
+
+.poster-flip {
+    position: relative;
+
+    width: 100%;
+    border-radius: 30px;
+
+    border: 1px solid #e3f7ee;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.poster-flip:hover {
+    border: 1px solid #a3f7cb;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.poster-img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+    transition: transform 0.6s ease-in-out;
+    backface-visibility: hidden;
+}
+
+.poster-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    background: 0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(163, 247, 203, 0.15);
+
+    color: #e3f7ee;
+    text-align: center;
+    transform: rotateY(180deg);
+    transition: transform 0.6s ease-in-out;
+    backface-visibility: hidden;
+}
+
+.poster-back h3 {
+    flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(15, 45, 33, 0.5) 100%);
+    border-radius: 35px;
+    height: 50px;
+    border: 1px solid #a3f7cb;
+    box-shadow: 0 0 18px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
+
+    color: #a3f7cb;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.film-year {
+    font-size: 1.05rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+    line-height: 1.3;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #e3f7ee;
+}
+
+.film-director {
+    text-transform: uppercase;
+    color: #a3f7cb;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+    border-bottom: 1px solid #a3f7cb;
+    padding-bottom: 15px;
+}
+
+.film-synopsis {
+    padding-top: 15px;
+    margin: 0;
+    color: #e3f7ee;
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.poster-flip:hover .poster-img {
+    transform: rotateY(-180deg);
+}
+
+.poster-flip:hover .poster-back {
+    transform: rotateY(0deg);
+}
+
+
+/* =========================================================
+   MAPPA - CYBER GLASS 2035
+   ========================================================= */
+
+.map-page {
+    width: 100%;
+}
+
+/* CONTENITORE MAPPA LEAFLET */
+#map {
+    width: 100%;
+    max-width: 950px;
+    height: 550px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(163, 247, 203, 0.15);
+
+    overflow: hidden;
+}
+
+.leaflet-popup-content-wrapper {
+    background: rgba(14, 42, 32, 0.95) !important;
+    backdrop-filter: blur(15px);
+    color: #e3f7ee !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px !important;
+}
+
+.leaflet-popup-tip {
+    background: rgba(14, 42, 32, 0.95) !important;
+}
+
+.leaflet-popup-content {
+    font-family: inherit;
+    color: #e3f7ee;
+}
+
+.map-legend {
+    padding: 12px;
+    background: rgba(10, 32, 23, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    color: #e3f7ee;
+}
+
+/* =========================================================
+   M4PP4
+   ========================================================= */
+
+#filters {
+    width: 100%;
+    max-width: 950px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 30px auto 0 auto;
+}
+
+#filters button {
+    padding: 9px 18px;
+}
+
+
+/* =========================================================
+   EXPLORE THE LOCATIONS
+   ========================================================= */
+
+.locations-section {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 65px auto 40px auto;
+}
+
+/* =========================================================
+   CONTENITORE ITINERARIO E TIMELINE
+   ========================================================= */
+
+#locations-list {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Linea verticale luminosa */
+#locations-list::before {
+    content: "";
+    position: absolute;
+
+    left: 31px;
+    top: 30px;
+    bottom: 30px;
+
+    width: 2px;
+
+    background: linear-gradient(180deg, #a3f7cb 0%, rgba(163, 247, 203, 0.3) 100%);
+}
+
+/* Singola tappa */
+.location-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 25px 0;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+}
+
+/* Badge numero tappa neon */
+.location-number {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    background: linear-gradient(135deg, rgba(20, 60, 45, 0.95) 0%, rgba(6, 20, 14, 0.95) 100%);
+    border: 2px solid #a3f7cb;
+    border-radius: 50%;
+
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #a3f7cb;
+    box-shadow:
+        0 0 15px rgba(163, 247, 203, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Informazioni location */
+.location-info {
+    flex: 1;
+    padding-top: 5px;
+}
+
+.location-info h3 {
+    margin: 0 0 6px 0;
+}
+
+/* Film associati */
+.location-info p:first-of-type {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 10px 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #a3f7cb;
+    text-align: left;
+}
+
+/* Descrizione */
+.location-info p:nth-of-type(2) {
+    width: 100%;
+    max-width: 700px;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #bad3c7;
+    text-align: justify;
+}
+
+/* Link Explore tappa */
+.location-info a {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 8px 18px;
+
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 38, 28, 0.6) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #e3f7ee;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.location-info a:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(15, 45, 33, 0.7) 100%);
+    color: #a3f7cb;
+    border: 1.5px solid #a3f7cb;
+    box-shadow: 0 0 16px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
+    text-shadow: 0 0 8px rgba(163, 247, 203, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Più location nella stessa tappa */
+.location-subitem {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba(163, 247, 203, 0.25);
+}
+
+.location-subitem:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* =========================================================
+   CONNESSIONE TRA TAPPE
+   ========================================================= */
+
+.route-connection {
+    position: relative;
+    width: calc(100% - 95px);
+    margin: -8px 0 -8px 95px;
+    padding: 8px 15px 8px 18px;
+    box-sizing: border-box;
+    border-left: 1px solid rgba(163, 247, 203, 0.35);
+}
+
+.route-connection::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: 12px;
+    width: 7px;
+    height: 7px;
+    background-color: #a3f7cb;
+    box-shadow: 0 0 8px #a3f7cb;
+    border-radius: 50%;
+}
+
+.route-main-info {
+    margin-bottom: 4px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #a3f7cb;
+}
+
+.route-directions {
+    width: 100% !important;
+    max-width: 650px !important;
+    margin: 0 !important;
+    font-family: inherit;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    color: #bad3c7 !important;
+    text-align: left !important;
+}
+
+.route-directions strong {
+    font-weight: 600;
+    color: #e3f7ee;
+}
+
+/* Vista "All locations" */
+#locations-list:not(:has(.location-number))::before {
+    display: none;
+}
+
+.location-card:not(:has(.location-number)) {
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(163, 247, 203, 0.15);
+}
+
+.location-card:not(:has(.location-number)) .location-info {
+    padding-left: 0;
+}
 
 /* =========================================================
    PAGINA ITINERARI
@@ -890,9 +1205,6 @@ main p {
     color: #6ee7b7;
 
     font-size: 1rem;
-
-    text-decoration: none;
-
     transition: all 0.2s ease;
 }
 
@@ -973,9 +1285,17 @@ main p {
 /* TESTI */
 
 .story-content h3,
+.metadata-content h3,
+.qr-content h3 {
+    margin-top: 0;
+    color: #e3f7ee;
+    font-size: 1.17em;
+    font-weight: bold;
+    text-align: left;
+}
+
 .story-content p,
 .story-content strong,
-.metadata-content h3,
 .metadata-content li,
 .metadata-content strong,
 .metadata-content p {
@@ -999,17 +1319,6 @@ main p {
 
 
 /* QR CODE */
-
-.qr-content h3 {
-    margin-top: 0;
-
-    color: #e3f7ee;
-
-    font-size: 1.17em;
-    font-weight: bold;
-
-    text-align: left;
-}
 
 .qr-description {
     margin-bottom: 30px;
@@ -1052,207 +1361,6 @@ main p {
 
 .films-introduction h2 {
     margin-bottom: 20px;
-}
-
-
-/* poster */
-
-.poster-container {
-    width: 100%;
-    max-width: 950px;
-
-    box-sizing: border-box;
-
-    margin: 40px auto;
-    padding: 0 10px;
-}
-
-.poster-grid {
-    width: 100%;
-
-    display: flex;
-    flex-wrap: wrap;
-
-    justify-content: space-between;
-
-    gap: 20px;
-}
-
-.poster {
-    flex: 1 1 calc(33.333% - 30px);
-
-    min-width: 250px;
-
-    box-sizing: border-box;
-}
-
-.poster-flip {
-    position: relative;
-
-    width: 100%;
-    border-radius: 30px;
-
-    border: 1px solid #e3f7ee;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.poster-flip:hover {
-    border: 1px solid #a3f7cb;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.poster-img {
-    width: 100%;
-    height: auto;
-
-    display: block;
-
-    transition: transform 0.6s ease-in-out;
-
-    backface-visibility: hidden;
-}
-
-.poster-back {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    box-sizing: border-box;
-
-    padding: 8%;
-
-    display: flex;
-    flex-direction: column;
-
-    background: linear-gradient(145deg, rgba(12, 38, 28, 0.9) 0%, rgba(5, 18, 12, 0.95) 100%);
-    backdrop-filter: blur(20px);
-    color: #e3f7ee;
-
-    text-align: center;
-
-    transform: rotateY(180deg);
-
-    transition: transform 0.6s ease-in-out;
-
-    backface-visibility: hidden;
-}
-
-.poster-back h3 {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(15, 45, 33, 0.5) 100%);
-    border-radius: 35px;
-    height: 50px;
-    border: 1px solid #a3f7cb;
-    box-shadow: 0 0 18px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
-    
-    color: #a3f7cb;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-
-.film-year {
-
-    font-size: 1.05rem;
-    font-weight: 600;
-
-    letter-spacing: 3px;
-    line-height: 1.3;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-    color: #e3f7ee;
-    }
-
-.film-director {
-    text-transform: uppercase;
-    color: #a3f7cb;
-    text-align: center;
-    margin-bottom: 10px;
-    font-weight: 600;
-    border-bottom: 1px solid #a3f7cb;
-    padding-bottom: 20px;
-}
-
-.film-synopsis {
-    padding-top: 20px;
-    margin: 0;
-
-    color: #e3f7ee;
-
-    font-size: 1em;
-    line-height: 1.6;
-
-    text-align: center;
-}
-
-.poster-flip:hover .poster-img {
-    transform: rotateY(-180deg);
-}
-
-.poster-flip:hover .poster-back {
-    transform: rotateY(0deg);
-}
-
-
-/* bottoni previous/ next all pages */
-
-.bottoni-pagine {
-    width: 100%;
-    max-width: 950px;
-
-    margin: 50px auto 20px auto;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.bottone {
-    display: inline-block;
-
-    padding: 12px 28px;
-
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(15, 45, 33, 0.5) 100%);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.5);
-    border-radius: 35px;
-
-    font-size: 0.9rem;
-    font-weight: 700;
-
-    color: #e3f7ee;
-
-    text-decoration: none;
-
-    box-shadow:
-        0 10px 20px rgba(0, 0, 0, 0.25),
-        0 1px 1px rgba(255, 255, 255, 0.45);
-
-    transition: all 0.3s ease;
-}
-
-.bottone:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(15, 45, 33, 0.7) 100%);
-    color: #a3f7cb;
-    border: 1.5px solid #a3f7cb;
-    box-shadow: 0 0 18px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
-    text-shadow: 0 0 8px rgba(163, 247, 203, 0.6);
-    transform: translateY(-2px);
-}
-
-.bottoni-pagine .bottone:only-child {
-    margin-left: auto;
 }
 
 /* =========================================================
@@ -1307,10 +1415,7 @@ main p {
 }
 
 .disclaimer-page .disclaimer-title {
-    font-size: 1.4rem;
     margin-bottom: 12px;
-    color: #e3f7ee;
-    text-align: left;
 }
 
 .disclaimer-page .disclaimer-text {
@@ -1341,7 +1446,7 @@ main p {
 }
 
 /* Eyebrow Label */
-.about-page .section-label {
+.section-label {
     display: inline-block;
     margin-bottom: 0.6rem;
     font-size: 0.85rem;
@@ -1370,20 +1475,12 @@ main p {
     color: #a3f7cb;
 }
 
-/* Section Headings */
-.about-page h2 {
-    max-width: none;
-    margin-bottom: 1.4rem;
-    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-    font-weight: 700;
-    color: #e3f7ee;
-    text-align: left;
-    letter-spacing: 0.5px;
-}
 
-/* About Introduction */
-.about-introduction {
-    padding-bottom: 2.5rem;
+/* About Section Separators */
+.about-introduction,
+.team-section,
+.shared-work {
+    padding-bottom: 2.8rem;
     border-bottom: 1px solid rgba(163, 247, 203, 0.2);
 }
 
@@ -1399,11 +1496,6 @@ main p {
 }
 
 /* Team Section */
-.team-section {
-    padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
-}
-
 .team-introduction {
     margin-bottom: 2.2rem !important;
 }
@@ -1496,12 +1588,6 @@ main p {
     letter-spacing: 0.4px;
 }
 
-/* Shared Work */
-.shared-work {
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
-}
-
 /* Visual Styles Section */
 .about-styles p {
     margin-bottom: 1.4rem;
@@ -1563,584 +1649,6 @@ footer a:hover {
 
 
 /* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media screen and (max-width: 800px) {
-
-    header {
-        padding: 15px 20px;
-        border-radius: 30px;
-
-        flex-direction: column;
-
-        gap: 10px;
-    }
-
-    .link-head {
-        justify-content: center;
-
-        flex-wrap: wrap;
-
-        text-align: center !important;
-    }
-
-    .link-head>a,
-    .dropdown>a {
-        display: inline-block;
-
-        margin: 5px 8px;
-
-        font-size: 0.9rem;
-    }
-
-    .dropdown-menu {
-        top: 100%;
-        left: 50%;
-
-        min-width: 210px;
-
-        transform: translateX(-50%);
-    }
-
-    .bar-style {
-        top: 110px;
-        border-radius: 25px;
-    }
-
-    .bar-item {
-        min-width: 100px;
-    }
-
-    .bar-item a {
-        font-size: 1rem;
-    }
-
-    main {
-        padding: 20px;
-    }
-
-    main h2 {
-        font-size: 2rem;
-    }
-
-    .home-introduction {
-        margin: 35px auto 50px auto;
-        min-height: 450px;
-    }
-
-    .home-introduction::before {
-        width: 450px;
-        height: 95vw;
-        max-width: none;
-        max-height: none;
-    }
-
-    .title-container {
-        padding: 40px 20px;
-
-        border-radius: 30px;
-    }
-
-    .title-container::after {
-        border-radius: 27px;
-    }
-
-    .title-container h1 {
-        font-size: 2.8rem;
-    }
-
-
-    .narratives {
-        margin: 50px auto;
-    }
-
-    .narrativa-container {
-        flex-direction: column;
-
-        gap: 30px;
-    }
-
-    .card-body h3 {
-        min-height: auto;
-
-        font-size: 1.8rem;
-    }
-
-    .area-immagini {
-        height: auto;
-
-        flex-direction: column;
-
-        padding: 20px;
-        border-radius: 30px;
-
-        overflow: visible;
-    }
-
-    .film-panel-left,
-    .description-container-right {
-        width: 100%;
-    }
-
-    .film-panel-left img {
-        width: 100%;
-    }
-
-    .frecce_scena {
-        width: 100%;
-
-        flex-direction: row;
-    }
-
-    .frecce_scena span {
-        writing-mode: horizontal-tb;
-    }
-
-    .story-content,
-    .metadata-content,
-    .qr-content {
-        height: auto;
-
-        min-height: 400px;
-    }
-
-    .showview-buttons {
-        justify-content: center;
-
-        flex-wrap: wrap;
-    }
-
-    .metadata-tasti button {
-        width: 100%;
-    }
-
-    .poster {
-        flex: 1 1 100%;
-    }
-
-    .bottoni-pagine {
-        margin-top: 35px;
-
-        gap: 15px;
-    }
-
-    .bottone {
-        font-size: 0.9rem;
-    }
-
-    footer {
-        padding: 25px 20px;
-    }
-
-    /* DISCLAIMER MOBILE */
-    .disclaimer-page .page-title {
-        font-size: 2.2rem;
-        margin-bottom: 30px;
-    }
-
-    .disclaimer-page .disclaimer-item,
-    .disclaimer-page .disclaimer-item:nth-child(even) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-        padding: 30px 0;
-    }
-
-    .disclaimer-page .disclaimer-number {
-        font-size: 3rem;
-    }
-
-    .disclaimer-page .disclaimer-title {
-        font-size: 1.3rem;
-    }
-
-    /* MAPPA MOBILE */
-    .map-page h1 {
-        font-size: 2.5rem;
-    }
-
-    #map {
-        height: 400px;
-    }
-
-    #filters {
-        flex-wrap: wrap;
-    }
-
-    #locations-list::before {
-        left: 24px;
-    }
-
-    .location-card {
-        gap: 18px;
-    }
-
-    .location-number {
-        flex-basis: 50px;
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
-    }
-
-    .location-info h3 {
-        font-size: 1.4rem;
-    }
-
-    .route-connection {
-        width: calc(100% - 68px);
-        margin-left: 68px;
-    }
-
-    /* ABOUT PAGE RESPONSIVE */
-    .about-page {
-        width: 95%;
-        padding: 2rem 0 3.5rem;
-    }
-
-    .about-page section {
-        margin-bottom: 2.8rem;
-    }
-
-    .team-container {
-        grid-template-columns: 1fr;
-        gap: 1.2rem;
-    }
-
-    .team-card {
-        min-height: 170px;
-        padding: 1.4rem;
-    }
-
-    .team-card h3 {
-        font-size: 1.2rem;
-    }
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-    .team-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .team-card:last-child {
-        grid-column: 1 / -1;
-    }
-}
-
-
-/* =========================================================
-   MAPPA - CYBER GLASS 2035
-   ========================================================= */
-
-.map-page {
-    width: 100%;
-}
-
-/* TITOLO MAPPA */
-.map-page h1 {
-    width: 100%;
-    max-width: 950px;
-    margin: 35px auto 25px auto;
-
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    color: #a3f7cb;
-    text-align: center;
-    text-shadow: 0 0 25px rgba(163, 247, 203, 0.4);
-}
-
-/* CONTENITORE MAPPA LEAFLET */
-#map {
-    width: 100%;
-    max-width: 950px;
-    height: 550px;
-    margin: 0 auto;
-    box-sizing: border-box;
-
-    border-radius: 35px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-top: 2px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(163, 247, 203, 0.15);
-
-    overflow: hidden;
-}
-
-.leaflet-popup-content-wrapper {
-    background: rgba(14, 42, 32, 0.95) !important;
-    backdrop-filter: blur(15px);
-    color: #e3f7ee !important;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 18px !important;
-}
-
-.leaflet-popup-tip {
-    background: rgba(14, 42, 32, 0.95) !important;
-}
-
-.leaflet-popup-content {
-    font-family: inherit;
-    color: #e3f7ee;
-}
-
-.map-legend {
-    padding: 12px;
-    background: rgba(10, 32, 23, 0.85);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    color: #e3f7ee;
-}
-
-/* =========================================================
-   MAPPA
-   ========================================================= */
-
-#filters {
-    width: 100%;
-    max-width: 950px;
-
-    display: flex;
-    justify-content: center;
-
-    gap: 12px;
-
-    margin: 30px auto 0 auto;
-}
-
-#filters button {
-    padding: 9px 18px;
-}
-
-
-/* =========================================================
-   EXPLORE THE LOCATIONS
-   ========================================================= */
-
-.locations-section {
-    width: 100%;
-    max-width: 950px;
-
-    margin: 65px auto 40px auto;
-}
-
-.locations-section h2 {
-    color: #e3f7ee;
-    font-size: 2.4rem;
-}
-
-/* =========================================================
-   CONTENITORE ITINERARIO E TIMELINE
-   ========================================================= */
-
-#locations-list {
-    position: relative;
-    width: 100%;
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-/* Linea verticale luminosa */
-#locations-list::before {
-    content: "";
-    position: absolute;
-
-    left: 31px;
-    top: 30px;
-    bottom: 30px;
-
-    width: 2px;
-
-    background: linear-gradient(180deg, #a3f7cb 0%, rgba(163, 247, 203, 0.3) 100%);
-}
-
-/* Singola tappa */
-.location-card {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    padding: 25px 0;
-    box-sizing: border-box;
-    background: transparent;
-    border: none;
-}
-
-/* Badge numero tappa neon */
-.location-number {
-    position: relative;
-    z-index: 2;
-    flex: 0 0 64px;
-    width: 64px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-
-    background: linear-gradient(135deg, rgba(20, 60, 45, 0.95) 0%, rgba(6, 20, 14, 0.95) 100%);
-    border: 2px solid #a3f7cb;
-    border-radius: 50%;
-
-    font-family: inherit;
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #a3f7cb;
-    box-shadow: 
-        0 0 15px rgba(163, 247, 203, 0.4),
-        inset 0 1px 2px rgba(255, 255, 255, 0.4);
-}
-
-/* Informazioni location */
-.location-info {
-    flex: 1;
-    padding-top: 5px;
-}
-
-.location-info h3 {
-    margin: 0 0 6px 0;
-    font-family: inherit;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #e3f7ee;
-    letter-spacing: 0.5px;
-}
-
-/* Film associati */
-.location-info p:first-of-type {
-    width: 100%;
-    max-width: none;
-    margin: 0 0 10px 0;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #a3f7cb;
-    text-align: left;
-}
-
-/* Descrizione */
-.location-info p:nth-of-type(2) {
-    width: 100%;
-    max-width: 700px;
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #bad3c7;
-    text-align: justify;
-}
-
-/* Link Explore tappa */
-.location-info a {
-    display: inline-block;
-    margin-top: 14px;
-    padding: 8px 18px;
-
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 38, 28, 0.6) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-
-    font-family: inherit;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #e3f7ee;
-    text-decoration: none;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.location-info a:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(15, 45, 33, 0.7) 100%);
-    color: #a3f7cb;
-    border: 1.5px solid #a3f7cb;
-    box-shadow: 0 0 16px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
-    text-shadow: 0 0 8px rgba(163, 247, 203, 0.6);
-    transform: translateY(-2px);
-}
-
-/* Più location nella stessa tappa */
-.location-subitem {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px dashed rgba(163, 247, 203, 0.25);
-}
-
-.location-subitem:last-child {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-bottom: none;
-}
-
-/* =========================================================
-   CONNESSIONE TRA TAPPE
-   ========================================================= */
-
-.route-connection {
-    position: relative;
-    width: calc(100% - 95px);
-    margin: -8px 0 -8px 95px;
-    padding: 8px 15px 8px 18px;
-    box-sizing: border-box;
-    border-left: 1px solid rgba(163, 247, 203, 0.35);
-}
-
-.route-connection::before {
-    content: "";
-    position: absolute;
-    left: -4px;
-    top: 12px;
-    width: 7px;
-    height: 7px;
-    background-color: #a3f7cb;
-    box-shadow: 0 0 8px #a3f7cb;
-    border-radius: 50%;
-}
-
-.route-main-info {
-    margin-bottom: 4px;
-    font-family: inherit;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #a3f7cb;
-}
-
-.route-directions {
-    width: 100% !important;
-    max-width: 650px !important;
-    margin: 0 !important;
-    font-family: inherit;
-    font-size: 0.8rem !important;
-    line-height: 1.4 !important;
-    color: #bad3c7 !important;
-    text-align: left !important;
-}
-
-.route-directions strong {
-    font-weight: 600;
-    color: #e3f7ee;
-}
-
-/* Vista "All locations" */
-#locations-list:not(:has(.location-number))::before {
-    display: none;
-}
-
-.location-card:not(:has(.location-number)) {
-    padding: 22px 0;
-    border-bottom: 1px solid rgba(163, 247, 203, 0.15);
-}
-
-.location-card:not(:has(.location-number)) .location-info {
-    padding-left: 0;
-}
-
-
-/* =========================================================
    DOCUMENTATION: JOURNEY & WORKFLOW (STYLE 2035)
    ========================================================= */
 
@@ -2166,16 +1674,6 @@ footer a:hover {
     border-bottom: none;
 }
 
-.documentation-section h2,
-.workflow h2 {
-    max-width: none;
-    margin-bottom: 18px;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #e3f7ee;
-    text-align: left;
-    white-space: normal;
-}
 
 .documentation-section p {
     margin-bottom: 15px;
@@ -2189,25 +1687,32 @@ footer a:hover {
     margin-top: 20px;
 }
 
+.workflow-step,
+.development-item {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(20, 60, 45, 0.4) 50%, rgba(5, 20, 15, 0.6) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.45);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(255, 255, 255, 0.15);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.workflow-step:hover,
+.development-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(163, 247, 203, 0.5);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(163, 247, 203, 0.25);
+}
+
 .workflow-step {
     flex: 1;
     display: block;
     padding: 18px 10px;
     text-align: center;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(20, 60, 45, 0.4) 50%, rgba(5, 20, 15, 0.6) 100%);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.5);
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
     text-decoration: none;
-}
-
-.workflow-step:hover {
-    transform: translateY(-3px);
-    border-color: rgba(163, 247, 203, 0.6);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(163, 247, 203, 0.3);
 }
 
 .workflow-step strong {
@@ -2323,20 +1828,6 @@ footer a:hover {
 
 .development-item {
     padding: 22px 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(20, 60, 45, 0.45) 50%, rgba(6, 20, 14, 0.6) 100%);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.45);
-    border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(255, 255, 255, 0.15);
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-}
-
-.development-item:hover {
-    transform: translateY(-2px);
-    border-color: rgba(163, 247, 203, 0.4);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45), 0 0 12px rgba(163, 247, 203, 0.15);
 }
 
 .development-item h3 {
@@ -2360,18 +1851,6 @@ footer a:hover {
 /* =========================================================
    DOCUMENTATION: VISUAL IDENTITY & HISTORICAL STYLES (STYLE 2035)
    ========================================================= */
-
-.visual-styles .section-label,
-.visual-references .section-label {
-    display: inline-block;
-    margin-bottom: 0.6rem;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #a3f7cb;
-    text-shadow: 0 0 12px rgba(163, 247, 203, 0.4);
-}
 
 .style-exploration {
     margin-top: 2.5rem;
@@ -2512,7 +1991,6 @@ footer a:hover {
     font-size: 0.85rem;
     font-weight: 500;
 
-    text-decoration: none;
 
     border-bottom: 1px solid rgba(163, 247, 203, 0.4);
 
@@ -2572,7 +2050,7 @@ footer a:hover {
     color: #a3f7cb;
     font-size: 0.92rem;
     font-weight: 600;
-    text-decoration: none;
+
     margin-top: 15px;
     padding: 10px 18px;
     background: rgba(163, 247, 203, 0.08);
@@ -2588,26 +2066,6 @@ footer a:hover {
     transform: translateY(-1px);
 }
 
-/* Responsive */
-
-@media (max-width: 600px) {
-    .style-item summary {
-        gap: 0.8rem;
-    }
-
-    .style-year {
-        min-width: 60px;
-        font-size: 1rem;
-    }
-
-    .style-name {
-        font-size: 0.95rem;
-    }
-
-    .style-content {
-        padding-bottom: 1.2rem;
-    }
-}
 
 /* =========================================================
    DOCUMENTATION: CODE & TECHNICAL TABLES (STYLE 2035)
@@ -2807,4 +2265,288 @@ pre.tree {
     color: #a5d6a7;
     border: 1px solid rgba(165, 214, 167, 0.45);
     box-shadow: 0 0 8px rgba(165, 214, 167, 0.2);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+    header {
+        padding: 15px 20px;
+        border-radius: 30px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .link-head {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        text-align: center !important;
+    }
+
+    .link-head>a,
+    .dropdown>a {
+        display: inline-block;
+
+        margin: 5px 8px;
+
+        font-size: 0.9rem;
+    }
+
+    .dropdown-menu {
+        top: 100%;
+        left: 50%;
+
+        min-width: 210px;
+
+        transform: translateX(-50%);
+    }
+
+    .bar-style {
+        top: 110px;
+        border-radius: 25px;
+    }
+
+    .bar-item {
+        min-width: 100px;
+    }
+
+    .bar-item a {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    main h2 {
+        font-size: 1.4rem;
+    }
+
+    .home-introduction {
+        margin: 35px auto 50px auto;
+        min-height: 450px;
+    }
+
+    .home-introduction::before {
+        width: 450px;
+        height: 95vw;
+        max-width: none;
+        max-height: none;
+    }
+
+    .title-container {
+        padding: 40px 20px;
+
+        border-radius: 30px;
+    }
+
+    .title-container::after {
+        border-radius: 27px;
+    }
+
+    .title-container h1 {
+        font-size: 2.8rem;
+    }
+
+    .narratives {
+        margin: 50px auto;
+    }
+
+    .narrativa-container {
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .card-body h3 {
+        min-height: auto;
+
+        font-size: 1.5rem;
+    }
+
+    .area-immagini {
+        height: auto;
+
+        flex-direction: column;
+
+        padding: 20px;
+        border-radius: 30px;
+
+        overflow: visible;
+    }
+
+    .film-panel-left,
+    .description-container-right {
+        width: 100%;
+    }
+
+    .film-panel-left img {
+        width: 100%;
+    }
+
+    .frecce_scena {
+        width: 100%;
+
+        flex-direction: row;
+    }
+
+    .frecce_scena span {
+        writing-mode: horizontal-tb;
+    }
+
+    .story-content,
+    .metadata-content,
+    .qr-content {
+        height: auto;
+
+        min-height: 400px;
+    }
+
+    .showview-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .metadata-tasti button {
+        width: 100%;
+    }
+
+    .poster {
+        flex: 1 1 100%;
+    }
+
+    .bottoni-pagine {
+        margin-top: 35px;
+
+        gap: 15px;
+    }
+
+    .bottone {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 25px 20px;
+    }
+
+    /* DISCLAIMER MOBILE */
+    .disclaimer-page .page-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
+    .disclaimer-page .disclaimer-item,
+    .disclaimer-page .disclaimer-item:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 30px 0;
+    }
+
+    .disclaimer-page .disclaimer-number {
+        font-size: 3rem;
+    }
+
+    .disclaimer-page .disclaimer-title {
+        font-size: 1.3rem;
+    }
+
+    /* MAPPA MOBILE */
+    .map-page h1 {
+        font-size: 2.5rem;
+    }
+
+    #map {
+        height: 400px;
+    }
+
+    #filters {
+        flex-wrap: wrap;
+    }
+
+    #locations-list::before {
+        left: 24px;
+    }
+
+    .location-card {
+        gap: 18px;
+    }
+
+    .location-number {
+        flex-basis: 50px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+
+    .location-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .route-connection {
+        width: calc(100% - 68px);
+        margin-left: 68px;
+    }
+
+    /* ABOUT PAGE RESPONSIVE */
+    .about-page {
+        width: 95%;
+        padding: 2rem 0 3.5rem;
+    }
+
+    .about-page section {
+        margin-bottom: 2.8rem;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .team-card {
+        min-height: 170px;
+        padding: 1.4rem;
+    }
+
+    .team-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .team-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .team-card:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .style-item summary {
+        gap: 0.8rem;
+    }
+
+    .style-year {
+        min-width: 60px;
+        font-size: 1rem;
+    }
+
+    .style-name {
+        font-size: 0.95rem;
+    }
+
+    .style-content {
+        padding-bottom: 1.2rem;
+    }
 }
