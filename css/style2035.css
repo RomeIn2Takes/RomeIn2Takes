@@ -27,9 +27,6 @@ a:hover {
     opacity: 1;
 }
 
-button {
-    cursor: pointer;
-}
 
 /*conform titles*/
 .introduction h2,
@@ -49,6 +46,49 @@ button {
     text-shadow: 0 0 25px rgba(163, 247, 203, 0.4);
 
 }
+
+/*conform button*/
+
+button {
+    cursor: pointer;
+}
+
+.difficulty-buttons button,
+.tellme-buttons button, .showview-buttons button, .metadata-tasti button, #filters button, #filters button:hover,
+#filters button.active {
+    padding: 8px 12px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: #e3f7ee;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 18px;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.difficulty-buttons button:hover,
+.difficulty-buttons button.active,
+.tellme-buttons button:hover,
+.tellme-buttons button.active, .showview-buttons button:hover,
+.showview-buttons button.active, .metadata-tasti button:hover,
+.metadata-tasti button.active, #filters button:hover,
+#filters button.active {
+    background: rgba(20, 60, 45, 0.6);
+    color: #a3f7cb;
+    border: 1.5px solid #a3f7cb;
+    box-shadow: 0 0 14px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
+    text-shadow: 0 0 8px rgba(163, 247, 203, 0.6);
+    transform: translateY(-2px);
+}
+
+
 
 /* =========================================================
    HEADER / NAVBAR 
@@ -323,7 +363,6 @@ main p {
     background-position: center;
     background-size: cover;
     z-index: -1;
-    pointer-events: none;
 }
 
 
@@ -753,33 +792,6 @@ main p {
     margin-bottom: 8px;
 }
 
-.showview-buttons button {
-    padding: 10px 18px;
-
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(10, 30, 22, 0.5) 100%);
-    color: #e3f7ee;
-
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.45);
-    border-radius: 20px;
-
-    font-size: 0.8em;
-    font-weight: 600;
-
-    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
-
-    transition: all 0.3s ease;
-}
-
-.showview-buttons button:hover,
-.showview-buttons button.active {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(20, 60, 45, 0.6) 100%);
-    color: #a3f7cb;
-    border: 1.5px solid #a3f7cb;
-    box-shadow: 0 0 14px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
-    text-shadow: 0 0 8px rgba(163, 247, 203, 0.6);
-    transform: translateY(-1px);
-}
 
 
 /* =========================================================
@@ -844,37 +856,6 @@ main p {
     white-space: nowrap;
 }
 
-.difficulty-buttons button,
-.tellme-buttons button {
-    padding: 8px 12px;
-
-    background: rgba(255, 255, 255, 0.1);
-
-    color: #e3f7ee;
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 18px;
-
-    font-size: 0.8rem;
-    font-weight: 600;
-
-    text-align: center;
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-}
-
-.difficulty-buttons button:hover,
-.difficulty-buttons button.active,
-.tellme-buttons button:hover,
-.tellme-buttons button.active {
-    background: rgba(20, 60, 45, 0.6);
-    color: #a3f7cb;
-    border: 1.5px solid #a3f7cb;
-    box-shadow: 0 0 14px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
-    text-shadow: 0 0 8px rgba(163, 247, 203, 0.6);
-}
 
 
 /* METADATA BUTTONS */
@@ -896,28 +877,6 @@ main p {
     align-self: center;
 
     padding: 10px 20px;
-
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-    color: #e3f7ee;
-
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.5);
-    border-radius: 22px;
-
-    font-size: 0.85rem;
-    font-weight: 600;
-
-    transition: all 0.3s ease;
-}
-
-.metadata-tasti button:hover,
-.metadata-tasti button.active {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(20, 60, 45, 0.65) 100%);
-    color: #a3f7cb;
-    border: 1.5px solid #a3f7cb;
-    box-shadow: 0 0 16px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
-    text-shadow: 0 0 8px rgba(163, 247, 203, 0.6);
-    transform: translateY(-2px);
 }
 
 .metadata-tasti li {
@@ -961,8 +920,6 @@ main p {
     backdrop-filter: blur(15px);
 
     z-index: 9999;
-
-    cursor: pointer;
 }
 
 .modal-box {
@@ -1957,28 +1914,8 @@ footer a:hover {
 
 #filters button {
     padding: 9px 18px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 38, 28, 0.6) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.45);
-    border-radius: 25px;
-
-    font-size: 0.85rem;
-
-    color: #e3f7ee;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
 }
 
-#filters button:hover,
-#filters button.active {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(20, 60, 45, 0.65) 100%);
-    color: #a3f7cb;
-    border: 1.5px solid #a3f7cb;
-    box-shadow: 0 0 16px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
-    text-shadow: 0 0 8px rgba(163, 247, 203, 0.6);
-    transform: translateY(-2px);
-}
 
 /* =========================================================
    EXPLORE THE LOCATIONS
@@ -2478,8 +2415,6 @@ footer a:hover {
     gap: 1.5rem;
 
     padding: 0.9rem 0.4rem;
-
-    cursor: pointer;
     list-style: none;
 
     color: inherit;
