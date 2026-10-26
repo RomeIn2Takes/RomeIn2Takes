@@ -378,7 +378,7 @@ main p, p {
     );
 
     /* standard animation 360 rotation */
-    animation: ruota-bordo 2s linear infinite;
+    animation: ruota-bordo 5s linear infinite;
     z-index: 0;
 }
 
