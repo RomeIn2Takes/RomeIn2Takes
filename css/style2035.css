@@ -1,3 +1,7 @@
+/* =========================================================
+   questa pagina viene utilizzata per la visualizzzazione anni 2035. le note sono mezzo ingl e mezze in italiano perche sono appunti orientativi e non hanno lo scopo di coumincare di altri in quanto è un lavoro svolto indivisulamente. per orientari meglio c'è una prima sezione di regole generali e poi viene organizzato per pagine di visualizzazione cosi come viene visto nell'header. per le pagine sono usati nomi con lettere cosi che venga piu veloce ceracrsli con comm f e non si perda tra altri nomi
+   ========================================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Exo:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap');
 
 html,
@@ -71,7 +75,7 @@ button {
 .difficulty-buttons button,
 .tellme-buttons button, .showview-buttons button, .metadata-tasti button, #filters button, #filters button:hover,
 #filters button.active, .bottone,
-.discover {
+.discover, .location-info a {
     padding: 8px 12px;
 
     background: rgba(255, 255, 255, 0.1);
@@ -97,7 +101,7 @@ button {
 .metadata-tasti button.active, #filters button:hover,
 #filters button.active, .bottone:hover,
 .discover:hover,
-.narrative-card:hover .discover {
+.narrative-card:hover .discover, .location-info a:hover {
     background: rgba(20, 60, 45, 0.6);
     color: #a3f7cb;
     border: 1.5px solid #a3f7cb;
@@ -122,7 +126,9 @@ button {
     margin-left: auto;
 }
 
-/* HEADER */
+/* =========================================================
+   H34D3R
+   ========================================================= */
 header, .bar-style {
     position: sticky;
     top: 15px;
@@ -281,7 +287,7 @@ main {
 
 /* TESTO GENERALE  */
 
-main p {
+main p, p {
     width: 100%;
     max-width: 950px;
 
@@ -668,14 +674,14 @@ main p {
 
 
 /* =========================================================
-   MAPPA - CYBER GLASS 2035
+   M4PP3
    ========================================================= */
 
 .map-page {
     width: 100%;
 }
 
-/* CONTENITORE MAPPA LEAFLET */
+/* contenitore mappa Leaflet */
 #map {
     width: 100%;
     max-width: 950px;
@@ -684,8 +690,7 @@ main p {
     box-sizing: border-box;
 
     border-radius: 35px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     box-shadow:
         0 25px 50px rgba(0, 0, 0, 0.5),
         0 0 30px rgba(163, 247, 203, 0.15);
@@ -693,20 +698,21 @@ main p {
     overflow: hidden;
 }
 
+/* box testo pin mappa */
 .leaflet-popup-content-wrapper {
     background: rgba(14, 42, 32, 0.95) !important;
     backdrop-filter: blur(15px);
-    color: #e3f7ee !important;
+    color: #e3f7ee;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 18px !important;
 }
 
+/* decorazione triangolo info luoghi */
 .leaflet-popup-tip {
     background: rgba(14, 42, 32, 0.95) !important;
 }
 
 .leaflet-popup-content {
-    font-family: inherit;
     color: #e3f7ee;
 }
 
@@ -719,9 +725,6 @@ main p {
     color: #e3f7ee;
 }
 
-/* =========================================================
-   M4PP4
-   ========================================================= */
 
 #filters {
     width: 100%;
@@ -729,20 +732,13 @@ main p {
 
     display: flex;
     justify-content: center;
-
     gap: 12px;
-
     margin: 30px auto 0 auto;
 }
 
 #filters button {
     padding: 9px 18px;
 }
-
-
-/* =========================================================
-   EXPLORE THE LOCATIONS
-   ========================================================= */
 
 .locations-section {
     width: 100%;
@@ -751,10 +747,7 @@ main p {
     margin: 65px auto 40px auto;
 }
 
-/* =========================================================
-   CONTENITORE ITINERARIO E TIMELINE
-   ========================================================= */
-
+/* timeline */
 #locations-list {
     position: relative;
     width: 100%;
@@ -785,8 +778,6 @@ main p {
     gap: 30px;
     padding: 25px 0;
     box-sizing: border-box;
-    background: transparent;
-    border: none;
 }
 
 /* Badge numero tappa neon */
@@ -804,8 +795,6 @@ main p {
     background: linear-gradient(135deg, rgba(20, 60, 45, 0.95) 0%, rgba(6, 20, 14, 0.95) 100%);
     border: 2px solid #a3f7cb;
     border-radius: 50%;
-
-    font-family: inherit;
     font-size: 1.6rem;
     font-weight: 800;
     color: #a3f7cb;
@@ -822,6 +811,7 @@ main p {
 
 .location-info h3 {
     margin: 0 0 6px 0;
+    color: #e3f7ee;
 }
 
 /* Film associati */
@@ -829,7 +819,7 @@ main p {
     width: 100%;
     max-width: none;
     margin: 0 0 10px 0;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #a3f7cb;
     text-align: left;
@@ -851,29 +841,8 @@ main p {
     display: inline-block;
     margin-top: 14px;
     padding: 8px 18px;
-
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 38, 28, 0.6) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-
-    font-family: inherit;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #e3f7ee;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
 }
 
-.location-info a:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(15, 45, 33, 0.7) 100%);
-    color: #a3f7cb;
-    border: 1.5px solid #a3f7cb;
-    box-shadow: 0 0 16px rgba(163, 247, 203, 0.6), inset 0 0 8px rgba(163, 247, 203, 0.25);
-    text-shadow: 0 0 8px rgba(163, 247, 203, 0.6);
-    transform: translateY(-2px);
-}
 
 /* Più location nella stessa tappa */
 .location-subitem {
@@ -887,10 +856,6 @@ main p {
     margin-bottom: 0;
     border-bottom: none;
 }
-
-/* =========================================================
-   CONNESSIONE TRA TAPPE
-   ========================================================= */
 
 .route-connection {
     position: relative;
@@ -952,9 +917,10 @@ main p {
 }
 
 /* =========================================================
-   PAGINA ITINERARI
+   1T1N3R4R1
    ========================================================= */
-.introduction h3 {
+    /* sottotitolo titolo" */
+   .introduction h3 {
     font-size: 1.5rem;
     font-weight: 700;
     
@@ -982,7 +948,6 @@ main p {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 38, 28, 0.75) 100%);
 
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.5);
     border-radius: 40px;
 
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
@@ -992,7 +957,6 @@ main p {
 
 
 /* box itinerario pic */
-
 .film-panel-left {
     width: 43%;
     height: 100%;
@@ -1020,26 +984,23 @@ main p {
     object-fit: cover;
 
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.5);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
 }
 
 .photo-when {
     width: 100%;
-
     margin-bottom: 6px;
-    color: #a3f7cb;
-
-    font-size: 0.85rem;
-    font-weight: 600;
-
+    margin-left: 8px;
     text-align: left;
+    
+    color: #a3f7cb;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 
 /* frecce box itinerario */
-
 .frecce_scena {
     width: 9%;
 
@@ -1058,9 +1019,7 @@ main p {
     border: none;
 
     color: #e3f7ee;
-
     font-size: 2.2rem;
-
     transition: all 0.3s ease;
 }
 
@@ -1075,12 +1034,10 @@ main p {
     font-size: 1rem;
     font-weight: bold;
 
-    writing-mode: vertical-lr;
 }
 
 
 /* zona testi box itinerario*/
-
 .description-container-right {
     width: 45%;
     height: 100%;
@@ -1095,7 +1052,6 @@ main p {
 }
 
 /* buttons story, metadata, qr */
-
 .showview-buttons {
     width: 100%;
 
@@ -1107,12 +1063,7 @@ main p {
     margin-bottom: 8px;
 }
 
-
-
-/* =========================================================
-   PANNELLI STORY / METADATA / QR
-   ========================================================= */
-
+/* pannelli story, metadata, qr */
 .story-content,
 .metadata-content,
 .qr-content {
@@ -1131,8 +1082,7 @@ main p {
     background: linear-gradient(145deg, rgba(10, 32, 23, 0.85) 0%, rgba(4, 15, 10, 0.95) 100%);
     color: #e3f7ee;
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 30px;
 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
@@ -1140,15 +1090,12 @@ main p {
     overflow-y: auto;
 }
 
-
 /* difficulty and tell-me buttons */
-
 .difficulty-buttons {
     width: 100%;
 
     display: flex;
     gap: 8px;
-
     margin-bottom: 12px;
 
     flex-shrink: 0;
@@ -1171,26 +1118,18 @@ main p {
     white-space: nowrap;
 }
 
-
-
-/* METADATA BUTTONS */
-
+/* metadata buttons */
 .metadata-tasti {
     display: flex;
     flex-direction: column;
 
     gap: 15px;
-
     margin: 15px auto 0;
-
-    font-weight: bold;
 }
 
 .metadata-tasti button {
     width: 250px;
-
     align-self: center;
-
     padding: 10px 20px;
 }
 
@@ -1199,22 +1138,7 @@ main p {
 }
 
 
-/* META PUNTI */
-
-.meta-punti {
-    color: #6ee7b7;
-
-    font-size: 1rem;
-    transition: all 0.2s ease;
-}
-
-.meta-punti:hover {
-    color: #e3f7ee;
-}
-
-
 /* metadata buttons */
-
 .modal-overlay {
     position: fixed;
 
@@ -1228,12 +1152,10 @@ main p {
     align-items: center;
     justify-content: center;
 
-    background: rgba(4, 12, 8, 0.7);
-    backdrop-filter: blur(15px);
-
     z-index: 9999;
 }
 
+/* metadata info */
 .modal-box {
     position: relative;
 
@@ -1263,10 +1185,9 @@ main p {
     margin-top: 0;
 
     padding-bottom: 8px;
-
     color: #e3f7ee;
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    letter-spacing: 0.1em;
 
     font-size: 1.2rem;
 }
@@ -1276,13 +1197,8 @@ main p {
     padding: 0;
 
     list-style: none;
-
-    font-size: 0.9rem;
-    line-height: 1.8;
 }
 
-
-/* TESTI */
 
 .story-content h3,
 .metadata-content h3,
@@ -1317,16 +1233,10 @@ main p {
     line-height: 1.5;
 }
 
-
-/* QR CODE */
-
 .qr-description {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    color: #e3f7ee;
 
-    color: #bad3c7;
-
-    font-size: 0.9rem;
-    line-height: 1.4;
 }
 
 .qr-image {
@@ -1336,96 +1246,15 @@ main p {
     margin-top: 10px;
 
     padding: 10px;
-
-    background-color: #e3f7ee;
+    display: block;
+    margin: 0 auto;
 
     border-radius: 25px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-
 /* =========================================================
-   SEZIONE FILM HOMEPAGE
-   ========================================================= */
-
-.films-section {
-    width: 100%;
-    max-width: 950px;
-
-    margin: 80px auto;
-}
-
-.films-introduction {
-    margin-bottom: 40px;
-}
-
-.films-introduction h2 {
-    margin-bottom: 20px;
-}
-
-/* =========================================================
-   DISCLAIMER
-   ========================================================= */
-
-.disclaimer-page {
-    max-width: 950px;
-    margin: 0 auto;
-}
-
-
-.disclaimer-page .disclaimer-item {
-    display: flex;
-    flex-direction: row-reverse; /* dispari: txt a snx, n a dx */
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 40px 0;
-    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
-    box-sizing: border-box;
-}
-
-.disclaimer-page .disclaimer-item:last-child {
-    border-bottom: none;
-}
-
-.disclaimer-page .disclaimer-item:nth-child(even) {
-    flex-direction: row;
-    /* pari: n a snx, txt a dx */
-}
-
-/* num grande neon */
-.disclaimer-page .disclaimer-number {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #a3f7cb;
-    text-shadow: 0 0 20px rgba(163, 247, 203, 0.4);
-    flex-shrink: 0;
-    line-height: 1;
-}
-
-.disclaimer-page .disclaimer-content {
-    flex-grow: 1;
-}
-
-/* annullare i vincoli globali di main h2 e main p*/
-.disclaimer-page .disclaimer-title,
-.disclaimer-page .disclaimer-text {
-    max-width: none;
-    margin: 0;
-}
-
-.disclaimer-page .disclaimer-title {
-    margin-bottom: 12px;
-}
-
-.disclaimer-page .disclaimer-text {
-    text-align: justify;
-    line-height: 1.6;
-    color: #bad3c7;
-}
-
-/* =========================================================
-   ABOUT PAGE - CYBER LIQUID GLASS 2035
+   480U7 PAGE
    ========================================================= */
 
 .about-page {
@@ -1458,20 +1287,19 @@ main p {
 }
 
 /* Paragraphs */
-.about-page section > p:not(.section-label) {
+.about-page section>p:not(.section-label) {
     max-width: none;
     line-height: 1.8;
     margin-bottom: 1.4rem;
     color: #bad3c7;
-    font-size: 1.05rem;
     text-align: left;
 }
 
-.about-page section > p strong {
+.about-page section>p strong {
     color: #e3f7ee;
 }
 
-.about-page section > p i {
+.about-page section>p i {
     color: #a3f7cb;
 }
 
@@ -1517,9 +1345,9 @@ main p {
     padding: 1.8rem;
     box-sizing: border-box;
     background: linear-gradient(145deg,
-                rgba(255, 255, 255, 0.1) 0%,
-                rgba(18, 52, 38, 0.35) 50%,
-                rgba(6, 20, 14, 0.6) 100%);
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(18, 52, 38, 0.35) 50%,
+            rgba(6, 20, 14, 0.6) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1836,6 +1664,67 @@ footer a:hover {
     color: #bad3c7;
 }
 
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.disclaimer-page {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+
+.disclaimer-page .disclaimer-item {
+    display: flex;
+    flex-direction: row-reverse; /* dispari: txt a snx, n a dx */
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
+    box-sizing: border-box;
+}
+
+.disclaimer-page .disclaimer-item:last-child {
+    border-bottom: none;
+}
+
+.disclaimer-page .disclaimer-item:nth-child(even) {
+    flex-direction: row;
+    /* pari: n a snx, txt a dx */
+}
+
+/* num grande neon */
+.disclaimer-page .disclaimer-number {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #a3f7cb;
+    text-shadow: 0 0 20px rgba(163, 247, 203, 0.4);
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.disclaimer-page .disclaimer-content {
+    flex-grow: 1;
+}
+
+/* annullare i vincoli globali di main h2 e main p*/
+.disclaimer-page .disclaimer-title,
+.disclaimer-page .disclaimer-text {
+    max-width: none;
+    margin: 0;
+}
+
+.disclaimer-page .disclaimer-title {
+    margin-bottom: 12px;
+}
+
+.disclaimer-page .disclaimer-text {
+    text-align: justify;
+    line-height: 1.6;
+    color: #bad3c7;
+}
 
 /* =========================================================
    DOCUMENTATION: VISUAL IDENTITY & HISTORICAL STYLES (STYLE 2035)
