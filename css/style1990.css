@@ -1,5 +1,5 @@
 /* =========================================================
-   CSS STILE ANNI 80
+   CSS STILE ANNI 90
    ========================================================= */
 
    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
@@ -161,30 +161,29 @@ header {
     z-index: 999;
 
     display: flex;
-    align-items: center;
-    gap: 10px; /* Spazio tra i rettangoli */
-
     width: 100%;
+    padding: 0;
     box-sizing: border-box;
-    height: 80px;
-    padding: 5px;
 
+    background-color: #ff007f;
+    border-bottom: 2px solid #00f3ff;
 }
 
 .bar-item {
     flex: 1;
-    background-color:#ff007f;
-
-    height: 100%;
+    height: 50px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     text-align: center;
-    
-    border: 1.5px solid #ffe600;
-    transition: transform 0.08s ease;
+
+    border-right: 1px solid rgba(255, 230, 0, 0.4);
+}
+
+.bar-item:last-child {
+    border-right: none;
 }
 
 .bar-item a {
@@ -200,26 +199,13 @@ header {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.9rem;
 
-    text-shadow: 0 0 2px white;
-
-    transition: text-shadow 0.4s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.bar-item:active {
-    transform: translate(5px, 5px); }
-
 .bar-item a:hover {
-
-    color: #ffe600;
-
+    background-color: #1d0243;
+    color: #00f3ff;
     opacity: 1;
-
-    text-shadow:
-        0 0 5px #0ff,
-        0 0 10px #0ff,
-        0 0 20px #0ff,
-        0 0 40px #0ff;
-
 }
 
 
@@ -1930,6 +1916,7 @@ footer a, footer a:hover {
 
     .bar-style {
         top: 80px;
+        overflow-x: auto;
     }
 
     .bar-item {
