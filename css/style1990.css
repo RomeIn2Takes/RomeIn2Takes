@@ -1,10 +1,12 @@
 /* =========================================================
-   CSS STILE ANNI 90
+   CSS STILE ANNI 90 - Synthwave, neon, pixel
+
+   home page importata e modificata appogiata a ai dal sito https: //codepen.io/inegoita/pen/BgdXMw
    ========================================================= */
 
    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
-
+   
 /* STILE GENERALE */
 
 html,
@@ -14,11 +16,34 @@ body {
     width: 100%;
     min-height: 100vh;
 
-    background: linear-gradient(180deg,#1d0243,#2a0360,#1d0243);
+    background: linear-gradient(180deg,#3e0490,#2a0360,#1d0243);
     background-attachment: fixed;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 10;
+}
+
+main {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 30px 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main p {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
 
     font-family: 'VT323', monospace;
-    color: #00f3ff;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    text-align: justify;
 }
 
 a {
@@ -26,20 +51,73 @@ a {
 }
 
 a:hover {
-    opacity: 0.7;
+    text-decoration: none;
 }
 
 button {
     cursor: pointer;
 }
 
-h2 {
-    text-shadow: 0 0 3px #00f3ff;
+/*conform titles #46365d*/
+.introduction h2,
+.documentation-intro h1,
+.page-title,
+.map-page h1,
+.about-introduction h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+
+    color: #ff007f;
+    text-align: center;        
+    text-shadow: -3px -3px 0px #00ffff;
+
+    width: 100%;
+    max-width: 950px;
+
+    display: inline-block;
+    padding: 16px 24px;
+
+    border-radius: 0px;
+    box-shadow:
+        3px 0 0 0 black,
+            -3px 0 0 0 black,
+            0 3px 0 0 black,
+            0 -3px 0 0 black;
+
+    background:
+            radial-gradient(ellipse at top, rgba(255, 0, 127, 0.28) 0%, transparent 70%),
+            repeating-linear-gradient(180deg,
+                rgba(0, 0, 0, 0.2) 0px,
+                rgba(0, 0, 0, 0.2) 2px,
+                transparent 2px,
+                transparent 4px),
+            linear-gradient(180deg, #2e0561 0%, #1d0243 50%, #0f0024 100%);
+
+}
+
+/* conform subtitles */
+section h2,
+.about-page h2,
+.workflow h2,
+.documentation-section h2,
+.disclaimer-page .disclaimer-title {
+    font-family: 'Press Start 2P', monospace;
+        font-size: 2rem;
+        line-height: 1.5;
+        text-transform: uppercase;
+    
+        color: #00ffff;
+        text-align: center;
+        text-shadow: -3px -3px 0px #ffe600;
+        -webkit-text-stroke: 1px black
 }
 
 
 /* =========================================================
-   HEADER / NAVBAR
+   HEADER 
    ========================================================= */
 
 header {
@@ -63,9 +141,7 @@ header {
     box-shadow: 0 0 15px #00f3ff;
 }
 
-
-/* LINK NAVBAR */
-
+/* link header */
 .link-head {
     display: flex;
     align-items: center;
@@ -74,27 +150,18 @@ header {
 .link-head>a,
 .dropdown>a {
     margin-right: 20px;
-
     color: #ff007f;
 
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.7rem;
-
-    transition: color 0.2s ease;
+    font-family: 'Press Start 2P';
+    font-size: 0.70rem;
 }
 
 .link-head>a:hover,
 .dropdown>a:hover {
     color: #ffe600;
-
-    opacity: 1;
-
     text-decoration: underline;
 
 }
-
-
-/* DROPDOWN NAVBAR (itinerary)*/
 
 .dropdown {
     position: relative;
@@ -108,12 +175,8 @@ header {
     left: 0;
 
     min-width: 230px;
-
     background-color: #1d0243;
-
     border: 1px solid #1d0243;
-
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.35);
 
     z-index: 2100;
 }
@@ -124,18 +187,12 @@ header {
 
 .dropdown-menu a {
     display: block;
-
     margin: 0;
     padding: 12px 15px;
-
     color: white;
-
     font-family: 'VT323', monospace;
     font-size: 1rem;
-
     white-space: nowrap;
-
-    border-bottom: 1px solid rgba(255, 0, 127, 0.4);
 }
 
 .dropdown-menu a:last-child {
@@ -145,16 +202,9 @@ header {
 .dropdown-menu a:hover {
     background-color: #ff007f;
 
-    color: white;
-
-    opacity: 1;
 }
 
-
-/* =========================================================
-   BARRA STILI / DATE
-   ========================================================= */
-
+/* BARRA STILI */
 .bar-style {
     position: sticky;
     top: 50px;
@@ -179,7 +229,7 @@ header {
 
     text-align: center;
 
-    border-right: 1px solid rgba(255, 230, 0, 0.4);
+    border-right:2px solid #00f3ff
 }
 
 .bar-item:last-child {
@@ -197,71 +247,25 @@ header {
     color: #ffe600;
 
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.9rem;
-
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
+    font-size: 0.85rem;}
 
 .bar-item a:hover {
-    background-color: #1d0243;
-    color: #00f3ff;
-    opacity: 1;
+    color: #ffe600;
+    text-shadow:
+        0 0 5px #00f3ff,
+        0 0 10px #00f3ff,
+        0 0 20px #00f3ff,
+        0 0 40px #00f3ff;
+    transform: scale(1.15);
 }
 
 
 /* =========================================================
-   MAIN
+   H0M3P4G3
    ========================================================= */
 
-main {
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 30px 40px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-/* TITOLI GENERALI stesso stile usato nella homepage */
-
-main h2 {
-    width: 100%;
-    max-width: 950px;
-
-    box-sizing: border-box;
-
-    margin-bottom: 15px;
-
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-
-    color: #ff007f;
-
-    text-align: center;
-}
-
-
-/* TESTO GENERALE */
-
-main p {
-    width: 100%;
-    max-width: 950px;
-
-    margin: 0 auto;
-
-    font-family: 'VT323', monospace;
-    font-size: 1.3rem;
-    line-height: 1.5rem;
-    text-align: justify;
-}
-
-
 /* =========================================================
-   HOMEPAGE - SYNTHWAVE / OUTRUN 80s-90s HERO
+   homepage importata e adatatta da code pen inizia qui...
    ========================================================= */
 
 .home-introduction {
@@ -283,11 +287,9 @@ main p {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 
-    /* Sfondo gradiente Synthwave 80s/90s (da CodePen) */
     background: linear-gradient(to bottom, #010310 0%, #0c1142 24%, #45125e 45%, #d53567 60%, #f0c3d9 65%, #0c1142 65%);
 }
 
-/* 1. STELLE SCINTILLANTI (da CodePen .stars:after) */
 .home-introduction::before {
     content: '';
     position: absolute;
@@ -320,7 +322,6 @@ main p {
     pointer-events: none;
 }
 
-/* 2. GRIGLIA 3D PROSPETTICA ANIMATA (da CodePen .grid) */
 .home-introduction::after {
     content: '';
     position: absolute;
@@ -337,9 +338,6 @@ main p {
     z-index: 1;
     pointer-events: none;
 }
-
-
-/* CONTENITORE TITOLO (da CodePen .sun)*/
 
 .title-container {
     position: relative;
@@ -361,7 +359,6 @@ main p {
     z-index: 2;
 }
 
-/* 3. SOLE AL NEON A STRISCE (da CodePen .sun) */
 .title-container::before {
     content: '';
     position: absolute;
@@ -386,7 +383,6 @@ main p {
     pointer-events: none;
 }
 
-/* 4. OVERLAY SCANLINES CRT ESTESO A TUTTO IL BANNER (da CodePen .overlay) */
 .title-container::after {
     content: '';
     position: absolute;
@@ -405,9 +401,6 @@ main p {
     z-index: 4;
 }
 
-
-/* 5. TITOLO CHROME RETRO (da CodePen .chrome .shine per "Rome in Two Takes") */
-
 .title-container h1 {
     position: relative;
     z-index: 3;
@@ -425,18 +418,17 @@ main p {
     text-align: center;
     letter-spacing: 2px;
 
-    /* Gradiente Chrome identico al CodePen */
     background-image:
         linear-gradient(115deg, transparent 42%, rgba(255, 255, 255, 0.95) 50%, transparent 58%),
         linear-gradient(to bottom, #2989cc 0%, #d3e5ec 50%, #592451 51%, #b3628d 55%, #592451 59%, #b3628d 65%, #ac86a6 75%, #b3628d 100%);
     background-size: 250% 100%, 100% 100%;
     background-repeat: no-repeat;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgba(255, 255, 255, 0.4);
 
-    /* Effetto 3D Chrome e bagliori del CodePen */
     filter:
         drop-shadow(-1px -1px 0px #2989cc)
         drop-shadow(-2px -2px 0px #2989cc)
@@ -445,14 +437,9 @@ main p {
         drop-shadow(0 0 12px rgba(255, 255, 255, 0.7))
         drop-shadow(0 0 25px rgba(41, 137, 204, 0.6));
 
-    /* Riflesso luce animato metallico */
     animation: chrome-shine 6s ease-in-out infinite;
 }
 
-
-/* =========================================================
-   ANIMAZIONI SYNTHWAVE / OUTRUN (da CodePen)
-   ========================================================= */
 
 @keyframes moving-grid {
     0% {
@@ -481,8 +468,9 @@ main p {
     }
 }
 
-
-/* narratives homepage */
+/* =========================================================
+   ...e finisce qui
+   ========================================================= */
 
 .narratives {
     width: 100%;
@@ -501,41 +489,19 @@ main p {
     margin-top: 30px;
 }
 
-
-/* =========================================================
-   HOMEPAGE - NARRATIVE CARD 
-   ========================================================= */
-
 .narrative-card {
     flex: 1;
     box-sizing: border-box;
-
-    
-    background-color: #c2b8cf;
-    background-image: repeating-linear-gradient(0deg,
-        rgba(255, 0, 127, 0.04) 0px,
-        rgba(255, 0, 127, 0.04) 2px,
-        transparent 2px, /* spessore linea */
-        transparent 8px /* Distanza tra le linee */
-            );
-
-
-    border: 2px solid #00f3ff;
-    border-radius: 8px;
+    background-color: #b1a8bd;
+    border: 2px solid black;
     overflow: hidden;
-
-    transition: all 0.3s ease;
 }
-
-
-/* parte superiore barra ricerca */
 
 .card-decoration {
     height: 45px;
-
     background: #998fa7;
 
-    border-bottom: 2px solid #00f3ff;
+    border-bottom: 2px solid black;
 
     display: flex;
     align-items: center;
@@ -553,7 +519,7 @@ main p {
     height: 18px;
     box-sizing: border-box;
 
-    color: #ff007f;
+    color: black;
     background-color: #c2b8cf;
     border-top: 2px solid #c2b8cf;
     border-left: 2px solid #c2b8cf;
@@ -567,51 +533,45 @@ main p {
     line-height: 1;
 }
 
-
-/* =========================================================
-   ETICHETTA ITINERARIO / TAB DI NAVIGAZIONE
-   ========================================================= */
-
 .card-label {
-    padding: 12px 20px;
 
-    border-bottom: 2px #ff007f;
-
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.75rem;
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
     letter-spacing: 1.5px;
+    margin-top: 10px;
+    color: black;
+    text-align: left;
+    margin-left: 15px;
 
-    color: #ffe600;
-
-    text-align: center;
 }
-
 
 .card-body {
-    padding: 24px 22px;
+    box-sizing: border-box;
+    margin: 12px;
+    border: 1.5px solid black;
+    padding: 20px 16px;
+    background-color: #c2b8cf;
+    text-align: center;   
+
 }
-
-
-/* titolo */
 
 .card-body h3 {
     min-height: 80px;
-    margin: 0 0 30px 0;
-
     font-family: 'Press Start 2P', cursive;
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     line-height: 1.45;
-    letter-spacing: 1px;
-
-    color: #ff007f;
+    color: #1d0243;
+    text-shadow: -2px -2px 0px #ff007f;
     text-align: center;
 }
 
 .card-details {
-    padding: 10px 0;
     margin-bottom: 18px;
-    border-top: 2px dashed #ff007f;
+    margin-top: 3px;
+}
 
+.card-details p strong {
+    color: #ff007f;
 }
 
 .card-details p {
@@ -623,73 +583,144 @@ main p {
     font-size: 1.25rem;
     line-height: 1.4rem;
 
-    color: #00f3ff;
+    color: black;
     text-align: left;
-}
-
-.card-details p strong {
-    color: #ffe600;
 }
 
 .card-description {
     width: 100%;
     max-width: none;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     font-family: 'VT323', monospace;
     font-size: 1.25rem;
     line-height: 1.5rem;
 
-    text-align: justify;
+    text-align: left;
     color: #1d0243;
 }
 
 .discover {
     display: inline-block;
-    padding: 10px 16px;
-    background-color: #1d0243;
-    border: 2px solid #00f3ff;
+    padding: 16px;
+    background-color: #c2b8cf;
+    border-top: 2.5px solid white;
+    border-left: 2.5px solid white;
+    border-right: 2.5px solid #46365d;
+    border-bottom: 2.5px solid #46365d;
 
-    border-radius: 4px;
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.68rem;
-    letter-spacing: 1px;
+    font-size: 0.65rem;
 
-    color: #00f3ff;
+    color: #1d0243;
     transition: all 0.2s ease;
 }
 
-
-/* =========================================================
-   HOVER CARD
-   ========================================================= */
-
 .narrative-card:hover {
-    transform: translateY(-5px);
-    border-color: #ffe600;
-    box-shadow: 0 0 10px #ffe600;
-}
-
-.narrative-card:hover .card-decoration {
-    border-bottom-color: #ffe600;
-}
-
-.narrative-card:hover .card-decoration::before {
-    border-color: #ffe600;
-    color: #ffe600;
-    box-shadow: 0 0 6px #ffe600;
-}
-
-.narrative-card:hover .card-body h3 {
-    color: #ffe600;
+    transform: scale(1.02);
 }
 
 .narrative-card:hover .discover {
-    background-color: #ffe600;
-    color: #1d0243;
-    border-color: #ffe600;
-    box-shadow: 0 0 10px #ffe600;
+    border-top: 2px solid #46365d;
+    border-left: 2px solid #46365d;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
 }
 
+.map-introduction p {
+    margin-bottom: 30px;
+}
+
+/* poster */
+
+.poster-container {
+    width: 100%;
+    max-width: 950px;
+    box-sizing: border-box;
+    margin: 40px auto;
+    padding: 0 10px;
+}
+
+.poster-grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.poster {
+    flex: 1 1 calc(33.333% - 30px);
+    min-width: 250px;
+    box-sizing: border-box;
+}
+
+.poster-flip {
+    position: relative;
+    width: 100%;
+}
+
+.poster-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease-in-out;
+    backface-visibility: hidden;
+}
+
+.poster-back {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding: 7%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #00f3ff;
+    background-image: repeating-linear-gradient(0deg,
+                rgba(255, 0, 128, 0.181) 0px,
+                rgba(255, 0, 128, 0.327) 2px,
+                transparent 4px,
+                /* spessore linea */
+                transparent 3px
+                /* Distanza tra le linee */
+            );
+    color: #1d0243;
+
+    text-align: center;
+
+    transform: rotateY(180deg);
+
+    transition: transform 0.6s ease-in-out;
+
+    backface-visibility: hidden;
+}
+
+.poster-back p {
+    margin: 0;
+
+    color: #1d0243;
+
+    font-size: 1em;
+    line-height: 1.4;
+
+    text-align: justify;
+}
+
+.poster-flip:hover .poster-img {
+    transform: rotateY(-180deg);
+}
+
+.poster-flip:hover .poster-back {
+    transform: rotateY(0deg);
+}
 
 /* =========================================================
    AREA PRINCIPALE - stile interface desktop 
@@ -1270,105 +1301,6 @@ main p {
 .films-introduction h2 {
     margin-bottom: 20px;
 }
-
-
-/* =========================================================
-   POSTER
-   ========================================================= */
-
-.poster-container {
-    width: 100%;
-    max-width: 950px;
-
-    box-sizing: border-box;
-
-    margin: 40px auto;
-    padding: 0 10px;
-}
-
-.poster-grid {
-    width: 100%;
-
-    display: flex;
-    flex-wrap: wrap;
-
-    justify-content: space-between;
-
-    gap: 20px;
-}
-
-.poster {
-    flex: 1 1 calc(33.333% - 30px);
-
-    min-width: 250px;
-
-    box-sizing: border-box;
-}
-
-.poster-flip {
-    position: relative;
-
-    width: 100%;
-}
-
-.poster-img {
-    width: 100%;
-    height: auto;
-
-    display: block;
-
-    transition: transform 0.6s ease-in-out;
-
-    backface-visibility: hidden;
-}
-
-.poster-back {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    box-sizing: border-box;
-
-    padding: 7%;
-
-    display: flex;
-    flex-direction: column;
-
-    background-color: #0ff;
-    color: #1d0243;
-
-    text-align: center;
-
-    transform: rotateY(180deg);
-
-    transition: transform 0.6s ease-in-out;
-
-    backface-visibility: hidden;
-}
-
-.poster-back p {
-    margin: 0;
-
-    color: #1d0243;
-
-    font-size: 1em;
-    line-height: 1.4;
-
-    text-align: justify;
-}
-
-.poster-flip:hover .poster-img {
-    transform: rotateY(-180deg);
-}
-
-.poster-flip:hover .poster-back {
-    transform: rotateY(0deg);
-}
-
 
 /* =========================================================
    BOTTONI PREVIOUS / NEXT
