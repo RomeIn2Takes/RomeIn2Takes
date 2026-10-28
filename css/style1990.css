@@ -99,20 +99,32 @@ button {
 }
 
 /* conform subtitles */
+h2,
+main h2,
 section h2,
+.films-introduction h2,
 .about-page h2,
 .workflow h2,
 .documentation-section h2,
 .disclaimer-page .disclaimer-title {
-    font-family: 'Press Start 2P', monospace;
-        font-size: 2rem;
-        line-height: 1.5;
-        text-transform: uppercase;
-    
-        color: #00ffff;
-        text-align: center;
-        text-shadow: -3px -3px 0px #ffe600;
-        -webkit-text-stroke: 1px black
+    width: 100%;
+    max-width: 950px;
+    margin: 45px auto 20px auto;
+    box-sizing: border-box;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    text-wrap: balance;
+
+    color: #ffe600;
+        text-shadow:
+            2px 2px 0px #ff007f,
+            4px 4px 0px black,
+            0 0 8px rgba(255, 230, 0, 0.4);
 }
 
 
@@ -475,17 +487,13 @@ header {
 .narratives {
     width: 100%;
     max-width: 950px;
-
     margin: 70px auto;
 }
 
 .narrativa-container {
     width: 100%;
-
     display: flex;
-
     gap: 40px;
-
     margin-top: 30px;
 }
 
@@ -495,6 +503,10 @@ header {
     background-color: #b1a8bd;
     border: 2px solid black;
     overflow: hidden;
+    box-shadow: 0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 15px #0ff,
+        0 0 15px #0ff;
 }
 
 .card-decoration {
@@ -534,7 +546,6 @@ header {
 }
 
 .card-label {
-
     font-family: 'VT323', monospace;
     font-size: 1.3rem;
     letter-spacing: 1.5px;
@@ -560,9 +571,13 @@ header {
     font-family: 'Press Start 2P', cursive;
     font-size: 1.3rem;
     line-height: 1.45;
-    color: #1d0243;
-    text-shadow: -2px -2px 0px #ff007f;
+    color: #ff007f;
+    text-shadow:
+        2px 2px 0px #00f3ff,
+        4px 4px 0px #000000,
+        0 0 12px rgba(0, 243, 255, 0.45);
     text-align: center;
+    text-transform: uppercase;
 }
 
 .card-details {
@@ -616,7 +631,11 @@ header {
 }
 
 .narrative-card:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
+    box-shadow: 0 0 5px #ffe600,
+            0 0 10px #ffe600,
+            0 0 15px #0ff,
+            0 0 15px #0ff;
 }
 
 .narrative-card:hover .discover {
@@ -624,6 +643,7 @@ header {
     border-left: 2px solid #46365d;
     border-right: 2px solid white;
     border-bottom: 2px solid white;
+    background-color: #998fa7;
 }
 
 .map-introduction p {
@@ -1901,7 +1921,7 @@ footer a, footer a:hover {
     }
 
     main h2 {
-        font-size: 2.3rem;
+        font-size: 1.15rem;
     }
 
 
