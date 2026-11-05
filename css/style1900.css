@@ -2453,3 +2453,58 @@ footer p a:hover {
 
 }
 
+
+
+/* =========================================================
+  NUOVA BARRA ANNI
+   ========================================================= */
+/* Navbar più ampia su desktop */
+@media (min-width: 801px) {
+    header {
+        height: 72px;
+    }
+
+    .link-head > a,
+    .dropdown > a {
+        font-size: 1rem;
+    }
+
+    .bar-style {
+        top: 72px;
+    }
+}
+
+/* Barra degli anni più sottile, con fotogrammi al centro */
+.bar-style {
+    justify-content: flex-start;
+    overflow-x: auto;
+}
+
+.bar-item {
+    flex: 0 0 82px;
+    min-width: 0;
+    height: 36px;
+    box-sizing: border-box;
+}
+
+.bar-item:first-child {
+    margin-inline-start: auto;
+    border-inline-start: 1px solid #606060;
+}
+
+.bar-item:last-child {
+    margin-inline-end: auto;
+    border-inline-end: 1px solid #606060;
+}
+
+.bar-item a {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+
+@media (max-width: 600px) {
+    .bar-item {
+        flex-basis: 64px;
+    }
+}
