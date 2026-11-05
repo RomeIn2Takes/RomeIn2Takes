@@ -333,6 +333,89 @@ main p {
     text-align: center;
 }
 
+
+
+
+/* =========================================================
+   HOMEPAGE - COUNTDOWN
+   ========================================================= */
+/* 1900 — Countdown cinematografico sopra il titolo */
+@property --film1900-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.home-introduction > .title-container {
+    position: relative;
+    isolation: isolate;
+}
+
+.home-introduction > .title-container::after {
+    content: "3";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    padding-bottom: 16px;
+    pointer-events: none;
+
+    color: #252522;
+    font: 700 clamp(4rem, 15vw, 10rem) / 1 Georgia, serif;
+    background-color: #d3d1c8;
+    background-image:
+        radial-gradient(
+            circle at center,
+            transparent 0 68px,
+            #55534e 68px 70px,
+            transparent 70px 84px,
+            #55534e 84px 86px,
+            transparent 86px
+        ),
+        linear-gradient(90deg, transparent calc(50% - 0.5px),
+            #55534e calc(50% - 0.5px) calc(50% + 0.5px),
+            transparent calc(50% + 0.5px)),
+        linear-gradient(transparent calc(50% - 0.5px),
+            #55534e calc(50% - 0.5px) calc(50% + 0.5px),
+            transparent calc(50% + 0.5px)),
+        conic-gradient(
+            #9e9b91 0deg var(--film1900-angle, 0deg),
+            #d3d1c8 var(--film1900-angle, 0deg) 360deg
+        );
+
+    animation:
+        film1900-count 3s step-end both,
+        film1900-turn 1s linear 3 forwards,
+        film1900-fade 0.55s ease-out 3s forwards;
+}
+
+@keyframes film1900-count {
+    0% { content: "3"; }
+    33.333% { content: "2"; }
+    66.667%, 100% { content: "1"; }
+}
+
+@keyframes film1900-turn {
+    from { --film1900-angle: 0deg; }
+    to { --film1900-angle: 360deg; }
+}
+
+@keyframes film1900-fade {
+    from { opacity: 1; visibility: visible; }
+    to { opacity: 0; visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-introduction > .title-container::after {
+        animation:
+            film1900-count 3s step-end both,
+            film1900-fade 0.01s step-end 3s forwards;
+    }
+}
+
+
 /* =========================================================
    HOMEPAGE - NARRATIVES
    ========================================================= */
@@ -2369,3 +2452,4 @@ footer p a:hover {
     }
 
 }
+
