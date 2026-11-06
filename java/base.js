@@ -33,36 +33,39 @@
 
     function initBarEvents() {
 
-        const barLinks =
-            document.querySelectorAll(".bar-style .bar-item a");
+    const barLinks =
+        document.querySelectorAll(".bar-style .bar-item a");
 
-        barLinks.forEach(function (link) {
+    barLinks.forEach(function (link) {
 
-            link.addEventListener("click", function (e) {
+        link.addEventListener("click", function (e) {
 
-                e.preventDefault();
+            e.preventDefault();
 
-                const newStyle =
-                    this.getAttribute("href");
+            const newStyle = this.getAttribute("href");
 
-                if (cssLink && newStyle) {
+            if (cssLink && newStyle) {
 
-                    cssLink.setAttribute(
-                        "href",
-                        newStyle
-                    );
+                // Cambia il CSS
+                cssLink.setAttribute("href", newStyle);
 
-                    localStorage.setItem(
-                        "userStyle",
-                        newStyle
-                    );
-                }
+                // Salva lo stile selezionato
+                localStorage.setItem("userStyle", newStyle);
 
-            });
+                // Aggiorna la cartografia Leaflet
+                document.dispatchEvent(
+                    new CustomEvent('themeChanged', {
+                        detail: { style: newStyle }
+                    })
+                );
+
+            }
 
         });
 
-    }
+    });
+
+}
 
 
     if (document.readyState === "loading") {
@@ -444,13 +447,102 @@ function initMapPage() {
             );
 
 
-    L.tileLayer(
-        'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-        {
+    /* ========================================================
+    STILI CARTOGRAFICI
+    ======================================================== */
+
+    var mapStyles = {
+
+        "css/base.css": {
+            url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
             attribution:
                 '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        },
+
+        "css/style1900.css": {
+            url: "https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png",
+            attribution:
+                '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> ' +
+                '&copy; <a href="https://stamen.com/">Stamen Design</a> ' +
+                '&copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> ' +
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        },
+
+        "css/style1960.css": {
+            url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+            attribution:
+                'Tiles &copy; Esri'
+        },
+
+        "css/style1990.css": {
+            url: "https://api.thunderforest.com/mobile-atlas/{z}/{x}/{y}{r}.png?apikey={apikey}",
+            apikey: "",
+            attribution:
+                '&copy; <a href="https://www.thunderforest.com/">Thunderforest</a>, ' +
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        },
+
+        "css/style2035.css": {
+            url: "https://tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-token={accessToken}",
+            accessToken: "",
+            attribution:
+                '&copy; <a href="https://jawg.io/">Jawg Maps</a> ' +
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }
-    ).addTo(map);
+    };
+
+
+    /* ========================================================
+    CAMBIO DINAMICO DELLA MAPPA
+    ======================================================== */
+
+    var currentTileLayer = null;
+
+    function changeMapStyle(cssFile) {
+
+        var selectedStyle = mapStyles[cssFile] || mapStyles["css/base.css"];
+
+        // Se manca una chiave API, utilizza OpenStreetMap
+        if (
+            (cssFile === "css/style1990.css" && !selectedStyle.apikey) ||
+            (cssFile === "css/style2035.css" && !selectedStyle.accessToken)
+        ) {
+            selectedStyle = mapStyles["css/base.css"];
+        }
+
+        var newTileLayer = L.tileLayer(
+            selectedStyle.url,
+            {
+                attribution: selectedStyle.attribution,
+                apikey: selectedStyle.apikey,
+                accessToken: selectedStyle.accessToken,
+                maxZoom: 19
+            }
+        );
+
+        // Aggiunge il nuovo sfondo prima di rimuovere il precedente
+        newTileLayer.addTo(map);
+        newTileLayer.bringToBack();
+
+        if (currentTileLayer) {
+            map.removeLayer(currentTileLayer);
+        }
+
+        currentTileLayer = newTileLayer;
+    }
+
+
+    /* ========================================================
+    STILE INIZIALE E CAMBIO TEMA
+    ======================================================== */
+
+    var initialStyle = localStorage.getItem("userStyle") || "css/base.css";
+
+    changeMapStyle(initialStyle);
+
+    document.addEventListener('themeChanged', function (event) {
+        changeMapStyle(event.detail.style);
+    });
 
 
     /* ========================================================
