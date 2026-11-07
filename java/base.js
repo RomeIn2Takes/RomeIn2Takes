@@ -460,11 +460,10 @@ function initMapPage() {
         },
 
         "css/style1900.css": {
-            url: "https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png",
+            url: "https://tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token={accessToken}",
+            accessToken: "poi rimettiamo token",
             attribution:
-                '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> ' +
-                '&copy; <a href="https://stamen.com/">Stamen Design</a> ' +
-                '&copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> ' +
+                '&copy; <a href="https://jawg.io/">Jawg Maps</a> ' +
                 '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         },
 
@@ -484,7 +483,7 @@ function initMapPage() {
 
         "css/style2035.css": {
             url: "https://tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-token={accessToken}",
-            accessToken: "",
+            accessToken: "poi rimettiamo token",
             attribution:
                 '&copy; <a href="https://jawg.io/">Jawg Maps</a> ' +
                 '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -505,7 +504,11 @@ function initMapPage() {
         // Se manca una chiave API, utilizza OpenStreetMap
         if (
             (cssFile === "css/style1990.css" && !selectedStyle.apikey) ||
-            (cssFile === "css/style2035.css" && !selectedStyle.accessToken)
+            (
+                (cssFile === "css/style1900.css" ||
+                cssFile === "css/style2035.css") &&
+                !selectedStyle.accessToken
+            )
         ) {
             selectedStyle = mapStyles["css/base.css"];
         }
