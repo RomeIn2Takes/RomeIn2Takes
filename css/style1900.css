@@ -626,9 +626,14 @@ main p {
     border-radius: 2px;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.72rem;
+    font-size: 1rem;
     font-weight: normal;
-    letter-spacing: 0.7px;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: 10px 16px;
 
     text-align: center;
     text-transform: uppercase;
@@ -1404,8 +1409,13 @@ main p {
     border-radius: 2px;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.7px;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: 10px 16px;
 
     transition:
         background-color 0.2s ease,
