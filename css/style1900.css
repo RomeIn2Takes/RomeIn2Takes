@@ -2217,8 +2217,45 @@ main:not(:has(.home-introduction))
 }
 
 .map-page:has(#show-all.active) .location-card {
-    padding: 26px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+
+    margin: 0 0 24px;
+    padding: 28px;
+
+    background: #2c2b29;
+
+    border: 1px solid #625d54;
+    border-radius: 2px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.map-page:has(#show-all.active) .location-card::before,
+.map-page:has(#show-all.active) .location-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    pointer-events: none;
+}
+
+.map-page:has(#show-all.active) .location-card::before {
+    top: 8px;
+    left: 8px;
+
+    border-top: 2px solid #b8ad98;
+    border-left: 2px solid #b8ad98;
+}
+
+.map-page:has(#show-all.active) .location-card::after {
+    bottom: 8px;
+    right: 8px;
+
+    border-bottom: 2px solid #b8ad98;
+    border-right: 2px solid #b8ad98;
 }
 
 .map-page:has(#show-all.active) .location-info {
