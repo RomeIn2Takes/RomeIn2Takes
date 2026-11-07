@@ -240,6 +240,45 @@ main p {
 }
 
 /* =========================================================
+   SOTTOTITOLO DEGLI ITINERARI
+   ========================================================= */
+
+.introduction > h3 {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto 30px;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    color: #e2e2df;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: normal;
+    font-style: italic;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+
+    text-align: center;
+    text-wrap: balance;
+}
+
+.introduction > h3::after {
+    content: "";
+
+    display: block;
+
+    width: 110px;
+    height: 3px;
+    margin: 20px auto 0;
+
+    border-top: 1px solid #e2e2df;
+    border-bottom: 1px solid #e2e2df;
+}
+
+/* =========================================================
    HOMEPAGE - TITLE
    ========================================================= */
 
