@@ -1881,9 +1881,10 @@ main:not(:has(.home-introduction))
     position: relative;
 
     width: 100%;
-    max-width: 850px;
+    max-width: 950px;
 
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 
@@ -1898,7 +1899,7 @@ main:not(:has(.home-introduction))
     top: 0;
     bottom: 0;
 
-    width: 82px;
+    width: 100px;
     box-sizing: border-box;
 
     background:
@@ -1938,7 +1939,7 @@ main:not(:has(.home-introduction))
     display: flex;
     align-items: flex-start;
 
-    gap: 30px;
+    gap: 20px;
 
     padding: 25px 0;
 
@@ -1958,9 +1959,9 @@ main:not(:has(.home-introduction))
     position: relative;
     z-index: 2;
 
-    flex: 0 0 82px;
-    width: 82px;
-    height: 64px;
+    flex: 0 0 100px;
+    width: 100px;
+    height: 76px;
 
     display: flex;
     align-items: center;
@@ -1970,14 +1971,14 @@ main:not(:has(.home-introduction))
 
     /* Rettangolo centrato esattamente dietro al numero */
     background:
-        linear-gradient(#b7afa0, #b7afa0)
-            center top / 44px 2px no-repeat,
+    linear-gradient(#b7afa0, #b7afa0)
+        center top / 64px 2px no-repeat,
 
-        linear-gradient(#b7afa0, #b7afa0)
-            center bottom / 44px 2px no-repeat,
+    linear-gradient(#b7afa0, #b7afa0)
+        center bottom / 64px 2px no-repeat,
 
-        linear-gradient(#55514a, #55514a)
-            center / 44px 100% no-repeat;
+    linear-gradient(#55514a, #55514a)
+        center / 64px 100% no-repeat;
 
     border: none;
     border-radius: 0;
@@ -2001,8 +2002,10 @@ main:not(:has(.home-introduction))
 
 .location-info {
     flex: 1;
+    min-width: 0;
 
     padding-top: 3px;
+    box-sizing: border-box;
 }
 
 .location-info h3 {
@@ -2047,7 +2050,7 @@ main:not(:has(.home-introduction))
 
 .location-info p:nth-of-type(2) {
     width: 100%;
-    max-width: 62ch;
+    max-width: none;
 
     margin: 0;
 
@@ -2125,8 +2128,8 @@ main:not(:has(.home-introduction))
 .route-connection {
     position: relative;
 
-    width: calc(100% - 112px);
-    margin: 4px 0 22px 112px;
+    width: calc(100% - 120px);
+    margin: 4px 0 22px 120px;
     padding: 4px 0 4px 16px;
 
     box-sizing: border-box;
@@ -2169,7 +2172,7 @@ main:not(:has(.home-introduction))
 
 .route-directions {
     width: 100%;
-    max-width: 62ch;
+    max-width: none;
     margin: 0;
 
     color: #c4c0b7;
@@ -2213,7 +2216,7 @@ main:not(:has(.home-introduction))
 }
 
 .location-card:not(:has(.location-number)) .location-info {
-    padding-left: 112px;
+    padding-left: 120px;
 }
 
 
