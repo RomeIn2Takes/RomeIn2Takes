@@ -483,7 +483,7 @@ function initMapPage() {
 
         "css/style2035.css": {
             url: "https://tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-token={accessToken}",
-            accessToken: "poi rimettiamo token",
+            accessToken: "poi mettiamo token",
             attribution:
                 '&copy; <a href="https://jawg.io/">Jawg Maps</a> ' +
                 '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -568,12 +568,36 @@ function initMapPage() {
     var markers = [];
 
     var defaultMapIcon = new L.Icon.Default();
-    var icons1960 = {};
+
+    var themedIcons = {};
+
+    // Colori e spessori condivisi da segnaposto e percorsi
+    var mapVisualStyles = {
+        "css/style1900.css": {
+            historical: "#303030",
+            women: "#a3a3a3",
+            weight: 4
+        },
+
+        "css/style1960.css": {
+            historical: "#b73526",
+            women: "#007f86",
+            weight: 6
+        },
+
+        "css/style2035.css": {
+            historical: "#48bc99",
+            women: "#cf79ff",
+            weight: 5
+        }
+    };
 
     function getMarkerIcon(location) {
 
-        // Negli altri temi usa il segnaposto originale di Leaflet
-        if (activeMapTheme !== "css/style1960.css") {
+        var style = mapVisualStyles[activeMapTheme];
+
+        // Gli altri temi mantengono il segnaposto originale
+        if (!style) {
             return defaultMapIcon;
         }
 
@@ -584,33 +608,87 @@ function initMapPage() {
             ? "both"
             : (women ? "women" : "historical");
 
-        if (!icons1960[type]) {
+        var key = activeMapTheme + ":" + type;
+
+        if (!themedIcons[key]) {
 
             var fill = type === "both"
                 ? "url(#routes)"
-                : (type === "women" ? "#007f86" : "#b73526");
+                : (type === "women" ? style.women : style.historical);
+
+            var definitions =
+                '<defs>' +
+                    '<linearGradient id="routes" ' +
+                        'x1="0%" y1="0%" x2="100%" y2="0%">' +
+                        '<stop offset="50%" stop-color="' +
+                            style.historical + '"/>' +
+                        '<stop offset="50%" stop-color="' +
+                            style.women + '"/>' +
+                    '</linearGradient>' +
+                '</defs>';
+
+            var drawing = "";
+
+            if (activeMapTheme === "css/style1900.css") {
+
+                // Fotogramma con perforazioni laterali
+                drawing =
+                    '<rect x="3" y="3" width="30" height="30" ' +
+                        'rx="2" fill="#242424" ' +
+                        'stroke="#d1cbbd" stroke-width="1.5"/>' +
+
+                    '<rect x="10" y="7" width="16" height="22" ' +
+                        'fill="' + fill + '" ' +
+                        'stroke="#d1cbbd" stroke-width="1"/>' +
+
+                    '<path d="M6 7v3 M6 15v3 M6 23v3 ' +
+                        'M30 7v3 M30 15v3 M30 23v3" ' +
+                        'stroke="#d1cbbd" stroke-width="3"/>' +
+
+                    '<circle cx="18" cy="18" r="3" fill="#efe9dc"/>';
+
+            } else if (activeMapTheme === "css/style2035.css") {
+
+                // Esagono con mirino centrale
+                drawing =
+                    '<path d="M18 2 L32 10 L32 26 ' +
+                        'L18 34 L4 26 L4 10 Z" ' +
+                        'fill="#101725" stroke="' + fill + '" ' +
+                        'stroke-width="2.5"/>' +
+
+                    '<circle cx="18" cy="18" r="7" ' +
+                        'fill="' + fill + '" fill-opacity="0.25" ' +
+                        'stroke="' + fill + '" stroke-width="1.5"/>' +
+
+                    '<path d="M18 8v6 M18 22v6 ' +
+                        'M8 18h6 M22 18h6" ' +
+                        'stroke="' + fill + '" stroke-width="2"/>' +
+
+                    '<circle cx="18" cy="18" r="2" fill="#ffffff"/>';
+
+            } else {
+
+                // Cerchi del tema 1960
+                drawing =
+                    '<circle cx="18" cy="18" r="16" ' +
+                        'fill="#fff9e9" stroke="#28231e" ' +
+                        'stroke-width="2"/>' +
+
+                    '<circle cx="18" cy="18" r="11" ' +
+                        'fill="' + fill + '"/>' +
+
+                    '<circle cx="18" cy="18" r="4" fill="#fff9e9"/>';
+
+            }
 
             var svg =
                 '<svg xmlns="http://www.w3.org/2000/svg" ' +
-                'width="36" height="36" viewBox="0 0 36 36">' +
-
-                    '<defs>' +
-                        '<linearGradient id="routes" x1="0%" y1="0%" x2="100%" y2="0%">' +
-                            '<stop offset="50%" stop-color="#b73526"/>' +
-                            '<stop offset="50%" stop-color="#007f86"/>' +
-                        '</linearGradient>' +
-                    '</defs>' +
-
-                    '<circle cx="18" cy="18" r="16" ' +
-                        'fill="#fff9e9" stroke="#28231e" stroke-width="2"/>' +
-
-                    '<circle cx="18" cy="18" r="11" fill="' + fill + '"/>' +
-
-                    '<circle cx="18" cy="18" r="4" fill="#fff9e9"/>' +
-
+                    'width="36" height="36" viewBox="0 0 36 36">' +
+                    definitions +
+                    drawing +
                 '</svg>';
 
-            icons1960[type] = L.icon({
+            themedIcons[key] = L.icon({
                 iconUrl:
                     "data:image/svg+xml;charset=UTF-8," +
                     encodeURIComponent(svg),
@@ -621,7 +699,7 @@ function initMapPage() {
             });
         }
 
-        return icons1960[type];
+        return themedIcons[key];
     }
 
 
@@ -773,13 +851,17 @@ function initMapPage() {
         }
 
 
-        var is1960 = activeMapTheme === "css/style1960.css";
+        var routeStyle = mapVisualStyles[activeMapTheme] || {
+            historical: "blue",
+            women: "red",
+            weight: 3
+        };
 
         historicalLine = L.polyline(
             visibleHistoricalRoute,
             {
-                color: is1960 ? "#b73526" : "blue",
-                weight: is1960 ? 6 : 3,
+                color: routeStyle.historical,
+                weight: routeStyle.weight,
                 opacity: 1,
                 dashArray: null,
                 lineCap: "round",
@@ -790,8 +872,8 @@ function initMapPage() {
         womenLine = L.polyline(
             visibleWomenRoute,
             {
-                color: is1960 ? "#007f86" : "red",
-                weight: is1960 ? 6 : 3,
+                color: routeStyle.women,
+                weight: routeStyle.weight,
                 opacity: 1,
                 dashArray: null,
                 lineCap: "round",
