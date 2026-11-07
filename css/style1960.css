@@ -2015,6 +2015,12 @@ main h2,
         transform 0.25s ease;
 }
 
+.home-introduction ~ .map-introduction > .bottone {
+    display: block;
+    width: fit-content;
+    margin: 24px auto 0;
+}
+
 .bottone:hover {
     background-color: var(--turquoise);
     color: var(--yellow);

@@ -1422,6 +1422,11 @@ main p {
         color 0.2s ease,
         border-color 0.2s ease;
 }
+.home-introduction ~ .map-introduction > .bottone {
+    display: block;
+    width: fit-content;
+    margin: 24px auto 0;
+}
 
 .bottone:hover {
     background-color: #404040;
