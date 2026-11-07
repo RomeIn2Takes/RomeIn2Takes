@@ -540,11 +540,14 @@ function initMapPage() {
     ======================================================== */
 
     var initialStyle = localStorage.getItem("userStyle") || "css/base.css";
-
+    var activeMapTheme = initialStyle;
     changeMapStyle(initialStyle);
 
     document.addEventListener('themeChanged', function (event) {
-        changeMapStyle(event.detail.style);
+        activeMapTheme = event.detail.style;
+
+        changeMapStyle(activeMapTheme);
+        updateMap();
     });
 
 
@@ -563,6 +566,63 @@ function initMapPage() {
        ======================================================== */
 
     var markers = [];
+
+    var defaultMapIcon = new L.Icon.Default();
+    var icons1960 = {};
+
+    function getMarkerIcon(location) {
+
+        // Negli altri temi usa il segnaposto originale di Leaflet
+        if (activeMapTheme !== "css/style1960.css") {
+            return defaultMapIcon;
+        }
+
+        var historical = location.narratives.includes("historical");
+        var women = location.narratives.includes("women");
+
+        var type = historical && women
+            ? "both"
+            : (women ? "women" : "historical");
+
+        if (!icons1960[type]) {
+
+            var fill = type === "both"
+                ? "url(#routes)"
+                : (type === "women" ? "#007f86" : "#b73526");
+
+            var svg =
+                '<svg xmlns="http://www.w3.org/2000/svg" ' +
+                'width="36" height="36" viewBox="0 0 36 36">' +
+
+                    '<defs>' +
+                        '<linearGradient id="routes" x1="0%" y1="0%" x2="100%" y2="0%">' +
+                            '<stop offset="50%" stop-color="#b73526"/>' +
+                            '<stop offset="50%" stop-color="#007f86"/>' +
+                        '</linearGradient>' +
+                    '</defs>' +
+
+                    '<circle cx="18" cy="18" r="16" ' +
+                        'fill="#fff9e9" stroke="#28231e" stroke-width="2"/>' +
+
+                    '<circle cx="18" cy="18" r="11" fill="' + fill + '"/>' +
+
+                    '<circle cx="18" cy="18" r="4" fill="#fff9e9"/>' +
+
+                '</svg>';
+
+            icons1960[type] = L.icon({
+                iconUrl:
+                    "data:image/svg+xml;charset=UTF-8," +
+                    encodeURIComponent(svg),
+
+                iconSize: [36, 36],
+                iconAnchor: [18, 18],
+                popupAnchor: [0, -18]
+            });
+        }
+
+        return icons1960[type];
+    }
 
 
     function setupMarkers() {
@@ -626,7 +686,7 @@ function initMapPage() {
             var currentLocation =
                 locations[i];
 
-
+            markers[i].setIcon(getMarkerIcon(currentLocation));
             var matchesNarrative =
                 currentNarrative === 'all' ||
                 currentLocation.narratives.includes(
@@ -713,22 +773,31 @@ function initMapPage() {
         }
 
 
-        historicalLine =
-            L.polyline(
-                visibleHistoricalRoute,
-                {
-                    color: 'blue'
-                }
-            );
+        var is1960 = activeMapTheme === "css/style1960.css";
 
+        historicalLine = L.polyline(
+            visibleHistoricalRoute,
+            {
+                color: is1960 ? "#b73526" : "blue",
+                weight: is1960 ? 6 : 3,
+                opacity: 1,
+                dashArray: null,
+                lineCap: "round",
+                lineJoin: "round"
+            }
+        );
 
-        womenLine =
-            L.polyline(
-                visibleWomenRoute,
-                {
-                    color: 'red'
-                }
-            );
+        womenLine = L.polyline(
+            visibleWomenRoute,
+            {
+                color: is1960 ? "#007f86" : "red",
+                weight: is1960 ? 6 : 3,
+                opacity: 1,
+                dashArray: null,
+                lineCap: "round",
+                lineJoin: "round"
+            }
+        );
 
 
         if (
