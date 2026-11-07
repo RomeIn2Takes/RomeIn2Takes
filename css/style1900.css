@@ -1890,19 +1890,39 @@ main:not(:has(.home-introduction))
 /* =========================================================
    LINEA VERTICALE PRINCIPALE
    ========================================================= */
-
 #locations-list::before {
     content: "";
 
     position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
 
-    left: 31px;
-    top: 30px;
-    bottom: 30px;
+    width: 82px;
+    box-sizing: border-box;
 
-    width: 2px;
+    background:
+        /* Perforazioni a sinistra */
+        repeating-linear-gradient(
+            to bottom,
+            #c8c2b6 0 11px,
+            transparent 11px 22px
+        ) 5px 6px / 8px 22px repeat-y,
 
-    background-color: rgba(189, 189, 185, 0.55);
+        /* Perforazioni a destra */
+        repeating-linear-gradient(
+            to bottom,
+            #c8c2b6 0 11px,
+            transparent 11px 22px
+        ) calc(100% - 5px) 6px / 8px 22px repeat-y,
+
+        #171716;
+
+    border: 1px solid #080808;
+
+    box-shadow: 2px 0 7px rgba(0, 0, 0, 0.25);
+
+    pointer-events: none;
 }
 
 
@@ -1938,9 +1958,9 @@ main:not(:has(.home-introduction))
     position: relative;
     z-index: 2;
 
-    flex: 0 0 58px;
-    width: 58px;
-    height: 58px;
+    flex: 0 0 82px;
+    width: 82px;
+    height: 64px;
 
     display: flex;
     align-items: center;
@@ -1948,16 +1968,30 @@ main:not(:has(.home-introduction))
 
     box-sizing: border-box;
 
-    background-color: #343434;
+    /* Rettangolo centrato esattamente dietro al numero */
+    background:
+        linear-gradient(#b7afa0, #b7afa0)
+            center top / 44px 2px no-repeat,
 
-    border: 1px solid #bdbdb9;
-    border-radius: 50%;
+        linear-gradient(#b7afa0, #b7afa0)
+            center bottom / 44px 2px no-repeat,
+
+        linear-gradient(#55514a, #55514a)
+            center / 44px 100% no-repeat;
+
+    border: none;
+    border-radius: 0;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.35rem;
-    font-weight: normal;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
 
-    color: #e8e6e1;
+    color: #fff4de;
+
+    text-shadow:
+        0 1px 3px #000,
+        0 0 6px #000;
 }
 
 
@@ -2168,7 +2202,7 @@ main:not(:has(.home-introduction))
 
 
 #locations-list:not(:has(.location-number))::before {
-    display: none;
+    display: block;
 }
 
 
@@ -2181,14 +2215,13 @@ main:not(:has(.home-introduction))
 }
 
 .location-card:not(:has(.location-number)) .location-info {
-    padding-left: 0;
+    padding-left: 112px;
 }
 
 
 /* =========================================================
    MAPPA RESPONSIVE
    ========================================================= */
-
 @media screen and (max-width: 800px) {
 
     .map-page h1 {
@@ -2208,7 +2241,8 @@ main:not(:has(.home-introduction))
     }
 
     #locations-list::before {
-        left: 24px;
+        left: 0;
+        width: 70px;
     }
 
     .location-card {
@@ -2216,12 +2250,16 @@ main:not(:has(.home-introduction))
     }
 
     .location-number {
-        flex-basis: 50px;
-
-        width: 50px;
-        height: 50px;
+        flex-basis: 70px;
+        width: 70px;
+        height: 58px;
 
         font-size: 1.4rem;
+
+        background-size:
+            34px 2px,
+            34px 2px,
+            34px 100%;
     }
 
     .location-info h3 {
@@ -2229,9 +2267,12 @@ main:not(:has(.home-introduction))
     }
 
     .route-connection {
-        width: calc(100% - 68px);
+        width: calc(100% - 88px);
+        margin-left: 88px;
+    }
 
-        margin-left: 68px;
+    .location-card:not(:has(.location-number)) .location-info {
+        padding-left: 88px;
     }
 }
 
