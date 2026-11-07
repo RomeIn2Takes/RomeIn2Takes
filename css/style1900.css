@@ -1917,6 +1917,15 @@ main:not(:has(.home-introduction))
             transparent 11px 22px
         ) calc(100% - 5px) 6px / 8px 22px repeat-y,
 
+        /* Fotogrammi decorativi lungo la striscia */
+        repeating-linear-gradient(
+            to bottom,
+            #948c7e 0 1px,
+            #45423c 1px 55px,
+            #948c7e 55px 56px,
+            #171716 56px 66px
+        ) center top / 64px 66px repeat-y,
+
         #171716;
 
     border: 1px solid #080808;
@@ -1978,7 +1987,9 @@ main:not(:has(.home-introduction))
         center bottom / 64px 2px no-repeat,
 
     linear-gradient(#55514a, #55514a)
-        center / 64px 100% no-repeat;
+        center / 64px 100% no-repeat,
+
+    #171716;
 
     border: none;
     border-radius: 0;
@@ -2242,9 +2253,15 @@ main:not(:has(.home-introduction))
     }
 
     #locations-list::before {
-        left: 0;
-        width: 70px;
-    }
+    left: 0;
+    width: 70px;
+
+    background-size:
+        8px 22px,
+        8px 22px,
+        34px 66px,
+        auto;
+}
 
     .location-card {
         gap: 18px;
