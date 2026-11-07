@@ -2006,14 +2006,17 @@ main:not(:has(.home-introduction))
 }
 
 .location-info h3 {
-    margin: 0 0 7px 0;
+    margin: 0 0 16px;
+
+    color: #e2e2df;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.45rem;
-    font-weight: normal;
-    letter-spacing: 0.3px;
+    font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+    font-weight: bold;
+    line-height: 1.25;
+    letter-spacing: 0;
 
-    color: #eee;
+    text-align: left;
 }
 
 
@@ -2023,12 +2026,18 @@ main:not(:has(.home-introduction))
     width: 100%;
     max-width: none;
 
-    margin: 0 0 8px 0;
+    margin: 0 0 16px;
+    padding: 0;
 
-    font-size: 0.8rem;
-    line-height: 1.2rem;
+    background: none;
+    border: none;
 
-    color: #bdbdb9;
+    color: #c8bda6;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5;
 
     text-align: left;
 }
@@ -2038,14 +2047,15 @@ main:not(:has(.home-introduction))
 
 .location-info p:nth-of-type(2) {
     width: 100%;
-    max-width: 700px;
+    max-width: 62ch;
 
     margin: 0;
 
-    font-size: 0.9rem;
-    line-height: 1.45rem;
+    color: #e2e0da;
 
-    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.75;
 
     text-align: left;
 }
@@ -2115,83 +2125,71 @@ main:not(:has(.home-introduction))
 .route-connection {
     position: relative;
 
-    width: calc(100% - 95px);
-
-    margin:
-        -8px
-        0
-        -8px
-        95px;
-
-    padding:
-        8px
-        15px
-        8px
-        18px;
+    width: calc(100% - 112px);
+    margin: 4px 0 22px 112px;
+    padding: 4px 0 4px 16px;
 
     box-sizing: border-box;
 
-    border-left:
-    1px solid rgba(189, 189, 185, 0.35);
+    background: none;
+    border: none;
+    border-left: 1px solid #777064;
+    border-radius: 0;
+
+    color: #c4c0b7;
 }
 
 
 /* PICCOLO PUNTO SULLA LINEA SECONDARIA */
 
 .route-connection::before {
-    content: "";
-
-    position: absolute;
-
-    left: -4px;
-    top: 12px;
-
-    width: 7px;
-    height: 7px;
-
-    background-color: #bdbdb9;
-
-    border-radius: 50%;
+    content: none;
 }
 
 
 /* TRASPORTO + TEMPO */
 
 .route-main-info {
-    margin-bottom: 3px;
+    margin: 0 0 6px;
+    padding: 0;
+
+    border: none;
+
+    color: #c8bda6;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.68rem;
+    font-size: 0.9rem;
     font-weight: normal;
-
-    color: #bdbdb9;
+    line-height: 1.5;
+    letter-spacing: 0;
 }
 
 
 /* INDICAZIONI */
 
 .route-directions {
-    width: 100% !important;
-    max-width: 650px !important;
+    width: 100%;
+    max-width: 62ch;
+    margin: 0;
 
-    margin: 0 !important;
+    color: #c4c0b7;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.66rem !important;
-    line-height: 1.1rem !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
 
-    color: #d8d6d1;
-
-    text-align: left !important;
+    text-align: left;
 }
 
 
 /* NEXT STOP leggermente più evidente */
 
 .route-directions strong {
-    font-weight: normal;
+    color: #d5cfc2;
 
-    color: rgba(244, 232, 193, 0.8);
+    font-size: inherit;
+    font-weight: normal;
+    line-height: inherit;
 }
 
 
@@ -2263,7 +2261,7 @@ main:not(:has(.home-introduction))
     }
 
     .location-info h3 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .route-connection {
