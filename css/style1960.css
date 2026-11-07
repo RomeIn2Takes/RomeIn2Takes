@@ -2022,8 +2022,16 @@ main h2,
     transform: translateY(-2px);
 }
 
-.bottoni-pagine .bottone:only-child {
+.bottoni-pagine > .bottone:only-child {
     margin-left: auto;
+    margin-right: 0;
+}
+
+/* Il ritorno alla mappa resta a sinistra, anche da solo */
+main:not(:has(.home-introduction))
+.bottoni-pagine > a.bottone[href="mappa.html"] {
+    margin-left: 0;
+    margin-right: auto;
 }
 
 /* =========================================================
