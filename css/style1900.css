@@ -1044,7 +1044,9 @@ main p {
 .tellme-buttons button,
 .metadata-tasti button,
 #filters button {
-    padding: 8px 14px;
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: 10px 16px;
 
     background-color: #292929;
     color: #d8d6d1;
@@ -1053,14 +1055,13 @@ main p {
     border-radius: 2px;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: normal;
-    letter-spacing: 0.7px;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
 
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
+    text-align: center;
+    text-transform: none;
 }
 
 
@@ -1417,9 +1418,16 @@ main p {
     color: #ffffff;
     border-color: #bdbdb9;
 }
-
-.bottoni-pagine .bottone:only-child {
+.bottoni-pagine > .bottone:only-child {
     margin-left: auto;
+    margin-right: 0;
+}
+
+/* Il ritorno alla mappa resta a sinistra, anche da solo */
+main:not(:has(.home-introduction))
+.bottoni-pagine > a.bottone[href="mappa.html"] {
+    margin-left: 0;
+    margin-right: auto;
 }
 
 
@@ -1672,11 +1680,6 @@ main p {
 
 }
 
-a.bottone[href="mappa.html"] {
-    display: block;
-    width: fit-content;
-    margin: 20px auto;
-}
 
 /* =========================================================
    DOCUMENTATION
