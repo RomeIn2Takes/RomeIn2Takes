@@ -2209,25 +2209,38 @@ main:not(:has(.home-introduction))
 
 
 /* =========================================================
-   ALL LOCATIONS
+   ALL LOCATIONS — SOLO QUANDO IL FILTRO ALL È ATTIVO
    ========================================================= */
 
-
-#locations-list:not(:has(.location-number))::before {
-    display: block;
+.map-page:has(#show-all.active) #locations-list::before {
+    display: none;
 }
 
-
-
-.location-card:not(:has(.location-number)) {
-    padding: 22px 0;
-
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.25);
+.map-page:has(#show-all.active) .location-card {
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.location-card:not(:has(.location-number)) .location-info {
-    padding-left: 120px;
+.map-page:has(#show-all.active) .location-info {
+    padding-left: 0;
+}
+
+/* Affianca i paragrafi contenenti i due collegamenti */
+
+.map-page:has(#show-all.active) .location-info > p:has(> a) {
+    display: inline-block;
+
+    width: auto;
+    max-width: 100%;
+
+    margin: 16px 12px 0 0;
+    padding: 0;
+
+    vertical-align: top;
+}
+
+.map-page:has(#show-all.active) .location-info > p:has(> a) > a {
+    margin-top: 0;
 }
 
 
