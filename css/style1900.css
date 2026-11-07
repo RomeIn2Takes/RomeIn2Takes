@@ -656,36 +656,58 @@ main p {
 
 .poster-back {
     position: absolute;
-
     top: 0;
     left: 0;
 
     width: 100%;
     height: 100%;
-
     box-sizing: border-box;
-    padding: 7%;
+
+    padding: 12% 11%;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
 
+    /* Carta con bordi leggermente scuriti */
     background:
-        linear-gradient(
-            rgba(72, 66, 58, 0.10),
-            rgba(72, 66, 58, 0.10)
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(49, 43, 34, 0.18) 100%
         ),
-        #c8c6c0;
+        repeating-linear-gradient(
+            0deg,
+            rgba(55, 48, 38, 0.025) 0px,
+            rgba(55, 48, 38, 0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+        #d1cbbd;
 
-    color: #302b24;
+    color: #292722;
 
+    border: 5px solid #292722;
+    outline: 1px solid #625b4e;
+    outline-offset: -12px;
+
+    box-shadow:
+        inset 0 0 0 3px #d1cbbd,
+        inset 0 0 0 4px #625b4e,
+        inset 0 0 28px rgba(40, 34, 26, 0.15);
+
+    font-family: Georgia, "Times New Roman", serif;
     text-align: center;
+
+    overflow-y: auto;
 
     transform: rotateY(180deg);
     transition: transform 0.6s ease-in-out;
     backface-visibility: hidden;
-
-    filter: grayscale(100%) sepia(20%) contrast(110%);
 }
+
 /* =========================================================
    AREA PRINCIPALE — PELLICOLA
    ========================================================= */
@@ -1290,15 +1312,59 @@ main p {
     backface-visibility: hidden;
 }
 .poster-back p {
+    width: 100%;
+    max-width: none;
     margin: 0;
 
-    color: #302b24;
+    color: #292722;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(0.75rem, 1.1vw, 0.95rem);
-    line-height: 1.5;
+    font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+    line-height: 1.6;
 
-    text-align: justify;
+    text-align: center;
+}
+
+.poster-back h3 {
+    width: 100%;
+    margin: 0;
+
+    color: #292722;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 1px;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.poster-back .film-year {
+    display: block;
+    width: 65%;
+    margin: 0;
+    padding: 8px 0;
+
+    border-top: 1px solid #625b4e;
+    border-bottom: 1px solid #625b4e;
+
+    color: #484237;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.poster-back .film-director {
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.poster-back .film-synopsis {
+    margin-top: 4px;
 }
 
 
