@@ -1533,6 +1533,8 @@ header {
     width: 100%;
     max-width: 950px;
     height: 550px;
+    position: relative;
+    z-index: 0;
 
     margin: 0 auto;
     box-sizing: border-box;

@@ -481,8 +481,13 @@ header {
 /* 14 — MAP: LEAFLET & FILTERS */
 .map-page { width: 100%; }
 #map {
-    width: 100%; max-width: var(--content-width); height: 550px;
-    margin: 0 auto; border: 4px solid var(--white);
+    width: 100%; 
+    max-width: var(--content-width); 
+    height: 550px;
+    margin: 0 auto; 
+    position: relative;
+    z-index: 0;
+    border: 4px solid var(--white);
 }
 .leaflet-popup-content { font-family: var(--font-body); }
 #filters {

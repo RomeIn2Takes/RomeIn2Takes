@@ -1828,6 +1828,8 @@ main:not(:has(.home-introduction))
     height: 550px;
 
     margin: 0 auto;
+    position: relative;
+    z-index: 0;
 
     box-sizing: border-box;
 
