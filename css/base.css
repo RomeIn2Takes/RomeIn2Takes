@@ -1,7 +1,7 @@
 /* =========================================================
    ROME IN TWO TAKES — BASE STYLE / CINEMA
    ========================================================= */
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Courier+Prime&family=League+Spartan:wght@700&family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Courier+Prime&family=League+Spartan:wght@700&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap");
 
 /* 01 — VARIABLES */
 :root {
@@ -13,7 +13,7 @@
     --black: #2b2623;
     --font-title: 'Bebas Neue', sans-serif;
     --font-heading: "Archivo Black", Arial, sans-serif;
-    --font-body: 'Special Elite', monospace;
+    --font-body: "Lora", Georgia, serif;
     --font-code: 'Courier Prime', monospace;
     --text-small: 0.85rem;
     --text-base: 1rem;
@@ -104,7 +104,7 @@ main p {
     width: 100%; max-width: var(--content-width);
     margin: 0 auto;
     font-size: var(--text-large);
-    line-height: 1.6rem;
+    line-height: 1.65rem;
     color: var(--white);
     text-align: justify;
 }
