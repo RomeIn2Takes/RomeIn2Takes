@@ -1,7 +1,7 @@
 /* =========================================================
    ROME IN TWO TAKES — BASE STYLE / CINEMA
    ========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&family=Courier+Prime&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Courier+Prime&family=League+Spartan:wght@700&family=Special+Elite&display=swap");
 
 /* 01 — VARIABLES */
 :root {
@@ -182,42 +182,121 @@ header {
     margin: 50px auto 70px;
     text-align: center;
 }
+
 .title-container {
     position: relative;
-    width: 100%; max-width: 900px;
-    margin: 0 auto; padding: 60px 70px;
-    background: var(--dark);
-    border: 7px solid var(--cream); border-radius: 18px;
-    box-shadow: 0 0 0 3px white, 0 0 0 7px var(--cream),
-                0 0 20px rgba(244,232,193,0.7),
-                0 0 40px rgba(244,232,193,0.35),
-                0 8px 20px rgba(0,0,0,0.4);
-}
-.title-container h1 {
-    width: 100%; max-width: none;
-    margin: 0; padding: 0;
-    font-size: 5.5rem; line-height: 1; letter-spacing: 6px;
-    color: var(--white);
-    text-align: center; text-transform: uppercase;
-    -webkit-text-stroke: 1px var(--cream);
-    text-shadow: 2px 2px 0 #6d2121, 0 0 8px rgba(244,232,193,0.3);
-}
-.title-container::before, .title-container::after {
-    position: absolute; left: 0;
     width: 100%;
-    color: var(--cream);
-    font-family: Arial, sans-serif;
-    font-size: 1.4rem; letter-spacing: 10px;
-    text-align: center;
-    text-shadow: 0 0 4px white, 0 0 8px var(--cream);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem clamp(0.6rem, 3vw, 1.5rem);
+
+    background: linear-gradient(
+    180deg,
+    #51392d 0%,
+    #38271f 30%,
+    #2a1e19 75%,
+    #453025 100%
+);
+border: 2px solid #634736;
+border-top-color: #987454;
+border-radius: 4px;
+
+box-shadow:
+    inset 0 1px 0 rgba(255, 238, 203, 0.45),
+    inset 0 2px 5px rgba(87, 57, 35, 0.22),
+    inset 0 -3px 6px rgba(87, 57, 35, 0.18);
 }
-.title-container::before {
-    content: "  \25CF     \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF    \25CF   ";
-    top: 8px;
-}
+
+/* Lampadine sopra e sotto il pannello */
+.title-container::before,
 .title-container::after {
-    content: "     \25CF      \25CF          \25CF      \25CF      \25CF      \25CF     \25CF      \25CF      \25CF      \25CF      \25CF      \25CF      \25CF";
-    bottom: 8px;
+    content: "";
+    position: absolute;
+    inset-inline: 14px;
+    height: 24px;
+
+    background: radial-gradient(
+        circle at center,
+        #fff8df 0 2px,
+        #ffe2a4 3px,
+        #efad58 5px,
+        #a56635 6px,
+        rgba(255, 158, 66, 0.28) 8px,
+        transparent 11px
+    ) center / 32px 24px space no-repeat;
+
+    pointer-events: none;
+}
+
+.title-container::before {
+    top: 7px;
+}
+
+.title-container::after {
+    bottom: 7px;
+}
+
+/* Pannello retroilluminato e titolo */
+.title-container h1 {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-block: clamp(1.25rem, 4vw, 2.75rem);
+    padding-inline: max(0.5rem, calc((100% - 8.4em) / 2));
+
+    font-family: "Archivo Black", Arial, sans-serif;
+    font-size: clamp(1.3rem, 6.8vw, 4.9rem);
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: 0.015em;
+    text-align: center;
+    text-transform: uppercase;
+    text-wrap: balance;
+
+    color: #b74424;
+-webkit-text-stroke: 1.5px #fff0bc;
+
+background:
+    /* Riflessi caldi delle lampadine, vicini ai bordi */
+    radial-gradient(ellipse at 50% 0%,
+        rgba(255, 185, 91, 0.23), transparent 42%),
+    radial-gradient(ellipse at 50% 100%,
+        rgba(255, 173, 74, 0.18), transparent 38%),
+
+    /* Guide orizzontali del pannello */
+    repeating-linear-gradient(
+        to bottom,
+        transparent 0 31px,
+        rgba(64, 43, 27, 0.27) 31px 32px
+    ),
+
+    /* Vetro avorio, più scuro vicino alla cornice */
+    linear-gradient(180deg, #b79b74, #e6d1ac 22%, #e6d1ac 78%, #ad8f66);
+
+text-shadow:
+    /* Riflesso vicino al filetto */
+     0 0 2px rgba(255, 170, 60, 0.75),
+
+    /* Fascia di rame intorno al filetto */
+     3px  0   0 #b74424,
+    -3px  0   0 #b74424,
+     0    3px 0 #b74424,
+     0   -3px 0 #b74424,
+     2px  2px 0 #b74424,
+    -2px  2px 0 #b74424,
+     2px -2px 0 #b74424,
+    -2px -2px 0 #b74424,
+
+        /* Spessore delle lettere e ombra sul pannello */
+    2px 3px 0 #78321f,
+    3px 5px 0 #6a2b1e,
+    4px 7px 0 #53251c,
+    6px 10px 6px rgba(47, 28, 21, 0.48);
+
+box-shadow:
+    inset 0 1px 0 rgba(255, 241, 209, 0.55),
+    inset 0 3px 7px rgba(57, 38, 23, 0.32),
+    inset 0 -4px 9px rgba(57, 38, 23, 0.28);
 }
 
 /* 08 — HOMEPAGE: NARRATIVES */
