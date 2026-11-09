@@ -5,13 +5,14 @@
 
 /* 01 — VARIABLES */
 :root {
-    --background: #943b3b;
+    --background: #94473b;
     --dark: #1c1b1b;
     --dark-light: #212121;
     --cream: #f4e8c1;
     --white: #ffffff;
     --black: #2b2623;
     --font-title: 'Bebas Neue', sans-serif;
+    --font-heading: "Archivo Black", Arial, sans-serif;
     --font-body: 'Special Elite', monospace;
     --font-code: 'Courier Prime', monospace;
     --text-small: 0.85rem;
@@ -54,12 +55,50 @@ main {
     flex-direction: column;
     align-items: center;
 }
-main h1, main h2 { color: var(--cream); letter-spacing: 2px; }
-main h2 {
-    width: 100%; max-width: var(--content-width);
-    margin: 35px 0 20px;
-    font-size: var(--heading-large);
+/* Titoli principali — effetto insegna */
+main h1,
+main h2,
+.disclaimer-page .page-title {
+    font-family: "Archivo Black", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: 0.015em;
     text-align: center;
+    text-transform: uppercase;
+    text-wrap: balance;
+
+    color: #b74424;
+    -webkit-text-stroke: 1.5px #fff0bc;
+
+    text-shadow:
+         0    0   2px rgba(255, 170, 60, 0.75),
+         3px  0   0 #b74424,
+        -3px  0   0 #b74424,
+         0    3px 0 #b74424,
+         0   -3px 0 #b74424,
+         2px  2px 0 #b74424,
+        -2px  2px 0 #b74424,
+         2px -2px 0 #b74424,
+        -2px -2px 0 #b74424,
+         2px  3px 0 #78321f,
+         3px  5px 0 #6a2b1e,
+         4px  7px 0 #53251c,
+         6px 10px 6px rgba(47, 28, 21, 0.48);
+}
+
+main h1,
+.disclaimer-page .page-title {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 35px auto 25px;
+    font-size: clamp(2.2rem, 5.8vw, 4.4rem);
+}
+
+main h2 {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 35px auto 24px;
+    font-size: clamp(1.9rem, 4.6vw, 3.5rem);
 }
 main p {
     width: 100%; max-width: var(--content-width);
@@ -68,21 +107,6 @@ main p {
     line-height: 1.6rem;
     color: var(--white);
     text-align: justify;
-}
-.documentation-intro h1,
-.map-page h1,
-.disclaimer-page .page-title {
-    width: 100%; max-width: var(--content-width);
-    margin: 35px auto 20px;
-    font-size: var(--heading-large);
-    text-align: center;
-}
-.documentation-section h2, .workflow h2 {
-    max-width: none;
-    margin-bottom: 15px;
-    font-size: var(--heading-small);
-    text-align: left;
-    white-space: normal;
 }
 
 /* 04 — HEADER & NAVIGATION */
@@ -244,7 +268,7 @@ box-shadow:
     padding-block: clamp(1.25rem, 4vw, 2.75rem);
     padding-inline: max(0.5rem, calc((100% - 8.4em) / 2));
 
-    font-family: "Archivo Black", Arial, sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(1.3rem, 6.8vw, 4.9rem);
     font-weight: 400;
     line-height: 1.16;
@@ -808,8 +832,7 @@ pre.tree {
     max-width: none; margin: 0;
 }
 .disclaimer-page .disclaimer-title {
-    font-size: 1.4rem; margin-bottom: 12px;
-    color: var(--cream); text-align: left;
+    margin-bottom: 12px;
 }
 .disclaimer-page .disclaimer-text { text-align: justify; line-height: 1.6; }
 
@@ -852,7 +875,6 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
     .bar-item { min-width: 100px; }
     .bar-item a { font-size: 1rem; }
     main { padding: 20px; }
-    main h2 { font-size: 2.3rem; }
     .home-introduction { margin: 35px auto 50px; }
     .title-container { padding: 50px 25px; border-width: 5px; }
     .title-container h1 { font-size: 3.2rem; letter-spacing: 3px; }
@@ -876,7 +898,6 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
     footer { padding: 25px 20px; }
 
     /* Map */
-    .map-page h1 { font-size: 3.2rem; }
     #map { height: 430px; }
     #filters { flex-wrap: wrap; }
     .locations-section { margin-top: 45px; }
