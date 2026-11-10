@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1900s: The Birth of Cinema - Rome in Two Takes</title>
+
+    <link id="theme-style" rel="stylesheet" href="css/style1900.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Limelight&display=swap" rel="stylesheet">
+    <script src="java/base.js"></script>
+</head>
+
+<body>
+    <header>
+    
+        <div class="link-head" style="text-align:left;">
+            <a href="index.html">Home</a>
+            <a href="mappa.html">Map</a>
+            <div class="dropdown">
+                <a href="#">Itinerary &#9660;</a>
+                <div class="dropdown-menu">
+                    <a href="tourStorico.html">Historical Journey</a>
+                    <a href="narrativa_femminista.html">Women & Urban Space</a>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+        <div class="link-head" style="text-align:left;">
+            <a href="about.html">About</a>
+            <a href="documentazione.html">Documentation</a>
+            <a href="documentation-code.html">Technical Notes</a>
+            <a href="disclaimer.html">Disclaimer</a>
+    
+        </div>
+    
+    </header>
+
+ <!-- barra scelta stile -->
+    <div class="bar-style">
+        <div class="bar-item">
+            <a href="css/style1650.css">
+                <span class="nav-label">1650s</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="css/style1850.css">
+                <span class="nav-label">1850s</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="css/style1900.css">
+                <span class="nav-label">1900s</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="css/base.css">
+                <span class="nav-label">1940s</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="css/style1960.css">
+                <span class="nav-label">1960s</span>
+            </a>
+        </div>
+        <div class="bar-item">
+            <a href="css/style1990.css">
+                <span class="nav-label">1990s</span>
+            </a>
+        </div>
+        
+        <div class="bar-item">
+            <a href="css/style2035.css">
+                <span class="nav-label">2035</span>
+            </a>
+        </div>
+    </div>
+
+
+    <main class="documentation-page style-detail">
+
+        <section class="documentation-intro">
+            <h1>1900s: The Birth of Cinema</h1>
+            <p>
+                The 1900s theme imagines <em>Rome in Two Takes</em> as an early film screening.
+                Curtains introduce the title, tickets lead to the two itineraries, and film
+                strips organise scenes and stops. The recurring materials are photographic
+                paper, dark film and pale print.
+            </p>
+            <p>
+                <a class="style-pinterest-link"
+                   href="https://it.pinterest.com/francescagaeta01/rome-in-2-takes/1900/">
+                    Project inspiration board on Pinterest &rarr;
+                </a>
+            </p>
+        </section>
+
+        <nav class="documentation-section style-index"
+     aria-labelledby="style-index-heading">
+    <h2 id="style-index-heading">On this page</h2>
+
+    <div class="style-index-grid">
+        <div class="style-index-card">
+            <h3>Visual identity</h3>
+            <a href="#concept">01. Concept and visual references</a>
+            <a href="#opening">02. Opening title</a>
+            <a href="#typography">03. Typography</a>
+            <a href="#palette">04. Colour and materials</a>
+        </div>
+
+        <div class="style-index-card">
+            <h3>Navigation and itineraries</h3>
+            <a href="#navigation">05. Navigation and year selector</a>
+            <a href="#itineraries">06. Itinerary cards and scene viewer</a>
+            <a href="#images">07. Posters, photographs and filters</a>
+        </div>
+
+        <div class="style-index-card">
+            <h3>Map design</h3>
+            <a href="#basemap">08. Basemap and cartographic style</a>
+            <a href="#map-symbols">09. Markers and route lines</a>
+            <a href="#locations">10. Location lists and archive cards</a>
+        </div>
+
+        <div class="style-index-card">
+            <h3>Interaction</h3>
+            <a href="#controls">11. Buttons and interaction states</a>
+            <a href="#motion">12. Animation and responsive behaviour</a>
+        </div>
+    </div>
+</nav>
+
+        <section class="documentation-section" id="concept">
+            <h2>01. Concept and visual references</h2>
+            <p>
+                The theme borrows from the experience of attending and handling film:
+                the curtain frames the opening, the ticket marks admission, the film strip
+                establishes sequence, and the archive card gives each location a place of
+                its own. These motifs have distinct roles and reappear only where those
+                roles make sense.
+            </p>
+            <p>
+                The period label describes the visual interpretation. The films and locations
+                belong to the project as a whole and span several decades. The countdown
+                also draws on familiar projection imagery, giving the theme a broader
+                cinematic vocabulary.
+            </p>
+        </section>
+
+        <section class="documentation-section" id="opening">
+            <h2>02. Opening title and title container</h2>
+            <p>
+                The title container uses <code>tende.png</code> as a stage curtain.
+                A dark overlay softens the image behind the title, while a pale radial
+                highlight suggests a spotlight. The large, tilted title and its layered
+                shadow recall hand-lettered film advertising. The theatre image frames
+                the text as a theatrical entrance to the project.
+            </p>
+            <p>
+                The countdown covers the stage temporarily. Its concentric rings, crosshair
+                and rotating sweep are drawn with CSS gradients, while three animation
+                steps change the numeral from 3 to 1. The overlay fades to reveal the
+                title below it.
+            </p>
+        </section>
+
+        <section class="documentation-section" id="typography">
+            <h2>03. Typography</h2>
+            <p>
+                <strong>Lobster Two</strong> is the display face specified for the opening
+                title and major headings. Its curved letterforms give headings the presence
+                of display lettering. The homepage uses an italic treatment and a slight
+                rotation to make the entrance more theatrical.
+            </p>
+            <p>
+                <strong>Georgia</strong>, with Times New Roman as a fallback, carries
+                the paragraphs, credits and controls. The serif text supports the printed
+                character of the theme while giving longer descriptions a more regular
+                rhythm. The itinerary subtitle uses centred italic Georgia and a thin
+                double rule, echoing the graphic treatment on the backs of the posters.
+            </p>
+        </section>
+
+        <section class="documentation-section" id="palette">
+            <h2>04. Colour and materials</h2>
+            <ul>
+                <li><strong>Charcoal:</strong> <code>#343434</code> for the page and
+                    <code>#292929</code> for darker navigation and control surfaces.</li>
+                <li><strong>Light grey:</strong> <code>#e2e2df</code> for readable text
+                    on the dark page.</li>
+                <li><strong>Aged paper:</strong> <code>#d1cbbd</code> on the poster backs,
+                    with dark ink and a double border.</li>
+                <li><strong>Warm archive accents:</strong> pale taupe outlines and
+                    sepia details on tickets and cards.</li>
+            </ul>
+            <p>
+                Dark surfaces frame the photographs and recall a screening room.
+                Pale paper surfaces mark material meant to be read closely, such as
+                tickets and poster credits. The slight warmth separates paper from
+                the cooler greys of the interface.
+            </p>
+        </section>
+
+        <section class="documentation-section" id="navigation">
+            <h2>05. Navigation and year selector</h2>
+            <p>
+                The header uses a dark surface, thin rules and light serif links.
+                It remains at the top during scrolling, keeping the main routes through
+                the site available. The restrained finish gives priority to the page title
+                and the imagery.
+            </p>
+            <p>
+                The year selector is a shallower horizontal strip. Individual periods
+                sit in equally sized cells with vertical dividers, recalling consecutive
+                film frames. The strip can scroll on narrow screens, so the period labels
+                retain their own space instead of compressing into one crowded row.
+            </p>
+        </section>
+
+        <section class="documentation-section" id="itineraries">
+            <h2>06. Itinerary cards, icons and scene viewer</h2>
+            <p>
+                On the homepage, Historical Journey and Women &amp; Urban Space are
+                presented as admission tickets. Cut corners, an inset outline and
+                the labels ITINERARY 01 and ITINERARY 02 give the two entrances a common
+                shape. The cards use numbered labels and full itinerary names as their
+                identifying signs.
+            </p>
+            <p>
+                Inside each itinerary, the scene viewer becomes a wide strip of film with
+                perforated sides. The paired photographs compare the location today with
+                the same place on film. Scene arrows and the current scene number provide
+                orientation, while the Story, Metadata and QR controls switch the
+                accompanying material.
+            </p>
+        </section>
+
+        <section class="documentation-section" id="images">
+            <h2>07. Posters, photographs and filters</h2>
+            <p>
+                The six posters identify the films used by the two itineraries:
+                <em>Rome, Open City</em>, <em>Bellissima</em>, <em>Mamma Roma</em>,
+                <em>A Special Day</em>, <em>The Great Beauty</em> and
+                <em>There's Still Tomorrow</em>. They connect the itinerary locations
+                to the wider film selection and keep each production visually identifiable.
+            </p>
+            <p>
+                The stylesheet applies full grayscale, a 20% sepia tint and a modest
+                contrast increase to the poster fronts and scene photographs. This gives
+                imagery from different decades a shared photographic tone. On the reverse,
+                a paper texture and double rule frame the film title, year, director and
+                synopsis, like a small printed programme.
+            </p>
+        </section>
+
+        <section class="documentation-section" id="basemap">
+            <h2>08. Basemap and cartographic style</h2>
+            <p>
+                The 1900s theme uses <strong>Jawg Light</strong> as its Leaflet basemap.
+                Its pale, subdued background keeps Rome's streets recognisable and leaves
+                visual room for the routes and film-location markers. A thin white frame
+                separates the cartographic image from the dark page.
+            </p>
+            <p>
+                The street map provides present-day orientation. The period treatment
+                comes from the muted backdrop, the route palette and the archive design
+                around the map.
+            </p>
+        </section>
+
+        <section class="documentation-section" id="map-symbols">
+            <h2>09. Markers and route lines</h2>
+            <p>
+                Location markers resemble miniature film frames, with a dark rectangular
+                body, pale perforations and a central dot. The small frame connects the
+                map to the same visual vocabulary used in the scene viewer and the stop
+                list. Selecting a marker opens the information associated with that location.
+            </p>
+            <p>
+                The 1900s route palette pairs charcoal with warm sepia. Both routes
+                use continuous lines. A location shared by the two itineraries can show
+                both colours in its frame, and the map filters let visitors inspect
+                each route independently.
+            </p>
+        </section>
+
+        <section class="documentation-section" id="locations">
+            <h2>10. Location lists and archive cards</h2>
+            <p>
+                Below the map, the individual itinerary views place a numbered film strip
+                alongside the stops. The perforations and repeated frames establish a
+                continuous reading path. Each number is anchored to its own stop, so the
+                label can sit beside the centre of the card even when descriptions vary
+                in length.
+            </p>
+            <p>
+                Each stop has an archive-style card with a dark surface and small pale
+                corner marks. The place name is the main heading, the film title is
+                separated by italic text, and the description follows underneath.
+                Transport and directions are quieter notes between cards so that the next
+                move is available without drawing attention away from the location itself.
+            </p>
+            <p>
+                The <strong>All locations</strong> view uses independent archive cards
+                and omits the film strip. This presents the places as a catalogue without
+                suggesting a route order. Where a place belongs to both itineraries, its
+                two links can sit side by side and wrap on a narrower screen.
+            </p>
+        </section>
+
+        <section class="documentation-section" id="controls">
+            <h2>11. Buttons and interaction states</h2>
+            <p>
+                Rectangular buttons use dark surfaces, pale text and thin grey borders.
+                The simple shape distinguishes controls from the decorative edges of
+                tickets and film frames. In the map filters and scene controls, a lighter
+                fill marks the selected option so it remains distinguishable after
+                the pointer moves away.
+            </p>
+            <p>
+                Hover brightens a button's border and surface. The homepage tickets
+                lift slightly and gain contrast, signalling that the entire card is
+                clickable. Buttons use familiar action labels so their purpose remains
+                clear alongside the period styling.
+            </p>
+        </section>
+
+        <section class="documentation-section" id="motion">
+            <h2>12. Animation and responsive behaviour</h2>
+            <p>
+                Motion is tied to specific actions. The opening countdown introduces
+                the screening, the ticket lift signals a link, and the poster's rotation
+                reveals its reverse. The countdown has a reduced-motion variant that
+                removes the rotating sweep and shortens the final fade.
+            </p>
+            <p>
+                On a narrow screen, the homepage ticket cards stack, the year selector
+                scrolls horizontally and the film strip beside the map stops becomes
+                narrower. These changes preserve the reading order while making room for
+                the text and controls.
+            </p>
+        </section>
+
+        <div class="bottoni-pagine">
+            <a href="documentazione.html#visual-styles" class="bottone">
+                &larr; Back to visual styles
+            </a>
+        </div>
+    </main>
+
+
+
+     <footer>
+        <div class="footer-container">
+
+            <p class="footer-title">
+                <strong>Rome in Two Takes</strong>
+            </p>
+
+            <p>
+                Project developed for the course
+                <a href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2025/533915"
+                    target="_blank">
+                    Information Modeling and Web Technologies
+                </a>
+                within the Master's Degree in
+                <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge"
+                    target="_blank">
+                    Digital Humanities and Digital Knowledge
+                </a>,
+                University of Bologna.
+            </p>
+
+            <p>
+                Maria Cavaleri · Francesca Gaeta · C. Kielyn Madayag
+            </p>
+
+             <div class="footer-links">
+
+                <a href="about.html" class="footer-box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    About the Project
+                </a>
+
+                <a href="https://github.com/RomeIn2Takes/RomeIn2Takes"
+                    target="_blank"
+                    class="footer-box">
+                    <i class="fa-brands fa-github"></i>
+                    GitHub Repository
+                </a>
+
+            </div>
+
+            <p class="footer-copyright">
+                © 2026 Rome in Two Takes
+            </p>
+
+        </div>
+    </footer>
+</body>
+
+</html>
