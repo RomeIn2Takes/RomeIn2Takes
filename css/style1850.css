@@ -1,33 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=IM+Fell+English+SC&display=swap');
 
+
 html {
     scroll-behavior: smooth;
 }
 
-/* SFONDO BODY CHE SIMULA PUNTINISMO --> INSPO DOMENICA, SERAUT */ 
+
+/* SFONDO BODY CHE SIMULA PUNTINISMO --> INSPO DOMENICA, SERAUT */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     min-height: 100vh;
-    background-color: #f2ecd9; 
+    background-color: #f2ecd9;
     font-family: 'IM Fell English SC', serif;
     color: #2c2825;
 }
+
 
 a {
     text-decoration: none;
     color: #4a3b32;
 }
 
+
 a:hover {
     color: #8c4736;
     opacity: 0.85;
 }
 
+
 button {
     cursor: pointer;
 }
+
 
 header {
     position: sticky;
@@ -44,10 +50,12 @@ header {
     border-bottom: 3px double #2b3d1d;
 }
 
+
 .link-head {
     display: flex;
     align-items: center;
 }
+
 
 .link-head > a,
 .dropdown > a {
@@ -59,16 +67,19 @@ header {
     transition: color 0.2s ease;
 }
 
+
 .link-head > a:hover,
 .dropdown > a:hover {
     color: #d4a373;
     text-decoration: underline;
 }
 
+
 /* DROPDOWN */
 .dropdown {
     position: relative;
 }
+
 
 .dropdown-menu {
     display: none;
@@ -82,9 +93,11 @@ header {
     z-index: 2100;
 }
 
+
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
 
 .dropdown-menu a {
     display: block;
@@ -96,10 +109,12 @@ header {
     border-bottom: 1px solid rgba(212, 163, 115, 0.3);
 }
 
+
 .dropdown-menu a:hover {
     background-color: #d4a373;
     color: #2b221e;
 }
+
 
 /* BARRA STILI-DATE */
 .bar-style {
@@ -115,6 +130,7 @@ header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+
 .bar-item {
     flex: 1;
     height: 65px;
@@ -125,9 +141,11 @@ header {
     border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+
 .bar-item:last-child {
     border-right: none;
 }
+
 
 .bar-item a {
     width: 100%;
@@ -143,13 +161,15 @@ header {
     transition: all 0.2s ease;
 }
 
+
 .bar-item a:hover {
     color: #d4a373;
     text-shadow: 0 0 8px rgba(212, 163, 115, 0.8);
 }
 
+
 /* =========================================================
-   TITOLO PRINCIPALE --> dovrebbe simulare una pennelleta materica 
+   TITOLO PRINCIPALE --> dovrebbe simulare una pennelleta materica
    ========================================================= */
 .home-introduction {
     width: 100%;
@@ -157,6 +177,7 @@ header {
     margin: 60px auto 80px auto;
     text-align: center;
 }
+
 
 .title-container {
   position: relative;
@@ -170,21 +191,46 @@ header {
   box-shadow: none;
 }
 
+
 .title-container::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-1deg);
-  width: 75%;
+  transform: translate(-50%, -50%) ;
+  width:0%;
   height: 110px;
   padding: 90px 90px;
-  background: 
-    radial-gradient(ellipse at center, rgba(123, 158, 168, 0.65) 0%, rgba(88, 129, 87, 0.55) 40%, transparent 75%),
-    linear-gradient(90deg, transparent 0%, rgba(96, 184, 169, 0.45) 50%, transparent 100%);
-  filter: blur(22px);
-  z-index: 1;
+  background: linear-gradient(120deg,
+      rgba(217, 180, 87, 0.75),
+      rgba(235, 205, 95, 0.85),
+      rgba(212, 163, 115, 0.8),
+      rgba(195, 150, 70, 0.75)
+  );
+   
+background-size: 300% 300%;
+animation: drawBrush 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+ 
+border-radius: 90px 120px 80px 110px;
+filter: blur(20px);
+z-index: 1;
 }
+
+
+@keyframes drawBrush {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 90%; /* Si ferma alla dimensione perfetta dietro al titolo */
+    opacity: 1;
+  }
+}
+
 
 .title-container h1 {
   position: relative;
@@ -198,11 +244,25 @@ header {
   color: #222b26;
   text-align: center;
   text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  animation: revealText 1s ease 1.2s forwards;
+}
+@keyframes revealText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+
+/* CORPO DEL SITO MAIN */
 main {
     width: 100%;
-    max-width: 1200px; 
+    max-width: 1200px;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 40px 30px;
@@ -211,17 +271,33 @@ main {
     align-items: center;
 }
 
+
 main h2{
     width: 100%;
     max-width: 950px;
     box-sizing: border-box;
     margin-bottom: 50px auto 20px auto;
-    font-family: 'IM Fell English', Georgia, serif;
-    font-size: 2rem;
-    letter-spacing: 2px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
     color: #50946f;
     text-align: center;
 }
+
+
+main p, p {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 20px auto;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.8rem;
+    color: #2c2825;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
 
 /* SCELTA ITINERARIO */
 .narratives {
@@ -230,12 +306,14 @@ main h2{
     margin: 60px auto;
 }
 
+
 .narrativa-container {
     width: 100%;
     display: flex;
     gap: 40px;
     margin-top: 30px;
 }
+
 
 .narrative-card {
     flex: 1;
@@ -250,29 +328,12 @@ main h2{
     transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
-.narrative-card::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    width: 105%;
-    height: 105%;
-    
-    /* EFFETTO MACCHIA QUANDO SCEGLI ITIERARIO --> da rivedere*/
-    background: 
-        radial-gradient(ellipse at center, rgba(207, 181, 140, 0.75) 0%, rgba(141, 150, 141, 0.959) 50%, transparent 85%),
-        linear-gradient(135deg, transparent 0%, rgba(128, 99, 90, 0.5) 50%, transparent 100%);
-    filter: blur(20px);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
 
 .narrative-card:hover::before {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.05);
 }
+
 
 .narrative-card:hover {
     transform: translateY(-6px);
@@ -289,9 +350,11 @@ main h2{
     border-bottom: 1px dashed #d97757;
 }
 
+
 .card-body {
     padding: 15px;
 }
+
 
 .card-body h3 {
     margin: 0 0 20px 0;
@@ -301,12 +364,14 @@ main h2{
     text-align: center;
 }
 
+
 .card-details {
     padding: 10px 0;
     margin-bottom: 20px;
     border-top: 1px solid #d97757;
     border-bottom: 1px solid #d97757;
 }
+
 
 .card-details p, .card-description {
     font-family: 'IM Fell English SC', serif;
@@ -315,6 +380,7 @@ main h2{
     text-align: left;
     margin: 5px 0;
 }
+
 
 .discover, .bottone, #filters button {
     display: inline-block;
@@ -329,16 +395,340 @@ main h2{
     transition: all 0.2s ease;
 }
 
+
 .discover:hover, .narrative-card:hover .discover, .bottone:hover, #filters button:hover, #filters button.active {
     background-color: #d97757;
     color: #ffffff;
     border-color: #d97757;
 }
 
+
 .narrative-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
+
+
+/*AREA IMMAGINI SCENE --> dovrebbe ssimulare uan tavolozza di colori */
+.area-immagini {
+    width: 100%;
+    max-width: 950px;
+    height: 610px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 50px auto;
+    padding: 35px;
+    box-sizing: border-box;
+    background-color: #faf5eb;
+    border: none;
+    border-radius: 255px 35px 225px 45px / 35px 225px 25px 255px;
+    box-shadow: 0 15px 40px rgba(59, 82, 73, 0.15),
+                inset 0 0 30px rgba(217, 119, 87, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.area-immagini::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(123, 158, 168, 0.3) 0%, rgba(217, 119, 87, 0.15) 50%, transparent 70%);
+    filter: blur(20px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+.area-immagini::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(141, 182, 131, 0.3) 0%, rgba(235, 205, 95, 0.2) 50%, transparent 70%);
+    filter: blur(25px);
+    z-index: 0;
+    pointer-events: none;
+}
+.film-panel-left, .frecce_scena, .description-container-right {
+    position: relative;
+    z-index: 1;
+}
+.film-panel-left img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border: 3px solid #f2ecd9;
+    border-radius: 12px 25px 10px 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.story-content, .metadata-content, .qr-content {
+    position: relative;
+    width: 100%;
+    height: 465px;
+    box-sizing: border-box;
+    padding: 25px;
+    background-color: #fffefb;
+    color: #2c2825;
+    border: 2px solid #b5c4b1;
+    border-radius: 15px 5px 20px 10px;
+    overflow-y: auto;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.02);
+}
+
+
+.film-panel-left {
+    width: 43%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+
+.film-panel-left img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border: 3px solid #f2ecd9;
+    border-radius: 12px 25px 10px 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+
+.photo-when {
+    width: 100%;
+    margin-bottom: 4px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #5e3c58;
+}
+
+
+.frecce_scena {
+    width: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.frecce_scena button {
+    background: none;
+    border: none;
+    color: #3b5249;
+    font-size: 2rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+
+.frecce_scena button:hover {
+    color: #d97757;
+    transform: scale(1.2);
+}
+
+
+.frecce_scena span {
+    color: #2c2825;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+
+.description-container-right {
+    width: 46%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+
+/* BOTTONI */
+
+
+.discover, .bottone, #filters button {
+    position: relative;
+    display: inline-block;
+    padding: 9px 18px;
+    background-color: #3b5249;
+    border: 1px solid #7b9ea8;
+    border-radius: 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #f4ebd0;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+
+.showview-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+
+.showview-buttons button {
+    padding: 6px 12px;
+    background-color: #3b5249;
+    color: #f4ebd0;
+    border: 1px solid #7b9ea8;
+    border-radius: 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+}
+
+
+.difficulty-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+
+.difficulty-buttons button {
+    flex: 1;
+    padding: 6px 10px;
+    background-color: #3b5249;
+    color: #f4ebd0;
+    border: 1px solid #7b9ea8;
+    border-radius: 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
+.tellme-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+
+.tellme-buttons button {
+    padding: 6px 12px;
+    background-color: #3b5249;
+    color: #f4ebd0;
+    border: 1px solid #7b9ea8;
+    border-radius: 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+}
+
+
+/* Stati active e hover comuni per tutti i bottoni */
+.discover:hover, .bottone:hover, #filters button:hover, #filters button.active,
+.showview-buttons button:hover, .showview-buttons button.active,
+.difficulty-buttons button:hover, .difficulty-buttons button.active,
+.tellme-buttons button:hover, .tellme-buttons button.active,
+.narrative-card:hover .discover {
+    background-color: #ebcd5f;
+    color: #222b26;
+    border-color: #ebcd5f;
+}
+/*09 — MODAL & POPUP */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.5);
+}
+
+
+.modal-box {
+    position: relative;
+    width: 450px;
+    max-width: 90%;
+    padding: 30px;
+    background: #fffefb;
+    color: #2c2825;
+    border: 3px double #7b9ea8;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+
+.modal-box h3 {
+    margin-top: 0;
+    padding-bottom: 8px;
+    color: #5e3c58;
+    border-bottom: 1px solid #d97757;
+    font-family: 'Cinzel', serif;
+}
+
+
+.modal-box ul {
+    margin: 15px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+.qr-image {
+    width: 170px;
+    height: 170px;
+    margin: 15px auto;
+    padding: 4px;
+    background: #ffffff;
+    border: 1px solid #7b9ea8;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* POSTER (GRIGLIA LOCANDINE)+ */
 .films-section {
@@ -347,12 +737,14 @@ main h2{
     margin: 80px auto;
 }
 
+
 .poster-container {
     width: 100%;
     max-width: 950px;
     box-sizing: border-box;
     margin: 40px auto;
 }
+
 
 .poster-grid {
     width: 100%;
@@ -362,16 +754,19 @@ main h2{
     gap: 30px;
 }
 
+
 .poster {
     flex: 1 1 calc(33.333% - 20px);
     min-width: 250px;
     box-sizing: border-box;
 }
 
+
 .poster-flip {
     position: relative;
     width: 100%;
 }
+
 
 .poster-img {
     width: 100%;
@@ -382,6 +777,7 @@ main h2{
     border: 4px solid #222b26;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+
 
 .poster-back {
     position: absolute;
@@ -403,10 +799,75 @@ main h2{
     font-family: 'IM Fell English SC', serif;
 }
 
+
 .poster-flip:hover .poster-img {
     transform: rotateY(-180deg);
 }
 
+
 .poster-flip:hover .poster-back {
     transform: rotateY(0deg);
+}
+
+
+/* FOOTER */
+.bottoni-pagine {
+width: 100%;
+max-width: 950px;
+margin: 50px auto 20px auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+footer {
+width: 100%;
+box-sizing: border-box;
+margin-top: 80px;
+padding: 25px 40px;
+background-color: #3b5249;
+border-top: 3px double #7b9ea8;
+}
+
+
+.footer-container {
+width: 100%;
+max-width: 950px;
+margin: 0 auto;
+text-align: center;
+}
+
+
+footer p, footer a {
+color: #f4ebd0;
+font-family: 'IM Fell English SC', serif;
+font-size: 0.95rem;
+}
+
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 15px;
+margin: 25px 0;
+}
+
+
+.footer-box {
+width: 220px;
+padding: 14px 18px;
+border: 1px solid #7b9ea8;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+background-color: #222b26;
+color: #f4ebd0;
+}
+
+
+.footer-box:hover {
+background-color: #d97757;
+color: #ffffff;
 }
