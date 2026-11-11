@@ -1247,6 +1247,22 @@ main p {
     line-height: 1.4;
 }
 
+/* Ambientazione della scena */
+.story-content > p.movie-description:not(:empty) {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 6px 0 16px;
+    padding: 10px 14px;
+
+    background-color: #dfd9cc;
+    border-left: 3px solid #776954;
+    color: #2b2623;
+
+    font-size: 1rem;
+    line-height: 1.55;
+    text-align: left;
+}
+
 
 /* =========================================================
    QR
@@ -1271,6 +1287,13 @@ main p {
 
     font-size: 0.9rem;
     line-height: 1.4;
+}
+
+.qr-content > a {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 10px auto 0;
 }
 
 .qr-image {
