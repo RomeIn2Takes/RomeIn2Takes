@@ -2415,26 +2415,25 @@ a.bottone[href="mappa.html"]:hover {
     font: 700 1.45rem / 1 "Oswald", sans-serif;
     font-variant-numeric: tabular-nums;
 }
-
-/* Schede ispirate al manifesto stampato */
+/* Schede ispirate al retro delle locandine */
 #locations-list .location-info {
+    position: relative;
     flex: 1;
     min-width: 0;
-    padding: clamp(14px, 2.5vw, 24px);
     box-sizing: border-box;
-    border: 1px solid var(--ochre);
-    background:
-        repeating-linear-gradient(
-            125deg,
-            var(--red-dark) 0 20px,
-            var(--yellow) 20px 40px,
-            var(--turquoise-dark) 40px 60px,
-            #ffffff 60px 80px
-        ) top / 100% 4px no-repeat,
-        var(--stop-paper);
-    box-shadow: 3px 3px 0 var(--paper-dark);
+    padding: clamp(18px, 2.5vw, 24px);
+    border: 2px solid var(--red-bright);
+    background-color: var(--stop-paper);
+    box-shadow: 6px 6px 0 rgba(51, 37, 30, 0.30);
 }
 
+#locations-list .location-info::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 2px solid var(--turquoise);
+    pointer-events: none;
+}
 #locations-list .location-info h3 {
     width: fit-content;
     max-width: 100%;
@@ -2535,7 +2534,7 @@ a.bottone[href="mappa.html"]:hover {
 
 #locations-list > .location-card:not(:has(> .location-number)) {
     --route-accent: var(--turquoise);
-    --stop-paper: #fbf1cf;
+    --stop-frame: #235a80;
     --stop-action-hover: var(--turquoise);
     --stop-action-text: var(--ink);
 }
