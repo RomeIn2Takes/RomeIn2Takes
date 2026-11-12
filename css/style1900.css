@@ -1500,7 +1500,7 @@ main p + p {
     color: #ffffff;
     border-color: #bdbdb9;
 }
-.bottoni-pagine > .bottone:only-child {
+.bottoni-pagine > .bottone:only-child:not(.style-detail *) {
     margin-left: auto;
     margin-right: 0;
 }
