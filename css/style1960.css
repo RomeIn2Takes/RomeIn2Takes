@@ -129,8 +129,8 @@ header {
 .dropdown > a:hover,
 .link-head > a:focus-visible,
 .dropdown > a:focus-visible {
-    color: #fff4b0;
-    border-bottom-color: #fff4b0;
+    color: var(--yellow);
+    border-bottom-color: var(--yellow);
 }
 
 
@@ -175,7 +175,7 @@ header {
 
 .dropdown-menu a:hover,
 .dropdown-menu a:focus-visible {
-    color: #fff4b0;
+    color: var(--yellow);
     text-decoration: underline;
     text-underline-offset: 3px;
 }
