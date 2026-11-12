@@ -93,7 +93,7 @@ header {
     padding: 12px 40px;
     box-sizing: border-box;
 
-    background-color: var(--paper-light);
+    background-color: var(--red-bright);
 
     border-bottom: 2px solid var(--ink);
 }
@@ -107,7 +107,7 @@ header {
 .dropdown > a {
     margin-right: 24px;
 
-    color: var(--ink);
+    color: #fff7e7;
 
     font-family: 'Oswald', sans-serif;
     font-size: 0.85rem;
@@ -126,9 +126,11 @@ header {
 }
 
 .link-head > a:hover,
-.dropdown > a:hover {
-    color: var(--red);
-    border-bottom-color: var(--red);
+.dropdown > a:hover,
+.link-head > a:focus-visible,
+.dropdown > a:focus-visible {
+    color: #fff4b0;
+    border-bottom-color: #fff4b0;
 }
 
 
@@ -149,7 +151,7 @@ header {
 
     min-width: 220px;
 
-    background-color: var(--paper-light);
+    background-color: var(--red-bright);
     border: 1px solid var(--ink);
 
     z-index: 2100;
@@ -165,81 +167,88 @@ header {
 
     padding: 12px 15px;
 
-    color: var(--ink);
+    color: #fff7e7;
 
     font-family: 'Oswald', sans-serif;
     font-size: 0.85rem;
 }
 
-.dropdown-menu a:hover {
-    background-color: var(--red);
-    color: var(--paper-light);
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+    color: #fff4b0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
-
-
-/* =========================================================
-   TIMELINE
-   ========================================================= */
-
 .bar-style {
     position: sticky;
     top: 58px;
     z-index: 1999;
 
     display: flex;
-
     width: 100%;
-    padding: 0;
-
+    padding: 3px 12px;
     box-sizing: border-box;
+    overflow-x: auto;
 
-    background-color: var(--red-bright);
-
-    border-bottom: 2px solid var(--ink);
+    background-color: var(--paper-light);
+    border-bottom: 1px solid var(--paper-dark);
 }
 
 .bar-item {
-    flex: 1;
+    position: relative;
+    flex: 0 0 76px;
+    height: 36px;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 58px;
-
-    border-right: 1px solid rgba(255, 245, 220, 0.35);
+.bar-item:first-child {
+    margin-inline-start: auto;
 }
 
 .bar-item:last-child {
-    border-right: none;
+    margin-inline-end: auto;
+}
+
+/* Tratti stampati tra le date */
+.bar-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2px;
+    height: 14px;
+
+    background-color: var(--turquoise-dark);
+    box-shadow: 3px 0 0 var(--red);
+    transform: translateY(-50%) skewX(-18deg);
+
+    pointer-events: none;
 }
 
 .bar-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: var(--paper-light);
-
+    color: var(--ink);
     font-family: 'Oswald', sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
-
-    letter-spacing: 2px;
-
-    transition:
-        background-color 0.25s ease,
-        color 0.25s ease;
+    letter-spacing: 0.8px;
 }
 
-.bar-item a:hover {
-    background-color: var(--paper-dark);
-    color: var(--red-bright);
+.bar-item a:hover,
+.bar-item a:focus-visible {
+    color: var(--turquoise-dark);
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
+.bar-item a:focus-visible {
+    outline: 2px solid var(--turquoise-dark);
+    outline-offset: -4px;
+}
 
 /* =========================================================
    MAIN
