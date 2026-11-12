@@ -52,7 +52,7 @@
         <a data-pin-do="embedBoard"
            data-pin-scale-height="420"
            data-pin-scale-width="115"
-           href="https://it.pinterest.com/francescagaeta01/rome-in-2-takes/">
+           href="https://it.pinterest.com/francescagaeta01/rome-in-2-takes/1900/">
             View the project board on Pinterest
         </a>
     </div>
@@ -91,9 +91,11 @@
     <h2>02. Before the film begins</h2>
     <div class="era-grid">
         <article class="era-card">
-            <div class="era-title-sample" aria-hidden="true">Rome in Two Takes</div>
+            <div class="era-title-sample" aria-hidden="true">
+            <span>Rome in <br> Two Takes</span>
+            </div>
             <h3>The curtain and title</h3>
-            <p>The opening uses the curtain image <code>tende.png</code>, a radial highlight and a slightly tilted title. The curtain frames the page like a stage, while the lettering recalls a printed film title. The highlight guides the eye to the name of the project.</p>
+            <p>The opening uses the curtain image <code>tende.png</code>, a radial highlight and a slightly tilted title. The curtain frames the page like a stage. The italic lettering and slight tilt draw on the oblique compositions in the period graphics that inspired the theme.</p>
         </article>
         <article class="era-card">
             <div class="era-countdown-sample" aria-hidden="true"><span>3</span><span>2</span><span>1</span></div>
@@ -190,17 +192,34 @@
     </figure>
 </section>
 
-        <section class="documentation-section" id="basemap">
+<section class="documentation-section" id="basemap">
     <h2>06. Basemap and cartographic style</h2>
+
     <figure class="era-card era-map-card">
-        <img class="era-map-reference"
-             src="https://www.jawg.io/static/b11fc4e45a9fdaef6e0a23426f635565/87351/light%402x.png"
-             alt="Jawg Light style sample with pale streets and muted cartographic labels"
-             loading="lazy">
+        <img
+            class="era-map-reference"
+            src="img/mappa1900.png"
+            alt="Map of Rome in the 1900s theme, with film-frame markers and itinerary routes"
+            loading="lazy">
+
         <figcaption>
-            <h3>Jawg Light · Basemap reference</h3>
-            <p>The pale streets and understated labels leave room for the charcoal and sepia routes. The map provides present-day orientation, while the markers, route colours and cards carry the theme’s early-cinema references.</p>
-            <a href="https://www.jawg.io/en/maps/">Style reference from Jawg Maps &rarr;</a>
+            <h3>Jawg Light and Leaflet</h3>
+
+            <p>
+                The interactive map uses Leaflet to display the basemap, place
+                markers at film locations and draw the two itinerary routes.
+                The markers open information about each location, while the
+                filters let visitors explore either itinerary separately.
+            </p>
+
+            <p>
+                We chose Jawg Light because its pale greys complement the
+                charcoal, ivory and sepia tones of the 1900s theme. Its restrained
+                colours and understated labels keep streets and landmarks
+                readable while giving the itinerary lines and film-frame markers
+                room to stand out. Visitors can see where they are in Rome and
+                quickly identify which places they can explore.
+            </p>
         </figcaption>
     </figure>
 </section>
@@ -251,20 +270,14 @@
                 two links can sit side by side and wrap on a narrower screen.
             </p>
             <figure class="era-card era-visual-card">
-    <div class="era-stop-preview">
-        <div class="era-stop" data-location-name="Palazzo Federici">
-            <span>01</span>
-            <div><h3>Palazzo Federici</h3><p class="era-stop-film"><em>A Special Day</em></p><p class="era-stop-description" hidden></p></div>
-        </div>
-        <div class="era-stop" data-location-name="Cinecittà">
-            <span>02</span>
-            <div><h3>Cinecittà</h3><p class="era-stop-film" hidden></p><p class="era-stop-description" hidden></p></div>
-        </div>
-    </div>
-    <figcaption>
-        <p>The vertical strip connects the numbered stops and signals the reading order. The separate dark cards give each location a clear title and space for the film and description. The catalogue view drops the strip because its locations are independent entries.</p>
-    </figcaption>
-</figure>
+                        <img class="era-stops-screenshot"
+                            src="img/fermate1900.png"
+                            alt="Rullino verticale con tappe numerate e schede delle fermate"
+                            loading="lazy">
+                <figcaption>
+                    <p>The vertical strip connects the numbered stops and signals the reading order. The separate dark cards give each location a clear title and space for the film and description. The catalogue view drops the strip because its locations are independent entries.</p>
+                </figcaption>
+            </figure>
         </section>
 
         <section class="documentation-section" id="itineraries">

@@ -2775,9 +2775,21 @@ main:not(:has(.home-introduction))
     text-align: left;
 }
 
-.style-detail .era-card a,
-.style-detail #references a {
+.style-detail .era-card a {
     color: #f1e5ce;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.style-detail #references > .style-pinterest-link {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 0;
+    border-bottom: 0;
+    color: #f1e5ce;
+    text-align: center;
     text-decoration: underline;
     text-underline-offset: 3px;
 }
@@ -2796,6 +2808,8 @@ main:not(:has(.home-introduction))
     place-content: center;
     margin-bottom: 16px;
     text-align: center;
+    box-sizing: border-box;
+    min-height: 104px;
 }
 
 .style-detail .era-title-sample {
@@ -2805,6 +2819,11 @@ main:not(:has(.home-introduction))
     font-size: 1.55rem;
     font-style: italic;
     font-weight: bold;
+}
+.style-detail .era-title-sample span {
+    display: inline-block;
+    font-style: italic;
+    transform: rotate(-8deg);
 }
 
 .style-detail .era-countdown-sample {
@@ -2908,13 +2927,15 @@ main:not(:has(.home-introduction))
 }
 
 .style-detail .era-map-card {
-    margin-top: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0 0;
 }
 
 .style-detail .era-map-reference {
     display: block;
     width: 100%;
-    max-height: 220px;
+    max-height: 310px;
     object-fit: contain;
     margin: 0 0 16px;
     background: #e2e2df;
@@ -3037,7 +3058,7 @@ main:not(:has(.home-introduction))
     position: relative;
     width: 100%;
     margin: 0 auto;
-    aspect-ratio: 1147 / 72;
+    aspect-ratio: 1387 / 99;
     overflow: hidden;
 }
 
@@ -3046,10 +3067,10 @@ main:not(:has(.home-introduction))
     top: 0;
     left: 0;
     display: block;
-    width: 175.41%;
+    width: 145.06%;
     max-width: none;
     height: auto;
-    transform: translate(-21.87%, -1.96%);
+    transform: translate(-15.90%, -1.96%);
 }
 
 .style-detail .era-poster-card .poster-back h3 {
@@ -3166,43 +3187,11 @@ main:not(:has(.home-introduction))
     margin: 0;
 }
 
-.style-detail .era-stop-preview {
-    position: relative;
-    display: grid;
-    gap: 12px;
-    padding: 10px 0;
-    background:
-        repeating-linear-gradient(#b8ad98 0 7px, #171716 7px 14px)
-            4px top / 6px 100% no-repeat,
-        repeating-linear-gradient(#b8ad98 0 7px, #171716 7px 14px)
-            56px top / 6px 100% no-repeat,
-        linear-gradient(#171716, #171716) left / 66px 100% no-repeat;
-}
-
-.style-detail .era-stop {
-    display: grid;
-    grid-template-columns: 66px minmax(0, 1fr);
-    align-items: center;
-    gap: 12px;
-}
-
-.style-detail .era-stop > span {
-    justify-self: center;
-    padding: 5px;
-    color: #fff4de;
-    background: #55514a;
-    border-block: 1px solid #b7afa0;
-    font-weight: bold;
-}
-
-.style-detail .era-stop > div {
-    padding: 10px;
-    border: 1px solid #625d54;
-    background: #343434;
-}
-
-.style-detail .era-stop h3 {
-    margin: 0 0 4px;
+.style-detail .era-stops-screenshot {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 0 14px;
 }
 
 .style-detail .era-workflow-preview {
@@ -3274,9 +3263,6 @@ main:not(:has(.home-introduction))
     box-sizing: border-box;
 }
 
-.style-detail .era-stop > div > p + p {
-    margin-top: 0.45em;
-}
 
 
 /* =========================================================
