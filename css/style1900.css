@@ -218,6 +218,10 @@ main p {
     text-align: justify;
 }
 
+/* Spazio tra paragrafi consecutivi */
+main p + p {
+    margin-block-start: 0.85rem;
+}
 
 /* =========================================================
    TITOLI PAGINE INTERNE
@@ -2576,9 +2580,6 @@ main:not(:has(.home-introduction))
 }
 
 
-.about-page .about-introduction > p + p {
-    margin-top: 16px;
-}
 
 .about-page .team-container {
     display: grid;
@@ -3205,10 +3206,6 @@ main:not(:has(.home-introduction))
 /* Spaziatura, campioni tipografici e schede degli itinerari */
 .style-detail > .documentation-section > h2 {
     margin: 0 auto 12px;
-}
-
-.style-detail p + p {
-    margin-top: 0.65em;
 }
 
 .style-detail .era-visual-card {
