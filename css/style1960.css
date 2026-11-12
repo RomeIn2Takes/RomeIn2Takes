@@ -2281,21 +2281,64 @@ a.bottone[href="mappa.html"]:hover {
     font-family: Georgia, "Times New Roman", serif;
 }
 
-
 /* =========================================================
-   MAP FILTERS
+   MAP FILTERS — ETICHETTE DA MANIFESTO
    ========================================================= */
 
 #filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 12px;
     width: 100%;
     max-width: 950px;
-
-    display: flex;
-    justify-content: center;
-
-    gap: 10px;
-
     margin: 20px auto 0;
+}
+
+#filters button {
+    --filter-accent: var(--turquoise);
+    --filter-text: #1c1713;
+
+    min-height: 44px;
+    padding: 8px 16px;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    background: var(--paper-light);
+    color: var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+    font: 500 1rem / 1.3 "Oswald", sans-serif;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+#filters #show-historical {
+    --filter-accent: var(--yellow);
+    --filter-text: var(--ink);
+}
+
+#filters #show-women {
+    --filter-accent: var(--red-bright);
+    --filter-text: #ffffff;
+}
+
+#filters button:hover {
+    background-color: var(--filter-accent);
+    color: var(--filter-text);
+}
+
+#filters button.active {
+    background-color: var(--filter-accent);
+    color: var(--filter-text);
+    box-shadow: 1px 1px 0 var(--ink);
+    font-weight: 700;
+}
+
+#filters button:focus-visible,
+#locations-list .location-info a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
 }
 
 
@@ -2306,285 +2349,203 @@ a.bottone[href="mappa.html"]:hover {
 .locations-section {
     width: 100%;
     max-width: 950px;
-
-    margin: 65px auto 20px;
+    margin: 48px auto 20px;
 }
 
 .locations-section h2 {
-    margin-bottom: 45px;
+    margin-bottom: 28px;
 }
 
-
-/* =========================================================
-   LOCATIONS LIST
-   ========================================================= */
-
 #locations-list {
+    --stop-size: 48px;
+    --stop-gap: 18px;
+    --route-accent: var(--yellow);
+    --stop-paper: #fbf1cf;
+    --number-text: var(--red-dark);
+    --stop-action-hover: var(--red-bright);
+    --stop-action-text: #ffffff;
+
     position: relative;
-
+    display: grid;
+    gap: 16px;
     width: 100%;
-    max-width: 850px;
-
     margin: 0 auto;
 }
 
-
-/* =========================================================
-   VERTICAL TIMELINE
-   ========================================================= */
-
-#locations-list::before {
-    content: "";
-
-    position: absolute;
-
-    left: 31px;
-    top: 30px;
-    bottom: 30px;
-
-    width: 2px;
-
-    background-color: var(--red);
+.map-page:has(#show-women.active) #locations-list {
+    --route-accent: var(--red-bright);
+    --stop-paper: #fbf1cf;
+    --number-text: #ffffff;
+    --stop-action-hover: var(--yellow);
+    --stop-action-text: var(--ink);
 }
 
+/* Linea del percorso, visibile nelle viste con tappe numerate */
+#locations-list:has(> .location-card > .location-number)::before {
+    content: "";
+    position: absolute;
+    inset-block: calc(var(--stop-size) / 2);
+    inset-inline-start: calc(var(--stop-size) / 2 - 2px);
+    width: 4px;
+    background-color: var(--route-accent);
+    box-shadow: 1px 0 0 var(--ink);
+    pointer-events: none;
+}
 
-/* =========================================================
-   LOCATION CARD
-   ========================================================= */
-
-.location-card {
+#locations-list .location-card {
     position: relative;
-
-    width: 100%;
-
     display: flex;
     align-items: flex-start;
-
-    gap: 30px;
-
-    padding: 25px 0;
-
-    box-sizing: border-box;
-
-    background-color: transparent;
-    border: none;
+    gap: var(--stop-gap);
+    min-width: 0;
 }
 
-
-/* =========================================================
-   LOCATION NUMBER
-   ========================================================= */
-
-.location-number {
-    position: relative;
-    z-index: 2;
-
-    flex: 0 0 58px;
-
-    width: 58px;
-    height: 58px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+#locations-list .location-number {
+    display: grid;
+    place-items: center;
+    align-self: center;
+    flex: 0 0 var(--stop-size);
+    height: var(--stop-size);
     box-sizing: border-box;
-
-    background-color: var(--red);
-
     border: 1px solid var(--ink);
-    border-radius: 50%;
-
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-
-    color: var(--paper-light);
+    background-color: var(--route-accent);
+    color: var(--number-text);
+    box-shadow: 2px 2px 0 var(--ink);
+    transform: rotate(-6deg);
+    font: 700 1.45rem / 1 "Oswald", sans-serif;
+    font-variant-numeric: tabular-nums;
 }
 
-
-/* =========================================================
-   LOCATION INFO
-   ========================================================= */
-
-.location-info {
+/* Schede ispirate al manifesto stampato */
+#locations-list .location-info {
     flex: 1;
-    padding-top: 3px;
+    min-width: 0;
+    padding: clamp(14px, 2.5vw, 24px);
+    box-sizing: border-box;
+    border: 1px solid var(--ochre);
+    background:
+        repeating-linear-gradient(
+            125deg,
+            var(--red-dark) 0 20px,
+            var(--yellow) 20px 40px,
+            var(--turquoise-dark) 40px 60px,
+            #ffffff 60px 80px
+        ) top / 100% 4px no-repeat,
+        var(--stop-paper);
+    box-shadow: 3px 3px 0 var(--paper-dark);
 }
 
-.location-info h3 {
-    margin: 0 0 7px;
-
-    font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-
-    letter-spacing: -0.5px;
-
-    color: var(--red);
+#locations-list .location-info h3 {
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 12px;
+    color: var(--ink);
+    font: 400 clamp(1.3rem, 3vw, 1.7rem) / 1.2 "Anton", Impact, sans-serif;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
 }
 
-.location-info p:first-of-type {
+#locations-list .location-info p {
     width: 100%;
     max-width: none;
-
-    margin: 0 0 8px;
-
-    font-size: 0.8rem;
-    line-height: 1.2rem;
-
-    color: var(--red);
-
-    text-align: left;
-}
-
-.location-info p:nth-of-type(2) {
-    width: 100%;
-    max-width: 700px;
-
-    margin: 0;
-
-    font-size: 0.9rem;
-    line-height: 1.45rem;
-
+    margin: 0 0 10px;
     color: var(--ink);
-
+    font-size: 1rem;
+    line-height: 1.6;
     text-align: left;
 }
 
-
-/* =========================================================
-   DISCOVER THIS STOP
-   ========================================================= */
-
-.location-info a {
-    display: inline-block;
-
-    margin-top: 12px;
-    padding: 8px 14px;
-
-    background-color: var(--red);
-    color: var(--paper-light);
-
-    border: 1px solid var(--ink);
-    border-radius: 0;
-
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-
-    letter-spacing: 0.7px;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
+#locations-list .location-info p:first-of-type {
+    color: #235a80;
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 600;
 }
 
-.location-info a:hover {
-    background-color: var(--ink);
-    color: var(--paper-light);
-}
-
-
-/* =========================================================
-   MULTIPLE LOCATIONS
-   ========================================================= */
-
-.location-subitem {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-
-    border-bottom: 1px dashed var(--line);
-}
-
-.location-subitem:last-child {
-    padding-bottom: 0;
+#locations-list .location-info p:last-child {
     margin-bottom: 0;
-
-    border-bottom: none;
 }
 
-
-/* =========================================================
-   ROUTE CONNECTION
-   ========================================================= */
-
-.route-connection {
-    position: relative;
-
-    width: calc(100% - 95px);
-
-    margin: -8px 0 -8px 95px;
-
-    padding: 8px 15px 8px 18px;
-
-    box-sizing: border-box;
-
-    border-left: 1px solid var(--line);
-}
-
-.route-connection::before {
-    content: "";
-
-    position: absolute;
-
-    left: -4px;
-    top: 12px;
-
-    width: 7px;
-    height: 7px;
-
-    background-color: var(--red);
-
-    border-radius: 50%;
-}
-
-.route-main-info {
-    margin-bottom: 3px;
-
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-
-    color: var(--red);
-}
-
-.route-directions {
-    width: 100% !important;
-    max-width: 650px !important;
-
-    margin: 0 !important;
-
-    font-size: 0.66rem !important;
-    line-height: 1.1rem !important;
-
+#locations-list .location-info a {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 7px 12px;
+    border: 1px solid var(--ink);
+    background-color: var(--paper-light);
     color: var(--ink);
-
-    text-align: left !important;
+    font: 500 0.95rem / 1.4 "Oswald", sans-serif;
 }
 
-.route-directions strong {
-    font-weight: bold;
-    color: var(--red);
+#locations-list .location-info a:hover {
+    background-color: var(--stop-action-hover);
+    color: var(--stop-action-text);
+}
+
+#locations-list .location-info a.location-link-women:hover,
+#locations-list .location-info a.location-link-women:focus-visible {
+    border-color: var(--red-dark);
+    background-color: var(--yellow);
+    color: var(--red-dark);
+    box-shadow: inset 0 -3px 0 var(--red-dark);
+}
+
+#locations-list .location-subitem + .location-subitem {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
 }
 
 
 /* =========================================================
-   ALL LOCATIONS
+   SPOSTAMENTI TRA LE TAPPE
    ========================================================= */
 
-#locations-list:not(:has(.location-number))::before {
-    display: none;
+#locations-list .route-connection {
+    margin-inline-start: calc(var(--stop-size) + var(--stop-gap));
+    padding: 0 12px;
+    border-left: 2px solid var(--ochre);
 }
 
-.location-card:not(:has(.location-number)) {
-    padding: 22px 0;
-
-    border-bottom: 1px solid var(--line);
+#locations-list .route-main-info {
+    margin: 0 0 4px;
+    color: var(--ink);
+    font: 600 0.95rem / 1.4 "Oswald", sans-serif;
 }
 
-.location-card:not(:has(.location-number)) .location-info {
-    padding-left: 0;
+#locations-list .route-directions {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    color: var(--ink-light);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    text-align: left;
+}
+
+#locations-list .route-directions strong {
+    color: var(--ink);
+}
+
+
+/* =========================================================
+   ALL LOCATIONS — CATALOGO SENZA NUMERAZIONE
+   ========================================================= */
+
+#locations-list > .location-card:not(:has(> .location-number)) {
+    --route-accent: var(--turquoise);
+    --stop-paper: #fbf1cf;
+    --stop-action-hover: var(--turquoise);
+    --stop-action-text: var(--ink);
+}
+
+#locations-list > .location-card:not(:has(> .location-number)) .location-info > p:has(> a) {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    margin: 0 10px 0 0;
+    vertical-align: top;
 }
 
 
