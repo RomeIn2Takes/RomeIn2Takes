@@ -2357,8 +2357,8 @@ a.bottone[href="mappa.html"]:hover {
 }
 
 #locations-list {
-    --stop-size: 48px;
-    --stop-gap: 18px;
+    --stop-size: 68px;
+    --stop-gap: 28px;
     --route-accent: var(--yellow);
     --stop-paper: #fbf1cf;
     --number-text: var(--red-dark);
@@ -2422,7 +2422,7 @@ a.bottone[href="mappa.html"]:hover {
     min-width: 0;
     box-sizing: border-box;
     padding: clamp(18px, 2.5vw, 24px);
-    border: 2px solid var(--red-bright);
+    border: 3px solid var(--red-bright);
     background-color: var(--stop-paper);
     box-shadow: 6px 6px 0 rgba(51, 37, 30, 0.30);
 }
@@ -2431,7 +2431,7 @@ a.bottone[href="mappa.html"]:hover {
     content: "";
     position: absolute;
     inset: 6px;
-    border: 2px solid var(--turquoise);
+    border: 3px solid var(--turquoise);
     pointer-events: none;
 }
 #locations-list .location-info h3 {
