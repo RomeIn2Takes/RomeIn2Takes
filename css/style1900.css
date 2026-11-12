@@ -3378,126 +3378,96 @@ footer p a:hover {
     border-top: 1px solid #606060;
 }
 
-/* =========================================================
-   VISUAL STYLES — MINIMAL ACCORDION
-   ========================================================= */
+/* DOCUMENTATION — INDICE DEGLI STILI */
 
-.style-exploration {
-    margin-top: 2.5rem;
+.visual-styles .style-exploration {
+    margin: 32px 0 40px;
 }
 
-.style-exploration > h3 {
-    margin-bottom: 0.5rem;
+.visual-styles .style-exploration > h3 {
+    margin: 0 0 10px;
+    color: #f1ede5;
+    text-align: center;
 }
 
-.style-exploration > p {
-    margin-bottom: 1.5rem;
+.visual-styles .style-exploration > p {
+    margin: 0 0 18px;
+    text-align: left;
 }
 
-
-/* Accordion */
-
-.style-item {
-    border-bottom: 1px solid currentColor;
+.visual-styles .style-table-scroll {
+    overflow-x: auto;
+    border: 1px solid #625d54;
+    border-radius: 2px;
 }
 
-.style-item:first-of-type {
-    border-top: 1px solid currentColor;
+.visual-styles .style-table-scroll:focus-visible {
+    outline: 2px solid #e2e2df;
+    outline-offset: 3px;
 }
 
-
-/* Summary */
-
-.style-item summary {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-
-    padding: 0.9rem 0.2rem;
-
-    cursor: pointer;
-    list-style: none;
-
-    color: inherit;
-    font-family: inherit;
-
-    transition: opacity 0.2s ease;
-}
-
-.style-item summary::-webkit-details-marker {
-    display: none;
-}
-
-.style-item summary::marker {
-    content: "";
-}
-
-.style-item summary:hover {
-    opacity: 0.7;
-}
-
-
-/* Year */
-
-.style-year {
-    min-width: 75px;
-
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-
-/* Theme name */
-
-.style-name {
-    flex: 1;
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-
-/* Arrow */
-
-.style-item summary::after {
-    content: "";
-
-    width: 7px;
-    height: 7px;
-
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-
-    transform: rotate(45deg);
-
-    margin-right: 0.5rem;
-
-    transition: transform 0.25s ease;
-}
-
-.style-item[open] summary::after {
-    transform: rotate(225deg);
-}
-
-
-/* Expanded content */
-
-.style-content {
-
+.visual-styles .style-table {
     width: 100%;
-
-    max-width: none;
-
-    box-sizing: border-box;
-
-    padding: 0.3rem 0 1.5rem;
-
+    border-collapse: collapse;
+    background: #2c2b29;
+    color: #e2e2df;
+    text-align: left;
 }
 
-.style-content p {
-    margin: 0 0 1rem;
+.visual-styles .style-table th,
+.visual-styles .style-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #625d54;
+    line-height: 1.5;
+}
 
-    font-size: 0.95rem;
-    line-height: 1.7;
+.visual-styles .style-table thead th {
+    background: #24221f;
+    color: #f1e5ce;
+}
+
+.visual-styles .style-table tbody th {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.visual-styles .style-table tbody tr:nth-child(even) {
+    background: #343230;
+}
+
+.visual-styles .style-table tbody tr:last-child > * {
+    border-bottom: 0;
+}
+
+.visual-styles .style-table .style-table-action {
+    text-align: center;
+}
+
+.visual-styles .style-table .bottone {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.visual-styles .style-table .bottone:focus-visible {
+    outline: 2px solid #e2e2df;
+    outline-offset: 3px;
+}
+
+.visual-styles .style-table-pending {
+    color: #d3ccc0;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+    .visual-styles .style-table th,
+    .visual-styles .style-table td {
+        padding: 10px 8px;
+    }
+
+    .visual-styles .style-table .bottone {
+        white-space: normal;
+    }
 }
 
 
@@ -3532,28 +3502,6 @@ footer p a:hover {
 }
 
 
-/* Responsive */
-
-@media (max-width: 600px) {
-
-    .style-item summary {
-        gap: 0.8rem;
-    }
-
-    .style-year {
-        min-width: 60px;
-        font-size: 1rem;
-    }
-
-    .style-name {
-        font-size: 0.95rem;
-    }
-
-    .style-content {
-        padding-bottom: 1.2rem;
-    }
-
-}
 
 
 
