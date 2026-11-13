@@ -2689,6 +2689,248 @@ a.bottone[href="mappa.html"]:hover {
     }
 }
 
+
+/* DOCUMENTATION — 1960s ITALIAN FILM POSTERS */
+
+.style-detail-1960 {
+    width: min(950px, calc(100% - 32px));
+    margin-inline: auto;
+}
+
+.style-detail-1960 > .documentation-section {
+    margin: clamp(30px, 5vw, 48px) auto;
+    scroll-margin-top: 90px;
+}
+
+.style-detail-1960 p {
+    max-width: 70ch;
+    margin: 0 0 14px;
+    text-align: left;
+    line-height: 1.55;
+}
+
+.style-detail-1960 .sixties-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.style-detail-1960 .sixties-card {
+    position: relative;
+    min-width: 0;
+    padding: clamp(19px, 3vw, 26px);
+    border: 3px solid var(--red-bright);
+    background: var(--paper-light);
+    color: var(--ink);
+    box-shadow: 5px 5px 0 rgba(51, 37, 30, 0.28);
+    overflow-wrap: anywhere;
+}
+
+.style-detail-1960 .sixties-card::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 2px solid var(--turquoise-dark);
+    pointer-events: none;
+}
+
+.style-detail-1960 .sixties-card h3 {
+    margin: 0 0 10px;
+    color: var(--red-dark);
+    font: 400 clamp(1.2rem, 2.4vw, 1.6rem) / 1.2 "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+}
+
+.style-detail-1960 .sixties-card p:last-child {
+    margin-bottom: 0;
+}
+
+.style-detail-1960 .sixties-card a {
+    color: var(--turquoise-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.style-detail-1960 .sixties-card a:hover,
+.style-detail-1960 .sixties-card a:focus-visible {
+    color: var(--red-dark);
+}
+
+.style-detail-1960 :is(.sixties-title-sample, .sixties-type, .sixties-year-sample,
+.sixties-marker-samples, .sixties-route-samples, .sixties-poster-back, .sixties-swatch) {
+    margin-bottom: 16px;
+}
+
+.style-detail-1960 .sixties-title-sample {
+    width: fit-content;
+    margin-inline: auto;
+    padding: 10px 14px;
+    background: var(--red-dark);
+    color: var(--yellow);
+    box-shadow: 4px 4px 0 var(--ink);
+    transform: rotate(-3deg);
+    font: 400 clamp(1.2rem, 3.5vw, 2rem) / 1.2 "Anton", Impact, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.style-detail-1960 .sixties-type {
+    padding: 12px;
+    border-bottom: 1px solid var(--line);
+    font-size: clamp(1.35rem, 3vw, 1.9rem);
+    text-align: center;
+}
+
+.style-detail-1960 .sixties-anton { font-family: "Anton", Impact, sans-serif; }
+.style-detail-1960 .sixties-oswald { font-family: "Oswald", sans-serif; }
+.style-detail-1960 .sixties-bodoni { font-family: "Bodoni Moda", Georgia, serif; }
+
+.style-detail-1960 .sixties-swatch {
+    height: 44px;
+    border: 1px solid var(--ink);
+}
+
+.style-detail-1960 [data-colour="Paper"] { background: var(--paper); }
+.style-detail-1960 [data-colour="Ink"] { background: var(--ink); }
+.style-detail-1960 [data-colour="Cinema red"] { background: var(--red-bright); }
+.style-detail-1960 [data-colour="Yellow"] { background: var(--yellow); }
+.style-detail-1960 [data-colour="Turquoise"] { background: var(--turquoise); }
+.style-detail-1960 [data-colour="Ochre"] { background: var(--ochre); }
+
+.style-detail-1960 .sixties-year-sample {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background: var(--paper);
+    font-family: "Oswald", sans-serif;
+}
+
+.style-detail-1960 .sixties-year-sample span + span::before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-inline: 10px;
+    background: var(--turquoise-dark);
+    box-shadow: 2px 1px 0 var(--ochre);
+    transform: skewX(-18deg);
+}
+
+.style-detail-1960 .sixties-marker-samples,
+.style-detail-1960 .sixties-route-samples {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.style-detail-1960 .sixties-marker-samples i {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border: 3px solid var(--paper-light);
+    border-radius: 50%;
+    outline: 1px solid var(--ink);
+    background: #b73526;
+}
+
+.style-detail-1960 .sixties-marker-samples i::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--paper-light);
+}
+
+.style-detail-1960 .sixties-marker-samples i:nth-child(2) {
+    background: #007f86;
+}
+
+.style-detail-1960 .sixties-marker-samples i:nth-child(3) {
+    background: linear-gradient(90deg, #b73526 50%, #007f86 50%);
+}
+
+.style-detail-1960 .sixties-route-samples i {
+    width: 64px;
+    height: 5px;
+    background: #b73526;
+}
+
+.style-detail-1960 .sixties-route-samples i + i {
+    background: #007f86;
+}
+
+.style-detail-1960 .sixties-stop-number {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin: 0 0 14px 4px;
+    border: 1px solid var(--ink);
+    background: var(--yellow);
+    box-shadow: 2px 2px 0 var(--ink);
+    transform: rotate(-6deg);
+    font: 600 1.4rem / 1 "Oswald", sans-serif;
+}
+
+.style-detail-1960 .sixties-image {
+    display: block;
+    width: 100%;
+    height: 170px;
+    margin: 0 auto 16px;
+    object-fit: contain;
+}
+
+.style-detail-1960 .sixties-poster-back {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 10px;
+    width: min(100%, 132px);
+    min-height: 170px;
+    box-sizing: border-box;
+    margin-inline: auto;
+    padding: 12px;
+    border: 2px solid var(--red-bright);
+    outline: 1px solid var(--ink);
+    outline-offset: -6px;
+    background: #fff;
+    text-align: center;
+}
+
+.style-detail-1960 .sixties-poster-back strong {
+    padding: 4px;
+    background: var(--red-dark);
+    color: var(--yellow);
+    font: 400 1rem / 1.2 "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+}
+
+.style-detail-1960 .sixties-poster-back span {
+    font-size: 0.85rem;
+}
+
+.style-detail-1960 .sixties-back {
+    justify-content: flex-start;
+}
+
+@media (max-width: 680px) {
+    .style-detail-1960 .sixties-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.style-detail-1960 .sixties-screenshot {
+    margin: 20px 0 0;
+}
+
+.style-detail-1960 .sixties-screenshot .sixties-image {
+    height: auto;
+}
+
+
 /* =========================================================
    FOOTER
    ========================================================= */
