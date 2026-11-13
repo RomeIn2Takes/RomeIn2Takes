@@ -2159,6 +2159,96 @@ a.bottone[href="mappa.html"]:hover {
     margin: 50px auto;
 }
 
+/* DOCUMENTATION — WORKFLOW ORIZZONTALE */
+
+.documentation-page .workflow {
+    width: 100%;
+    max-width: 950px;
+    margin: 40px auto;
+}
+
+.documentation-page .workflow-steps {
+    --workflow-gap: 12px;
+    --workflow-number-size: 52px;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(112px, 1fr);
+    gap: var(--workflow-gap);
+    padding: 10px 6px 14px;
+    overflow-x: auto;
+}
+
+.documentation-page .workflow-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+/* Collega il centro di ogni numero a quello successivo */
+.documentation-page .workflow-step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--workflow-number-size) / 2 - 1px);
+    left: 50%;
+    width: calc(100% + var(--workflow-gap));
+    height: 2px;
+    background-color: var(--ochre);
+    pointer-events: none;
+}
+
+.documentation-page .workflow-step:nth-child(3n + 1) {
+    --workflow-colour: var(--yellow);
+}
+
+.documentation-page .workflow-step:nth-child(3n + 2) {
+    --workflow-colour: var(--red-bright);
+    --workflow-number-text: #fff;
+}
+
+.documentation-page .workflow-step:nth-child(3n + 3) {
+    --workflow-colour: var(--turquoise);
+}
+
+.documentation-page .workflow-step strong {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: var(--workflow-number-size);
+    height: var(--workflow-number-size);
+    box-sizing: border-box;
+    border: 1px solid var(--ink);
+    background-color: var(--workflow-colour, var(--yellow));
+    color: var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+    transform: rotate(-6deg);
+    font: 400 1.55rem / 1 "Anton", Impact, sans-serif;
+}
+
+.documentation-page .workflow-step p {
+    width: auto;
+    margin: 0;
+    font: 500 1rem / 1.125 "Oswald", sans-serif;
+    text-align: center;
+}
+
+.documentation-page .workflow-step:hover p,
+.documentation-page .workflow-step:focus-visible p {
+    color: var(--red-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.documentation-page .workflow-step:focus-visible {
+    outline: 2px solid var(--turquoise-dark);
+    outline-offset: 3px;
+}
+
 
 /* =========================================================
    FILM SELECTION
