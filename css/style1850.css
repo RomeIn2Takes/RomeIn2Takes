@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=IM+Fell+English+SC&display=swap');
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
-/* SFONDO BODY CHE SIMULA PUNTINISMO --> INSPO DOMENICA, SERAUT */
+/* SFONDO BODY CHE SIMULA PUNTINISMO */
 html, body {
     margin: 0;
     padding: 0;
@@ -17,23 +15,19 @@ html, body {
     color: #2c2825;
 }
 
-
 a {
     text-decoration: none;
     color: #4a3b32;
 }
-
 
 a:hover {
     color: #8c4736;
     opacity: 0.85;
 }
 
-
 button {
     cursor: pointer;
 }
-
 
 header {
     position: sticky;
@@ -50,12 +44,10 @@ header {
     border-bottom: 3px double #2b3d1d;
 }
 
-
 .link-head {
     display: flex;
     align-items: center;
 }
-
 
 .link-head > a,
 .dropdown > a {
@@ -67,19 +59,16 @@ header {
     transition: color 0.2s ease;
 }
 
-
 .link-head > a:hover,
 .dropdown > a:hover {
     color: #d4a373;
     text-decoration: underline;
 }
 
-
 /* DROPDOWN */
 .dropdown {
     position: relative;
 }
-
 
 .dropdown-menu {
     display: none;
@@ -93,11 +82,9 @@ header {
     z-index: 2100;
 }
 
-
 .dropdown:hover .dropdown-menu {
     display: block;
 }
-
 
 .dropdown-menu a {
     display: block;
@@ -109,12 +96,10 @@ header {
     border-bottom: 1px solid rgba(212, 163, 115, 0.3);
 }
 
-
 .dropdown-menu a:hover {
     background-color: #d4a373;
     color: #2b221e;
 }
-
 
 /* BARRA STILI-DATE */
 .bar-style {
@@ -130,7 +115,6 @@ header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-
 .bar-item {
     flex: 1;
     height: 65px;
@@ -141,11 +125,9 @@ header {
     border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-
 .bar-item:last-child {
     border-right: none;
 }
-
 
 .bar-item a {
     width: 100%;
@@ -161,15 +143,13 @@ header {
     transition: all 0.2s ease;
 }
 
-
 .bar-item a:hover {
     color: #d4a373;
     text-shadow: 0 0 8px rgba(212, 163, 115, 0.8);
 }
 
-
 /* =========================================================
-   TITOLO PRINCIPALE --> dovrebbe simulare una pennelleta materica
+   TITOLO PRINCIPALE 
    ========================================================= */
 .home-introduction {
     width: 100%;
@@ -177,7 +157,6 @@ header {
     margin: 60px auto 80px auto;
     text-align: center;
 }
-
 
 .title-container {
   position: relative;
@@ -191,14 +170,13 @@ header {
   box-shadow: none;
 }
 
-
 .title-container::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) ;
-  width:0%;
+  transform: translate(-50%, -50%);
+  width: 0%;
   height: 110px;
   padding: 90px 90px;
   background: linear-gradient(120deg,
@@ -207,15 +185,12 @@ header {
       rgba(212, 163, 115, 0.8),
       rgba(195, 150, 70, 0.75)
   );
-   
-background-size: 300% 300%;
-animation: drawBrush 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
- 
-border-radius: 90px 120px 80px 110px;
-filter: blur(20px);
-z-index: 1;
+  background-size: 300% 300%;
+  animation: drawBrush 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  border-radius: 90px 120px 80px 110px;
+  filter: blur(20px);
+  z-index: 1;
 }
-
 
 @keyframes drawBrush {
   0% {
@@ -226,11 +201,10 @@ z-index: 1;
     opacity: 1;
   }
   100% {
-    width: 90%; /* Si ferma alla dimensione perfetta dietro al titolo */
+    width: 90%;
     opacity: 1;
   }
 }
-
 
 .title-container h1 {
   position: relative;
@@ -247,6 +221,7 @@ z-index: 1;
   opacity: 0;
   animation: revealText 1s ease 1.2s forwards;
 }
+
 @keyframes revealText {
   0% {
     opacity: 0;
@@ -257,7 +232,6 @@ z-index: 1;
     transform: translateY(0);
   }
 }
-
 
 /* CORPO DEL SITO MAIN */
 main {
@@ -271,12 +245,11 @@ main {
     align-items: center;
 }
 
-
-main h2{
+main h2 {
     width: 100%;
     max-width: 950px;
     box-sizing: border-box;
-    margin-bottom: 50px auto 20px auto;
+    margin: 50px auto 20px auto;
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-style: italic;
     font-size: 2.5rem;
@@ -284,7 +257,6 @@ main h2{
     color: #50946f;
     text-align: center;
 }
-
 
 main p, p {
     width: 100%;
@@ -298,7 +270,6 @@ main p, p {
     box-sizing: border-box;
 }
 
-
 /* SCELTA ITINERARIO */
 .narratives {
     width: 100%;
@@ -306,14 +277,12 @@ main p, p {
     margin: 60px auto;
 }
 
-
 .narrativa-container {
     width: 100%;
     display: flex;
     gap: 40px;
     margin-top: 30px;
 }
-
 
 .narrative-card {
     flex: 1;
@@ -323,23 +292,17 @@ main p, p {
     border-radius: 4px;
     padding: 20px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    overflow: visible; /* Lascia che la pennellata sbordi morbidamente */
+    overflow: visible;
     z-index: 1;
     transition: transform 0.4s ease, border-color 0.4s ease;
 }
-
-
-.narrative-card:hover::before {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.05);
-}
-
 
 .narrative-card:hover {
     transform: translateY(-6px);
     border-color: #d97757;
     box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
+
 .card-label {
     padding: 10px;
     font-family: 'Cinzel', serif;
@@ -350,11 +313,9 @@ main p, p {
     border-bottom: 1px dashed #d97757;
 }
 
-
 .card-body {
     padding: 15px;
 }
-
 
 .card-body h3 {
     margin: 0 0 20px 0;
@@ -364,14 +325,12 @@ main p, p {
     text-align: center;
 }
 
-
 .card-details {
     padding: 10px 0;
     margin-bottom: 20px;
     border-top: 1px solid #d97757;
     border-bottom: 1px solid #d97757;
 }
-
 
 .card-details p, .card-description {
     font-family: 'IM Fell English SC', serif;
@@ -380,7 +339,6 @@ main p, p {
     text-align: left;
     margin: 5px 0;
 }
-
 
 .discover, .bottone, #filters button {
     display: inline-block;
@@ -395,26 +353,19 @@ main p, p {
     transition: all 0.2s ease;
 }
 
-
 .discover:hover, .narrative-card:hover .discover, .bottone:hover, #filters button:hover, #filters button.active {
     background-color: #d97757;
     color: #ffffff;
     border-color: #d97757;
 }
 
-
-.narrative-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
 /* =========================================================
-   AREA IMMAGINI & SCENE VIEWER (STILE IMPRESSIONISTA)
+   AREA IMMAGINI & SCENE VIEWER (RETTANGOLO ORGANICO & SEURAT)
    ========================================================= */
 .area-immagini {
     width: 100%;
-    max-width: var(--content-width);
-    height: 610px;
+    max-width: 980px;
+    height: 600px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -423,39 +374,30 @@ main p, p {
     margin: 50px auto;
     padding: 35px;
     box-sizing: border-box;
-    background-color: #faf5eb;
-    border: none;
+
+    /* Sfondo base avorio caldo */
+    background-color: #f4ebd0;
+
+    /* Trama a puntini fitti in stile Seurat (verdi, azzurrini, caldi e ocra)[cite: 4] */
+    background-image: 
+        radial-gradient(circle, rgba(123, 158, 168, 0.6) 2.5px, transparent 2.5px),
+        radial-gradient(circle, rgba(141, 182, 131, 0.55) 2.5px, transparent 2.5px),
+        radial-gradient(circle, rgba(217, 119, 87, 0.4) 2px, transparent 2px),
+        radial-gradient(circle, rgba(235, 205, 95, 0.6) 2.5px, transparent 2.5px);
+    
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px, 2.5px 7.5px, 7.5px 2.5px;
+
+    /* NIENTE ELLISSE: Bordo rettangolare con angoli asimmetrici e morbidi */
     border-radius: 255px 35px 225px 45px / 35px 225px 25px 255px;
-    box-shadow: 0 15px 40px rgba(59, 82, 73, 0.15),
+    border: 3px solid #7b9ea8;
+
+    /* Ombra artistica soffusa */
+    box-shadow: 0 20px 50px rgba(59, 82, 73, 0.2),
                 inset 0 0 30px rgba(217, 119, 87, 0.08);
+    
     position: relative;
     overflow: hidden;
-}
-
-.area-immagini::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(123, 158, 168, 0.3) 0%, rgba(217, 119, 87, 0.15) 50%, transparent 70%);
-    filter: blur(20px);
-    z-index: 0;
-    pointer-events: none;
-}
-
-.area-immagini::after {
-    content: "";
-    position: absolute;
-    bottom: -20px;
-    left: -20px;
-    width: 180px;
-    height: 180px;
-    background: radial-gradient(circle, rgba(141, 182, 131, 0.3) 0%, rgba(235, 205, 95, 0.2) 50%, transparent 70%);
-    filter: blur(25px);
-    z-index: 0;
-    pointer-events: none;
 }
 
 .film-panel-left, .frecce_scena, .description-container-right {
@@ -463,13 +405,14 @@ main p, p {
     z-index: 1;
 }
 
+/* Pannello sinistro (Immagini) */
 .film-panel-left {
-    width: 43%;
+    width: 40%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 15px;
+    justify-content: center;
+    gap: 12px;
 }
 
 .film-panel-left img {
@@ -478,8 +421,8 @@ main p, p {
     aspect-ratio: 16 / 10;
     object-fit: cover;
     border: 3px solid #f2ecd9;
-    border-radius: 12px 25px 10px 20px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
 .photo-when {
@@ -491,6 +434,7 @@ main p, p {
     color: #5e3c58;
 }
 
+/* Frecce di navigazione centrali */
 .frecce_scena {
     width: 8%;
     display: flex;
@@ -521,8 +465,9 @@ main p, p {
     font-weight: bold;
 }
 
+/* Pannello destro (Testi/Story) */
 .description-container-right {
-    width: 46%;
+    width: 48%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -555,19 +500,29 @@ main p, p {
     width: 100%;
     height: 440px;
     box-sizing: border-box;
-    padding: 25px;
-    background-color: #fffefb;
-    color: #2c2825;
-    border: 2px solid #b5c4b1;
-    border-radius: 15px 5px 20px 10px;
+    padding: 22px;
+    background-color: #e0f7f573;
+    background-image: 
+        radial-gradient(circle, rgba(74, 107, 115, 0.5) 2px, transparent 1px),
+        radial-gradient(circle, rgba(123, 158, 168, 0.6) 2px, transparent 1px),
+        radial-gradient(circle, rgba(235, 205, 95, 0.45) 1.5px, transparent 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 12px, 6px 14px;
+    color: #ec8600;
+    border: 2px solid #7b9ea8;
+    border-radius: 12px;
     overflow-y: auto;
     box-shadow: inset 0 0 15px rgba(0,0,0,0.02);
 }
 
+/* =========================================================
+   BOTTONI DI DIFFICOLTÀ CON EFFETTO PENNELLATA (IN RIGA)
+   ========================================================= */
 .difficulty-buttons {
     width: 100%;
-    display: flex;
-    flex-direction: row;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
     gap: 6px;
     margin-bottom: 12px;
     flex-shrink: 0;
@@ -575,19 +530,21 @@ main p, p {
 
 .difficulty-buttons button {
     flex: 1;
-    padding: 6px 8px;
+    min-width: 0;
+    padding: 6px 4px;
     background: linear-gradient(120deg,
-        rgba(217, 180, 87, 0.65),
-        rgba(235, 205, 95, 0.75),
-        rgba(212, 163, 115, 0.7)
+        rgba(217, 180, 87, 0.75),
+        rgba(235, 205, 95, 0.85)
     );
     color: #222b26;
-    border: 2px solid rgba(123, 158, 168, 0.6);   
-    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;    
+    border: 1px solid #7b9ea8;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
     font-family: 'Cinzel', serif;
-    cursor: pointer;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    font-weight: bold;
     text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .tellme-buttons {
@@ -613,13 +570,13 @@ main p, p {
 .showview-buttons button:hover, .showview-buttons button.active,
 .difficulty-buttons button:hover, .difficulty-buttons button.active,
 .tellme-buttons button:hover, .tellme-buttons button.active {
-    background-color: #ebcd5f;
-    color: #222b26;
-    border-color: #ebcd5f;
+    background: linear-gradient(120deg, #3b5249, #7b9ea8);
+    color: #f4ebd0;
+    border-color: #3b5249;
 }
 
 /* =========================================================
-   11 — MODAL & POPUP (FINESTRE MODALI)
+   MODAL & POPUP (FINESTRE MODALI)
    ========================================================= */
 .modal-overlay {
     position: fixed;
@@ -675,16 +632,12 @@ main p, p {
     display: block;
 }
 
-
-
-
-/* POSTER (GRIGLIA LOCANDINE)+ */
+/* POSTER (GRIGLIA LOCANDINE) */
 .films-section {
     width: 100%;
     max-width: 950px;
     margin: 80px auto;
 }
-
 
 .poster-container {
     width: 100%;
@@ -692,7 +645,6 @@ main p, p {
     box-sizing: border-box;
     margin: 40px auto;
 }
-
 
 .poster-grid {
     width: 100%;
@@ -702,19 +654,16 @@ main p, p {
     gap: 30px;
 }
 
-
 .poster {
     flex: 1 1 calc(33.333% - 20px);
     min-width: 250px;
     box-sizing: border-box;
 }
 
-
 .poster-flip {
     position: relative;
     width: 100%;
 }
-
 
 .poster-img {
     width: 100%;
@@ -725,7 +674,6 @@ main p, p {
     border: 4px solid #222b26;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-
 
 .poster-back {
     position: absolute;
@@ -747,75 +695,66 @@ main p, p {
     font-family: 'IM Fell English SC', serif;
 }
 
-
 .poster-flip:hover .poster-img {
     transform: rotateY(-180deg);
 }
-
 
 .poster-flip:hover .poster-back {
     transform: rotateY(0deg);
 }
 
-
 /* FOOTER */
 .bottoni-pagine {
-width: 100%;
-max-width: 950px;
-margin: 50px auto 20px auto;
-display: flex;
-justify-content: space-between;
-align-items: center;
+    width: 100%;
+    max-width: 950px;
+    margin: 50px auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
 
 footer {
-width: 100%;
-box-sizing: border-box;
-margin-top: 80px;
-padding: 25px 40px;
-background-color: #3b5249;
-border-top: 3px double #7b9ea8;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 80px;
+    padding: 25px 40px;
+    background-color: #3b5249;
+    border-top: 3px double #7b9ea8;
 }
-
 
 .footer-container {
-width: 100%;
-max-width: 950px;
-margin: 0 auto;
-text-align: center;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    text-align: center;
 }
-
 
 footer p, footer a {
-color: #f4ebd0;
-font-family: 'IM Fell English SC', serif;
-font-size: 0.95rem;
+    color: #f4ebd0;
+    font-family: 'IM Fell English SC', serif;
+    font-size: 0.95rem;
 }
-
 
 .footer-links {
-display: flex;
-justify-content: center;
-gap: 15px;
-margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
 }
-
 
 .footer-box {
-width: 220px;
-padding: 14px 18px;
-border: 1px solid #7b9ea8;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-background-color: #222b26;
-color: #f4ebd0;
+    width: 220px;
+    padding: 14px 18px;
+    border: 1px solid #7b9ea8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #222b26;
+    color: #f4ebd0;
 }
 
-
 .footer-box:hover {
-background-color: #d97757;
-color: #ffffff;
+    background-color: #d97757;
+    color: #ffffff;
 }
