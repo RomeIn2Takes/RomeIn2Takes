@@ -863,6 +863,27 @@ header {
 .poster-flip:hover .poster-img { transform: rotateY(-180deg); }
 .poster-flip:hover .poster-back { transform: rotateY(0deg); }
 
+/* 13 — PREVIOUS / NEXT */
+.bottoni-pagine {
+    width: 100%; max-width: var(--content-width);
+    margin: 50px auto 20px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.bottone {
+    display: inline-block; padding: 10px 18px;
+    border-color: var(--dark);
+    font-family: var(--font-title); font-size: 1rem; letter-spacing: 1.5px;
+}
+.bottone:hover {
+    box-shadow: 0 0 5px rgba(244,232,193,0.8), 0 0 10px rgba(244,232,193,0.5);
+}
+.bottoni-pagine .bottone:only-child { margin-left: auto; }
+
+.map-introduction .bottone {
+    display: block;
+    width: fit-content;
+    margin: 28px auto 0;
+}
 
 /* 14 — MAP: LEAFLET & FILTERS */
 .map-page { width: 100%; }
@@ -883,83 +904,154 @@ header {
 }
 #filters button { padding: 9px 18px; font-size: 0.85rem; }
 
-/* 15 — MAP: LOCATIONS & ROUTES */
+/* 15 — MAP: LOCATIONS & ROUTES
+   il percorso come un programma di sala illuminato:
+   una fila verticale di lampadine collega le tappe,
+   ogni numero è una lampadina-insegna, ogni tappa una piccola locandina */
 .locations-section {
     width: 100%; max-width: var(--content-width);
     margin: 65px auto 20px;
 }
 .locations-section h2 { margin-bottom: 45px; }
 #locations-list { position: relative; width: 100%; max-width: 850px; margin: 0 auto; }
+
+/* fila verticale di lampadine */
+/* fila verticale di lampadine che collega le tappe */
 #locations-list::before {
-    content: ""; position: absolute;
-    left: 31px; top: 30px; bottom: 30px; width: 2px;
-    background: rgba(244,232,193,0.65);
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 25px;                 /* centro dei numeri (64px / 2) meno metà larghezza */
+    top: 32px;
+    bottom: 32px;
+    width: 14px;
+    background-image: radial-gradient(circle, #fffbea 0 2px, #ffd98a 3px, #f0b85a 4px, rgba(255, 175, 75, 0.35) 5.5px, transparent 7px);
+    background-size: 14px 24px;     /* una lampadina ogni 24px */
+    background-repeat: repeat-y;
+    background-position: center top;
+    pointer-events: none;
 }
+
 .location-card {
     position: relative; width: 100%;
     display: flex; align-items: flex-start; gap: 30px;
-    padding: 25px 0; background: transparent; border: none;
+    padding: 18px 0; background: transparent; border: none;
 }
+
+/* numero della tappa: tondo scuro con bordo in ottone e cifra illuminata */
 .location-number {
     position: relative; z-index: 2;
     flex: 0 0 64px; width: 64px; height: 64px;
     display: flex; align-items: center; justify-content: center;
-    background: var(--background);
-    border: 2px solid var(--cream); border-radius: 50%;
-    font-family: var(--font-title); font-size: 1.7rem; color: var(--cream);
+    background: #221c18;
+    border: 3px solid #a8864a;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 2px #0e0b09,
+        0 0 18px rgba(255, 175, 80, 0.45);
+    color: #f7e8c6;
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 1.6rem;
+    text-shadow: 0 0 8px rgba(255, 200, 120, 0.6);
 }
-.location-info { flex: 1; padding-top: 3px; }
+
+/* la tappa: piccola locandina in cornice scura con filetto in ottone */
+.location-info {
+    flex: 1;
+    padding: 20px 24px;
+    background: linear-gradient(#f3e7c8, #eadbb6);
+    border: 6px solid #221c18;
+    border-radius: 3px;
+    box-shadow:
+        inset 0 0 0 2px #a8864a,
+        0 8px 18px rgba(30, 10, 6, 0.4);
+}
 .location-info h3 {
-    margin: 0 0 5px;
-    font-size: 1.8rem; letter-spacing: 1px; color: var(--white);
+    margin: 0 0 6px;
+    color: #1c1b1b;
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 1.6rem; letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 .location-info p:first-of-type {
     width: 100%; max-width: none; margin: 0 0 8px;
-    font-size: 0.8rem; line-height: 1.2rem;
-    color: var(--cream); text-align: left;
+    color: #94473b;
+    font-size: 0.85rem; line-height: 1.4;
+    text-align: left;
 }
 .location-info p:nth-of-type(2) {
-    width: 100%; max-width: 700px; margin: 0;
-    font-size: 0.9rem; line-height: 1.45rem;
-    color: var(--white); text-align: left;
+    width: 100%; max-width: none; margin: 0;
+    color: var(--black);
+    font-size: 0.9rem; line-height: 1.6;
+    text-align: left;
 }
 .location-info a {
-    display: inline-block; margin-top: 12px; padding: 6px 11px;
-    font-size: 0.7rem;
+    display: inline-block; margin-top: 14px; padding: 7px 14px;
+    border-color: var(--dark);
+    font-family: var(--font-title);
+    font-size: 0.95rem; letter-spacing: 1.5px;
 }
+.location-info a:hover {
+    background: #94473b; color: var(--white); border-color: #94473b;
+}
+
+/* più luoghi nella stessa tappa */
 .location-subitem {
-    padding-bottom: 20px; margin-bottom: 20px;
-    border-bottom: 1px dashed rgba(244,232,193,0.4);
+    padding-bottom: 18px; margin-bottom: 18px;
+    border-bottom: 1px dashed rgba(148, 71, 59, 0.5);
 }
 .location-subitem:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
+
+/* spostamento tra una tappa e l'altra */
 .route-connection {
     position: relative;
     width: calc(100% - 95px);
-    margin: -8px 0 -8px 95px;
-    padding: 8px 15px 8px 18px;
-    border-left: 1px solid rgba(244,232,193,0.45);
-}
-.route-connection::before {
-    content: ""; position: absolute; left: -4px; top: 12px;
-    width: 7px; height: 7px;
-    background: var(--cream); border-radius: 50%;
+    margin: 0 0 0 95px;
+    padding: 6px 15px 6px 18px;
+    border-left: 2px solid #a8864a;
 }
 .route-main-info {
-    margin-bottom: 3px; font-size: 0.68rem; font-weight: normal;
-    color: rgba(244,232,193,0.85);
+    margin-bottom: 3px;
+    color: var(--cream);
+    font-family: var(--font-title);
+    font-size: 0.95rem; letter-spacing: 1.5px;
 }
 .route-directions {
     width: 100%; max-width: 650px; margin: 0;
-    font-size: 0.66rem; line-height: 1.1rem;
-    color: rgba(255,255,255,0.65); text-align: left;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.72rem; line-height: 1.3rem;
+    text-align: left;
 }
-.route-directions strong { font-weight: normal; color: rgba(244,232,193,0.8); }
-/* All Locations has no numbered stops: remove the timeline. */
-#locations-list:not(:has(.location-number))::before { display: none; }
-.location-card:not(:has(.location-number)) {
-    padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.25);
+.route-directions strong { font-weight: normal; color: var(--cream); }
+
+/* ALL LOCATIONS — solo quando il filtro "All locations" è attivo:
+   niente lampadine verticali, locandine due per riga */
+.map-page:has(#show-all.active) #locations-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
 }
-.location-card:not(:has(.location-number)) .location-info { padding-left: 0; }
+.map-page:has(#show-all.active) #locations-list::before { display: none; }
+.map-page:has(#show-all.active) .location-card { padding: 0; }
+.map-page:has(#show-all.active) .location-info { height: 100%; }
+
+/* se le locandine sono in numero dispari, l'ultima va al centro */
+.map-page:has(#show-all.active) .location-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 24px) / 2);
+}
+
+/* i due bottoni delle narrative affiancati, senza interlinea in più */
+.map-page:has(#show-all.active) .location-info p:has(> a) {
+    display: inline-block;
+    width: auto;
+    margin: 14px 8px 0 0;
+    line-height: 1;
+}
+.map-page:has(#show-all.active) .location-info p:has(> a) a { margin-top: 0; }
+
+
 
 /* 16 — DOCUMENTATION: JOURNEY & WORKFLOW */
 .documentation-intro p { margin: 0 auto 20px; }
@@ -1184,6 +1276,8 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
     .location-number { flex-basis: 50px; width: 50px; height: 50px; font-size: 1.4rem; }
     .location-info h3 { font-size: 1.5rem; }
     .route-connection { width: calc(100% - 68px); margin-left: 68px; }
+    .map-page:has(#show-all.active) #locations-list { grid-template-columns: minmax(0, 1fr); }
+.map-page:has(#show-all.active) .location-card:last-child:nth-child(odd) { width: auto; }
 
     /* Disclaimer: vertical layout ONLY on small screens */
     .disclaimer-page .disclaimer-item,
