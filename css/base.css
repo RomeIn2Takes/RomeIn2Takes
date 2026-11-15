@@ -1,7 +1,8 @@
 /* =========================================================
    ROME IN TWO TAKES — BASE STYLE / CINEMA
    ========================================================= */
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Courier+Prime&family=League+Spartan:wght@700&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&family=Courier+Prime&family=League+Spartan:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Limelight&display=swap");
+
 
 /* 01 — VARIABLES */
 :root {
@@ -13,7 +14,8 @@
     --black: #2b2623;
     --font-title: 'Bebas Neue', sans-serif;
     --font-heading: "Archivo Black", Arial, sans-serif;
-    --font-body: "Lora", Georgia, serif;
+    --font-neon: "Limelight", Georgia, serif;
+--font-body: "Libre Baskerville", Georgia, serif;
     --font-code: 'Courier Prime', monospace;
     --text-small: 0.85rem;
     --text-base: 1rem;
@@ -55,67 +57,66 @@ main {
     flex-direction: column;
     align-items: center;
 }
-/* Titoli principali — effetto insegna */
+
+main p {
+    width: 100%; max-width: var(--content-width);
+    margin: 0 auto;
+    font-size: var(--text-base);
+    line-height: 1.8;
+    color: var(--white);
+    text-align: left;
+}
+
+/* spazio tra paragrafi consecutivi */
+main p + p {
+    margin-top: 1em;
+}
+
+/* Titoli principali — lettere retroilluminate con il contorno scuro del tabellone
+   (stessa regola per tutte le pagine) */
 main h1,
 main h2,
 .disclaimer-page .page-title {
-    font-family: "Archivo Black", Arial, sans-serif;
+    width: 100%;
+    max-width: var(--content-width);
+    font-family: var(--font-neon);
     font-weight: 400;
-    line-height: 1.16;
-    letter-spacing: 0.015em;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
     text-align: center;
     text-transform: uppercase;
     text-wrap: balance;
 
-    color: #b74424;
-    -webkit-text-stroke: 1.5px #fff0bc;
+    /* lettere color pannello, contorno marrone-nero della cornice */
+    color: #f7e8c6;
+    -webkit-text-stroke: 3px #221c18;
+    paint-order: stroke fill;             /* il contorno resta fuori dalla lettera */
 
+    /* alone chiaro e neutro dietro le lettere */
     text-shadow:
-         0    0   2px rgba(255, 170, 60, 0.75),
-         3px  0   0 #b74424,
-        -3px  0   0 #b74424,
-         0    3px 0 #b74424,
-         0   -3px 0 #b74424,
-         2px  2px 0 #b74424,
-        -2px  2px 0 #b74424,
-         2px -2px 0 #b74424,
-        -2px -2px 0 #b74424,
-         2px  3px 0 #78321f,
-         3px  5px 0 #6a2b1e,
-         4px  7px 0 #53251c,
-         6px 10px 6px rgba(47, 28, 21, 0.48);
+    0 0 8px rgba(255, 210, 140, 0.3),
+    0 0 20px rgba(255, 196, 120, 0.18);
 }
 
 main h1,
 .disclaimer-page .page-title {
-    width: 100%;
-    max-width: var(--content-width);
     margin: 35px auto 25px;
-    font-size: clamp(2.2rem, 5.8vw, 4.4rem);
+    font-size: clamp(2.2rem, 5.5vw, 4rem);
 }
 
 main h2 {
-    width: 100%;
-    max-width: var(--content-width);
-    margin: 35px auto 24px;
-    font-size: clamp(1.9rem, 4.6vw, 3.5rem);
+    margin: 40px auto 22px;
+    font-size: clamp(1.7rem, 3.8vw, 2.7rem);
 }
-main p {
-    width: 100%; max-width: var(--content-width);
-    margin: 0 auto;
-    font-size: var(--text-large);
-    line-height: 1.65rem;
-    color: var(--white);
-    text-align: justify;
-}
+
 
 /* 04 — HEADER & NAVIGATION */
 header {
     position: sticky; top: 0; z-index: 2000;
     width: 100%;
     display: flex; justify-content: space-between; align-items: center;
-    height: 50px;
-    padding: 15px 40px;
+    height: 58px;
+    padding: 12px 40px;
     background: var(--dark-light);
     border-top: var(--border-light);
     border-bottom: var(--border-light);
@@ -155,9 +156,9 @@ header {
 
 /* 05 — STYLE / DATE BAR */
 .bar-style {
-    position: sticky; top: 50px; z-index: 999;
+    position: sticky; top: 58px; z-index: 999;
     display: flex; justify-content: safe center;
-    width: 100%; padding: 0 12px;
+    width: 100%; padding: 3 12px;
     overflow-x: auto;
     background: #6e2b23;
     border-bottom: 1px solid #c9a35a;
