@@ -200,128 +200,305 @@ header {
     background: var(--cream); color: var(--background); border-color: var(--cream);
 }
 
-/* 07 — HOMEPAGE: CINEMA MARQUEE */
+/* 07 — HOMEPAGE: CINEMA MARQUEE (anni '40) */
+
+/* Proprietà registrate: permettono alle lampadine di sfumare dolcemente
+   invece di accendersi/spegnersi di colpo */
+@property --a {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 1;
+}
+@property --b {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0.35;
+}
+
 .home-introduction {
-    width: 100%; max-width: 1000px;
+    /* grana leggera usata su cornice, pannello e insegna */
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.22 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+    width: 100%;
+    max-width: 1000px;
     margin: 50px auto 70px;
     text-align: center;
 }
 
-.title-container {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
+/* ---------- Insegna al neon "CINEMA" sopra il tabellone ---------- */
+.home-introduction::before {
+    content: "Cinema";
+    display: block;
+    width: fit-content;
     margin: 0 auto;
-    padding: 2.5rem clamp(0.6rem, 3vw, 1.5rem);
+    /* più spazio a sinistra per compensare il letter-spacing dopo l'ultima lettera */
+    padding: 0.2em 0.45em 0.1em 0.7em;
 
-    background: linear-gradient(
-    180deg,
-    #51392d 0%,
-    #38271f 30%,
-    #2a1e19 75%,
-    #453025 100%
-);
-border: 2px solid #634736;
-border-top-color: #987454;
-border-radius: 4px;
+    background:
+        var(--grain),
+        linear-gradient(180deg, #2b211c, #141010);
+    border: 2px solid #3d2e25;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
 
-box-shadow:
-    inset 0 1px 0 rgba(255, 238, 203, 0.45),
-    inset 0 2px 5px rgba(87, 57, 35, 0.22),
-    inset 0 -3px 6px rgba(87, 57, 35, 0.18);
+    color: #fff1ec;
+    font-family: "Limelight", var(--font-heading);
+    font-size: clamp(1.5rem, 4.4vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 1px #ffffff,
+        0 0 5px #ff6a4d,
+        0 0 12px #ff2d16,
+        0 0 24px #e01b0b,
+        0 0 42px rgba(224, 27, 11, 0.5);
+
+    animation: neon-flicker 9s linear infinite;
 }
 
-/* Lampadine sopra e sotto il pannello */
+/* ---------- Cornice in lamiera verniciata ---------- */
+.title-container {
+    --band: 38px;        /* fascia delle lampadine */
+    --bulbs-x: 22;       /* lampadine sopra e sotto  — numero PARI */
+    --bulbs-y: 8;        /* lampadine per lato       — numero PARI */
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: calc(var(--band) + 2px);
+
+    background:
+        var(--grain),
+        linear-gradient(180deg,
+            rgba(255, 235, 200, 0.07) 0%, transparent 18%,
+            transparent 82%, rgba(0, 0, 0, 0.35) 100%),
+        #221c18;
+
+    border: 3px solid #14100e;
+    border-radius: 3px;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 230, 190, 0.18),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.6),
+        0 0 0 1px #4a3d32,
+        0 0 90px rgba(255, 175, 80, 0.3),       /* luce che si riversa sul muro */
+        0 16px 28px rgba(20, 10, 6, 0.55);
+}
+
+/* ---------- Lampadine ----------
+   ::before = fila sopra e sotto (angoli compresi)  |  ::after = lati
+   ogni lampadina: portalampada con bordo cromato, vetro, filamento acceso
+   con alone (gruppi A e B che si alternano), riflesso sul vetro */
 .title-container::before,
 .title-container::after {
+    --socket: radial-gradient(circle,
+        #0b0807 0 9px, #7a6d5a 9.5px 10.5px, #1c1612 11px 11.5px, transparent 12px);
+    --glass: radial-gradient(circle at 45% 42%,
+        #9a8866 0 1px, #6a573e 3.5px, #3d3024 7.5px, transparent 8px);
+    --shine: radial-gradient(circle at calc(50% - 3px) calc(50% - 3.5px),
+        rgba(255, 255, 255, 0.9) 0 1.2px, rgba(255, 255, 255, 0) 3px);
+
     content: "";
     position: absolute;
-    inset-inline: 14px;
-    height: 24px;
-
-    background: radial-gradient(
-        circle at center,
-        #fff8df 0 2px,
-        #ffe2a4 3px,
-        #efad58 5px,
-        #a56635 6px,
-        rgba(255, 158, 66, 0.28) 8px,
-        transparent 11px
-    ) center / 32px 24px space no-repeat;
-
+    z-index: 1;
     pointer-events: none;
+    filter: drop-shadow(0 0 5px rgba(255, 175, 75, 0.5));
+    animation: bulbs-chase 1.3s ease-in-out infinite alternate;
 }
 
+/* fila superiore e inferiore */
 .title-container::before {
-    top: 7px;
+    --lit-a: radial-gradient(circle at 25% 50%,
+        rgb(255 253 242 / var(--a)) 0 2.5px,
+        rgb(255 231 160 / var(--a)) 5px,
+        rgb(255 186 80 / calc(var(--a) * 0.9)) 7.5px,
+        rgb(255 165 62 / calc(var(--a) * 0.45)) 9.5px,
+        rgb(255 150 50 / calc(var(--a) * 0.18)) 14px,
+        transparent 18px);
+    --lit-b: radial-gradient(circle at 75% 50%,
+        rgb(255 253 242 / var(--b)) 0 2.5px,
+        rgb(255 231 160 / var(--b)) 5px,
+        rgb(255 186 80 / calc(var(--b) * 0.9)) 7.5px,
+        rgb(255 165 62 / calc(var(--b) * 0.45)) 9.5px,
+        rgb(255 150 50 / calc(var(--b) * 0.18)) 14px,
+        transparent 18px);
+
+    inset: 0;
+    background-image:
+        var(--shine), var(--shine),
+        var(--lit-a), var(--lit-a),
+        var(--lit-b), var(--lit-b),
+        var(--glass), var(--glass),
+        var(--socket), var(--socket);
+    background-size:
+        calc(100% / var(--bulbs-x)) var(--band), calc(100% / var(--bulbs-x)) var(--band),
+        calc(200% / var(--bulbs-x)) var(--band), calc(200% / var(--bulbs-x)) var(--band),
+        calc(200% / var(--bulbs-x)) var(--band), calc(200% / var(--bulbs-x)) var(--band),
+        calc(100% / var(--bulbs-x)) var(--band), calc(100% / var(--bulbs-x)) var(--band),
+        calc(100% / var(--bulbs-x)) var(--band), calc(100% / var(--bulbs-x)) var(--band);
+    background-position: 0 0, 0 100%;   /* la coppia si ripete: sopra, sotto */
+    background-repeat: repeat-x;
 }
 
+/* lati sinistro e destro */
 .title-container::after {
-    bottom: 7px;
+    --lit-a: radial-gradient(circle at 50% 25%,
+        rgb(255 253 242 / var(--a)) 0 2.5px,
+        rgb(255 231 160 / var(--a)) 5px,
+        rgb(255 186 80 / calc(var(--a) * 0.9)) 7.5px,
+        rgb(255 165 62 / calc(var(--a) * 0.45)) 9.5px,
+        rgb(255 150 50 / calc(var(--a) * 0.18)) 14px,
+        transparent 18px);
+    --lit-b: radial-gradient(circle at 50% 75%,
+        rgb(255 253 242 / var(--b)) 0 2.5px,
+        rgb(255 231 160 / var(--b)) 5px,
+        rgb(255 186 80 / calc(var(--b) * 0.9)) 7.5px,
+        rgb(255 165 62 / calc(var(--b) * 0.45)) 9.5px,
+        rgb(255 150 50 / calc(var(--b) * 0.18)) 14px,
+        transparent 18px);
+
+    inset: var(--band) 0;
+    background-image:
+        var(--shine), var(--shine),
+        var(--lit-a), var(--lit-a),
+        var(--lit-b), var(--lit-b),
+        var(--glass), var(--glass),
+        var(--socket), var(--socket);
+    background-size:
+        var(--band) calc(100% / var(--bulbs-y)), var(--band) calc(100% / var(--bulbs-y)),
+        var(--band) calc(200% / var(--bulbs-y)), var(--band) calc(200% / var(--bulbs-y)),
+        var(--band) calc(200% / var(--bulbs-y)), var(--band) calc(200% / var(--bulbs-y)),
+        var(--band) calc(100% / var(--bulbs-y)), var(--band) calc(100% / var(--bulbs-y)),
+        var(--band) calc(100% / var(--bulbs-y)), var(--band) calc(100% / var(--bulbs-y));
+    background-position: 0 0, 100% 0;   /* la coppia si ripete: sinistra, destra */
+    background-repeat: repeat-y;
 }
 
-/* Pannello retroilluminato e titolo */
+/* ---------- Pannello retroilluminato con lettere intercambiabili ---------- */
 .title-container h1 {
+    --row: 1.12em;   /* altezza di una riga del titolo */
+
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: none;
     margin: 0;
-    padding-block: clamp(1.25rem, 4vw, 2.75rem);
-    padding-inline: max(0.5rem, calc((100% - 8.4em) / 2));
+    /* il riquadro del testo è largo ~6.6em: "ROME IN TWO TAKES" non ci sta
+       su una riga e il text-wrap: balance la spezza in ROME IN / TWO TAKES */
+    padding: 0.08em max(12px, calc((100% - 6.6em) / 2)) 0.1em;
 
-    font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 6.8vw, 4.9rem);
+    background:
+        var(--grain),
+        /* guide sotto le due righe del titolo */
+        linear-gradient(to bottom,
+            transparent calc(50% - 4px),
+            rgba(55, 44, 30, 0.55) calc(50% - 4px) calc(50% - 3px),
+            rgba(255, 255, 255, 0.8) calc(50% - 3px) calc(50% - 2px),
+            rgba(110, 92, 64, 0.3) calc(50% - 2px) 50%,
+            transparent 50% calc(100% - 4px),
+            rgba(55, 44, 30, 0.55) calc(100% - 4px) calc(100% - 3px),
+            rgba(255, 255, 255, 0.8) calc(100% - 3px) calc(100% - 2px),
+            rgba(110, 92, 64, 0.3) calc(100% - 2px) 100%
+        ) bottom / 100% calc(var(--row) * 2) no-repeat content-box padding-box,
+        /* tubi al neon dietro il plexiglass: due fasce più luminose */
+        linear-gradient(to bottom,
+            rgba(255, 255, 255, 0) 6%, rgba(255, 255, 250, 0.5) 28%,
+            rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0) 56%,
+            rgba(255, 255, 250, 0.5) 76%, rgba(255, 255, 255, 0) 94%),
+        radial-gradient(ellipse 75% 100% at 50% 50%,
+            #fcf7e9 0%, #f2e7c9 68%, #dcc89a 100%);
+
+    border: 4px solid;
+    border-color: #d6cfc1 #8e8678 #6c665b #aca496;   /* profilo in alluminio */
+    border-radius: 1px;
+    box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.25),
+        inset 0 0 26px rgba(120, 90, 40, 0.3),
+        0 0 0 2px #0e0b09,
+        0 0 24px rgba(255, 220, 150, 0.35);
+
+    color: #131110;
+    font-family: "Anton", Impact, "Haettenschweiler", "Arial Narrow", sans-serif;
+    font-size: clamp(2rem, 9.5vw, 6rem);
     font-weight: 400;
-    line-height: 1.16;
-    letter-spacing: 0.015em;
+    line-height: var(--row);
+    letter-spacing: 0.04em;
+    word-spacing: 0.18em;
     text-align: center;
     text-transform: uppercase;
+    white-space: normal;
     text-wrap: balance;
 
-    color: #b74424;
--webkit-text-stroke: 1.5px #fff0bc;
+    /* via l'effetto insegna rossa di "main h1" */
+    -webkit-text-stroke: 0;
+    /* lettere in plastica sul pannello: ombra corta verso il basso */
+    text-shadow:
+        0 0 1px rgba(0, 0, 0, 0.5),
+        0 0.035em 0.02em rgba(40, 30, 20, 0.28);
 
-background:
-    /* Riflessi caldi delle lampadine, vicini ai bordi */
-    radial-gradient(ellipse at 50% 0%,
-        rgba(255, 185, 91, 0.23), transparent 42%),
-    radial-gradient(ellipse at 50% 100%,
-        rgba(255, 173, 74, 0.18), transparent 38%),
-
-    /* Guide orizzontali del pannello */
-    repeating-linear-gradient(
-        to bottom,
-        transparent 0 31px,
-        rgba(64, 43, 27, 0.27) 31px 32px
-    ),
-
-    /* Vetro avorio, più scuro vicino alla cornice */
-    linear-gradient(180deg, #b79b74, #e6d1ac 22%, #e6d1ac 78%, #ad8f66);
-
-text-shadow:
-    /* Riflesso vicino al filetto */
-     0 0 2px rgba(255, 170, 60, 0.75),
-
-    /* Fascia di rame intorno al filetto */
-     3px  0   0 #b74424,
-    -3px  0   0 #b74424,
-     0    3px 0 #b74424,
-     0   -3px 0 #b74424,
-     2px  2px 0 #b74424,
-    -2px  2px 0 #b74424,
-     2px -2px 0 #b74424,
-    -2px -2px 0 #b74424,
-
-        /* Spessore delle lettere e ombra sul pannello */
-    2px 3px 0 #78321f,
-    3px 5px 0 #6a2b1e,
-    4px 7px 0 #53251c,
-    6px 10px 6px rgba(47, 28, 21, 0.48);
-
-box-shadow:
-    inset 0 1px 0 rgba(255, 241, 209, 0.55),
-    inset 0 3px 7px rgba(57, 38, 23, 0.32),
-    inset 0 -4px 9px rgba(57, 38, 23, 0.28);
+    animation: board-power-on 1.8s ease-out both;
 }
+
+/* riga piccola in rosso "NOW SHOWING", con la sua guida sotto */
+.title-container h1::before {
+    content: "\2605  Now Showing  \2605";
+    display: block;
+    padding: 0.35em 0 0.25em 0.45em;   /* 0.45em a sx compensa il letter-spacing */
+
+    background: linear-gradient(to bottom,
+        transparent calc(100% - 4px),
+        rgba(55, 44, 30, 0.55) calc(100% - 4px) calc(100% - 3px),
+        rgba(255, 255, 255, 0.8) calc(100% - 3px) calc(100% - 2px),
+        rgba(110, 92, 64, 0.3) calc(100% - 2px) 100%);
+
+    color: #8e1d10;
+    font-size: 0.26em;
+    line-height: 1.2;
+    letter-spacing: 0.45em;
+    white-space: pre;
+    text-shadow: 0 0 1px rgba(80, 10, 0, 0.4);
+}
+
+/* ---------- Animazioni ---------- */
+@keyframes bulbs-chase {
+    from { --a: 1;    --b: 0.35; }
+    to   { --a: 0.35; --b: 1; }
+}
+
+@keyframes neon-flicker {
+    0%, 18%, 20.5%, 23%, 61%, 63%, 100% { opacity: 1; }
+    19%, 22%, 62% { opacity: 0.5; }
+}
+
+@keyframes board-power-on {
+    0%        { filter: brightness(0.3) saturate(0.6); }
+    10%       { filter: brightness(1.05); }
+    14%       { filter: brightness(0.5); }
+    22%       { filter: brightness(1); }
+    26%       { filter: brightness(0.75); }
+    40%, 100% { filter: brightness(1); }
+}
+
+/* ---------- Mobile ---------- */
+@media screen and (max-width: 800px) {
+    .title-container {
+        --bulbs-x: 10;
+        --bulbs-y: 4;
+    }
+}
+
+/* ---------- Meno movimento ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .home-introduction::before,
+    .title-container::before,
+    .title-container::after,
+    .title-container h1 {
+        animation: none;
+    }
+}
+
 
 /* 08 — HOMEPAGE: NARRATIVES */
 .narratives { width: 100%; max-width: var(--content-width); margin: 70px auto; }
@@ -876,11 +1053,6 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
     .bar-item a { font-size: 1rem; }
     main { padding: 20px; }
     .home-introduction { margin: 35px auto 50px; }
-    .title-container { padding: 50px 25px; border-width: 5px; }
-    .title-container h1 { font-size: 3.2rem; letter-spacing: 3px; }
-    .title-container::before, .title-container::after {
-        font-size: 0.9rem; letter-spacing: 4px; overflow: hidden; white-space: nowrap;
-    }
     .narratives { margin: 50px auto; }
     .narrativa-container { flex-direction: column; gap: 30px; }
     .card-body h3 { min-height: auto; font-size: 2rem; }
