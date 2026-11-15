@@ -1544,83 +1544,119 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
     margin-top: 2rem;
 }
 
-
 /* =========================================================
-   TEAM CARDS
+   TEAM CARDS — come il retro dei poster:
+   cornice scura, pannello crema retroilluminato (senza le guide,
+   che si confonderebbero con l'elenco dei compiti),
+   icona dentro un tondo-insegna come i numeri della mappa
    ========================================================= */
 
+/* il link che avvolge la card occupa tutta la cella della griglia */
+.team-container > a {
+    display: flex;
+}
+.team-container > a:hover { opacity: 1; }
+
 .team-card {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     min-width: 0;
     min-height: 190px;
+    padding: 1.8rem 1.4rem 1.6rem;
 
-    padding: 1.5rem;
+    background: radial-gradient(ellipse at 50% 40%, #fcf7e9 0%, #f2e7c9 65%, #dcc89a 100%);
+    border: 10px solid #221c18;                 /* cornice scura */
+    border-radius: 3px;
+    box-shadow:
+        inset 0 0 0 3px #aca496,                /* profilo in alluminio */
+        inset 0 0 22px rgba(120, 90, 40, 0.3),
+        0 10px 20px rgba(30, 10, 6, 0.45);
+    color: var(--black);
+    text-align: center;
 
-    box-sizing: border-box;
-
-    border: 1px solid currentColor;
-    background: transparent;
-    color: inherit;
-
-    transition:
-        transform 0.25s ease,
-        background-color 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Team Card Icon */
+/* icona: tondo scuro, bordo in ottone, simbolo illuminato */
+.team-card .team-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    margin-bottom: 1.1rem;
 
-.team-icon {
-    display: inline-block;
-    align-self: flex-start;
-    font-size: 5rem;
+    background: #221c18;
+    border: 3px solid #a8864a;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 2px #0e0b09,
+        0 0 16px rgba(255, 175, 80, 0.45);
+
+    color: #f7e8c6;
+    font-size: 2.4rem;
     line-height: 1;
-    margin-bottom: 1.3rem;
-    opacity: 0.85;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    text-shadow: 0 0 8px rgba(255, 200, 120, 0.7);
+    transition: box-shadow 0.25s ease;
 }
 
-.team-card:hover .team-icon {
-    transform: scale(1.12) translateY(-2px);
-    opacity: 1;
-}
-
-/* Member name */
-
+/* nome */
 .team-card h3 {
-    margin: 0 0 1.5rem;
-
-    font-family: inherit;
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 1.3;
-
-    color: inherit;
+    margin: 0 0 0.9rem;
+    color: #131110;
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.15;
+    text-transform: uppercase;
 }
 
-
-/* Member role */
-
-.team-card .team-role {
-    margin: auto 0 0;
-    padding-top: 1rem;
-
-    border-top: 1px solid currentColor;
-
-    font-family: inherit;
-    font-size: 0.9rem;
-    line-height: 1.5;
-
-    opacity: 0.8;
+/* compiti: righe centrate separate da un filetto rosso mattone */
+.team-tasks {
+    width: 100%;
+    margin: 0 0 1.3rem;
+    padding: 0;
+    list-style: none;
+}
+.team-tasks li {
+    padding: 6px 0;
+    color: var(--black);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+.team-tasks li + li {
+    border-top: 1px solid rgba(148, 71, 59, 0.35);
 }
 
-
-/* Subtle hover */
-
-.team-card:hover {
-    transform: translateY(-3px);
+/* bottone GitHub in fondo alla card */
+.team-github-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
 }
+
+/* al passaggio: la card si solleva, l'icona e la cornice si illuminano */
+.team-container > a:hover .team-card {
+    transform: translateY(-4px);
+    box-shadow:
+        inset 0 0 0 3px #aca496,
+        inset 0 0 22px rgba(120, 90, 40, 0.3),
+        0 0 35px rgba(255, 175, 80, 0.4),
+        0 12px 24px rgba(30, 10, 6, 0.5);
+}
+.team-container > a:hover .team-icon {
+    box-shadow:
+        0 0 0 2px #0e0b09,
+        0 0 26px rgba(255, 190, 90, 0.8);
+}
+.team-container > a:hover .team-github-button {
+    background: #94473b; color: var(--white); border-color: #94473b;
+}
+
 
 
 /* =========================================================
