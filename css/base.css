@@ -1,7 +1,7 @@
 /* =========================================================
    ROME IN TWO TAKES — BASE STYLE / CINEMA
    ========================================================= */
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&family=Courier+Prime&family=League+Spartan:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Limelight&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&family=Courier+Prime&family=League+Spartan:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Limelight&family=Josefin+Sans:wght@400;600&display=swap");
 
 
 /* 01 — VARIABLES */
@@ -15,8 +15,9 @@
     --font-title: 'Bebas Neue', sans-serif;
     --font-heading: "Archivo Black", Arial, sans-serif;
     --font-neon: "Limelight", Georgia, serif;
---font-body: "Libre Baskerville", Georgia, serif;
+    --font-body: "Libre Baskerville", Georgia, serif;
     --font-code: 'Courier Prime', monospace;
+    --font-nav: "Josefin Sans", Arial, sans-serif;
     --text-small: 0.85rem;
     --text-base: 1rem;
     --text-large: 1.1rem;
@@ -125,7 +126,11 @@ header {
 .link-head > a, .dropdown > a {
     margin-right: 20px;
     color: var(--white);
-    font-size: 1.05rem;
+    font-family: var(--font-nav);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     transition: color 0.2s ease;
 }
 .link-head > a:hover, .dropdown > a:hover {
@@ -147,7 +152,10 @@ header {
     display: block;
     margin: 0; padding: 12px 15px;
     color: var(--white);
-    font-size: 0.9rem;
+    font-family: var(--font-nav);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     white-space: nowrap;
     border-bottom: 1px solid rgba(244,232,193,0.2);
 }
