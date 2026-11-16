@@ -3,19 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Documentation - Rome in Two Takes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Process - Rome in Two Takes</title>
 
     <link id="theme-style" rel="stylesheet" href="css/base.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Limelight&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Limelight&family=Bebas+Neue&family=Courier+Prime&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
     <script src="java/base.js"></script>
 </head>
 
 <body>
+    <!-- HEADER -->
     <header>
-    
+
         <div class="link-head" style="text-align:left;">
             <a href="index.html">Home</a>
             <a href="mappa.html">Map</a>
@@ -23,13 +25,11 @@
                 <a href="#">Itinerary &#9660;</a>
                 <div class="dropdown-menu">
                     <a href="tourStorico.html">Historical Journey</a>
-                    <a href="narrativa_femminista.html">Women & Urban Space</a>
+                    <a href="narrativa_femminista.html">Women &amp; Urban Space</a>
                 </div>
-    
             </div>
-    
         </div>
-    
+
         <div class="link-head" style="text-align:left;">
             <a href="about.html">About</a>
             <div class="dropdown">
@@ -40,12 +40,11 @@
                 </div>
             </div>
             <a href="disclaimer.html">Disclaimer</a>
-    
         </div>
-    
+
     </header>
 
- <!-- barra scelta stile -->
+    <!-- STYLE SWITCHER BAR -->
     <div class="bar-style">
         <div class="bar-item">
             <a href="css/style1650.css">
@@ -77,7 +76,6 @@
                 <span class="nav-label">1990s</span>
             </a>
         </div>
-        
         <div class="bar-item">
             <a href="css/style2035.css">
                 <span class="nav-label">2035</span>
@@ -101,6 +99,13 @@
                 implementation.
             </p>
 
+            <p>
+                The visual identity of the website is documented at the end of
+                this page, with one page for each historical theme. The code,
+                the data and the technical solutions are described in the
+                <a href="documentation-code.html">Technical Documentation</a>.
+            </p>
+
         </section>
 
 
@@ -110,48 +115,48 @@
             <h2>Our Workflow</h2>
 
             <div class="workflow-steps">
-                        
+
                 <a href="#step-01" class="workflow-step">
                     <strong>01</strong>
                     <p>Brainstorming</p>
                 </a>
-                        
+
                 <a href="#step-02" class="workflow-step">
                     <strong>02</strong>
                     <p>Research</p>
                 </a>
-                        
+
                 <a href="#step-03" class="workflow-step">
                     <strong>03</strong>
                     <p>Narrative Design</p>
                 </a>
-                        
+
                 <a href="#step-04" class="workflow-step">
                     <strong>04</strong>
                     <p>Information Architecture</p>
                 </a>
-                        
+
                 <a href="#step-05" class="workflow-step">
                     <strong>05</strong>
-                     <p>Prototyping</p>
+                    <p>Prototyping</p>
                 </a>
-                        
+
                 <a href="#step-06" class="workflow-step">
                     <strong>06</strong>
-                       <p>Content and metadata</p>
+                    <p>Content and metadata</p>
                 </a>
-                        
+
                 <a href="#step-07" class="workflow-step">
                     <strong>07</strong>
                     <p>Development</p>
                 </a>
-                        
+
             </div>
 
         </section>
 
 
-        <!-- BRAINSTORMING -->
+        <!-- 01. BRAINSTORMING -->
         <section class="documentation-section" id="step-01">
 
             <h2>01. Brainstorming and Topic Selection</h2>
@@ -187,7 +192,7 @@
         </section>
 
 
-        <!-- CONCEPT -->
+        <!-- 02. RESEARCH -->
         <section class="documentation-section" id="step-02">
 
             <h2>02. Research and Film Selection</h2>
@@ -197,6 +202,11 @@
                 Italian films strongly connected with the city. We watched and compared
                 different films, investigated their historical contexts and identified
                 the real locations that could be connected to the project.
+            </p>
+
+            <p>
+                The research also included the analysis of websites and digital
+                projects related to cinema and film locations.
             </p>
 
             <p>
@@ -212,9 +222,8 @@
                 The selected corpus includes films from different periods of Italian
                 cinema, allowing the project to connect changes in the representation
                 of Rome with changes in Italian society. The research also involved
-                identifying filming locations, comparing cinematic spaces with their
-                present-day appearance and studying their geographical distribution
-                across the city.
+                identifying filming locations and comparing cinematic spaces with their
+                present-day appearance.
             </p>
 
             <div class="film-selection">
@@ -229,32 +238,44 @@
         </section>
 
 
-        <!-- RESEARCH -->
+        <!-- 03. NARRATIVE DESIGN -->
         <section class="documentation-section" id="step-03">
 
             <h2>03. Narrative Design</h2>
 
             <p>
-                The research phase included the analysis of websites and digital
-                projects related to cinema and film locations, as well as research
-                on the selected films, their historical context and the real
-                locations used during filming.
+                With the corpus defined, we turned the research into two narratives:
+                <strong>Historical Journey</strong>, which follows the transformation
+                of Rome through cinema, and <strong>Women &amp; Urban Space</strong>,
+                which follows the progressive occupation of the city by female
+                characters.
             </p>
 
             <p>
-                The geographical distribution of the locations was also studied
-                in order to create plausible itineraries through the city.
+                Each narrative is a sequence of stops. The geographical distribution
+                of the locations was studied in order to create plausible itineraries,
+                and the movement between consecutive stops (means of transport, travel
+                time and directions) was described for each route.
+            </p>
+
+            <p>
+                Every stop is designed as a scene that brings together the place as it
+                appears today, the film image and a text. The texts are written for three
+                audiences (normal, child and scholar) and at different levels of detail:
+                a shorter version, a standard one, a longer one and a
+                &ldquo;Did you know?&rdquo; note. Each scene also offers a metadata view
+                and a QR code.
             </p>
 
         </section>
 
 
-        <!-- PROTOTYPING -->
+        <!-- 04. INFORMATION ARCHITECTURE -->
         <section class="documentation-section" id="step-04">
 
             <h2>04. Information Architecture</h2>
 
-           <p>
+            <p>
                 Before developing the individual contents, we defined a common structure
                 for the website. The aim was to make the different sections feel part
                 of the same system while allowing the map and the two itineraries to
@@ -265,7 +286,7 @@
                 A first basic version of the website was therefore created to establish
                 its main architecture. We defined a common header and footer, the primary
                 navigation system and the main pages: Home, Map, Historical Journey,
-                Women & Urban Space, Documentation, Team and Disclaimer.
+                Women &amp; Urban Space, Documentation, About and Disclaimer.
             </p>
 
             <p>
@@ -275,12 +296,10 @@
                 two narratives and navigating the individual stages of each itinerary.
             </p>
 
-
-
         </section>
 
 
-        <!-- CONTENT DESIGN -->
+        <!-- 05. PROTOTYPING -->
         <section class="documentation-section" id="step-05">
 
             <h2>05. Prototyping and Visual Exploration</h2>
@@ -296,33 +315,29 @@
                 to define the final visual identity, but to establish where the main
                 components should appear and which interactions each page should support.
             </p>
-            <!-- TRE PROTOTIPI VERTICALI -->
+
+            <!-- THREE PROTOTYPES -->
             <div class="prototype-row">
 
                 <figure>
                     <img src="img/documentazione/prototipo1.jpg"
                          alt="First paper prototype">
-
                     <figcaption>
                         Home page prototype.
                     </figcaption>
                 </figure>
 
-
                 <figure>
                     <img src="img/documentazione/prototipo2.jpg"
                          alt="Second paper prototype">
-
                     <figcaption>
                         Map page prototype.
                     </figcaption>
                 </figure>
 
-
                 <figure>
                     <img src="img/documentazione/prototipo3.jpg"
                          alt="Third paper prototype">
-
                     <figcaption>
                         Itinerary page prototype.
                     </figcaption>
@@ -331,7 +346,7 @@
             </div>
 
 
-            <!-- IDEE GRAFICHE -->
+            <!-- GRAPHIC IDEAS -->
             <div class="graphic-ideas">
 
                 <h3>Graphic Ideas</h3>
@@ -348,10 +363,10 @@
         </section>
 
 
-        <!-- DEVELOPMENT -->
+        <!-- 06. CONTENT AND METADATA -->
         <section class="documentation-section" id="step-06">
 
-            <h2>06. Content and metadata design</h2>
+            <h2>06. Content and Metadata Design</h2>
 
             <p>Once the structure of the itineraries had been defined, the textual
                 contents were developed according to a shared model. Each location
@@ -373,275 +388,259 @@
 
         </section>
 
-                <!-- =========================================================
-     07. DEVELOPMENT
-     ========================================================= -->
 
-<section class="documentation-section" id="step-07">
+        <!-- 07. DEVELOPMENT -->
+        <section class="documentation-section" id="step-07">
 
-    <h2>07. Development</h2>
-
-    <p>
-        After the structure, narratives and visual organisation had been defined,
-        the website was implemented using HTML, CSS and JavaScript. Development
-        was carried out progressively, starting from the shared components of
-        the website and then implementing the specific behaviour required by
-        each page.
-    </p>
-
-    <div class="development-grid">
-
-        <div class="development-item">
-
-            <h3>Shared Structure</h3>
+            <h2>07. Development</h2>
 
             <p>
-                A common navigation system, header, footer and general stylesheet
-                were developed to maintain consistency across the website.
+                After the structure, narratives and visual organisation had been defined,
+                the website was implemented using HTML, CSS and JavaScript. Development
+                was carried out progressively, starting from the shared components of
+                the website and then implementing the specific behaviour required by
+                each page.
             </p>
 
-        </div>
+            <div class="development-grid">
 
-        <div class="development-item">
+                <div class="development-item">
+                    <h3>Shared Structure</h3>
+                    <p>
+                        A common navigation system, header, footer, general script and
+                        stylesheet were developed to maintain consistency across the website.
+                    </p>
+                </div>
 
-            <h3>Interactive Map</h3>
+                <div class="development-item">
+                    <h3>Interactive Map</h3>
+                    <p>
+                        The map was developed with Leaflet. Locations and routes are loaded
+                        from JSON files and used to generate markers, popups, the two
+                        itinerary routes and the list of stops below the map. Users can
+                        filter the locations according to the Historical Journey or
+                        Women &amp; Urban Space narratives.
+                    </p>
+                </div>
+
+                <div class="development-item">
+                    <h3>Itineraries</h3>
+                    <p>
+                        The two narrative pages were developed as sequences of cinematic
+                        scenes. Navigation controls allow users to move through the
+                        stages and access story content, metadata and a QR code.
+                    </p>
+                </div>
+
+                <div class="development-item">
+                    <h3>Graphic Themes</h3>
+                    <p>
+                        Seven alternative styles reinterpret the same content through
+                        different historical and visual languages. The HTML structure
+                        remains the same while CSS modifies typography, colours, layouts,
+                        decorative elements and, on the map, the basemap and the markers.
+                    </p>
+                </div>
+
+            </div>
 
             <p>
-                The map was developed with Leaflet and OpenStreetMap. Location
-                data are stored in JavaScript and used to automatically generate
-                markers, popups and the two itinerary routes. Users can filter
-                the locations according to the Historical or Women & Urban Space
-                narratives.
+                The implementation is described in detail in the
+                <a href="documentation-code.html">Technical Documentation</a>:
+                project structure, data files, style switching, map and itinerary logic.
+                The visual themes are documented below.
             </p>
 
-        </div>
+        </section>
 
-        <div class="development-item">
 
-            <h3>Itineraries</h3>
+        <!-- VISUAL IDENTITY & HISTORICAL STYLES -->
+        <section class="documentation-section visual-styles"
+                 id="visual-styles">
+
+            <p class="section-label">VISUAL DESIGN</p>
+
+            <h2>Visual Identity &amp; Historical Styles</h2>
 
             <p>
-                The two narrative pages were developed as sequences of cinematic
-                locations. Navigation controls allow users to move through the
-                different stages and access story content, metadata and external
-                information.
+                One of the project's requirements was the development of multiple
+                visual themes capable of transforming the appearance of the website
+                while preserving its content and structure.
             </p>
-
-        </div>
-
-        <div class="development-item">
-
-            <h3>Graphic Themes</h3>
 
             <p>
-                Alternative styles were designed to reinterpret the same content
-                through different historical and visual languages. The common
-                HTML structure remains consistent while CSS is used to modify
-                typography, colours, layouts and decorative elements.
+                Rather than treating these themes as simple colour variations,
+                we approached each one as an opportunity to explore the visual
+                language of a different historical period.
             </p>
 
-        </div>
+            <p>
+                Since cinema represents the central subject of
+                <i>Rome in Two Takes</i>, cinematic aesthetics became an important
+                reference throughout the design process. Film posters, typography,
+                promotional materials and historical visual conventions helped
+                shape the identity of the different themes.
+            </p>
 
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     VISUAL IDENTITY & HISTORICAL STYLES
-     ========================================================= -->
-
-<section class="documentation-section visual-styles"
-         id="visual-styles">
-
-    <p class="section-label">VISUAL DESIGN</p>
-
-    <h2>Visual Identity & Historical Styles</h2>
-
-    <p>
-        One of the project's requirements was the development of multiple
-        visual themes capable of transforming the appearance of the website
-        while preserving its content and structure.
-    </p>
-
-    <p>
-        Rather than treating these themes as simple colour variations,
-        we approached each one as an opportunity to explore the visual
-        language of a different historical period.
-    </p>
-
-    <p>
-        Since cinema represents the central subject of
-        <i>Rome in Two Takes</i>, cinematic aesthetics became an important
-        reference throughout the design process. Film posters, typography,
-        promotional materials and historical visual conventions helped
-        shape the identity of the different themes.
-    </p>
-
-    <p>
-        Each stylesheet therefore combines historical inspiration with
-        contemporary usability, adapting typography, colours, backgrounds,
-        decorative elements and interface components to create a coherent
-        visual experience.
-    </p>
+            <p>
+                Each stylesheet therefore combines historical inspiration with
+                contemporary usability, adapting typography, colours, backgrounds,
+                decorative elements and interface components to create a coherent
+                visual experience.
+            </p>
 
 
+            <div class="style-exploration">
+                <h3 id="style-table-title">Explore the Styles</h3>
+                <p>
+                    Each theme has its own page with the visual references and design
+                    choices behind it. The files and palettes are listed in the
+                    <a href="documentation-code.html#arch-themes">Technical Documentation</a>.
+                </p>
 
-<div class="style-exploration">
-    <h3 id="style-table-title">Explore the Styles</h3>
-    <p>Explore the visual references and design choices behind each theme.</p>
+                <div class="style-table-scroll" role="region"
+                     aria-labelledby="style-table-title" tabindex="0">
+                    <table class="style-table" aria-labelledby="style-table-title">
+                        <thead>
+                            <tr>
+                                <th scope="col">Period</th>
+                                <th scope="col">Design</th>
+                                <th scope="col" class="style-table-action">Details</th>
+                            </tr>
+                        </thead>
 
-    <div class="style-table-scroll" role="region"
-         aria-labelledby="style-table-title" tabindex="0">
-        <table class="style-table" aria-labelledby="style-table-title">
-            <thead>
-                <tr>
-                    <th scope="col">Period</th>
-                    <th scope="col">Design</th>
-                    <th scope="col" class="style-table-action">Design notes</th>
-                </tr>
-            </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1650s</th>
+                                <td><strong>Early Printed Culture</strong><br>
+                                    Serif lettering and decorative details inspired by seventeenth-century books.</td>
+                                <td class="style-table-action">
+                                    <a class="bottone" href="doc-stili/style-1650.html"
+                                       aria-label="Explore the 1650s design">Explore the style &rarr;</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1850s</th>
+                                <td><strong>Nineteenth-Century Design</strong><br>
+                                    Typography, ornaments and layouts drawn from nineteenth-century publications.</td>
+                                <td class="style-table-action">
+                                    <a class="bottone" href="doc-stili/style-1850.html"
+                                       aria-label="Explore the 1850s design">Explore the style &rarr;</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1900s</th>
+                                <td><strong>The Birth of Cinema</strong><br>
+                                    Theatre curtains, admission tickets and film strips evoke the experience of early screenings.</td>
+                                <td class="style-table-action">
+                                    <a class="bottone" href="doc-stili/style-1900.html"
+                                       aria-label="Explore the 1900s design">Explore the style &rarr;</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1940s</th>
+                                <td><strong>The Cinema Theatre</strong><br>
+                                    An illuminated marquee and warm colours evoke the entrance to a cinema.</td>
+                                <td class="style-table-action">
+                                    <a class="bottone" href="doc-stili/style-1940.html"
+                                       aria-label="Explore the 1940s design">Explore the style &rarr;</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1960s</th>
+                                <td><strong>Italian Film Posters</strong><br>
+                                    Bold typography, warm paper and bright colours recall illustrated Italian film posters.</td>
+                                <td class="style-table-action">
+                                    <a class="bottone" href="doc-stili/style-1960.html"
+                                       aria-label="Explore the 1960s design">Explore the style &rarr;</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1990s</th>
+                                <td><strong>Late Twentieth Century</strong><br>
+                                    Analogue media and early digital graphics inform the visual language of the interface.</td>
+                                <td class="style-table-action">
+                                    <a class="bottone" href="doc-stili/style-1990.html"
+                                       aria-label="Explore the 1990s design">Explore the style &rarr;</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2035</th>
+                                <td><strong>Imagining the Future</strong><br>
+                                    A speculative theme imagines how cultural information might be presented in the future.</td>
+                                <td class="style-table-action">
+                                    <a class="bottone" href="doc-stili/style-2035.html"
+                                       aria-label="Explore the 2035 design">Explore the style &rarr;</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-            <tbody>
-                <tr>
-                    <th scope="row">1650s</th>
-                    <td><strong>Early Printed Culture</strong><br>
-                        Serif lettering and decorative details inspired by seventeenth-century books.</td>
-                    <td class="style-table-action">
-                        <a class="bottone" href="doc-stili/style-1650.html"
-                           aria-label="Explore the 1650s design">Explore the style &rarr;</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1850s</th>
-                    <td><strong>Nineteenth-Century Design</strong><br>
-                        Typography, ornaments and layouts drawn from nineteenth-century publications.</td>
-                    <td class="style-table-action">
-                        <a class="bottone" href="doc-stili/style-1850.html"
-                           aria-label="Explore the 1850s design">Explore the style &rarr;</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1900s</th>
-                    <td><strong>The Birth of Cinema</strong><br>
-                        Theatre curtains, admission tickets and film strips evoke the experience of early screenings.</td>
-                    <td class="style-table-action">
-                        <a class="bottone" href="doc-stili/style-1900.html"
-                           aria-label="Explore the 1900s design">Explore the style &rarr;</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1940s</th>
-                    <td><strong>The Cinema Theatre</strong><br>
-                        An illuminated marquee and warm colours evoke the entrance to a cinema.</td>
-                    <td class="style-table-action">
-                        <a class="bottone" href="doc-stili/style-1940.html"
-                           aria-label="Explore the 1940s design">Explore the style &rarr;</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1960s</th>
-                    <td><strong>Italian Film Posters</strong><br>
-                        Bold typography, warm paper and bright colours recall illustrated Italian film posters.</td>
-                    <td class="style-table-action">
-                        <a class="bottone" href="doc-stili/style-1960.html"
-                           aria-label="Explore the 1960s design">Explore the style &rarr;</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1990s</th>
-                    <td><strong>Late Twentieth Century</strong><br>
-                        Analogue media and early digital graphics inform the visual language of the interface.</td>
-                    <td class="style-table-action">
-                        <a class="bottone" href="doc-stili/style-1990.html"
-                           aria-label="Explore the 1990s design">Explore the style &rarr;</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2035</th>
-                    <td><strong>Imagining the Future</strong><br>
-                        A speculative theme imagines how cultural information might be presented in the future.</td>
-                    <td class="style-table-action">
-                        <a class="bottone" href="doc-stili/style-2035.html"
-                           aria-label="Explore the 2035 design">Explore the style &rarr;</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+            <!-- PINTEREST INSPIRATION BOARD -->
+            <div class="visual-references">
 
-    <!-- =====================================================
-         PINTEREST INSPIRATION BOARD
-         ===================================================== -->
+                <p class="section-label">DESIGN REFERENCES</p>
 
-    <div class="visual-references">
+                <h3>Our Visual Inspiration Board</h3>
 
-        <p class="section-label">DESIGN REFERENCES</p>
+                <p>
+                    The development of the different visual themes
+                    was supported by research into historical graphic
+                    design, cinematic imagery, typography and
+                    film advertising.
+                </p>
 
-        <h3>Our Visual Inspiration Board</h3>
+                <p>
+                    We collected our references in a shared Pinterest
+                    board, which served as a visual archive throughout
+                    the design process. The board brings together
+                    the different inspirations that contributed
+                    to the development of the website's
+                    historical and speculative identities.
+                </p>
 
-        <p>
-            The development of the different visual themes
-            was supported by research into historical graphic
-            design, cinematic imagery, typography and
-            film advertising.
-        </p>
+                <!-- PINTEREST EMBED -->
+                <div class="pinterest-board">
 
-        <p>
-            We collected our references in a shared Pinterest
-            board, which served as a visual archive throughout
-            the design process. The board brings together
-            the different inspirations that contributed
-            to the development of the website's
-            historical and speculative identities.
-        </p>
+                    <a data-pin-do="embedBoard"
+                       data-pin-board-width="900"
+                       data-pin-scale-height="500"
+                       data-pin-scale-width="100"
+                       href="https://it.pinterest.com/francescagaeta01/rome-in-2-takes/">
+                    </a>
 
+                </div>
 
-        <!-- PINTEREST EMBED -->
+                <a href="https://pin.it/1mPhYWXPO"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="pinterest-board-link">
 
-        <div class="pinterest-board">
+                    <i class="fa-brands fa-pinterest"></i>
 
-            <a data-pin-do="embedBoard"
-               data-pin-board-width="900"
-               data-pin-scale-height="500"
-               data-pin-scale-width="100"
-               href="https://it.pinterest.com/francescagaeta01/rome-in-2-takes/">
-            </a>
+                    Explore the complete inspiration board
 
-        </div>
+                    <span aria-hidden="true">↗</span>
 
+                </a>
 
-        <a href="https://pin.it/1mPhYWXPO"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="pinterest-board-link">
+            </div>
 
-            <i class="fa-brands fa-pinterest"></i>
-
-            Explore the complete inspiration board
-
-            <span aria-hidden="true">↗</span>
-
-        </a>
-
-    </div>
-
-</section>
-
+        </section>
 
 
         <div class="bottoni-pagine">
             <a href="about.html" class="bottone">&larr; About the project</a>
-            <a href="documentation-code.html" class="bottone">Technical documentation &rarr;</a>
+            <a href="documentation-code.html" class="bottone">Technical Documentation &rarr;</a>
         </div>
 
     </main>
 
 
-
-     <footer>
+    <!-- FOOTER -->
+    <footer>
         <div class="footer-container">
 
             <p class="footer-title">
@@ -666,7 +665,7 @@
                 Maria Cavaleri · Francesca Gaeta · C. Kielyn Madayag
             </p>
 
-             <div class="footer-links">
+            <div class="footer-links">
 
                 <a href="about.html" class="footer-box">
                     <i class="fa-solid fa-circle-info"></i>
@@ -688,7 +687,8 @@
 
         </div>
     </footer>
-<script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
+
+    <script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
 </body>
 
 </html>
