@@ -1682,6 +1682,502 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
     margin-bottom: 1.2rem;
 }
 
+/* =========================================================
+   21 — DOCUMENTATION: STYLE TABLE (Project Process page)
+   ========================================================= */
+
+.section-label {
+    margin: 0 auto 6px;
+    color: var(--cream);
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+/* wrapper for wide tables, used on both documentation pages */
+.style-table-scroll { overflow-x: auto; }
+
+.visual-styles .style-exploration { margin: 32px 0 40px; }
+.visual-styles .style-exploration > h3 { margin: 0 0 10px; text-align: center; }
+.visual-styles .style-exploration > p { margin: 0 0 18px; }
+
+.visual-styles .style-table-scroll {
+    border: 3px solid #221c18;
+    box-shadow: 0 0 0 1px #4a3d32, 0 0 30px rgba(255, 175, 80, 0.2);
+}
+.visual-styles .style-table-scroll:focus-visible {
+    outline: 2px solid var(--cream);
+    outline-offset: 3px;
+}
+.visual-styles .style-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: linear-gradient(#f3e7c8, #eadbb6);
+    color: var(--black);
+    text-align: left;
+}
+.visual-styles .style-table th,
+.visual-styles .style-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(148, 71, 59, 0.35);
+    line-height: 1.5;
+}
+.visual-styles .style-table thead th {
+    background: #221c18;
+    color: var(--cream);
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.visual-styles .style-table tbody th {
+    color: #131110;
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+}
+.visual-styles .style-table tbody tr:nth-child(even) { background: rgba(148, 71, 59, 0.08); }
+.visual-styles .style-table tbody tr:last-child > * { border-bottom: 0; }
+.visual-styles .style-table .style-table-action { text-align: center; }
+.visual-styles .style-table .bottone {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+/* Pinterest boards (Project Process page and style pages) */
+.pinterest-board {
+    width: 100%;
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 10px;
+    background: #221c18;
+    border: 3px solid #14100e;
+    box-shadow: inset 0 0 0 2px #a8864a;
+}
+.pinterest-board-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: fit-content;
+    margin: 20px auto 0;
+    padding: 10px 18px;
+    background: var(--dark);
+    border: var(--border-white);
+    border-radius: 3px;
+    font-family: var(--font-title);
+    letter-spacing: 1.5px;
+}
+.pinterest-board-link:hover { background: var(--cream); color: var(--background); opacity: 1; }
+
+@media (max-width: 600px) {
+    .visual-styles .style-table th,
+    .visual-styles .style-table td { padding: 10px 8px; }
+    .visual-styles .style-table .bottone { white-space: normal; }
+}
+
+
+/* =========================================================
+   22 — STYLE PAGE (doc-stili/style-1940.html)
+   cards, palette, samples. Everything is scoped to .style-detail
+   ========================================================= */
+
+/* page rhythm */
+.style-detail > .documentation-intro {
+    width: 100%; max-width: var(--content-width);
+    margin: 0 auto 10px;
+}
+.style-detail > .documentation-section {
+    width: 100%; max-width: var(--content-width);
+    padding: 26px 0;
+    scroll-margin-top: 5.5rem;
+}
+.style-detail > .documentation-section > h2 { margin: 6px auto 14px; }
+.style-detail :is(h1, h2, h3) { text-align: center; }
+.style-detail p,
+.style-detail figcaption { text-align: left; }
+.style-detail .era-lead { max-width: none; text-wrap: pretty; }
+.style-detail .era-kicker,
+.style-detail .era-card time {
+    display: block;
+    color: var(--cream);
+    font-family: var(--font-title);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* grids */
+.style-detail .era-grid,
+.style-detail .style-palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+    gap: 18px;
+    margin: 16px 0;
+}
+.style-detail .era-chronology,
+.style-detail .style-palette-grid { padding: 0; list-style: none; }
+.style-detail .style-palette-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+/* four cards: two per row */
+.style-detail .era-chronology { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
+
+/* cards: a small display case, dark frame with a brass line */
+.style-detail .era-card,
+.style-detail .style-swatch {
+    position: relative;
+    min-width: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #221c18;
+    color: var(--cream);
+    border: 3px solid #14100e;
+    border-radius: 3px;
+    box-shadow:
+        inset 0 0 0 2px #a8864a,
+        0 8px 18px rgba(30, 10, 6, 0.4);
+}
+.style-detail .era-card :is(h3, h4) {
+    margin: 8px 0 10px;
+    color: #f7e8c6;
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+.style-detail .era-card p { color: #f1e6cc; }
+.style-detail .era-card code {
+    color: var(--cream);
+    font-family: var(--font-code);
+    font-size: 0.85em;
+}
+.style-detail .era-card a,
+.style-detail .era-credit a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--cream);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.style-detail .era-card a:hover { color: var(--white); opacity: 1; }
+.style-detail .era-visual-card,
+.style-detail .era-selector-card,
+.style-detail .era-itinerary-card,
+.style-detail .era-poster-card { margin: 0; }
+.style-detail .era-visual-card { margin-top: 16px; }
+
+.style-detail .era-pending {
+    margin: 0;
+    padding: 16px;
+    border: 1px dashed #a8864a;
+    color: #f1e6cc;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Pinterest board on the style page */
+.style-detail .era-board { max-width: 840px; }
+.style-detail #references > .style-pinterest-link {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    border-bottom: 0;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ---------- opening samples ---------- */
+.style-detail .era-neon-sample,
+.style-detail .era-bulbs-sample,
+.style-detail .era-board-sample {
+    display: grid;
+    place-content: center;
+    min-height: 104px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* neon sign: same recipe as the sign on the homepage */
+.style-detail .era-neon-sample {
+    background: linear-gradient(180deg, #2b211c, #141010);
+    border: 2px solid #3d2e25;
+    border-radius: 12px 12px 0 0;
+    color: #fff1ec;
+    font-family: "Limelight", var(--font-heading);
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    letter-spacing: 0.25em;
+    padding-left: 0.25em;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 1px #ffffff,
+        0 0 5px #ff6a4d,
+        0 0 12px #ff2d16,
+        0 0 24px #e01b0b;
+    animation: neon-flicker 9s linear infinite;
+}
+
+/* bulbs: two groups of bulbs alternate (--a / --b are animated by bulbs-chase) */
+.style-detail .era-bulbs-sample {
+    background:
+        radial-gradient(circle at 25% 50%, rgb(255 253 242 / var(--a)) 0 3px, rgb(255 231 160 / var(--a)) 5px, rgb(255 186 80 / calc(var(--a) * 0.8)) 8px, rgb(255 150 50 / calc(var(--a) * 0.25)) 12px, transparent 16px) 0 50% / 64px 52px repeat-x,
+        radial-gradient(circle at 75% 50%, rgb(255 253 242 / var(--b)) 0 3px, rgb(255 231 160 / var(--b)) 5px, rgb(255 186 80 / calc(var(--b) * 0.8)) 8px, rgb(255 150 50 / calc(var(--b) * 0.25)) 12px, transparent 16px) 0 50% / 64px 52px repeat-x,
+        radial-gradient(circle at 25% 50%, #0b0807 0 9px, #7a6d5a 9.5px 10.5px, #1c1612 11px 11.5px, transparent 12px) 0 50% / 64px 52px repeat-x,
+        radial-gradient(circle at 75% 50%, #0b0807 0 9px, #7a6d5a 9.5px 10.5px, #1c1612 11px 11.5px, transparent 12px) 0 50% / 64px 52px repeat-x,
+        #221c18;
+    border: 3px solid #14100e;
+    box-shadow: inset 0 0 0 1px #4a3d32, 0 0 30px rgba(255, 175, 80, 0.25);
+    animation: bulbs-chase 1.3s ease-in-out infinite alternate;
+}
+
+/* backlit board */
+.style-detail .era-board-sample {
+    background: radial-gradient(ellipse 75% 100% at 50% 50%, #fcf7e9 0%, #f2e7c9 68%, #dcc89a 100%);
+    border: 4px solid;
+    border-color: #d6cfc1 #8e8678 #6c665b #aca496;
+    box-shadow:
+        inset 0 0 22px rgba(120, 90, 40, 0.3),
+        0 0 0 2px #0e0b09,
+        0 0 20px rgba(255, 220, 150, 0.3);
+    color: #131110;
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 1.7rem;
+    line-height: 1.12;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.style-detail .era-board-sample span { display: block; }
+.style-detail .era-board-sample small {
+    display: block;
+    padding-left: 0.45em;
+    color: #8e1d10;
+    font-family: var(--font-title);
+    font-size: 0.8rem;
+    letter-spacing: 0.45em;
+}
+
+/* ---------- typography ---------- */
+.style-detail .era-type-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr)); }
+.style-detail .era-type-card {
+    display: grid;
+    grid-template-rows: auto minmax(4rem, auto) 1fr;
+    gap: 10px;
+}
+.style-detail .era-type-card h3 { margin: 0; }
+.style-detail .era-type-specimen {
+    display: grid;
+    align-items: center;
+    padding: 10px;
+    background: #f3e7c8;
+    border: 1px solid #a8864a;
+    color: #131110;
+}
+.style-detail .era-type-specimen--dark { background: #14100e; }
+.style-detail .era-type-specimen p {
+    margin: 0;
+    color: #131110;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    line-height: 1.3;
+    text-align: center;
+}
+.style-detail .era-type-specimen--dark p {
+    color: #fff1ec;
+    text-shadow: 0 0 5px #ff6a4d, 0 0 12px #ff2d16;
+}
+.style-detail .era-font-limelight  { font-family: "Limelight", serif; letter-spacing: 0.08em; text-transform: uppercase; }
+.style-detail .era-font-anton      { font-family: "Anton", Impact, sans-serif; text-transform: uppercase; }
+.style-detail .era-font-bebas      { font-family: "Bebas Neue", sans-serif; letter-spacing: 2px; }
+.style-detail .era-font-baskerville{ font-family: "Libre Baskerville", Georgia, serif; font-style: italic; }
+.style-detail .era-font-josefin    { font-family: "Josefin Sans", Arial, sans-serif; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+.style-detail .era-font-courier    { font-family: "Courier Prime", monospace; }
+
+/* ---------- palette ---------- */
+.style-detail .style-swatch { display: grid; gap: 5px; padding: 12px; }
+.style-detail .style-swatch-sample {
+    min-height: 78px;
+    margin-bottom: 6px;
+    border: 1px solid #a8864a;
+    background: var(--swatch);
+}
+.style-detail .style-swatch strong {
+    color: #f7e8c6;
+    font-family: var(--font-title);
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+.style-detail .style-swatch code { color: var(--cream); font-family: var(--font-code); }
+.style-detail .style-swatch span { color: #f1e6cc; font-size: 0.85rem; line-height: 1.4; }
+
+/* ---------- navigation, map, stops, itineraries ---------- */
+.style-detail .era-selector-scroll { overflow-x: auto; margin-bottom: 14px; }
+.style-detail .era-selector-scroll img { display: block; width: 100%; min-width: 640px; height: auto; }
+
+.style-detail .era-map-card { width: 100%; margin: 16px 0 0; }
+.style-detail .era-map-reference {
+    display: block;
+    width: 100%;
+    max-height: 310px;
+    margin: 0 0 16px;
+    object-fit: contain;
+    background: #14100e;
+}
+.style-detail .era-stops-screenshot { display: block; width: 100%; height: auto; margin: 0 0 14px; }
+
+.style-detail .era-itinerary-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr)); }
+.style-detail .era-itinerary-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    box-sizing: border-box;
+    object-fit: contain;
+    background: #14100e;
+    border: 1px solid #a8864a;
+}
+
+/* ---------- posters ---------- */
+.style-detail .era-poster-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); }
+.style-detail .era-poster-frame {
+    max-width: 176px;
+    margin: 0 auto 16px;
+    padding: 8px;
+    background: #14100e;
+    border: 1px solid #0f0b09;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 2px #4a3d32, 0 0 24px rgba(255, 175, 80, 0.3);
+}
+.style-detail .era-poster-frame .poster-img { display: block; width: 100%; height: auto; }
+
+/* back of the poster, shown flat */
+.style-detail .era-poster-card .poster-back {
+    position: static;
+    inset: auto;
+    width: 100%;
+    max-width: 176px;
+    aspect-ratio: 2 / 3;
+    margin: 0 auto 16px;
+    padding: 12px;
+    gap: 4px;
+    transform: none;
+    backface-visibility: visible;
+}
+.style-detail .era-poster-card .poster-back h3 {
+    margin: 0;
+    color: #131110;
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0;
+}
+.style-detail .era-poster-card .poster-back .film-year { margin: 0; }
+.style-detail .era-poster-card .poster-back p {
+    margin: 0;
+    color: var(--black);
+    font-size: 0.7rem;
+    line-height: 1.3;
+    text-align: center;
+}
+
+/* ---------- metadata ---------- */
+.style-detail .era-paper {
+    display: flow-root;
+    min-height: 210px;
+    padding: 14px;
+    background: radial-gradient(ellipse at 50% 40%, #fcf7e9 0%, #f2e7c9 65%, #dcc89a 100%);
+    border: 3px solid;
+    border-color: #d6cfc1 #8e8678 #6c665b #aca496;
+    box-shadow: inset 0 0 22px rgba(120, 90, 40, 0.3);
+    color: var(--black);
+}
+.style-detail .era-paper h3 {
+    margin: 8px 0 10px;
+    color: #131110;
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-align: left;
+    text-transform: uppercase;
+}
+.style-detail .era-view-labels { display: flex; flex-wrap: wrap; gap: 6px; }
+.style-detail .era-view-labels span,
+.style-detail .era-view-labels strong {
+    padding: 4px 10px;
+    background: var(--dark);
+    border-radius: 3px;
+    color: var(--white);
+    font-family: var(--font-title);
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+.style-detail .era-view-labels strong { background: #94473b; }
+.style-detail .era-meta-choices { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.style-detail .era-meta-choices li {
+    padding: 6px 10px;
+    background: var(--dark);
+    border-radius: 3px;
+    color: var(--white);
+    font-family: var(--font-title);
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+.style-detail .era-metadata-sheet {
+    border: 8px solid #221c18;
+    box-shadow:
+        inset 0 0 0 2px #a8864a,
+        0 0 24px rgba(255, 175, 80, 0.3);
+}
+.style-detail .era-metadata-sheet h3 {
+    padding-bottom: 8px;
+    color: #94473b;
+    border-bottom: 1px solid #94473b;
+}
+.style-detail .era-metadata-sheet dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; margin: 12px 0 0; }
+.style-detail .era-metadata-sheet dt { color: #94473b; font-weight: bold; }
+.style-detail .era-metadata-sheet dd { margin: 0; }
+
+/* ---------- workflow, buttons, credit ---------- */
+.style-detail .era-workflow-preview { margin: 0 0 16px; }
+.style-detail .era-workflow-preview .workflow-step p { text-align: center; }
+
+.style-detail .era-button-samples {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 16px;
+}
+.style-detail .era-button-samples .era-hover {
+    background: #94473b;
+    color: var(--white);
+    border-color: #94473b;
+}
+.style-detail .era-button-samples .era-active {
+    background: var(--cream);
+    color: var(--background);
+    border-color: var(--cream);
+}
+
+.style-detail .era-credit {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 680px;
+    margin: 28px auto 0;
+}
+.style-detail .era-credit i { flex: 0 0 auto; color: var(--cream); font-size: 1.45rem; }
+.style-detail .era-credit p { margin: 0; }
+
+/* less movement */
+@media (prefers-reduced-motion: reduce) {
+    .style-detail .era-neon-sample,
+    .style-detail .era-bulbs-sample { animation: none; }
+}
+
 
 /* =========================================================
    ABOUT INTRODUCTION
