@@ -596,6 +596,14 @@ function initMapPage() {
             historical: "#ff007f",
             women: "#00f3ff",
             weight: 4
+        },
+
+                // 1940: percorsi a puntini, come una fila di lampadine
+        "css/base.css": {
+            historical: "#a3271c",
+            women: "#b8862f",
+            weight: 7,
+            dashArray: "0.1 13"
         }
     };
 
@@ -684,6 +692,27 @@ function initMapPage() {
                     '<rect x="14" y="14" width="8" height="8" ' +
                         'fill="#ffe600"/>';
             
+                        } else if (activeMapTheme === "css/base.css") {
+
+                // 1940: piccola insegna da cinema con la punta in basso.
+                // Cornice scura con bordo in ottone, una fila di lampadine
+                // sopra e una sotto, pannello centrale del colore dell'itinerario
+                var bulbs = "";
+                for (var x = 8; x <= 28; x += 4) {
+                    bulbs +=
+                        '<circle cx="' + x + '" cy="5.2" r="1.3" fill="#ffe3a3"/>' +
+                        '<circle cx="' + x + '" cy="21.8" r="1.3" fill="#ffe3a3"/>';
+                }
+
+                                drawing =
+                    '<path d="M5 2 H31 A2 2 0 0 1 33 4 V23 A2 2 0 0 1 31 25 ' +
+                        'H22 L18 33 L14 25 H5 A2 2 0 0 1 3 23 V4 A2 2 0 0 1 5 2 Z" ' +
+                        'fill="#221c18" stroke="#a8864a" stroke-width="1.5"/>' +
+
+                    bulbs +
+
+                    '<rect x="7" y="8.5" width="22" height="10" ' +
+                        'fill="' + fill + '" stroke="#f3e7c8" stroke-width="1"/>';
             } else {
 
                 // Cerchi del tema 1960
@@ -881,7 +910,7 @@ function initMapPage() {
                 color: routeStyle.historical,
                 weight: routeStyle.weight,
                 opacity: 1,
-                dashArray: null,
+                dashArray: routeStyle.dashArray || null,
                 lineCap: "round",
                 lineJoin: "round"
             }
@@ -893,7 +922,7 @@ function initMapPage() {
                 color: routeStyle.women,
                 weight: routeStyle.weight,
                 opacity: 1,
-                dashArray: null,
+                dashArray: routeStyle.dashArray || null,
                 lineCap: "round",
                 lineJoin: "round"
             }
