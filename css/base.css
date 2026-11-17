@@ -992,14 +992,26 @@ header {
 
 /* 14 — MAP: LEAFLET & FILTERS */
 .map-page { width: 100%; }
+/* la mappa in una cornice scura con filetto in ottone, illuminata da dietro */
 #map {
-    width: 100%; 
-    max-width: var(--content-width); 
+    width: 100%;
+    max-width: var(--content-width);
     height: 550px;
-    margin: 0 auto; 
+    margin: 0 auto;
     position: relative;
     z-index: 0;
-    border: 4px solid var(--white);
+
+    border: 10px solid #221c18;            /* cornice, come il tabellone */
+    border-radius: 3px;
+
+    /* filetto in ottone sul bordo interno della cornice */
+    outline: 2px solid #a8864a;
+    outline-offset: -10px;
+
+    box-shadow:
+        0 0 0 1px #4a3d32,                  /* bordino esterno */
+        0 0 50px rgba(255, 175, 80, 0.35),  /* luce calda dietro la cornice */
+        0 14px 28px rgba(30, 10, 6, 0.5);   /* ombra sul muro */
 }
 .leaflet-popup-content { font-family: var(--font-body); }
 #filters {
