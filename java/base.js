@@ -473,9 +473,9 @@ function initMapPage() {
                 'Tiles &copy; Esri'
         },
 
-        "css/style1990.css": {
-            url: "https://api.thunderforest.com/mobile-atlas/{z}/{x}/{y}{r}.png?apikey={apikey}",
-            apikey: "",
+                "css/style1990.css": {
+            url: "https://api.thunderforest.com/transport-dark/{z}/{x}/{y}{r}.png?apikey={apikey}",
+            apikey: "292da98cd1ba4fdca88f81b7974d4d0d",
             attribution:
                 '&copy; <a href="https://www.thunderforest.com/">Thunderforest</a>, ' +
                 '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -589,6 +589,13 @@ function initMapPage() {
             historical: "#48bc99",
             women: "#cf79ff",
             weight: 5
+        },
+
+        // 1990: linee al neon rosa e azzurro
+        "css/style1990.css": {
+            historical: "#ff007f",
+            women: "#00f3ff",
+            weight: 4
         }
     };
 
@@ -666,6 +673,17 @@ function initMapPage() {
 
                     '<circle cx="18" cy="18" r="2" fill="#ffffff"/>';
 
+                } else if (activeMapTheme === "css/style1990.css") {
+
+                // 1990: rombo al neon con un pixel giallo al centro
+                drawing =
+                    '<path d="M18 3 L33 18 L18 33 L3 18 Z" ' +
+                        'fill="#1d0243" stroke="' + fill + '" ' +
+                        'stroke-width="3"/>' +
+
+                    '<rect x="14" y="14" width="8" height="8" ' +
+                        'fill="#ffe600"/>';
+            
             } else {
 
                 // Cerchi del tema 1960
