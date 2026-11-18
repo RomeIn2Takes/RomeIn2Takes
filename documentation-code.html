@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Documentation - Rome in Two Takes</title>
+    <title>Technical Documentation - Rome in Two Takes</title>
 
-    <link rel="stylesheet" href="css/base.css">
+    <link id="theme-style" rel="stylesheet" href="css/base.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Limelight&family=Bebas+Neue&family=Courier+Prime&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Limelight&family=Bebas+Neue&family=Courier+Prime&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
     <script src="java/base.js"></script>
 </head>
 
@@ -26,7 +24,7 @@
                 <a href="#">Itinerary &#9660;</a>
                 <div class="dropdown-menu">
                     <a href="tourStorico.html">Historical Journey</a>
-                    <a href="narrativa_femminista.html">Women & Urban Space</a>
+                    <a href="narrativa_femminista.html">Women &amp; Urban Space</a>
                 </div>
             </div>
         </div>
@@ -36,15 +34,15 @@
             <div class="dropdown">
                 <a href="#">Documentation &#9660;</a>
                 <div class="dropdown-menu">
-                    <a href="documentazione.html">The journey</a>
-                    <a href="documentation-code.html">Code</a>
+                    <a href="documentazione.html">Project Process</a>
+                    <a href="documentation-code.html">Technical Documentation</a>
                 </div>
             </div>
             <a href="disclaimer.html">Disclaimer</a>
         </div>
     </header>
 
-    <!-- barra scelta stile -->
+    <!-- STYLE SWITCHER BAR -->
     <div class="bar-style">
         <div class="bar-item">
             <a href="css/style1650.css">
@@ -76,7 +74,6 @@
                 <span class="nav-label">1990s</span>
             </a>
         </div>
-        
         <div class="bar-item">
             <a href="css/style2035.css">
                 <span class="nav-label">2035</span>
@@ -86,15 +83,19 @@
 
     <main class="documentation-page">
 
+        <!-- INTRO -->
         <section class="documentation-intro">
-            <h1>Code & Technical Choices</h1>
+            <h1>Technical Documentation</h1>
             <p>
-                This section illustrates the software architecture, design patterns, data models,
-                and specific solutions adopted in <em>Rome in Two Takes</em>.
-                It describes both high-level system architectural decisions and low-level CSS/JavaScript
-                implementations.
+                This section illustrates the structure, data models and technical
+                solutions adopted in <em>Rome in Two Takes</em>, from the organisation
+                of the files to the CSS and JavaScript implementations.
+                The design process is described in the
+                <a href="documentazione.html">Project Process</a>.
             </p>
         </section>
+
+        <!-- TECHNICAL INDEX -->
         <section class="workflow">
             <h2>Technical Index</h2>
             <div class="workflow-steps">
@@ -104,279 +105,665 @@
                 </a>
                 <a href="#arch-json" class="workflow-step">
                     <strong>02</strong>
-                    <p>JSON files</p>
+                    <p>JSON data</p>
                 </a>
                 <a href="#arch-themes" class="workflow-step">
                     <strong>03</strong>
                     <p>CSS themes</p>
                 </a>
-                <a href="#arch-metadata" class="workflow-step">
+                <a href="#arch-map" class="workflow-step">
                     <strong>04</strong>
-                    <p>Metadata</p>
+                    <p>Interactive map</p>
                 </a>
-                <a href="#tech-pseudo" class="workflow-step">
+                <a href="#arch-itinerary" class="workflow-step">
                     <strong>05</strong>
+                    <p>Itineraries and metadata</p>
+                </a>
+                <a href="#tech-choices" class="workflow-step">
+                    <strong>06</strong>
                     <p>Coding choices</p>
                 </a>
-                <a href="#tech-height" class="workflow-step">
-                    <strong>06</strong>
+                <a href="#tech-media" class="workflow-step">
+                    <strong>07</strong>
                     <p>Media queries</p>
                 </a>
             </div>
         </section>
 
-        <!-- ARCHITETTURA SITO --> 
+
+        <!-- 01. ARCHITECTURE -->
         <section class="documentation-section" id="arch-pages">
-            <h2>01. HTML Architecture & style switching system</h2>
+            <h2>01. HTML Architecture &amp; Project Structure</h2>
 
             <p>
-                The website is organized into modular static HTML pages sharing a standardized document layout:
-                global sticky header navigation, temporal style selector, dynamic main content,and footer connected with external links<br><br>
-                In project the folder you can find:
+                The website is organised into modular static HTML pages sharing a standardised
+                layout: a header with the main navigation, a strip for choosing the visual
+                theme, the main content and a footer with external links. All pages load the
+                same script, <code>java/base.js</code>, which contains the behaviour of the
+                whole site.
             </p>
 
+            <p>
+                The script is divided into three independent parts: the style-switching system,
+                the itinerary pages (<code>initStoryPage</code>) and the map page
+                (<code>initMapPage</code>). The last two stop immediately if the page does not
+                contain their elements (<code>.area-immagini</code> scenes and the
+                <code>#map</code> container), so a single file can serve every page.
+            </p>
 
-            <pre class="tree"><code>RomeIn2Takes/...
+            <p>The project folder is organised as follows:</p>
+
+            <pre class="tree"><code>RomeIn2Takes/
 ├── css/
-│   ├── base.css               <span class="comment"># 1950 - Neorealism (base)</span>
-│   ├── style1500.css          <span class="comment"># Renaissance</span>
-│   ├── style1900.css          <span class="comment"># Early Silent Cinema</span>
-│   ├── style1980.css          <span class="comment"># Synthwave / Arcade</span>
-│   ├── style2000.css          <span class="comment"># Y2K / Digital Web</span>
-│   ├── style2020.css          <span class="comment"># Contemporary Minimal</span>
-│   └── style2035.css          <span class="comment"># Futuristic Glassmorphism</span>
+│   ├── base.css               <span class="comment"># 1940s - The Cinema Theatre (default theme)</span>
+│   ├── style1650.css          <span class="comment"># 1650s - Early Printed Culture</span>
+│   ├── style1850.css          <span class="comment"># 1850s - Nineteenth-Century Design</span>
+│   ├── style1900.css          <span class="comment"># 1900s - The Birth of Cinema</span>
+│   ├── style1960.css          <span class="comment"># 1960s - Italian Film Posters</span>
+│   ├── style1990.css          <span class="comment"># 1990s - Late Twentieth Century</span>
+│   └── style2035.css          <span class="comment"># 2035 - Imagining the Future</span>
+├── doc-stili/
+│   └── style-1650.html ...    <span class="comment"># one documentation page for each theme</span>
 ├── img/
 │   └── ...                    <span class="comment"># pictures used in the project</span>
 ├── java/
-│   └── base.js                <span class="comment"># unique script</span>
+│   └── base.js                <span class="comment"># unique script for all pages</span>
 ├── json/
-│   ├── dati_tour.json         <span class="comment"># metadata and tours description</span>
-│   ├── mappa.geojson          <span class="comment"># georeferenced coordinates</span>
-│   └── spostamenti.json       <span class="comment"># narrative data for thematic tours</span>
-├── disclaimer.html            <span class="comment"># Disclaimer</span>
-├── documentazione.html        <span class="comment"># Design workflow</span>
-├── documentation-code.html    <span class="comment"># this page</span>
+│   ├── dati_tour.json         <span class="comment"># stories and metadata of the itinerary scenes</span>
+│   ├── mappa.geojson          <span class="comment"># locations (georeferenced)</span>
+│   └── spostamenti.json       <span class="comment"># routes between consecutive stops</span>
 ├── index.html                 <span class="comment"># Homepage</span>
-├── mappa.html                 <span class="comment"># Full interactive map</span>
+├── mappa.html                 <span class="comment"># Interactive map and list of stops</span>
+├── tourStorico.html           <span class="comment"># Itinerary: Historical Journey</span>
+├── narrativa_femminista.html  <span class="comment"># Itinerary: Women &amp; Urban Space</span>
+├── about.html                 <span class="comment"># About the project</span>
+├── documentazione.html        <span class="comment"># Project Process</span>
+├── documentation-code.html    <span class="comment"># this page</span>
+├── disclaimer.html            <span class="comment"># Disclaimer</span>
 └── README.md                  <span class="comment"># Repository overview</span></code></pre>
-
-            <div class="tech-highlight-card">
-                <h3>Persistent Style Switching System</h3>
-                <p>
-                    Rather than duplicating HTML structures across eras, the website implements a non-destructive
-                    runtime theme-swapping system.
-                    below the <code>&lt;header&gt;</code> of each page, a single stylesheet tag carries
-                    <code>class="bar-style"</code>,invoking a function in JavaScript attaching event
-                    listeners to every <code>.bar-style</code>:
-                </p>
-                <p>
-                    <strong>Persistence across page transitions:</strong> When a user navigates through different sections of this website, <code>base.js</code> reads <code>localStorage.getItem("userStyle")</code> before DOM
-                    rendering completes, preserving the chosen era.
-                </p>
-            </div>
         </section>
 
-        <!--json -->
+
+        <!-- 02. JSON -->
         <section class="documentation-section" id="arch-json">
             <h2>02. Data Decoupling via JSON</h2>
 
             <p>
-                A core architectural decision was the complete separation of content, metadata, and cartographic
-                geometry from static markup into external JSON repositories (<code>dati_tour.json</code>,
-                <code>mappa.geojson</code>, and <code>spostamenti.json</code>).
+                A core architectural decision was the separation of content, metadata and
+                cartographic data from the HTML markup into three external files. The pages keep
+                the structure (scenes, panels, buttons, map container) and the script fills
+                them with the data.
             </p>
 
             <div class="development-grid">
                 <div class="development-item">
-                    <h3>Data Decoupling</h3>
+                    <h3>Easier editing</h3>
                     <p>
-                        HTML files maintain an immaculate structural skeleton without dense walls of hardcoded prose.
-                        In this way editors can refine narrations or add metadata without
-                        editing HTML markup.
+                        Editors can refine narrations, add metadata or change coordinates by editing
+                        the JSON files, without touching the HTML.
                     </p>
                 </div>
 
                 <div class="development-item">
-                    <h3>Single source files</h3>
-                    <p>Itinerary data are shared between the narrative texts and the map page.
-                        Dynamic JSON nesting allows each scene to store information between 3 target
-                        audiences (<code>normal</code>, <code>child</code>, <code>scholar</code>) and 4
-                        content granularities (<code>text-less</code>, <code>text-standard</code>,
-                        <code>text-more</code>, <code>text-didyouknow</code>), or explore different coordinates.
+                    <h3>Two data sets, one link</h3>
+                    <p>
+                        The itinerary pages read <code>dati_tour.json</code>, while the map page reads
+                        <code>mappa.geojson</code> and <code>spostamenti.json</code>. The two sets are
+                        connected by the links to the individual scenes
+                        (<code>historicalLink</code>, <code>womenLink</code>) stored in each location.
                     </p>
                 </div>
             </div>
+
+            <div class="style-table-scroll" role="region"
+                 aria-label="JSON files" tabindex="0">
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>File</th>
+                            <th>Content</th>
+                            <th>Main structure</th>
+                            <th>Used by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>dati_tour.json</code></td>
+                            <td>Stories and metadata of every scene in the two itineraries</td>
+                            <td>
+                                <code>itinerari[]</code> (with <code>source_file</code>) &rarr;
+                                <code>tappe[]</code>, each with <code>id</code>,
+                                <code>story</code> (title, environment and <code>levels</code>:
+                                <code>normal</code>, <code>child</code>, <code>scholar</code>, each with
+                                <code>text-less</code>, <code>text-standard</code>, <code>text-more</code>,
+                                <code>text-didyouknow</code>),
+                                <code>cinematic_context</code>, <code>location</code>, <code>project</code>
+                            </td>
+                            <td>Itinerary pages</td>
+                        </tr>
+                        <tr>
+                            <td><code>mappa.geojson</code></td>
+                            <td>The film locations</td>
+                            <td>
+                                GeoJSON <code>FeatureCollection</code> (RFC 7946) with coordinates in
+                                <code>[longitude, latitude]</code> order. Properties:
+                                <code>name</code>, <code>films</code>, <code>description</code>,
+                                <code>narratives</code>, <code>historicalOrder</code>,
+                                <code>womenOrder</code>, <code>historicalLink</code>,
+                                <code>womenLink</code>
+                            </td>
+                            <td>Map page</td>
+                        </tr>
+                        <tr>
+                            <td><code>spostamenti.json</code></td>
+                            <td>The movements between consecutive stops</td>
+                            <td>
+                                <code>historicalRoutes[]</code> and <code>womenRoutes[]</code>, each route
+                                with <code>fromOrder</code>, <code>toOrder</code>, <code>transport</code>,
+                                <code>time</code>, <code>distance</code>, <code>directions</code>
+                            </td>
+                            <td>Map page</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <!-- css stylesheet tables -->
+
+        <!-- 03. THEMES -->
         <section class="documentation-section" id="arch-themes">
-            <h2>03. Stylistic Directions: Palettes, Typography & Eras</h2>
+            <h2>03. CSS Themes: Style Switching &amp; Stylesheets</h2>
 
             <p>
-                Each era stylesheet reimagines the graphic identity of <em>Rome in Two Takes</em>, aligning aesthetic
-                choices with historical media technologies and graphic traditions:
+                Rather than duplicating HTML structures across eras, the website uses a single
+                markup and seven stylesheets. Each stylesheet reimagines the graphic identity of
+                <em>Rome in Two Takes</em>, aligning aesthetic choices with historical media
+                technologies and graphic traditions. Each theme is described in a dedicated page
+                in the <a href="documentazione.html#visual-styles">Project Process</a>.
             </p>
 
-            <table class="tech-table">
-                <thead>
-                    <tr>
-                        <th>Period</th>
-                        <th>Color palette</th>
-                        <th>Typography</th>
-                        <th>Design choice</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>1500</strong></td>
-                        <td>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #d4af37;"></span><code>#d4af37</code></span>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #2b1d0c;"></span><code>#2b1d0c</code></span>
-                        </td>
-                        <td><code>'Cinzel'</code>, <code>Garamond</code>, Serif</td>
-                        <td>Stampe rinascimentali, trattati cartografici e manoscritti umanistici</td>
-                    </tr>
-                    <tr>
-                        <td><strong>1900</strong></td>
-                        <td>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #343434;"></span><code>#343434</code></span>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #e2e2df;"></span><code>#e2e2df</code></span>
-                        </td>
-                        <td><code>Georgia</code>, <code>"Times New Roman"</code></td>
-                        <td>Cinema muto d'inizio secolo, cartelli d'intertitolo e alto contrasto monocromo</td>
-                    </tr>
-                    <tr>
-                        <td><strong>1950 (Base)</strong></td>
-                        <td>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #943b3b;"></span><code>#943b3b</code></span>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #f4e8c1;"></span><code>#f4e8c1</code></span>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #000000;"></span><code>#000000</code></span>
-                        </td>
-                        <td><code>'Special Elite'</code>, <code>'Bebas Neue'</code></td>
-                        <td>Evokes post-war Italian Neorealism, vintage typewriter scripts, and
-                            mid-century cinema posters</td>
-                    </tr>
-                    <tr>
-                        <td><strong>1980</strong></td>
-                        <td>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #1d0243;"></span><code>#1d0243</code></span>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #2a0360;"></span><code>#2a0360</code></span>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #00f3ff;"></span><code>#00f3ff</code></span>
-                        </td>
-                        <td><code>'VT323'</code>, <code>'Press Start 2P'</code></td>
-                        <td>Vibrant counter-culture, arcade gaming monitors, and neon
-                            aesthetic</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2000</strong></td>
-                        <td>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #e0e0e0;"></span><code>#e0e0e0</code></span>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #003366;"></span><code>#003366</code></span>
-                        </td>
-                        <td><code>'Trebuchet MS'</code>, <code>Arial</code>, Sans-Serif</td>
-                        <td>Transizione digitale Y2K, estetica dei menu DVD e primi portali web</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2020</strong></td>
-                        <td>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #121212;"></span><code>#121212</code></span>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #ffffff;"></span><code>#ffffff</code></span>
-                        </td>
-                        <td><code>'Inter'</code>, <code>Helvetica Neue</code>, Sans-Serif</td>
-                        <td>Minimalismo contemporaneo, dark mode e interfacce delle piattaforme di streaming</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2035 (Futuristic)</strong></td>
-                        <td>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #15382b;"></span><code>#15382b</code></span>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #030a07;"></span><code>#030a07</code></span>
-                            <span class="color-badge"><span class="color-swatch" style="background-color: #bad3c7;"></span><code>#bad3c7</code></span>
-                        </td>
-                        <td><code>'SF Pro Display'</code>, Ultra-clean Geometric Sans-Serif</td>
-                        <td>Implements modern glassmorphism (translucent panels, subtle luminous borders, clean HUD
-                            layouts)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- metadata -->
-        <section class="documentation-section" id="arch-metadata">
-            <h2>04. Metadata in narratives</h2>
-
-            <p>Every cinematic scene incorporates metadata organised using standard web ontologies:
-            </p>
-
-            <div>
-                <ul>
+            <div class="tech-highlight-card">
+                <h3>Persistent Style Switching System</h3>
+                <ol>
                     <li>
-                        <span><strong>Schema.org</strong></span>
-                       used for the cinematic contexts such movie titles, directors and shot information.
-                    </li><br>
-                    <li>
-                        <span><strong>CIDOC CRM</strong> and <strong>Schema.org</strong></span>
-                        gives infomration about the architectural heritage and coordinates and dates datas..
-                    </li><br>
-                    <li>
-                        <span><strong>Dublin Core (dcterms)</strong></span>records the language attribuet and the credits of this project
+                        Every page links one stylesheet (by default <code>css/base.css</code>) and
+                        contains a <code>.bar-style</code> strip. The links of the strip point
+                        directly to the CSS files.
                     </li>
-                </ul>
+                    <li>
+                        When a page loads, <code>base.js</code> reads
+                        <code>localStorage.getItem("userStyle")</code> before the page is rendered.
+                        If the value is one of the seven valid stylesheets, it becomes the
+                        <code>href</code> of the theme link; otherwise the script restores
+                        <code>css/base.css</code>.
+                    </li>
+                    <li>
+                        When a visitor clicks a link in the strip, the script cancels the default
+                        navigation, swaps the <code>href</code> of the stylesheet, saves the choice
+                        in <code>localStorage</code> and dispatches a custom
+                        <code>themeChanged</code> event.
+                    </li>
+                    <li>
+                        The map listens to <code>themeChanged</code> and changes basemap, markers
+                        and route colours without reloading the page (see
+                        <a href="#arch-map">section 04</a>).
+                    </li>
+                </ol>
                 <p>
-                    These properties are fetched dynamically and rendered inside specific modal overlays,
-                    ensuring that viewers can inspect technical filmmaking choices both with with architectural data.
+                    The chosen era is therefore preserved while navigating through the sections of
+                    the website. The theme documentation pages are the exception: they do not load
+                    <code>base.js</code> and keep the stylesheet of the theme they describe.
                 </p>
+            </div>
+
+            <h3>Stylesheets, palettes and typography</h3>
+
+            <div class="style-table-scroll" role="region"
+                 aria-label="Stylesheets, palettes and typography" tabindex="0">
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>CSS file</th>
+                            <th>Style</th>
+                            <th>Color palette</th>
+                            <th>Typography</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1650s</strong></td>
+                            <td><code>style1650.css</code></td>
+                            <td>Early Printed Culture</td>
+                            <td>See style page</td>
+                            <td>See style page</td>
+                            <td><a href="doc-stili/style-1650.html">Style page &rarr;</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>1850s</strong></td>
+                            <td><code>style1850.css</code></td>
+                            <td>Nineteenth-Century Design</td>
+                            <td>See style page</td>
+                            <td>See style page</td>
+                            <td><a href="doc-stili/style-1850.html">Style page &rarr;</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>1900s</strong></td>
+                            <td><code>style1900.css</code></td>
+                            <td>The Birth of Cinema</td>
+                            <td>
+                                <span class="color-badge"><span class="color-swatch" style="background-color: #343434;"></span><code>#343434</code></span>
+                                <span class="color-badge"><span class="color-swatch" style="background-color: #e2e2df;"></span><code>#e2e2df</code></span>
+                                <span class="color-badge"><span class="color-swatch" style="background-color: #d1cbbd;"></span><code>#d1cbbd</code></span>
+                            </td>
+                            <td>Display face for titles, <code>Georgia</code> for text</td>
+                            <td><a href="doc-stili/style-1900.html">Style page &rarr;</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>1940s</strong></td>
+                            <td><code>base.css</code> (default)</td>
+                            <td>The Cinema Theatre</td>
+                            <td>
+                                <span class="color-badge"><span class="color-swatch" style="background-color: #94473b;"></span><code>#94473b</code></span>
+                                <span class="color-badge"><span class="color-swatch" style="background-color: #f4e8c1;"></span><code>#f4e8c1</code></span>
+                                <span class="color-badge"><span class="color-swatch" style="background-color: #1c1b1b;"></span><code>#1c1b1b</code></span>
+                            </td>
+                            <td>
+                                <code>'Limelight'</code> (signs and headings),
+                                <code>'Anton'</code> (board and panel titles),
+                                <code>'Bebas Neue'</code> (labels and buttons),
+                                <code>'Libre Baskerville'</code> (text),
+                                <code>'Josefin Sans'</code> (navigation)
+                            </td>
+                            <td><a href="doc-stili/style-1940.html">Style page &rarr;</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>1960s</strong></td>
+                            <td><code>style1960.css</code></td>
+                            <td>Italian Film Posters</td>
+                            <td>See style page</td>
+                            <td>See style page</td>
+                            <td><a href="doc-stili/style-1960.html">Style page &rarr;</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>1990s</strong></td>
+                            <td><code>style1990.css</code></td>
+                            <td>Late Twentieth Century</td>
+                            <td>See style page</td>
+                            <td>See style page</td>
+                            <td><a href="doc-stili/style-1990.html">Style page &rarr;</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>2035</strong></td>
+                            <td><code>style2035.css</code></td>
+                            <td>Imagining the Future</td>
+                            <td>
+                                <span class="color-badge"><span class="color-swatch" style="background-color: #15382b;"></span><code>#15382b</code></span>
+                                <span class="color-badge"><span class="color-swatch" style="background-color: #030a07;"></span><code>#030a07</code></span>
+                                <span class="color-badge"><span class="color-swatch" style="background-color: #bad3c7;"></span><code>#bad3c7</code></span>
+                            </td>
+                            <td><code>'SF Pro Display'</code>, clean geometric sans-serif; glassmorphism panels</td>
+                            <td><a href="doc-stili/style-2035.html">Style page &rarr;</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Shared components</h3>
+            <p>
+                Since all themes style the same HTML, every stylesheet has to cover the same set
+                of components. The table lists the hooks that the themes restyle.
+            </p>
+
+            <div class="style-table-scroll" role="region"
+                 aria-label="Shared components" tabindex="0">
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>HTML hooks</th>
+                            <th>What a theme restyles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Header and menus</td>
+                            <td><code>header</code>, <code>.link-head</code>, <code>.dropdown</code>, <code>.dropdown-menu</code></td>
+                            <td>Colours, typography, dropdown appearance</td>
+                        </tr>
+                        <tr>
+                            <td>Style selector</td>
+                            <td><code>.bar-style</code>, <code>.bar-item</code>, <code>.nav-label</code></td>
+                            <td>Shape and surface of the strip (film frames in the 1900s)</td>
+                        </tr>
+                        <tr>
+                            <td>Documentation pages</td>
+                            <td><code>.documentation-section</code>, <code>.workflow-steps</code>, <code>.development-item</code>, <code>.tech-table</code></td>
+                            <td>Cards, tables and the step strip</td>
+                        </tr>
+                        <tr>
+                            <td>Buttons</td>
+                            <td><code>.bottone</code>, elements with <code>onclick</code>, <code>.active</code></td>
+                            <td>Shape, hover and selected state</td>
+                        </tr>
+                        <tr>
+                            <td>Itinerary scenes</td>
+                            <td><code>.area-immagini</code>, <code>.story-content</code>, <code>.metadata-content</code>, <code>.qr-content</code>, <code>.modal-box</code></td>
+                            <td>Frame around the scene, panels, modal overlays</td>
+                        </tr>
+                        <tr>
+                            <td>Map page</td>
+                            <td><code>#map</code>, <code>#filters</code>, <code>.location-card</code>, <code>.location-number</code>, <code>.route-connection</code></td>
+                            <td>Filters, cards of the stops, numbering and route notes</td>
+                        </tr>
+                        <tr>
+                            <td>Footer</td>
+                            <td><code>footer</code>, <code>.footer-container</code>, <code>.footer-box</code></td>
+                            <td>Colours and typography</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
-        <section class="documentation-section" id="tech-pseudo">
-            <h2>05. Technical implementations & architectural best practices</h2>
 
-            <p>Some of the technical coding choices we have done in order to to enrich the visual presentation without polluting the HTML DOM are:
+        <!-- 04. MAP -->
+        <section class="documentation-section" id="arch-map">
+            <h2>04. Interactive Map</h2>
+
+            <p>
+                The map page uses Leaflet. <code>initMapPage</code> creates a map centred on Rome
+                (<code>41.9028, 12.4964</code>, zoom 12), then loads
+                <code>mappa.geojson</code> and <code>spostamenti.json</code> in parallel with
+                <code>Promise.all</code>. When both files are available, the script builds the
+                markers, the two route lines and the list of stops below the map.
             </p>
 
             <div class="development-grid">
                 <div class="development-item">
-                    <h3><code>::before</code> and <code>::after</code></h3>
-                    <p>This pseudo-elements are used to add content in specific stylesheet when belonging to specific eras 
+                    <h3>Narrative filters</h3>
+                    <p>
+                        Three buttons select <em>Historical Journey</em>, <em>Women &amp; Urban Space</em>
+                        or <em>All</em>. A location is shown if its <code>narratives</code> list includes
+                        the selected one. Each route line joins the visible locations in the order
+                        given by <code>historicalOrder</code> or <code>womenOrder</code>; the
+                        <em>All</em> view draws both lines.
                     </p>
                 </div>
 
                 <div class="development-item">
-                    <h3><code>.active</code> buttons state</h3>
-                    <p>Is handled by the JavaScript to manage selected
-                    states of the <button><code>button</code></button>consistently without writing redundant code on every button element
+                    <h3>List of stops</h3>
+                    <p>
+                        For each narrative the list shows numbered cards. Locations that share the same
+                        order number are grouped in one stop. Between two consecutive stops, a note
+                        reports transport, time, distance and directions taken from
+                        <code>spostamenti.json</code>. The <em>All</em> view shows independent cards,
+                        without numbers, with links to the itineraries in which the place appears.
                     </p>
                 </div>
 
                 <div class="development-item">
-                    <h3>Fixed Viewport</h3>
-                    <p>Standard desktop displays and modern laptops provide typical viewport heights between 768px and 1080px. We have chosen to fix some height limit to
-                    560px in order to ensures the entire fit of the content without requiring disruptive scrolling.
+                    <h3>Theme-aware map</h3>
+                    <p>
+                        On <code>themeChanged</code> the script replaces the tile layer, redraws the
+                        markers and recolours the routes. The new basemap is added before the old
+                        one is removed, to avoid a blank map during the change.
                     </p>
                 </div>
 
                 <div class="development-item">
-                    <h3>Keyframes</h3>
-                    <p><code>@keyframes</code> are used in specific in different stylesheets to create specific animations without overwriting the JavaScript.
+                    <h3>Fallbacks</h3>
+                    <p>
+                        Themes without their own basemap (1650s, 1850s) use OpenStreetMap, and so does
+                        the 1990s theme when no API key is set. The same default applies to markers
+                        (Leaflet pin) and routes (blue and red) in the themes with no custom style.
                     </p>
                 </div>
             </div>
 
-        </section>
+            <h3>Map styles by theme</h3>
 
-        <!--media queries -->
-        <section class="documentation-section" id="tech-insights">
-            <h2>07. Media queries</h2>
-            <p>To guarantee accessibility and smooth navigation across smartphones, tablets, and desktop displays,
-            CSS <code>@media</code> queries are implemented systematically across all theme stylesheets.
-            Native media queries were deliberately chosen over external frameworks such as Bootstrap to ensure maximum
-            design flexibility and avoid rigid grid constraints or unnecessary CSS bloat across the different historical styles.
+            <div class="style-table-scroll" role="region"
+                 aria-label="Map styles by theme" tabindex="0">
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Basemap</th>
+                            <th>Marker</th>
+                            <th>Historical route</th>
+                            <th>Women route</th>
+                            <th>Line weight</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1650s</strong></td>
+                            <td>OpenStreetMap (default)</td>
+                            <td>Leaflet pin</td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: blue;"></span><code>blue</code></span></td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: red;"></span><code>red</code></span></td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1850s</strong></td>
+                            <td>OpenStreetMap (default)</td>
+                            <td>Leaflet pin</td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: blue;"></span><code>blue</code></span></td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: red;"></span><code>red</code></span></td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1900s</strong></td>
+                            <td>Jawg Light</td>
+                            <td>Film frame with side perforations</td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: #303030;"></span><code>#303030</code></span></td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: #a3a3a3;"></span><code>#a3a3a3</code></span></td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1940s</strong></td>
+                            <td>OpenStreetMap</td>
+                            <td>Leaflet pin</td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: blue;"></span><code>blue</code></span></td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: red;"></span><code>red</code></span></td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1960s</strong></td>
+                            <td>Esri World Street Map</td>
+                            <td>Concentric circles</td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: #b73526;"></span><code>#b73526</code></span></td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: #007f86;"></span><code>#007f86</code></span></td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1990s</strong></td>
+                            <td>Thunderforest Mobile Atlas (OpenStreetMap without API key)</td>
+                            <td>Leaflet pin</td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: blue;"></span><code>blue</code></span></td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: red;"></span><code>red</code></span></td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2035</strong></td>
+                            <td>Jawg Matrix</td>
+                            <td>Hexagon with crosshair</td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: #48bc99;"></span><code>#48bc99</code></span></td>
+                            <td><span class="color-badge"><span class="color-swatch" style="background-color: #cf79ff;"></span><code>#cf79ff</code></span></td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                In the themes with custom markers, the icons are SVG images generated by the script
+                and cached. A marker is filled with the colour of the narrative it belongs to, and
+                with a half-and-half gradient when a location belongs to both.
             </p>
         </section>
 
-        <!-- NAVIGAZIONE BOTTOM -->
+
+        <!-- 05. ITINERARIES AND METADATA -->
+        <section class="documentation-section" id="arch-itinerary">
+            <h2>05. Itinerary Pages &amp; Metadata</h2>
+
+            <p>
+                The two itinerary pages contain the structure of each scene
+                (<code>.area-immagini</code>), identified by an <code>id</code>. At load time
+                <code>initStoryPage</code> fetches <code>dati_tour.json</code>, finds the active
+                itinerary (the one whose <code>source_file</code> appears in the page path, or
+                otherwise the one with the most scene ids found in the page) and fills each scene
+                with the story and the metadata that have the same <code>id</code>.
+            </p>
+
+            <p>
+                Only one scene at a time is displayed. The arrows move forward and backward, and
+                loop at the ends. A URL with a hash (for example from the map list) opens the
+                corresponding scene directly.
+            </p>
+
+            <div class="style-table-scroll" role="region"
+                 aria-label="Interface functions" tabindex="0">
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Function</th>
+                            <th>Effect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>next_scene()</code>, <code>previous_scene()</code></td>
+                            <td>Move between scenes, returning to the first or last one at the ends</td>
+                        </tr>
+                        <tr>
+                            <td><code>showStoryView()</code>, <code>showMetadataView()</code>, <code>showQRView()</code></td>
+                            <td>Show one of the three views of a scene: story, metadata or QR code</td>
+                        </tr>
+                        <tr>
+                            <td><code>showNormal()</code>, <code>showChild()</code>, <code>showScholar()</code></td>
+                            <td>Choose the audience of the text; the text goes back to the standard version</td>
+                        </tr>
+                        <tr>
+                            <td><code>showLess()</code>, <code>showMore()</code>, <code>showDidYouKnow()</code></td>
+                            <td>Show the shorter, the longer or the &ldquo;Did you know?&rdquo; text of the active audience</td>
+                        </tr>
+                        <tr>
+                            <td><code>toggleModal()</code>, <code>closeOnBackground()</code></td>
+                            <td>Open a metadata overlay (closing any other) and close it by clicking the background</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 id="arch-metadata">Metadata in narratives</h3>
+
+            <p>
+                Every cinematic scene incorporates metadata organised in three categories:
+                <em>Cinematic Context</em>, <em>Location</em> and <em>Project</em>. The script
+                matches each box of the metadata view to the corresponding object in the JSON
+                file (<code>cinematic_context</code>, <code>location</code>, <code>project</code>)
+                and writes one list item for each key. The properties are described with standard
+                vocabularies:
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Schema.org</strong> is used for the cinematic context, such as movie
+                    titles, directors and shot information.
+                </li>
+                <li>
+                    <strong>CIDOC CRM</strong> and <strong>Schema.org</strong> describe the
+                    architectural heritage, the coordinates and the dates.
+                </li>
+                <li>
+                    <strong>Dublin Core (dcterms)</strong> records the language and the credits of
+                    the project.
+                </li>
+            </ul>
+
+            <p>
+                These properties are loaded dynamically and shown in dedicated overlays, so that
+                visitors can inspect the filmmaking choices together with the architectural data.
+            </p>
+        </section>
+
+
+        <!-- 06. CODING CHOICES -->
+        <section class="documentation-section" id="tech-choices">
+            <h2>06. Technical Implementations &amp; Best Practices</h2>
+
+            <p>
+                These are some of the technical choices that enrich the visual presentation
+                without polluting the HTML:
+            </p>
+
+            <div class="style-table-scroll" role="region"
+                 aria-label="Coding choices" tabindex="0">
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Choice</th>
+                            <th>Where</th>
+                            <th>Why</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>::before</code> and <code>::after</code></td>
+                            <td>Stylesheets of specific eras</td>
+                            <td>Add decorative content to the themes that need it, without extra HTML elements</td>
+                        </tr>
+                        <tr>
+                            <td><code>@keyframes</code></td>
+                            <td>Stylesheets with animations (for example the 1900s opening countdown)</td>
+                            <td>Animations stay in CSS, so the JavaScript does not have to manage them. Where there is movement, a reduced-motion variant is provided</td>
+                        </tr>
+                        <tr>
+                            <td><code>.active</code> state of buttons</td>
+                            <td><code>base.js</code></td>
+                            <td>One global click listener marks the selected button among its siblings with an <code>onclick</code> attribute, instead of repeating code on every button</td>
+                        </tr>
+                        <tr>
+                            <td><code>localStorage</code> and <code>themeChanged</code></td>
+                            <td><code>base.js</code></td>
+                            <td>The chosen era persists across pages, and the map reacts to a theme change without being coupled to the switcher code</td>
+                        </tr>
+                        <tr>
+                            <td>Guard clauses</td>
+                            <td><code>initStoryPage</code>, <code>initMapPage</code></td>
+                            <td>Each part of the script runs only on the pages that contain its elements</td>
+                        </tr>
+                        <tr>
+                            <td>Fixed viewport height</td>
+                            <td>Layout of the itinerary pages</td>
+                            <td>Typical desktop and laptop viewports are between 768px and 1080px high. A height limit of 560px lets the whole content fit without disruptive scrolling</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+        <!-- 07. MEDIA QUERIES -->
+        <section class="documentation-section" id="tech-media">
+            <h2>07. Media Queries</h2>
+            <p>
+                To guarantee accessibility and smooth navigation across smartphones, tablets and
+                desktop displays, CSS <code>@media</code> queries are implemented systematically
+                across all theme stylesheets. Native media queries were deliberately chosen over
+                external frameworks such as Bootstrap to ensure maximum design flexibility and
+                avoid rigid grid constraints or unnecessary CSS across the different historical
+                styles.
+            </p>
+        </section>
+
+        <!-- BOTTOM NAVIGATION -->
         <div class="bottoni-pagine">
-            <a href="documentazione.html" class="bottone">&larr; Journey documentation</a>
+            <a href="documentazione.html" class="bottone">&larr; Project Process</a>
             <a href="disclaimer.html" class="bottone">Disclaimer &rarr;</a>
         </div>
 

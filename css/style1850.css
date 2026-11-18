@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=IM+Fell+English+SC&display=swap');
+/* =========================================================
+   ROME IN TWO TAKES — IMPRESSIONIST STYLE (1850)
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=IM+Fell+English+SC&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
 
-html {
-    scroll-behavior: smooth;
-}
-
-/* SFONDO BODY CHE SIMULA PUNTINISMO --> INSPO DOMENICA, SERAUT */ 
+/* 01 — VARIABLES & CORE RESET (Mantenuto inalterato) */
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
 html, body {
     margin: 0;
     padding: 0;
@@ -12,12 +13,12 @@ html, body {
     min-height: 100vh;
     background-color: #f2ecd9;
     background-image: 
-        radial-gradient(#b5c4b1 18%, transparent 19%), 
-        radial-gradient(#b1d698 18%, transparent 19%),
-        radial-gradient(#9db4c0 12%, transparent 13%);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px, 5px 15px;
-    
+        radial-gradient(circle, rgba(123, 158, 168, 0.45) 2px, transparent 2px),
+        radial-gradient(circle, rgba(141, 182, 131, 0.4) 2px, transparent 2px),
+        radial-gradient(circle, rgba(217, 119, 87, 0.3) 1.5px, transparent 1.5px),
+        radial-gradient(circle, rgba(235, 205, 95, 0.45) 2px, transparent 2px);
+    background-size: 14px 14px;
+    background-position: 0 0, 7px 7px, 3.5px 10.5px, 10.5px 3.5px;
     font-family: 'IM Fell English SC', serif;
     color: #2c2825;
 }
@@ -25,17 +26,27 @@ html, body {
 a {
     text-decoration: none;
     color: #4a3b32;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #8c4736;
+    color: #d97757;
     opacity: 0.85;
 }
 
 button {
     cursor: pointer;
+    font: inherit;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   HEADER & NAVIGATION
+   ========================================================= */
 header {
     position: sticky;
     top: 0;
@@ -108,7 +119,9 @@ header {
     color: #2b221e;
 }
 
-/* BARRA STILI-DATE */
+/* =========================================================
+   BARRA STILI-DATE
+   ========================================================= */
 .bar-style {
     position: sticky;
     top: 55px;
@@ -116,7 +129,7 @@ header {
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    padding: 12px 0;
+    padding:10px;
     background-color: #4a3b32;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -124,7 +137,7 @@ header {
 
 .bar-item {
     flex: 1;
-    height: 65px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,7 +157,7 @@ header {
     justify-content: center;
     color: #f4ebd0;
     font-family: 'Cinzel', serif;
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     font-weight: bold;
     letter-spacing: 1px;
     transition: all 0.2s ease;
@@ -156,7 +169,93 @@ header {
 }
 
 /* =========================================================
-   TITOLO PRINCIPALE --> dovrebbe simulare una pennelleta materica 
+   MAIN & TYPOGRAPHY
+   ========================================================= */
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main h2 {
+    width: 100%;
+    max-width: 950px;
+    box-sizing: border-box;
+    margin: 50px auto 20px auto;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    color: #50946f;
+    text-align: center;
+}
+
+main p, p {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 20px auto;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.8rem;
+    color: #2c2825;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+main p + p {
+    margin-block-start: 0.85rem;
+}
+
+/* TITOLI PAGINE INTERNE */
+.map-page h1,
+.documentation-intro h1,
+.about-introduction h1,
+.disclaimer-page .page-title,
+.introduction h2 {
+    width: 100%;
+    max-width: 950px;
+    margin: 35px auto 25px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 3.8rem;
+    font-weight: 600;
+    color: #50946f;
+    text-align: center;
+}
+
+/* SOTTOTITOLO DEGLI ITINERARI */
+.introduction > h3 {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 30px;
+    padding: 0;
+    box-sizing: border-box;
+    color: #3b5249;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.introduction > h3::after {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 3px;
+    margin: 20px auto 0;
+    border-top: 1px solid #7b9ea8;
+    border-bottom: 1px solid #7b9ea8;
+}
+
+/* =========================================================
+   HOMEPAGE - TITLE
    ========================================================= */
 .home-introduction {
     width: 100%;
@@ -182,15 +281,35 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-1deg);
-  width: 75%;
+  transform: translate(-50%, -50%);
+  width: 90%;
   height: 110px;
   padding: 90px 90px;
-  background: 
-    radial-gradient(ellipse at center, rgba(123, 158, 168, 0.65) 0%, rgba(88, 129, 87, 0.55) 40%, transparent 75%),
-    linear-gradient(90deg, transparent 0%, rgba(96, 184, 169, 0.45) 50%, transparent 100%);
-  filter: blur(22px);
+  background: linear-gradient(120deg,
+      rgba(217, 180, 87, 0.75),
+      rgba(235, 205, 95, 0.85),
+      rgba(212, 163, 115, 0.8),
+      rgba(195, 150, 70, 0.75)
+  );
+  background-size: 300% 300%;
+  animation:drawBrush 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  border-radius: 90px 120px 80px 110px;
+  filter: blur(20px);
   z-index: 1;
+}
+
+@keyframes drawBrush {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 90%;
+    opacity: 1;
+  }
 }
 
 .title-container h1 {
@@ -199,7 +318,7 @@ header {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Karolyne Macbeth', cursive;
+  font-family: 'Pinyon Script', cursive;
   font-size: 5.5rem;
   line-height: 1.1;
   color: #222b26;
@@ -207,14 +326,1064 @@ header {
   text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9);
 }
 
-main h2{
+.home-introduction > p {
+    max-width: 780px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* =========================================================
+   HOMEPAGE - NARRATIVES (TICKETS / CARDS)
+   ========================================================= */
+.narratives {
+    width: 100%;
+    max-width: 950px;
+    margin: 60px auto;
+}
+
+.narrativa-container {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.narrative-card {
+    flex: 1;
+    box-sizing: border-box;
+    background-color: #fffefb;
+    border: 3px double #7b9ea8;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    overflow: visible;
+    z-index: 1;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.narrative-card:hover {
+    transform: translateY(-6px);
+    border-color: #d97757;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.card-label {
+    padding: 10px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #5e3c58;
+    text-align: center;
+    border-bottom: 1px dashed #d97757;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h3 {
+    margin: 0 0 20px 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #222b26;
+    text-align: center;
+}
+
+.card-details {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-top: 1px solid #d97757;
+    border-bottom: 1px solid #d97757;
+}
+
+.card-details p, .card-description {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 1.05rem;
+    color: #2c2825;
+    text-align: left;
+    margin: 5px 0;
+}
+
+.discover, .bottone, #filters button {
+    display: inline-block;
+    padding: 9px 18px;
+    background-color: #3b5249;
+    border: 1px solid #7b9ea8;
+    border-radius: 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    color: #f4ebd0;
+    transition: all 0.2s ease;
+}
+
+.discover:hover, .narrative-card:hover .discover, .bottone:hover, #filters button:hover, #filters button.active {
+    background-color: #d97757;
+    color: #ffffff;
+    border-color: #d97757;
+}
+
+/* =========================================================
+   AREA IMMAGINI & SCENE VIEWER (RETTANGOLO ORGANICO & SEURAT)
+   ========================================================= */
+.area-immagini {
+    width: 100%;
+    max-width: 980px;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 50px auto;
+    padding: 35px;
+    box-sizing: border-box;
+    background-color: #f4ebd0;
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px, 2.5px 7.5px, 7.5px 2.5px;
+    border-radius: 255px 35px 225px 45px / 35px 225px 25px 255px;
+    border: 3px solid #7b9ea8;
+    box-shadow: 0 20px 50px rgba(59, 82, 73, 0.2), inset 0 0 30px rgba(217, 119, 87, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.film-panel-left, .frecce_scena, .description-container-right {
+    position: relative;
+    z-index: 1;
+}
+
+.film-panel-left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.film-panel-left img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border: 3px solid #f2ecd9;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.photo-when {
+    width: 100%;
+    margin-bottom: 4px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #5e3c58;
+}
+
+.frecce_scena {
+    width: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.frecce_scena button {
+    background: none;
+    border: none;
+    color: #3b5249;
+    font-size: 2rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+
+.frecce_scena button:hover {
+    color: #d97757;
+    transform: scale(1.2);
+}
+
+.frecce_scena span {
+    color: #2c2825;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.description-container-right {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.showview-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.showview-buttons button {
+    padding: 6px 12px;
+    background-color: #3b5249;
+    color: #f4ebd0;
+    border: 1px solid #7b9ea8;
+    border-radius: 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.story-content, .metadata-content, .qr-content {
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 440px;
+    box-sizing: border-box;
+    padding: 22px;
+    background-color: #e0f7f573;
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 12px, 6px 14px;
+    color: #ec8600;
+    border: 2px solid #7b9ea8;
+    border-radius: 12px;
+    overflow-y: auto;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.02);
+}
+
+.story-content h3,
+.story-content p,
+.story-content strong,
+.metadata-content h3,
+.metadata-content li,
+.metadata-content strong,
+.metadata-content p {
+    color: #2c2825;
+}
+
+.story-content p,
+.metadata-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.story-content > p.movie-description:not(:empty) {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 6px 0 16px;
+    padding: 10px 14px;
+    background-color: rgba(244, 235, 208, 0.7);
+    border-left: 3px solid #7b9ea8;
+    color: #2c2825;
+    font-size: 1rem;
+    line-height: 1.55;
+    text-align: left;
+}
+
+/* =========================================================
+   BOTTONI DI DIFFICOLTÀ & TELL ME
+   ========================================================= */
+.difficulty-buttons {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 6px;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+}
+
+.difficulty-buttons button {
+    flex: 1;
+    min-width: 0;
+    padding: 6px 4px;
+    background: linear-gradient(120deg,
+        rgba(217, 180, 87, 0.75),
+        rgba(235, 205, 95, 0.85)
+    );
+    color: #222b26;
+    border: 1px solid #7b9ea8;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tellme-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+.tellme-buttons button {
+    padding: 6px 12px;
+    background-color: #3b5249;
+    color: #f4ebd0;
+    border: 1px solid #7b9ea8;
+    border-radius: 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.metadata-tasti {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 15px auto 0;
+    font-weight: bold;
+}
+
+.metadata-tasti button {
+    width: 250px;
+    align-self: center;
+    padding: 8px 12px;
+}
+
+.showview-buttons button:hover, .showview-buttons button.active,
+.difficulty-buttons button:hover, .difficulty-buttons button.active,
+.tellme-buttons button:hover, .tellme-buttons button.active,
+.metadata-tasti button:hover {
+    background: linear-gradient(120deg, #3b5249, #7b9ea8);
+    color: #f4ebd0;
+    border-color: #3b5249;
+}
+
+/* =========================================================
+   MODAL & POPUP
+   ========================================================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(44, 40, 37, 0.6);
+    cursor: pointer;
+}
+
+.modal-box {
+    position: relative;
+    width: 450px;
+    max-width: 90%;
+    padding: 30px;
+    background: #fffefb;
+    color: #2c2825;
+    border: 3px double #7b9ea8;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    cursor: default;
+}
+
+.modal-box h3 {
+    margin-top: 0;
+    padding-bottom: 8px;
+    color: #5e3c58;
+    border-bottom: 1px solid #d97757;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+}
+
+.modal-box ul {
+    margin: 15px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    font-family: 'IM Fell English SC', serif;
+}
+
+.qr-image {
+    width: 170px;
+    height: 170px;
+    margin: 15px auto;
+    padding: 4px;
+    background: #ffffff;
+    border: 1px solid #7b9ea8;
+    display: block;
+}
+
+.qr-content h3 {
+    margin-top: 0;
+    color: #2b2623;
+    font-size: 1.17em;
+    font-weight: bold;
+    text-align: left;
+}
+
+.qr-description {
+    margin-bottom: 20px;
+    color: #2b2623;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   POSTER (GRIGLIA LOCANDINE)
+   ========================================================= */
+.films-section {
+    width: 100%;
+    max-width: 950px;
+    margin: 80px auto;
+}
+
+.films-introduction {
+    margin-bottom: 40px;
+}
+
+.films-introduction h2 {
+    margin-bottom: 20px;
+}
+
+.poster-container {
     width: 100%;
     max-width: 950px;
     box-sizing: border-box;
-    margin-bottom: 15px;
-    font-family: 'IM Fell English', Georgia, serif;
-    font-size: 2rem;
-    letter-spacing: 2px;
-    color: #50946f;
+    margin: 40px auto;
+    padding: 0 10px;
+}
+
+.poster-grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.poster {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 250px;
+    box-sizing: border-box;
+}
+
+.poster-flip {
+    position: relative;
+    width: 100%;
+}
+
+.poster-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease-in-out;
+    backface-visibility: hidden;
+    border: 4px solid #222b26;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.poster-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: #fffefb;
+    color: #2c2825;
+    border: 3px double #7b9ea8;
     text-align: center;
+    transform: rotateY(180deg);
+    transition: transform 0.6s ease-in-out;
+    backface-visibility: hidden;
+    font-family: 'IM Fell English SC', serif;
+    overflow-y: auto;
+}
+
+.poster-back h3 {
+    margin: 0;
+    color: #2c2825;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    text-transform: uppercase;
+}
+
+.poster-back .film-year {
+    color: #8c4736;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.poster-back p {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    color: #2c2825;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.poster-flip:hover .poster-img {
+    transform: rotateY(-180deg);
+}
+
+.poster-flip:hover .poster-back {
+    transform: rotateY(0deg);
+}
+
+/* =========================================================
+   DOCUMENTATION & WORKFLOW
+   ========================================================= */
+.documentation-section {
+    width: 100%;
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 22px 0;
+    border-bottom: 1px solid #7b9ea8;
+}
+
+.documentation-section:last-of-type {
+    border-bottom: none;
+}
+
+.workflow-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.workflow-step {
+    flex: 1 1 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 12px;
+    background-color: #fffefb;
+    border: 2px solid #7b9ea8;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.workflow-step strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #3b5249;
+    border-radius: 50%;
+    color: #f4ebd0;
+    font-family: 'Cinzel', serif;
+}
+
+.workflow-step p {
+    margin: 0;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.film-selection {
+    max-width: 850px;
+    margin: 35px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid #7b9ea8;
+}
+
+.film-selection span {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(123, 158, 168, 0.4);
+    font-size: 0.95rem;
+}
+
+.film-selection span:nth-child(odd) {
+    border-right: 1px solid rgba(123, 158, 168, 0.4);
+}
+
+.prototype-row {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.prototype-row figure {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+}
+
+.prototype-row img {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    border: 2px solid #7b9ea8;
+    background: #fffefb;
+}
+
+.graphic-ideas {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.graphic-ideas img {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 30px auto 12px;
+    border: 2px solid #7b9ea8;
+}
+
+/* =========================================================
+   MAP & LOCATIONS
+   ========================================================= */
+.map-page {
+    width: 100%;
+}
+
+#map {
+    width: 100%;
+    max-width: 950px;
+    height: 550px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+    box-sizing: border-box;
+    border: 4px solid #fffefb;
+    border-radius: 4px;
+}
+
+.leaflet-popup-content {
+    font-family: 'Crimson Pro', Georgia, serif;
+}
+
+#filters {
+    width: 100%;
+    max-width: 950px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto 0 auto;
+}
+
+.locations-section {
+    width: 100%;
+    max-width: 950px;
+    margin: 65px auto 20px auto;
+}
+
+.locations-section h2 {
+    margin-bottom: 45px;
+}
+
+#locations-list {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#locations-list::before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 32px;
+    bottom: 32px;
+    width: 6px;
+    background: radial-gradient(circle, #7b9ea8 0 2px, #3b5249 3px, transparent 5px);
+    background-size: 6px 24px;
+    background-repeat: repeat-y;
+    pointer-events: none;
+}
+
+.location-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 18px 0;
+}
+
+.location-number {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3b5249;
+    border: 3px solid #7b9ea8;
+    border-radius: 50%;
+    color: #f4ebd0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    box-shadow: 0 0 12px rgba(59, 82, 73, 0.3);
+}
+
+.location-info {
+    flex: 1;
+    padding: 20px 24px;
+    background-color: #fffefb;
+    border: 3px double #7b9ea8;
+    border-radius: 4px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.location-info h3 {
+    margin: 0 0 6px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: #2c2825;
+}
+
+.location-info p:first-of-type {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 8px;
+    color: #d97757;
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: left;
+}
+
+.location-info p:nth-of-type(2) {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    color: #2c2825;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.location-info a {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 7px 14px;
+    font-size: 0.95rem;
+}
+
+.route-connection {
+    position: relative;
+    width: calc(100% - 95px);
+    margin: 0 0 0 95px;
+    padding: 6px 15px 6px 18px;
+    border-left: 2px solid #7b9ea8;
+}
+
+.route-main-info {
+    margin-bottom: 3px;
+    color: #50946f;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+}
+
+.route-directions {
+    color: #2c2825;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.location-subitem {
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px dashed rgba(123, 158, 168, 0.5);
+}
+
+.location-subitem:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* ALL LOCATIONS GRID */
+.map-page:has(#show-all.active) #locations-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+.map-page:has(#show-all.active) #locations-list::before { display: none; }
+.map-page:has(#show-all.active) .location-card { padding: 0; }
+.map-page:has(#show-all.active) .location-info { height: 100%; }
+
+/* =========================================================
+   DISCLAIMER & ABOUT
+   ========================================================= */
+.disclaimer-page {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.disclaimer-page .disclaimer-item {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid #7b9ea8;
+    box-sizing: border-box;
+}
+
+.disclaimer-page .disclaimer-item:last-child {
+    border-bottom: none;
+}
+
+.disclaimer-page .disclaimer-item:nth-child(even) {
+    flex-direction: row;
+}
+
+.disclaimer-page .disclaimer-number {
+    font-size: 4rem;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    color: #50946f;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.disclaimer-page .disclaimer-content {
+    flex-grow: 1;
+}
+
+.disclaimer-page .disclaimer-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #50946f;
+    font-family: 'Cinzel', serif;
+    text-align: left;
+}
+
+.disclaimer-page .disclaimer-text {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* ABOUT TEAM CARDS */
+.about-page > .about-introduction,
+.about-page > .team-section,
+.about-page > .about-styles {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.about-page > .team-section,
+.about-page > .about-styles {
+    margin-top: 48px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.team-container > a {
+    display: flex;
+    min-width: 0;
+}
+
+.team-card {
+    flex: 1;
+    min-width: 0;
+    padding: 26px 20px;
+    box-sizing: border-box;
+    background-color: #fffefb;
+    border: 3px double #7b9ea8;
+    border-radius: 4px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    border-color: #d97757;
+}
+
+.team-icon {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 14px;
+    color: #5e3c58;
+    font-size: 2rem;
+}
+
+.team-card h3 {
+    margin: 0 0 10px;
+    color: #222b26;
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
+}
+
+.team-tasks {
+    margin: 16px 0 0;
+    padding-left: 1.25rem;
+    color: #2c2825;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    text-align: left;
+    list-style: disc;
+}
+
+.team-tasks li + li {
+    margin-top: 6px;
+}
+
+/* =========================================================
+   STYLE DETAIL PAGE (.style-detail)
+   ========================================================= */
+.style-detail > .documentation-intro {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 24px;
+}
+
+.style-detail > .documentation-section {
+    width: 100%;
+    max-width: 950px;
+    margin: 28px auto;
+    box-sizing: border-box;
+}
+
+.style-detail .era-card,
+.style-detail .style-swatch {
+    position: relative;
+    min-width: 0;
+    padding: 20px;
+    background: #fffefb;
+    border: 3px double #7b9ea8;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.style-detail .era-card h3,
+.style-detail .era-card h4 {
+    margin: 8px 0 10px;
+    color: #50946f;
+    font-family: 'Cinzel', serif;
+}
+
+.style-detail .era-grid,
+.style-detail .style-palette-grid {
+    display: grid;
+    gap: 16px;
+    margin: 16px 0;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+}
+
+.style-detail .style-palette-grid {
+    list-style: none;
+    padding: 0;
+}
+
+.style-detail .style-swatch-sample {
+    min-height: 78px;
+    margin-bottom: 6px;
+    border: 1px solid #7b9ea8;
+    background: var(--swatch);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 80px;
+    padding: 25px 40px;
+    background-color: #3b5249;
+    border-top: 3px double #7b9ea8;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer p, footer a {
+    color: #f4ebd0;
+    font-family: 'IM Fell English SC', serif;
+    font-size: 0.95rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.footer-box {
+    width: 220px;
+    padding: 14px 18px;
+    border: 1px solid #7b9ea8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #222b26;
+    color: #f4ebd0;
+}
+
+.footer-box:hover {
+    background-color: #d97757;
+    color: #ffffff;
+    border-color: #d97757;
+}
+
+.footer-copyright {
+    padding-top: 15px;
+    border-top: 1px solid rgba(244, 235, 208, 0.3);
+}
+
+/* =========================================================
+   RESPONSIVE OVERRIDES
+   ========================================================= */
+@media screen and (max-width: 800px) {
+    header { padding: 12px 20px; flex-direction: column; gap: 10px; }
+    .link-head { justify-content: center; flex-wrap: wrap; text-align: center; }
+    .link-head > a, .dropdown > a { display: inline-block; margin: 5px 8px; font-size: 0.9rem; }
+    .dropdown-menu { top: 100%; left: 50%; min-width: 210px; transform: translateX(-50%); }
+    .bar-style { top: 90px; }
+    .bar-item { min-width: 100px; }
+    .bar-item a { font-size: 1rem; }
+    main { padding: 20px; }
+    
+    .narrativa-container, .team-container { flex-direction: column; gap: 30px; }
+    .area-immagini { height: auto; flex-direction: column; padding: 30px 18px; }
+    .film-panel-left, .description-container-right { width: 100%; }
+    .frecce_scena { width: 100%; flex-direction: row; }
+    .frecce_scena span { writing-mode: horizontal-tb; }
+    
+    .disclaimer-page .disclaimer-item,
+    .disclaimer-page .disclaimer-item:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .disclaimer-page .disclaimer-number { font-size: 2.5rem; }
 }

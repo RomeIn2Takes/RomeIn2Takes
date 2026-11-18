@@ -195,7 +195,7 @@ main h2 {
 
     color: #eee;
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: 'Lobster Two', cursive;
     font-size: 2.5rem;
     font-weight: normal;
     letter-spacing: 1px;
@@ -218,6 +218,10 @@ main p {
     text-align: justify;
 }
 
+/* Spazio tra paragrafi consecutivi */
+main p + p {
+    margin-block-start: 0.85rem;
+}
 
 /* =========================================================
    TITOLI PAGINE INTERNE
@@ -225,6 +229,7 @@ main p {
 
 .map-page h1,
 .documentation-intro h1,
+.about-introduction h1,
 .disclaimer-page .page-title,
 .introduction h2 {
     width: 100%;
@@ -237,6 +242,45 @@ main p {
 
     color: #d3d1cc;
     text-align: center;
+}
+
+/* =========================================================
+   SOTTOTITOLO DEGLI ITINERARI
+   ========================================================= */
+
+.introduction > h3 {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto 30px;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    color: #e2e2df;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: normal;
+    font-style: italic;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+
+    text-align: center;
+    text-wrap: balance;
+}
+
+.introduction > h3::after {
+    content: "";
+
+    display: block;
+
+    width: 110px;
+    height: 3px;
+    margin: 20px auto 0;
+
+    border-top: 1px solid #e2e2df;
+    border-bottom: 1px solid #e2e2df;
 }
 
 /* =========================================================
@@ -279,7 +323,7 @@ main p {
     height: 353px;
 
     left: 50%;
-    top: 68%;
+    top: 61%;
 
     transform: translate(-50%, -50%);
 
@@ -332,6 +376,89 @@ main p {
 
     text-align: center;
 }
+
+
+
+
+/* =========================================================
+   HOMEPAGE - COUNTDOWN
+   ========================================================= */
+/* 1900 — Countdown cinematografico sopra il titolo */
+@property --film1900-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.home-introduction > .title-container {
+    position: relative;
+    isolation: isolate;
+}
+
+.home-introduction > .title-container::after {
+    content: "3";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    padding-bottom: 16px;
+    pointer-events: none;
+
+    color: #252522;
+    font: 700 clamp(4rem, 15vw, 10rem) / 1 Georgia, serif;
+    background-color: #d3d1c8;
+    background-image:
+        radial-gradient(
+            circle at center,
+            transparent 0 68px,
+            #55534e 68px 70px,
+            transparent 70px 84px,
+            #55534e 84px 86px,
+            transparent 86px
+        ),
+        linear-gradient(90deg, transparent calc(50% - 0.5px),
+            #55534e calc(50% - 0.5px) calc(50% + 0.5px),
+            transparent calc(50% + 0.5px)),
+        linear-gradient(transparent calc(50% - 0.5px),
+            #55534e calc(50% - 0.5px) calc(50% + 0.5px),
+            transparent calc(50% + 0.5px)),
+        conic-gradient(
+            #9e9b91 0deg var(--film1900-angle, 0deg),
+            #d3d1c8 var(--film1900-angle, 0deg) 360deg
+        );
+
+    animation:
+        film1900-count 3s step-end both,
+        film1900-turn 1s linear 3 forwards,
+        film1900-fade 0.55s ease-out 3s forwards;
+}
+
+@keyframes film1900-count {
+    0% { content: "3"; }
+    33.333% { content: "2"; }
+    66.667%, 100% { content: "1"; }
+}
+
+@keyframes film1900-turn {
+    from { --film1900-angle: 0deg; }
+    to { --film1900-angle: 360deg; }
+}
+
+@keyframes film1900-fade {
+    from { opacity: 1; visibility: visible; }
+    to { opacity: 0; visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-introduction > .title-container::after {
+        animation:
+            film1900-count 3s step-end both,
+            film1900-fade 0.01s step-end 3s forwards;
+    }
+}
+
 
 /* =========================================================
    HOMEPAGE - NARRATIVES
@@ -543,9 +670,14 @@ main p {
     border-radius: 2px;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.72rem;
+    font-size: 1rem;
     font-weight: normal;
-    letter-spacing: 0.7px;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: 10px 16px;
 
     text-align: center;
     text-transform: uppercase;
@@ -573,36 +705,58 @@ main p {
 
 .poster-back {
     position: absolute;
-
     top: 0;
     left: 0;
 
     width: 100%;
     height: 100%;
-
     box-sizing: border-box;
-    padding: 7%;
+
+    padding: 12% 11%;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
 
+    /* Carta con bordi leggermente scuriti */
     background:
-        linear-gradient(
-            rgba(72, 66, 58, 0.10),
-            rgba(72, 66, 58, 0.10)
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(49, 43, 34, 0.18) 100%
         ),
-        #c8c6c0;
+        repeating-linear-gradient(
+            0deg,
+            rgba(55, 48, 38, 0.025) 0px,
+            rgba(55, 48, 38, 0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+        #d1cbbd;
 
-    color: #302b24;
+    color: #292722;
 
+    border: 5px solid #292722;
+    outline: 1px solid #625b4e;
+    outline-offset: -12px;
+
+    box-shadow:
+        inset 0 0 0 3px #d1cbbd,
+        inset 0 0 0 4px #625b4e,
+        inset 0 0 28px rgba(40, 34, 26, 0.15);
+
+    font-family: Georgia, "Times New Roman", serif;
     text-align: center;
+
+    overflow-y: auto;
 
     transform: rotateY(180deg);
     transition: transform 0.6s ease-in-out;
     backface-visibility: hidden;
-
-    filter: grayscale(100%) sepia(20%) contrast(110%);
 }
+
 /* =========================================================
    AREA PRINCIPALE — PELLICOLA
    ========================================================= */
@@ -939,7 +1093,9 @@ main p {
 .tellme-buttons button,
 .metadata-tasti button,
 #filters button {
-    padding: 8px 14px;
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: 10px 16px;
 
     background-color: #292929;
     color: #d8d6d1;
@@ -948,14 +1104,13 @@ main p {
     border-radius: 2px;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: normal;
-    letter-spacing: 0.7px;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
 
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
+    text-align: center;
+    text-transform: none;
 }
 
 
@@ -1096,6 +1251,22 @@ main p {
     line-height: 1.4;
 }
 
+/* Ambientazione della scena */
+.story-content > p.movie-description:not(:empty) {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 6px 0 16px;
+    padding: 10px 14px;
+
+    background-color: #dfd9cc;
+    border-left: 3px solid #776954;
+    color: #2b2623;
+
+    font-size: 1rem;
+    line-height: 1.55;
+    text-align: left;
+}
+
 
 /* =========================================================
    QR
@@ -1120,6 +1291,13 @@ main p {
 
     font-size: 0.9rem;
     line-height: 1.4;
+}
+
+.qr-content > a {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 10px auto 0;
 }
 
 .qr-image {
@@ -1207,15 +1385,59 @@ main p {
     backface-visibility: hidden;
 }
 .poster-back p {
+    width: 100%;
+    max-width: none;
     margin: 0;
 
-    color: #302b24;
+    color: #292722;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(0.75rem, 1.1vw, 0.95rem);
-    line-height: 1.5;
+    font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+    line-height: 1.6;
 
-    text-align: justify;
+    text-align: center;
+}
+
+.poster-back h3 {
+    width: 100%;
+    margin: 0;
+
+    color: #292722;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 1px;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.poster-back .film-year {
+    display: block;
+    width: 65%;
+    margin: 0;
+    padding: 8px 0;
+
+    border-top: 1px solid #625b4e;
+    border-bottom: 1px solid #625b4e;
+
+    color: #484237;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.poster-back .film-director {
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.poster-back .film-synopsis {
+    margin-top: 4px;
 }
 
 
@@ -1254,13 +1476,23 @@ main p {
     border-radius: 2px;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.7px;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: 10px 16px;
 
     transition:
         background-color 0.2s ease,
         color 0.2s ease,
         border-color 0.2s ease;
+}
+.home-introduction ~ .map-introduction > .bottone {
+    display: block;
+    width: fit-content;
+    margin: 24px auto 0;
 }
 
 .bottone:hover {
@@ -1268,9 +1500,16 @@ main p {
     color: #ffffff;
     border-color: #bdbdb9;
 }
-
-.bottoni-pagine .bottone:only-child {
+.bottoni-pagine > .bottone:only-child:not(.style-detail *) {
     margin-left: auto;
+    margin-right: 0;
+}
+
+/* Il ritorno alla mappa resta a sinistra, anche da solo */
+main:not(:has(.home-introduction))
+.bottoni-pagine > a.bottone[href="mappa.html"] {
+    margin-left: 0;
+    margin-right: auto;
 }
 
 
@@ -1523,11 +1762,6 @@ main p {
 
 }
 
-a.bottone[href="mappa.html"] {
-    display: block;
-    width: fit-content;
-    margin: 20px auto;
-}
 
 /* =========================================================
    DOCUMENTATION
@@ -1545,9 +1779,91 @@ a.bottone[href="mappa.html"] {
 .documentation-section h2,
 .workflow h2 {
     max-width: none;
-    white-space: nowrap;
+    white-space: normal;
+    text-wrap: balance;
 }
 
+/* WORKFLOW — RULLINO ORIZZONTALE */
+
+.documentation-page .workflow {
+    width: 100%;
+    max-width: 950px;
+    min-width: 0;
+    margin: 40px auto;
+}
+
+.workflow-steps {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(118px, 1fr);
+    gap: 8px;
+
+    padding: 25px 12px;
+    overflow-x: auto;
+
+    background:
+        repeating-linear-gradient(
+            to right,
+            #b8ad98 0 11px,
+            transparent 11px 22px
+        ) left 7px / 22px 8px repeat-x,
+        repeating-linear-gradient(
+            to right,
+            #b8ad98 0 11px,
+            transparent 11px 22px
+        ) left calc(100% - 7px) / 22px 8px repeat-x,
+        #171716;
+
+    border: 1px solid #080808;
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 116px;
+    padding: 12px 8px;
+    box-sizing: border-box;
+
+    background: #2c2b29;
+    border: 1px solid #827969;
+
+    text-align: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.workflow-step strong {
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.65rem;
+    line-height: 1;
+}
+
+.workflow-step p {
+    margin: 0;
+
+    color: #e2e2df;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.workflow-step:hover,
+.workflow-step:focus-visible {
+    background: #454039;
+    border-color: #e5dccb;
+}
+
+.workflow-step:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: -4px;
+}
 
 /* Film */
 
@@ -1638,6 +1954,10 @@ a.bottone[href="mappa.html"] {
     text-align: center;
 }
 
+.documentation-page .pinterest-board {
+    filter: grayscale(100%);
+}
+
 
 
 
@@ -1661,6 +1981,8 @@ a.bottone[href="mappa.html"] {
     height: 550px;
 
     margin: 0 auto;
+    position: relative;
+    z-index: 0;
 
     box-sizing: border-box;
 
@@ -1714,28 +2036,58 @@ a.bottone[href="mappa.html"] {
     position: relative;
 
     width: 100%;
-    max-width: 850px;
+    max-width: 950px;
 
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 
 /* =========================================================
    LINEA VERTICALE PRINCIPALE
    ========================================================= */
-
 #locations-list::before {
     content: "";
 
     position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
 
-    left: 31px;
-    top: 30px;
-    bottom: 30px;
+    width: 100px;
+    box-sizing: border-box;
 
-    width: 2px;
+    background:
+        /* Perforazioni a sinistra */
+        repeating-linear-gradient(
+            to bottom,
+            #c8c2b6 0 11px,
+            transparent 11px 22px
+        ) 5px 6px / 8px 22px repeat-y,
 
-    background-color: rgba(189, 189, 185, 0.55);
+        /* Perforazioni a destra */
+        repeating-linear-gradient(
+            to bottom,
+            #c8c2b6 0 11px,
+            transparent 11px 22px
+        ) calc(100% - 5px) 6px / 8px 22px repeat-y,
+
+        /* Fotogrammi decorativi lungo la striscia */
+        repeating-linear-gradient(
+            to bottom,
+            #948c7e 0 1px,
+            #45423c 1px 55px,
+            #948c7e 55px 56px,
+            #171716 56px 66px
+        ) center top / 64px 66px repeat-y,
+
+        #171716;
+
+    border: 1px solid #080808;
+
+    box-shadow: 2px 0 7px rgba(0, 0, 0, 0.25);
+
+    pointer-events: none;
 }
 
 
@@ -1749,9 +2101,9 @@ a.bottone[href="mappa.html"] {
     width: 100%;
 
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 
-    gap: 30px;
+    gap: 20px;
 
     padding: 25px 0;
 
@@ -1771,9 +2123,9 @@ a.bottone[href="mappa.html"] {
     position: relative;
     z-index: 2;
 
-    flex: 0 0 58px;
-    width: 58px;
-    height: 58px;
+    flex: 0 0 100px;
+    width: 100px;
+    height: 76px;
 
     display: flex;
     align-items: center;
@@ -1781,16 +2133,32 @@ a.bottone[href="mappa.html"] {
 
     box-sizing: border-box;
 
-    background-color: #343434;
+    /* Rettangolo centrato esattamente dietro al numero */
+    background:
+    linear-gradient(#b7afa0, #b7afa0)
+        center top / 64px 2px no-repeat,
 
-    border: 1px solid #bdbdb9;
-    border-radius: 50%;
+    linear-gradient(#b7afa0, #b7afa0)
+        center bottom / 64px 2px no-repeat,
+
+    linear-gradient(#55514a, #55514a)
+        center / 64px 100% no-repeat,
+
+    #171716;
+
+    border: none;
+    border-radius: 0;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.35rem;
-    font-weight: normal;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
 
-    color: #e8e6e1;
+    color: #fff4de;
+
+    text-shadow:
+        0 1px 3px #000,
+        0 0 6px #000;
 }
 
 
@@ -1800,19 +2168,75 @@ a.bottone[href="mappa.html"] {
 
 .location-info {
     flex: 1;
+    min-width: 0;
 
     padding-top: 3px;
+    box-sizing: border-box;
+}
+
+/* Scheda accanto alla pellicola, nei due itinerari */
+
+.map-page:has(#show-historical.active, #show-women.active)
+.location-info {
+    position: relative;
+
+    padding: 28px;
+
+    background: #2c2b29;
+
+    border: 1px solid #625d54;
+    border-radius: 2px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Angoli da fotografia d'archivio */
+
+.map-page:has(#show-historical.active, #show-women.active)
+.location-info::before,
+.map-page:has(#show-historical.active, #show-women.active)
+.location-info::after {
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    pointer-events: none;
+}
+
+.map-page:has(#show-historical.active, #show-women.active)
+.location-info::before {
+    top: 8px;
+    left: 8px;
+
+    border-top: 2px solid #b8ad98;
+    border-left: 2px solid #b8ad98;
+}
+
+.map-page:has(#show-historical.active, #show-women.active)
+.location-info::after {
+    bottom: 8px;
+    right: 8px;
+
+    border-bottom: 2px solid #b8ad98;
+    border-right: 2px solid #b8ad98;
 }
 
 .location-info h3 {
-    margin: 0 0 7px 0;
+    margin: 0 0 16px;
+
+    color: #e2e2df;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.45rem;
-    font-weight: normal;
-    letter-spacing: 0.3px;
+    font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+    font-weight: bold;
+    line-height: 1.25;
+    letter-spacing: 0;
 
-    color: #eee;
+    text-align: left;
 }
 
 
@@ -1822,12 +2246,18 @@ a.bottone[href="mappa.html"] {
     width: 100%;
     max-width: none;
 
-    margin: 0 0 8px 0;
+    margin: 0 0 16px;
+    padding: 0;
 
-    font-size: 0.8rem;
-    line-height: 1.2rem;
+    background: none;
+    border: none;
 
-    color: #bdbdb9;
+    color: #c8bda6;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5;
 
     text-align: left;
 }
@@ -1837,14 +2267,15 @@ a.bottone[href="mappa.html"] {
 
 .location-info p:nth-of-type(2) {
     width: 100%;
-    max-width: 700px;
+    max-width: none;
 
     margin: 0;
 
-    font-size: 0.9rem;
-    line-height: 1.45rem;
+    color: #e2e0da;
 
-    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.75;
 
     text-align: left;
 }
@@ -1914,114 +2345,174 @@ a.bottone[href="mappa.html"] {
 .route-connection {
     position: relative;
 
-    width: calc(100% - 95px);
-
-    margin:
-        -8px
-        0
-        -8px
-        95px;
-
-    padding:
-        8px
-        15px
-        8px
-        18px;
+    width: calc(100% - 120px);
+    margin: 4px 0 22px 120px;
+    padding: 4px 0 4px 16px;
 
     box-sizing: border-box;
 
-    border-left:
-    1px solid rgba(189, 189, 185, 0.35);
+    background: none;
+    border: none;
+    border-left: 1px solid #777064;
+    border-radius: 0;
+
+    color: #c4c0b7;
 }
 
 
 /* PICCOLO PUNTO SULLA LINEA SECONDARIA */
 
 .route-connection::before {
-    content: "";
-
-    position: absolute;
-
-    left: -4px;
-    top: 12px;
-
-    width: 7px;
-    height: 7px;
-
-    background-color: #bdbdb9;
-
-    border-radius: 50%;
+    content: none;
 }
 
 
 /* TRASPORTO + TEMPO */
 
 .route-main-info {
-    margin-bottom: 3px;
+    margin: 0 0 6px;
+    padding: 0;
+
+    border: none;
+
+    color: #c8bda6;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.68rem;
+    font-size: 0.9rem;
     font-weight: normal;
-
-    color: #bdbdb9;
+    line-height: 1.5;
+    letter-spacing: 0;
 }
 
 
 /* INDICAZIONI */
 
 .route-directions {
-    width: 100% !important;
-    max-width: 650px !important;
+    width: 100%;
+    max-width: none;
+    margin: 0;
 
-    margin: 0 !important;
+    color: #c4c0b7;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.66rem !important;
-    line-height: 1.1rem !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
 
-    color: #d8d6d1;
-
-    text-align: left !important;
+    text-align: left;
 }
 
 
 /* NEXT STOP leggermente più evidente */
 
 .route-directions strong {
-    font-weight: normal;
+    color: #d5cfc2;
 
-    color: rgba(244, 232, 193, 0.8);
+    font-size: inherit;
+    font-weight: normal;
+    line-height: inherit;
 }
 
 
 
 /* =========================================================
-   ALL LOCATIONS
+   ALL LOCATIONS — SOLO QUANDO IL FILTRO ALL È ATTIVO
    ========================================================= */
+.map-page:has(#show-all.active) #locations-list {
+    --catalog-gap: 22px;
 
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: var(--catalog-gap);
+}
 
-#locations-list:not(:has(.location-number))::before {
+@media (min-width: 801px) {
+    .map-page:has(#show-all.active) #locations-list > .location-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc((100% - var(--catalog-gap)) / 2);
+    }
+}
+
+@media (max-width: 800px) {
+    .map-page:has(#show-all.active) #locations-list {
+        grid-template-columns: minmax(0, 1fr);
+        grid-auto-rows: auto;
+    }
+}
+
+.map-page:has(#show-all.active) #locations-list::before {
     display: none;
 }
 
+.map-page:has(#show-all.active) .location-card {
+    position: relative;
 
+    margin: 0 0 24px;
+    padding: 28px;
 
-.location-card:not(:has(.location-number)) {
-    padding: 22px 0;
+    background: #2c2b29;
 
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid #625d54;
+    border-radius: 2px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.location-card:not(:has(.location-number)) .location-info {
+.map-page:has(#show-all.active) .location-card::before,
+.map-page:has(#show-all.active) .location-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    pointer-events: none;
+}
+
+.map-page:has(#show-all.active) .location-card::before {
+    top: 8px;
+    left: 8px;
+
+    border-top: 2px solid #b8ad98;
+    border-left: 2px solid #b8ad98;
+}
+
+.map-page:has(#show-all.active) .location-card::after {
+    bottom: 8px;
+    right: 8px;
+
+    border-bottom: 2px solid #b8ad98;
+    border-right: 2px solid #b8ad98;
+}
+
+.map-page:has(#show-all.active) .location-info {
     padding-left: 0;
+}
+
+/* Affianca i paragrafi contenenti i due collegamenti */
+
+.map-page:has(#show-all.active) .location-info > p:has(> a) {
+    display: inline-block;
+
+    width: auto;
+    max-width: 100%;
+
+    margin: 16px 12px 0 0;
+    padding: 0;
+
+    vertical-align: top;
+}
+
+.map-page:has(#show-all.active) .location-info > p:has(> a) > a {
+    margin-top: 0;
 }
 
 
 /* =========================================================
    MAPPA RESPONSIVE
    ========================================================= */
-
 @media screen and (max-width: 800px) {
 
     .map-page h1 {
@@ -2041,30 +2532,44 @@ a.bottone[href="mappa.html"] {
     }
 
     #locations-list::before {
-        left: 24px;
-    }
+    left: 0;
+    width: 70px;
+
+    background-size:
+        8px 22px,
+        8px 22px,
+        34px 66px,
+        auto;
+}
 
     .location-card {
         gap: 18px;
     }
 
     .location-number {
-        flex-basis: 50px;
-
-        width: 50px;
-        height: 50px;
+        flex-basis: 70px;
+        width: 70px;
+        height: 58px;
 
         font-size: 1.4rem;
+
+        background-size:
+            34px 2px,
+            34px 2px,
+            34px 100%;
     }
 
     .location-info h3 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .route-connection {
-        width: calc(100% - 68px);
+        width: calc(100% - 88px);
+        margin-left: 88px;
+    }
 
-        margin-left: 68px;
+    .location-card:not(:has(.location-number)) .location-info {
+        padding-left: 88px;
     }
 }
 
@@ -2079,6 +2584,706 @@ a.bottone[href="mappa.html"] {
 .disclaimer-page .disclaimer-number {
     font-size: 2.5rem;
 }
+
+/* =========================================================
+   ABOUT 
+   ========================================================= */
+
+.about-page > .about-introduction,
+.about-page > .team-section,
+.about-page > .about-styles {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.about-page > .team-section,
+.about-page > .about-styles {
+    margin-top: 48px;
+}
+
+
+
+.about-page .team-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+}
+
+/* Il link GitHub occupa tutta la scheda */
+.about-page .team-container > a {
+    display: flex;
+    min-width: 0;
+    border-radius: 2px;
+}
+
+.about-page .team-card {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    padding: 26px 20px;
+    box-sizing: border-box;
+
+    background: #2c2b29;
+    border: 1px solid #625d54;
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    text-align: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Angoli ripresi dalle schede della mappa */
+.about-page .team-card::before,
+.about-page .team-card::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+}
+
+.about-page .team-card::before {
+    top: 8px;
+    left: 8px;
+    border-top: 2px solid #b8ad98;
+    border-left: 2px solid #b8ad98;
+}
+
+.about-page .team-card::after {
+    bottom: 8px;
+    right: 8px;
+    border-bottom: 2px solid #b8ad98;
+    border-right: 2px solid #b8ad98;
+}
+
+.about-page .team-icon {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 14px;
+
+    color: #d8cfbf;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.about-page .team-card h3 {
+    margin: 0 0 10px;
+
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    line-height: 1.25;
+}
+
+.about-page .team-tasks {
+    margin: 16px 0 0;
+    padding-left: 1.25rem;
+
+    color: #d3ccc0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.55;
+    text-align: left;
+    list-style: disc;
+}
+
+.about-page .team-tasks li + li {
+    margin-top: 6px;
+}
+
+.about-page .team-tasks li::marker {
+    color: #b8ad98;
+}
+
+.about-page .team-container > a:hover .team-card,
+.about-page .team-container > a:focus-visible .team-card {
+    background: #373532;
+    border-color: #b8ad98;
+}
+
+.about-page .team-container > a:focus-visible {
+    outline: 2px solid #e2e2df;
+    outline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+    .about-page .team-container {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 480px;
+        margin-inline: auto;
+    }
+}
+
+/* SCHEDA STILE 1900 — SCHEDE, PALETTE E RIFERIMENTI */
+
+.style-detail > .documentation-section {
+    width: 100%;
+    max-width: 950px;
+    box-sizing: border-box;
+}
+
+.style-detail .era-lead {
+    max-width: 64ch;
+    text-align: left;
+    text-wrap: pretty;
+}
+
+.style-detail .era-kicker,
+.style-detail .era-card time {
+    color: #d5c8b2;
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.style-detail > .documentation-section[id] {
+    scroll-margin-top: 9rem;
+}
+
+.style-detail .documentation-section h2 {
+    white-space: normal;
+    text-wrap: balance;
+}
+
+.style-detail .era-grid,
+.style-detail .style-palette-grid {
+    display: grid;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.style-detail .era-grid,
+.style-detail .style-palette-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+}
+
+.style-detail .era-chronology,
+.style-detail .style-palette-grid {
+    padding: 0;
+    list-style: none;
+}
+
+.style-detail .era-card,
+.style-detail .style-swatch {
+    position: relative;
+    min-width: 0;
+    padding: 20px;
+    background: #2c2b29;
+    border: 1px solid #625d54;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.style-detail .era-card::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #b8ad98;
+    border-left: 2px solid #b8ad98;
+    pointer-events: none;
+}
+
+.style-detail .era-card :is(h3, h4) {
+    margin: 8px 0 10px;
+    color: #f1ede5;
+    font-size: 1.18rem;
+}
+
+.style-detail .era-card p,
+.style-detail > .documentation-section > p:not(.era-lead) {
+    text-align: left;
+}
+
+.style-detail .era-card a {
+    color: #f1e5ce;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.style-detail #references > .style-pinterest-link {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 0;
+    border-bottom: 0;
+    color: #f1e5ce;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.style-detail .era-card a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+}
+
+.style-detail .era-title-sample,
+.style-detail .era-countdown-sample,
+.style-detail .era-ticket-sample {
+    min-height: 104px;
+    display: grid;
+    place-content: center;
+    margin-bottom: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 104px;
+}
+
+.style-detail .era-title-sample {
+    background: linear-gradient(#201c17a0, #201c17a0),
+                #222 url("../img/tende.png") center / cover;
+    color: #f1ede5;
+    font-size: 1.55rem;
+    font-style: italic;
+    font-weight: bold;
+}
+.style-detail .era-title-sample span {
+    display: inline-block;
+    font-style: italic;
+    transform: rotate(-8deg);
+}
+
+.style-detail .era-countdown-sample {
+    grid-auto-flow: column;
+    gap: 8px;
+    padding: 8px;
+    background: #191817;
+}
+
+.style-detail .era-countdown-sample span {
+    width: clamp(33px, 6vw, 54px);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle, transparent 56%, #625d54 58% 60%, transparent 62%),
+        #d3d1c8;
+    color: #292722;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.style-detail .era-ticket-sample {
+    min-height: 100px;
+    outline: 1px solid #80715c;
+    outline-offset: -7px;
+    clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px,
+        100% calc(100% - 8px), calc(100% - 8px) 100%,
+        8px 100%, 0 calc(100% - 8px), 0 8px);
+    color: #302820;
+    background: #c8c6c0;
+}
+
+.style-detail .era-ticket-sample small {
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+}
+
+.style-detail .style-swatch {
+    display: grid;
+    gap: 5px;
+    padding: 12px;
+}
+
+.style-detail .style-swatch-sample {
+    min-height: 78px;
+    margin-bottom: 6px;
+    border: 1px solid #8b8377;
+    background: var(--swatch);
+}
+
+.style-detail .era-board {
+    width: 100%;
+    max-width: 840px;
+    margin: 24px auto;
+    padding: 12px;
+    box-sizing: border-box;
+    background: #24221f;
+    border: 1px solid #625d54;
+    filter: grayscale(100%);
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+.style-detail > .documentation-section[id] {
+        scroll-margin-top: 11rem;
+    }
+}
+
+/* Esempi delle locandine, della mappa e dei percorsi */
+.style-detail .era-poster-card {
+    margin: 0;
+}
+
+.style-detail .era-poster-card .poster-img,
+.style-detail .era-poster-card .poster-back {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    max-width: 156px;
+    box-sizing: border-box;
+    margin: 0 auto 16px;
+}
+
+.style-detail .era-poster-card .poster-img {
+    object-fit: contain;
+    background: #1c1b1b;
+}
+
+.style-detail .era-poster-card .poster-back {
+    position: static;
+    transform: none;
+    gap: 3px;
+    padding: 12px;
+    outline-offset: -8px;
+}
+
+.style-detail .era-poster-card .poster-back h3,
+.style-detail .era-poster-card .poster-back p {
+    color: #292722;
+}
+
+.style-detail .era-map-card {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0 0;
+}
+
+.style-detail .era-map-reference {
+    display: block;
+    width: 100%;
+    max-height: 310px;
+    object-fit: contain;
+    margin: 0 0 16px;
+    background: #e2e2df;
+}
+
+.style-detail .era-marker-samples,
+.style-detail .era-route-samples {
+    min-height: 96px;
+    margin-bottom: 16px;
+    padding: 12px;
+    box-sizing: border-box;
+    background: #d1cbbd;
+    color: #292722;
+}
+
+.style-detail .era-marker-samples {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.style-detail .era-film-marker {
+    display: block;
+    width: 34px;
+    height: 38px;
+    border: 2px solid #d1cbbd;
+    outline: 1px solid #242424;
+    border-radius: 2px;
+    background:
+        radial-gradient(circle, #efe9dc 0 3px, transparent 4px),
+        linear-gradient(#303030, #303030) center / 14px 27px no-repeat,
+        repeating-linear-gradient(#d1cbbd 0 4px, transparent 4px 9px)
+            left 3px center / 3px 27px no-repeat,
+        repeating-linear-gradient(#d1cbbd 0 4px, transparent 4px 9px)
+            right 3px center / 3px 27px no-repeat,
+        #242424;
+}
+
+.style-detail .era-film-marker--sepia {
+    background-image:
+        radial-gradient(circle, #efe9dc 0 3px, transparent 4px),
+        linear-gradient(#86603e, #86603e),
+        repeating-linear-gradient(#d1cbbd 0 4px, transparent 4px 9px),
+        repeating-linear-gradient(#d1cbbd 0 4px, transparent 4px 9px);
+}
+
+.style-detail .era-film-marker--shared {
+    background-image:
+        radial-gradient(circle, #efe9dc 0 3px, transparent 4px),
+        linear-gradient(90deg, #303030 50%, #86603e 50%),
+        repeating-linear-gradient(#d1cbbd 0 4px, transparent 4px 9px),
+        repeating-linear-gradient(#d1cbbd 0 4px, transparent 4px 9px);
+}
+
+.style-detail .era-route-samples {
+    display: grid;
+    align-content: center;
+    gap: 9px;
+}
+
+.style-detail .era-route-sample {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.9rem;
+}
+
+.style-detail .era-route-sample::before {
+    content: "";
+    flex: 0 0 32px;
+    height: 4px;
+    border-radius: 2px;
+    background: #303030;
+}
+
+.style-detail .era-route-sample--sepia::before {
+    background: #86603e;
+}
+
+.style-detail .era-credit {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 680px;
+    box-sizing: border-box;
+    margin: 28px auto 0;
+}
+
+.style-detail .era-credit i {
+    flex: 0 0 auto;
+    color: #d5c8b2;
+    font-size: 1.45rem;
+}
+
+.style-detail .era-credit p {
+    margin: 0;
+    text-align: left;
+}
+
+.style-detail .era-credit a {
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Capitoli ed esempi statici */
+
+.style-detail .era-selector-card {
+    margin: 0;
+}
+
+.style-detail .era-selector-scroll {
+    overflow-x: auto;
+    margin-bottom: 14px;
+}
+
+.style-detail .era-selector-crop {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 1387 / 99;
+    overflow: hidden;
+}
+
+.style-detail .era-selector-crop img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 145.06%;
+    max-width: none;
+    height: auto;
+    transform: translate(-15.90%, -1.96%);
+}
+
+.style-detail .era-poster-card .poster-back h3 {
+    font-size: 1.1rem;
+}
+
+.style-detail .era-selector-card p,
+.style-detail .era-map-card p,
+.style-detail .era-poster-card p {
+    text-align: left;
+}
+
+/* Titoli, ritmo della pagina ed esempi */
+.style-detail > .documentation-intro {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 24px;
+}
+
+.style-detail > .documentation-intro h1::after {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 3px;
+    margin: 20px auto 0;
+    border-top: 1px solid #e2e2df;
+    border-bottom: 1px solid #e2e2df;
+}
+
+.style-detail > .documentation-section {
+    margin: 28px auto;
+}
+
+.style-detail :is(h1, h2, h3) {
+    text-align: center;
+}
+
+.style-detail p,
+.style-detail figcaption {
+    text-align: left;
+}
+
+.style-detail .era-lead {
+    max-width: none;
+}
+
+.style-detail .era-poster-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+}
+
+.style-detail .era-poster-card .poster-back :is(h3, .film-year, p) {
+    margin: 0;
+}
+
+.style-detail .era-poster-card .poster-back p {
+    font-size: 0.7rem;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.style-detail .era-visual-card {
+    margin: 24px 0 0;
+}
+
+.style-detail .era-paper {
+    display: flow-root;
+    min-height: 210px;
+    padding: 14px;
+    color: #292722;
+    background: #c5c1b8;
+    box-shadow: inset 0 0 16px #625b4e44;
+}
+
+.style-detail .era-paper h3 {
+    color: #292722;
+}
+
+.style-detail .era-view-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.75rem;
+}
+
+.style-detail .era-view-labels strong {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.style-detail .era-meta-choices {
+    display: grid;
+    gap: 6px;
+    padding: 0;
+    list-style: none;
+}
+
+.style-detail .era-meta-choices li {
+    padding: 6px 10px;
+    background: #292929;
+    color: #e2e2df;
+}
+
+.style-detail .era-metadata-sheet dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 12px;
+}
+
+.style-detail .era-metadata-sheet dt {
+    font-weight: bold;
+}
+
+.style-detail .era-metadata-sheet dd {
+    margin: 0;
+}
+
+.style-detail .era-stops-screenshot {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 0 14px;
+}
+
+.style-detail .era-workflow-preview {
+    margin-bottom: 16px;
+}
+
+.style-detail .era-workflow-preview .workflow-step p {
+    text-align: left;
+}
+
+/* Spaziatura, campioni tipografici e schede degli itinerari */
+.style-detail > .documentation-section > h2 {
+    margin: 0 auto 12px;
+}
+
+.style-detail .era-visual-card {
+    margin-top: 16px;
+}
+
+.style-detail .era-type-grid,
+.style-detail .era-itinerary-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr));
+}
+
+.style-detail .era-type-card {
+    display: grid;
+    grid-template-rows: auto minmax(4rem, auto) 1fr;
+    gap: 10px;
+}
+
+.style-detail .era-type-card h3 {
+    margin: 0;
+}
+
+.style-detail .era-type-specimen {
+    display: grid;
+    align-items: center;
+    padding: 8px;
+    background: #24221f;
+    border-block: 1px solid #625d54;
+}
+
+.style-detail .era-type-specimen p {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    line-height: 1.35;
+}
+
+.style-detail .era-type-body-sample {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.style-detail .era-itinerary-card {
+    margin: 0;
+}
+
+.style-detail .era-itinerary-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #191817;
+    border: 1px solid #625d54;
+    box-sizing: border-box;
+}
+
+
 
 /* =========================================================
    FOOTER
@@ -2193,126 +3398,96 @@ footer p a:hover {
     border-top: 1px solid #606060;
 }
 
-/* =========================================================
-   VISUAL STYLES — MINIMAL ACCORDION
-   ========================================================= */
+/* DOCUMENTATION — INDICE DEGLI STILI */
 
-.style-exploration {
-    margin-top: 2.5rem;
+.visual-styles .style-exploration {
+    margin: 32px 0 40px;
 }
 
-.style-exploration > h3 {
-    margin-bottom: 0.5rem;
+.visual-styles .style-exploration > h3 {
+    margin: 0 0 10px;
+    color: #f1ede5;
+    text-align: center;
 }
 
-.style-exploration > p {
-    margin-bottom: 1.5rem;
+.visual-styles .style-exploration > p {
+    margin: 0 0 18px;
+    text-align: left;
 }
 
-
-/* Accordion */
-
-.style-item {
-    border-bottom: 1px solid currentColor;
+.visual-styles .style-table-scroll {
+    overflow-x: auto;
+    border: 1px solid #625d54;
+    border-radius: 2px;
 }
 
-.style-item:first-of-type {
-    border-top: 1px solid currentColor;
+.visual-styles .style-table-scroll:focus-visible {
+    outline: 2px solid #e2e2df;
+    outline-offset: 3px;
 }
 
-
-/* Summary */
-
-.style-item summary {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-
-    padding: 0.9rem 0.2rem;
-
-    cursor: pointer;
-    list-style: none;
-
-    color: inherit;
-    font-family: inherit;
-
-    transition: opacity 0.2s ease;
-}
-
-.style-item summary::-webkit-details-marker {
-    display: none;
-}
-
-.style-item summary::marker {
-    content: "";
-}
-
-.style-item summary:hover {
-    opacity: 0.7;
-}
-
-
-/* Year */
-
-.style-year {
-    min-width: 75px;
-
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-
-/* Theme name */
-
-.style-name {
-    flex: 1;
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-
-/* Arrow */
-
-.style-item summary::after {
-    content: "";
-
-    width: 7px;
-    height: 7px;
-
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-
-    transform: rotate(45deg);
-
-    margin-right: 0.5rem;
-
-    transition: transform 0.25s ease;
-}
-
-.style-item[open] summary::after {
-    transform: rotate(225deg);
-}
-
-
-/* Expanded content */
-
-.style-content {
-
+.visual-styles .style-table {
     width: 100%;
-
-    max-width: none;
-
-    box-sizing: border-box;
-
-    padding: 0.3rem 0 1.5rem;
-
+    border-collapse: collapse;
+    background: #2c2b29;
+    color: #e2e2df;
+    text-align: left;
 }
 
-.style-content p {
-    margin: 0 0 1rem;
+.visual-styles .style-table th,
+.visual-styles .style-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #625d54;
+    line-height: 1.5;
+}
 
-    font-size: 0.95rem;
-    line-height: 1.7;
+.visual-styles .style-table thead th {
+    background: #24221f;
+    color: #f1e5ce;
+}
+
+.visual-styles .style-table tbody th {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.visual-styles .style-table tbody tr:nth-child(even) {
+    background: #343230;
+}
+
+.visual-styles .style-table tbody tr:last-child > * {
+    border-bottom: 0;
+}
+
+.visual-styles .style-table .style-table-action {
+    text-align: center;
+}
+
+.visual-styles .style-table .bottone {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.visual-styles .style-table .bottone:focus-visible {
+    outline: 2px solid #e2e2df;
+    outline-offset: 3px;
+}
+
+.visual-styles .style-table-pending {
+    color: #d3ccc0;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+    .visual-styles .style-table th,
+    .visual-styles .style-table td {
+        padding: 10px 8px;
+    }
+
+    .visual-styles .style-table .bottone {
+        white-space: normal;
+    }
 }
 
 
@@ -2347,25 +3522,59 @@ footer p a:hover {
 }
 
 
-/* Responsive */
 
-@media (max-width: 600px) {
 
-    .style-item summary {
-        gap: 0.8rem;
+
+/* =========================================================
+  NUOVA BARRA
+   ========================================================= */
+/* Navbar più ampia su desktop */
+@media (min-width: 801px) {
+    header {
+        height: 72px;
     }
 
-    .style-year {
-        min-width: 60px;
+    .link-head > a,
+    .dropdown > a {
         font-size: 1rem;
     }
 
-    .style-name {
-        font-size: 0.95rem;
+    .bar-style {
+        top: 72px;
     }
+}
 
-    .style-content {
-        padding-bottom: 1.2rem;
+/* Barra degli anni più sottile, con fotogrammi al centro */
+.bar-style {
+    justify-content: flex-start;
+    overflow-x: auto;
+}
+
+.bar-item {
+    flex: 0 0 82px;
+    min-width: 0;
+    height: 36px;
+    box-sizing: border-box;
+}
+
+.bar-item:first-child {
+    margin-inline-start: auto;
+    border-inline-start: 1px solid #606060;
+}
+
+.bar-item:last-child {
+    margin-inline-end: auto;
+    border-inline-end: 1px solid #606060;
+}
+
+.bar-item a {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+
+@media (max-width: 600px) {
+    .bar-item {
+        flex-basis: 64px;
     }
-
 }

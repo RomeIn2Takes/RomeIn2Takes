@@ -33,36 +33,39 @@
 
     function initBarEvents() {
 
-        const barLinks =
-            document.querySelectorAll(".bar-style .bar-item a");
+    const barLinks =
+        document.querySelectorAll(".bar-style .bar-item a");
 
-        barLinks.forEach(function (link) {
+    barLinks.forEach(function (link) {
 
-            link.addEventListener("click", function (e) {
+        link.addEventListener("click", function (e) {
 
-                e.preventDefault();
+            e.preventDefault();
 
-                const newStyle =
-                    this.getAttribute("href");
+            const newStyle = this.getAttribute("href");
 
-                if (cssLink && newStyle) {
+            if (cssLink && newStyle) {
 
-                    cssLink.setAttribute(
-                        "href",
-                        newStyle
-                    );
+                // Cambia il CSS
+                cssLink.setAttribute("href", newStyle);
 
-                    localStorage.setItem(
-                        "userStyle",
-                        newStyle
-                    );
-                }
+                // Salva lo stile selezionato
+                localStorage.setItem("userStyle", newStyle);
 
-            });
+                // Aggiorna la cartografia Leaflet
+                document.dispatchEvent(
+                    new CustomEvent('themeChanged', {
+                        detail: { style: newStyle }
+                    })
+                );
+
+            }
 
         });
 
-    }
+    });
+
+}
 
 
     if (document.readyState === "loading") {
@@ -444,13 +447,108 @@ function initMapPage() {
             );
 
 
-    L.tileLayer(
-        'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-        {
+    /* ========================================================
+    STILI CARTOGRAFICI
+    ======================================================== */
+
+    var mapStyles = {
+
+        "css/base.css": {
+            url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
             attribution:
                 '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        },
+
+        "css/style1900.css": {
+            url: "https://tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token={accessToken}",
+            accessToken: "poi rimettiamo token",
+            attribution:
+                '&copy; <a href="https://jawg.io/">Jawg Maps</a> ' +
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        },
+
+        "css/style1960.css": {
+            url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+            attribution:
+                'Tiles &copy; Esri'
+        },
+
+                "css/style1990.css": {
+            url: "https://api.thunderforest.com/transport-dark/{z}/{x}/{y}{r}.png?apikey={apikey}",
+            apikey: "292da98cd1ba4fdca88f81b7974d4d0d",
+            attribution:
+                '&copy; <a href="https://www.thunderforest.com/">Thunderforest</a>, ' +
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        },
+
+        "css/style2035.css": {
+            url: "https://tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-token={accessToken}",
+            accessToken: "poi mettiamo token",
+            attribution:
+                '&copy; <a href="https://jawg.io/">Jawg Maps</a> ' +
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }
-    ).addTo(map);
+    };
+
+
+    /* ========================================================
+    CAMBIO DINAMICO DELLA MAPPA
+    ======================================================== */
+
+    var currentTileLayer = null;
+
+    function changeMapStyle(cssFile) {
+
+        var selectedStyle = mapStyles[cssFile] || mapStyles["css/base.css"];
+
+        // Se manca una chiave API, utilizza OpenStreetMap
+        if (
+            (cssFile === "css/style1990.css" && !selectedStyle.apikey) ||
+            (
+                (cssFile === "css/style1900.css" ||
+                cssFile === "css/style2035.css") &&
+                !selectedStyle.accessToken
+            )
+        ) {
+            selectedStyle = mapStyles["css/base.css"];
+        }
+
+        var newTileLayer = L.tileLayer(
+            selectedStyle.url,
+            {
+                attribution: selectedStyle.attribution,
+                apikey: selectedStyle.apikey,
+                accessToken: selectedStyle.accessToken,
+                maxZoom: 19
+            }
+        );
+
+        // Aggiunge il nuovo sfondo prima di rimuovere il precedente
+        newTileLayer.addTo(map);
+        newTileLayer.bringToBack();
+
+        if (currentTileLayer) {
+            map.removeLayer(currentTileLayer);
+        }
+
+        currentTileLayer = newTileLayer;
+    }
+
+
+    /* ========================================================
+    STILE INIZIALE E CAMBIO TEMA
+    ======================================================== */
+
+    var initialStyle = localStorage.getItem("userStyle") || "css/base.css";
+    var activeMapTheme = initialStyle;
+    changeMapStyle(initialStyle);
+
+    document.addEventListener('themeChanged', function (event) {
+        activeMapTheme = event.detail.style;
+
+        changeMapStyle(activeMapTheme);
+        updateMap();
+    });
 
 
     /* ========================================================
@@ -468,6 +566,188 @@ function initMapPage() {
        ======================================================== */
 
     var markers = [];
+
+    var defaultMapIcon = new L.Icon.Default();
+
+    var themedIcons = {};
+
+    // Colori e spessori condivisi da segnaposto e percorsi
+    var mapVisualStyles = {
+        "css/style1900.css": {
+            historical: "#303030",
+            women: "#a3a3a3",
+            weight: 4
+        },
+
+        "css/style1960.css": {
+            historical: "#b73526",
+            women: "#007f86",
+            weight: 6
+        },
+
+        "css/style2035.css": {
+            historical: "#48bc99",
+            women: "#cf79ff",
+            weight: 5
+        },
+
+        // 1990: linee al neon rosa e azzurro
+        "css/style1990.css": {
+            historical: "#ff007f",
+            women: "#00f3ff",
+            weight: 4
+        },
+
+                // 1940: percorsi a puntini, come una fila di lampadine
+        "css/base.css": {
+            historical: "#a3271c",
+            women: "#b8862f",
+            weight: 7,
+            dashArray: "0.1 13"
+        }
+    };
+
+    function getMarkerIcon(location) {
+
+        var style = mapVisualStyles[activeMapTheme];
+
+        // Gli altri temi mantengono il segnaposto originale
+        if (!style) {
+            return defaultMapIcon;
+        }
+
+        var historical = location.narratives.includes("historical");
+        var women = location.narratives.includes("women");
+
+        var type = historical && women
+            ? "both"
+            : (women ? "women" : "historical");
+
+        var key = activeMapTheme + ":" + type;
+
+        if (!themedIcons[key]) {
+
+            var fill = type === "both"
+                ? "url(#routes)"
+                : (type === "women" ? style.women : style.historical);
+
+            var definitions =
+                '<defs>' +
+                    '<linearGradient id="routes" ' +
+                        'x1="0%" y1="0%" x2="100%" y2="0%">' +
+                        '<stop offset="50%" stop-color="' +
+                            style.historical + '"/>' +
+                        '<stop offset="50%" stop-color="' +
+                            style.women + '"/>' +
+                    '</linearGradient>' +
+                '</defs>';
+
+            var drawing = "";
+
+            if (activeMapTheme === "css/style1900.css") {
+
+                // Fotogramma con perforazioni laterali
+                drawing =
+                    '<rect x="3" y="3" width="30" height="30" ' +
+                        'rx="2" fill="#242424" ' +
+                        'stroke="#d1cbbd" stroke-width="1.5"/>' +
+
+                    '<rect x="10" y="7" width="16" height="22" ' +
+                        'fill="' + fill + '" ' +
+                        'stroke="#d1cbbd" stroke-width="1"/>' +
+
+                    '<path d="M6 7v3 M6 15v3 M6 23v3 ' +
+                        'M30 7v3 M30 15v3 M30 23v3" ' +
+                        'stroke="#d1cbbd" stroke-width="3"/>' +
+
+                    '<circle cx="18" cy="18" r="3" fill="#efe9dc"/>';
+
+            } else if (activeMapTheme === "css/style2035.css") {
+
+                // Esagono con mirino centrale
+                drawing =
+                    '<path d="M18 2 L32 10 L32 26 ' +
+                        'L18 34 L4 26 L4 10 Z" ' +
+                        'fill="#101725" stroke="' + fill + '" ' +
+                        'stroke-width="2.5"/>' +
+
+                    '<circle cx="18" cy="18" r="7" ' +
+                        'fill="' + fill + '" fill-opacity="0.25" ' +
+                        'stroke="' + fill + '" stroke-width="1.5"/>' +
+
+                    '<path d="M18 8v6 M18 22v6 ' +
+                        'M8 18h6 M22 18h6" ' +
+                        'stroke="' + fill + '" stroke-width="2"/>' +
+
+                    '<circle cx="18" cy="18" r="2" fill="#ffffff"/>';
+
+                } else if (activeMapTheme === "css/style1990.css") {
+
+                // 1990: rombo al neon con un pixel giallo al centro
+                drawing =
+                    '<path d="M18 3 L33 18 L18 33 L3 18 Z" ' +
+                        'fill="#1d0243" stroke="' + fill + '" ' +
+                        'stroke-width="3"/>' +
+
+                    '<rect x="14" y="14" width="8" height="8" ' +
+                        'fill="#ffe600"/>';
+            
+                        } else if (activeMapTheme === "css/base.css") {
+
+                // 1940: piccola insegna da cinema con la punta in basso.
+                // Cornice scura con bordo in ottone, una fila di lampadine
+                // sopra e una sotto, pannello centrale del colore dell'itinerario
+                var bulbs = "";
+                for (var x = 8; x <= 28; x += 4) {
+                    bulbs +=
+                        '<circle cx="' + x + '" cy="5.2" r="1.3" fill="#ffe3a3"/>' +
+                        '<circle cx="' + x + '" cy="21.8" r="1.3" fill="#ffe3a3"/>';
+                }
+
+                                drawing =
+                    '<path d="M5 2 H31 A2 2 0 0 1 33 4 V23 A2 2 0 0 1 31 25 ' +
+                        'H22 L18 33 L14 25 H5 A2 2 0 0 1 3 23 V4 A2 2 0 0 1 5 2 Z" ' +
+                        'fill="#221c18" stroke="#a8864a" stroke-width="1.5"/>' +
+
+                    bulbs +
+
+                    '<rect x="7" y="8.5" width="22" height="10" ' +
+                        'fill="' + fill + '" stroke="#f3e7c8" stroke-width="1"/>';
+            } else {
+
+                // Cerchi del tema 1960
+                drawing =
+                    '<circle cx="18" cy="18" r="16" ' +
+                        'fill="#fff9e9" stroke="#28231e" ' +
+                        'stroke-width="2"/>' +
+
+                    '<circle cx="18" cy="18" r="11" ' +
+                        'fill="' + fill + '"/>' +
+
+                    '<circle cx="18" cy="18" r="4" fill="#fff9e9"/>';
+
+            }
+
+            var svg =
+                '<svg xmlns="http://www.w3.org/2000/svg" ' +
+                    'width="36" height="36" viewBox="0 0 36 36">' +
+                    definitions +
+                    drawing +
+                '</svg>';
+
+            themedIcons[key] = L.icon({
+                iconUrl:
+                    "data:image/svg+xml;charset=UTF-8," +
+                    encodeURIComponent(svg),
+
+                iconSize: [36, 36],
+                iconAnchor: [18, 18],
+                popupAnchor: [0, -18]
+            });
+        }
+
+        return themedIcons[key];
+    }
 
 
     function setupMarkers() {
@@ -531,7 +811,7 @@ function initMapPage() {
             var currentLocation =
                 locations[i];
 
-
+            markers[i].setIcon(getMarkerIcon(currentLocation));
             var matchesNarrative =
                 currentNarrative === 'all' ||
                 currentLocation.narratives.includes(
@@ -618,22 +898,35 @@ function initMapPage() {
         }
 
 
-        historicalLine =
-            L.polyline(
-                visibleHistoricalRoute,
-                {
-                    color: 'blue'
-                }
-            );
+        var routeStyle = mapVisualStyles[activeMapTheme] || {
+            historical: "blue",
+            women: "red",
+            weight: 3
+        };
 
+        historicalLine = L.polyline(
+            visibleHistoricalRoute,
+            {
+                color: routeStyle.historical,
+                weight: routeStyle.weight,
+                opacity: 1,
+                dashArray: routeStyle.dashArray || null,
+                lineCap: "round",
+                lineJoin: "round"
+            }
+        );
 
-        womenLine =
-            L.polyline(
-                visibleWomenRoute,
-                {
-                    color: 'red'
-                }
-            );
+        womenLine = L.polyline(
+            visibleWomenRoute,
+            {
+                color: routeStyle.women,
+                weight: routeStyle.weight,
+                opacity: 1,
+                dashArray: routeStyle.dashArray || null,
+                lineCap: "round",
+                lineJoin: "round"
+            }
+        );
 
 
         if (

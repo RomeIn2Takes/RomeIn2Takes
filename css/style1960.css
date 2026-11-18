@@ -93,7 +93,7 @@ header {
     padding: 12px 40px;
     box-sizing: border-box;
 
-    background-color: var(--paper-light);
+    background-color: var(--red-bright);
 
     border-bottom: 2px solid var(--ink);
 }
@@ -107,7 +107,7 @@ header {
 .dropdown > a {
     margin-right: 24px;
 
-    color: var(--ink);
+    color: #fff7e7;
 
     font-family: 'Oswald', sans-serif;
     font-size: 0.85rem;
@@ -126,9 +126,11 @@ header {
 }
 
 .link-head > a:hover,
-.dropdown > a:hover {
-    color: var(--red);
-    border-bottom-color: var(--red);
+.dropdown > a:hover,
+.link-head > a:focus-visible,
+.dropdown > a:focus-visible {
+    color: var(--yellow);
+    border-bottom-color: var(--yellow);
 }
 
 
@@ -149,7 +151,7 @@ header {
 
     min-width: 220px;
 
-    background-color: var(--paper-light);
+    background-color: var(--red-bright);
     border: 1px solid var(--ink);
 
     z-index: 2100;
@@ -165,81 +167,88 @@ header {
 
     padding: 12px 15px;
 
-    color: var(--ink);
+    color: #fff7e7;
 
     font-family: 'Oswald', sans-serif;
     font-size: 0.85rem;
 }
 
-.dropdown-menu a:hover {
-    background-color: var(--red);
-    color: var(--paper-light);
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+    color: var(--yellow);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
-
-
-/* =========================================================
-   TIMELINE
-   ========================================================= */
-
 .bar-style {
     position: sticky;
     top: 58px;
     z-index: 1999;
 
     display: flex;
-
     width: 100%;
-    padding: 0;
-
+    padding: 3px 12px;
     box-sizing: border-box;
+    overflow-x: auto;
 
-    background-color: var(--red-bright);
-
-    border-bottom: 2px solid var(--ink);
+    background-color: var(--paper-light);
+    border-bottom: 1px solid var(--paper-dark);
 }
 
 .bar-item {
-    flex: 1;
+    position: relative;
+    flex: 0 0 76px;
+    height: 36px;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 58px;
-
-    border-right: 1px solid rgba(255, 245, 220, 0.35);
+.bar-item:first-child {
+    margin-inline-start: auto;
 }
 
 .bar-item:last-child {
-    border-right: none;
+    margin-inline-end: auto;
+}
+
+/* Tratti stampati tra le date */
+.bar-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2px;
+    height: 14px;
+
+    background-color: var(--turquoise-dark);
+    box-shadow: 3px 0 0 var(--red);
+    transform: translateY(-50%) skewX(-18deg);
+
+    pointer-events: none;
 }
 
 .bar-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: var(--paper-light);
-
+    color: var(--ink);
     font-family: 'Oswald', sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
-
-    letter-spacing: 2px;
-
-    transition:
-        background-color 0.25s ease,
-        color 0.25s ease;
+    letter-spacing: 0.8px;
 }
 
-.bar-item a:hover {
-    background-color: var(--paper-dark);
-    color: var(--red-bright);
+.bar-item a:hover,
+.bar-item a:focus-visible {
+    color: var(--turquoise-dark);
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
+.bar-item a:focus-visible {
+    outline: 2px solid var(--turquoise-dark);
+    outline-offset: -4px;
+}
 
 /* =========================================================
    MAIN
@@ -280,6 +289,7 @@ main p {
 main h2,
 .map-page h1,
 .documentation-intro h1,
+.about-page .about-introduction h1,
 .disclaimer-page .page-title {
 
     width: fit-content;
@@ -2015,6 +2025,12 @@ main h2,
         transform 0.25s ease;
 }
 
+.home-introduction ~ .map-introduction > .bottone {
+    display: block;
+    width: fit-content;
+    margin: 24px auto 0;
+}
+
 .bottone:hover {
     background-color: var(--turquoise);
     color: var(--yellow);
@@ -2022,8 +2038,16 @@ main h2,
     transform: translateY(-2px);
 }
 
-.bottoni-pagine .bottone:only-child {
+.bottoni-pagine > .bottone:only-child {
     margin-left: auto;
+    margin-right: 0;
+}
+
+/* Il ritorno alla mappa resta a sinistra, anche da solo */
+main:not(:has(.home-introduction))
+.bottoni-pagine > a.bottone[href="mappa.html"] {
+    margin-left: 0;
+    margin-right: auto;
 }
 
 /* =========================================================
@@ -2133,6 +2157,96 @@ a.bottone[href="mappa.html"]:hover {
     max-width: 950px;
 
     margin: 50px auto;
+}
+
+/* DOCUMENTATION — WORKFLOW ORIZZONTALE */
+
+.documentation-page .workflow {
+    width: 100%;
+    max-width: 950px;
+    margin: 40px auto;
+}
+
+.documentation-page .workflow-steps {
+    --workflow-gap: 12px;
+    --workflow-number-size: 52px;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(112px, 1fr);
+    gap: var(--workflow-gap);
+    padding: 10px 6px 14px;
+    overflow-x: auto;
+}
+
+.documentation-page .workflow-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+/* Collega il centro di ogni numero a quello successivo */
+.documentation-page .workflow-step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--workflow-number-size) / 2 - 1px);
+    left: 50%;
+    width: calc(100% + var(--workflow-gap));
+    height: 2px;
+    background-color: var(--ochre);
+    pointer-events: none;
+}
+
+.documentation-page .workflow-step:nth-child(3n + 1) {
+    --workflow-colour: var(--yellow);
+}
+
+.documentation-page .workflow-step:nth-child(3n + 2) {
+    --workflow-colour: var(--red-bright);
+    --workflow-number-text: #fff;
+}
+
+.documentation-page .workflow-step:nth-child(3n + 3) {
+    --workflow-colour: var(--turquoise);
+}
+
+.documentation-page .workflow-step strong {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: var(--workflow-number-size);
+    height: var(--workflow-number-size);
+    box-sizing: border-box;
+    border: 1px solid var(--ink);
+    background-color: var(--workflow-colour, var(--yellow));
+    color: var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+    transform: rotate(-6deg);
+    font: 400 1.55rem / 1 "Anton", Impact, sans-serif;
+}
+
+.documentation-page .workflow-step p {
+    width: auto;
+    margin: 0;
+    font: 500 1rem / 1.125 "Oswald", sans-serif;
+    text-align: center;
+}
+
+.documentation-page .workflow-step:hover p,
+.documentation-page .workflow-step:focus-visible p {
+    color: var(--red-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.documentation-page .workflow-step:focus-visible {
+    outline: 2px solid var(--turquoise-dark);
+    outline-offset: 3px;
 }
 
 
@@ -2258,21 +2372,64 @@ a.bottone[href="mappa.html"]:hover {
     font-family: Georgia, "Times New Roman", serif;
 }
 
-
 /* =========================================================
-   MAP FILTERS
+   MAP FILTERS — ETICHETTE DA MANIFESTO
    ========================================================= */
 
 #filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 12px;
     width: 100%;
     max-width: 950px;
-
-    display: flex;
-    justify-content: center;
-
-    gap: 10px;
-
     margin: 20px auto 0;
+}
+
+#filters button {
+    --filter-accent: var(--turquoise);
+    --filter-text: #1c1713;
+
+    min-height: 44px;
+    padding: 8px 16px;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    background: var(--paper-light);
+    color: var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+    font: 500 1rem / 1.3 "Oswald", sans-serif;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+#filters #show-historical {
+    --filter-accent: var(--yellow);
+    --filter-text: var(--ink);
+}
+
+#filters #show-women {
+    --filter-accent: var(--red-bright);
+    --filter-text: #ffffff;
+}
+
+#filters button:hover {
+    background-color: var(--filter-accent);
+    color: var(--filter-text);
+}
+
+#filters button.active {
+    background-color: var(--filter-accent);
+    color: var(--filter-text);
+    box-shadow: 1px 1px 0 var(--ink);
+    font-weight: 700;
+}
+
+#filters button:focus-visible,
+#locations-list .location-info a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
 }
 
 
@@ -2283,285 +2440,584 @@ a.bottone[href="mappa.html"]:hover {
 .locations-section {
     width: 100%;
     max-width: 950px;
-
-    margin: 65px auto 20px;
+    margin: 48px auto 20px;
 }
 
 .locations-section h2 {
-    margin-bottom: 45px;
+    margin-bottom: 28px;
 }
 
-
-/* =========================================================
-   LOCATIONS LIST
-   ========================================================= */
-
 #locations-list {
+    --stop-size: 68px;
+    --stop-gap: 28px;
+    --route-accent: var(--yellow);
+    --stop-paper: #fbf1cf;
+    --number-text: var(--red-dark);
+    --stop-action-hover: var(--red-bright);
+    --stop-action-text: #ffffff;
+
     position: relative;
-
+    display: grid;
+    gap: 16px;
     width: 100%;
-    max-width: 850px;
-
     margin: 0 auto;
 }
 
-
-/* =========================================================
-   VERTICAL TIMELINE
-   ========================================================= */
-
-#locations-list::before {
-    content: "";
-
-    position: absolute;
-
-    left: 31px;
-    top: 30px;
-    bottom: 30px;
-
-    width: 2px;
-
-    background-color: var(--red);
+.map-page:has(#show-women.active) #locations-list {
+    --route-accent: var(--red-bright);
+    --stop-paper: #fbf1cf;
+    --number-text: #ffffff;
+    --stop-action-hover: var(--yellow);
+    --stop-action-text: var(--ink);
 }
 
+/* Linea del percorso, visibile nelle viste con tappe numerate */
+#locations-list:has(> .location-card > .location-number)::before {
+    content: "";
+    position: absolute;
+    inset-block: calc(var(--stop-size) / 2);
+    inset-inline-start: calc(var(--stop-size) / 2 - 2px);
+    width: 4px;
+    background-color: var(--route-accent);
+    box-shadow: 1px 0 0 var(--ink);
+    pointer-events: none;
+}
 
-/* =========================================================
-   LOCATION CARD
-   ========================================================= */
-
-.location-card {
+#locations-list .location-card {
     position: relative;
-
-    width: 100%;
-
     display: flex;
     align-items: flex-start;
-
-    gap: 30px;
-
-    padding: 25px 0;
-
-    box-sizing: border-box;
-
-    background-color: transparent;
-    border: none;
+    gap: var(--stop-gap);
+    min-width: 0;
 }
 
-
-/* =========================================================
-   LOCATION NUMBER
-   ========================================================= */
-
-.location-number {
-    position: relative;
-    z-index: 2;
-
-    flex: 0 0 58px;
-
-    width: 58px;
-    height: 58px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+#locations-list .location-number {
+    display: grid;
+    place-items: center;
+    align-self: center;
+    flex: 0 0 var(--stop-size);
+    height: var(--stop-size);
     box-sizing: border-box;
-
-    background-color: var(--red);
-
     border: 1px solid var(--ink);
-    border-radius: 50%;
-
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-
-    color: var(--paper-light);
+    background-color: var(--route-accent);
+    color: var(--number-text);
+    box-shadow: 2px 2px 0 var(--ink);
+    transform: rotate(-6deg);
+    font: 700 1.45rem / 1 "Oswald", sans-serif;
+    font-variant-numeric: tabular-nums;
 }
-
-
-/* =========================================================
-   LOCATION INFO
-   ========================================================= */
-
-.location-info {
+/* Schede ispirate al retro delle locandine */
+#locations-list .location-info {
+    position: relative;
     flex: 1;
-    padding-top: 3px;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: clamp(18px, 2.5vw, 24px);
+    border: 3px solid var(--red-bright);
+    background-color: var(--stop-paper);
+    box-shadow: 6px 6px 0 rgba(51, 37, 30, 0.30);
 }
 
-.location-info h3 {
-    margin: 0 0 7px;
-
-    font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-
-    letter-spacing: -0.5px;
-
-    color: var(--red);
+#locations-list .location-info::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 3px solid var(--turquoise);
+    pointer-events: none;
+}
+#locations-list .location-info h3 {
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 12px;
+    color: var(--ink);
+    font: 400 clamp(1.3rem, 3vw, 1.7rem) / 1.2 "Anton", Impact, sans-serif;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
 }
 
-.location-info p:first-of-type {
+#locations-list .location-info p {
     width: 100%;
     max-width: none;
-
-    margin: 0 0 8px;
-
-    font-size: 0.8rem;
-    line-height: 1.2rem;
-
-    color: var(--red);
-
-    text-align: left;
-}
-
-.location-info p:nth-of-type(2) {
-    width: 100%;
-    max-width: 700px;
-
-    margin: 0;
-
-    font-size: 0.9rem;
-    line-height: 1.45rem;
-
+    margin: 0 0 10px;
     color: var(--ink);
-
+    font-size: 1rem;
+    line-height: 1.6;
     text-align: left;
 }
 
-
-/* =========================================================
-   DISCOVER THIS STOP
-   ========================================================= */
-
-.location-info a {
-    display: inline-block;
-
-    margin-top: 12px;
-    padding: 8px 14px;
-
-    background-color: var(--red);
-    color: var(--paper-light);
-
-    border: 1px solid var(--ink);
-    border-radius: 0;
-
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-
-    letter-spacing: 0.7px;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
+#locations-list .location-info p:first-of-type {
+    color: #235a80;
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 600;
 }
 
-.location-info a:hover {
-    background-color: var(--ink);
-    color: var(--paper-light);
-}
-
-
-/* =========================================================
-   MULTIPLE LOCATIONS
-   ========================================================= */
-
-.location-subitem {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-
-    border-bottom: 1px dashed var(--line);
-}
-
-.location-subitem:last-child {
-    padding-bottom: 0;
+#locations-list .location-info p:last-child {
     margin-bottom: 0;
-
-    border-bottom: none;
 }
 
-
-/* =========================================================
-   ROUTE CONNECTION
-   ========================================================= */
-
-.route-connection {
-    position: relative;
-
-    width: calc(100% - 95px);
-
-    margin: -8px 0 -8px 95px;
-
-    padding: 8px 15px 8px 18px;
-
-    box-sizing: border-box;
-
-    border-left: 1px solid var(--line);
-}
-
-.route-connection::before {
-    content: "";
-
-    position: absolute;
-
-    left: -4px;
-    top: 12px;
-
-    width: 7px;
-    height: 7px;
-
-    background-color: var(--red);
-
-    border-radius: 50%;
-}
-
-.route-main-info {
-    margin-bottom: 3px;
-
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-
-    color: var(--red);
-}
-
-.route-directions {
-    width: 100% !important;
-    max-width: 650px !important;
-
-    margin: 0 !important;
-
-    font-size: 0.66rem !important;
-    line-height: 1.1rem !important;
-
+#locations-list .location-info a {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 7px 12px;
+    border: 1px solid var(--ink);
+    background-color: var(--paper-light);
     color: var(--ink);
-
-    text-align: left !important;
+    font: 500 0.95rem / 1.4 "Oswald", sans-serif;
 }
 
-.route-directions strong {
-    font-weight: bold;
-    color: var(--red);
+#locations-list .location-info a:hover {
+    background-color: var(--stop-action-hover);
+    color: var(--stop-action-text);
+}
+
+#locations-list .location-info a.location-link-women:hover,
+#locations-list .location-info a.location-link-women:focus-visible {
+    border-color: var(--red-dark);
+    background-color: var(--yellow);
+    color: var(--red-dark);
+    box-shadow: inset 0 -3px 0 var(--red-dark);
+}
+
+#locations-list .location-subitem + .location-subitem {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
 }
 
 
 /* =========================================================
-   ALL LOCATIONS
+   SPOSTAMENTI TRA LE TAPPE
    ========================================================= */
 
-#locations-list:not(:has(.location-number))::before {
+#locations-list .route-connection {
+    margin-inline-start: calc(var(--stop-size) + var(--stop-gap));
+    padding: 0 12px;
+    border-left: 2px solid var(--ochre);
+}
+
+#locations-list .route-main-info {
+    margin: 0 0 4px;
+    color: var(--ink);
+    font: 600 0.95rem / 1.4 "Oswald", sans-serif;
+}
+
+#locations-list .route-directions {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    color: var(--ink-light);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    text-align: left;
+}
+
+#locations-list .route-directions strong {
+    color: var(--ink);
+}
+
+
+/* =========================================================
+   ALL LOCATIONS — CATALOGO SENZA NUMERAZIONE
+   ========================================================= */
+#locations-list:has(> .location-card):not(:has(> .location-card > .location-number)) {
+    --catalog-gap: 22px;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: var(--catalog-gap);
+}
+
+#locations-list > .location-card:not(:has(> .location-number)) {
+    align-items: stretch;
+}
+
+#locations-list > .location-card:not(:has(> .location-number)) .location-info {
+    padding-inline: clamp(22px, 3vw, 30px);
+}
+
+@media (min-width: 681px) {
+    #locations-list > .location-card:not(:has(> .location-number)):last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc((100% - var(--catalog-gap)) / 2);
+    }
+}
+
+@media (max-width: 680px) {
+    #locations-list:has(> .location-card):not(:has(> .location-card > .location-number)) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-auto-rows: auto;
+    }
+}
+#locations-list > .location-card:not(:has(> .location-number)) {
+    --route-accent: var(--turquoise);
+    --stop-frame: #235a80;
+    --stop-action-hover: var(--turquoise);
+    --stop-action-text: var(--ink);
+}
+
+#locations-list > .location-card:not(:has(> .location-number)) .location-info > p:has(> a) {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    margin: 0 10px 0 0;
+    vertical-align: top;
+}
+
+
+
+/* ABOUT — SCHEDE DEL TEAM */
+
+.about-page .team-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.about-page .team-container > a {
+    display: grid;
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+.about-page .team-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 24px;
+    border: 3px solid #000;
+    background: var(--paper-light);
+    color: var(--ink);
+    box-shadow: 5px 5px 0 rgba(51, 37, 30, 0.25);
+}
+
+.about-page .team-container > a[href="https://github.com/mariacavaleri"] {
+    --team-frame: var(--red-bright);
+    --team-name: var(--red-dark);
+}
+
+.about-page .team-container > a[href="https://github.com/FrancescaGaeta"] {
+    --team-frame: var(--turquoise);
+    --team-name: var(--turquoise-dark);
+}
+
+.about-page .team-container > a[href="https://github.com/KielynCMadayag"] {
+    --team-frame: var(--yellow);
+    --team-name: #805800;
+}
+
+.about-page .team-card .team-icon {
     display: none;
 }
 
-.location-card:not(:has(.location-number)) {
-    padding: 22px 0;
-
-    border-bottom: 1px solid var(--line);
+.about-page .team-card::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 3px solid var(--team-frame);
+    pointer-events: none;
 }
 
-.location-card:not(:has(.location-number)) .location-info {
-    padding-left: 0;
+.about-page .team-card h3 {
+    margin: 0 0 16px;
+    color: var(--team-name);
+    font: 400 clamp(1.35rem, 2.2vw, 1.8rem) / 1.2 "Anton", Impact, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.about-page .team-card .team-role {
+    margin: 0 0 12px;
+    text-align: left;
+}
+
+.about-page .team-card ul {
+    margin: 0 0 16px;
+    padding-inline-start: 1.2em;
+    text-align: left;
+}
+
+.about-page .team-github-button {
+    display: inline-flex;
+    align-items: center;
+    align-self: center;
+    gap: 8px;
+    margin-top: auto;
+    background-color: var(--paper-light);
+    color: var(--ink);
+    border: 1px solid var(--ink);
+}
+
+.about-page .team-container > a:hover .team-card,
+.about-page .team-container > a:focus-visible .team-card {
+    box-shadow: 7px 7px 0 rgba(51, 37, 30, 0.35);
+}
+
+.about-page .team-container > a:hover .team-github-button,
+.about-page .team-container > a:focus-visible .team-github-button {
+    background-color: var(--turquoise-dark);
+    color: #fff;
+}
+
+.about-page .team-container > a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+    .about-page .team-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+
+/* DOCUMENTATION — 1960s ITALIAN FILM POSTERS */
+
+.style-detail-1960 {
+    width: min(950px, calc(100% - 32px));
+    margin-inline: auto;
+}
+
+.style-detail-1960 > .documentation-section {
+    margin: clamp(30px, 5vw, 48px) auto;
+    scroll-margin-top: 90px;
+}
+
+.style-detail-1960 p {
+    max-width: 70ch;
+    margin: 0 0 14px;
+    text-align: left;
+    line-height: 1.55;
+}
+
+.style-detail-1960 .sixties-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.style-detail-1960 .sixties-card {
+    position: relative;
+    min-width: 0;
+    padding: clamp(19px, 3vw, 26px);
+    border: 3px solid var(--red-bright);
+    background: var(--paper-light);
+    color: var(--ink);
+    box-shadow: 5px 5px 0 rgba(51, 37, 30, 0.28);
+    overflow-wrap: anywhere;
+}
+
+.style-detail-1960 .sixties-card::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 2px solid var(--turquoise-dark);
+    pointer-events: none;
+}
+
+.style-detail-1960 .sixties-card h3 {
+    margin: 0 0 10px;
+    color: var(--red-dark);
+    font: 400 clamp(1.2rem, 2.4vw, 1.6rem) / 1.2 "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+}
+
+.style-detail-1960 .sixties-card p:last-child {
+    margin-bottom: 0;
+}
+
+.style-detail-1960 .sixties-card a {
+    color: var(--turquoise-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.style-detail-1960 .sixties-card a:hover,
+.style-detail-1960 .sixties-card a:focus-visible {
+    color: var(--red-dark);
+}
+
+.style-detail-1960 :is(.sixties-title-sample, .sixties-type, .sixties-year-sample,
+.sixties-marker-samples, .sixties-route-samples, .sixties-poster-back, .sixties-swatch) {
+    margin-bottom: 16px;
+}
+
+.style-detail-1960 .sixties-title-sample {
+    width: fit-content;
+    margin-inline: auto;
+    padding: 10px 14px;
+    background: var(--red-dark);
+    color: var(--yellow);
+    box-shadow: 4px 4px 0 var(--ink);
+    transform: rotate(-3deg);
+    font: 400 clamp(1.2rem, 3.5vw, 2rem) / 1.2 "Anton", Impact, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.style-detail-1960 .sixties-type {
+    padding: 12px;
+    border-bottom: 1px solid var(--line);
+    font-size: clamp(1.35rem, 3vw, 1.9rem);
+    text-align: center;
+}
+
+.style-detail-1960 .sixties-anton { font-family: "Anton", Impact, sans-serif; }
+.style-detail-1960 .sixties-oswald { font-family: "Oswald", sans-serif; }
+.style-detail-1960 .sixties-bodoni { font-family: "Bodoni Moda", Georgia, serif; }
+
+.style-detail-1960 .sixties-swatch {
+    height: 44px;
+    border: 1px solid var(--ink);
+}
+
+.style-detail-1960 [data-colour="Paper"] { background: var(--paper); }
+.style-detail-1960 [data-colour="Ink"] { background: var(--ink); }
+.style-detail-1960 [data-colour="Cinema red"] { background: var(--red-bright); }
+.style-detail-1960 [data-colour="Yellow"] { background: var(--yellow); }
+.style-detail-1960 [data-colour="Turquoise"] { background: var(--turquoise); }
+.style-detail-1960 [data-colour="Ochre"] { background: var(--ochre); }
+
+.style-detail-1960 .sixties-year-sample {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background: var(--paper);
+    font-family: "Oswald", sans-serif;
+}
+
+.style-detail-1960 .sixties-year-sample span + span::before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-inline: 10px;
+    background: var(--turquoise-dark);
+    box-shadow: 2px 1px 0 var(--ochre);
+    transform: skewX(-18deg);
+}
+
+.style-detail-1960 .sixties-marker-samples,
+.style-detail-1960 .sixties-route-samples {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.style-detail-1960 .sixties-marker-samples i {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border: 3px solid var(--paper-light);
+    border-radius: 50%;
+    outline: 1px solid var(--ink);
+    background: #b73526;
+}
+
+.style-detail-1960 .sixties-marker-samples i::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--paper-light);
+}
+
+.style-detail-1960 .sixties-marker-samples i:nth-child(2) {
+    background: #007f86;
+}
+
+.style-detail-1960 .sixties-marker-samples i:nth-child(3) {
+    background: linear-gradient(90deg, #b73526 50%, #007f86 50%);
+}
+
+.style-detail-1960 .sixties-route-samples i {
+    width: 64px;
+    height: 5px;
+    background: #b73526;
+}
+
+.style-detail-1960 .sixties-route-samples i + i {
+    background: #007f86;
+}
+
+.style-detail-1960 .sixties-stop-number {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin: 0 0 14px 4px;
+    border: 1px solid var(--ink);
+    background: var(--yellow);
+    box-shadow: 2px 2px 0 var(--ink);
+    transform: rotate(-6deg);
+    font: 600 1.4rem / 1 "Oswald", sans-serif;
+}
+
+.style-detail-1960 .sixties-image {
+    display: block;
+    width: 100%;
+    height: 170px;
+    margin: 0 auto 16px;
+    object-fit: contain;
+}
+
+.style-detail-1960 .sixties-poster-back {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 10px;
+    width: min(100%, 132px);
+    min-height: 170px;
+    box-sizing: border-box;
+    margin-inline: auto;
+    padding: 12px;
+    border: 2px solid var(--red-bright);
+    outline: 1px solid var(--ink);
+    outline-offset: -6px;
+    background: #fff;
+    text-align: center;
+}
+
+.style-detail-1960 .sixties-poster-back strong {
+    padding: 4px;
+    background: var(--red-dark);
+    color: var(--yellow);
+    font: 400 1rem / 1.2 "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+}
+
+.style-detail-1960 .sixties-poster-back span {
+    font-size: 0.85rem;
+}
+
+.style-detail-1960 .sixties-back {
+    justify-content: flex-start;
+}
+
+@media (max-width: 680px) {
+    .style-detail-1960 .sixties-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.style-detail-1960 .sixties-screenshot {
+    margin: 20px 0 0;
+}
+
+.style-detail-1960 .sixties-screenshot .sixties-image {
+    height: auto;
 }
 
 

@@ -839,6 +839,8 @@ main p {
     max-width: 950px;
     height: 550px;
     margin: 0 auto;
+    position: relative;
+    z-index: 0;
     box-sizing: border-box;
     border: 6px solid #3b2314;
     outline: 2px solid #8b6b33;

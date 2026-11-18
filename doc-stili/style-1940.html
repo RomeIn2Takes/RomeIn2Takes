@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1940s: The Cinema Theatre - Rome in Two Takes</title>
+
+    <!-- base.css is the 1940s theme; it imports its own fonts -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="link-head">
+            <a href="../index.html">Home</a>
+            <a href="../mappa.html">Map</a>
+
+            <div class="dropdown">
+                <a href="#">Itinerary &#9660;</a>
+
+                <div class="dropdown-menu">
+                    <a href="../tourStorico.html">Historical Journey</a>
+                    <a href="../narrativa_femminista.html">Women &amp; Urban Space</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="link-head">
+            <a href="../about.html">About</a>
+            <div class="dropdown">
+                <a href="#">Documentation &#9660;</a>
+                <div class="dropdown-menu">
+                    <a href="../documentazione.html">Project Process</a>
+                    <a href="../documentation-code.html">Technical Documentation</a>
+                </div>
+            </div>
+            <a href="../disclaimer.html">Disclaimer</a>
+        </div>
+    </header>
+
+    <main class="documentation-page style-detail">
+
+        <section class="documentation-intro">
+            <h1>The Cinema Theatre</h1>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="references">
+            <h2>Visual references</h2>
+            <p>We began with one idea: the 1940s theme should evoke the entrance of a cinema at night. We used Pinterest to look for references for illuminated marquees, frames lined with bulbs, neon signs, lobby display cases and backlit title boards. Those references helped us decide which elements could become part of the site's title, itinerary cards and scene viewer.</p>
+            <div class="pinterest-board era-board">
+                <!-- TODO: check the name of the 1940 section of the Pinterest board -->
+                <a data-pin-do="embedBoard"
+                   data-pin-scale-height="420"
+                   data-pin-scale-width="115"
+                   href="https://it.pinterest.com/francescagaeta01/rome-in-2-takes/1940/">
+                    View the project board on Pinterest
+                </a>
+            </div>
+            <a class="style-pinterest-link"
+               href="https://it.pinterest.com/francescagaeta01/rome-in-2-takes/1940/">
+                Open the 1940s section on Pinterest &rarr;
+            </a>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="concept">
+            <h2>01. Going to the pictures after the war</h2>
+            <p class="era-lead">The 1940s are the years of the liberation of Rome, of <em>Rome, Open City</em> and of the first postwar cinemagoing. The theme does not reconstruct a specific cinema. It evokes the place where the experience began: the entrance, with its lights, its announcements and its posters.</p>
+            <ol class="era-grid era-chronology">
+                <li class="era-card">
+                    <span class="era-kicker">1944&ndash;1950</span>
+                    <h3>A studio without films</h3>
+                    <p>After the liberation of Rome in 1944, the Cinecittà studios sheltered displaced families. According to the Primo Levi Center, the grounds served as a refugee camp between 1944 and 1950, and the Allied requisition of the studios made filming on location a practical choice for postwar filmmakers.</p>
+                    <a href="https://primolevicenter.org/printed-matter/?p=2082">Primo Levi Center &rarr;</a>
+                </li>
+                <li class="era-card">
+                    <time datetime="1945-09-24">24 September 1945</time>
+                    <h3>Rome, Open City</h3>
+                    <p>Filming began on 18 January 1945, without a studio and with leftover film stock. The film premiered on 24 September 1945 to a mixed reception from critics, and in the following weeks audiences made it the first hit of the year.</p>
+                    <a href="https://www.criterion.com/current/posts/1356">The Criterion Collection &rarr;</a>
+                </li>
+                <li class="era-card">
+                    <span class="era-kicker">1945&ndash;1960</span>
+                    <h3>Cinema in everyday life</h3>
+                    <p>The research project <em>Italian Cinema Audiences</em> studies the place of cinema in Italians' daily lives after the war, using 160 video interviews and over 1,000 questionnaires.</p>
+                    <a href="https://italiana.esteri.it/italiana/en/eventi/italian-cinema-audiences/">Italiana, Ministry of Foreign Affairs &rarr;</a>
+                </li>
+                <li class="era-card">
+                    <span class="era-kicker">The entrance</span>
+                    <h3>The marquee</h3>
+                    <p>A cinema announced its programme on the marquee, where film titles were placed letter by letter. Marquees are described as neon-and-bulb landmarks that can be seen from blocks away, so the entrance was already part of the show.</p>
+                    <a href="https://assets.atlasobscura.com/articles/historic-movie-theater-marquees">Atlas Obscura &rarr;</a>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="opening">
+            <h2>02. Before the film begins</h2>
+            <div class="era-grid">
+                <article class="era-card">
+                    <div class="era-neon-sample" aria-hidden="true">Cinema</div>
+                    <h3>The neon sign</h3>
+                    <p>The word &ldquo;Cinema&rdquo; sits above the title in Limelight, with wide letter-spacing. Layered <code>text-shadow</code> values build the red neon glow, and the sign body is a dark metal plate with a fine grain. A slow, irregular flicker repeats every nine seconds.</p>
+                </article>
+                <article class="era-card">
+                    <div class="era-bulbs-sample" aria-hidden="true"></div>
+                    <h3>The frame of bulbs</h3>
+                    <p>The title is framed by a painted metal border with 22 bulbs along the top and bottom and 8 on each side (10 and 4 on small screens). Each bulb is drawn in CSS: a chrome socket, glass, a lit filament with a halo and a highlight. Two groups of bulbs alternate, so the light seems to run along the frame.</p>
+                </article>
+                <article class="era-card">
+                    <div class="era-board-sample" aria-hidden="true"><span><small>&#9733; Now Showing &#9733;</small>Rome in<br>Two Takes</span></div>
+                    <h3>The backlit board</h3>
+                    <p>The title appears as plastic letters on a cream panel lit from behind, with an aluminium profile and thin guide lines under each row, like a board with interchangeable letters. A small red &ldquo;Now showing&rdquo; line sits above it. When the page loads the board flickers on, as if the power had just been switched on.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="typography">
+            <h2>03. Typography</h2>
+            <div class="era-grid era-type-grid">
+                <article class="era-card era-type-card">
+                    <h3>Limelight</h3>
+                    <div class="era-type-specimen era-type-specimen--dark">
+                        <p class="era-font-limelight">Rome in Two Takes</p>
+                    </div>
+                    <p>The neon sign and the main page headings (<code>h1</code>, <code>h2</code>). Capital letters with wide spacing, a dark outline and a soft glow recall the lettering of illuminated signs.</p>
+                </article>
+                <article class="era-card era-type-card">
+                    <h3>Anton</h3>
+                    <div class="era-type-specimen">
+                        <p class="era-font-anton">Historical Journey</p>
+                    </div>
+                    <p>The letters of the backlit board and the titles inside panels: itinerary cards, scenes, stops, modal windows and the numbers in round signs.</p>
+                </article>
+                <article class="era-card era-type-card">
+                    <h3>Bebas Neue</h3>
+                    <div class="era-type-specimen">
+                        <p class="era-font-bebas">Itinerary 01 &middot; Discover the itinerary</p>
+                    </div>
+                    <p>Labels and controls: buttons, the year selector, the &ldquo;Itinerary&rdquo; labels, scene counters, route notes and table headings.</p>
+                </article>
+                <article class="era-card era-type-card">
+                    <h3>Libre Baskerville</h3>
+                    <div class="era-type-specimen">
+                        <p class="era-font-baskerville">A city seen through cinema</p>
+                    </div>
+                    <p>Body text. Its italic is used for the subtitles of the itineraries, which work like the tagline of a film poster.</p>
+                </article>
+                <article class="era-card era-type-card">
+                    <h3>Josefin Sans</h3>
+                    <div class="era-type-specimen">
+                        <p class="era-font-josefin">Home &middot; Map &middot; About</p>
+                    </div>
+                    <p>The main navigation, in capitals with wide tracking, like the lettering on a cinema's entrance.</p>
+                </article>
+                <article class="era-card era-type-card">
+                    <h3>Courier Prime</h3>
+                    <div class="era-type-specimen">
+                        <p class="era-font-courier">css/base.css</p>
+                    </div>
+                    <p>Code and file trees in the Technical Documentation, a typewriter face that echoes the scripts of the period.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="palette">
+            <h2>04. Colour and materials</h2>
+            <ul class="style-palette-grid">
+                <li class="style-swatch" style="--swatch: #94473b">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Brick red</strong>
+                    <code>#94473b</code>
+                    <span>Page background, labels, hover and emphasis on panels</span>
+                </li>
+                <li class="style-swatch" style="--swatch: #6e2b23">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Deep wine</strong>
+                    <code>#6e2b23</code>
+                    <span>Year selector</span>
+                </li>
+                <li class="style-swatch" style="--swatch: #1c1b1b">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Cinema black</strong>
+                    <code>#1c1b1b</code>
+                    <span>Buttons and footer</span>
+                </li>
+                <li class="style-swatch" style="--swatch: #212121">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Graphite</strong>
+                    <code>#212121</code>
+                    <span>Header and drop-down menus</span>
+                </li>
+                <li class="style-swatch" style="--swatch: #221c18">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Painted metal</strong>
+                    <code>#221c18</code>
+                    <span>Frames of the title, display cases and posters</span>
+                </li>
+                <li class="style-swatch" style="--swatch: #a8864a">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Brass</strong>
+                    <code>#a8864a</code>
+                    <span>Thin rules, rings around numbers, outlines of buttons on dark frames</span>
+                </li>
+                <li class="style-swatch" style="--swatch: #f4e8c1">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Cream</strong>
+                    <code>#f4e8c1</code>
+                    <span>Rules, menu hover, secondary text on red</span>
+                </li>
+                <li class="style-swatch" style="--swatch: linear-gradient(135deg, #fcf7e9, #f2e7c9 60%, #dcc89a)">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Backlit panel</strong>
+                    <code>#fcf7e9 &rarr; #dcc89a</code>
+                    <span>Story and metadata panels, poster backs, workflow steps</span>
+                </li>
+                <li class="style-swatch" style="--swatch: linear-gradient(135deg, #f3e7c8, #eadbb6)">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Poster paper</strong>
+                    <code>#f3e7c8 &rarr; #eadbb6</code>
+                    <span>Itinerary cards, stop cards, mats around photographs</span>
+                </li>
+                <li class="style-swatch" style="--swatch: #ffd98a">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Bulb amber</strong>
+                    <code>#ffd98a</code>
+                    <span>Bulbs and their warm glow</span>
+                </li>
+                <li class="style-swatch" style="--swatch: #ff2d16">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Neon red</strong>
+                    <code>#ff2d16</code>
+                    <span>The glow of the &ldquo;Cinema&rdquo; sign (a darker <code>#8e1d10</code> for &ldquo;Now showing&rdquo; and film years)</span>
+                </li>
+                <li class="style-swatch" style="--swatch: #aca496">
+                    <div class="style-swatch-sample" aria-hidden="true"></div>
+                    <strong>Aluminium</strong>
+                    <code>#aca496</code>
+                    <span>Profile around the backlit panels (from <code>#d6cfc1</code> to <code>#6c665b</code>)</span>
+                </li>
+            </ul>
+            <p>The page behaves like the wall of a cinema entrance, washed by the warm light of the bulbs. Dark painted metal, brass details and aluminium profiles form the frames, while cream surfaces, lit from behind, hold the text. Brick red ties the interface together and marks what can be selected.</p>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="navigation">
+            <h2>05. Navigation and year selector</h2>
+            <figure class="era-card era-selector-card">
+                <div class="era-selector-scroll">
+                    <img src="../img/documentazione/1940_year_selector.png"
+                         alt="Header and year selector of the 1940s theme, with bulbs between the years"
+                         loading="lazy">
+                </div>
+                <figcaption>
+                    <p>The header is a graphite bar with thin cream lines above and below. Its links are set in Josefin Sans capitals; on hover they turn cream, and the drop-down menus fill with cream. The year selector is a separate strip in deep wine with a brass line underneath. Years are set in Bebas Neue, and a small bulb sits between one year and the next, like the lamps of a marquee. On hover a year turns white and glows. On small screens the strip scrolls horizontally.</p>
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="basemap">
+            <h2>06. Basemap and cartographic style</h2>
+            <figure class="era-card era-map-card">
+                <!-- TODO: add the map screenshot (img/documentazione/mappa1940.png) and the text when the map style is defined -->
+                <figcaption>
+                    <p class="era-pending">The map style for this theme is still being defined. This section will be completed once the basemap has been chosen.</p>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="documentation-section" id="map-symbols">
+            <h2>07. Markers and route lines</h2>
+            <div class="era-grid">
+                <article class="era-card">
+                    <!-- TODO: marker sample -->
+                    <h3>Markers</h3>
+                    <p class="era-pending">To be defined together with the map style.</p>
+                </article>
+                <article class="era-card">
+                    <!-- TODO: route sample -->
+                    <h3>Route lines</h3>
+                    <p class="era-pending">To be defined together with the map style.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="locations">
+            <h2>08. Location lists and poster cards</h2>
+            <p>
+                Below the map, the individual itinerary views join the stops with a vertical
+                line of bulbs. Each stop has a round sign with a brass ring and a lit number,
+                which sits on the line, so the sequence reads like the lamps leading to
+                the entrance of a theatre.
+            </p>
+            <p>
+                Each stop is a small poster: cream paper inside a dark frame with a thin brass
+                line. The place name is set in Anton capitals, the film title appears in brick
+                red above the description, and the button uses Bebas Neue. Transport and directions
+                are quieter notes between cards, along a brass line, so the next move is available
+                without competing with the location itself.
+            </p>
+            <p>
+                The <strong>All locations</strong> view drops the line of bulbs and the numbers
+                and places the posters two per row, as a catalogue without a route order. An odd
+                last poster is centred.
+            </p>
+            <figure class="era-card era-visual-card">
+                <img class="era-stops-screenshot"
+                     src="../img/documentazione/fermate1940.png"
+                     alt="Vertical line of bulbs connecting numbered signs and stop cards"
+                     loading="lazy">
+                <figcaption>
+                    <p>The line of bulbs and the numbered signs show the reading order. The poster cards give each location a clear title and room for the film and the description.</p>
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="itineraries">
+            <h2>09. Itinerary cards and scene viewer</h2>
+            <p>On the homepage the two itineraries are display cases of the lobby. Each has a dark frame lined with bulbs, a thin brass line and a paper poster with the label (&ldquo;Itinerary 01&rdquo;), the title, two details between brick-red rules, a description and a button. On hover the case rises and the bulbs shine more brightly. Inside each route, the scene is a larger case of the same kind, with a row of bulbs above and below. Photographs are mounted prints with a cream mat and a brass outline, the arrows are round brass-ringed buttons, and the text sits on a backlit panel.</p>
+            <div class="era-grid era-itinerary-grid">
+                <figure class="era-card era-itinerary-card">
+                    <img src="../img/documentazione/itinerary1-1940.png" alt="Historical Journey in the 1940s style" loading="lazy">
+                    <figcaption>
+                        <h3>Historical Journey</h3>
+                        <p>Scenes and their locations are presented in a sequence, with round arrows and a scene counter to show where the reader is along the route.</p>
+                    </figcaption>
+                </figure>
+                <figure class="era-card era-itinerary-card">
+                    <img src="../img/documentazione/itinerary2-1940.png" alt="Women and Urban Space in the 1940s style" loading="lazy">
+                    <figcaption>
+                        <h3>Women &amp; Urban Space</h3>
+                        <p>The same case brings together the view of the place today, the film image and the Story, Metadata and QR Code panels.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="images">
+            <h2>10. Posters and photographs</h2>
+            <div class="era-grid era-poster-grid">
+                <figure class="era-card era-poster-card">
+                    <div class="era-poster-frame">
+                        <img class="poster-img" src="../img/romacittaperta-poster.png"
+                             alt="Poster for Rome, Open City" loading="lazy">
+                    </div>
+                    <figcaption>
+                        <h3>Front &middot; The film poster</h3>
+                        <p>The poster keeps its original colours and is set in a dark frame, like a poster in the display case at the entrance. On hover the frame shines with the warm light of the bulbs.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="era-card era-poster-card">
+                    <div class="poster-back">
+                        <h3>Rome, Open City</h3>
+                        <span class="film-year">1945</span>
+                        <p class="film-director">by Roberto Rossellini</p>
+                        <p class="film-synopsis">
+                            A landmark of Italian Neorealism, the film portrays
+                            Rome during the Nazi occupation and the struggle of the Resistance.
+                        </p>
+                    </div>
+                    <figcaption>
+                        <h3>Back &middot; The backlit panel</h3>
+                        <p>The reverse is a cream panel lit from behind, with an aluminium profile and faint guide lines, like the title board of the theatre. The title is in Anton, the year in red Bebas Neue. On the homepage, hovering over a poster turns it around to show these credits.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="metadata">
+            <h2>11. Metadata and how it is displayed</h2>
+            <div class="era-grid">
+                <figure class="era-card era-visual-card">
+                    <div class="era-paper">
+                        <div class="era-view-labels"><span>Story</span><strong>Metadata</strong><span>QR Code</span></div>
+                        <h3>Technical Details &amp; Metadata</h3>
+                        <ul class="era-meta-choices">
+                            <li>Cinematic Context</li>
+                            <li>Location</li>
+                            <li>Project</li>
+                        </ul>
+                    </div>
+                    <figcaption>
+                        <h3>The metadata panel</h3>
+                        <p>The three categories let readers choose which kind of information they want. The cream backlit panel stays within the same case as Story and QR Code, so switching views keeps the scene in context. The selected view turns brick red.</p>
+                    </figcaption>
+                </figure>
+                <figure class="era-card era-visual-card">
+                    <div class="era-paper era-metadata-sheet">
+                        <h3>Cinematic Context</h3>
+                        <dl>
+                            <dt>Film</dt><dd>A Special Day</dd>
+                            <dt>Director</dt><dd>Ettore Scola</dd>
+                            <dt>Year</dt><dd>1977</dd>
+                        </dl>
+                    </div>
+                    <figcaption>
+                        <h3>The record opens on its own</h3>
+                        <p>The selected record opens in a window styled as a small poster: a dark frame, a brass line, a title in brick red and field labels in the same colour. The project draws on Schema.org, Dublin Core and CIDOC CRM to describe films, locations and project credits.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="documentation-workflow">
+            <h2>12. The workflow panels</h2>
+            <figure class="era-card era-visual-card">
+                <div class="workflow-steps era-workflow-preview" aria-label="Example of the seven steps in the documentation workflow">
+                    <div class="workflow-step"><strong>01</strong><p>Brainstorming</p></div>
+                    <div class="workflow-step"><strong>02</strong><p>Research</p></div>
+                    <div class="workflow-step"><strong>03</strong><p>Narrative Design</p></div>
+                    <div class="workflow-step"><strong>04</strong><p>Information Architecture</p></div>
+                    <div class="workflow-step"><strong>05</strong><p>Prototyping</p></div>
+                    <div class="workflow-step"><strong>06</strong><p>Content and metadata</p></div>
+                    <div class="workflow-step"><strong>07</strong><p>Development</p></div>
+                </div>
+                <figcaption>
+                    <p>In the documentation each step is a small backlit panel with a numbered sign, like those on the map. A bulb between one step and the next links them in sequence. On narrower screens the steps wrap onto several rows and the bulbs disappear, since the sequence is no longer a single line.</p>
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="controls">
+            <h2>13. Buttons and interaction states</h2>
+            <div class="era-button-samples" aria-hidden="true">
+                <span class="bottone">Explore the map &rarr;</span>
+                <span class="bottone era-hover">Hover</span>
+                <span class="bottone era-active">Selected</span>
+            </div>
+            <p>
+                Buttons are solid near-black with a white label in Bebas Neue, which makes them
+                stand out on both the red page and the cream panels. On hover, page buttons fill
+                with cream and gain a soft glow, while buttons inside scenes and stop cards turn
+                brick red. On dark frames the buttons are outlined in brass.
+            </p>
+            <p>
+                The selected option must remain visible after the pointer moves away. In the map
+                filters it turns cream, and in the scene controls (views, audiences, text versions)
+                it turns brick red. The itinerary cards on the homepage also lift slightly on
+                hover, signalling that the entire card is clickable.
+            </p>
+        </section>
+
+        <!-- ===================================================== -->
+        <section class="documentation-section" id="motion">
+            <h2>14. Animation and responsive behaviour</h2>
+            <p>
+                The motion of the theme is the light of the entrance. The neon sign flickers
+                every nine seconds, the bulbs of the frame alternate in a 1.3-second cycle,
+                and the title board flickers on in 1.8 seconds when the page loads. Cards and
+                panels rise slightly on hover, and a poster takes 0.6 seconds to turn around.
+                For visitors who prefer reduced motion, the sign, the bulbs and the board stay
+                still.
+            </p>
+            <p>
+                On a narrow screen the frame around the title uses fewer bulbs (10 along the top
+                and bottom and 4 on each side), the itinerary cases stack, the scene viewer
+                changes from a row to a column, and the workflow panels wrap. The year selector
+                scrolls horizontally, so that every label keeps its space.
+            </p>
+        </section>
+
+        <!-- TODO: add the design credit if needed, as in the 1900s page
+        <aside class="era-card era-credit" aria-label="Design credit">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+            <p>This style was created by team member <strong>NAME</strong>.
+                <a href="https://github.com/USERNAME">View their GitHub profile &rarr;</a>
+            </p>
+        </aside>
+        -->
+
+        <div class="bottoni-pagine">
+            <a href="../documentazione.html#visual-styles" class="bottone">
+                &larr; Back to visual styles
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+
+            <p class="footer-title">
+                <strong>Rome in Two Takes</strong>
+            </p>
+
+            <p>
+                Project developed for the course
+                <a href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2025/533915"
+                    target="_blank">
+                    Information Modeling and Web Technologies
+                </a>
+                within the Master's Degree in
+                <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge"
+                    target="_blank">
+                    Digital Humanities and Digital Knowledge
+                </a>,
+                University of Bologna.
+            </p>
+
+            <p>
+                Maria Cavaleri · Francesca Gaeta · C. Kielyn Madayag
+            </p>
+
+            <div class="footer-links">
+
+                <a href="../about.html" class="footer-box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    About the Project
+                </a>
+
+                <a href="https://github.com/RomeIn2Takes/RomeIn2Takes"
+                    target="_blank"
+                    class="footer-box">
+                    <i class="fa-brands fa-github"></i>
+                    GitHub Repository
+                </a>
+
+            </div>
+
+            <p class="footer-copyright">
+                © 2026 Rome in Two Takes
+            </p>
+
+        </div>
+    </footer>
+    <script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
+</body>
+
+</html>
