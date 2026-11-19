@@ -165,21 +165,20 @@ header {
 /* BARRA STILI */
 .bar-style {
     position: sticky;
-    top: 50px;
+    top: 47px;
     z-index: 1300;
 
     display: flex;
     width: 100%;
     padding: 0;
     box-sizing: border-box;
-
-    background-color: #ff007f;
-    border-bottom: 2px solid #00f3ff;
+    overflow-x: auto;
 }
 
 .bar-item {
     flex: 1;
-    height: 50px;
+    height: 36px;
+    box-sizing: border-box;
 
     display: flex;
     justify-content: center;
@@ -187,11 +186,11 @@ header {
 
     text-align: center;
 
-    border-right:2px solid #00f3ff
-}
-
-.bar-item:last-child {
-    border-right: none;
+    background-color: #ff007f;
+    border-top: 2px solid #ff71b8;
+    border-left: 2px solid #ff71b8;
+    border-right: 2px solid #800040;
+    border-bottom: 2px solid #800040;
 }
 
 .bar-item a {
@@ -201,21 +200,23 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 
     color: #ffe600;
+    text-shadow: 2px 2px 0px #1d0243;
 
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.85rem;}
-
-.bar-item a:hover {
-    color: #ffe600;
-    text-shadow:
-        0 0 5px #00f3ff,
-        0 0 10px #00f3ff,
-        0 0 20px #00f3ff,
-        0 0 40px #00f3ff;
-    transform: scale(1.15);
+    font-size: 0.7rem;
 }
+
+.bar-item:hover {
+    background-color: #c80064;
+    border-top: 2px solid #800040;
+    border-left: 2px solid #800040;
+    border-right: 2px solid #ff71b8;
+    border-bottom: 2px solid #ff71b8;
+}
+
 
 
 /* =========================================================
@@ -2089,11 +2090,11 @@ footer a, footer a:hover {
     }
 
     .bar-item {
-        min-width: 100px;
+        min-width: 80px;
     }
 
     .bar-item a {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
 

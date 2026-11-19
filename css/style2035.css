@@ -190,14 +190,13 @@ header, .bar-style {
     padding: 0;
 
     background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.12) 0%,
-            rgba(20, 60, 45, 0.7) 50%,
-            rgba(5, 20, 15, 0.9) 100%);
-
-    backdrop-filter: blur(25px) saturate(140%);
+            rgba(18, 52, 39, 0.96) 0%,
+            rgba(10, 32, 24, 0.98) 50%,
+            rgba(4, 15, 11, 0.99) 100%);
 
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
 }
 
@@ -211,7 +210,7 @@ header, .bar-style {
     margin: 0;
     padding: 11px 18px;
     color: #e3f7ee;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     font-weight: 400;
     white-space: nowrap;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -229,14 +228,17 @@ header, .bar-style {
 
 /* BARRA STILI */
 .bar-style {
-    top: 85px;
+    top: 75px;
     z-index: 2000;
-    padding: 15px 35px;
+    width: fit-content;
+    max-width: 95%;
+    justify-content: center;
+    padding: 0 15px;
 }
 
 .bar-item {
-    flex: 1;
-    height: 60px;
+    width: 100px;
+    height: 40px;
 
     display: flex;
     justify-content: center;
@@ -245,6 +247,21 @@ header, .bar-style {
     text-align: center;
 
     border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+    position: relative;
+        border-right: none;
+}
+
+.bar-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: rgba(163, 247, 203, 0.5);
+    box-shadow: 0 0 6px #a3f7cb;
 }
 
 .bar-item:last-child {
@@ -261,14 +278,13 @@ header, .bar-style {
 
     color: #e3f7ee;
 
-    font-size: 1.1rem;
+    font-size: 0.85rem;
     font-weight: 600;
-
 }
 
 .bar-item a:hover {
     color: #a3f7cb;
-    transform: translateY(-1px);
+    transform: translateY(-1px);        
 }
 
 
@@ -2004,14 +2020,17 @@ footer a:hover {
     .bar-style {
         top: 110px;
         border-radius: 25px;
+        overflow-x: auto;
+        justify-content: flex-start;
     }
 
     .bar-item {
-        min-width: 100px;
+        width: 64px;
+        flex-shrink: 0;
     }
 
     .bar-item a {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     main {
