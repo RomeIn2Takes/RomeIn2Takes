@@ -183,7 +183,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-
     text-align: center;
 
     background-color: #ff007f;
@@ -203,18 +202,20 @@ header {
     box-sizing: border-box;
 
     color: #ffe600;
-    text-shadow: 2px 2px 0px #1d0243;
-
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.7rem;
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
 }
 
 .bar-item:hover {
-    background-color: #c80064;
+    background-color: #ff188c;
     border-top: 2px solid #800040;
     border-left: 2px solid #800040;
     border-right: 2px solid #ff71b8;
     border-bottom: 2px solid #ff71b8;
+}
+
+.bar-item:hover a {
+    color: #00f3ff;
 }
 
 
@@ -2349,7 +2350,6 @@ footer p a:hover {
     color: #00f3ff;
 }
 
-/* Bottoni About / GitHub nel footer */
 .footer-links {
     display: flex;
     justify-content: center;
