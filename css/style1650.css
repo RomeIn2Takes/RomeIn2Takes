@@ -33,6 +33,7 @@ html, body {
     background-color: #d4af37;
     font-family: 'EB Garamond', serif;
     color: #2b2924;
+    text-align: justify;
 }
 
 a {
@@ -144,7 +145,7 @@ header {
 
 .bar-item {
     flex: 1;
-    height: 65px;
+    height: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,7 +176,7 @@ header {
 }
 
 /* =========================================================
-   MAIN & TIPOGRAFIA
+   MAIN 
    ========================================================= */
 main {
     width: 100%;
@@ -190,8 +191,8 @@ main h2 {
     width: 100%;
     max-width: 950px;
     box-sizing: border-box;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 30px;
     font-family: 'EB Garamond', serif;
     font-style: italic;
     font-size: 2.8rem;
@@ -202,9 +203,9 @@ main h2 {
 main h2::before {
   content: "";
   display: block;
-  width: 350px;     
+  width: 200px;     
   height: 90px;      
-  margin: 0 auto 15px auto; 
+  margin: 0 auto 5px auto; 
   background-image: url('../img.decorazioni_barocco/dec_homepage.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -241,14 +242,7 @@ main p {
   padding: 50px 70px;
   box-sizing: border-box;
   background-color: #c49b17;
-  border-radius: 6px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  background-image: 
-    url('../img.decorazioni_barocco/dec_titolo.png'),
-    url('../img.decorazioni_barocco/dec_titolo.png'),
-    url('../img.decorazioni_barocco/dec_titolo.png'),
-    url('../img.decorazioni_barocco/dec_titolo.png');
-  background-position: top left, top right, bottom left, bottom right;
+  border: 10px solid #4a2e18;
   background-size: 80px 80px;
   background-repeat: no-repeat;
 }
@@ -272,6 +266,7 @@ main p {
     width: 100%;
     max-width: 950px;
     margin: 60px auto;
+    box-sizing: border-box;
 }
 
 .narrativa-container {
@@ -281,24 +276,18 @@ main p {
     gap: 40px;
     margin-top: -10px;
     margin-bottom: 10px;
-    background-color: transparent;
+    box-sizing: border-box;
 }
 
 .narrative-card {
   flex: 1;
-  box-sizing: border-box;
-  background-size: 100% 100%; 
+  box-sizing: border-box; 
+  border: 5px solid, #4a2e18;
+  background-color: #e7d9b0;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 120px 130px; 
+  padding: 20px 20px; 
   transition: all 0.3s ease;
-}
-
-.narrative-card:first-child {
-  background-image: url('../img.decorazioni_barocco/itinerario1_marrone.png');
-}
-.narrative-card:last-child {
-    background-image: url('../img.decorazioni_barocco/itinerario2_marrone.png');
 }
 
 .card-label {
@@ -309,6 +298,7 @@ main p {
     letter-spacing: 2px;
     color: #4a2e18;
     text-align: center;
+    border: 30px, #1a0f08;
 }
 
 .card-body {
@@ -340,10 +330,12 @@ main p {
 }
 
 .discover {
-    display: inline-block;
-    padding: 8px 16px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-top: 8px;
+    padding: 8px 8px;
     background-color: #641305;
-    border: 1px solid #d4af37;
     border-radius: 4px;
     font-family: 'EB Garamond', serif;
     font-style: italic;
@@ -353,10 +345,26 @@ main p {
 }
 
 .narrative-card:hover .discover {
-    background-color: #4a2e18;
+    background-color: #922c1e;
     color: #FFF;
 }
+/* =========================================================
+   TASTI EXPLORE MAP
+   ========================================================= */
+    .map-introduction {
+    width: 100%;
+    max-width: 950px;
+    margin: 40px auto;
+    box-sizing: border-box;
+}
 
+    .map-introduction .button {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 20px;
+}
 /* =========================================================
    AREA IMMAGINI (RULLINO / SCENE)
    ========================================================= */
@@ -912,6 +920,7 @@ main p {
 }
 
 .location-card {
+    display:block;
     position: relative;
     width: 100%;
     display: flex;
@@ -943,38 +952,48 @@ main p {
 
 .location-info {
     flex: 1;
+    min-width: 0;
+    padding: 24px 28px;
+    box-sizing: border-box;
+    background-color: #f4ebd0;
+    border: 5px solid #4a2e18;
+    text-align: justify;
+    flex: 1;
     padding-top: 3px;
 }
 
 .location-info h3 {
-    margin: 0 0 5px 0;
     font-family: 'ChopinScript', serif;
     font-size: 2.2rem;
     color: #641305;
+    margin-bottom:10px
 }
 
 .location-info p:first-of-type {
     width: 100%;
     max-width: none;
-    margin: 0 0 8px 0;
     font-family: 'EB Garamond', serif;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #5c3a21;
+    text-align:left;
+    margin-bottom: 10px;
 }
 
 .location-info p:nth-of-type(2) {
     width: 100%;
     max-width: 700px;
-    margin: 0;
     font-family: 'EB Garamond', serif;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     line-height: 1.5;
     color: #2b2924;
+    text-align: left;
 }
 
 .location-info a {
     display: inline-block;
+    width: fit-content;
+    margin-right: auto;
     margin-top: 12px;
     padding: 6px 14px;
     background-color: #641305;
@@ -1007,9 +1026,10 @@ main p {
 .route-connection {
     position: relative;
     width: calc(100% - 95px);
-    margin: -8px 0 -8px 95px;
-    padding: 8px 15px 8px 18px;
+    margin: 0px 0 0px 90px;
+    padding: 14px 18px 14px 20px;
     box-sizing: border-box;
+    font-size: 1rem;
     border-left: 2px solid rgba(139, 107, 51, 0.5);
 }
 
@@ -1025,21 +1045,22 @@ main p {
 }
 
 .route-main-info {
-    margin-bottom: 3px;
+    margin-bottom: 10px;
     font-family: 'EB Garamond', serif;
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #5c3a21;
 }
 
 .route-directions {
     width: 100% !important;
-    max-width: 650px !important;
+    max-width: none !important;
     margin: 0 !important;
     font-family: 'EB Garamond', serif;
-    font-size: 0.95rem !important;
-    line-height: 1.3rem !important;
+    font-size: 1.3rem !important;
+    line-height: 1.7rem !important;
     color: #3b2716 !important;
+    text-align: left !important;
 }
 
 #locations-list:not(:has(.location-number))::before {
@@ -1163,7 +1184,10 @@ main p {
 }
 
 .bottone {
-    display: inline-block;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-top: 8px;
     padding: 10px 20px;
     background-color: #4a2e18;
     border: 1px solid #d4af37;
