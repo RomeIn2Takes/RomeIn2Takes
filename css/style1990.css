@@ -46,7 +46,7 @@ main p {
 }
 
 /* conform title pages */
-.map-page h1, .introduction h2, .about-introduction h1, .documentation-intro h1 {
+.map-page h1, .introduction h2, .about-introduction h1, .documentation-intro h1, .disclaimer-page .page-title {
     width: 100%;
     max-width: 950px;
     margin: 35px auto 25px auto;
@@ -2231,7 +2231,7 @@ pre.tree {
 }
 
 /* =========================================================
-   DISCLAIMER
+   D15CL41M3R
    ========================================================= */
 
 .disclaimer-page {
@@ -2240,119 +2240,154 @@ pre.tree {
     margin: 0 auto;
 }
 
-.disclaimer-page .page-title {
-    width: 100%;
-    max-width: 950px;
-    margin: 35px auto 50px auto;
-
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.8em;
-    letter-spacing: 3px;
-
-    color: #ff007f;
-    text-align: center;
-    text-shadow: 0 0 3px #00f3ff;
-}
-
-.disclaimer-page .disclaimer-item {
+.disclaimer-item {
     display: flex;
     flex-direction: row-reverse;
-    /* dispari: txt a snx, n a dx */
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
-    padding: 40px 0;
+    gap: 45px;
+    padding: 35px 0;
     border-bottom: 2px dashed #ffe600;
     box-sizing: border-box;
 }
 
-.disclaimer-page .disclaimer-item:last-child {
+.disclaimer-item:nth-child(even) {
+    flex-direction: row;
+}
+
+.disclaimer-item:last-child {
     border-bottom: none;
 }
 
-.disclaimer-page .disclaimer-item:nth-child(even) {
-    flex-direction: row;
-    /* pari: n a snx, txt a dx */
-}
-
-
-.disclaimer-page .disclaimer-title {
-    color: #ffe600;
-    text-shadow: 0 0 3px #ffe600;
-}
-
-.disclaimer-page .disclaimer-number {
+.disclaimer-number {
+    flex-shrink: 0;
     font-family: 'Press Start 2P', cursive;
-    font-size: 3rem;
+    font-size: 2.8rem;
     line-height: 1;
     color: #ffe600;
-    text-shadow: 0 0 15px #00f3ff;
+    text-shadow:
+        2px 2px 0px #ff007f,
+        4px 4px 0px #000000,
+        0 0 12px rgba(255, 230, 0, 0.45);
 }
 
-.disclaimer-page .disclaimer-content {
-    flex-grow: 1;
+.disclaimer-content {
+    flex: 1;
 }
 
-/* Annullare i vincoli globali di main h2 e main p */
-.disclaimer-page .disclaimer-title,
-.disclaimer-page .disclaimer-text {
-    max-width: none;
-    margin: 0;
-}
-
-.disclaimer-page .disclaimer-title {
+.disclaimer-title {
+    margin: 0 0 12px 0;
     font-family: 'Press Start 2P', cursive;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     letter-spacing: 1px;
-    margin-bottom: 14px;
+    text-transform: uppercase;
     color: #ff007f;
-    text-shadow: 0 0 3px #00f3ff;
+    text-shadow:
+        2px 2px 0px #00f3ff,
+        3px 3px 0px #000000;
     text-align: left;
 }
 
-.disclaimer-page .disclaimer-text {
+.disclaimer-text {
+    max-width: none;
+    margin: 0;
     font-family: 'VT323', monospace;
-    font-size: 1.35rem;
-    line-height: 1.5;
-    text-align: justify;
+    font-size: 1.45rem;
+    line-height: 1.45;
+    color: white;
+    text-align: left;
 }
 
 /* =========================================================
-   FOOTER
+   F0073R
    ========================================================= */
 
 footer {
     width: 100%;
-
     box-sizing: border-box;
-
     margin-top: 80px;
-    padding: 25px 40px;
+    padding: 30px 40px;
 
     background-color: #1d0243;
-    border-top: 2px solid #ff007f;
+    border-top: 1px solid #00f3ff;
+    border-bottom: 1px solid #ff007f;
+    box-shadow: 0 0 15px #00f3ff;
 }
 
 .footer-container {
     width: 100%;
     max-width: 950px;
-
     margin: 0 auto;
-
     text-align: center;
 }
 
-
-footer p{
+.footer-title {
+    margin: 0 0 10px 0;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
     color: #ff007f;
-    font-size: 1rem;
 }
 
+footer p {
+    margin: 6px auto;
+    font-family: 'VT323', monospace;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: white;
+    text-align: center;
+}
 
-footer a, footer a:hover {
+footer p a {
     color: #ffe600;
-    font-size: 1rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+footer p a:hover {
+    color: #00f3ff;
+}
+
+/* Bottoni About / GitHub nel footer */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 22px 0;
+}
+
+.footer-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 14px;
+
+    background-color: #1d0243;
+    border: 1px solid #00f3ff;
+    border-radius: 2px;
+
+    font-family: 'VT323', monospace;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    color: #00f3ff;
+    box-shadow: 0 0 10px #00f3ff;
+}
+
+.footer-box:hover {
+    background-color: #ffe600;
+    color: #1d0243;
+    border-color: #ffe600;
+    box-shadow: 0 0 10px #ffe600;
+    transform: scale(1.08);
+}
+
+.footer-copyright {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px dashed #ff007f;
+    color: #ff007f;
 }
 
 
