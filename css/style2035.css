@@ -230,14 +230,14 @@ header, .bar-style {
 .bar-style {
     top: 75px;
     z-index: 2000;
-    width: fit-content;
-    max-width: 95%;
+    width: 90%;
+    max-width: 900px;
     justify-content: center;
     padding: 0 15px;
 }
 
 .bar-item {
-    width: 100px;
+    flex: 1;
     height: 40px;
 
     display: flex;
@@ -899,17 +899,6 @@ main p, p {
     border-left: 1.5px solid rgba(163, 247, 203, 0.4);
 }
 
-.route-connection::before {
-    content: "";
-    position: absolute;
-    left: -4px;
-    top: 14px;
-    width: 7px;
-    height: 7px;
-    background-color: #a3f7cb;
-    box-shadow: 0 0 8px #a3f7cb;
-    border-radius: 50%;
-}
 
 .route-main-info {
     margin: 0 0 6px;
@@ -1079,7 +1068,6 @@ main p, p {
     font-size: 1rem;
     font-weight: bold;
 }
-
 
 /* zona testi box itinerario*/
 .description-container-right {
@@ -1273,11 +1261,6 @@ main p, p {
     width: 100%;
     box-sizing: border-box;
     margin: 6px 0 18px;
-    padding: 10px 14px;
-
-    background: rgba(163, 247, 203, 0.1);
-
-    border-radius: 12px;
     color: #a3f7cb;
 
     font-size: 0.98rem;
@@ -1321,72 +1304,48 @@ main p, p {
    480U7 PAGE
    ========================================================= */
 
-.about-page {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 3rem 0 5rem;
+.about-page section {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 3rem auto;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
     box-sizing: border-box;
 }
 
-.about-page section {
-    margin-bottom: 3.8rem;
-    position: relative;
-}
-
-.about-page section:last-child {
+.about-page section:last-of-type {
     margin-bottom: 0;
+    border-bottom: none;
 }
 
-/* Eyebrow Label */
-.section-label {
-    display: inline-block;
-    font-weight: bold;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #a3f7cb;
-    text-shadow: 0 0 12px rgba(163, 247, 203, 0.4);
-}
-
-/* Paragraphs */
-.about-page section>p:not(.section-label) {
-    max-width: none;
-    line-height: 1.8;
-    margin-bottom: 1.4rem;
+.about-page section p {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
     color: #bad3c7;
     text-align: left;
 }
 
-
-/* About Section Separators */
-.about-introduction,
-.team-section,
-.shared-work {
-    padding-bottom: 2.8rem;
-    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
-}
-
-/* Team Section */
-.team-introduction {
-    margin-bottom: 2.2rem !important;
-}
-
-/* Team Grid */
+/* Griglia Team */
 .team-container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     margin-top: 2rem;
 }
 
-/* Team Cards */
+.team-container > a {
+    display: flex;
+}
+
+/* Card singola membro */
 .team-card {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    min-width: 0;
-    min-height: 210px;
-    padding: 1.8rem;
+    align-items: center;
+    padding: 26px 20px;
     box-sizing: border-box;
+
     background: linear-gradient(145deg,
             rgba(255, 255, 255, 0.1) 0%,
             rgba(18, 52, 38, 0.35) 50%,
@@ -1395,77 +1354,92 @@ main p, p {
     border: 1.5px solid rgba(163, 247, 203, 0.3);
     border-radius: 24px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
 .team-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(163, 247, 203, 0.8);
-    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(163, 247, 203, 0.35);
+    transform: translateY(-5px);
+    border-color: #a3f7cb;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55), 0 0 20px rgba(163, 247, 203, 0.3);
 }
 
-/* Team Card Icon */
+/* Icona */
 .team-icon {
-    display: inline-block;
-    align-self: flex-start;
-    font-size: 6rem;
-
-    margin-bottom: 1.3rem;
+    font-size: 2.8rem;
+    margin-bottom: 12px;
     color: #a3f7cb;
-    text-shadow: 0 0 16px rgba(163, 247, 203, 0.45);
-    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 14px rgba(163, 247, 203, 0.45);
 }
 
-.team-card:hover .team-icon {
-    transform: scale(1.12) translateY(-2px);
-    color: #e3f7ee;
-    text-shadow: 0 0 20px rgba(163, 247, 203, 0.7);
-}
-
-/* Member Name */
+/* Nome */
 .team-card h3 {
-    margin: 0 0 1.2rem;
+    margin: 0 0 14px 0;
+    font-size: 1.35rem;
     font-weight: 700;
-    line-height: 1.3;
     color: #e3f7ee;
 }
 
-/* Member Role */
-.team-card .team-role {
-    margin: auto 0 0;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(163, 247, 203, 0.2);
-    line-height: 1.5;
+/* Lista compiti */
+.team-tasks {
+    width: 100%;
+    margin: 0 0 22px 0;
+    padding-left: 20px;
+    box-sizing: border-box;
+
+    color: #bad3c7;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.team-tasks li {
+    margin-bottom: 6px;
+}
+
+.team-tasks li::marker {
     color: #a3f7cb;
 }
 
-/* Visual Styles Section */
-.about-styles p {
-    margin-bottom: 1.4rem;
+/* Bottone GitHub allineato in basso */
+.team-github-button {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.about-styles .bottone {
-    display: inline-block;
-    margin-top: 1.5rem;
+.team-card:hover .team-github-button {
+    background: rgba(20, 60, 45, 0.6);
+    color: #a3f7cb;
+    border-color: #a3f7cb;
+    box-shadow: 0 0 14px rgba(163, 247, 203, 0.5);
 }
 
 /* =========================================================
-   D0CUM3NT4AT10N- Journey
+   D0CUM3NT4AT10N — Project Process & Technical Documentation
    ========================================================= */
-.documentation-intro p {
-    margin: 0 auto 20px;
-    text-align: center;
-    max-width: 800px;
-}
 
+.documentation-intro,
 .documentation-section,
 .workflow {
     width: 100%;
     max-width: 950px;
     margin: 0 auto;
-    padding: 30px 0;
-    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
     box-sizing: border-box;
+}
+
+.documentation-intro p {
+    margin: 0 auto 16px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.documentation-section,
+.workflow {
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
+    scroll-margin-top: 130px;
 }
 
 .documentation-section:last-of-type {
@@ -1474,46 +1448,105 @@ main p, p {
 
 .documentation-section p {
     margin-bottom: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #bad3c7;
+    text-align: left;
 }
 
+.documentation-section h3,
+.graphic-ideas h3,
+.style-exploration > h3,
+.visual-references > h3 {
+    margin: 28px 0 10px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #a3f7cb;
+    text-shadow: 0 0 10px rgba(163, 247, 203, 0.3);
+}
+
+/* Etichetta sopra i titoli (VISUAL DESIGN / DESIGN REFERENCES) */
+.section-label {
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a3f7cb;
+    text-shadow: 0 0 12px rgba(163, 247, 203, 0.4);
+}
+
+/* Link testuali nelle pagine di documentazione */
+.documentation-intro a,
+.documentation-section p a,
+.tech-highlight-card a,
+.tech-table a:not(.bottone) {
+    color: #a3f7cb;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.documentation-intro a:hover,
+.documentation-section p a:hover,
+.tech-highlight-card a:hover,
+.tech-table a:not(.bottone):hover {
+    color: #e3f7ee;
+}
+
+/* Liste puntate nelle sezioni */
+.documentation-section ul {
+    margin: 12px 0 18px;
+    padding-left: 22px;
+    color: #bad3c7;
+    line-height: 1.7;
+}
+
+.documentation-section li {
+    margin-bottom: 8px;
+}
+
+.documentation-section li::marker {
+    color: #a3f7cb;
+}
+
+/* 7 Step del Workflow / Technical Index */
 .workflow-steps {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(110px, 1fr));
     gap: 12px;
     margin-top: 20px;
+    overflow-x: auto;
 }
 
 .workflow-step,
 .development-item {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(20, 60, 45, 0.4) 50%, rgba(5, 20, 15, 0.6) 100%);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
     box-sizing: border-box;
     transition: all 0.3s ease;
 }
 
+.workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 10px;
+    text-align: center;
+}
+
 .workflow-step:hover {
     transform: translateY(-3px);
-    border-color: rgba(163, 247, 203, 0.5);
+    border-color: #a3f7cb;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(163, 247, 203, 0.25);
 }
 
-.workflow-step {
-    flex: 1;
-    display: block;
-    padding: 18px 10px;
-    text-align: center;
-    text-decoration: none;
-}
-
-/*numeri*/
 .workflow-step strong {
     display: block;
     margin-bottom: 6px;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 800;
     color: #a3f7cb;
     text-shadow: 0 0 12px rgba(163, 247, 203, 0.4);
@@ -1521,13 +1554,16 @@ main p, p {
 
 .workflow-step p {
     margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.3;
     color: #e3f7ee;
     text-align: center;
 }
 
+/* Selezione Film */
 .film-selection {
     max-width: 850px;
-    margin: 35px auto;
+    margin: 30px auto 10px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -1550,9 +1586,10 @@ main p, p {
     font-size: 0.6rem;
 }
 
+/* Prototipi e Graphic Ideas */
 .prototype-row {
     display: flex;
-    gap: 30px;
+    gap: 24px;
     margin-top: 25px;
 }
 
@@ -1570,7 +1607,8 @@ main p, p {
     padding: 4px;
 }
 
-.prototype-row figcaption, .graphic-ideas p {
+.prototype-row figcaption,
+.graphic-ideas p {
     margin-top: 12px;
     font-size: 0.85rem;
     color: #a3f7cb;
@@ -1578,7 +1616,7 @@ main p, p {
 }
 
 .graphic-ideas {
-    margin-top: 60px;
+    margin-top: 45px;
     text-align: center;
 }
 
@@ -1587,24 +1625,26 @@ main p, p {
     width: 100%;
     max-width: 800px;
     height: auto;
-    margin: 25px auto 15px;
+    margin: 20px auto 15px;
     border-radius: 20px;
     border: 1px solid rgba(163, 247, 203, 0.5);
 }
 
+/* Box Development / JSON */
 .development-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    margin-top: 25px;
+    margin: 22px 0;
 }
 
 .development-item {
-    padding: 22px 20px;
+    padding: 22px 24px;
 }
 
 .development-item h3 {
-    text-align: center;;
+    margin: 0 0 10px;
+    font-size: 1.25rem;
     font-weight: 700;
     color: #a3f7cb;
     text-align: center;
@@ -1612,159 +1652,17 @@ main p, p {
 
 .development-item p {
     margin: 0;
-    text-align: center;
     color: #bad3c7;
-    font-size: 0.85rem;
-}
-
-/* VISUAL IDENTITY */
-
-.style-exploration {
-    margin-top: 2.5rem;
-}
-
-.style-exploration>h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #a3f7cb;
-    text-shadow: 0 0 10px rgba(163, 247, 203, 0.3);
-}
-
-.style-exploration>p {
-    margin-bottom: 1.5rem;
-    color: #bad3c7;
+    font-size: 0.92rem;
     line-height: 1.6;
+    text-align: left;
 }
 
-/* Accordion */
-.style-item {
-    border-bottom: 1px solid rgba(163, 247, 203, 0.2);
-    transition: background-color 0.25s ease;
-}
-
-.style-item:first-of-type {
-    border-top: 1px solid rgba(163, 247, 203, 0.2);
-}
-
-.style-item[open] {
-    background: rgba(163, 247, 203, 0.03);
-    border-radius: 8px;
-}
-
-/* Summary */
-.style-item summary {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-
-    padding: 0.9rem 0.4rem;
-    transition: opacity 0.2s ease, color 0.2s ease;
-}
-
-.style-item summary::-webkit-details-marker {
-    display: none;
-}
-
-.style-item summary::marker {
-    content: "";
-}
-
-.style-item summary:hover {
-    opacity: 0.85;
-}
-
-/* Year */
-.style-year {
-    min-width: 75px;
-    font-weight: 700;
-    color: #a3f7cb;
-    text-shadow: 0 0 10px rgba(163, 247, 203, 0.35);
-}
-
-/* Theme name */
-.style-name {
-    flex: 1;
-    font-weight: 500;
-    color: #e3f7ee;
-    transition: color 0.2s ease;
-}
-
-.style-item summary:hover .style-name {
-    color: #a3f7cb;
-}
-
-/* Arrow indicator */
-.style-item summary::after {
-    content: "";
-
-    width: 7px;
-    height: 7px;
-
-    border-right: 1.5px solid #bad3c7;
-    border-bottom: 1.5px solid #bad3c7;
-
-    transform: rotate(45deg);
-
-    margin-right: 0.5rem;
-
-    transition: transform 0.25s ease;
-}
-
-.style-item[open] summary::after {
-    transform: rotate(225deg);
-}
-
-/* Expanded content */
-.style-content {
-    width: 100%;
-    max-width: none;
-    box-sizing: border-box;
-    padding: 0.3rem 2em 1.5rem;
-}
-
-.style-content p {
-    margin: 0 0 1rem;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #bad3c7;
-}
-
-/* Pinterest reference */
-.style-pinterest-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-
-    margin-top: 0.3rem;
-    color: #a3f7cb;
-
-    transition: opacity 0.2s ease, text-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.style-pinterest-link:hover {
-    color: #e3f7ee;
-    text-shadow: 0 0 8px rgba(163, 247, 203, 0.5);
-}
-
-/* Pinterest Board section */
+/* Pinterest Board */
 .visual-references {
-    margin-top: 3.5rem;
+    margin-top: 2.5rem;
     padding-top: 2rem;
-}
-
-.visual-references>h3 {
-    margin-bottom: 0.8rem;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #a3f7cb;
-    text-shadow: 0 0 10px rgba(163, 247, 203, 0.3);
-}
-
-.visual-references>p {
-    margin-bottom: 1.2rem;
-    color: #bad3c7;
-    line-height: 1.6;
+    border-top: 1px solid rgba(163, 247, 203, 0.2);
 }
 
 .pinterest-board {
@@ -1783,13 +1681,12 @@ main p, p {
     align-items: center;
     gap: 8px;
     color: #a3f7cb;
-    font-size: 0.85rem;
-
-    margin-top: 15px;
+    font-size: 0.9rem;
+    margin-top: 10px;
     padding: 10px 18px;
     background: rgba(163, 247, 203, 0.08);
     border: 1px solid rgba(163, 247, 203, 0.3);
-    border-radius: 12px;
+    border-radius: 18px;
     transition: all 0.25s ease;
 }
 
@@ -1800,34 +1697,47 @@ main p, p {
     transform: translateY(-1px);
 }
 
+/* =========================================================
+   C0D3 & TABELLE DOCUMENTAZIONE
+   ========================================================= */
 
-/* C0D3 */
+/* Albero cartelle e tag code */
 pre.tree {
     background: linear-gradient(145deg, rgba(5, 18, 12, 0.85) 0%, rgba(2, 8, 5, 0.95) 100%);
-    border: 1px solid rgba(163, 247, 203, 0.25);
-    border-radius: 14px;
-    padding: 12px 16px;
-    margin: 15px 0;
+    border: 1px solid rgba(163, 247, 203, 0.3);
+    border-radius: 18px;
+    padding: 18px 22px;
+    margin: 18px 0;
     overflow-x: auto;
-    font-size: 11.5px;
-
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: #e3f7ee;
     box-sizing: border-box;
 }
 
-.tree {
-    color: #e3f7ee;
-}
-
 .comment {
-    color: #5d8a74;
+    color: #6ea38a;
     font-style: italic;
 }
 
+.documentation-section p code,
+.documentation-section li code,
+.tech-highlight-card code,
+.tech-table td code {
+    background: rgba(0, 0, 0, 0.45);
+    color: #a3f7cb;
+    padding: 2px 6px;
+    border-radius: 5px;
+    border: 1px solid rgba(163, 247, 203, 0.25);
+    font-size: 0.82rem;
+}
+
+/* Card evidenza tecnica */
 .tech-highlight-card {
     background: linear-gradient(145deg, rgba(20, 60, 45, 0.45) 0%, rgba(6, 20, 14, 0.65) 100%);
     backdrop-filter: blur(25px);
     color: #bad3c7;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(163, 247, 203, 0.3);
     border-radius: 24px;
     padding: 24px 28px;
     margin: 22px 0;
@@ -1835,82 +1745,90 @@ pre.tree {
 }
 
 .tech-highlight-card h3 {
-    margin: 0 0 10px;
-    font-size: 1.4rem;
+    margin: 0 0 12px;
+    font-size: 1.35rem;
     font-weight: 700;
     color: #a3f7cb;
-    text-shadow: 0 0 10px rgba(163, 247, 203, 0.3);
 }
 
 .tech-highlight-card p,
-.tech-highlight-card ul {
+.tech-highlight-card ul,
+.tech-highlight-card ol {
     color: #bad3c7;
-    font-size: 0.92rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.65;
     margin-bottom: 12px;
 }
 
-.tech-highlight-card ul {
-    padding-left: 20px;
+.tech-highlight-card ul,
+.tech-highlight-card ol {
+    padding-left: 22px;
 }
 
 .tech-highlight-card li {
     margin-bottom: 8px;
 }
 
-.tech-highlight-card strong {
-    color: #e3f7ee;
+/* Contenitore e tabelle (Explore the Styles + Technical Tables) */
+.style-table-scroll {
+    overflow-x: auto;
+    margin: 20px 0;
+    background: linear-gradient(145deg, rgba(16, 48, 35, 0.4) 0%, rgba(5, 18, 12, 0.7) 100%);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(163, 247, 203, 0.3);
+    border-radius: 20px;
 }
 
-/*testo tabella tecnica*/
+.style-table,
 .tech-table {
     width: 100%;
-    max-width: 950px;
-    margin: 15px auto;
+    border-collapse: collapse;
     color: #bad3c7;
-    box-sizing: border-box;
-    border-top: 1px solid rgba(163, 247, 203, 0.35);
-    border-bottom: 1px solid rgba(163, 247, 203, 0.35);
+    text-align: left;
 }
 
+.style-table th,
+.style-table td,
 .tech-table th,
 .tech-table td {
-    padding: 5px 8px;
-    text-align: left;
-    font-size: 0.8rem;
-    line-height: 1.25;
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
     border-bottom: 1px solid rgba(163, 247, 203, 0.15);
 }
 
-.tech-table th:not(:last-child),
-.tech-table td:not(:last-child) {
-    border-right: 1px solid rgba(163, 247, 203, 0.15);
-}
-
-
-.tech-table th {
-    font-size: 0.95rem;
+.style-table thead th,
+.tech-table thead th {
+    background: rgba(163, 247, 203, 0.1);
+    color: #a3f7cb;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #a3f7cb;
-    padding: 7px 8px;
     border-bottom: 1px solid rgba(163, 247, 203, 0.35);
 }
 
-.tech-table td strong {
+.style-table tbody th,
+.tech-table td strong,
+.style-table td strong {
     color: #e3f7ee;
-    font-size: 0.85rem;
-    white-space: nowrap;
+    font-weight: 700;
 }
 
-.tech-table td code {
-    background: rgba(0, 0, 0, 0.45);
-    color: #a3f7cb;
-    padding: 1px 4px;
-    border-radius: 3px;
-    border: 1px solid rgba(163, 247, 203, 0.25);
-    font-size: 0.75rem;
+.style-table tbody tr:last-child th,
+.style-table tbody tr:last-child td,
+.tech-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.style-table tbody tr:hover,
+.tech-table tbody tr:hover {
+    background: rgba(163, 247, 203, 0.05);
+}
+
+.style-table-action {
+    text-align: center;
+    white-space: nowrap;
 }
 
 .color-badge {
