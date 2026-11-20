@@ -745,7 +745,6 @@ header {
     color: #f7e8c6;
     font-family: var(--font-title);
     font-size: 1.1rem; letter-spacing: 2px;
-    writing-mode: vertical-lr;
 }
 
 /* colonna destra */
