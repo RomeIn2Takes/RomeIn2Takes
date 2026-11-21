@@ -55,7 +55,6 @@ button {
    ========================================================= */
 header {
     position: sticky;
-    height: 70px;
     top: 0;
     z-index: 2000;
     width: 100%;
@@ -65,6 +64,8 @@ header {
     align-items: center;
     padding: 15px 40px;
     background-color: #1a0f08;
+    border-top: 2px solid #d4af37;
+    border-bottom: 2px solid #d4af37;
 }
 
 .link-head {
@@ -136,21 +137,20 @@ header {
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    padding: 0;
-    justify-content:center;
+    padding: 12px 0;
     background-color: #4a2e18;
-    border-top: 5px solid #700404;
-    border-bottom: 5px solid #700404;
+    border-top: 1px solid rgba(212, 175, 55, 0.5);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.5);
 }
 
 .bar-item {
-    flex: 0 0 auto;
-    height: 40px;
+    flex: 1;
+    height: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-right: 2px solid #700404
+    border-right: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .bar-item:last-child {
@@ -160,7 +160,6 @@ header {
 .bar-item a {
     width: 100%;
     height: 100%;
-    padding: 0 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,7 +203,7 @@ main h2 {
 main h2::before {
   content: "";
   display: block;
-  width: 200px;     
+  width: 150px;     
   height: 90px;      
   margin: 0 auto 5px auto; 
   background-image: url('../img.decorazioni_barocco/dec_homepage.png');
@@ -222,7 +221,7 @@ main p {
     font-size: 1.2rem;
     line-height: 1.7rem;
     color: #4a2e18;
-    text-align: center;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -238,9 +237,9 @@ main p {
 .title-container {
   position: relative;
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 90px 70px;
+  padding: 50px 70px;
   box-sizing: border-box;
   background-color: #c49b17;
   border: 10px solid #4a2e18;
@@ -253,7 +252,7 @@ main p {
   margin: 0;
   padding: 0;
   font-family: 'Berry Rotunda', serif;
-  font-size: 6rem;
+  font-size: 5.5rem;
   line-height: 1.1;
   color: #4a2e18;
   text-align: center;
@@ -473,8 +472,8 @@ main p {
     min-height: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: justify;
+    justify-content: justify;
     box-sizing: border-box;
 }
 
@@ -677,7 +676,7 @@ main p {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: justify;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 9999;
     cursor: pointer;
