@@ -735,6 +735,164 @@ main p {
     background-color: white;
     border: 2px solid #8b6b33;
 }
+/* =========================================================
+   ABOUT PAGE — 1650s STYLE
+   ========================================================= */
+.about-page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    box-sizing: border-box;
+}
+
+.about-page section {
+    width: 100%;
+    margin-bottom: 3.5rem;
+}
+
+.about-page section:last-child {
+    margin-bottom: 0;
+}
+
+.about-page section > p:not(.section-label) {
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    color: #2b2924;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+.about-introduction h1 {
+    margin: 20px auto 1.8rem;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 3rem;
+    color: #4a2e18;
+    text-align: center;
+}
+
+.about-page h2 {
+    margin-bottom: 1.2rem;
+}
+
+.about-introduction,
+.team-section,
+.shared-work {
+    padding-bottom: 2rem;
+    border-bottom: 2px solid rgba(139, 107, 51, 0.5);
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.team-container > a {
+    display: flex;
+}
+
+.team-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    min-height: 220px;
+    padding: 2rem 1.5rem 1.8rem;
+    box-sizing: border-box;
+    background-color: #f4ebd0;
+    border: 4px solid #4a2e18;
+    color: #2b2924;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card .team-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.1rem;
+    background-color: #4a2e18;
+    border: 4px solid #d4af37;
+    border-radius: 50%;
+    color: #f4ebd0;
+    font-size: 2.1rem;
+    line-height: 1;
+}
+
+.team-card h3 {
+    margin: 0 0 1rem;
+    color: #641305;
+    font-family: 'ChopinScript', 'EB Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: normal;
+    line-height: 1.15;
+    text-align: center;
+}
+
+.team-tasks {
+    width: 100%;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    list-style: none;
+    font-family: 'EB Garamond', serif;
+}
+
+.team-tasks li {
+    padding: 7px 0;
+    color: #2b2924;
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.team-tasks li + li {
+    border-top: 1px solid #922c1e;
+}
+
+.team-github-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+    margin-left: 0;
+    padding: 8px 16px;
+    background-color: #922c1e;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    color: #f4ebd0;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.team-container > a:hover .team-card {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px #922c1e;
+}
+
+.team-container > a:hover .team-github-button {
+    background-color: #922c1e;
+    color: #ffffff;
+}
+
+.about-styles p {
+    margin-bottom: 1.2rem;
+}
+
+.about-styles .bottone {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-left: 0;
+}
+
 
 /* =========================================================
    POSTER (GRIGLIA LOCANDINE)
@@ -1312,5 +1470,44 @@ footer a:hover {
     .route-connection {
         width: calc(100% - 68px);
         margin-left: 68px;
+    }
+}
+
+@media (max-width: 900px) {
+    .team-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .team-container > a:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-page {
+        width: 92%;
+        padding: 2rem 0 3rem;
+    }
+
+    .about-page section {
+        margin-bottom: 2.5rem;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .team-container > a:last-child {
+        grid-column: auto;
+    }
+
+    .team-card {
+        min-height: 160px;
+        padding: 1.5rem 1.2rem;
+    }
+
+    .team-card h3 {
+        font-size: 1.9rem;
     }
 }
