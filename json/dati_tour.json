@@ -8,7 +8,8 @@
           "step": 1,
           "id": "palazzo-federici",
           "story": {
-            "title": "Federici Palace- A special day (1977)",
+            "place": "Federici Palace",
+            "title": "A Special Day",
             "levels": {
               "normal": {
                 "text-less": "The tour begins at the height of the Fascist regime, where it all started: the building's residents, dressed in Fascist uniforms, return home marching.",
@@ -57,7 +58,8 @@
           "step": 2,
           "id": "piazza-di-spagna",
           "story": {
-            "title": "Piazza di Spagna - Rome, Open City (1945)",
+            "place": "Piazza di Spagna",
+            "title": "Rome, Open City",
             "levels": {
               "normal": {
                 "text-less": "The tour continues with the dark years of the Nazi occupation: German soldiers marching in Piazza di Spagna show the harsh reality of that.",
@@ -106,7 +108,8 @@
           "step": 3,
           "id": "piazza-navona",
           "story": {
-            "title": "Piazza Navona - There's Still Tomorrow (2023)",
+            "place": "Piazza Navona",
+            "title": "There's Still Tomorrow",
             "levels": {
               "normal": {
                 "text-standard": "incolla testo",
@@ -155,7 +158,8 @@
           "step": 4,
           "id": "santa-maria-in-cappella",
           "story": {
-            "title": "Chiesa di Santa Maria in Cappella There's Still Tomorrow (2023)",
+            "place": "Chiesa di Santa Maria in Cappella",
+            "title": "There's Still Tomorrow",
             "levels": {
               "normal": {
                 "text-less": "Set in 1946 the scene captures the tensions of a traditional patriarchal family mirrored on the parvis of this ancient church.",
@@ -204,7 +208,8 @@
           "step": 5,
           "id": "lungotevere-testaccio",
           "story": {
-            "title": "Lungotevere Testaccio- There's still tomorrow (2023)",
+            "place": "Lungotevere Testaccio",
+            "title": "There's Still Tomorrow",
             "levels": {
               "normal": {
                 "text-less": "The journey reaches the heart of working-class Rome in the post-war period: in this historic square, the daily life of a neighborhood trying to leave behind the rubble left by the conflict is reborn.",
@@ -253,7 +258,8 @@
           "step": 6,
           "id": "porta-portese",
           "story": {
-            "title": "Porta Portese market Mamma Roma (1962)",
+            "place": "Porta Portese market",
+            "title": "Mamma Roma",
             "levels": {
               "normal": {
                 "text-less": "The tour moves to the early 1950s: the market serves as the backdrop for a mother's desperate quest for social redemption for her son.",
@@ -302,7 +308,8 @@
           "step": 7,
           "id": "knights-of-malta-keyhole",
           "story": {
-            "title": "San Pietro in Montorio - The Great Beauty (2013)",
+            "place": "San Pietro in Montorio",
+            "title": "The Great Beauty",
             "levels": {
               "normal": {
                 "text-less": "The journey ascends the Aventine Hill, where we encounter one of Rome's most fascinating secrets: the ancient keyhole that frames the dome of St. Peter's and transforms the city into a painting.",
@@ -357,7 +364,8 @@
           "step": 1,
           "id": "palazzo-federici",
           "story": {
-            "title": "Federici Palace- A Special Day (1977)",
+            "place": "Federici Palace",
+            "title": "A Special Day",
             "environment": "Environment: THE HOUSE",
             "levels": {
               "normal": {
@@ -407,7 +415,8 @@
           "step": 2,
           "id": "cinecitta",
           "story": {
-            "title": "Cinecittà - Bellissima (1951)",
+            "place": "Cinecittà",
+            "title": "Bellissima",
             "environment": "Environment: THE CITY OF THE IMAGE",
             "levels": {
               "normal": {
@@ -457,7 +466,8 @@
           "step": 3,
           "id": "via-bodoni",
           "story": {
-            "title": "Via Bodoni - There's Still Tomorrow (2023)",
+            "place": "Via Bodoni",
+            "title": "There's Still Tomorrow",
             "environment": "Environment: The neighborhood",
             "levels": {
               "normal": {
@@ -507,7 +517,8 @@
           "step": 4,
           "id": "piazza-testaccio",
           "story": {
-            "title": "Piazza and Market of Testaccio - There's still Tomorrow (2023)",
+            "place": "Piazza and Market of Testaccio",
+            "title": "There's Still Tomorrow",
             "environment": "Environment: The neighborhood",
             "levels": {
               "normal": {
@@ -557,7 +568,8 @@
           "step": 5,
           "id": "lungotevere-testaccio",
           "story": {
-            "title": "Lungotevere Testaccio - There's still tomorrow (2023)",
+            "place": "Lungotevere Testaccio",
+            "title": "There's Still Tomorrow",
             "environment": "Environment: The transition",
             "levels": {
               "normal": {
@@ -607,7 +619,8 @@
           "step": 6,
           "id": "porta-portese",
           "story": {
-            "title": "Porta Portese and Piazza dei Mercanti - Mamma Roma (1962)",
+            "place": "Porta Portese and Piazza dei Mercanti",
+            "title": "Mamma Roma",
             "environment": "Environment: The public city",
             "levels": {
               "normal": {
@@ -657,7 +670,8 @@
           "step": 7,
           "id": "san-pietro-in-montorio",
           "story": {
-            "title": "Bramante's Tempietto - The Great Beauty (2013)",
+            "place": "Bramante's Tempietto",
+            "title": "The Great Beauty",
             "environment": "Environment: The temple",
             "levels": {
               "normal": {
@@ -707,7 +721,8 @@
           "step": 8,
           "id": "fontana-acqua-paola",
           "story": {
-            "title": "Fontanone and Belvedere del Gianicolo - The Great Beauty (2023)",
+            "place": "Fontanone and Belvedere del Gianicolo",
+            "title": "The Great Beauty",
             "environment": "Environment: The ascent",
             "levels": {
               "normal": {

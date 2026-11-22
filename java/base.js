@@ -165,12 +165,24 @@ function initStoryPage() {
             const sceneEl = document.getElementById(tappa.id);
             if (!sceneEl) return;
 
-            // 1. Popola Story (Titolo, Ambiente e Livelli di lettura)
+            // 1. Popola Story (Luogo, Titolo film in corsivo, Ambiente e Livelli di lettura)
             const storyBox = sceneEl.querySelector('.story-content');
             if (storyBox && tappa.story) {
                 const h3 = storyBox.querySelector('h3');
-                if (h3 && tappa.story.title) {
-                    h3.textContent = tappa.story.title;
+                if (h3) {
+                    h3.textContent = tappa.story.place || tappa.story.title || '';
+
+                    if (tappa.story.place && tappa.story.title) {
+                        let pTitle = storyBox.querySelector('p.movie-title');
+                        if (!pTitle) {
+                            pTitle = document.createElement('p');
+                            pTitle.className = 'movie-title';
+                            pTitle.style.marginTop = '0';
+                            pTitle.style.marginBottom = '10px';
+                            h3.insertAdjacentElement('afterend', pTitle);
+                        }
+                        pTitle.innerHTML = '<em>' + tappa.story.title + '</em>';
+                    }
                 }
 
                 const pEnv = storyBox.querySelector('p.movie-description');
