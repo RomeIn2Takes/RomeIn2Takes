@@ -348,23 +348,7 @@ main p {
     background-color: #922c1e;
     color: #FFF;
 }
-/* =========================================================
-   TASTI EXPLORE MAP
-   ========================================================= */
-    .map-introduction {
-    width: 100%;
-    max-width: 950px;
-    margin: 40px auto;
-    box-sizing: border-box;
-}
 
-    .map-introduction .button {
-    display: block;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: 0;
-    margin-top: 20px;
-}
 /* =========================================================
    AREA IMMAGINI (RULLINO / SCENE)
    ========================================================= */
@@ -1703,10 +1687,10 @@ main p {
 footer {
     width: 100%;
     box-sizing: border-box;
-    margin-top: 80px;
+    margin-top: 50px;
     padding: 25px 40px;
-    background-color: #1a0f08;
-    border-top: 2px solid #d4af37;
+    background-color: #641305;
+    border-top: 5px solid #4a2e18;
 }
 
 .footer-container {
@@ -1720,7 +1704,7 @@ footer p, footer a {
     color: #f4ebd0;
     font-family: 'EB Garamond', serif;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 footer a:hover {
@@ -1730,13 +1714,13 @@ footer a:hover {
 .footer-box {
     width: 220px;
     box-sizing: border-box;
-    padding: 14px 18px;
+    padding: 14px 18px;  
     border: 1px solid #d4af37;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background-color: #2b1d0c;
+    background-color: #4a2e18;
 }
 
 .footer-box:hover {
