@@ -9,7 +9,6 @@
           "id": "palazzo-federici",
           "story": {
             "title": "Federici Palace- A special day (1977)",
-            "environment": "Environment: THE HOUSE",
             "levels": {
               "normal": {
                 "text-less": "The tour begins at the height of the Fascist regime, where it all started: the building's residents, dressed in Fascist uniforms, return home marching.",
@@ -59,7 +58,6 @@
           "id": "piazza-di-spagna",
           "story": {
             "title": "Piazza di Spagna - Rome, Open City (1945)",
-            "environment": "Environment: THE SQUARE",
             "levels": {
               "normal": {
                 "text-less": "The tour continues with the dark years of the Nazi occupation: German soldiers marching in Piazza di Spagna show the harsh reality of that.",
@@ -109,7 +107,6 @@
           "id": "piazza-navona",
           "story": {
             "title": "Piazza Navona - There's Still Tomorrow (2023)",
-            "environment": "Environment: The neighborhood",
             "levels": {
               "normal": {
                 "text-standard": "incolla testo",
@@ -159,7 +156,6 @@
           "id": "santa-maria-in-cappella",
           "story": {
             "title": "Chiesa di Santa Maria in Cappella There's Still Tomorrow (2023)",
-            "environment": "Environment: The community",
             "levels": {
               "normal": {
                 "text-less": "Set in 1946 the scene captures the tensions of a traditional patriarchal family mirrored on the parvis of this ancient church.",
@@ -209,7 +205,6 @@
           "id": "lungotevere-testaccio",
           "story": {
             "title": "Lungotevere Testaccio- There's still tomorrow (2023)",
-            "environment": "Environment: The transition",
             "levels": {
               "normal": {
                 "text-less": "The journey reaches the heart of working-class Rome in the post-war period: in this historic square, the daily life of a neighborhood trying to leave behind the rubble left by the conflict is reborn.",
@@ -259,7 +254,6 @@
           "id": "porta-portese",
           "story": {
             "title": "Porta Portese market Mamma Roma (1962)",
-            "environment": "Environment: The public city",
             "levels": {
               "normal": {
                 "text-less": "The tour moves to the early 1950s: the market serves as the backdrop for a mother's desperate quest for social redemption for her son.",
@@ -309,7 +303,6 @@
           "id": "knights-of-malta-keyhole",
           "story": {
             "title": "San Pietro in Montorio - The Great Beauty (2013)",
-            "environment": "Environment: The ascent",
             "levels": {
               "normal": {
                 "text-less": "The journey ascends the Aventine Hill, where we encounter one of Rome's most fascinating secrets: the ancient keyhole that frames the dome of St. Peter's and transforms the city into a painting.",
