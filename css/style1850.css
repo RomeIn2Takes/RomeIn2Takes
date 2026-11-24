@@ -1,7 +1,7 @@
 /* =========================================================
    ROME IN TWO TAKES — IMPRESSIONIST STYLE (1850)
    ========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=IM+Fell+English+SC&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Raleway+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=IM+Fell+English+SC&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Raleway+Dots&family=Codystar:wght@300;400&display=swap');
 
 /* 01 — VARIABLES & CORE RESET (Mantenuto inalterato) */
 html { scroll-behavior: smooth; }
@@ -318,13 +318,12 @@ main p + p {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Raleway Dots';
+  font-family: 'Codystar', display;
   font-size: 5.5rem;
-  font-weight: 400;
+  font-weight: 800;
   line-height: 1.1;
-  color: #222b26;
+  color: #1f682fb9;
   text-align: center;
-  -webkit-text-stroke: 1.5px #222b26;
 }
 
 .home-introduction > p {
@@ -424,6 +423,45 @@ main p + p {
     background-color: #d97757;
     color: #ffffff;
     border-color: #d97757;
+}
+
+/* =========================================================
+   BOTTONI A CASO NELLE PAGINE
+   ========================================================= */
+.bottoni-pagine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 950px;
+    margin: 40px auto;
+}
+
+.bottoni-pagine .bottone:first-child {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.bottoni-pagine .bottone:last-child {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.bottoni-pagine .bottone:only-child {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/*MAP INTRODUCTION BOTTONE */
+.map-introduction {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-introduction .bottone {
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 /* =========================================================
@@ -1387,4 +1425,25 @@ footer p, footer a {
         gap: 15px;
     }
     .disclaimer-page .disclaimer-number { font-size: 2.5rem; }
+}
+
+/*SEMIBOX TRASPARENTI PER RENDERE LEGGIBILE IL TESTO */
+
+.project-introduction,
+.map-introduction,
+.films-introduction,
+.about-introduction,
+.about-guide,
+.about-styles {
+    width: 100%;
+    margin: 20px 10px;
+    padding: 20px 28px;
+    box-sizing: border-box;
+    background: linear-gradient(
+        to bottom,
+        rgba(252, 250, 242, 0) 0%,
+        rgba(252, 250, 242, 0.72) 25%,
+        rgba(252, 250, 242, 0.72) 75%,
+        rgba(252, 250, 242, 0) 100%
+    );
 }
