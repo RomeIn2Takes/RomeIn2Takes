@@ -1,7 +1,7 @@
 /* =========================================================
    ROME IN TWO TAKES — IMPRESSIONIST STYLE (1850)
    ========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=IM+Fell+English+SC&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=IM+Fell+English+SC&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Raleway+Dots&display=swap');
 
 /* 01 — VARIABLES & CORE RESET (Mantenuto inalterato) */
 html { scroll-behavior: smooth; }
@@ -318,12 +318,13 @@ main p + p {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Pinyon Script', cursive;
+  font-family: 'Raleway Dots';
   font-size: 5.5rem;
+  font-weight: 400;
   line-height: 1.1;
   color: #222b26;
   text-align: center;
-  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9);
+  -webkit-text-stroke: 1.5px #222b26;
 }
 
 .home-introduction > p {
