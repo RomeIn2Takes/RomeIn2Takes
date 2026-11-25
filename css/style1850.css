@@ -1430,11 +1430,16 @@ footer p, footer a {
 /*SEMIBOX TRASPARENTI PER RENDERE LEGGIBILE IL TESTO */
 
 .project-introduction,
+.introduction,
+.team-section,
 .map-introduction,
+.documentation-intro,
+.documentation-section,
 .films-introduction,
 .about-introduction,
 .about-guide,
-.about-styles {
+.about-styles, 
+.disclaimer-content {
     width: 100%;
     margin: 20px 10px;
     padding: 20px 28px;
