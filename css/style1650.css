@@ -211,7 +211,23 @@ main h2::before {
   background-repeat: no-repeat;
   background-position: center;
   filter: brightness(0) saturate(100%) invert(20%) sepia(80%) saturate(500%) hue-rotate(340deg);
+  animation: ghirigoro 1s cubic-bezier(0.22, 1, 0.36, 1) 0.75s both;
 }
+
+@keyframes ghirigoro {
+    0% {
+        opacity: 0;
+        transform: translateY(-24px);
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 main p {
     width: 100%;
@@ -245,6 +261,7 @@ main p {
   border: 10px solid #4a2e18;
   background-size: 80px 80px;
   background-repeat: no-repeat;
+  animation: tcapertura 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .title-container h1 {
@@ -257,8 +274,44 @@ main p {
   color: #4a2e18;
   text-align: center;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  animation:
+    h1animation 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both,
+    light 5s ease-in-out 1.4s infinite;
+}
+@keyframes tcapertura {
+    0% {
+        opacity: 0;
+        clip-path: inset(0 35% 0 35%);
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        transform: translateY(0);
+    }
 }
 
+@keyframes h1animation {
+    0% {
+        opacity: 0;
+        letter-spacing: 0.14em;
+        transform: translateY(12px);
+    }
+    100% {
+        opacity: 1;
+        letter-spacing: normal;
+        transform: translateY(0);
+    }
+}
+
+@keyframes light {
+    0%, 100% {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        text-shadow: 2px 2px 14px rgba(212, 175, 55, 0.65);
+    }
+}
 /* =========================================================
    NARRATIVE CARDS
    ========================================================= */
@@ -347,6 +400,21 @@ main p {
 .narrative-card:hover .discover {
     background-color: #922c1e;
     color: #FFF;
+}
+
+/* =========================================================
+    MAP INTRODUCTION: EXPLORE ROME ON MAP
+   ========================================================= */
+.map-introduction {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 70px;
+}
+
+.map-introduction .bottone {
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 /* =========================================================
@@ -1258,19 +1326,18 @@ main p {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: center;
+    gap: 25px;
 }
 
 .poster {
-    flex: 1 1 calc(33.333% - 30px);
-    min-width: 250px;
-    box-sizing: border-box;
+    flex: 0 1 auto;
 }
 
 .poster-flip {
     position: relative;
-    width: 100%;
+    width: fit-content;
+
 }
 
 .poster-img {
@@ -1653,10 +1720,13 @@ main p {
     align-items: center;
 }
 
+.bottoni-pagine .bottone:only-child{
+    margin-left: auto;
+}
+
 .bottone {
     display: block;
     width: fit-content;
-    margin-left: auto;
     margin-top: 8px;
     padding: 10px 20px;
     background-color: #4a2e18;
@@ -1671,14 +1741,11 @@ main p {
     transition: all 0.2s ease;
 }
 
+
 .bottone:hover {
     background-color: #922c1e;
     color: #fff;
     box-shadow: 0 0 15px #d4af37;
-}
-
-.bottoni-pagine .bottone:first-child {
-    margin-left: 0;
 }
 
 /* =========================================================
