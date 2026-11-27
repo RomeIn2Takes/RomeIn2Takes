@@ -1,6 +1,13 @@
-/* =========================================================
-   questa pagina viene utilizzata per la visualizzzazione anni 2035. le note sono mezzo ingl e mezze in italiano perche sono appunti orientativi e non hanno lo scopo di coumincare di altri in quanto è un lavoro svolto indivisulamente. per orientari meglio c'è una prima sezione di regole generali e poi viene organizzato per pagine di visualizzazione cosi come viene visto nell'header. per le pagine sono usati nomi con lettere cosi che venga piu veloce ceracrsli con comm f e non si perda tra altri nomi
-   ========================================================= */
+/*
+ * Foglio di stile per la visualizzazione anni 2035.
+ * Note in italiano e inglese ad uso personale (appunti orientativi, lavoro individuale).
+
+Struttura:
+ * 1. Regole generali
+ * 2. Sezioni per pagina di visualizzazione (come nell'header)
+ 
+ * I nomi delle pagine usano codici a lettere per trovarli subito con Cmd+F senza perdersi tra altri nomi.
+ */
 
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Exo:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap');
 
@@ -11,7 +18,7 @@ body {
     width: 100%;
     min-height: 100vh;
 
-    background: radial-gradient(circle at 50% 30%, #15382b 0%, #081711 70%, #030a07 100%);
+    background: radial-gradient(circle at 50%, #15382b 30%, #0a1c15 70%, #030a07 100%);    
     background-attachment: fixed;
 
     font-family: 'Exo', sans-serif;
@@ -97,8 +104,7 @@ button {
 .difficulty-buttons button.active,
 .tellme-buttons button:hover,
 .tellme-buttons button.active, .showview-buttons button:hover,
-.showview-buttons button.active, .metadata-tasti button:hover,
-.metadata-tasti button.active, #filters button:hover,
+.showview-buttons button.active, .metadata-tasti button:hover, #filters button:hover,
 #filters button.active, .bottone:hover,
 .discover:hover,
 .narrative-card:hover .discover, .location-info a:hover {
@@ -176,7 +182,6 @@ header, .bar-style {
     transform: translateY(-1px);
 }
 
-
 /* dropdown header*/
 .dropdown {
     position: relative;
@@ -199,7 +204,6 @@ header, .bar-style {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
 }
-
 
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -252,6 +256,7 @@ header, .bar-style {
         border-right: none;
 }
 
+/* pallini luminosi tra date */
 .bar-item:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -287,7 +292,6 @@ header, .bar-style {
     transform: translateY(-1px);        
 }
 
-
 /* main */
 main {
     width: 100%;
@@ -300,20 +304,14 @@ main {
     align-items: center;
 }
 
-
-/* TESTO GENERALE  */
-
 main p, p {
     width: 100%;
     max-width: 950px;
-
     margin: 0 auto;
 
     font-size: 1rem;
     line-height: 1.5rem;
-
-    color: #bad3c7;
-
+    color: #e3f7ee;
     text-align: justify;
 }
 
@@ -346,7 +344,7 @@ main p, p {
     transform: translate(-50%, -50%) rotate(90deg);
     width: 490px;
     min-height: 1200px;
-    background-image: url("../img_femminista/sfondo.jpg"), url("../sfondo.jpg");
+    background-image: url("../img_femminista/sfondo.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -505,6 +503,7 @@ main p, p {
 .card-body {
     padding: 25px;
 }
+
 /* titolo itinerario */
 .card-body h3 {
     min-height: 70px;
@@ -533,7 +532,6 @@ main p, p {
     text-align: left;
 }
 
-
 .card-description {
     width: 100%;
     max-width: none;
@@ -561,8 +559,11 @@ main p, p {
     margin-bottom: 30px;
 }
 
-/* poster */
+.films-introduction h2 {
+    margin-top: 90px;
+}
 
+/* poster */
 .poster-container {
     width: 100%;
     max-width: 950px;
@@ -590,8 +591,6 @@ main p, p {
 
     width: 100%;
     border-radius: 30px;
-
-    border: 1px solid #e3f7ee;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     transition: all 0.3s ease;
@@ -647,7 +646,6 @@ main p, p {
     text-align: center;
 }
 
-
 .film-year {
     font-size: 1.05rem;
     font-weight: 600;
@@ -666,8 +664,18 @@ main p, p {
     text-align: center;
     margin-bottom: 10px;
     font-weight: 600;
-    border-bottom: 1px solid #a3f7cb;
+
     padding-bottom: 15px;
+}
+
+.film-director::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 2px;
+    margin: 20px auto 0;
+    background: linear-gradient(90deg, transparent, #a3f7cb, transparent);
+    box-shadow: 0 0 12px #a3f7cb;
 }
 
 .film-synopsis {
@@ -1033,7 +1041,6 @@ main p, p {
     font-weight: 600;
 }
 
-
 /* frecce box itinerario */
 .frecce_scena {
     width: 9%;
@@ -1169,7 +1176,6 @@ main p, p {
     margin-bottom: 12px;
 }
 
-
 /* metadata buttons */
 .modal-overlay {
     position: fixed;
@@ -1203,7 +1209,6 @@ main p, p {
     color: #e3f7ee;
 
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-top: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 35px;
 
     box-shadow:
@@ -1464,7 +1469,6 @@ main p, p {
     text-shadow: 0 0 10px rgba(163, 247, 203, 0.3);
 }
 
-/* Etichetta sopra i titoli (VISUAL DESIGN / DESIGN REFERENCES) */
 .section-label {
     margin-bottom: 6px;
     font-size: 0.85rem;
@@ -1508,7 +1512,6 @@ main p, p {
     color: #a3f7cb;
 }
 
-/* 7 Step del Workflow / Technical Index */
 .workflow-steps {
     display: grid;
     grid-template-columns: repeat(7, minmax(110px, 1fr));
@@ -1538,7 +1541,6 @@ main p, p {
 }
 
 .workflow-step:hover {
-    transform: translateY(-3px);
     border-color: #a3f7cb;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(163, 247, 203, 0.25);
 }
@@ -1698,10 +1700,10 @@ main p, p {
 }
 
 /* =========================================================
-   C0D3 & TABELLE DOCUMENTAZIONE
+   T3CHN1CAL D0C
    ========================================================= */
 
-/* Albero cartelle e tag code */
+/* albero code */
 pre.tree {
     background: linear-gradient(145deg, rgba(5, 18, 12, 0.85) 0%, rgba(2, 8, 5, 0.95) 100%);
     border: 1px solid rgba(163, 247, 203, 0.3);
@@ -1769,7 +1771,6 @@ pre.tree {
     margin-bottom: 8px;
 }
 
-/* Contenitore e tabelle (Explore the Styles + Technical Tables) */
 .style-table-scroll {
     overflow-x: auto;
     margin: 20px 0;
@@ -1821,10 +1822,6 @@ pre.tree {
     border-bottom: none;
 }
 
-.style-table tbody tr:hover,
-.tech-table tbody tr:hover {
-    background: rgba(163, 247, 203, 0.05);
-}
 
 .style-table-action {
     text-align: center;
