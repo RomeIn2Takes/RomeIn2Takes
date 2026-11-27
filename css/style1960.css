@@ -282,6 +282,11 @@ main p {
     text-align: justify;
 }
 
+/* Spazio tra paragrafi consecutivi */
+main p + p {
+    margin-block-start: 0.85rem;
+}
+
 /* =========================================================
    TITOLI PRINCIPALI — STILE MANIFESTO 1963
    ========================================================= */
