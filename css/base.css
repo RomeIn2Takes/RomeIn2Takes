@@ -1189,8 +1189,7 @@ header {
 .documentation-section:last-of-type { border-bottom: none; }
 .documentation-section p { margin-bottom: 15px; }
 
-/* WORKFLOW: le fasi come piccoli pannelli retroilluminati (come il retro dei poster),
-   collegate da una lampadina tra l'una e l'altra */
+/* WORKFLOW: le fasi come piccoli pannelli retroilluminati  */
 .workflow-steps {
     display: flex; flex-wrap: wrap;
     gap: 16px;
@@ -1218,17 +1217,7 @@ header {
     text-align: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-/* lampadina tra una fase e la successiva */
-.workflow-step:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 50%; right: -12px;
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: #ffd98a;
-    box-shadow: 0 0 8px 2px rgba(255, 185, 80, 0.7);
-    transform: translateY(-50%);
-}
+
 /* numero: tondo con bordo in ottone, come i numeri della mappa */
 .workflow-step strong {
     display: flex; align-items: center; justify-content: center;
@@ -1259,10 +1248,6 @@ header {
 }
 .workflow-step:hover strong { box-shadow: 0 0 14px rgba(255, 190, 90, 0.8); }
 
-/* quando le fasi vanno a capo le lampadine tra una e l'altra non hanno più senso */
-@media (max-width: 900px) {
-    .workflow-step:not(:last-child)::after { display: none; }
-}
 
 .development-item {
     background: var(--white); text-align: center;
@@ -1764,6 +1749,9 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
     padding: 8px 12px;
     font-size: 0.95rem;
     white-space: nowrap;
+}
+.visual-styles .style-table .bottone:hover {
+    border-color: #94473b;
 }
 
 /* Pinterest boards (Project Process page and style pages) */
