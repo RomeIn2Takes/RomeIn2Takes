@@ -282,6 +282,17 @@ main p {
     text-align: justify;
 }
 
+/* Link dentro i paragrafi */
+main p a {
+    color:var(--red);
+    text-decoration: underline;
+}
+main p a:hover {
+    color: var(--turquoise)
+}
+
+
+
 /* Spazio tra paragrafi consecutivi */
 main p + p {
     margin-block-start: 0.85rem;

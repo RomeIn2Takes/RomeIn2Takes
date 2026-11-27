@@ -67,6 +67,15 @@ main p {
     color: var(--white);
     text-align: left;
 }
+/* Link dentro i paragrafi */
+main p a {
+    color:#eadbb6;
+    text-decoration: underline;
+}
+main p a:hover {
+    color: var(--cream);
+}
+
 
 /* spazio tra paragrafi consecutivi */
 main p + p {
