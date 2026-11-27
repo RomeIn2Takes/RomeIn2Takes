@@ -243,7 +243,7 @@
                             <td><code>mappa.geojson</code></td>
                             <td>The film locations</td>
                             <td>
-                                GeoJSON <code>FeatureCollection</code> (RFC 7946) with coordinates in
+                                GeoJSON <code>FeatureCollection</code> with coordinates in
                                 <code>[longitude, latitude]</code> order. Properties:
                                 <code>name</code>, <code>films</code>, <code>description</code>,
                                 <code>narratives</code>, <code>historicalOrder</code>,
@@ -307,11 +307,6 @@
                         <a href="#arch-map">section 04</a>).
                     </li>
                 </ol>
-                <p>
-                    The chosen era is therefore preserved while navigating through the sections of
-                    the website. The theme documentation pages are the exception: they do not load
-                    <code>base.js</code> and keep the stylesheet of the theme they describe.
-                </p>
             </div>
 
             <h3>Stylesheets, palettes and typography</h3>
@@ -326,25 +321,35 @@
                             <th>Style</th>
                             <th>Color palette</th>
                             <th>Typography</th>
-                            <th>Details</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>1650s</strong></td>
                             <td><code>style1650.css</code></td>
-                            <td>Early Printed Culture</td>
-                            <td>See style page</td>
-                            <td>See style page</td>
-                            <td><a href="doc-stili/style-1650.html">Style page &rarr;</a></td>
+                            <td>Baroque in Rome</td>
+                            <td>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #ffd700;"></span><code>#ffd700</code></span>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #4a2e18;"></span><code>#4a2e18</code></span>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #922c1e;"></span><code>#922c1e</code></span>
+                            </td>
+                            <td><code>'EB Garamond'</code>for text and <code>'Berry Rotunda'</code> for main title</td>
                         </tr>
                         <tr>
                             <td><strong>1850s</strong></td>
                             <td><code>style1850.css</code></td>
-                            <td>Nineteenth-Century Design</td>
-                            <td>See style page</td>
-                            <td>See style page</td>
-                            <td><a href="doc-stili/style-1850.html">Style page &rarr;</a></td>
+                            <td>Nineteenth-Century pointillism</td>
+                            <td><span class="color-badge"><span class="color-swatch"
+                                    style="background-color: #50946f;"></span><code>#50946f</code></span>
+                            <span class="color-badge"><span class="color-swatch"
+                                    style="background-color: #1f682fb9;"></span><code>#1f682fb9</code></span>
+                            <span class="color-badge"><span class="color-swatch"
+                                    style="background-color: #4a3b32;"></span><code>#4a3b32</code></span>
+                            </td>
+                            <td><code>'Cormorant Garamond'</code>, <code>'Cinzel'</code></td>
                         </tr>
                         <tr>
                             <td><strong>1900s</strong></td>
@@ -356,7 +361,6 @@
                                 <span class="color-badge"><span class="color-swatch" style="background-color: #d1cbbd;"></span><code>#d1cbbd</code></span>
                             </td>
                             <td>Display face for titles, <code>Georgia</code> for text</td>
-                            <td><a href="doc-stili/style-1900.html">Style page &rarr;</a></td>
                         </tr>
                         <tr>
                             <td><strong>1940s</strong></td>
@@ -374,35 +378,58 @@
                                 <code>'Libre Baskerville'</code> (text),
                                 <code>'Josefin Sans'</code> (navigation)
                             </td>
-                            <td><a href="doc-stili/style-1940.html">Style page &rarr;</a></td>
                         </tr>
                         <tr>
                             <td><strong>1960s</strong></td>
                             <td><code>style1960.css</code></td>
                             <td>Italian Film Posters</td>
-                            <td>See style page</td>
-                            <td>See style page</td>
-                            <td><a href="doc-stili/style-1960.html">Style page &rarr;</a></td>
+                            <td>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #F0E1C3;"></span><code>#f0e1c3</code></span>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #C83C2E;"></span><code>#c83c2e</code></span>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #F4D44E;"></span><code>#f4d44e</code></span>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #1599A3;"></span><code>#1599a3</code></span>
+                            </td>
+                            <td>
+                                <code>''Anton''</code>,
+                                <code>'Oswald'</code>,
+                                <code>'Bodoni Moda'</code> 
+                            </td>
                         </tr>
                         <tr>
                             <td><strong>1990s</strong></td>
                             <td><code>style1990.css</code></td>
-                            <td>Late Twentieth Century</td>
-                            <td>See style page</td>
-                            <td>See style page</td>
-                            <td><a href="doc-stili/style-1990.html">Style page &rarr;</a></td>
+                            <td>Early monitor and videogame</td>
+                            <td>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #00f3ff;"></span><code>#00f3ff</code></span>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #ff007f;"></span><code>#ff007f</code></span>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #ffe600"></span><code>#ffe600</code></span>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #1d0243 ;"></span><code>#1d0243</code></span>
+                            </td>
+                            <td>
+                                <code>'VT323', monospace</code> for normal text,
+                                <code>'Press Start 2P'</code> for titles
+                            </td>
                         </tr>
                         <tr>
                             <td><strong>2035</strong></td>
                             <td><code>style2035.css</code></td>
                             <td>Imagining the Future</td>
                             <td>
-                                <span class="color-badge"><span class="color-swatch" style="background-color: #15382b;"></span><code>#15382b</code></span>
-                                <span class="color-badge"><span class="color-swatch" style="background-color: #030a07;"></span><code>#030a07</code></span>
+                                <span class="color-badge"><span class="color-swatch" style="background-color: #a3f7cb;"></span><code>#a3f7cb</code></span>
+                                <span class="color-badge"><span class="color-swatch" style="background-color: #e3f7ee;"></span><code>#e3f7ee</code></span>
                                 <span class="color-badge"><span class="color-swatch" style="background-color: #bad3c7;"></span><code>#bad3c7</code></span>
+                                <span class="color-badge"><span class="color-swatch"
+                                        style="background-color: #0b2218;"></span><code>#0b2218</code></span>
                             </td>
-                            <td><code>'SF Pro Display'</code>, clean geometric sans-serif; glassmorphism panels</td>
-                            <td><a href="doc-stili/style-2035.html">Style page &rarr;</a></td>
+                            <td><code>'Exo', sans-serif</code></td>
                         </tr>
                     </tbody>
                 </table>
