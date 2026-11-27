@@ -344,7 +344,7 @@ main p, p {
     transform: translate(-50%, -50%) rotate(90deg);
     width: 490px;
     min-height: 1200px;
-    background-image: url("../img_femminista/sfondo.jpg");
+    background-image: url("../img/img_femminista/sfondo.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

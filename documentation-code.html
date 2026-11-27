@@ -83,19 +83,18 @@
 
     <main class="documentation-page">
 
-        <!-- INTRO -->
         <section class="documentation-intro">
             <h1>Technical Documentation</h1>
             <p>
                 This section illustrates the structure, data models and technical
-                solutions adopted in <em>Rome in Two Takes</em>, from the organisation
+                solutions adopted in <em>Rome in Two Takes</em>: from the organisation
                 of the files to the CSS and JavaScript implementations.
                 The design process is described in the
                 <a href="documentazione.html">Project Process</a>.
             </p>
         </section>
 
-        <!-- TECHNICAL INDEX -->
+        <!--index-->
         <section class="workflow">
             <h2>Technical Index</h2>
             <div class="workflow-steps">
@@ -138,7 +137,7 @@
             <p>
                 The website is organised into modular static HTML pages sharing a standardised
                 layout: a header with the main navigation, a strip for choosing the visual
-                theme, the main content and a footer with external links. All pages load the
+                theme, the main content and a footer. All pages load the
                 same script, <code>java/base.js</code>, which contains the behaviour of the
                 whole site.
             </p>
@@ -155,15 +154,14 @@
 
             <pre class="tree"><code>RomeIn2Takes/
 ├── css/
-│   ├── base.css               <span class="comment"># 1940s - The Cinema Theatre (default theme)</span>
-│   ├── style1650.css          <span class="comment"># 1650s - Early Printed Culture</span>
-│   ├── style1850.css          <span class="comment"># 1850s - Nineteenth-Century Design</span>
+│   ├── base.css               <span class="comment"># 1940s - default theme (drive-in cinema inspired)</span>
+│   ├── style1650.css          <span class="comment"># 1650s - Baroque Rome culture</span>
+│   ├── style1850.css          <span class="comment"># 1850s - Draws on the pointillist style of the late 1900s</span>
 │   ├── style1900.css          <span class="comment"># 1900s - The Birth of Cinema</span>
 │   ├── style1960.css          <span class="comment"># 1960s - Italian Film Posters</span>
-│   ├── style1990.css          <span class="comment"># 1990s - Late Twentieth Century</span>
+│   ├── style1990.css          <span class="comment"># 1990s - inspired by video games and early monitors</span>
 │   └── style2035.css          <span class="comment"># 2035 - Imagining the Future</span>
-├── doc-stili/
-│   └── style-1650.html ...    <span class="comment"># one documentation page for each theme</span>
+│  
 ├── img/
 │   └── ...                    <span class="comment"># pictures used in the project</span>
 ├── java/

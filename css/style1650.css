@@ -206,7 +206,7 @@ main h2::before {
   width: 150px;     
   height: 90px;      
   margin: 0 auto 5px auto; 
-  background-image: url('../img.decorazioni_barocco/dec_homepage.png');
+  background-image: url('../img/img.decorazioni_barocco/dec_homepage.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
