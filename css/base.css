@@ -1691,21 +1691,55 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
    21 — DOCUMENTATION: STYLE TABLE (Project Process page)
    ========================================================= */
 
+/* etichetta sopra i titoli: ottone, con due filetti ai lati */
 .section-label {
-    margin: 0 auto 6px;
-    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: #d9b77a;
     font-family: var(--font-title);
-    font-size: 1.1rem;
-    letter-spacing: 4px;
+    font-size: 1.05rem;
+    letter-spacing: 5px;
     text-align: center;
+}
+.section-label::before,
+.section-label::after {
+    content: "";
+    width: 50px;
+    height: 1px;
+    background: #c9a35a;
+}
+.visual-styles .section-label { margin: 10px auto 0; }
+
+/* sottotitoli: come i titoli ma più piccoli */
+.visual-styles h3 {
+    margin: 0 auto 20px;
+    color: #f7e8c6;
+    font-family: var(--font-neon);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px #221c18;
+    paint-order: stroke fill;
+    text-shadow: 0 0 8px rgba(255, 210, 140, 0.3);
 }
 
 /* wrapper for wide tables, used on both documentation pages */
 .style-table-scroll { overflow-x: auto; }
 
-.visual-styles .style-exploration { margin: 32px 0 40px; }
-.visual-styles .style-exploration > h3 { margin: 0 0 10px; text-align: center; }
-.visual-styles .style-exploration > p { margin: 0 0 18px; }
+.visual-styles .style-exploration { margin: 40px 0 50px; }
+.visual-styles .style-exploration > p { margin: 0 0 20px; }
+
+/* blocco "Design References": staccato dalla tabella con un filetto */
+.visual-references {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(201, 163, 90, 0.45);
+}
+.visual-references .section-label { margin-bottom: 8px; }
+.visual-references > p { margin-bottom: 15px; }
 
 .visual-styles .style-table-scroll {
     border: 3px solid #221c18;
