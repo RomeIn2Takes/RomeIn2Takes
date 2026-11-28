@@ -515,29 +515,9 @@
                 <div class="development-item">
                     <h3>List of stops</h3>
                     <p>
-                        For each narrative the list shows numbered cards. Locations that share the same
-                        order number are grouped in one stop. Between two consecutive stops, a note
+                        For each narrative it's shown a list of of the different stop locations. Between two consecutive stops, a note
                         reports transport, time, distance and directions taken from
-                        <code>spostamenti.json</code>. The <em>All</em> view shows independent cards,
-                        without numbers, with links to the itineraries in which the place appears.
-                    </p>
-                </div>
-
-                <div class="development-item">
-                    <h3>Theme-aware map</h3>
-                    <p>
-                        On <code>themeChanged</code> the script replaces the tile layer, redraws the
-                        markers and recolours the routes. The new basemap is added before the old
-                        one is removed, to avoid a blank map during the change.
-                    </p>
-                </div>
-
-                <div class="development-item">
-                    <h3>Fallbacks</h3>
-                    <p>
-                        Themes without their own basemap (1650s, 1850s) use OpenStreetMap, and so does
-                        the 1990s theme when no API key is set. The same default applies to markers
-                        (Leaflet pin) and routes (blue and red) in the themes with no custom style.
+                        <code>spostamenti.json</code>. The <em>All</em> view shows independent cards, with links to the itineraries in which the place appears.
                     </p>
                 </div>
             </div>
@@ -629,22 +609,6 @@
         <!-- 05. ITINERARIES AND METADATA -->
         <section class="documentation-section" id="arch-itinerary">
             <h2>05. Itinerary Pages &amp; Metadata</h2>
-
-            <p>
-                The two itinerary pages contain the structure of each scene
-                (<code>.area-immagini</code>), identified by an <code>id</code>. At load time
-                <code>initStoryPage</code> fetches <code>dati_tour.json</code>, finds the active
-                itinerary (the one whose <code>source_file</code> appears in the page path, or
-                otherwise the one with the most scene ids found in the page) and fills each scene
-                with the story and the metadata that have the same <code>id</code>.
-            </p>
-
-            <p>
-                Only one scene at a time is displayed. The arrows move forward and backward, and
-                loop at the ends. A URL with a hash (for example from the map list) opens the
-                corresponding scene directly.
-            </p>
-
             <div class="style-table-scroll" role="region"
                  aria-label="Interface functions" tabindex="0">
                 <table class="tech-table">
@@ -679,8 +643,6 @@
                 </table>
             </div>
 
-            <h3 id="arch-metadata">Metadata in narratives</h3>
-
             <p>
                 Every cinematic scene incorporates metadata organised in three categories:
                 <em>Cinematic Context</em>, <em>Location</em> and <em>Project</em>. The script
@@ -704,11 +666,6 @@
                     the project.
                 </li>
             </ul>
-
-            <p>
-                These properties are loaded dynamically and shown in dedicated overlays, so that
-                visitors can inspect the filmmaking choices together with the architectural data.
-            </p>
         </section>
 
 
@@ -717,8 +674,8 @@
             <h2>06. Technical Implementations &amp; Best Practices</h2>
 
             <p>
-                These are some of the technical choices that enrich the visual presentation
-                without polluting the HTML:
+                These are some of the technical implementation adopted to enrich the visual presentation and the different historical styles
+                without polluting the HTML. 
             </p>
 
             <div class="style-table-scroll" role="region"
@@ -739,8 +696,8 @@
                         </tr>
                         <tr>
                             <td><code>@keyframes</code></td>
-                            <td>Stylesheets with animations (for example the 1900s opening countdown)</td>
-                            <td>Animations stay in CSS, so the JavaScript does not have to manage them. Where there is movement, a reduced-motion variant is provided</td>
+                            <td>Stylesheets with animations (in <code>style1900.css</code>, <code>style1990.css</code>, <code>style2035.css</code>)</td>
+                            <td>Animations stay in CSS, so the JavaScript does not have to manage them.</td>
                         </tr>
                         <tr>
                             <td><code>.active</code> state of buttons</td>
