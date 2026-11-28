@@ -1728,10 +1728,10 @@ pre.tree {
 .tech-table td code {
     background: rgba(0, 0, 0, 0.45);
     color: #a3f7cb;
-    padding: 2px 6px;
-    border-radius: 5px;
+    padding: 1px 4px;
+    border-radius: 3px;
     border: 1px solid rgba(163, 247, 203, 0.25);
-    font-size: 0.82rem;
+    font-size: 0.76rem;
 }
 
 /* Card evidenza tecnica */
@@ -1772,12 +1772,14 @@ pre.tree {
 }
 
 .style-table-scroll {
+    width: 100%;
+    max-width: 950px;
+    margin: 15px auto;
     overflow-x: auto;
-    margin: 20px 0;
     background: linear-gradient(145deg, rgba(16, 48, 35, 0.4) 0%, rgba(5, 18, 12, 0.7) 100%);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(163, 247, 203, 0.3);
-    border-radius: 20px;
+    border-radius: 14px;
 }
 
 .style-table,
@@ -1792,17 +1794,24 @@ pre.tree {
 .style-table td,
 .tech-table th,
 .tech-table td {
-    padding: 14px 16px;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    line-height: 1.25;
+    vertical-align: middle;
     border-bottom: 1px solid rgba(163, 247, 203, 0.15);
+}
+
+.tech-table th:not(:last-child),
+.tech-table td:not(:last-child) {
+    border-right: 1px solid rgba(163, 247, 203, 0.15);
 }
 
 .style-table thead th,
 .tech-table thead th {
+    padding: 6px 8px;
     background: rgba(163, 247, 203, 0.1);
     color: #a3f7cb;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -1813,7 +1822,9 @@ pre.tree {
 .tech-table td strong,
 .style-table td strong {
     color: #e3f7ee;
+    font-size: 0.85rem;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .style-table tbody tr:last-child th,
@@ -1822,9 +1833,14 @@ pre.tree {
     border-bottom: none;
 }
 
-
 .style-table-action {
     text-align: center;
+    white-space: nowrap;
+}
+
+.style-table .bottone {
+    padding: 6px 12px;
+    font-size: 0.8rem;
     white-space: nowrap;
 }
 

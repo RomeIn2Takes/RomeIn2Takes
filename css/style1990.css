@@ -2048,8 +2048,10 @@ header {
 }
 
 .style-table-scroll {
+    width: 100%;
+    max-width: 950px;
+    margin: 15px auto;
     overflow-x: auto;
-    margin: 18px 0;
     background-color: #1d0243;
     border: 2px solid #00f3ff;
     box-shadow: 4px 4px 0px #ff007f;
@@ -2060,7 +2062,6 @@ header {
     width: 100%;
     border-collapse: collapse;
     font-family: 'VT323', monospace;
-    font-size: 1.15rem;
     color: white;
     text-align: left;
 }
@@ -2069,16 +2070,25 @@ header {
 .style-table td,
 .tech-table th,
 .tech-table td {
-    padding: 9px 12px;
-    line-height: 1.3;
+    padding: 4px 8px;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    vertical-align: middle;
     border-bottom: 1px dashed rgba(0, 243, 255, 0.35);
+}
+
+.tech-table th:not(:last-child),
+.tech-table td:not(:last-child) {
+    border-right: 1px dashed rgba(0, 243, 255, 0.35);
 }
 
 .style-table thead th,
 .tech-table thead th {
+    padding: 6px 8px;
     background-color: #2e0561;
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.6rem;
+    font-size: 0.55rem;
+    letter-spacing: 1px;
     color: #ffe600;
     text-transform: uppercase;
     border-bottom: 2px solid #00f3ff;
@@ -2088,6 +2098,8 @@ header {
 .style-table td strong,
 .tech-table td strong {
     color: #00f3ff;
+    font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 .style-table tbody tr:last-child th,
@@ -2101,10 +2113,16 @@ header {
     white-space: nowrap;
 }
 
+.style-table .bottone {
+    padding: 5px 10px;
+    font-size: 0.55rem;
+    white-space: nowrap;
+}
+
 pre.tree {
     width: 100%;
-    margin: 15px 0;
-    padding: 12px 16px;
+    margin: 12px 0;
+    padding: 10px 14px;
     overflow-x: auto;
     box-sizing: border-box;
     background-color: #1d0243;
@@ -2125,11 +2143,11 @@ pre.tree {
 .development-item code,
 .tech-highlight-card code,
 .tech-table td code {
-    padding: 1px 5px;
+    padding: 1px 4px;
     background-color: #2e0561;
     border: 1px solid #00f3ff;
     font-family: 'VT323', monospace;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     color: #ffe600;
 }
 
@@ -2181,16 +2199,17 @@ pre.tree {
 .color-badge {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    margin: 2px 6px 2px 0;
+    gap: 3px;
+    margin: 1px 3px 1px 0;
     white-space: nowrap;
 }
 
 .color-swatch {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 9px;
+    height: 9px;
     border: 1px solid white;
+    flex-shrink: 0;
 }
 
 .visual-references {
