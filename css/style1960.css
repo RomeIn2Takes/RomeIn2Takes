@@ -2090,7 +2090,6 @@ a.bottone[href="mappa.html"]:hover {
     outline: 2px solid var(--ink);
 }
 
-
 /* =========================================================
    DISCLAIMER
    ========================================================= */
@@ -2100,18 +2099,15 @@ a.bottone[href="mappa.html"]:hover {
     margin: 0 auto;
 }
 
+/* dispari: testo a sinistra, numero a destra */
 .disclaimer-page .disclaimer-item {
     display: flex;
     flex-direction: row-reverse;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 40px;
     padding: 40px 0;
-
     border-bottom: 1px solid var(--line);
-
     box-sizing: border-box;
 }
 
@@ -2119,49 +2115,62 @@ a.bottone[href="mappa.html"]:hover {
     border-bottom: none;
 }
 
+/* pari: numero a sinistra, testo a destra */
 .disclaimer-page .disclaimer-item:nth-child(even) {
     flex-direction: row;
 }
 
+/* numero: etichetta ruotata come i numeri del workflow e della mappa */
 .disclaimer-page .disclaimer-number {
-    font-family: 'Oswald', sans-serif;
-    font-size: 5rem;
-    font-weight: 600;
+    flex: 0 0 90px;
+    height: 90px;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    border: 1px solid var(--ink);
+    background: var(--yellow);
+    color: var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+    transform: rotate(-6deg);
+    font: 400 2.6rem / 1 "Anton", Impact, sans-serif;
+}
 
-    color: var(--red);
-
-    flex-shrink: 0;
-    line-height: 1;
+/* colori alternati: giallo, rosso, turchese */
+.disclaimer-page .disclaimer-item:nth-child(3n + 2) .disclaimer-number {
+    background: var(--red-bright);
+    color: #ffffff;
+}
+.disclaimer-page .disclaimer-item:nth-child(3n + 3) .disclaimer-number {
+    background: var(--turquoise);
 }
 
 .disclaimer-page .disclaimer-content {
     flex-grow: 1;
 }
 
-.disclaimer-page .disclaimer-title,
+/* titolo: toglie il riquadro rosso di main h2 */
+.disclaimer-page .disclaimer-title {
+    width: auto;
+    max-width: none;
+    margin: 0 0 12px;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    text-shadow: none;
+    -webkit-text-stroke: 0;
+    color: var(--red-dark);
+    font: 400 1.7rem / 1.2 "Anton", Impact, sans-serif;
+    text-align: left;
+    text-transform: uppercase;
+}
+
 .disclaimer-page .disclaimer-text {
     max-width: none;
     margin: 0;
-}
-
-.disclaimer-page .disclaimer-title {
-    font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: 1.8rem;
-
-    margin-bottom: 12px;
-
-    color: var(--red);
-    text-align: left;
-}
-
-.disclaimer-page .disclaimer-text {
     color: var(--ink);
-
     text-align: justify;
     line-height: 1.6;
 }
-
-
 /* =========================================================
    DOCUMENTATION
    ========================================================= */

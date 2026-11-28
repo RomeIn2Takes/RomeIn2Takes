@@ -1518,7 +1518,6 @@ main:not(:has(.home-introduction))
 }
 
 
-
 /* =========================================================
    DISCLAIMER
    ========================================================= */
@@ -1528,15 +1527,15 @@ main:not(:has(.home-introduction))
     margin: 0 auto;
 }
 
-
+/* dispari: testo a sinistra, numero a destra */
 .disclaimer-page .disclaimer-item {
     display: flex;
-    flex-direction: row-reverse; /* dispari: txt a snx, n a dx */
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
     padding: 40px 0;
-    border-bottom: 1px solid #f4e8c1;
+    border-bottom: 1px solid #606060;
     box-sizing: border-box;
 }
 
@@ -1544,16 +1543,18 @@ main:not(:has(.home-introduction))
     border-bottom: none;
 }
 
+/* pari: numero a sinistra, testo a destra */
 .disclaimer-page .disclaimer-item:nth-child(even) {
-    flex-direction: row; /* pari: n a snx, txt a dx */
+    flex-direction: row;
 }
 
-/* num grande */
+/* numero grande in color carta antica */
 .disclaimer-page .disclaimer-number {
+    flex-shrink: 0;
+    color: #b8ad98;
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 4rem;
     font-weight: bold;
-    color: #f4e8c1;
-    flex-shrink: 0;
     line-height: 1;
 }
 
@@ -1561,7 +1562,7 @@ main:not(:has(.home-introduction))
     flex-grow: 1;
 }
 
-/* annullare i vincoli globali di main h2 e main p*/
+/* annulla i vincoli globali di main h2 e main p */
 .disclaimer-page .disclaimer-title,
 .disclaimer-page .disclaimer-text {
     max-width: none;
@@ -1569,9 +1570,9 @@ main:not(:has(.home-introduction))
 }
 
 .disclaimer-page .disclaimer-title {
-    font-size: 1.4rem;
     margin-bottom: 12px;
-    color: #f4e8c1;
+    color: #f1ede5;
+    font-size: 1.6rem;
     text-align: left;
 }
 
@@ -1580,6 +1581,19 @@ main:not(:has(.home-introduction))
     line-height: 1.6;
 }
 
+/* mobile: blocchi in colonna */
+@media screen and (max-width: 800px) {
+    .disclaimer-page .disclaimer-item,
+    .disclaimer-page .disclaimer-item:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .disclaimer-page .disclaimer-number {
+        font-size: 2.5rem;
+    }
+}
 
 /* =========================================================
    RESPONSIVE
@@ -2578,17 +2592,6 @@ main:not(:has(.home-introduction))
     }
 }
 
-/* DISCLAIMER*/
-.disclaimer-page .disclaimer-item,
-.disclaimer-page .disclaimer-item:nth-child(even) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-}
-
-.disclaimer-page .disclaimer-number {
-    font-size: 2.5rem;
-}
 
 /* =========================================================
    ABOUT 
