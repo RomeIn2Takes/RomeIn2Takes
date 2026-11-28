@@ -473,7 +473,7 @@ function initMapPage() {
 
         "css/style1900.css": {
             url: "https://tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token={accessToken}",
-            accessToken: "poi rimettiamo token",
+            accessToken: "TZFR1lPvaOtPUqA22q6wBAKWtWJ0U3RByHARL32LZjQ5x6OzlgL3RPhxXfcwJZKW",
             attribution:
                 '&copy; <a href="https://jawg.io/">Jawg Maps</a> ' +
                 '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -495,7 +495,7 @@ function initMapPage() {
 
         "css/style2035.css": {
             url: "https://tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-token={accessToken}",
-            accessToken: "poi mettiamo token",
+            accessToken: "TZFR1lPvaOtPUqA22q6wBAKWtWJ0U3RByHARL32LZjQ5x6OzlgL3RPhxXfcwJZKW",
             attribution:
                 '&copy; <a href="https://jawg.io/">Jawg Maps</a> ' +
                 '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -2321,7 +2321,8 @@ a.bottone[href="mappa.html"]:hover {
 
 .prototype-row img {
     width: 100%;
-    height: 400px;
+    height: auto;
+    max-height: 400px;
 
     display: block;
     object-fit: contain;
@@ -2359,6 +2360,312 @@ a.bottone[href="mappa.html"]:hover {
 .graphic-ideas p {
     font-size: 0.85rem;
     text-align: center;
+}
+
+/* =========================================================
+   DOCUMENTATION — DEVELOPMENT, VISUAL STYLES, REFERENCES
+   ========================================================= */
+
+/* DEVELOPMENT: schede come il retro delle locandine */
+.development-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0 35px;          /* 35px sotto: stacca il paragrafo che segue */
+}
+
+.development-item {
+    position: relative;
+    padding: 24px 26px;
+    background: var(--paper-light);
+    border: 3px solid var(--red-bright);
+    box-shadow: 5px 5px 0 rgba(51, 37, 30, 0.28);
+}
+
+.development-item::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 2px solid var(--turquoise-dark);
+    pointer-events: none;
+}
+
+.development-item h3 {
+    margin: 0 0 10px;
+    color: var(--red-dark);
+    font: 400 1.4rem / 1.2 "Anton", Impact, sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.development-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+
+/* ETICHETTE "VISUAL DESIGN" / "DESIGN REFERENCES":
+   con i trattini obliqui della barra degli anni */
+.section-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 0 auto;
+    color: var(--turquoise-dark);
+    font: 600 0.85rem / 1.4 "Oswald", sans-serif;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.section-label::before,
+.section-label::after {
+    content: "";
+    width: 2px;
+    height: 14px;
+    background: var(--turquoise-dark);
+    box-shadow: 3px 0 0 var(--red);
+    transform: skewX(-18deg);
+}
+
+/* il titolo subito sotto l'etichetta */
+.visual-styles > h2 {
+    margin-top: 14px;
+}
+
+
+/* SOTTOTITOLI: Anton rosso con doppio filetto turchese e giallo */
+.visual-styles h3 {
+    margin: 0 auto 20px;
+    color: var(--red-dark);
+    font: 400 clamp(1.5rem, 3vw, 2rem) / 1.2 "Anton", Impact, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.visual-styles h3::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 10px auto 0;
+    background: var(--turquoise);
+    box-shadow: 0 6px 0 var(--yellow);
+}
+
+
+/* SPAZI TRA I BLOCCHI */
+.visual-styles .style-exploration { margin: 45px 0 50px; }
+.visual-styles .style-exploration > p { margin: 0 0 22px; }
+
+.visual-references {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+}
+
+.visual-references .section-label { margin-bottom: 8px; }
+
+
+/* TABELLA DEGLI STILI */
+.style-table-scroll { overflow-x: auto; }
+
+.visual-styles .style-table-scroll {
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 rgba(51, 37, 30, 0.25);
+}
+
+.visual-styles .style-table-scroll:focus-visible {
+    outline: 2px solid var(--turquoise-dark);
+    outline-offset: 3px;
+}
+
+.visual-styles .style-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--paper-light);
+    color: var(--ink);
+    text-align: left;
+}
+
+.visual-styles .style-table th,
+.visual-styles .style-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    line-height: 1.5;
+    vertical-align: middle;
+}
+
+.visual-styles .style-table thead th {
+    background: var(--ink);
+    color: var(--yellow);
+    font: 500 0.95rem / 1.3 "Oswald", sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.visual-styles .style-table tbody th {
+    color: var(--red-dark);
+    font: 400 1.2rem / 1.2 "Anton", Impact, sans-serif;
+    white-space: nowrap;
+}
+
+.visual-styles .style-table td strong {
+    color: var(--turquoise-dark);
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.visual-styles .style-table tbody tr:nth-child(even) { background: var(--paper); }
+.visual-styles .style-table tbody tr:last-child > * { border-bottom: 0; }
+.visual-styles .style-table .style-table-action { text-align: center; }
+
+.visual-styles .style-table .bottone {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+
+/* BACHECA PINTEREST: staccata dal testo, con cornice da manifesto */
+.pinterest-board {
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+/* bottone "Explore the complete inspiration board": come gli altri bottoni */
+.pinterest-board-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 12px 22px;
+    background-color: var(--red-bright);
+    color: var(--yellow);
+    font: 400 1rem / 1.2 "Anton", Impact, sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.pinterest-board-link:hover,
+.pinterest-board-link:focus-visible {
+    background-color: var(--turquoise);
+    transform: translateY(-2px);
+}
+
+
+/* MOBILE */
+@media (max-width: 680px) {
+    .development-grid { grid-template-columns: minmax(0, 1fr); }
+
+    .visual-styles .style-table th,
+    .visual-styles .style-table td { padding: 10px 8px; }
+
+    .visual-styles .style-table .bottone { white-space: normal; }
+}
+
+/* =========================================================
+   TECHNICAL DOCUMENTATION
+   ========================================================= */
+
+/* sottotitoli dentro le sezioni */
+.documentation-section > h3 {
+    margin: 35px 0 15px;
+    color: var(--red-dark);
+    font: 400 1.5rem / 1.2 "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+}
+
+/* codice: etichetta scura come in un editor */
+main code {
+    padding: 1px 5px;
+    background: var(--ink);
+    color: var(--paper-light);
+    border-radius: 3px;
+    font-family: "Courier Prime", monospace;
+    font-size: 0.85em;
+}
+
+/* albero delle cartelle: sfondo scuro da editor */
+pre.tree {
+    margin: 20px 0;
+    padding: 16px 20px;
+    overflow-x: auto;
+    background: var(--ink);
+    color: var(--paper-light);
+    border-radius: 4px;
+    font-family: "Courier Prime", monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+pre.tree code { padding: 0; background: none; }
+.comment { color: var(--ochre); font-style: italic; }
+
+/* box del sistema di cambio stile: come le schede del development */
+.tech-highlight-card {
+    margin: 25px 0;
+    padding: 20px 24px;
+    background: var(--paper-light);
+    border: 3px solid var(--red-bright);
+    box-shadow: 5px 5px 0 rgba(51, 37, 30, 0.25);
+}
+.tech-highlight-card h3 {
+    margin: 0 0 10px;
+    color: var(--red-dark);
+    font: 400 1.4rem / 1.2 "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+}
+.tech-highlight-card li { margin-bottom: 8px; line-height: 1.6; }
+
+/* tabelle tecniche: lineari, solo filetti */
+.tech-table {
+    width: 100%;
+    margin: 15px 0 25px;
+    border-collapse: collapse;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    font-size: 0.85rem;
+}
+.tech-table th,
+.tech-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+}
+.tech-table th {
+    color: var(--red-dark);
+    font: 600 0.9rem "Oswald", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--ink);
+}
+.tech-table td strong { white-space: nowrap; }
+
+/* campioni di colore */
+.color-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 2px 6px 2px 0;
+    white-space: nowrap;
+}
+.color-swatch {
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--ink);
 }
 
 

@@ -3409,12 +3409,6 @@ footer p a:hover {
     margin: 32px 0 40px;
 }
 
-.visual-styles .style-exploration > h3 {
-    margin: 0 0 10px;
-    color: #f1ede5;
-    text-align: center;
-}
-
 .visual-styles .style-exploration > p {
     margin: 0 0 18px;
     text-align: left;
@@ -3582,4 +3576,199 @@ footer p a:hover {
     .bar-item {
         flex-basis: 64px;
     }
+}
+
+/* =========================================================
+   DOCUMENTATION — BOX, TITOLI, PINTEREST, CODICE
+   ========================================================= */
+
+/* box del development e del cambio stile: schede con angoli d'archivio */
+.development-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 30px 0 35px;
+}
+
+.development-item,
+.tech-highlight-card {
+    position: relative;
+    padding: 24px 26px;
+    box-sizing: border-box;
+    background: #2c2b29;
+    border: 1px solid #625d54;
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.development-item::before,
+.development-item::after,
+.tech-highlight-card::before,
+.tech-highlight-card::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+}
+.development-item::before,
+.tech-highlight-card::before {
+    top: 8px;
+    left: 8px;
+    border-top: 2px solid #b8ad98;
+    border-left: 2px solid #b8ad98;
+}
+.development-item::after,
+.tech-highlight-card::after {
+    bottom: 8px;
+    right: 8px;
+    border-bottom: 2px solid #b8ad98;
+    border-right: 2px solid #b8ad98;
+}
+
+.development-item h3,
+.tech-highlight-card h3 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.3rem;
+}
+.development-item p { margin: 0; font-size: 0.95rem; text-align: left; }
+.tech-highlight-card { margin: 25px 0; }
+.tech-highlight-card li { margin-bottom: 8px; color: #d0ceca; line-height: 1.6; }
+
+/* etichette "VISUAL DESIGN" / "DESIGN REFERENCES" */
+.section-label {
+    color: #b8ad98;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+/* sottotitoli: corsivo con doppio filetto, come negli itinerari */
+.documentation-section > h3,
+.visual-styles h3 {
+    margin: 35px auto 18px;
+    color: #f1ede5;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.documentation-section > h3::after,
+.visual-styles h3::after {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 3px;
+    margin: 14px auto 0;
+    border-top: 1px solid #e2e2df;
+    border-bottom: 1px solid #e2e2df;
+}
+
+/* spazi tra i blocchi */
+.visual-styles .style-exploration { margin: 40px 0 50px; }
+.visual-references {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid #606060;
+}
+
+/* Pinterest: bacheca staccata dal testo, bottone come gli altri */
+.pinterest-board { max-width: 900px; margin: 30px auto; }
+.pinterest-board-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    min-height: 44px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 10px 16px;
+    background-color: #292929;
+    color: #d8d6d1;
+    border: 1px solid #707070;
+    border-radius: 2px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.pinterest-board-link:hover {
+    background-color: #404040;
+    color: #ffffff;
+    border-color: #bdbdb9;
+}
+
+/* codice: etichetta scura come in un editor */
+main code {
+    padding: 1px 5px;
+    background: #1c1b1b;
+    color: #e8e6e1;
+    border: 1px solid #4a4843;
+    border-radius: 3px;
+    font-family: "Courier Prime", monospace;
+    font-size: 0.85em;
+}
+
+/* albero delle cartelle */
+pre.tree {
+    margin: 20px 0;
+    padding: 16px 20px;
+    overflow-x: auto;
+    background: #1c1b1b;
+    color: #e2e2df;
+    border-left: 4px solid #b8ad98;
+    border-radius: 0 4px 4px 0;
+    font-family: "Courier Prime", monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+pre.tree code { padding: 0; background: none; border: none; }
+.comment { color: #9e968a; font-style: italic; }
+
+/* tabelle tecniche: lineari, solo filetti */
+.tech-table {
+    width: 100%;
+    margin: 15px 0 25px;
+    border-collapse: collapse;
+    border-top: 1px solid #e2e2df;
+    border-bottom: 1px solid #e2e2df;
+    color: #d0ceca;
+    font-size: 0.85rem;
+}
+.tech-table th,
+.tech-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #606060;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+}
+.tech-table th {
+    color: #f1e5ce;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e2e2df;
+}
+.tech-table td strong { color: #ffffff; white-space: nowrap; }
+
+/* campioni di colore */
+.color-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 2px 6px 2px 0;
+    white-space: nowrap;
+}
+.color-swatch {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #b8ad98;
+}
+
+@media (max-width: 680px) {
+    .development-grid { grid-template-columns: 1fr; }
 }
