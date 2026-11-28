@@ -234,26 +234,22 @@ header, .bar-style {
 .bar-style {
     top: 75px;
     z-index: 2000;
-    width: 90%;
-    max-width: 900px;
-    justify-content: center;
+    width: 95%;
+    max-width: 950px;
+    justify-content: safe center;
     padding: 0 15px;
+    overflow-x: auto;
 }
 
 .bar-item {
-    flex: 1;
+    position: relative;
+    flex: 0 0 80px;
     height: 40px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
-
-    position: relative;
-        border-right: none;
 }
 
 /* pallini luminosi tra date */

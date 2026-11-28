@@ -169,14 +169,19 @@ header {
     z-index: 1300;
 
     display: flex;
+    justify-content: safe center;
     width: 100%;
-    padding: 0;
+    padding: 0 12px;
     box-sizing: border-box;
     overflow-x: auto;
+
+    background-color: #ff007f;
+    border-top: 2px solid #ff71b8;
+    border-bottom: 2px solid #800040;
 }
 
 .bar-item {
-    flex: 1;
+    flex: 0 0 80px;
     height: 36px;
     box-sizing: border-box;
 
