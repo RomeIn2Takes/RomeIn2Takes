@@ -461,7 +461,7 @@
                         <tr>
                             <td>Style selector</td>
                             <td><code>.bar-style</code>, <code>.bar-item</code>, <code>.nav-label</code></td>
-                            <td>Shape and surface of the strip (film frames in the 1900s)</td>
+                            <td>Shape and surface of the strip</td>
                         </tr>
                         <tr>
                             <td>Documentation pages</td>
@@ -483,11 +483,6 @@
                             <td><code>#map</code>, <code>#filters</code>, <code>.location-card</code>, <code>.location-number</code>, <code>.route-connection</code></td>
                             <td>Filters, cards of the stops, numbering and route notes</td>
                         </tr>
-                        <tr>
-                            <td>Footer</td>
-                            <td><code>footer</code>, <code>.footer-container</code>, <code>.footer-box</code></td>
-                            <td>Colours and typography</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -499,8 +494,7 @@
             <h2>04. Interactive Map</h2>
 
             <p>
-                The map page uses Leaflet. <code>initMapPage</code> creates a map centred on Rome
-                (<code>41.9028, 12.4964</code>, zoom 12), then loads
+                The map page uses Leaflet. <code>initMapPage</code> creates a map centred on Rome, then loads
                 <code>mappa.geojson</code> and <code>spostamenti.json</code> in parallel with
                 <code>Promise.all</code>. When both files are available, the script builds the
                 markers, the two route lines and the list of stops below the map.
