@@ -2574,6 +2574,101 @@ a.bottone[href="mappa.html"]:hover {
 
     .visual-styles .style-table .bottone { white-space: normal; }
 }
+
+/* =========================================================
+   TECHNICAL DOCUMENTATION
+   ========================================================= */
+
+/* sottotitoli dentro le sezioni */
+.documentation-section > h3 {
+    margin: 35px 0 15px;
+    color: var(--red-dark);
+    font: 400 1.5rem / 1.2 "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+}
+
+/* codice: etichetta scura come in un editor */
+main code {
+    padding: 1px 5px;
+    background: var(--ink);
+    color: var(--paper-light);
+    border-radius: 3px;
+    font-family: "Courier Prime", monospace;
+    font-size: 0.85em;
+}
+
+/* albero delle cartelle: sfondo scuro da editor */
+pre.tree {
+    margin: 20px 0;
+    padding: 16px 20px;
+    overflow-x: auto;
+    background: var(--ink);
+    color: var(--paper-light);
+    border-radius: 4px;
+    font-family: "Courier Prime", monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+pre.tree code { padding: 0; background: none; }
+.comment { color: var(--ochre); font-style: italic; }
+
+/* box del sistema di cambio stile: come le schede del development */
+.tech-highlight-card {
+    margin: 25px 0;
+    padding: 20px 24px;
+    background: var(--paper-light);
+    border: 3px solid var(--red-bright);
+    box-shadow: 5px 5px 0 rgba(51, 37, 30, 0.25);
+}
+.tech-highlight-card h3 {
+    margin: 0 0 10px;
+    color: var(--red-dark);
+    font: 400 1.4rem / 1.2 "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+}
+.tech-highlight-card li { margin-bottom: 8px; line-height: 1.6; }
+
+/* tabelle tecniche: lineari, solo filetti */
+.tech-table {
+    width: 100%;
+    margin: 15px 0 25px;
+    border-collapse: collapse;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    font-size: 0.85rem;
+}
+.tech-table th,
+.tech-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+}
+.tech-table th {
+    color: var(--red-dark);
+    font: 600 0.9rem "Oswald", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--ink);
+}
+.tech-table td strong { white-space: nowrap; }
+
+/* campioni di colore */
+.color-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 2px 6px 2px 0;
+    white-space: nowrap;
+}
+.color-swatch {
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--ink);
+}
+
+
 /* =========================================================
    MAP
    ========================================================= */
