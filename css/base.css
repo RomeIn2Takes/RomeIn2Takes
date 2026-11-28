@@ -1189,8 +1189,7 @@ header {
 .documentation-section:last-of-type { border-bottom: none; }
 .documentation-section p { margin-bottom: 15px; }
 
-/* WORKFLOW: le fasi come piccoli pannelli retroilluminati (come il retro dei poster),
-   collegate da una lampadina tra l'una e l'altra */
+/* WORKFLOW: le fasi come piccoli pannelli retroilluminati  */
 .workflow-steps {
     display: flex; flex-wrap: wrap;
     gap: 16px;
@@ -1218,17 +1217,7 @@ header {
     text-align: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-/* lampadina tra una fase e la successiva */
-.workflow-step:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 50%; right: -12px;
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: #ffd98a;
-    box-shadow: 0 0 8px 2px rgba(255, 185, 80, 0.7);
-    transform: translateY(-50%);
-}
+
 /* numero: tondo con bordo in ottone, come i numeri della mappa */
 .workflow-step strong {
     display: flex; align-items: center; justify-content: center;
@@ -1259,10 +1248,6 @@ header {
 }
 .workflow-step:hover strong { box-shadow: 0 0 14px rgba(255, 190, 90, 0.8); }
 
-/* quando le fasi vanno a capo le lampadine tra una e l'altra non hanno più senso */
-@media (max-width: 900px) {
-    .workflow-step:not(:last-child)::after { display: none; }
-}
 
 .development-item {
     background: var(--white); text-align: center;
@@ -1706,21 +1691,55 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
    21 — DOCUMENTATION: STYLE TABLE (Project Process page)
    ========================================================= */
 
+/* etichetta sopra i titoli: ottone, con due filetti ai lati */
 .section-label {
-    margin: 0 auto 6px;
-    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: #d9b77a;
     font-family: var(--font-title);
-    font-size: 1.1rem;
-    letter-spacing: 4px;
+    font-size: 1.05rem;
+    letter-spacing: 5px;
     text-align: center;
+}
+.section-label::before,
+.section-label::after {
+    content: "";
+    width: 50px;
+    height: 1px;
+    background: #c9a35a;
+}
+.visual-styles .section-label { margin: 10px auto 0; }
+
+/* sottotitoli: come i titoli ma più piccoli */
+.visual-styles h3 {
+    margin: 0 auto 20px;
+    color: #f7e8c6;
+    font-family: var(--font-neon);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px #221c18;
+    paint-order: stroke fill;
+    text-shadow: 0 0 8px rgba(255, 210, 140, 0.3);
 }
 
 /* wrapper for wide tables, used on both documentation pages */
 .style-table-scroll { overflow-x: auto; }
 
-.visual-styles .style-exploration { margin: 32px 0 40px; }
-.visual-styles .style-exploration > h3 { margin: 0 0 10px; text-align: center; }
-.visual-styles .style-exploration > p { margin: 0 0 18px; }
+.visual-styles .style-exploration { margin: 40px 0 50px; }
+.visual-styles .style-exploration > p { margin: 0 0 20px; }
+
+/* blocco "Design References": staccato dalla tabella con un filetto */
+.visual-references {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(201, 163, 90, 0.45);
+}
+.visual-references .section-label { margin-bottom: 8px; }
+.visual-references > p { margin-bottom: 15px; }
 
 .visual-styles .style-table-scroll {
     border: 3px solid #221c18;
@@ -1765,6 +1784,9 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
     font-size: 0.95rem;
     white-space: nowrap;
 }
+.visual-styles .style-table .bottone:hover {
+    border-color: #94473b;
+}
 
 /* Pinterest boards (Project Process page and style pages) */
 .pinterest-board {
@@ -1772,9 +1794,6 @@ footer p a { text-decoration: underline; text-underline-offset: 3px; }
     max-width: 900px;
     margin: 24px auto;
     padding: 10px;
-    background: #221c18;
-    border: 3px solid #14100e;
-    box-shadow: inset 0 0 0 2px #a8864a;
 }
 .pinterest-board-link {
     display: flex;

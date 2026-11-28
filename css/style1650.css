@@ -1304,6 +1304,105 @@ main p {
     color: #f4ebd0;
     opacity: 1;
 }
+
+
+/* =========================================================
+   TABELLA TECNICA COLORI E FONT
+   ========================================================= */
+.style-table-scroll {
+    width: 100%;
+    max-width: 950px;
+    margin: 28px auto 40px auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent; 
+    color: #3b2314;
+    border-top: 3px solid #4a2e18;
+    border-bottom: 3px solid #4a2e18;
+}
+
+.tech-table thead th {
+    padding: 12px 14px;
+    background-color: transparent;
+    color: #4a2e18;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+    text-align: left;
+    border-bottom: 3px solid #4a2e18;
+    vertical-align: bottom;
+}
+
+.tech-table tbody td {
+    padding: 14px 14px;
+    border-bottom: 2px solid #4a2e18;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.08rem;
+    line-height: 1.55;
+    text-align: left;
+    vertical-align: top;
+}
+
+.tech-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tech-table tbody tr:hover {
+    background-color: rgba(244, 235, 208, 0.22);
+}
+
+
+.tech-table .color-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px 2px 5px;
+    margin: 2px 4px 2px 0;
+    background-color: rgba(244, 235, 208, 0.85);
+    border: 1px solid #4a2e18;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
+.tech-table .color-swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    border: 1px solid #3b2314;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+/* Codice dentro la tabella */
+.tech-table code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.86em;
+    line-height: 1.35;
+    color: #3b2314;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.tech-table td > code {
+    display: inline-block;
+    padding: 2px 7px;
+    margin: 2px 3px 2px 0;
+    background-color: rgba(244, 235, 208, 0.85);
+    border: 1px solid #4a2e18;
+    border-radius: 3px;
+}
+
 /* =========================================================
    POSTER (GRIGLIA LOCANDINE)
    ========================================================= */
